@@ -136,14 +136,14 @@
                                     <if condition="$vo.borrow_status eq 0">
                                         <div class="bottm"><a href="{:U('Finance/invest?id='.$vo['id'])}">立即投标</a></div>
                                     <elseif condition="$vo.borrow_status eq 2"/>
-                                        <div class="bottm2"><a href="{:U('Finance/invest?id='.$vo['id'])}">初审中</a></div>
+                                        <div class="bottm2"><a href="javascript:void(0);">初审中</a></div>
                                     <elseif condition="$vo.borrow_status eq 4"/>
-                                        <div class="bottm2"><a href="{:U('Finance/invest?id='.$vo['id'])}">复审中</a></div>&nbsp;
+                                        <div class="bottm2"><a href="javascript:void(0);">复审中</a></div>&nbsp;
                                     <elseif condition="$vo.borrow_status eq 6"/>
-                                        <div class="bottm2"><a href="{:U('Finance/invest?id='.$vo['id'])}">还款中</a></div>&nbsp;
+                                        <div class="bottm2"><a href="javascript:void(0);">还款中</a></div>&nbsp;
                                     <elseif condition="$vo.borrow_status eq 7"/>
                                         <div class="bottm2">
-                                        <a href="{:U('Finance/invest?id='.$vo['id'])}">已完成</a>
+                                        <a href="javascript:void(0);">已完成</a>
                                         </div>&nbsp;
                                     </if>
 

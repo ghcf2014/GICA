@@ -68,7 +68,6 @@ class FinanceController extends HomeController {
         $condition['gica_member.uid'] =$uid ;
         $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
 
-        var_dump($list);
         $this->assign('list', $list);
         $this->assign('list2', $list2);
 
@@ -92,7 +91,23 @@ if($capital <= 0){// 上传错误提示错误信息
             $this->error('投资金额不能小于1元');
         }
         else{
-        	$count=$m->add();
+
+            $m2=M("z_borrow_info");
+            $condition2['id'] =$bid;
+            $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
+
+            $m2h=intval ($m22[0]['has_borrow'])+intval ($capital);
+
+
+            $m222=intval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
+
+            $data2['has_borrow']=$m2h;
+            //判断是否满额
+            if ( $m222 >= 0){
+ 
+
+            $m2=$m2->where($condition2)->save($data2);
+            $count=$m->add();
             // $this->success('投资成功！',U('Borrow/detail?id='.$bid));
 
             $uid=is_login(); 
@@ -105,11 +120,19 @@ if($capital <= 0){// 上传错误提示错误信息
 
              if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
             //成功提示
-            $this->success(L('投资成功。->>>>这不是真实金额'));
+            $this->success(L('投资成功。->>>>这不是真实金额'),U('Borrow/detail?id='.$bid));
             } else {
             //失败提示
             $this->error(L('投资失败，如发现金额已经投出，请及时联系我们处理。'));
             }
+
+            }
+            else{
+                $this->success(L('投资金额已超过借款金额！'));
+
+            }
+            
+
      }
     $this->assign('list3',$list3);
     }
