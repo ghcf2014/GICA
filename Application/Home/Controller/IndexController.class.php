@@ -41,6 +41,15 @@ class IndexController extends HomeController {
         $show       = $Page->show();
         $orderby['id']='desc';
         $list = $listBorrow->where('borrow_status not in (1,5,3)')->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
+
+        if ($list[0]['has_borrow'] ==0) {
+            $jindu=0;
+        }
+        else {
+           
+        }
+       
+        $this->assign('jindu',$jindu);//栏目
         $this->assign('category',$category);//栏目
         $this->assign('lists',$lists);//列表
         $this->assign('lists1',$lists1);

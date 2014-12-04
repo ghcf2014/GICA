@@ -228,8 +228,7 @@
                                                             借款进度：
                                                         </div>
                                                         <div class="progeos">
-                                                            <div
-                                                                style="width: <s:property value="#finance.schedules" default="0"/>%"></div>
+                                                            <div style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%"></div>
                                                         </div>
                                                         <div style="float: left;">
                                                             <span> <s:property value="#finance.schedules"
