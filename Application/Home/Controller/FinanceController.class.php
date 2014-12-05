@@ -128,7 +128,8 @@ if($capital <= 0){// 上传错误提示错误信息
 
             }
             else{
-                $this->success(L('投资金额已超过借款金额！'));
+                $this->error(L('投资金额已超过借款金额！'));
+                // $this->assign('waitSecond',U('Finance/invest'),5);
 
             }
             
