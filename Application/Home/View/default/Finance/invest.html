@@ -6,7 +6,7 @@
 			<div class="ifbox1">
 				<h2>
 					确定投标
-					<img src="images/neiye2_06.jpg" width="4" height="7" />
+					<img src="__STATIC__/rzg_images/neiye2_06.jpg" width="4" height="7" />
 				</h2>
 				<div class="boxmain"
 					style="padding-top: 20px; padding-bottom: 20px;">
@@ -17,8 +17,9 @@
 							<div class="tbinfo">
 								<div class="lbox">
 									<div class="pic">
-										<shove:img src="${investDetailMap.personalHead}"
-											defaulImg="__STATIC__/rzg_images/default-img.jpg" width="80" height="79"></shove:img>
+<!-- 										<shove:img src="${investDetailMap.personalHead}"
+											defaulImg="__STATIC__/rzg_images/default-img.jpg" width="80" height="79"></shove:img> -->
+											<img src="__STATIC__/rzg_images/default-img.jpg" width="80" height="79" />
 										<br />
 										
 									</div>
@@ -62,20 +63,18 @@
 										</li>
 										<li>
 											还款方式:
-											<strong> <s:if
-													test="%{investDetailMap.isDayThe == 2}">
-													到期还本付息
-											</s:if> <s:elseif test="%{investDetailMap.paymentMode == 1}">
+											<strong> <if condition="$vb.repayment_type eq 1">
+													按天到期还款
+											         <elseif condition="$vb.repayment_type eq 2"/>
 													按月分期还款
-											</s:elseif> <s:elseif test="%{investDetailMap.paymentMode ==2}">
-											按月付息,到期还本
-											</s:elseif> <s:elseif test="%{investDetailMap.paymentMode ==3}">
-											秒还
-											</s:elseif> <s:elseif test="%{investDetailMap.paymentMode ==4}">
- 											 一次性还款
-											</s:elseif> </strong>
+											         <elseif condition="$vb.repayment_type eq 3"/>
+											        按季分期还款
+											         <elseif condition="$vb.repayment_type eq 4"/>
+											        代表每月还息，到期还本
+											         </if>
+											</strong>
 										</li>
-										<li>
+<!-- 										<li>
 											交易类型:
 											<strong> <s:if
 													test="%{investDetailMap.tradeType == 1}">
@@ -83,7 +82,7 @@
 </s:if> <s:elseif test="%{investDetailMap.tradeType ==2}">
 线下交易
 </s:elseif> </strong>
-										</li>
+										</li> -->
 									</ul>
 								</div>
 							</div>

@@ -57,7 +57,6 @@
 												<img src="__STATIC__/rzg_images/ico_r_1.gif"onclick=qvip();;;;;;;;;;;;style="cursor: pointer;" />
 											</td>
 										</tr>
-										
 <!-- 									<tr>
 											<th align="right">
 												个人统计：
@@ -315,8 +314,8 @@
 						<div class="box-main">
 							<table border="0" cellpadding="0" cellspacing="0" class="zhtab">
 								<tr>
-									<th colspan="3" align="left">
-										账户总汇：
+									<th colspan="3" align="left" >
+										<a class="btn">账户总汇：</a>
 									</th>
 								</tr>
 								<tr>
@@ -337,76 +336,76 @@
 										</if>
 									</td>
 									<td>
-										冻结金额：￥
+<!-- 										冻结金额：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_freeze}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 								</tr>
 								<tr>
 									<td>
-										总收益：￥
+<!-- 										总收益：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 									<td>
-										利息收益：￥
+<!-- 										利息收益：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 									<td>
-										其他收益：￥
+<!-- 										其他收益：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 								</tr>
 								<tr>
 									<th colspan="3" align="left">
-										投资总汇：
+										<a class="btn">投资总汇：</a>
 									</th>
 								</tr>
 								<tr>
 									<td>
-										已收总额：￥
+<!-- 										已收总额：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 									<td>
-										已收本金：￥
+<!-- 										已收本金：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 									<td>
-										已收利息：￥
+<!-- 										已收利息：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 								</tr>
-								<tr>
+								<tr><volist name="list2" id="list2">
 									<td>
 										待收总额：￥
 										<if condition="$vo.account_money neq ''">
-										{$vo.money_collect}
+										{$list2['investor_capital']}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
 										</if>
@@ -414,56 +413,56 @@
 									<td>
 										待收本金：￥
 										<if condition="$vo.account_money neq ''">
-										{$vo.back_money}
+										{$list2['investor_capital']}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
 										</if>
 									</td>
 									<td>
-										待收利息：￥
+<!-- 										待收利息：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
-									</td>
+										</if> -->
+									</td></volist>
 								</tr>
 								<tr>
 									<th colspan="3" align="left">
-										借款总汇：
+										<a class="btn">借款总汇：</a>
 									</th>
 								</tr>
 								<tr>
 									<td>
-										已还总额：￥
+<!-- 										已还总额：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 									<td>
-										已还本金：￥
+<!-- 										已还本金：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 									<td>
-										已还利息：￥
+<!-- 										已还利息：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
 								</tr>
-								<tr>
+								<tr><volist name="borrow_money" id="bm">
 									<td>
 										待还总额：￥
 										<if condition="$vo.account_money neq ''">
-										{$vo.money_collect}
+										{$bm.borrow_money}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
 										</if>
@@ -471,25 +470,26 @@
 									<td>
 										待还本金：￥
 										<if condition="$vo.account_money neq ''">
-										{$vo.money_collect}
+										{$bm.borrow_money}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
 										</if>
 									</td>
 									<td>
-										待还利息：￥
+<!-- 										待还利息：￥
 										<if condition="$vo.account_money neq ''">
 										{$vo.money_collect}
 										<elseif condition="$vo.account_money eq 1"/>
 										0
-										</if>
+										</if> -->
 									</td>
+									</volist>
 								</tr>
 								
 								
 								<tr>
 									<th colspan="3" align="left">
-										最近还款：
+										<a class="btn">最近还款：</a>
 									</th>
 								</tr>
 								<tr>
