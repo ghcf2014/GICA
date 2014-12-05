@@ -32,8 +32,8 @@
 						<li class="txt">还款方式：</li>
 						<li><select id="repayWay" name="select">
 								<option selected="selected" value="0">等额本息</option>
-								<option value="2">先息后本</option>
-								<option value="3">一次性还款</option>
+								<option value="1">先息后本</option>
+								<option value="2">一次性还款</option>
 						</select> <span class="tip" style="display: none;">这部分金额不会加入自动投标</span></li>
 					</ul>
 				</div>
@@ -43,9 +43,9 @@
 				</div>
 				<div class="btn-submit">
 					<a href="javascript:void(0);" id="calcultor" class="gbtn">计算</a> <a
-						href="" class="gbtn gbtn-gray">重置</a> <input id="manual"
+						href="" class="gbtn gbtn-gray">重置</a> <!-- <input id="manual"
 						class="helpId" type="checkbox" value="" name="cb_ids"
-						onclick="changeStatus();" /> &nbsp;天标
+						onclick="changeStatus();" /> &nbsp;天标 -->
 				</div>
 			</div>
 			<div class="jsq_right">
@@ -56,6 +56,24 @@
 							每月收益： <strong id="aa" style="color: #166cb2;">0.00元</strong> 月利率：
 							<strong id="bb" style="color: #166cb2;">0%</strong><br /> 本息总额：
 							<strong id="cc" style="color: #166cb2;">0元</strong>
+						</p>
+						<p class="gjjg">
+							<table border="1" style="display: none; color: blue"
+							id="tabresult"><tr>
+								<td align="center">期数</td>
+								<td align="center">月收本息</td>
+								<td align="center">月收本金</td>
+								<td align="center">月收利息</td>
+								<td align="center">本息余额</td>
+							</tr>
+							<tr>
+								<td align="center" id="periods"></td>
+								<td align="center" id="principal"></td>
+								<td align="center" id="corpus"></td>
+								<td align="center" id="interest"></td>
+								<td align="center" id="remainder"></td>
+							</tr>
+						</table>
 						</p>
 					</div>
 					<div id="result" style="display: none">
@@ -68,7 +86,7 @@
 				<div class="jsqyb_con1" style="margin-top: 20px;">
 					<h2>收益计算器简介</h2>
 					<p>
-						收益计算器用于计算您在融资谷投资将会获得的收益，理财更加透明高效，固定日还款项目由于计息方式略有不同，具体收益请参见投资后的统计。
+						收益计算器用于计算您在工合财富投资将会获得的收益，理财更加透明高效，固定日还款项目由于计息方式略有不同，具体收益请参见投资后的统计。
 					</p>
 				</div>
 			</div>
@@ -82,8 +100,8 @@
 	$("#calcultor")
 			.click(
 					function() {
+						//alert("123456");
 						var repayWay = $("#repayWay").val();
-						//	alert('12345788');
 						var investMoney = $("#borrowSum").val();
 						if (!isNaN(investMoney)) { //判断是否是数字
 							if (investMoney == "" || investMoney < 200) {
@@ -131,15 +149,14 @@
 							return false;
 						}
 
-						var totalMomey = "";
+						var totalMomey = "";//总金额全局变量
 						var rate = yearRate / 100;//先转换为百分数
-						var monthrate = yearRate / 12;
+						var monthrate = yearRate / 12;//转换为月利率
 						//等额本息计算方法
 						if (repayWay == 0) {
 							totalMoney = (investMoney * (rate / 12) * Math.pow(
 									(1 + (rate / 12)), borrowTime))
-									/ (Math.pow((1 + (rate / 12)), borrowTime));
-							alert(totalMoney);
+									/ (Math.pow(1 + (rate / 12), borrowTime) - 1);
 							$("#aa").html(
 									"<font color='red'>" + totalMoney
 											+ "元</font>");
@@ -149,13 +166,14 @@
 							$("#cc")
 									.html(
 											"<font color='red'>"
-													+ (parseFloat(totalMoney) + parseFloat(investMoney))
+													+ (parseFloat(totalMoney) * parseFloat(borrowTime))
 													+ "元</font>");
+							//等额本息列表清单循环代码结构
 						}
+
 						//先息后本的方法
-						if (repayWay = 1) {
-							totalMoney = investMoney
-									* Math.pow(((1 + (rate / 12)), borrowTime);
+						if (repayWay == 1) {
+							totalMoney = investMoney * (rate / 12);
 							$("#aa").html(
 									"<font color='red'>" + totalMoney
 											+ "元</font>");
@@ -165,12 +183,13 @@
 							$("#cc")
 									.html(
 											"<font color='red'>"
-													+ (parseFloat(totalMoney) + parseFloat(investMoney))
+													+ ((parseFloat(totalMoney) * parseFloat(borrowTime)) + parseFloat(investMoney))
 													+ "元</font>");
+							//先息后本列表清单循环结构代码
 						}
 
 						//一次性还款的计算方法
-						if (repayWay = 2) {
+						if (repayWay == 2) {
 							totalMoney = investMoney
 									* Math.pow(((1 + (rate / 12))), borrowTime);
 							$("#aa").html(
@@ -179,12 +198,16 @@
 							$("#bb").html(
 									"<font color='red'>" + monthrate
 											+ "%</font>");
-							$("#cc")
-									.html(
-											"<font color='red'>"
-													+ (parseFloat(totalMoney) + parseFloat(investMoney))
-													+ "元</font>");
+							$("#cc").html(
+									"<font color='red'>"
+											+ (parseFloat(totalMoney))
+											+ "元</font>");
+							$("#tabresult").show();
+							$("#periods").html(borrowTime);
+							$("#principal").html(totalMoney);
+							$("#corpus").html(investMoney);
+							$("#interest").html(monthrate);
+							$("#remainder").html('0.00');
 						}
-
 					});
 </script> </block>
