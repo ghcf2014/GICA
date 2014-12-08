@@ -117,63 +117,498 @@
 
 <block name="body">
 <!-- 引用头部公共部分 -->
-<div class="kinds-list">
-    	
-	<div class="tz-step"><img src="/Public/static/rzg_images/wyjk_guide.jpg" /></div>
-    <div class="sqxyed"><div>如果您不急于贷款，可以通过这里先申请信用额度，这将方便您日后迅速获得额度内的贷款</div><a href="#"></a></div>
-    <ul class="kindsnr-list">
-		<li><div class="kindsnr-cnet">
-        <h3 class="kind1">担保借款</h3>
-        是指融资谷的合作伙伴为相应的借款提供连带保证，并负有连带保证责任的借款。
-（机构担保标需要通过机构担保认证） 
+<jsp:include page="/include/topref.jsp"></jsp:include>	
+<form action="<?php echo U('circulation_save');?>" method="post">
+<div class="nymain">
+<div class="bigbox" style="border:none">
+  <div class="sqdk" style="background:none;">
+  					<div class="l-nav">
+						<ul>
+							<li>
+								<a href="javascript:void(0);" class="shigong"><span>step1 </span>
+									基本资料</a>
+							</li>
+							<li class="on last">
+								<a href="<?php echo U('Borrow/papersinfo');?>"><span>step2 </span>
+									上传资料</a>
+							</li>
+							<li>
+										<a href="<?php echo U('Borrow/circulation');?>"><span>step3
+										</span> 发布贷款</a>
+							</li>
+						</ul>
+					</div>
+    <div class="r-main">
+    <!-- <div class="til01"> -->
+    <div class="til01">
+	<ul id="ul"><li class="on">发布贷款</li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;"><s:fielderror fieldName="enough"></s:fielderror></span></ul>
+	</div>
+	<!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
+	</div> -->
+  <div class="rmainbox">
+    <p class="tips"><span class="fred">*</span> 为必填项，所有资料均会严格保密。 </p>
+    <div class="tab">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th colspan="2" align="left">借款基本信息</th>
+    </tr>
+  <tr>
+    <td align="right">借款标题：<span class="fred">*</span></td>
+    <td><input name="borrow_name" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">借款总金额：<span class="fred">*</span></td>
+    <td><input name="borrow_money" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <!-- <tr>
+    <td align="right">&nbsp;</td>
+    <td>
+    <form action="<?php echo U('upload');?>" enctype="multipart/form-data" method="post" >
+    <div id="tab_1"><a href="javascript:void(0);" id="btn_personalHead" class="scbtn">上传图片</a></div>
+    <div id="tab_2"><input type='file'  name='photo'></div>
+    <div id="tab_3"><input type="submit" value="提交" class="btn trianglify-btn" ><div class="container">
+</div></div>
+     -->
+       <tr>
+    <td align="right">年利率：<span class="fred">*</span></td>
+    <td><input name="borrow_interest_rate" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">借款用途：<span class="fred">*</span></td>
+    <td><input name="borrow_use" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">借款期限：<span class="fred">*</span></td>
+    <td><input name="collect_day" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">&nbsp;</td>
+    <td class="tishi">（推荐使用
+    您的生活近照，或其他与借款用途相关的图片，<br />
+      有助增加借款成功几率。严禁使用他人照片） </td>
+  </tr>
+  <tr>
+    <td align="right">最低投标金额：<span class="fred">*</span></td>
+    <td><input name="borrow_min" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+    <tr>
+    <td align="right">最多投标金额：<span class="fred">*</span></td>
+    <td><input name="borrow_max" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">有效时间：<span class="fred">*</span></td>
+    <td><input name="collect_time" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">还款方式：<span class="fred">*</span></td>
+    <td><input name="repayment_type" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">投标奖励：<span class="fred">*</span></td>
+    <td><input name="reward_vouch_rate" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  <tr>
+    <td align="right">借款说明：<span class="fred">*</span></td>
+    <td><input name="borrow_info" type="text" class="inp280" maxlength="12" value=""/>
+    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    </td>
+  </tr>
+  
+<!--    <tr>
+    <td align="right">筹标期限：<span class="fred">*</span></td>
+    <td>
+    	<s:select list="borrowRaiseTermList" id="raiseTerm" name="paramMap.raiseTerm" cssClass="sel_140" listKey="key" listValue="value"  headerKey="" headerValue="--请选择--"></s:select>
+    	<span class="fred"><s:fielderror fieldName="paramMap['raiseTerm']"></s:fielderror></span>
+    </td>
+  </tr> -->
+    <tr>
+    <td align="right">&nbsp;</td>
 
-        <div class="kindsnr-link"><a href="<?php echo U('Borrow/papersinfo');?>">担保借款</a></div>
-        </div></li>
-     <li><div class="kindsnr-cnet">
-        <h3 class="kind4">净值借款</h3>
-        借款人可以发布的不超过其平台账号净值额度的借款金额，但借款人提现将受到限制。这是一种安全系数相对较高的借款标，因此利率方面可能比较低。净值标通常用于临时周转，使资金利用率最大化。
-        <div class="kindsnr-link4"><a href="<?php echo U('Borrow/papersinfo');?>">净值借款</a></div>
-        </div></li>
-      
-        <li><div class="kindsnr-cnet">
-        <h3 class="kind5">秒还借款</h3>
-       借款人标满瞬间送出利息，免手续费、自动审核、自动还款，不定期送出秒还标。
-        <div class="kindsnr-link5"><a href="<?php echo U('Borrow/papersinfo');?>">秒还标</a></div>
-        </div></li>
+    <td style="padding-top:20px;"><input  type="submit" class="bcbtn" value="保存发布"></td>
 
-          <li><div class="kindsnr-cnet">
-        <h3 class="kind2">信用借款</h3>
-       信用借款标是一种将个人的信用运用于借款之中，免抵押、免担保的小额个人信用贷款标，SP2P网贷通过严格审核，对借款人给予信用评级，授予信用额度，允许其在平台发布贷款信息。主要面向对象一般为18-60周岁有稳定收入，具有较强偿还能力的公民。
-        <div class="kindsnr-link2"><a href="<?php echo U('Borrow/papersinfo');?>">信用借款</a></div>
-        </div></li>
-        
-        <s:if test="#request.field==1">
-          <li><div class="kindsnr-cnet">
-        <h3 class="kind3">实地考察借款</h3>
-       小微企业现场考察审批借款；汽车、房产、货物等借款；逾期24小时内赔付。
-        <div class="kindsnr-link3"><a href="<?php echo U('Borrow/papersinfo');?>">实地考察借款</a></div>
-        </div></li>
-         </s:if>
-        <s:if test="#request.institutions==1">
-    	<li><div class="kindsnr-cnet">
-        <h3 class="kind1">担保借款</h3>
-        是指融资谷的合作伙伴为相应的借款提供连带保证，并负有连带保证责任的借款。
-（机构担保标需要通过机构担保认证） 
-
-        <div class="kindsnr-link"><a href="<?php echo U('Borrow/papersinfo');?>">担保借款</a></div>
-        </div></li>
-        </s:if>
-         <li><div class="kindsnr-cnet">
-        <h3 class="kind5">流转标</h3>
-       流转标投标即成功,到期网站垫付,零风险
-        <div class="kindsnr-link5"><a href="<?php echo U('Borrow/papersinfo');?>">流转标</a></div>
-        </div></li>
-	</ul>  
+  </tr>
+    </table>
+    </div>
+    </div>
+    </div>
+  </div>
+  </div>
 </div>
-<!-- $(function(){
-    //样式选中
-dqzt(2);
-}); -->		     
+</div>
+</form>
+<script type="text/javascript" src="script/nav-jk.js"></script>
+<script>
+$(document).ready(function(){
+	var sd=parseInt($(".l-nav").css("height"));
+    var sdf=parseInt($(".r-main").css("height"));
+	 $(".l-nav").css("height",sd>sdf?sd:sdf-15);
+	
+  /*   $('#imgPath').val('${paramMap.imgPath}');
+     $("#img").attr("src",'${paramMap.imgPath}');
+     $('#purpose').val('${paramMap.purpose}');
+     $('#deadLine').val('${paramMap.deadLine}');
+     $('#paymentMode').val('${paramMap.paymentMode}');
+     $('#raiseTerm').val('${paramMap.raiseTerm}');
+     $('#excitation').val('${paramMap.excitationType}');
+     $('#excitationMode').val('${paramMap.excitationMode}');
+     $('#radioval').val('${paramMap.radioval}');
+     var excitation = $('#excitation').val();
+     var mode = $('#excitationMode').val();
+     var radioval = $('#radioval').val();
+     if(radioval !=''){
+          $('#r_'+radioval).attr('checked','true');
+          if(radioval ==1){
+             $('#tab_1').css('display','block');
+          }
+          if(radioval ==2){
+             $('#tab_2').css('display','block');
+             $('#tab_1').css('display','none');
+          }
+          if(radioval ==3){
+             $('#tab_3').css('display','block');
+             $('#tab_1').css('display','none');
+          }
+     }
+     */
+	 var img='${paramMap.imgPath}';
+	 if(img.length==0 ){
+		img = "images/default-img.jpg";
+	}
+	 $('#imgPath').val(img);
+	 $("#img").attr("src",img);
+    
+     $('#purpose').val('${paramMap.purpose}');
+     $('#deadLine').val('${paramMap.deadLine}');
+     $('#raiseTerm').val('${paramMap.raiseTerm}');
+     $('#excitation').val('${paramMap.excitationType}');
+     $('#excitationMode').val('${paramMap.excitationMode}');
+     $('#radioval').val('${paramMap.radioval}');
+     var excitation = $('#excitation').val();
+     var mode = $('#excitationMode').val();
+     var radioval = $('#radioval').val();
+     if(radioval !=''){
+          $('#r_'+radioval).attr('checked','true');
+          if(radioval ==1){
+             $('#tab_1').css('display','block');
+          }
+          if(radioval ==2){
+             $('#tab_2').css('display','block');
+             $('#tab_1').css('display','none');
+          }
+          if(radioval ==3){
+             $('#tab_3').css('display','block');
+             $('#tab_1').css('display','none');
+          }
+     }
+     if(excitation != ''){
+        $('#radio_'+excitation).attr('checked','true');
+        if(excitation == 2){
+	       $('#sum').removeClass('gray');
+	       $('#sum').removeAttr('disabled');
+	       $('#sumRate').addClass('gray');
+	       $('#sumRate').attr('disabled');
+	       $('#sumRate').val('');
+	    }else if(excitation == 3){
+	       $('#sumRate').removeClass('gray');
+	       $('#sumRate').removeAttr('disabled');
+	       $('#sum').addClass('gray');
+	       $('#sum').attr('disabled');
+	       $('#sum').val('');
+	    }
+     }else{
+        $('#excitation').val('1');
+     }
+     if(mode == '2'){
+        $('#mode').attr('checked','true');
+     }else{
+        $('#excitationMode').val("1");
+     }
+     
+     
+     
+});
+
+$(function(){
+	 dqzt(2);
+     //样式选中
+     $("#jk_hover").attr('class','nav_first');
+	 $("#jk_hover div").removeClass('none');
+	 var flag = true;
+	 $('#bcbtn').click(function(){
+	      if(flag){  
+		       flag = false;
+		       $('#form').submit();
+	       }
+	 });
+	 //上传图片
+	 $("#btn_personalHead").click(function(){
+			var dir = getDirNum();
+			var json = "{'fileType':'JPG,BMP,GIF,TIF,PNG','fileSource':'user/"+dir+"','fileLimitSize':0.5,'title':'上传图片','cfn':'uploadCall','cp':'img'}";
+			json = encodeURIComponent(json);
+			window.showModalDialog("uploadFileAction.htm?obj="+json,window,"dialogWidth=500px;dialogHeight=400px");
+			var headImgPath = $("#img").attr("src");
+			if(headImgPath ==""){
+				alert("上传失败！");	
+			}
+	  });
+	  $('#sysimg img').click(function(){
+	      $('#imgPath').val($(this).attr('src'));
+	      $('#img').attr('src',$(this).attr('src'));
+	  });
+	  $('#r_1').click(function(){
+	      $('#tab_1').css('display','block');
+	      $('#tab_2').css('display','none');
+	      $('#tab_3').css('display','none');
+	      $('#radioval').val('1');
+	  });
+	  $('#r_2').click(function(){
+	      var personalImg=$('#personalImg').val();
+	      $('#tab_1').css('display','none');
+	      $('#tab_2').css('display','block');
+	      $('#tab_3').css('display','none');
+	      $('#radioval').val('2');
+	      $('#img').attr('src',personalImg);
+	      $('#imgPath').val(personalImg);
+	  });
+	  $('#r_3').click(function(){
+	      $('#tab_1').css('display','none');
+	      $('#tab_2').css('display','none');
+	      $('#tab_3').css('display','block');
+	      $('#radioval').val('3');
+	  });
+      switchCode();
+});
+function switchCode(){
+	    var timenow = new Date();
+	    $('#codeNum').attr('src','admin/imageCode.do?pageId=borrow&d='+timenow);
+};				     
+</script>
+<script>
+function uploadCall(basepath,fileName,cp){
+	if(cp == "img"){
+		var path = "upload/"+basepath+"/"+fileName;
+		$("#img").attr("src",path);
+		$("#setImg").attr("src",path);
+		$("#imgPath").val(path);
+	}
+}
+function getDirNum(){
+	var date = new Date();
+	var m = date.getMonth()+1;
+	var d = date.getDate();
+	if(m<10){
+		m = "0"+m;
+    }
+	if(d<10){
+	   d = "0"+d;
+	}
+	var dirName = date.getFullYear()+""+m+""+d;
+	return dirName; 
+}
+</script>
+
+
+<script>
+$(function(){
+$('input[name="excitationType"]').click(function(){
+	    if($(this).val() == 2){
+	       $('#sum').removeClass('gray');
+	       $('#sum').removeAttr('disabled');
+	       $('#sumRate').addClass('gray');
+	       $('#sumRate').attr('disabled');
+	       $('#sumRate').val('');
+	    }else if($(this).val() == 3){
+	       $('#sumRate').removeClass('gray');
+	       $('#sumRate').removeAttr('disabled');
+	       $('#sum').addClass('gray');
+	       $('#sum').attr('disabled');
+	       $('#sum').val('');
+	    }else{
+	       $('#sumRate').addClass('gray');
+	       $('#sumRate').attr('disabled');
+	       $('#sumRate').val('');
+	       $('#sum').addClass('gray');
+	       $('#sum').attr('disabled');
+	       $('#sum').val('');
+	    }
+	    $('#excitation').val($(this).val());
+	 });
+	 $('#mode').click(function(){
+	    var check = $(this).attr('checked');
+	    if(check == 'checked'){
+	        $('#excitationMode').val('2');	    
+	    }else{
+	        $('#excitationMode').val('1');
+	    }
+	 });
+});
+</script>
+  <script>
+    var editor;
+    KindEditor.ready(function(K) {
+      editor = K.create('textarea[name="content"]', {
+        resizeType : 1,
+        allowPreviewEmoticons : false,
+        allowImageUpload : true,
+        height : 400,
+        uploadJson : '<?php echo U('Publish/index/upload'); ?>',
+        items : ['source', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'clearhtml', 'quickformat', 'selectall', '|', 
+    'formatblock', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+    'italic', 'underline', 'strikethrough', 'removeformat', '|', 'image', 'multiimage', 'table', 'hr', 'emoticons', 'baidumap', 'link', 'unlink'],
+        afterChange : function() {
+          K(this).html(this.count('text'));
+        }
+      });
+    });
+          KindEditor.ready(function(K) {
+              var editor = K.editor({
+              uploadJson : '<?php echo U('Publish/index/upload'); ?>',
+              allowFileManager : true
+            });
+            K('#pub-imgadd').click(function() {
+              editor.loadPlugin('image', function() {
+                editor.plugin.imageDialog({
+                  showRemote : false,
+                  clickFn : function(url, title, width, height, border, align) {
+                    $('.item').removeClass('active');
+                    $('<div class="item active"><div class="imgshow"><img src="'+url+'"></div><input type="hidden" name="fmimg[]" value="'+url+'"></div>').prependTo('#pub-imgadd');
+                    var index = $('.carousel-indicators li').last().index()*1+1;
+                    $('<li data-target="#carousel-example-generic" data-slide-to="'+index+'"></li>').appendTo('.carousel-indicators');
+                    editor.hideDialog();
+                  }
+                });
+              });
+            });
+          });
+        </script>
+        <script>
+var cellsize =30;
+var image, imageHeight, imageWidth, backgroundSize, svg;
+
+function getImagePixelData(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  var imageData = ctx.getImageData(0, 0, img.width, img.height);
+  var mappedData = [];
+  for (var i = 0; i < imageData.data.length; i += 4) {
+    mappedData.push([imageData.data[i], imageData.data[i + 1], imageData.data[i + 2]]);
+  }
+  return mappedData;
+}
+var dropZone = document.getElementById('drop-zone');
+dropZone.ondragover = function() {
+  this.className = 'hover';
+  return false;
+};
+dropZone.ondragleave = function() {
+  dropZone.className = "";
+}
+dropZone.ondragend = function() {
+  dropZone.className = "";
+  return false;
+};
+dropZone.ondrop = processInput;
+document.getElementById("imageInput").onchange = processInput;
+
+$("#cell-size-input").keyup(function() {
+  cellsize = parseInt($(this).val());
+});
+$(".trianglify-btn").click(function() {
+  draw(image);
+  $(".download-btn").addClass("visible");
+});
+$(".download-btn").click(function() {
+  document.location.href = svg.replace("image/svg+xml", "image/octet-stream");
+});
+
+function processInput(e) {
+  dropZone.className = "";
+  e.preventDefault();
+  if (e.target.files) {
+    var file = e.target.files[0];
+  } else {
+    var file = e.dataTransfer.files[0];
+  }
+
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    image = new Image();
+    image.onload = function() {
+      var dropZoneWidth = $(dropZone).width();
+      var dropZoneHeight = $(dropZone).height();
+      var dropZoneRatio = dropZoneWidth / dropZoneHeight;
+      var imageRatio = image.width / image.height;
+      backgroundSize = "";
+      if (image.width > dropZoneWidth) { //Could be expressed in smaller chunks...
+        if (image.height > dropZoneHeight) {
+          if (imageRatio > dropZoneRatio) {
+            backgroundSize += dropZoneWidth + "px";
+            backgroundSize += " ";
+            backgroundSize += dropZoneWidth / imageRatio + "px";
+          } else {
+            backgroundSize += dropZoneHeight * imageRatio + "px";
+            backgroundSize += " ";
+            backgroundSize += dropZoneHeight + "px";
+          }
+        } else {
+          backgroundSize += dropZoneWidth + "px";
+          backgroundSize += " ";
+          backgroundSize += dropZoneWidth / imageRatio + "px";
+        }
+      } else if (image.height > dropZoneHeight) {
+        backgroundSize += dropZoneHeight * imageRatio + "px";
+        backgroundSize += " ";
+        backgroundSize += dropZoneHeight + "px";
+      } else {
+        backgroundSize = image.width + "px " + image.height + "px";
+      }
+      dropZone.style.background = 'url(' + imageData + ') no-repeat center';
+      dropZone.style.backgroundSize = backgroundSize;
+      console.log(dropZone.style.backgroundSize);
+      $(".trianglify-btn").addClass("visible");
+      $(".download-btn").removeClass("visible");
+    }
+    image.src = imageData = event.target.result;
+  };
+  reader.readAsDataURL(file);
+  return false;
+}
+
+function draw(img) {
+  var imageData = getImagePixelData(img);
+  var triangloid = new Triangloid({
+    cellsize: cellsize
+  });
+
+  var trianglifiedImage = triangloid.trianglifyImage(imageData, img.width, img.height);
+  svg = trianglifiedImage.getSVG();
+  dropZone.style.background = 'url(' + svg + ') no-repeat center';
+  dropZone.style.backgroundSize = backgroundSize;
+
+}
 </script>
 
 	<!-- /主体 -->

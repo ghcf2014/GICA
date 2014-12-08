@@ -26,7 +26,7 @@ class BorrowController extends HomeController {
 	 *        
 	 *         2014-12-5
 	 */
-	public function borrowAdd() {
+	public function papersinfo() {
 		$this->display ();
 	}
 	public function circulation() {
