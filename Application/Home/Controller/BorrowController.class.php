@@ -14,19 +14,8 @@ class BorrowController extends HomeController {
 	public function index() {
 		$this->display ();
 	}
-	
-	/**
-	 *
-	 * @author liuy
-	 *         发布借款标的初始化方法;当发布借款标时，需要注意以下几个步骤：
-	 *         1.发布纯信用借款标前首先有没有进行自己基本资料认证。（纯信用标）
-	 *         2.发布净值标时，验证是否平台有充值净资产，并且发标的金额不能大于净资产。
-	 *         3.发布抵押标时，必须上传对应的抵押物证件，如果没有则返回。
-	 *         4.发布担保标时，必须上传担保资料，和担保公司证件
-	 *        
-	 *         2014-12-5
-	 */
-	public function papersinfo() {
+	// 
+	public function borrowAdd() {
 		$this->display ();
 	}
 	public function circulation() {
