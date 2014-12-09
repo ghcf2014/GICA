@@ -58,7 +58,7 @@ class FinanceController extends HomeController {
             $list = $listBorrow->where($map)->select();
             $this->assign('list3',$list);
             var_dump($list);
-              $this->display();
+            $this->display();
     }
     public function add($id= 0){
             $uid  = is_login();//获取当前用户UID
@@ -71,14 +71,11 @@ class FinanceController extends HomeController {
             $this->assign('list', $list);
             $this->assign('list2', $list2);
 
-            //$borrowinfo = M("z_borrow_info bi")->field('bi.*,ac.type_name,ac.type_nid')->join('z_article_category ac on ac.id= bi.danbao')->where('bi.id='.$id)->find();
-            // if(!is_array($borrowinfo) || ($borrowinfo['borrow_status']==0 && $this->uid!=$borrowinfo['borrow_uid']) ) $this->error("数据有误");
             $map = array('id' => $id);
             $listBorrow  = M('z_borrow_info');
             $list3 = $listBorrow->where($map)->select();
 
             //从表单中获取来的数据 
-
             $capital=$_POST["capital"];
             //创建一个表对象，将传来的数据插入到数据库中
             $m=M("z_borrow_investor");

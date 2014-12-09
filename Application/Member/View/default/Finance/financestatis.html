@@ -1,16 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@include file="/include/taglib.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-	<head>
-
-		<jsp:include page="/include/head.jsp"></jsp:include>
-		<link rel="stylesheet" href="css/style.css" type="text/css"></link>
-		<link rel="stylesheet" href="css/base.css" type="text/css"></link>
-		<link href="css/inside.css" rel="stylesheet" type="text/css" />
-		<link id="skin" rel="stylesheet" href="css/jbox/Gray/jbox.css" />
-	</head>
-	<body>
+<block name="body">
+<extend name="Base/common"/>
+<block name="body">
 		<!-- 引用头部公共部分 -->
 		<jsp:include page="/include/topref.jsp"></jsp:include>
 		<div class="nymain">
@@ -18,7 +8,7 @@
 				<div class="l_nav">
 					<div class="box">
 						<!-- 引用我的帐号主页左边栏 -->
-						<%@include file="/include/left.jsp"%>
+						<include file="Public/left"/>
 					</div>
 				</div>
 				<div class="r_main">
@@ -53,17 +43,17 @@
 									<tr>
 										<td align="center">
 											￥
-											<s:if test="#request.financeStatisMap.earnInterest !=''">${financeStatisMap.earnInterest}</s:if>
+											<s:if test="#request.financeStatisMap.earnInterest !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
 											￥
-											<s:if test="#request.financeStatisMap.rewardIncome !=''">${financeStatisMap.rewardIncome}</s:if>
+											<s:if test="#request.financeStatisMap.rewardIncome !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
 											￥
-											<s:if test="#request.financeStatisMap.hasFI !=''">${financeStatisMap.hasFI}</s:if>
+											<s:if test="#request.financeStatisMap.hasFI !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 									</tr>
@@ -100,29 +90,29 @@
 									<tr>
 										<td align="center">
 											￥
-											<s:if test="#request.financeStatisMap.investAmount !=''">${financeStatisMap.investAmount}</s:if>
+											<s:if test="#request.financeStatisMap.investAmount !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.financeStatisMap.investCount !=''">${financeStatisMap.investCount}</s:if>
-											<s:else>0</s:else>
-										</td>
-										<td align="center">
-											￥
-											<s:if test="#request.financeStatisMap.hasPI !=''">${financeStatisMap.hasPI}</s:if>
-											<s:else>0</s:else>
-										</td>
-										<td align="center">
-											<s:if test="#request.financeStatisMap.hasCount !=''">${financeStatisMap.hasCount}</s:if>
+											<s:if test="#request.financeStatisMap.investCount !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
 											￥
-											<s:if test="#request.financeStatisMap.forPI !=''">${financeStatisMap.forPI}</s:if>
+											<s:if test="#request.financeStatisMap.hasPI !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.financeStatisMap.forCount !=''">${financeStatisMap.forCount}</s:if>
+											<s:if test="#request.financeStatisMap.hasCount !=''"></s:if>
+											<s:else>0</s:else>
+										</td>
+										<td align="center">
+											￥
+											<s:if test="#request.financeStatisMap.forPI !=''"></s:if>
+											<s:else>0</s:else>
+										</td>
+										<td align="center">
+											<s:if test="#request.financeStatisMap.forCount !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 									</tr>
@@ -136,11 +126,10 @@
 		</div>
 		<!-- 引用底部公共部分 -->
 		<jsp:include page="/include/footer.jsp"></jsp:include>
-
+		<!-- 左侧菜单on识别 -->
 		<script>
 	$(function() {
 		$('#li_12').addClass('on');
 	});
 </script>
-	</body>
-</html>
+</block>

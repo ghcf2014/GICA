@@ -29,18 +29,21 @@ class BorrowController extends HomeController {
 		$data ['borrow_money'] = $_POST ["borrow_money"];
 		$data ['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
 		$data ['borrow_use'] = $_POST ["borrow_use"];
-		$data ['collect_day'] = $_POST ["collect_day"];
+		$data ['borrow_duration'] = $_POST ["collect_day"];
 		$data ['borrow_min'] = $_POST ["borrow_min"];
 		$data ['borrow_max'] = $_POST ["borrow_max"];
 		$data ['collect_time'] = $_POST ["collect_time"];
 		$data ['repayment_type'] = $_POST ["repayment_type"];
 		$data ['reward_vouch_rate'] = $_POST ["reward_vouch_rate"];
 		$data ['borrow_info'] = $_POST ["borrow_info"];
+		$data ['borrow_status'] = 0;
 		$data ['borrow_uid'] = $uid;
+		$data ['add_time'] = time ();
+		$data ['add_ip'] = get_client_ip ();
 		$condition ['uid'] = $uid;
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
-		                                                    // 成功提示
+		                                                    // 成功提示add_time
 			$this->success ( L ( '发布审核已提交' ) );
 		} else {
 			// 失败提示

@@ -186,50 +186,110 @@
       <div class="lbox">
       <h2>按条件搜索</h2>
       <div class="lboxmain">
-      <form id="searchForm" action="finance.htm" >
+      <form id="searchForm" action="finance.htm">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
+  <tbody><tr>
     <td align="right">还款方式: </td>
     <td>
-    <input id="pageNum" name="curPage" type="hidden"/>
-    <input  id="m" name="m" type="hidden"  />
-    <input  name="title" type="hidden" value=""/>
+    <input id="pageNum" name="curPage" type="hidden">
+    <input id="m" name="m" type="hidden">
+    <input name="title" type="hidden" value="">
     
-    <s:select id="paymentMode" name="paymentMode" list="#{'':'没有限制',1:'按月分期还款',2:'按月付息,到期还本',3:'秒还',4:'一次性还款'}" value="paramMap.paymentMode" cssClass="sel_140" ></s:select>
-    </td>
+    <select name="paymentMode" id="paymentMode" class="sel_140">
+    <option value="">没有限制</option>
+    <option value="1">按月分期还款</option>
+    <option value="2">按月付息,到期还本</option>
+    <option value="3">秒还</option>
+    <option value="4">一次性还款</option>
+
+
+</select>
+
+</td>
   </tr>
   <tr>
     <td align="right">借款目的：</td>
     <td>
-    <s:select name="purpose" value="paramMap.purpose" list="borrowPurposeList" listKey="selectValue" listValue="selectName" headerKey="" headerValue="没有限制" cssClass="sel_140"></s:select>
-    
-    </td>
+    <select name="purpose" id="purpose" class="sel_140">
+    <option value="">没有限制</option>
+    <option value="9">长期使用</option>
+    <option value="10">资金周转</option>
+    <option value="11">短期周转</option>
+    <option value="16">创业借款</option>
+    <option value="17">其他借款</option>
+    <option value="18">普通借款</option>
+
+
+</select>
+
+</td>
   </tr>
   <tr>
     <td align="right">期限：</td>
     <td>
-    <s:select name="deadline" value="paramMap.deadline" list="borrowDeadlineList" listKey="selectValue" listValue="selectName" headerKey="" headerValue="没有限制" cssClass="sel_140"></s:select>
-   
-    </td>
+    <select name="deadline" id="deadline" class="sel_140">
+    <option value="">没有限制</option>
+    <option value="1">1个月</option>
+    <option value="2">2个月</option>
+    <option value="3">3个月</option>
+    <option value="6">6个月</option>
+    <option value="7">7个月</option>
+    <option value="12">12个月</option>
+    <option value="18">18个月</option>
+    <option value="24">24个月</option>
+
+
+</select>
+
+</td>
   </tr>
   <tr>
     <td align="right">奖励：</td>
-    <td><s:select id="reward" name="reward" list="#{'':'没有限制',2:'只显示有奖励的',1:'只显示无奖励的'}" value="paramMap.reward" cssClass="sel_140" ></s:select></td>
+    <td><select name="reward" id="reward" class="sel_140">
+    <option value="">没有限制</option>
+    <option value="2">只显示有奖励的</option>
+    <option value="1">只显示无奖励的</option>
+
+
+</select>
+
+</td>
   </tr>
   <tr>
     <td align="right">金额范围：</td>
     <td>
-    <s:select name="arStart" value="paramMap.arStart" list="borrowAmountList" listKey="selectValue" listValue="selectName" headerKey="" headerValue="没有限制" cssClass="sel_70"></s:select>
+    <select name="arStart" id="arStart" class="sel_70">
+    <option value="">没有限制</option>
+    <option value="10000">10000</option>
+    <option value="50000">50000</option>
+    <option value="100000">100000</option>
+    <option value="200000">200000</option>
+    <option value="5000000">5000000</option>
+
+
+</select>
+
+
          到
-     <s:select name="arEnd" value="paramMap.arEnd" list="borrowAmountList" listKey="selectValue" listValue="selectName" headerKey="" headerValue="没有限制" cssClass="sel_70"></s:select>
-    </td>
+     <select name="arEnd" id="arEnd" class="sel_70">
+    <option value="">没有限制</option>
+    <option value="10000">10000</option>
+    <option value="50000">50000</option>
+    <option value="100000">100000</option>
+    <option value="200000">200000</option>
+    <option value="5000000">5000000</option>
+
+
+</select>
+
+</td>
   </tr>
   
   <tr>
     <td>&nbsp;</td>
     <td><a href="javascript:void(0);" id="search" class="chaxun">确认</a></td>
   </tr>
-      </table>
+      </tbody></table>
       </form>
       </div>
       </div>

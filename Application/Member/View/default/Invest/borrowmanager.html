@@ -18,7 +18,7 @@
 								onclick="jumpUrl('homeBorrowInvestList.htm');">
 								成功借出
 							</li>
-<!-- 							<li id="lab_2" onclick="jumpUrl('homeBorrowTenderInList.htm');">
+							<!-- <li id="lab_2" onclick="jumpUrl('homeBorrowTenderInList.htm');">
 								招标中的借款
 							</li>
 							<li id="lab_3" onclick="jumpUrl('homeBorrowRecycleList.htm');">
@@ -97,26 +97,23 @@
 											协议书
 										</th>
 									</tr>
-<!-- 									<s:if test="pageBean.page==null || pageBean.page.size==0">
+									<s:if test="pageBean.page==null || pageBean.page.size==0">
 										<tr align="center">
 											<td colspan="10">
 												暂无数据
 											</td>
 										</tr>
-									</s:if> -->
+									</s:if>
 									<s:else>
-										<s:iterator value="pageBean.page" var="bean"><volist name="list" id="vo">
+										<s:iterator value="pageBean.page" var="bean">
 											<tr>
 												<td align="center">
-													{$vo.investor_uid}
-												</td>
-												<td align="center">
-													<a href="javascript:void(0);"target="_blank">${bean.borrowTitle}</a>
 												</td>
 												<td align="center">
 												</td>
 												<td align="center">
-                                                   {$vo.investor_capital}
+												</td>
+												<td align="center">
 												</td>
 												<td align="center">
 												</td>
@@ -124,23 +121,25 @@
 												</td>
 												<td align="center">个月
 												</td>
-												<td align="center">	
+												<td align="center">
+												</td>
+												<td align="center">
 												</td>
 												<td align="center">
 												</td>
 												<td align="center">
-													<s:if test="%{#bean.borrowWay ==1}">净值借款</s:if>
+													<!-- <s:if test="%{#bean.borrowWay ==1}">净值借款</s:if>
 													<s:if test="%{#bean.borrowWay ==2}">秒还借款</s:if>
 													<s:if test="%{#bean.borrowWay ==3}"> 普通借款</s:if>
 													<s:if test="%{#bean.borrowWay ==4}"> 实地考察借款</s:if>
-													<s:if test="%{#bean.borrowWay ==5}">  机构担保借款</s:if>
+													<s:if test="%{#bean.borrowWay ==5}">  机构担保借款</s:if> -->
 												</td>
 												<td align="center">
+													<a
+														href="protocol.htm?typeId=1&&borrowId=${bean.borrowId }&&investId=${bean.investId }&&styles=1"
+														target="_blank">查看协议</a>
 												</td>
-												<td align="center">
-													<a href="{:U('Invest/borrowprotocol')}" target="_blank">查看协议</a>
-												</td>
-											</tr></volist>
+											</tr>
 										</s:iterator>
 									</s:else>
 								</table>

@@ -48,16 +48,15 @@
 										</li>
 										<li>
 											已经完成：
-											<strong>%</strong>
+											<strong>{$vb['has_borrow']/$vb['borrow_money']*100}%</strong>
 										</li>
 										<li>
 											还需借款:
-											<strong>￥</strong>
+											<strong>￥{$vb['borrow_money']-$vb['has_borrow']}元</strong>
 										</li>
 										<li>
 											借款期限:
-											<strong>{$vb.borrow_duration} <s:if
-													test="%{investDetailMap.isDayThe ==1}">个月</s:if> <s:else>天</s:else>
+											<strong>{$vb.borrow_duration}月
 											</strong>
 										</li>
 										<li>
@@ -102,15 +101,10 @@
 											value="设置交易密码" /> </a> -->
 									<br />
 									<s:if test="#request.subscribes!=1">
-										<span class="f999">最低投标金额：<s:property
-												value="#request.minTenderedSum" default="0" />元&nbsp;最多投标金额：<s:if
-												test="%{investDetailMap.maxTenderedSum != -1}">{$vb.borrow_max}元</s:if>
-											<s:else>无限制</s:else> <br />当前年利率:%</span>
+										<span class="f999">最多投标金额：{$vb.borrow_max}元</span><br />
 									</s:if>
 									<s:else>
-										<span class="f999">最小认购金额：{$vb.borrow_min}元<s:property
-												value="#request.investMaps.smallestFlowUnit" default="0" />元&nbsp;
-											当前年利率:% <br />认购总份数：份,还有：份</span>
+										<span class="f999">最小认购金额：{$vb.borrow_min}元</span>
 									</s:else>
 								</p>
 								<div id="content" class="tbtab">
@@ -167,9 +161,9 @@
 													<tr>
 														<td width="51%" height="48" align="right">
 															<div>
-																<input type="text" class="result_btn_detail_3" value="1"
+<!-- 																<input type="text" class="result_btn_detail_3" value="1"
 																	id="result" style="width: 100px;" />
-																份&nbsp;&nbsp;
+																份&nbsp;&nbsp; -->
 															</div>
 														</td>
 														<td width="49%">
@@ -182,8 +176,8 @@
 													<tr>
 														<td colspan="2" align="center">
 															您的可投标金额为：
-															<font id="account_use" style="color: #FF0000">￥</font>元，最多可认购：
-															<font style="color: #FF0000" id="roam_use">份</font>
+															<font id="account_use" style="color: #FF0000">￥{$vo.account_money}</font>元，最多可认购：
+															<font style="color: #FF0000" id="roam_use">{$vo['account_money']-$vb['borrow_min']}份</font>
 															<input name="subscribes" type="hidden" id="subscribes"
 																value="" />
 															<input name="smallestFlowUnit" type="hidden"

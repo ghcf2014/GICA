@@ -2,6 +2,7 @@
 <extend name="Base/common"/>
 <block name="body">
 
+
 <!-- 引用头部公共部分 -->
 <jsp:include page="/include/topref.jsp"></jsp:include>	
 <form action="{:U('circulation_save')}" method="post">
@@ -25,7 +26,7 @@
     </tr>
   <tr>
     <td align="right">借款标题：<span class="fred">*</span></td>
-    <td><input name="borrow_name" type="text" class="inp280" maxlength="12" value=""/>
+    <td><input name="borrow_name" type="text" class="inp280" maxlength="30" value=""/>
     <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
     </td>
   </tr>
@@ -46,7 +47,7 @@
      -->
        <tr>
     <td align="right">年利率：<span class="fred">*</span></td>
-    <td><input name="borrow_interest_rate" type="text" class="inp100" maxlength="12" value=""/>%
+    <td><input name="borrow_interest_rate" type="text" class="inp100" maxlength="30" value=""/>%
     <span class="fred"></span>
     </td>
   </tr>
@@ -113,7 +114,7 @@
     </td>
   </tr>
   
-<!--    <tr>
+  <!--    <tr>
     <td align="right">筹标期限：<span class="fred">*</span></td>
     <td>
     	<s:select list="borrowRaiseTermList" id="raiseTerm" name="paramMap.raiseTerm" cssClass="sel_140" listKey="key" listValue="value"  headerKey="" headerValue="--请选择--"></s:select>
