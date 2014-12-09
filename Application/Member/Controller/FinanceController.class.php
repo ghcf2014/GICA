@@ -15,5 +15,8 @@ class FinanceController extends MemberController {
 	public function financestatis(){
 		$this->display();
 	}
+	public function borrowloanstatis(){
+		$this->display();
+	}
 	
 }

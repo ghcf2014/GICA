@@ -8,18 +8,36 @@ class UserinfoController extends MemberController {
         
     $this->display();
     }
-        public function bevip(){
-            
+    public function bevip(){
+        $uid  = is_login();
+        $m = M('ucenter_member');//用户头像
+        $condition1['gica_ucenter_member.id'] =$uid;
+        $m=$m->where($condition1)->select();
+        $this->assign('list', $m);
+        $this->display();
+    }
+    public function bevip_save(){
+        $uid  = is_login();
+        $m = M('ucenter_member');//用户头像
+        $data['customer_id']=$_POST['customer_id'];
+        $data['user_type']=1;
+        $data['time_limit']=strtotime('+1 year');
+        $condition['id'] =$uid;
+        //保存当前数据对象
+        if ($m = $m->where($condition)->save($data)) { //保存成功
+            //成功提示
+            $this->success(L('保存成功'),U('Member/index'));
+        } else {
+            //失败提示
+            $this->error(L('保存失败'));
+        }
+    }
+    public function userapplyforvip(){
     	
         
     $this->display();
     }
-        public function userapplyforvip(){
-    	
-        
-    $this->display();
-    }
-        public function userbankInfo(){
+    public function userbankInfo(){
     	
         
     $this->display();
@@ -51,67 +69,67 @@ class UserinfoController extends MemberController {
             $this->error(L('保存失败'));
         }
     }
-        public function userbasicdata(){
+    public function userbasicdata(){
     	
         
     $this->display();
     }
-        public function userbasicinfo(){
+    public function userbasicinfo(){
     	
         
     $this->display();
     }
-        public function userchagerwithdraw(){
+    public function userchagerwithdraw(){
     	
         
     $this->display();
     }
-        public function userchangebankInfo(){
+    public function userchangebankInfo(){
+	
+        
+    $this->display();
+    }
+    public function userchangepass(){
     	
         
     $this->display();
     }
-        public function userchangepass(){
+    public function userchangephone(){
     	
         
     $this->display();
     }
-        public function userchangephone(){
+    public function userfinanceindex(){
     	
         
     $this->display();
     }
-        public function userfinanceindex(){
+    public function userfindpass(){
     	
         
     $this->display();
     }
-        public function userfindpass(){
+    public function userfindpassbyphone(){
     	
         
     $this->display();
     }
-        public function userfindpassbyphone(){
+    public function userfindpaypass(){
     	
         
     $this->display();
     }
-        public function userfindpaypass(){
+    public function userinfoinformset(){
     	
         
     $this->display();
     }
-        public function userinfoinformset(){
+    public function userinfowork(){
     	
         
     $this->display();
     }
-        public function userinfowork(){
-    	
-        
-    $this->display();
-    }
-        public function usermailbanding(){
+    public function usermailbanding(){
             $uid        =   is_login();
             $m = M('ucenter_member');
             $m_id['id'] =$uid;
@@ -122,32 +140,32 @@ class UserinfoController extends MemberController {
         
     $this->display();
     }
-        public function userpapersinfo(){
+    public function userpapersinfo(){
     	
         
     $this->display();
     }
-        public function userrenewalvip(){
+    public function userrenewalvip(){
     	
         
     $this->display();
     }
-        public function userreplaymail(){
+    public function userreplaymail(){
     	
         
     $this->display();
     }
-        public function userreport(){
+    public function userreport(){
     	
         
     $this->display();
     }
-        public function userricelist(){
+    public function userricelist(){
     	
         
     $this->display();
     }
-        public function userselfidcard(){
+    public function userselfidcard(){
     	
         
     $this->display();

@@ -8,7 +8,7 @@
 				<div class="l_nav">
 					<div class="box">
 						<!-- 引用我的帐号主页左边栏 -->
-						<%@include file="/include/left.jsp"%>
+						<include file="Public/left"/>
 					</div>
 				</div>
 				<div class="r_main">
@@ -61,41 +61,41 @@
 									<tr>
 										<td align="center">
 											￥
-											<s:if test="#request.loanStatisMap.borrowAmount !=''">${loanStatisMap.borrowAmount}</s:if>
+											<s:if test="#request.loanStatisMap.borrowAmount !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.publishBorrow !=''">${loanStatisMap.publishBorrow}</s:if>
-											<s:else>0</s:else>
-										</td>
-										<td align="center">
-											￥
-											<s:if test="#request.loanStatisMap.hasPI !=''">${loanStatisMap.hasPI}</s:if>
-											<s:else>0</s:else>
-										</td>
-										<td align="center">
-											<s:if test="#request.loanStatisMap.successBorrow !=''">${loanStatisMap.successBorrow}</s:if>
-											<s:else>0</s:else>
-										</td>
-										<td align="center">
-											<s:if test="#request.loanStatisMap.borrowAmount !=''">${loanStatisMap.allPublishRepay}</s:if>
+											<s:if test="#request.loanStatisMap.publishBorrow !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
 											￥
-											<s:if test="#request.loanStatisMap.forRepayPI !=''">${loanStatisMap.forRepayPI}</s:if>
+											<s:if test="#request.loanStatisMap.hasPI !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.repayBorrow !=''">${loanStatisMap.repayBorrow}</s:if>
+											<s:if test="#request.loanStatisMap.successBorrow !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.beforeRepayBorrow !=''">${loanStatisMap.beforeRepayBorrow}</s:if>
+											<s:if test="#request.loanStatisMap.borrowAmount !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.forRepayBorrow !=''">${loanStatisMap.forRepayBorrow}</s:if>
+											￥
+											<s:if test="#request.loanStatisMap.forRepayPI !=''"></s:if>
+											<s:else>0</s:else>
+										</td>
+										<td align="center">
+											<s:if test="#request.loanStatisMap.repayBorrow !=''"></s:if>
+											<s:else>0</s:else>
+										</td>
+										<td align="center">
+											<s:if test="#request.loanStatisMap.beforeRepayBorrow !=''"></s:if>
+											<s:else>0</s:else>
+										</td>
+										<td align="center">
+											<s:if test="#request.loanStatisMap.forRepayBorrow !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 									</tr>
@@ -126,20 +126,20 @@
 									<tr>
 										<td align="center">
 											￥
-											<s:if test="#request.loanStatisMap.hasFI !=''">${loanStatisMap.hasFI}</s:if>
+											<s:if test="#request.loanStatisMap.hasFI !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.hasFICount !=''">${loanStatisMap.hasFICount}</s:if>
+											<s:if test="#request.loanStatisMap.hasFICount !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
 											￥
-											<s:if test="#request.loanStatisMap.hasI !=''">${loanStatisMap.hasI}</s:if>
+											<s:if test="#request.loanStatisMap.hasI !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.badFICount !=''">${loanStatisMap.badFICount}</s:if>
+											<s:if test="#request.loanStatisMap.badFICount !=''"></s:if>
 											<s:else>0</s:else>
 										</td>
 									</tr>

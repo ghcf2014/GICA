@@ -74,15 +74,16 @@
 
 								</div>
 								<div class="hy_info">
-									<if condition="$vo.status eq 1">
-										<a href="{:U('Userinfo/userrenewalvip')}" class="vipbtn" target="_self">会员续费</a>
-									<elseif condition="$vo.status eq 0"/>
-										<a href="{:U('Userinfo/bevip')}" class="vipbtn" target="_self">成为会员</a>
-									</if>
+											<if condition="$vo.user_type eq 1">
+												<a href="{:U('Userinfo/userrenewalvip')}" class="vipbtn" target="_self">VIP续费</a>
 										<p style="padding-left: 13px">
 											会员到期：&nbsp;&nbsp;
 											<span>{$vo.time_limit|date='Y-m-d H:i:s',###}</span>
 										</p>
+											<elseif condition="$vo.user_type eq 0"/>
+												<a href="{:U('Userinfo/bevip')}" class="vipbtn" target="_self">成为VIP</a>
+											</if>
+										
 										<p style="padding-left: 0px">
 											最后登陆时间：&nbsp;&nbsp;
 											<span style="color:#000">{$vo.last_login_time|date='Y-m-d H:i:s',###}</span>
