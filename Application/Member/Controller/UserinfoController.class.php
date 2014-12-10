@@ -79,10 +79,19 @@ class UserinfoController extends MemberController {
         
     $this->display();
     }
+    public function usermailindex(){
+        $this->display();
+
+    }
     public function userchagerwithdraw(){
-    	
-        
-    $this->display();
+        $uid=is_login();
+        $money = M("z_member_money");
+        $condition['uid'] =$uid;
+        $money = $money->where($condition)->select();
+
+        var_dump($money);
+        $this->assign('list', $money);
+        $this->display();
     }
     public function userchangebankInfo(){
 	

@@ -19,6 +19,10 @@ class SystemController extends MemberController {
         
     $this->display();
     }
+    public function usermailindex(){
+        $this->display();
+
+    }
         public function recharge_save(){
         $uid=is_login(); 
         $condition['uid'] =$uid;

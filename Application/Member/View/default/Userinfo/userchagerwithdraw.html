@@ -28,7 +28,7 @@
 						</ul>
 					</div>
 					<div class="box" id="zjjl">
-					<div class="boxmain2">
+					<div class="boxmain2"><volist name="list" id="vo">
 							<div class="tabmain">
 								<div class="biaoge">
 									<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -45,16 +45,16 @@
 										</tr>
 										<tr>
 											<td align="center">
-												￥0.00</td>
+												￥{$vo.account_money}</td>
 											<td align="center">
-												￥0.00</td>
+												￥{$vo.account_money}</td>
 											<td align="center">
-												￥0.00</td>
+												￥{$vo.money_freeze}</td>
 										</tr>
 									</tbody></table>
 
 								</div>
-							</div>
+							</div></volist>
 						</div>
 						<h2 class="otherh2x">
 							资金记录
@@ -91,8 +91,6 @@
 							    <option value="-1">提现失败</option>
 							    <option value="602">冻结秒还借款费</option>
 							    <option value="105">解冻秒还借款费</option>
-
-
 							</select>
 
 							<a href="javascript:void(0)" class="cxbtn" onclick="fundRecordList();;">查询</a>

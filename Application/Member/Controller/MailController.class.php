@@ -1,13 +1,14 @@
 <?php
-
-namespace Home\Controller;
+namespace Member\Controller;
 use OT\DataDictionary;
+use Think\Controller;
+use User\Api\UserApi;
 
 /**
  * 前台首页控制器
  * 主要获取首页聚合数据
  */
-class FinanceController extends HomeController {
+class MailController extends MemberController {
 
 	//系统首页
     public function index(){
@@ -27,6 +28,10 @@ class FinanceController extends HomeController {
 
     }
     public function tranferdetail(){
+        $this->display();
+
+    }
+    public function usermailindex(){
         $this->display();
 
     }

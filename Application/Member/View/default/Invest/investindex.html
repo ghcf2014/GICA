@@ -108,12 +108,12 @@
 										<s:iterator value="pageBean.page" var="bean"><volist name="list" id="vo">
 											<tr>
 												<td align="center">
-													{$vo.investor_uid}
+													{$vo.borrow_uid}
 												</td>
 												<td align="center">
-													<a href="javascript:void(0);"target="_blank">${bean.borrowTitle}</a>
+													<a href="javascript:void(0);"target="_blank">{$vo.borrow_name}</a>
 												</td>
-												<td align="center">
+												<td align="center">{$vo.borrow_duration}个月
 												</td>
 												<td align="center">
                                                    {$vo.investor_capital}
@@ -122,7 +122,7 @@
 												</td>
 												<td align="center">
 												</td>
-												<td align="center">个月
+												<td align="center">
 												</td>
 												<td align="center">	
 												</td>

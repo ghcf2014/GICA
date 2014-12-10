@@ -278,14 +278,20 @@ class InvestController extends MemberController {
     }
     public function investindex(){
         $uid = is_login();//获取当前用户UID
-        $m = M('z_borrow_investor');//用户头像
+        $borrow_info = M('z_borrow_info');
         $condition['investor_uid'] =$uid;
-        $m=$m->where($condition)->select();
+        $borrow_info=$borrow_info->select();
 
-        $this->assign('list',$m);
+        $this->assign('list',$borrow_info);
         $this->display();
     }
     public function borrowmanager(){
+        $uid = is_login();//获取当前用户UID
+        $borrow_info = M('z_borrow_info');
+        $condition['investor_uid'] =$uid;
+        $borrow_info=$borrow_info->select();
+
+        $this->assign('list',$borrow_info);
         $this->display();
     }
     public function borrowprotocol(){

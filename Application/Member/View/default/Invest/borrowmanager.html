@@ -14,8 +14,7 @@
 				<div class="r_main">
 					<div class="tabtil">
 						<ul>
-							<li id="lab_1" class="on"
-								onclick="jumpUrl('homeBorrowInvestList.htm');">
+							<li id="lab_1" class="on">
 								成功借出
 							</li>
 							<!-- <li id="lab_2" onclick="jumpUrl('homeBorrowTenderInList.htm');">
@@ -105,9 +104,9 @@
 										</tr>
 									</s:if>
 									<s:else>
-										<s:iterator value="pageBean.page" var="bean">
+										<s:iterator value="pageBean.page" var="bean"><volist name="list" id="vo">
 											<tr>
-												<td align="center">
+												<td align="center">{$vo.borrow_uid}
 												</td>
 												<td align="center">
 												</td>
@@ -135,10 +134,7 @@
 													<s:if test="%{#bean.borrowWay ==5}">  机构担保借款</s:if> -->
 												</td>
 												<td align="center">
-													<a
-														href="protocol.htm?typeId=1&&borrowId=${bean.borrowId }&&investId=${bean.investId }&&styles=1"
-														target="_blank">查看协议</a>
-												</td>
+												</td></volist>
 											</tr>
 										</s:iterator>
 									</s:else>
