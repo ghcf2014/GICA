@@ -34,6 +34,12 @@ class UserController extends HomeController {
 			$uid = $User->register($username, $password, $email);
 			if(0 < $uid){ //注册成功
 				//TODO: 发送验证邮件
+
+				$m=M("z_member_money");//关联会员资金表
+           		$m->uid=$uid;
+           		$count=$m->add();
+
+
 				$this->success('注册成功！',U('login'));
 			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));
