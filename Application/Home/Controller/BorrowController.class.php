@@ -16,6 +16,14 @@ class BorrowController extends HomeController {
 	}
 	// 
 	public function papersinfo() {
+		$uid = is_login ();
+        $m=M("z_member_data_info");
+        $condition['uid'] =$uid;
+        $condition['type'] =2;
+        $m=$m->where($condition)->select();
+        // var_dump($m);
+
+        $this->assign('list',$m);
 		$this->display ();
 	}
 	public function circulation() {
@@ -92,35 +100,68 @@ class BorrowController extends HomeController {
 		$p = intval ( $p );
 		$p = empty ( $p ) ? 1 : $p;
 		
-		// $borrowinfo = M("z_borrow_info bi")->field('bi.*,ac.type_name,ac.type_nid')->join('z_article_category ac on ac.id= bi.danbao')->where('bi.id='.$id)->find();
-		// if(!is_array($borrowinfo) || ($borrowinfo['borrow_status']==0 && $this->uid!=$borrowinfo['borrow_uid']) ) $this->error("数据有误");
+	
 		$map = array (
 				'id' => $id 
 		);
 		$listBorrow = M ( 'z_borrow_info' );
 		$list = $listBorrow->where ( $map )->select ();
 		$this->assign ( 'list3', $list );
-		var_dump ( $list );
+	
 		$this->display ();
 	}
 	// 上传
-	public function upload() {
-		$upload = new \Think\Upload (); // 实例化上传类
-		$upload->maxSize = 3145728; // 设置附件上传大小
-		$upload->exts = array (
-				'jpg',
-				'gif',
-				'png',
-				'jpeg' 
-		); // 设置附件上传类型
-		$upload->rootPath = './Uploads/'; // 设置附件上传根目录
-		$upload->savePath = ''; // 设置附件上传（子）目录
-		                        // 上传文件
-		$info = $upload->upload ();
-		if (! $info) { // 上传错误提示错误信息
-			$this->error ( $upload->getError () );
-		} else { // 上传成功
-			$this->success ( '上传成功！' );
-		}
-	}
+	private function AddFile($fileinfo,$depict){
+          $i=0;
+       // var_dump($fileinfo);
+        $uid=is_login(); 
+        $dateline=date("Y-m-d H:m:s");
+        $file=M('z_member_data_info');
+        $condition['uid'] =$uid;
+
+        foreach($fileinfo as $vo)
+        {
+            $data['data_url']=$vo['savepath'].$vo['savename'];
+            $data['uid']=$uid;
+            $data['add_time']=time();
+            $data['type']=2;
+            // $data['deal_time']=$dateline;
+	            if($file->where($condition)->data($data)->add($data)){
+	                //
+	                $i++;
+	            }else{
+	                  return false;
+	            }
+        }
+
+        return true;
+    }
+     //上传
+    public function upload(){
+        $config=array(
+            'maxSize'=>100*1024*1024*1024,
+            'mimes'=>array(),
+            'rootPath'=>'./Uploads/',
+            'ext'=>array(),
+            'autoSub'=>true,
+        );
+        $upload = new \Think\Upload($config);// 实例化上传类
+        $depict=$_POST['depict'];
+       $info   =   $upload->upload(); // 上传文件
+        if(!$info){// 上传错误提示错误信息
+            $this->error($upload->getError());
+        }
+        else{// 上传成功
+
+          //  var_dump($info);
+            if($this->AddFile($info,$depict))//写入数据库
+            {
+                $this->success('上传成功！');
+            }
+            else{
+               $this->error('写入数据库失败');
+            }
+        }
+    }
+	
 }
