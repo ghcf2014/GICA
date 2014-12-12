@@ -2,19 +2,18 @@
 <div class="header_out">
 	<div class="header">
 		<ul>
-			<li class="weibo"><a href="">官方微博</a></li>
-			<li class="weixin"><a href="">官方微信</a></li>
-			<li class="call">客户热线：400-123-4567</li>
+			<li class="weibo"><div></div><a href="">官方微博</a></li>
+			<li class="weixin"><div></div><a href="">官方微信</a></li>
+			<li class="call"><div></div><a href="">客户热线：400-123-4567</a></li>
 		</ul>
 		<if condition="is_login()">
 		<p>
-			<a href="{:U('Member/Index/index')}">{:get_username()}</a>&nbsp;<a
-				href="{:U('Home/User/logout')}"><font color="blue">退出</font></a>
+			<a href="{:U('Member/Index/index')}"class="zc">{:get_username()}[个人中心]</a>&nbsp;|&nbsp;<a href="{:U('Home/User/logout')}"class="dl">安全退出</a>
 		</p>
 		<else/>
 		<p>
-			<a href="{:U('Home/User/register')}" class="zc">注册</a> &nbsp;<a
-				href="{:U('Home/User/login')}" class="dl">登录</a>
+			<a href="{:U('Home/User/register')}" class="zc btn">免费注册</a> |&nbsp;<a
+				href="{:U('Home/User/login')}" class="dl btn">立即登录</a>
 		</p>
 		</if>
 

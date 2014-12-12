@@ -57,13 +57,10 @@ class FinanceController extends HomeController {
             $listBorrow  = M('z_borrow_info');
             $list = $listBorrow->where($map)->select();
             $this->assign('list3',$list);
-<<<<<<< HEAD
            // var_dump($list);
               $this->display();
-=======
             var_dump($list);
             $this->display();
->>>>>>> origin/master
     }
     public function add($id= 0){
             $uid  = is_login();//获取当前用户UID

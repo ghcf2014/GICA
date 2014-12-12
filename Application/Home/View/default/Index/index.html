@@ -85,20 +85,20 @@
             <!-- 网站行业动态 start -->
             <div class="cont_bot_r">
             	<dl>
-                	<dt><span>网站公告</span> <a href="{:U('Article/lists?category='.get_category_name(2))}" class="more">更多</a></dt>
+                	<dt><span>网站公告</span> <a href="{:U('Article/lists?category='.get_category_name(2))}" class="more"></a></dt>
                 	 <volist name="lists"  id="list"> <!-- class="current" -->
                          <dd><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a><span>{$list1.date}</span></dd>
                     </volist>
                 </dl>
                 <dl>
-                	<dt><span>行业动态</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more">更多</a></dt>
+                	<dt><span>行业动态</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more"></a></dt>
                      <volist name="lists1" id="list1">
                     <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.date}</span></dd>
                     </volist>
                 </dl>
 
                 <dl>
-					<dt><span>媒体新闻</span> <a href="#" class="more">更多</a></dt>
+					<dt><span>媒体新闻</span> <a href="#" class="more"></a></dt>
                     <dd><a href="#" class="current">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
                     <dd><a href="#">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
                     <dd><a href="#">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>

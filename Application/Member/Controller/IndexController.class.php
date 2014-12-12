@@ -36,11 +36,9 @@ class IndexController extends MemberController {
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
-<<<<<<< HEAD
+
         //var_dump($lists2);
-=======
         // var_dump($lists2);
->>>>>>> origin/master
         $this->display();
     }
     //文件信息写入数据库
