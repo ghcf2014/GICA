@@ -15,8 +15,8 @@ class IndexController extends MemberController {
   //       $this->display();
 
         is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
-        $uid        =   is_login();//获取当前用户UID
-
+        $uid  =   is_login();//获取当前用户UID
+       
         $listMember = M('member');
         $condition['gica_member.uid'] =$uid;
         $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
@@ -36,7 +36,11 @@ class IndexController extends MemberController {
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
+<<<<<<< HEAD
+        //var_dump($lists2);
+=======
         // var_dump($lists2);
+>>>>>>> origin/master
         $this->display();
     }
     //文件信息写入数据库

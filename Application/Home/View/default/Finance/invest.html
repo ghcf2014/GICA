@@ -1,35 +1,91 @@
-<block name="body">
-<extend name="Base/common"/>
-<block name="body">
-		<!-- 引用头部公共部分 -->
-		<div class="nymain">
-			<div class="ifbox1">
-				<h2>
-					确定投标
-					<img src="__STATIC__/rzg_images/neiye2_06.jpg" width="4" height="7" />
-				</h2>
-				<div class="boxmain" style="padding-top: 20px; padding-bottom: 20px;">
-					<div class="qrtb">
-						<div class="tbtop"></div>
-						<div class="tbmain">
-						  <volist name="list3" id="vb">
-							<div class="tbinfo">
-								<div class="lbox">
-									<div class="pic">
-<!-- 										<shove:img src="${investDetailMap.personalHead}"
-											defaulImg="__STATIC__/rzg_images/default-img.jpg" width="80" height="79"></shove:img> -->
-											<img src="__STATIC__/rzg_images/default-img.jpg" width="80" height="79" />
-										<br />
-										
-									</div>
-									<p class="name">
-										用户名：{$vb.borrow_uid|get_username}
-										<br />
-										籍
-										贯：{$vb.location}&nbsp;{$vblocation_now}
-										<br />
-										居住地：
+<block name="body"> <extend name="Base/common" /> <!--content start-->
+<div class="qrb_cont_out">
+	<div class="qrb_cont">
+		<h2>确认投标</h2>
+		<!--qrb_cont_top-->
 
+<<<<<<< HEAD
+		<div class="qrb_cont_top">
+			<!--qrb_cont_top 左边-->
+			<volist name="list3" id="vb">
+			<dl>
+				<dt>
+					<img src="__PUBLIC__/Home/images/qrb_cont_top_pic.png" width="200"
+						height="200" />
+				</dt>
+				<dd>
+					<p>
+						<strong>借款用户：</strong><span>{$vb.borrow_uid|get_username}</span>
+					</p>
+					<p>
+						<strong>借款日期：</strong><span>{$vo.add_time|date='Y-m-d',###}</span>
+					</p>
+					<p>
+						<strong>居 住 地 ：</strong><span>{$vb.location}&nbsp;{$vblocation_now}</span>
+					</p>
+				</dd>
+			</dl>
+			</volist>
+			<!--qrb_cont_top 右边-->
+			<volist name="list" id="vo">
+			<ul>
+				<li><strong>您的账户总额：</strong><span id="totalMoney">￥{$vo.account_money}</span></li>
+				<li><strong>您的可用余额：</strong><span id="leaveMoney">￥{$vo.account_money}</span></li>
+				<li><input type="button" class="btn" value="我要充值"
+					onclick="javascript:;" id="recharge"></li>
+			</ul>
+			</volist>
+		</div>
+
+
+		<!--qrb_cont_bot-->
+		<div class="qrb_cont_bot">
+			<!--qrb_cont_bot 左边-->
+			<volist name="list3" id="vb">
+			<ul class="qrb_cont_bot_l">
+				<li class="li01"><h3>
+						借款标题：<b>{$vb.borrow_name}</b>
+					</h3></li>
+				<li>借款金额：<span>￥{$vb.borrow_money}</span></li>
+				<li>借款年利率：<span>{$vb.borrow_interest_rate}%</span></li>
+				<li>已经完成：<span>{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
+				<li>还要借款：<span id="needMoney">￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
+				<li>借款期限：<span>{$vb.borrow_duration}月</span></li>
+				<li class="li_last">还款方式： <if
+						condition="$vb.repayment_type eq 1"> <span>按月分期</span> <elseif
+						condition="$vb.repayment_type eq 2" /> <span>按月分期</span> <elseif
+						condition="$vb.repayment_type eq 3" /> <span>按月分期</span> <elseif
+						condition="$vb.repayment_type eq 4" /> <span>按月分期</span></if>
+				</li>
+				<li class="li_last">交易类型：<span>线上</span></li>
+			</ul>
+			</volist>
+			<!--qrb_cont_bot 右边-->
+			<volist name="list" id="vo">
+			<div class="qrb_cont_bot_r">
+				<h3>请填写并确认下面投标金额</h3>
+				<ul>
+					<s:if test="#request.subscribes!=1">
+						<li><span id="investMinMoney">最低投标金额：{$vb.borrow_min}</span>元</li>
+					</s:if>
+					<s:else>
+						<li><span id="investMaxMoney">最多投标金额：{$vb.borrow_max}元</span></li>
+					</s:else>
+					<li>年化利率：<span>{$vb.borrow_interest_rate}%</span></li>
+					<!-- <li>最小认购金额：11元</li>
+					<li>认购总分数：10份</li>
+					<li>还有：<span>10</span>份
+					</li> -->
+				</ul>
+				<volist name="list3" id="vb">
+				<form id="form" action="{:U('add?id='.$vb['id'])}" method="post">
+				</volist>
+				<div class="tzje">
+					<span>投资金额</span><input type="text" class="txt" style="color: red;"
+						id="amount" name="capital" maxlength="20" value=""><span>元</span><input
+						type="button" value="最大金额" class="btn" id="maxMoney"
+						onclick="javascript:;">
+=======
 									</p>
 								</div>
 								<div class="rbox">
@@ -195,115 +251,74 @@
 						</div>
 						<div class="tbbot"></div>
 					</div>
+>>>>>>> origin/master
 				</div>
+				<center>
+					<span id="errorMsg"></span>
+				</center>
+				<p>注意：点击按钮表示您将确认投标金额并同意支付贷款</p>
+				<input type="button" value="确认投标" class="btn2" id="confirmInvest">
+				</from>
 			</div>
+			</volist>
+
 		</div>
-		<input type="hidden" id="investNum"
-			value="${investDetailMap.investNum}" />
-		<input type="hidden" id="usableSum" value="${userMap.usableSum}" />
-		<!-- 引用底部公共部分 -->
-		<jsp:include page="/include/footer.jsp"></jsp:include>
-		<s:hidden name="id" value="%{investDetailMap.id}"></s:hidden>
-		<s:hidden name="annualRate" value="%{investDetailMap.annualRate}"></s:hidden>
-		<s:hidden name="deadline" value="%{investDetailMap.deadline}"></s:hidden>
-		<script type="text/javascript" src="script/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="script/jquery.shove-1.0.js"></script>
-		<script type="text/javascript" src="script/nav-lc.js"></script>
-		<script>
-	$("#bigSum").click(function() {
-		var factSum = $("#factSum").val();
-		$("#amount").val(factSum);
-	});
-</script>
+	</div>
+</div>
 
-		<script type="text/javascript">
-	var flag = true;
-	$(function() {
-		//样式选中
-		$("#licai_hover").attr('class', 'nav_first');
-		$("#licai_hover div").removeClass('none');
-		$('.tabmain').find('li').click(function() {
-			$('.tabmain').find('li').removeClass('on');
-			$(this).addClass('on');
-			$('.lcmain_l').children('div').hide();
-			$('.lcmain_l').children('div').eq($(this).index()).show();
-		});
-		$('#invest')
-				.click(function() {
-					var id = $("#id").val();
-					param['paramMap.id'] = id;
-					param["paramMap.code"] = $("#code").val();
-					param['paramMap.annualRate'] = $("#annualRate").val();
-					param["paramMap.deadline"] = $("#deadline").val();
-					param['paramMap.amount'] = 1;
-					param['paramMap.investPWD'] = $('#investPWD').val();
-					param['paramMap.result'] = $('#result').val();//认购份数
-						param['paramMap.smallestFlowUnit'] = $(
-								'#smallestFlowUnit').val();//每份认购金额
-						param['paramMap.subscribes'] = $('#subscribes').val();//认购模式是否开启
-						if (flag) {
-							flag = false;
-							$
-									.shovePost(
-											'financeInvest.htm',
-											param,
-											function(data) {
-												var callBack = data.msg;
-												if (callBack == undefined
-														|| callBack == '') {
-													$('#content').html(data);
-													flag = true;
-												} else {
-													if (callBack == 1) {
-														alert("操作成功!");
-														window.location.href = 'financeDetail.htm?id=' + id;
-														flag = false;
-														return false;
-													}
-													alert(callBack);
-													flag = true;
-												}
-											});
-						}
-					});
-		$('#btnsave')
-				.click(
-						function() {
-							var id = $("#id").val();
-							param['paramMap.id'] = id;
-							param["paramMap.code"] = $("#code").val();
-							param['paramMap.annualRate'] = $("#annualRate")
-									.val();
-							param["paramMap.deadline"] = $("#deadline").val();
-							param['paramMap.amount'] = $('#amount').val();
-							param['paramMap.investPWD'] = $('#investPWD').val();
-							if (flag) {
-								flag = false;
-								$
-										.shovePost(
-												'financeInvest.htm',
-												param,
-												function(data) {
-													var callBack = data.msg;
-													if (callBack == undefined
-															|| callBack == '') {
-														$('#content')
-																.html(data);
-														flag = true;
-													} else {
-														if (callBack == 1) {
-															alert("操作成功!");
-															window.location.href = 'financeDetail.htm?id=' + id;
-															flag = false;
-															return false;
-														}
-														alert(callBack);
-														flag = true;
-													}
-												});
-							}
-						});
-
+<script>
+   //确认投标
+	$("#confirmInvest").click(
+			function() {
+				var amount = parseFloat($("#amount").val());
+				var needMoney = parseFloat($("#needMoney").html().substring(1,
+						$("#needMoney").html().length));
+				if (amount <= 0) {
+					$("#errorMsg").html("<font color='red'>投标金额小于零元！</font>");
+					return false;
+				}
+				if (amount > needMoney) {
+					$("#errorMsg").html(
+							"<font color='red'>投标金额不能大于还需借款！</font>");
+					return false;
+				}
+				$("#form").submit();
+			});
+</script> <script>
+//我要充值
+	$("#recharge").click(function() {
+		window.location.href = "{:U('Member/System/recharge')}";
 	});
-</script>
-</block>
+</script> <script>
+//最大金额计算
+	$("#maxMoney").click(
+			function() {
+				var totalMoney = parseFloat($("#totalMoney").html().substring(
+						1, $("#totalMoney").html().length));
+				var leaveMoney = parseFloat($("#leaveMoney").html().substring(
+						1, $("#leaveMoney").html().length));
+				var needMoney = parseFloat($("#needMoney").html().substring(1,
+						$("#needMoney").html().length));
+				var investMaxMoney = parseFloat($("#investMaxMoney").html()
+						.substring(1, $("#investMaxMoney").html().length));
+				var investMinMoney = parseFloat($("#investMinMoney").html()
+						.substring(1, $("#investMinMoney").html().length));
+				if (leaveMoney <= needMoney) {
+					$("#amount").val(leaveMoney);
+				}
+				if (leaveMoney >= needMoney) {
+					$("#amount").val(needMoney);
+				}
+				if (investMaxMoney > leaveMoney) {
+					if (investMaxMoney >= needMoney) {
+						$("#amount").val(needMoney);
+					}
+				}
+				if (investMaxMoney > leaveMoney) {
+					if (investMaxMoney <= needMoney) {
+						$("#amount").val(investMaxMoney);
+					}
+				}
+
+			});
+</script> <!--content end--> </block>

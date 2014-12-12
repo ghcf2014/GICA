@@ -2,177 +2,38 @@
 <extend name="Base/common"/>
 <block name="body">
 <!-- 引用头部公共部分 -->
-<jsp:include page="/include/topref.jsp"></jsp:include>	
-<div class="nymain">
-  <div class="lcnav">
-    <div class="tab">
-    <div class="srh">
-    <form action="javascript:void(0);" id="searchLink" method="post">
-    标题： <input type="text" id="title"  name="title" class="inp200" maxlength="200" value=""/> <input type="submit" id="searchLink" class="chaxun shigong" style="margin-left:6px;" value="查询"/>
-    </form>
+<!--woyaotouzi_banner start--->
+    <div class="tz_banner">
+    	<div class="tz_banner_in"></div>
     </div>
-<div class="tabmain">
-  <ul><li id="tab_1" class="on">全部借款列表</li>
-<!--<li id="tab_2">实地认证</li>
-<li id="tab_3">信用认证</li> -->
-<!--   <li id="tab_4">机构担保</li>
-<li id="tab_5">最近成功的借款</li></ul> -->
-    </div>
-    </div>
-    <div class="line">
-    </div>
-  </div>
-  <div class="lcmain">
-    <div class="lcmain_l" style="padding:0">
-    <div class="lctab" id="content">
-                    <ul id="lastestborrow">
-                    <volist name="list2" id="vo">
-                            <!-- 标开始 -->
-                                <li>
-                                    <if condition="$vo.borrow_status eq 0">
-                                        <div class="bottm"><a href="{:U('Finance/invest?id='.$vo['id'])}">立即投标</a></div>
-                                    <elseif condition="$vo.borrow_status eq 2"/>
-                                        <div class="bottm2"><a href="javascript:void(0);">初审中</a></div>
-                                    <elseif condition="$vo.borrow_status eq 4"/>
-                                        <div class="bottm2"><a href="javascript:void(0);">复审中</a></div>&nbsp;
-                                    <elseif condition="$vo.borrow_status eq 6"/>
-                                        <div class="bottm2"><a href="javascript:void(0);">还款中</a></div>&nbsp;
-                                    <elseif condition="$vo.borrow_status eq 7"/>
-                                        <div class="bottm2">
-                                        <a href="javascript:void(0);">已完成</a>
-                                        </div>&nbsp;
-                                    </if>
-
-
-                                    <div class="list_txt">
-                                        <table width="600" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <th colspan="3" align="left">
-                                                    <a href="financeDetail.htm?id=${finance.id}" target="_blank">
-                                                        <shove:sub value="#finance.borrowTitle" suffix="..."
-                                                            size="15" /> </a>
-                                                <span class="list_txtjl"><span>{$vo.reward_num|default="0.00"}
-<!--                                                     <s:if test="#finance.excitationType==2">
-                                                        <span class="list_txtjl"><span>￥${finance.excitationSum
-                                                                }</span> </span>
-                                                    </s:if>
-                                                    <s:if test="#finance.excitationType==3">
-                                                        <span class="list_txtjl"><span>${finance.excitationSum
-                                                                }%</span> </span>
-                                                    </s:if> -->
-                                                </th>
-                                            </tr>
-                                            <tr>
-                                                <h2>{$vo.borrow_name}</h2>
-                                            </tr>
-                                            <tr>
-                                                <td width="180">
-                                                    借款金额：
-                                                    <span>￥ {$vo.borrow_money|money_upper=###} </span>
-                                                </td>
-                                                <td width="180">
-                                                    年利率：
-                                                    <span>￥ {$vo.borrow_interest_rate}</span>
-                                                </td>
-                                                <td width="170">
-                                                    借款期限：
-                                                    <span>{$vo.borrow_duration} <s:property value="#finance.deadline"
-                                                            default="0" /> <s:if test="%{#finance.isDayThe ==1}">个月</s:if>
-                                                        <s:else>天</s:else> </span>
-                                                </td>
-                                                   <td width="170">
-                                                    发标时间：
-                                                    <span>{$vo.add_time|date='Y-m-d',###}</span>
-                                                </td>
-                                                
-                                            </tr>
-                                            <tr>
-                                                <td>借款类型：
-                                                        <img src="__STATIC__/rzg_images/ico_7.jpg" title="本息保障,推荐标" />
-<!--                                                     <s:if test="#finance.borrowWay ==1">
-                                                    借款类型：净值借款
-                                                        <img src="__STATIC__/rzg_images/neiye1_53.jpg" title="净值借款" />
-                                                    </s:if>
-                                                    <s:if test="#finance.borrowWay ==2">
-                                                    借款类型： 秒还借款
-                                                        <img src="__STATIC__/rzg_images/ico_1.jpg" title="秒还借款" />
-                                                    </s:if>
-                                                    <s:if test="#finance.borrowWay ==4">
-                                                    借款类型：实地考察借款
-                                                        <img src="__STATIC__/rzg_images/tubiao2.png" title="实地考察借款" />
-                                                    </s:if>
-                                                    <s:if test="#finance.borrowWay ==5">
-                                                     借款类型：机构担保借款
-                                                        <img src="__STATIC__/rzg_images/ico_7.jpg" title="本息保障,推荐标" />
-                                                    </s:if>
-                                                    <s:if test="#finance.isDayThe ==2">
-                                                     借款类型： 天标
-                                                        <img src="__STATIC__/rzg_images/neiye1_67.jpg" title="天标" />
-                                                    </s:if>
-                                                    <s:if test="#finance.hasPWD ==1">
-                                                    借款类型：
-                                                        <img src="__STATIC__/rzg_images/lock.png" title="投标时需要填写密码" />
-                                                   </s:if>
-                                                    <s:if test="#finance.auditStatus ==3">
-                                                    借款类型：
-                                                        <img src="__STATIC__/rzg_images/neiye1_62.jpg" title="该用户通过抵押认证" />
-                                                    </s:if> -->
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <div style="float: left;">
-                                                            借款进度：
-                                                        </div>
-                                                        <div class="progeos">
-                                                            <div
-                                                                style="width: {$vo['has_borrow']/$vo['borrow_money']*100}%"></div>
-                                                        </div>
-                                                        <div style="float: left;">
-                                                            <span> <s:property value="#finance.schedules"
-                                                                    default="0" /> %</span>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    完成投标：{$vo.has_borrow}
-                                                    <span> <s:property value="#finance.investNum"
-                                                            default="---" /> </span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div style="clear: both"></div>
-                                </li>
-                            <!-- 标结束 -->
-                            </volist>
-                        <s:else>
-                            <li style="text-align: center;">
-                                <div class="page"> {$page}</div><!-- 没有数据 -->
-                            </li>
-                        </s:else>
-                    </ul>
-              </ul>
-          <s:else>
-            <!-- <li style="text-align: center;padding-top: 20px;padding-bottom: 20px;">没有数据</li> -->
-          </s:else>
-        <s:if test="pageBean.page!=null || pageBean.page.size>0">
-    <div class="page" ></div>    
+	<!--woyaotouzi_banner end--->
     
-    </s:if>
-
-    </div>
-    </div>
-   <div class="lcmain_r">
-<!-- 
-      <div class="lbox">
-      <h2>借款标志说明</h2>
-      <div  class="lboxmain" style="background-image: url(images/neiye1_50.jpg); background-position: 136px 35px; background-repeat: no-repeat; ">
-      <ul><li>信用借款：无标志</li>
-      <li></li>
-	  
-      <li>净值借款：<img src="images/neiye1_53.jpg" width="15" height="16" /></li>
-      <li>秒还借款：<img src="images/neiye1_55.jpg" width="15" height="16" /></li>
+<<<<<<< HEAD
     
+	<!--content start-->
+	<div class="tz_cont">
+    
+    	<!--tz_cont_head01-->
+    	<ul class="tz_cont_head01">
+        	<li class="current">全部借款</li>
+        	<li>担保借款</li>
+        	<li>成功借款</li>
+        	<li class="tz_cont_head01_li_last">
+            	<span>标题</span>
+                <input type="text" value="" class="text"/>
+                <input type="button" value="" class="button"/>
+            </li>            
+        </ul>
+    	<!--tz_cont_head02-->
+        <ul class="tz_cont_head02">
+        	<li class="tz_cont_head02_li01">标的类型:</li>
+            <li class="current">信用标</li>
+            <li>净值标</li>
+            <li>秒还标</li>
+            <li>担保标</li>
+            <li>抵押标</li>
+        </ul>
+=======
 	  <li>担保借款：<img src="images/tubiao1.png" alt="" /></li>
       <li>通过抵押认证：<img src="images/neiye1_62.jpg" width="15" height="16" /></li>
      
@@ -384,172 +245,60 @@ function clearComponentVal(){
         $('#reward').get(0).selectedIndex=0;
         $('#arStart').get(0).selectedIndex=0;
 }
+>>>>>>> origin/master
 
-
-		function rateNumJudge(){//验证利息计算输入数字是否正确
-	 	   if($("#borrowSum").val()==""){
-	 	      $("#show_error").html("&nbsp;&nbsp;投资金额不能为空");
-	 	      $("#showIncome").html("");
-	 	   }else 
-	 	   if(!/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/.test($("#borrowSum").val())){
-	 	       $("#show_error").html("&nbsp;&nbsp;请输入正确的投资金额进行计算");
-	 	       $("#showIncome").html("");
-	 	   }else 
-	 	   if($("#yearRate").val()==""){
-	 	      $("#show_error").html("&nbsp;&nbsp;年利率不能为空");
-	 	      $("#showIncome").html("");
-	 	   }else 
-	 	   if(!/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/.test($("#yearRate").val())){
-	 	      $("#show_error").html("&nbsp;&nbsp;请输入正确的年利率");
-	 	      $("#showIncome").html("");
-	 	   }else 
-	 	   if($("#borrowTime").val()==""){
-	 	       $("#show_error").html("&nbsp;&nbsp;投资期限不能为空");
-	 	       $("#showIncome").html("");
-	 	   }else 
-	 	   if(!/^[0-9]*[1-9][0-9]*$/.test($("#borrowTime").val())){
-		 	    $("#show_error").html("&nbsp;&nbsp;请输入正确投资期限");
-		 	    $("#showIncome").html("");
-	 	   }else 
-	 	    if(!/^[0-9].*$/.test($("#bidReward").val())){
-		 	      $("#show_error").html("&nbsp;&nbsp;请输入正确的投资奖励");
-		 	      $("#showIncome").html("");
-	 	   }else 
-		 	if(!/^[0-9].*$/.test($("#bidRewardMoney").val())){
-			 	      $("#show_error").html("&nbsp;&nbsp;请输入正确的现金奖励 ");
-			 	      $("#showIncome").html("");
-	 	    }else{
-	 	      $("#show_error").html("");
-	 	   }
-	 	}
-	 	
-	 	function rateCalculate(){//利息计算
-	 	    var str = rateNumJudge();
-	 	    param["paramMap.borrowSum"] = $("#borrowSum").val();
-	        param["paramMap.yearRate"] = $("#yearRate").val();
-	        param["paramMap.borrowTime"] = $("#borrowTime").val();
-	        param["paramMap.repayWay"] = $("#repayWay").get(0).selectedIndex;
-	        param["paramMap.bidReward"] = $("#bidReward").val();
-	        param["paramMap.bidRewardMoney"] = $("#bidRewardMoney").val();
-	        
-	        var _array = [];
-	        
-			if($("#show_error").text()!=""){
-			   return;
-			}
-			$.shovePost("incomeCalculate.htm",param,function(data){
-			   //只有一条记录
-			   if(data == 1){
-			     $("#show_error").html("请填写完整信息进行计算");
-			     return;
-			   }
-			   _array.push("<table>");
-			    for(var i = 0; i < data.length; i ++){
-			    	data[i].income2year = data[i].income2year < 1 ? "0" + data[i].income2year : data[i].income2year;
-			    	data[i].rateSum = data[i].rateSum < 1 ? "0" + data[i].rateSum : data[i].rateSum;
-					_array.push("<tr><td style='padding-left:20px'><span>投标奖励：</span><span>"+data[i].reward+"元</span><br/>"
-					+"<span>年化收益：</span><span>"+data[i].income2year+"%</span><br/>"
-					+"<span>总计利息：</span><span>"+data[i].rateSum+"元</span><br/>"
-					+"<span>每月还款：</span><span>"+data[i].monPay+"元</span><br/>"
-					+"<span>总共收益：</span><span>"+data[i].allSum+"元</span><br/>");
-					/*+"<span>总计收益：</span><span>"+data[i].netIncome+"元(扣除10%管理费)</span></td></tr>"
-					_array.push("<p>投标奖励："+data[i].reward+"元</p><br /><br />"
-					+"<p>年化收益："+data[i].income2year+"元</p><br /><br />"
-					+"<p>总收益："+data[i].allSum+"元</p><br /><br />"
-					+"<p>每月还款："+data[i].monPay+"元</p><br /><br />"
-					+"<p>总计收益(扣除10%管理费)："+data[i].netIncome+"元</p>");*/
-				}
-				//_array.push("</table>");
-				$("#showIncome").html(_array.join(""));
-			});
-	 	}
-
-</script>
-<script type="text/javascript">
-		//$(function(){
-			dqzt(1);
-			$("span#tit").each(function(){
-				if($(this).text().length > 6){
-					$(this).text($(this).text().substring(0,8)+"..");
-				}
-			});
-	
-			var m = '${paramMap.m}';
-			if(m == ''){
-				m = 1;
-			}
-			$("#tab_"+m).addClass("on");
-			$("#tab_1").click(function(){
-			    window.location.href = "finance.htm?m=1"
-			});
-			$("#tab_2").click(function(){
-			   window.location.href = "finance.htm?m=2"
-			});
-			$("#tab_3").click(function(){
-               window.location.href = "finance.htm?m=3"
-			});
-			$("#tab_4").click(function(){
-			   window.location.href = "finance.htm?m=4"
-			});
-			$("#tab_5").click(function(){
-			   window.location.href = "finance.htm?m=5"
-			});
-			
-			
-			$("#search").click(function(){
-				var chk_value = [];
-				$('input[name="ck_mode"]:checked').each(function(){  
-		             chk_value.push($(this).val());  
-		        });
-		        if(chk_value.length != 0){
-		             $("#type").val(chk_value);
-		            $("#m").val('1');             
-		        }else{
-		            $("#type").val("");
-		        }
-                $("#searchForm").submit();
-			});
-			$("#arEnd").change(function(){
-			    var arStart = $('#arStart').val();
-			    arStart = parseInt(arStart);
-			    var arEnd = $(this).val();
-			    arEnd = parseInt(arEnd);
-			    if(arEnd < arStart){
-			      alert('金额范围不能小于开始!');
-			    }
-			});
-			$("#arStart").change(function(){
-			    var arEnd = $('#arEnd').val();
-			    arEnd = parseInt(arEnd);
-			    var arStart = $(this).val();
-			    arStart = parseInt(arStart);
-			    if(arEnd < arStart){
-			      alert('金额范围不能小于开始!');
-			    }
-			});
-			
-			$("#jumpPage").click(function(){
-			     var curPage = $("#curPageText").val();
-			    
-				 if(isNaN(curPage)){
-					alert("输入格式不正确!");
-					return;
-				 }
-				 $("#pageNum").val(curPage);
-   				var chk_value = [];
-				$('input[name="ck_mode"]:checked').each(function(){  
-		             chk_value.push($(this).val());  
-		        });
-		        if(chk_value.length != 0){
-		             param['paramMap.m'] = '1';
-		             $("#type").val(chk_value);                  
-		        }else{
-		            $("#type").val("");
-		        }
-                $("#searchForm").submit();
-			});
-		//});
-		
-	
-</script>
+    	<!--tz_cont_head03-->       
+        <ul class="tz_cont_head03">
+        	<li>项目</li>
+        	<li>借款金额</li>
+        	<li>年利率</li>
+        	<li class="li_s">期限</li>
+        	<!-- <li class="li_s">完成投标</li> -->
+        	<li class="li_s">保障方式</li>
+        	<li class="li_jd">进度</li>
+        	<li class="li_s">发布时间</li>
+        	<li class="li_s">立即投标</li>
+        </ul>
+        
+    	<!--tz_cont_head04-->  
+      
+         <volist name="list2" id="vo">
+        <ul class="tz_cont_head04">
+        	<li>{$vo.borrow_name}</li>
+        	<li>{$vo.borrow_money}<span>￥</span></li>
+        	<li>{$vo.borrow_interest_rate}%</li>
+        	<li class="li_s">{$vo.borrow_duration}</li>
+        	<!-- <li>{$vo.has_borrow}<span>￥</span></li> -->
+        	<li class="li_s">本息保护</li>
+        	<li class="li_jd">100%</li>
+        	<li class="li_s">{$vo.add_time|date='Y-m-d',###}</li>
+        	<li class="li_s"> <if condition="$vo.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vo['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
+                	    <elseif condition="$vo.borrow_status eq 2"/>
+                	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
+                	     <elseif condition="$vo.borrow_status eq 4"/>
+                	    <img alt="" src="__PUBLIC__/Home/images/checkref.png">
+                	    <elseif condition="$vo.borrow_status eq 6"/>
+                	    <img alt="" src="__PUBLIC__/Home/images/returning.png">
+                	     <elseif condition="$vo.borrow_status eq 7"/>
+                	     <img alt="" src="__PUBLIC__/Home/images/full.png">
+                	    </if></li>
+        </ul>
+        </volist>
+        
+        <!--tz_cont_bottom-->
+        <ul class="tz_cont_bottom">
+              <li style="text-align: center;"><div class="page"> {$page}</div><!-- 没有数据 --></li>
+        	<!-- <li>首页</li>
+        	<li>1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        	<li>5</li>
+        	<li>...</li>
+        	<li>尾页</li>
+        	<li><input type="text" value="1" class="txt"></li>
+        	<li><input type="button" class="btn" value="Go"></li> -->
+        </ul>   
+    </div>
+	<!--content end-->
 </block>

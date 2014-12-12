@@ -15,7 +15,7 @@ class IndexController extends HomeController {
         $category = D('Category')->getTree();
         $map = array('category_id' => 2);
         $map1 = array('category_id' => 40);
-        $lists    = D('Document')->where($map)->lists(null);
+        $lists    = D('Document')->where($map)->limit(6)->select();
         $lists1    = D('Document')->where($map1)->lists(null);
         
 
