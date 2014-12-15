@@ -496,7 +496,7 @@ height:0px;
 .nymain .bigbox .sqdk .l-nav ul .on a { color: #FFF; background: url(../rzg_images/sqdk_0333.png) no-repeat; line-height: 44px; font-size:18px}
 .nymain .bigbox .sqdk .l-nav ul .on a span{ font-size:14px; font-family:Arial, Helvetica, sans-serif; text-transform:uppercase; color:#e38f8f; }
 .nymain .bigbox .sqdk .l-nav ul .on a:hover { color: #FFF; background: url(../rzg_images/sqdk_0333.png) no-repeat ; line-height: 44px; }
-.nymain .bigbox .sqdk .r-main { float: left; width: 779px; border: 1px solid #eee; }
+.r-main { float: left; width: 779px; border: 1px solid #eee; }
 .nymain .bigbox .sqdk .r-main .til01 { background: url(../rzg_images/sqdk_03.jpg) repeat-x; height:40px; overflow: hidden; height: 100%; }
 .nymain .bigbox .sqdk .r-main .til01 li{ height:40px; float:left; padding:0 15px; line-height:38px; cursor:pointer; }
 

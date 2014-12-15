@@ -1,23 +1,20 @@
 <block name="body">
 <extend name="Base/common"/>
 <block name="body">
-
- <script type="text/javascript" src="__STATIC__/datepicker/js/jquery.min.js"></script> 
- <script type="text/javascript" src="__STATIC__/datepicker/js/jquery-ui-datepicker.js"></script>  
-<!-- 引用头部公共部分 -->
-<jsp:include page="/include/topref.jsp"></jsp:include>	
-<form action="{:U('circulation_save')}" method="post">
-<div class="nymain">
-<div class="bigbox" style="border:none">
-  <div class="sqdk" style="background:none;">
-  <include file="Public/borrowleft"/>
-    <div class="r-main">
+    <!--content start-->
+  <div class="zh_cont_out">
+      <div class="zh_cont">
+            <h2><a href="{:U('Index')}">我的账户</a></h2> 
+              <include file="Public/borrowleft"/>
+            <div class="zh_cont_r">
+              <form action="{:U('circulation_save')}" method="post">
+                  <div class="r-main">
     <!-- <div class="til01"> -->
     <div class="til01">
-	<ul id="ul"><li class="on">发布贷款</li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;"><s:fielderror fieldName="enough"></s:fielderror></span></ul>
-	</div>
-	<!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
-	</div> -->
+    <ul id="ul"><li class="on">发布贷款</li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;"><s:fielderror fieldName="enough"></s:fielderror></span></ul>
+    </div>
+    <!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
+    </div> -->
   <div class="rmainbox">
     <p class="tips"><span class="fred">*</span> 为必填项，所有资料均会严格保密。 </p>
     <div class="tab">
@@ -128,8 +125,8 @@
   <!--    <tr>
     <td align="right">筹标期限：<span class="fred">*</span></td>
     <td>
-    	<s:select list="borrowRaiseTermList" id="raiseTerm" name="paramMap.raiseTerm" cssClass="sel_140" listKey="key" listValue="value"  headerKey="" headerValue="--请选择--"></s:select>
-    	<span class="fred"><s:fielderror fieldName="paramMap['raiseTerm']"></s:fielderror></span>
+        <s:select list="borrowRaiseTermList" id="raiseTerm" name="paramMap.raiseTerm" cssClass="sel_140" listKey="key" listValue="value"  headerKey="" headerValue="--请选择--"></s:select>
+        <span class="fred"><s:fielderror fieldName="paramMap['raiseTerm']"></s:fielderror></span>
     </td>
   </tr> -->
     <tr>
@@ -142,12 +139,19 @@
     </div>
     </div>
     </div>
-  </div>
-  </div>
-</div>
-</div>
-</form>
-<script type="text/javascript" src="script/nav-jk.js"></script>
+              </form>
+            </div>
+            </div>
+        </div>
+    </div>
+  <!--content end-->    
+
+
+ <script type="text/javascript" src="__STATIC__/datepicker/js/jquery.min.js"></script> 
+ <script type="text/javascript" src="__STATIC__/datepicker/js/jquery-ui-datepicker.js"></script>  
+
+
+ <script type="text/javascript" src="script/nav-jk.js"></script>
 
 <script type="text/javascript">
 $(function(){

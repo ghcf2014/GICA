@@ -44,89 +44,24 @@
           <li class="li_s">发布时间</li>
         </ul>
         
-        
+        <volist name="list2" id="vo">
         <!--tz_cont_head04-->  
             <ul class="tz_cont_head04">
-                <li>大型融资</li>
-                <li><span>￥:</span>100万</li>
-                <li>13%</li>
-                <li class="li_s">3 天</li>
+                <li>{$vo.borrow_name}</li>
+                <li><span>￥:</span>{$vo.borrow_money|money_upper=###}</li>
+                <li>{$vo.borrow_interest_rate}%</li>
+                <li class="li_s">{$vo.borrow_duration}月</li>
                 <li class="li_s">本息保护</li>
-                <li class="li_jd">100%</li>
-                <li class="li_s">2014-11-22</li>
+                <li class="li_jd">{$vo['has_borrow']/$vo['borrow_money']*100}%</li>
+                <li class="li_s">{$vo.add_time|date='Y-m-d',###}</li>
                 <li class="li_s"><input type="button"></li>
             </ul>
-        
-            <ul class="tz_cont_head04">
-                <li>大型融资</li>
-                <li><span>￥:</span>100万</li>
-                <li>13%</li>
-                <li class="li_s">3 天</li>
-                <li class="li_s">本息保护</li>
-                <li class="li_jd">100%</li>
-                <li class="li_s">2014-11-22</li>
-                <li class="li_s"><input type="button"></li>
-            </ul>
-        
-            <ul class="tz_cont_head04">
-                <li>大型融资</li>
-                <li><span>￥:</span>100万</li>
-                <li>13%</li>
-                <li class="li_s">3 天</li>
-                <li class="li_s">本息保护</li>
-                <li class="li_jd">100%</li>
-                <li class="li_s">2014-11-22</li>
-                <li class="li_s"><input type="button"></li>
-            </ul>
-        
-            <ul class="tz_cont_head04">
-                <li>大型融资</li>
-                <li><span>￥:</span>100万</li>
-                <li>13%</li>
-                <li class="li_s">3 天</li>
-                <li class="li_s">本息保护</li>
-                <li class="li_jd">100%</li>
-                <li class="li_s">2014-11-22</li>
-                <li class="li_s"><input type="button"></li>
-            </ul>
-        
-            <ul class="tz_cont_head04">
-                <li>大型融资</li>
-                <li><span>￥:</span>100万</li>
-                <li>13%</li>
-                <li class="li_s">3 天</li>
-                <li class="li_s">本息保护</li>
-                <li class="li_jd">100%</li>
-                <li class="li_s">2014-11-22</li>
-                <li class="li_s"><input type="button"></li>
-            </ul>
-        
-            <ul class="tz_cont_head04">
-                <li>大型融资</li>
-                <li><span>￥:</span>100万</li>
-                <li>13%</li>
-                <li class="li_s">3 天</li>
-                <li class="li_s">本息保护</li>
-                <li class="li_jd">100%</li>
-                <li class="li_s">2014-11-22</li>
-                <li class="li_s"><input type="button"></li>
-            </ul>
-            
-            <ul class="tz_cont_head04">
-                <li>大型融资</li>
-                <li><span>￥:</span>100万</li>
-                <li>13%</li>
-                <li class="li_s">3 天</li>
-                <li class="li_s">本息保护</li>
-                <li class="li_jd">100%</li>
-                <li class="li_s">2014-11-22</li>
-                <li class="li_s"><input type="button"></li>
-            </ul>  
+        </volist>
         
       
         
         <!--tz_cont_bottom-->
-        <ul class="tz_cont_bottom">
+        <!-- <ul class="tz_cont_bottom">
           <li>首页</li>
           <li>1</li>
           <li>2</li>
@@ -137,7 +72,8 @@
           <li>尾页</li>
           <li><input type="text" value="1" class="txt"></li>
           <li><input type="button" class="btn" value="go"></li>
-        </ul>   
+        </ul>  -->  
+        <div class="page"> {$page}</div>
     </div>
   <!--content end-->
    <script type="text/javascript" src="script/jquery.shove-1.0.js"></script>

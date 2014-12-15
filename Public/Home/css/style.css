@@ -513,6 +513,56 @@ line-height: 38px;}
 .box .boxmain2 .friend li .name:hover { color: #00315d; }
 .box .boxmain2 .friend li .sc { color: #999; }
 .box .boxmain2 .friend li .sc:hover { color: #666; }
+/*前台内页*/
+.til01 { background: url(../rzg_images/sqdk_03.jpg) repeat-x; height:40px; overflow: hidden; height: 100%; }
+.til01 li{ height:40px; float:left; padding:0 15px; line-height:38px; cursor:pointer; }
+
+.til01 .on{color: #6ecefb; background:url(../images/neiye_menu_on.jpg) repeat-x}
+.rmainbox { padding-right: 30px; padding-left: 30px; padding-bottom: 40px; position: relative; }
+.tips { line-height: 24px; padding-top: 8px; padding-right: 16px; padding-bottom: 8px; padding-left: 16px; background: #fffcf7; margin-top: 20px; }
+.tab { padding-top: 20px; padding-left: 60px; padding-right: 60px; }
+
+/*前台内页上传区域*/
+.rmainbox .tab table tr th { font-size: 12px; background-color: #FAFAFA; padding-left: 30px; line-height: 28px; }
+.rmainbox .rzbox { margin-top: 8px; margin-bottom: 20px; }
+.rmainbox .rzbox h3 { font-size: 14px; line-height: 32px; font-weight: bold; color: #666; }
+.rmainbox .rzbox .txt { line-height: 24px; }
+.rmainbox .rzbox .jbrz { height: auto; }
+.rmainbox .rzbox .jbrz ul li { float: left; width: 170px; margin-right: 50px; border: 1px solid #ddd; height: 62px; padding: 15px; margin-bottom: 25px; position: relative; }
+.rmainbox .rzbox .jbrz ul li .pic { float: left; width: 62px; margin-right: 25px; }
+.rmainbox .rzbox .jbrz ul li .shangchuan { line-height: 28px; text-align: center; float: left; }
+.rmainbox .rzbox .jbrz ul li .shangchuan h3 { font-size: 12px; color: #136dad; font-weight: normal; }
+.rmainbox .rzbox .jbrz ul li .shico { line-height: 20px; color: #999; background-color: #f7f7f7; text-align: center; height: 20px; width: 52px; border: 1px solid #eee; position: absolute; left: 162px; top: -6px; z-index: 2; }
+
+.rmainbox .rzbox .kxrz { height: auto; }
+.rmainbox .rzbox .kxrz ul li { float: left; width: 82px; margin-right: 29px; border: 1px solid #ddd; height: 62px; padding: 15px; margin-bottom: 25px; position: relative; }
+.rmainbox .rzbox .kxrz ul li .pic { float: left; width: 62px; margin-right: 25px; }
+.rmainbox .rzbox .kxrz ul li .shangchuan { line-height: 28px; text-align: center; }
+.rmainbox .rzbox .kxrz ul li .shangchuan h3 { font-size: 12px; color: #136dad; font-weight: normal; }
+.rmainbox .rzbox .kxrz ul li .shico { line-height: 20px; color: #999; background-color: #f7f7f7; text-align: center; height: 20px; width: 52px; border: 1px solid #eee; position: absolute; left: 70px; top: -6px; z-index: 2; }
+.rmainbox .fbdk { padding-top: 10px; }
+.rmainbox .fbdk ul li { line-height: 40px; color: #999; background-image: url(../rzg_images/neiye1_333.jpg); background-repeat: repeat-x; background-position: left bottom; padding-top: 25px; padding-bottom: 25px; padding-left: 35px; overflow: hidden; height: 100%; }
+.rmainbox .fbdk ul li .btn { float: left; height: 40px; width: 136px; }
+.rmainbox .fbdk ul li .btn a { font-family: "微软雅黑"; font-size: 14px; line-height: 38px; color: #333; background-image: url(../rzg_images/fbdk_03.jpg); background-repeat: no-repeat; text-align: center; display: block; height: 40px; width: 136px; }
+.rmainbox .fbdk ul li .btn a:hover { color: #00315d; }
+.rmainbox .fbdk ul li p { float: left; margin-left: 30px; }
+.rmainbox .edtxt { line-height: 45px; background-image: url(../rzg_images/neiye1_333.jpg); background-repeat: repeat-x; background-position: left bottom; font-size: 14px; font-weight: bold; }
+.rmainbox .edtxt strong { color: #ff0000; }
+.rmainbox .edtab { margin-top: 50px; }
+.bigbox .sqdk .r-main .rmainbox .edtab table { line-height: 28px; }
+.bigbox .sqdk .r-main .rmainbox .edtab table tr td { border: 1px solid #ddd; }
+.bigbox .sqdk .r-main .rmainbox .edtab table tr th { font-weight: normal; background-color: #f9f9f9; border: 1px solid #ddd; }
+.rmainbox .tcbox { background-color: #cccccc; padding: 8px; width: 496px; position: absolute; left: 125px; top: 72px; z-index: 999; }
+.rmainbox .tcbox .tcmain { background-color: #FFF; }
+.rmainbox .tcbox .tcmain { padding-top: 5px; padding-right: 18px; padding-bottom: 30px; padding-left: 18px; }
+.rmainbox .tcbox .tcmain h3 { font-size: 14px; line-height: 42px; font-weight: normal; color: #136dad; }
+.rmainbox .tcbox .tcmain .ysctab table { line-height: 28px; }
+.rmainbox .tcbox .tcmain .ysctab table tr td { border: 1px solid #ddd; }
+.rmainbox .tcbox .tcmain .ysctab table tr th { font-weight: normal; background-color: #f9f9f9; border: 1px solid #ddd; }
+.rmainbox .tcbox .tcmain .ysctab table tr .pic { padding-top: 5px; padding-bottom: 5px; }
+.rmainbox .tcbox .tcmain .xzzl { background-image: url(../rzg_images/neiye1_333.jpg); background-repeat: repeat-x; background-position: left top; padding-top: 10px; margin-top: 15px; }
+.rmainbox .tcbox .tcmain .xzzl table { line-height: 30px; }
+.rmainbox .tcbox .tcmain .xzzl table tr th { font-size: 14px; font-weight: normal; color: #136dad; }
 
 
 
