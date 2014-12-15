@@ -58,8 +58,7 @@ class FinanceController extends HomeController {
             $list = $listBorrow->where($map)->select();
             $this->assign('list3',$list);
            // var_dump($list);
-              $this->display();
-            var_dump($list);
+            // var_dump($list);
             $this->display();
     }
     public function add($id= 0){
