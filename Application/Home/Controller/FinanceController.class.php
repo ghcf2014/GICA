@@ -58,7 +58,12 @@ class FinanceController extends HomeController {
             $list = $listBorrow->where($map)->select();
             $this->assign('list3',$list);
            // var_dump($list);
+<<<<<<< HEAD
             // var_dump($list);
+=======
+          //    $this->display();
+            //var_dump($list);
+>>>>>>> origin/master
             $this->display();
     }
     public function add($id= 0){
@@ -78,11 +83,14 @@ class FinanceController extends HomeController {
 
             //从表单中获取来的数据 
             $capital=$_POST["capital"];
+            
             //创建一个表对象，将传来的数据插入到数据库中
             $m=M("z_borrow_investor");
             $m->investor_capital=$capital;
             $m->borrow_id=$bid;
             $m->investor_uid=$uid;
+            print ("capital:".$capital);
+            print("accout_money:".$list[0]['account_money']);
     // 判断余额不足
     if($list[0]['account_money'] >= $capital ){
             if($capital <= 0){// 上传错误提示错误信息
