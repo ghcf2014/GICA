@@ -33,11 +33,51 @@
                 </dl>
                 <ul class="ul01">
                 	<li>认证管理：</li>
-                    <li><input type="button" class="btn" value="邮箱"></li>
-                    <li><input type="button" class="btn" value="手机"></li>
-                    <li><input type="button" class="btn" value="身份证"></li>
-                    <li><input type="button" class="btn" value="银行卡"></li>
-                    <li><input type="button" class="btn" value="VIP"></li>
+                    <li><if condition="$vs.email_status eq 0">
+													<a href="{:U('Userinfo/usermailbanding')}"><img
+															src="__STATIC__/rzg_images/img/h_yx_pic.jpg" title="邮箱未认证" />
+													</a>
+												<elseif condition="$vs.email_status eq 1"/>
+												     <a href="{:U('Userinfo/usermailbanding')}"><img
+															src="__STATIC__/rzg_images/img/l_yx_pic.jpg" title="邮箱已认证" />
+													</a>
+												</if></li>
+                    <li><if condition="$vs.phone_status eq 0">
+													<a href="{:U('Userinfo/userchangephone')}"><img
+															src="__STATIC__/rzg_images/img/h_sj_pic.jpg" title="手机未认证" />
+													</a>
+												<elseif condition="$vs.phone_status eq 1"/>
+												     <a href="{:U('Userinfo/userchangephone')}"><img
+															src="__STATIC__/rzg_images/img/l_sj_pic.jpg" title="手机已认证" />
+													</a>
+												</if></li>
+                    <li><if condition="$vs.id_status eq 0">
+												<a href="{:U('Userinfo/userselfset')}">
+													<img src="__STATIC__/rzg_images/img/h_sfz_pic.jpg" title="身份证未认证" />
+												</a>
+												<elseif condition="$vs.id_status eq 1"/>
+												     <a href="{:U('Userinfo/userselfset')}">
+													<img src="__STATIC__/rzg_images/img/l_sfz_pic.jpg" title="身份证已认证" />
+												    </a>
+												</if></li>
+                    <li><if condition="$vs.credit_status eq 0">
+												<a href="{:U('Userinfo/userbankset')}">
+													<img src="__STATIC__/rzg_images/img/h_yhk_pic.jpg" title="银行卡未认证" />
+												</a>
+												<elseif condition="$vs.credit_status eq 1"/>
+												     <a href="{:U('Userinfo/userbankset')}">
+													<img src="__STATIC__/rzg_images/img/l_yhk_pic.jpg" title="银行卡已认证" />
+												    </a>
+												</if></li>
+                    <li><if condition="$vs.video_status eq 0">
+												<a href="{:U('Userinfo/userrenewalvip')}">
+													<img src="__STATIC__/rzg_images/img/h_vip_pic.jpg" title="VIP未认证" />
+												</a>
+												<elseif condition="$vs.video_status eq 1"/>
+												     <a href="{:U('Userinfo/userrenewalvip')}">
+													<img src="__STATIC__/rzg_images/img/l_vip_pic.jpg" title="VIP已认证" />
+												    </a>
+												</if></li>
                 </ul>
                 
                 <ul class="ul02">
@@ -48,12 +88,22 @@
                 	<li><a href="{:U('System/withdrawdeposit')}">我要提现</a></li>
                 	<li>待收金额</li>
                 </ul>
-                <h4>账户详情：</h4>
+                <h4>账户详情：</h4><volist name="list" id="vo">
                 <div class="zh_cont_r_bot">
                 	<p>账户总汇</p>
                     <ul>
-                    	<li><p>账户总额：￥</p><span>485740.00</span></li>
-                    	<li><p>可用余额：￥</p><span>485740.00</span></li>
+                    	<li>账户总额：￥
+										<if condition="$vo.account_money neq ''">
+										{$vo.account_money}
+										<elseif condition="$vo.account_money eq 1"/>
+										0
+										</if></li>
+                    	<li>可用余额：￥
+										<if condition="$vo.account_money neq ''">
+										{$vo.account_money}
+										<elseif condition="$vo.account_money eq 1"/>
+										0
+										</if></li>
                     	<li><p>冻结金额：￥</p><span>0.00</span></li>
                     	<li><p>总收益：￥</p><span>0.00</span></li>
                     	<li><p>利息收益：￥</p><span>0.00</span></li>
@@ -64,8 +114,18 @@
                 <div class="zh_cont_r_bot">
                 	<p>投资总汇</p>
                     <ul>
-                    	<li><p>账户总额：￥</p><span>485740.00</span></li>
-                    	<li><p>可用余额：￥</p><span>485740.00</span></li>
+                    	<li><p>待收总额：￥
+										<if condition="$vo.account_money neq ''">
+										{$vo.investor_capital}
+										<elseif condition="$vo.account_money eq 1"/>
+										0
+										</if></li>
+                    	<li><p>待收本金：￥
+										<if condition="$vo.account_money neq ''">
+										{$vo.investor_capital}
+										<elseif condition="$vo.account_money eq 1"/>
+										0
+										</if></li>
                     	<li><p>冻结金额：￥</p><span>0.00</span></li>
                     	<li><p>总收益：￥</p><span>0.00</span></li>
                     	<li><p>利息收益：￥</p><span>0.00</span></li>
@@ -76,14 +136,24 @@
                 <div class="zh_cont_r_bot">
                 	<p>借款总汇</p>
                     <ul>
-                    	<li><p>账户总额：</p><span>￥485740.00</span></li>
-                    	<li><p>可用余额：</p><span>￥485740.00</span></li>
+                    	<li>待还总额：￥
+										<if condition="$vo.account_money neq ''">
+										{$vo.borrow_money}
+										<elseif condition="$vo.account_money eq 1"/>
+										0
+										</if></li>
+                    	<li>待还本金：￥
+										<if condition="$vo.account_money neq ''">
+										{$vo.borrow_money}
+										<elseif condition="$vo.account_money eq 1"/>
+										0
+										</if></li>
                     	<li><p>冻结金额：</p><span>￥0.00</span></li>
                     	<li><p>总收益：</p><span>￥0.00</span></li>
                     	<li><p>利息收益：</p><span>￥0.00</span></li>
                     	<li><p>其它收益：</p><span>￥0.00</span></li>
                     </ul>
-                </div>
+                </div></volist>
                 
                 <div class="zh_cont_r_bot last">
                 	 <!--<p>借款总汇</p>
