@@ -3,8 +3,8 @@
      <!--banner start-->
     <div class="banner">
         <ul>
-            <li style="display: block;"><img src="__PUBLIC__/Home/images/banner_pic1.png" width="1600" height="339" /></li>
-            <li><img src="__PUBLIC__/Home/images/banner_pic2.png" width="1600" height="339" /></li>
+            <li style="display: block;"><img src="__PUBLIC__/Home/images/banner3.jpg" width="1600" height="339" /></li>
+            <li><img src="__PUBLIC__/Home/images/banner2.jpg" width="1600" height="339" /></li>
             <li><img src="__PUBLIC__/Home/images/banner1.jpg" width="1600" height="339" /></li>
         </ul>
         <ol>
@@ -55,7 +55,7 @@
         	<div class="cont_bot_l">
            	  <h2>投资列表</h2>
            	     <volist name="list2" id="vo">
-           	     <h4><a href="{:U('Article/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
+           	     <h4><a href="{:U('Borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
             	<ul>
                 	<li>借款金额:<span>￥{$vo.borrow_money}</span></li>
                     <li>年利率:<span>{$vo.borrow_interest_rate}%</span></li>
