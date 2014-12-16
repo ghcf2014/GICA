@@ -24,14 +24,14 @@
     </tr>
   <tr>
     <td align="right">借款标题：<span class="fred">*</span></td>
-    <td><input name="borrow_name" type="text" class="inp280" maxlength="30" value=""/>
-    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    <td><input name="borrow_name" type="text" class="inp280" maxlength="30" id="s_borrow_name" value=""/>
+    <span class="fred" id="t_borrow_name"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
     </td>
   </tr>
   <tr>
     <td align="right">借款总金额：<span class="fred">*</span></td>
-    <td><input name="borrow_money" type="text" class="inp280" maxlength="12" value=""/>
-    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+    <td><input name="borrow_money" type="text" class="inp280" maxlength="12" id="s_borrow_money" value=""/>
+    <span class="fred" id="t_borrow_money"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
     </td>
   </tr>
   <!-- <tr>
@@ -45,20 +45,20 @@
      -->
        <tr>
     <td align="right">年利率：<span class="fred">*</span></td>
-    <td><input name="borrow_interest_rate" type="text" class="inp100" maxlength="30" value=""/>%
-    <span class="fred"></span>
+    <td><input name="borrow_interest_rate" type="text" class="inp100" maxlength="30" id="s_borrow_interest_rate" value=""/>%
+    <span class="fred" id="t_borrow_interest_rate"></span>
     </td>
   </tr>
   <tr>
     <td align="right">借款用途：<span class="fred">*</span></td>
-    <td><input name="borrow_use" type="text" class="inp280" maxlength="12" value=""/>
-    <span class="fred"></span>
+    <td><input name="borrow_use" type="text" class="inp280" maxlength="12" id="s_borrow_use" value=""/>
+    <span class="fred" id="t_borrow_use"></span>
     </td>
   </tr>
   <tr>
     <td align="right">借款期限：<span class="fred">*</span></td>
-    <td><input name="collect_day" type="text" class="inp280" maxlength="12" value=""/>月
-    <span class="fred"></span>
+    <td><input name="collect_day" type="text" class="inp280" maxlength="12" id="s_collect_day" value=""/>月
+    <span class="fred" id="t_collect_day"></span>
     </td>
   </tr>
   <tr>
@@ -69,13 +69,13 @@
   </tr>
   <tr>
     <td align="right">最低投标金额：<span class="fred">*</span></td>
-    <td><input name="borrow_min" type="text" class="inp280" maxlength="12" value=""/>元
+    <td><input name="borrow_min" type="text" class="inp280" maxlength="12" id="s_borrow_min" value=""/>元
     <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
     </td>
   </tr>
     <tr>
     <td align="right">最多投标金额：<span class="fred">*</span></td>
-    <td><input name="borrow_max" type="text" class="inp280" maxlength="12" value=""/>元
+    <td><input name="borrow_max" type="text" class="inp280" maxlength="12" id="s_borrow_max" value=""/>元
     <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
     </td>
   </tr>
@@ -162,5 +162,36 @@ $(function(){
     buttonImageOnly: true
   });
 });
+</script>
+<script type="text/javascript">
+//不能为空
+  $("#s_borrow_name").blur(function() {
+    if ($("#s_borrow_name").val() == "") {
+      $("#t_borrow_name").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
+  $("#s_borrow_money").blur(function() {
+    if ($("#s_borrow_money").val() == "") {
+      $("#t_borrow_money").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
+  $("#s_borrow_interest_rate").blur(function() {
+    if ($("#s_borrow_interest_rate").val() == "") {
+      $("#t_borrow_interest_rate").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
+  $("#s_collect_day").blur(function() {
+    if ($("#s_collect_day").val() == "") {
+      $("#t_collect_day").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
 </script>
 </block>

@@ -39,7 +39,7 @@ class IndexController extends HomeController {
         $count      = $listBorrow ->where('borrow_status not in (1,5,3)')->count();
         $Page = new  \Think\Page($count, 8);
         $show       = $Page->show();
-        $orderby['id']='desc';
+        $orderby['borrow_status']='ASC';
         $list = $listBorrow->where('borrow_status not in (1,5,3)')->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
 
         if ($list[0]['has_borrow'] ==0) {

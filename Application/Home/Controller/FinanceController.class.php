@@ -16,7 +16,7 @@ class FinanceController extends HomeController {
             $count      = $listBorrow ->where('borrow_status not in (1,5,3)')->count();
             $Page = new  \Think\Page($count, 8);
             $show       = $Page->show();
-            $orderby['id']='desc';
+            $orderby['borrow_status']='ASC';
             $list = $listBorrow->where('borrow_status not in (1,5,3)')->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
             $this->assign('list2',$list);
             $this->assign('page',$show);
@@ -24,7 +24,6 @@ class FinanceController extends HomeController {
     }
     public function papersinfo(){
         $this->display();
-
     }
     public function tranferdetail(){
         $this->display();

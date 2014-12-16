@@ -10,19 +10,19 @@
             <include file="Public/left"/>
             
             <!--zh_cont_r-->
-            <div class="zh_cont_r">
+            <div class="zh_cont_r"><volist name="mlist" id="vo">
                 <!--基本认证-->
-                <div class="tab">
+                <div class="tab"><form action="{:U('add?id='.$vb['id'])}" method="post">
                     <h3>当前位置>基本认证</h3>
                     <p style="background:#d3cbc7;width:968px;height:1px;"></p>
                     <dl class="jbrz" style="margin-top:110px">
                     	<dt>真实姓名</dt>
-                        <dd><input type="text" class="txt"></dd>
+                        <dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
                     </dl>
                     
                     <dl class="jbrz">
                     	<dt>身份证</dt>
-                        <dd><input type="text" class="txt"></dd>
+                        <dd><input type="text" class="txt" name="idcard" id="idNo" value="{$vo.idcard}" /></dd>
                     </dl>
                     
                     <dl class="jbrz sfz">
@@ -44,24 +44,24 @@
                     <dl class="jbrz sex">
                     	<dt>性别</dt>
                         <dd>
-                        	男<input type="radio" class="radio" name="sex" value="man" checked="checked"/>
-                            女<input type="radio" class="radio" name="sex" value="woman" />
+                        	男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
+                            女<input type="radio" class="radio" name="sex" value="0" />
                         </dd>
                     </dl>
                     
                     <dl class="jbrz">
                     	<dt>职业</dt>
-                        <dd><input type="text" class="txt"></dd>
+                        <dd><input type="text" class="txt" name="zy" id="idNo" value="{$vo.zy}" /></dd>
                     </dl>
                     <dl class="jbrz">
                     	<dt>手机号</dt>
-                        <dd><input type="text" class="txt"></dd>
+                        <dd><input type="text" class="txt" name="cell_phone" id="idNo" value="{$vo.cell_phone}" /></dd>
                     </dl>
                     
                     <dl class="jbrz jy">
                     	<dt>教育</dt>
                         <dd>
-                        	<input type="text" class="txt">
+                        	<input type="text" class="txt" name="education">
                             <select>
                             	<option>博士</option>
                             	<option>硕士</option>
@@ -75,14 +75,13 @@
                     
                     <dl class="jbrz">
                     	<dt>地址</dt>
-                        <dd><input type="text" class="txt"></dd>
+                        <dd><input type="text" class="txt" name="address" value="{$vo.address}"></dd>
                     </dl>
-                    
-                    <input type="button" class="btn" value="保存"/>
-                    
+                    <input type="submit" class="btn" value="保存"/>
+                    </form>
                 </div>
                 
-                
+                </volist>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@
             <h2><a href="{:U('Index')}">我的账户</a></h2>	
             	<include file="Public/left"/>
             <div class="zh_cont_r">
-            	<div class="r_main">
+            	<div class="r_main"><form action="{:U('recharge_save')}" method="post">
 					<div class="tabtil">
 						<ul>
 							<li class=" tipshang">
@@ -55,8 +55,7 @@
 										</td>
 										<td>
 											<input id="money" type="text" class="inp140"  name="account_money" />
-											<span style="color: red; float: none;" id="money_tip"
-												class="formtips"></span>
+											<span style="color: red; float: none;" id="money_tip"class="formtips"></span>
 										</td>
 									</tr>
 									<tr>
@@ -377,7 +376,7 @@
 
 							</div>
 							<div  id="btn_submit">
-							<input type="submit" class="btn" value="保存并继续"/> 
+							<input type="submit" class="btn" value="提交充值"id="addrecharge"/> 
 								<!-- <input type="button" class="bcbtn" value="保存并继续"id="addrecharge" /> -->
         <!-- <a href="javascript:void(0);" class="bcbtn" onclick="addRechargeInfo();">保存并继续</a> -->
 							</div>

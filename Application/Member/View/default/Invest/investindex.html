@@ -1,22 +1,18 @@
 <block name="body">
 <extend name="Base/common"/>
 <block name="body">
-		<!-- <引用头部公共部分 -->
-		<jsp:include page="/include/topref.jsp"></jsp:include>
-		<div class="nymain">
-			<div class="wdzh">
-				<div class="l_nav">
-					<div class="box">
-						<!-- 引用我的帐号主页左边栏 -->
-						<include file="Public/left"/>
-					</div>
-				</div>
-				<div class="r_main">
+		<!--content start-->
+	<div class="zh_cont_out">
+    	<div class="zh_cont">
+            <h2><a href="{:U('Index')}">我的账户</a></h2>	
+            	<include file="Public/left"/>
+            <div class="zh_cont_r">
+            	<div class="r_main">
 					<div class="tabtil">
 						<ul>
 							<li id="lab_1" class="on"
 								onclick="jumpUrl('homeBorrowInvestList.htm');">
-								成功借出
+								我的投资
 							</li>
 <!-- 							<li id="lab_2" onclick="jumpUrl('homeBorrowTenderInList.htm');">
 								招标中的借款
@@ -73,7 +69,7 @@
 											还款方式
 										</th>
 										<th>
-											应收本金
+											投资本金
 										</th>
 										<th>
 											年利率
@@ -83,9 +79,6 @@
 										</th>
 										<th>
 											期限
-										</th>
-										<th>
-											发布时间
 										</th>
 										<th>
 											还款时间
@@ -115,10 +108,7 @@
 												</td>
 												<td align="center">{$vo.borrow_duration}个月
 												</td>
-												<td align="center">
-                                                   {$vo.investor_capital}
-												</td>
-												<td align="center">
+												<td align="center">{$vo.investor_capital}
 												</td>
 												<td align="center">
 												</td>
@@ -129,11 +119,11 @@
 												<td align="center">
 												</td>
 												<td align="center">
-													<s:if test="%{#bean.borrowWay ==1}">净值借款</s:if>
+													<!-- <s:if test="%{#bean.borrowWay ==1}">净值借款</s:if>
 													<s:if test="%{#bean.borrowWay ==2}">秒还借款</s:if>
 													<s:if test="%{#bean.borrowWay ==3}"> 普通借款</s:if>
 													<s:if test="%{#bean.borrowWay ==4}"> 实地考察借款</s:if>
-													<s:if test="%{#bean.borrowWay ==5}">  机构担保借款</s:if>
+													<s:if test="%{#bean.borrowWay ==5}">  机构担保借款</s:if> -->
 												</td>
 												<td align="center">
 												</td>
@@ -155,6 +145,8 @@
 					</div>
 					</div>
 				</div>
-			</div>
-		</div>
+            </div>	
+        </div>
+    </div>
+	<!--content end-->		
 </block>

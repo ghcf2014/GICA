@@ -139,6 +139,12 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userselfset() {
+		$uid = is_login ();
+		$m = M ( "z_member_info" );
+		$condition['uid'] =$uid;
+        $m=$m->where($condition)->select();
+
+        $this->assign('mlist', $m);
 		$this->display ();
 	}
 	public function add() {

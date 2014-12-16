@@ -45,7 +45,7 @@
           <li class="li_s">发布时间</li>
         </ul>
         
-        <volist name="list2" id="vo">
+        <volist name="list2" id="vo" key="k">
         <!--tz_cont_head04-->  
             <ul class="tz_cont_head04">
                 <li><a href="{:U('Borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></li>
@@ -53,9 +53,10 @@
                 <li>{$vo.borrow_interest_rate}%</li>
                 <li class="li_s">{$vo.borrow_duration}月</li>
                 <li class="li_s">本息保护</li>
-                <li ><div id="jdbox" class="jdbox">{$vo['has_borrow']/$vo['borrow_money']*100}%</div></li>
+                <li ><div id="jdbox_{$k}" class="jdbox">{$vo['has_borrow']/$vo['borrow_money']*100}</div></li>
                 <li class="li_s">{$vo.add_time|date='Y-m-d',###}</li>
-                <li class="li_s"><if condition="$vo.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vo['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
+                <li class="li_s">
+                      <if condition="$vo.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vo['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
                 	    <elseif condition="$vo.borrow_status eq 2"/>
                 	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
                 	     <elseif condition="$vo.borrow_status eq 4"/>
@@ -66,24 +67,6 @@
                 	     <img alt="" src="__PUBLIC__/Home/images/full.png">
                 	    </if></li>
             </ul>
-<script type="text/javascript">
-window.onload = function(){
-	var object = document.getElementById('jdbox')
-	function loadImg (data){
-			var i = 0;
-			setInterval(function(){
-				i++
-				if(i>data){
-					i=data
-				}
-				var imgLeft = -(i*44+(i*10))+'px'
-				object.style.backgroundPosition = imgLeft+'\t'+'0px'
-				object.innerHTML = i+'%';
-			},50)
-	}
-	loadImg(88)
-}
-</script>
         </volist>
         
       
@@ -109,5 +92,122 @@ window.onload = function(){
  <script type="text/javascript" src="script/jbox/jquery.jBox-zh-CN.js"></script>
 
 
+<script type="text/javascript">
 
+window.onload = function(){
+  var object1 = document.getElementById('jdbox_1')
+  var object2 = document.getElementById('jdbox_2')
+  var object3 = document.getElementById('jdbox_3')
+  var object4 = document.getElementById('jdbox_4')
+  var object5 = document.getElementById('jdbox_5')
+  var object6 = document.getElementById('jdbox_6')
+  var object7 = document.getElementById('jdbox_7')
+  var object8 = document.getElementById('jdbox_8')
+  function loadImg1 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object1.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object1.innerHTML = i+'%';
+      },50)
+  }
+  loadImg1(parseInt(document.getElementById('jdbox_1').innerHTML))
+  
+    function loadImg2 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object2.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object2.innerHTML = i+'%';
+      },50)
+  }
+  loadImg2(parseInt(document.getElementById('jdbox_2').innerHTML))
+  function loadImg3 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object3.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object3.innerHTML = i+'%';
+      },50)
+  }
+  loadImg3(parseInt(document.getElementById('jdbox_3').innerHTML))
+  function loadImg4 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object4.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object4.innerHTML = i+'%';
+      },50)
+  }
+  loadImg4(parseInt(document.getElementById('jdbox_4').innerHTML))
+  function loadImg5 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object5.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object5.innerHTML = i+'%';
+      },50)
+  }
+  loadImg5(parseInt(document.getElementById('jdbox_5').innerHTML))
+  function loadImg6 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object6.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object6.innerHTML = i+'%';
+      },50)
+  }
+  loadImg6(parseInt(document.getElementById('jdbox_6').innerHTML))
+  function loadImg7 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object7.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object7.innerHTML = i+'%';
+      },50)
+  }
+  loadImg7(parseInt(document.getElementById('jdbox_7').innerHTML))
+  function loadImg8 (data){
+      var i = 0;
+      setInterval(function(){
+        i++
+        if(i>data){
+          i=data
+        }
+        var imgLeft = -(i*44+(i*10))+'px'
+        object8.style.backgroundPosition = imgLeft+'\t'+'0px'
+        object8.innerHTML = i+'%';
+      },50)
+  }
+  loadImg8(parseInt(document.getElementById('jdbox_8').innerHTML))
+}
+</script>
 </block>
