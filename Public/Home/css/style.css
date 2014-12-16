@@ -73,8 +73,8 @@ line-height: 38px;}
 .cont .cont_bot .cont_bot_l ul{overflow:hidden;width:680px;height:80px;margin-bottom:25px;padding-left:20px;border-bottom:1px dashed #ccc;}
 .cont .cont_bot .cont_bot_l ul li{float:left;width:170px;height:30px;line-height:30px;overflow:hidden;}
 .cont .cont_bot .cont_bot_l ul li p{float:left;}
-.cont .cont_bot .cont_bot_l ul li .out{display:block;width:73px;height:13px;background:#B4B4B4;float:left;margin-top:9px;}
-.cont .cont_bot .cont_bot_l ul li .out .in{display:block;width:30%;height:9px;background:#0697DA;margin-top:2px;margin-left:2px;}
+.cont .cont_bot .cont_bot_l ul li .out{display:block;width:73px;height:10px;background:#B4B4B4;float:left;margin-top:9px; padding: 1px;}
+.cont .cont_bot .cont_bot_l ul li .out .in{display:block;width:30%;height:10px;background:#0697DA;}
 .cont .cont_bot .cont_bot_l ul li .btn{width:95px;height:26px;background:url(../images/button_bg.png) no-repeat center center;cursor:pointer;}
 .cont .cont_bot .cont_bot_l .more{width:400px;height:40px;background:url(../images/cont_bg.png) repeat-x left bottom;display:block;text-align:center;line-height:40px;font-size:16px;margin:auto;}
 
@@ -420,6 +420,14 @@ line-height: 38px;}
 .bdxq_cont .xmxq{width:620px;height:368px;border-right:1px solid #dad2ce;float:left;border-bottom:1px solid #dad2ce;}
 .bdxq_cont .xmxq h3{width:706px;height:63px;line-height:63px;font-size:20px;font-weight:normal;}
 .bdxq_cont .xmxq p{width:445px;padding:0 90px 0 46px;height:auto;line-height:27px;font-size:16px;}
+.jdbox{
+	width:44px;
+	height:44px;
+	line-height:44px;
+	text-align:center;
+	background: url(../images/investjd.png);
+}
+
 
 /*---------------标的详情-------------------------------*/
 .bdxq_cont .bdxq{width:1070px;height:auto;border-bottom:1px solid #dad2ce;padding-bottom:10px;}

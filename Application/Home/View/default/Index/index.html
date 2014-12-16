@@ -63,7 +63,7 @@
                 	<li>发标时间:<span>{$vo.add_time|date='Y-m-d',###}</span></li>
                 	<li><p>借款类型:</p><p><img src="__PUBLIC__/Home/images/icon1.png" width="21" height="24" /></p><p><img src="__PUBLIC__/Home/images/icon2.png" width="21" height="24" /></p>
                 	</li>
-                	<li><p>借款进度:</p><span class="out"><span class="in"><!-- {$vo['has_borrow']/$vo['borrow_money']*100}% --></span></span></li>
+                	<li><p>借款进度:</p><span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;"><!-- {$vo['has_borrow']/$vo['borrow_money']*100}% --></span></span></li>
                 	<li>完成投标:<span>{$vo.has_borrow}</span></li>
                 	<li>&nbsp;&nbsp; 
                 	   <if condition="$vo.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vo['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
