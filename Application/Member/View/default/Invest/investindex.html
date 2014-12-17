@@ -73,16 +73,7 @@
 										</th>
 										<th>
 											年利率
-										</th>
-										<th>
-											应收利息
-										</th>
-										<th>
-											期限
-										</th>
-										<th>
-											还款时间
-										</th>
+										</th>										
 										<th>
 											借款类型
 										</th>
@@ -104,31 +95,25 @@
 													{$vo.borrow_uid}
 												</td>
 												<td align="center">
-													<a href="javascript:void(0);"target="_blank">{$vo.borrow_name}</a>
+													<a href="{:U('Home/Borrow/detail?id='.$vo['id'])}"target="_blank">{$vo.borrow_name}</a>
 												</td>
 												<td align="center">{$vo.borrow_duration}个月
 												</td>
-												<td align="center">{$vo.investor_capital}
+												<td align="center">暂无
 												</td>
-												<td align="center">
+												<td align="center">暂无
 												</td>
-												<td align="center">
-												</td>
-												<td align="center">	
-												</td>
-												<td align="center">
-												</td>
-												<td align="center">
+												<td align="center">暂无
 													<!-- <s:if test="%{#bean.borrowWay ==1}">净值借款</s:if>
 													<s:if test="%{#bean.borrowWay ==2}">秒还借款</s:if>
 													<s:if test="%{#bean.borrowWay ==3}"> 普通借款</s:if>
 													<s:if test="%{#bean.borrowWay ==4}"> 实地考察借款</s:if>
 													<s:if test="%{#bean.borrowWay ==5}">  机构担保借款</s:if> -->
 												</td>
-												<td align="center">
+												<td align="center">暂无
 												</td>
 												<td align="center">
-													<!-- <a href="{:U('Invest/borrowprotocol')}" target="_blank">查看协议</a> -->
+													<a href="{:U('Invest/borrowprotocol')}" target="_blank">查看协议</a>
 												</td>
 											</tr></volist>
 										</s:iterator>
