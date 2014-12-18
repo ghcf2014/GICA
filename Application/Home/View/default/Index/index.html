@@ -3,8 +3,8 @@
      <!--banner start-->
     <div class="banner">
         <ul>
-            <li style="display: block;"><img src="__PUBLIC__/Home/images/banner_pic1.png" width="1600" height="339" /></li>
-            <li><img src="__PUBLIC__/Home/images/banner_pic2.png" width="1600" height="339" /></li>
+            <li style="display: block;"><img src="__PUBLIC__/Home/images/banner3.jpg" width="1600" height="339" /></li>
+            <li><img src="__PUBLIC__/Home/images/banner2.jpg" width="1600" height="339" /></li>
             <li><img src="__PUBLIC__/Home/images/banner1.jpg" width="1600" height="339" /></li>
         </ul>
         <ol>
@@ -24,30 +24,28 @@
                 	<h2><a href="#">理财投资</a></h2>
                 	<p>了解我们</p>
                 </dt>
-                <dd>    投资理财 成为理财人，通过主动投标或加入U计划将资金进行投资，最高获得12-14%的预期年化收益。 
-</dd>
+                <dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需 </dd>
             </dl>
-            
             <dl>
             	<dt>
                 	<h2><a href="#">融资借款</a></h2>
                 	<p>帮助您解决所有问题</p>
                 </dt>
-                <dd>如果你现在需要资金周转，可以向我们提交借款申请，通过考察、资料审核、办理借款手续后手续后，可以及时解决资金问题。 </dd>
+                <dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需 </dd>
             </dl>
              <dl>
             	<dt style="background:url(__PUBLIC__/Home/images/icons.png) no-repeat 0   -83px">
                 	<h2><a href="#">安全保障</a></h2>
                 	<p>100%本息担保</p>
                 </dt>
-                <dd>我们的客户来自于公司业务一手客户及银行合作推荐客户，借助于银行大数据风控团队及自身专业的风控体系，更有第三方担保公司兜底，让您放心投资。</dd>
+                <dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需  </dd>
             </dl>
             <dl  class="helpCenter">
             	<dt>
                 	<h2><a href="#">新手指引</a></h2>
                 	<p>了解我们</p>
                 </dt>
-                <dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需要的人，获得年化12%-20%的投资收益。</dd>
+                <dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需 </dd>
             </dl>
         </div>
         <!--content_top end-->
@@ -57,7 +55,7 @@
         	<div class="cont_bot_l">
            	  <h2>投资列表</h2>
            	     <volist name="list2" id="vo">
-           	     <h4><a href="{:U('Article/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
+           	     <h4><a href="{:U('Borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
             	<ul>
                 	<li>借款金额:<span>￥{$vo.borrow_money}</span></li>
                     <li>年利率:<span>{$vo.borrow_interest_rate}%</span></li>
@@ -95,16 +93,18 @@
                 <dl>
                 	<dt><span>行业动态</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more"></a></dt>
                      <volist name="lists1" id="list1">
-                        <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.date}</span></dd>
+                    <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.date}</span></dd>
                     </volist>
                 </dl>
 
                 <dl>
-                    <dt><span>媒体新闻</span> <a href="{:U('Article/lists?category='.get_category_name(43))}" class="more"></a></dt>
-                     <volist name="lists3" id="list3">
-                        <dd> <a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a><span>{$list3.date}</span></dd>
-                    </volist>
-                    
+					<dt><span>媒体新闻</span> <a href="#" class="more"></a></dt>
+                    <dd><a href="#" class="current">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
+                    <dd><a href="#">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
+                    <dd><a href="#">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
+                    <dd><a href="#">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
+                    <dd><a href="#">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
+                    <dd><a href="#">P2P破解小微企业融资难</a><span>2014-12-05</span></dd>
                 </dl>
           <!-- 网站行业动态 end -->
             </div>

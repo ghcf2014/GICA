@@ -37,27 +37,25 @@
       <!--tz_cont_head03-->       
         <ul class="tz_cont_head03">
           <li>项目</li>
-          <li class="li02">借款金额</li>
+          <li>借款金额</li>
           <li>年利率</li>
-          <li>期限</li>
-          <li>保障方式</li>
+          <li class="li_s">期限</li>
+          <li class="li_s">保障方式</li>
           <li class="li_jd">进度</li>
-          <li>发布时间</li>
-          <li>立即投标</li>
-          
+          <li class="li_s">发布时间</li>
         </ul>
         
         <volist name="list2" id="vo" key="k">
         <!--tz_cont_head04-->  
             <ul class="tz_cont_head04">
                 <li><a href="{:U('Borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></li>
-                <li class="li02"><span>￥:</span>{$vo.borrow_money|money_upper=###}</li>
+                <li><span>￥:</span>{$vo.borrow_money|money_upper=###}</li>
                 <li>{$vo.borrow_interest_rate}%</li>
-                <li>{$vo.borrow_duration}月</li>
-                <li>本息保护</li>
-                <li class="li_jd"><div id="jdbox_{$k}" class="jdbox">{$vo['has_borrow']/$vo['borrow_money']*100}</div></li>
-                <li>{$vo.add_time|date='Y-m-d',###}</li>
-                <li class="li_last">
+                <li class="li_s">{$vo.borrow_duration}月</li>
+                <li class="li_s">本息保护</li>
+                <li ><div id="jdbox_{$k}" class="jdbox">{$vo['has_borrow']/$vo['borrow_money']*100}</div></li>
+                <li class="li_s">{$vo.add_time|date='Y-m-d',###}</li>
+                <li class="li_s">
                       <if condition="$vo.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vo['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
                 	    <elseif condition="$vo.borrow_status eq 2"/>
                 	    <img alt="" src="__PUBLIC__/Home/images/checking.png">

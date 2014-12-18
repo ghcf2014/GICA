@@ -7,7 +7,6 @@ use Think\Controller;
 
 class UserinfoController extends MemberController {
 	public function index() {
-
 		$this->display ();
 	}
 	public function bevip() {
@@ -145,124 +144,15 @@ class UserinfoController extends MemberController {
 		$condition['uid'] =$uid;
         $m=$m->where($condition)->select();
 
-
         $this->assign('mlist', $m);
 		$this->display ();
 	}
-	private function AddFile($fileinfo,$depict){
-          $i=0;
-       // var_dump($fileinfo);
-        $uid=is_login(); 
-        $dateline=date("Y-m-d H:m:s");
-        $file=M('z_member_info');
-        $condition['uid'] =$uid;
-        foreach($fileinfo as $vo)
-        {
-        	
-            $data['card_img']=$vo['savepath'].$vo['savename'];
-            // $data['data_name']=$depict[$i];
-            // $data['add_time']=$vo['savepath'];
-            // $data['deal_time']=$dateline;
-            if($file->where($condition)->data($data)->save()){
-                //
-                $i++;
-            }else{
-                  return false;
-            }
-        }
-
-        return true;
-    }
-    public function upload(){
-    	$uid=is_login(); 
-        $config=array(
-            'maxSize'=>100*1024*1024*1024,
-            'mimes'=>array(),
-            'rootPath'=>'./Uploads/User/',
-            'savePath'=>$uid.'/',
-            'ext'=>array(),
-            'autoSub'=>true,
-        );
-        $upload = new \Think\Upload($config);// 实例化上传类
-        $depict=$_POST['depict'];
-       $info   =   $upload->upload(); // 上传文件
-        if(!$info){// 上传错误提示错误信息
-            $this->error($upload->getError());
-        }
-        else{// 上传成功
-
-          //  var_dump($info);
-            if($this->AddFile($info,$depict))//写入数据库
-            {
-                $this->success('上传成功！');
-            }
-            else{
-              //  $this->error('写入数据库失败');
-            }
-
-        }
-    }
-    private function AddFile_back($fileinfo,$depict){
-          $i=0;
-       // var_dump($fileinfo);
-        $uid=is_login(); 
-        $dateline=date("Y-m-d H:m:s");
-        $file=M('z_member_info');
-        $condition['uid'] =$uid;
-        foreach($fileinfo as $vo)
-        {
-
-            $data['card_back_img']=$vo['savepath'].$vo['savename'];
-            // $data['data_name']=$depict[$i];
-            // $data['add_time']=$vo['savepath'];
-            // $data['deal_time']=$dateline;
-            if($file->where($condition)->data($data)->save()){
-                //
-                $i++;
-            }else{
-                  return false;
-            }
-        }
-
-        return true;
-    }
-    public function upload_back(){
-    	$uid=is_login(); 
-        $config=array(
-            'maxSize'=>100*1024*1024*1024,
-            'mimes'=>array(),
-            'rootPath'=>'./Uploads/User/',
-            'savePath'=>$uid.'/',
-            'ext'=>array(),
-            'autoSub'=>true,
-        );
-        $upload = new \Think\Upload($config);// 实例化上传类
-        $depict=$_POST['depict'];
-        $info   =   $upload->upload(); // 上传文件
-        if(!$info){// 上传错误提示错误信息
-            $this->error($upload->getError());
-        }
-        else{// 上传成功
-
-          //  var_dump($info);
-            if($this->AddFile_back($info,$depict))//写入数据库
-            {
-                $this->success('上传成功！');
-            }
-            else{
-              //  $this->error('写入数据库失败');
-            }
-
-        }
-    }
 	public function add() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "z_member_info" );
 		$data ['real_name'] = $_POST ["real_name"];
 		$data ['idcard'] = $_POST ["idcard"];
-		// $data ['card_img'] = $_POST ["card_img"];
-		// $data ['card_back_img'] = $_POST ["card_back_img"];
 		$data ['sex'] = $_POST ["sex"];
 		$data ['zy'] = $_POST ["zy"];
 		$data ['cell_phone'] = $_POST ["cell_phone"];
@@ -278,9 +168,6 @@ class UserinfoController extends MemberController {
 			// 失败提示
 			$this->error ( L ( '保存失败' ) );
 		}
-
-        
-
 	}
 	public function userselfset_2() {
 		$this->display ();

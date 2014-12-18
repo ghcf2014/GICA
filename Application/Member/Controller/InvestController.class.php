@@ -15,7 +15,7 @@ class InvestController extends MemberController {
   //       $this->display();
 
         is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
-        $uid    =   is_login();//获取当前用户UID
+        $uid        =   is_login();//获取当前用户UID
 
         $listMember = M('member');
         $condition['gica_member.uid'] =$uid;
