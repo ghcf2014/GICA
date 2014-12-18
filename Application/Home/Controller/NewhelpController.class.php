@@ -99,4 +99,10 @@ class NewhelpController extends HomeController {
         $this->display();
     }
 
+    /**
+     * 关于我们
+     */
+    public function aboutus(){
+    	$this->display();
+    }
 }
