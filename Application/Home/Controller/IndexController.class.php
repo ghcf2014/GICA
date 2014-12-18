@@ -15,8 +15,10 @@ class IndexController extends HomeController {
         $category = D('Category')->getTree();
         $map = array('category_id' => 2);
         $map1 = array('category_id' => 40);
+        $map2 = array('category_id' => 43);
         $lists    = D('Document')->where($map)->limit(6)->select();
         $lists1    = D('Document')->where($map1)->lists(null);
+        $lists3    = D('Document')->where($map2)->limit(6)->select();
         
 
         $lists2    = D('z_borrow_investor')->field('investor_uid,sum(investor_capital)investor_capital')->order('investor_capital desc')->group('investor_uid')->select();
@@ -54,6 +56,7 @@ class IndexController extends HomeController {
         $this->assign('lists',$lists);//列表
         $this->assign('lists1',$lists1);
         $this->assign('lists2',$lists2);
+        $this->assign('lists3',$lists3);
         $this->assign('list2',$list);
         $this->assign('page',$show);
         $this->display();

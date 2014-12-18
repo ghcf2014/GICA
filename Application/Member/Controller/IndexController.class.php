@@ -67,11 +67,12 @@ class IndexController extends MemberController {
     }
      //上传
     public function upload(){
+        $uid=is_login(); 
         $config=array(
             'maxSize'=>100*1024*1024*1024,
             'mimes'=>array(),
-            'rootPath'=>'./Uploads/',
-            'ext'=>array(),
+            'rootPath'=>'./Uploads/User/',
+            'savePath'=>$uid.'/',
             'autoSub'=>true,
         );
         $upload = new \Think\Upload($config);// 实例化上传类

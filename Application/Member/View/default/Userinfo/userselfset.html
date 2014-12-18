@@ -15,7 +15,7 @@
                 <div class="tab"><form action="{:U('add?id='.$vb['id'])}" method="post">
                     <h3>当前位置>基本认证</h3>
                     <p style="background:#d3cbc7;width:968px;height:1px;"></p>
-                    <dl class="jbrz" style="margin-top:110px">
+                    <dl class="jbrz" style="margin-top:40px">
                     	<dt>真实姓名</dt>
                         <dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
                     </dl>
@@ -25,27 +25,39 @@
                         <dd><input type="text" class="txt" name="idcard" id="idNo" value="{$vo.idcard}" /></dd>
                     </dl>
                     
-                    <dl class="jbrz sfz">
+                    <dl class="sfz" >
                     	<dt>身份证正面</dt>
                         <dd>
-                        	<input type="file" class="txt">
-                            <input type="button" class="btn">
+                        	<input type="button" class="btn" value="上传" id="card_img" >
+                                <if condition="$vo.card_img eq ''">
+                                        <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
+                                <elseif condition="$vo.card_img  neq ''"/>
+                                        <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
+                                </if>
                         </dd>
                     </dl>
                     
                     <dl class="jbrz sfz">
                     	<dt>身份证反面</dt>
 						<dd>
-                        	<input type="file" class="txt">
-                            <input type="button" class="btn">
+                        	<input type="button"  class="btn" value="上传"id="card_back_img">
+                        	<if condition="$vo.card_back_img eq ''">
+                                        <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
+                                <elseif condition="$vo.card_back_img  neq ''"/>
+                                        <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
+                                </if>
                         </dd>
                     </dl>
                     
                     <dl class="jbrz sex">
                     	<dt>性别</dt>
-                        <dd>
-                        	男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
-                            女<input type="radio" class="radio" name="sex" value="0" />
+                        <dd><if condition="$vo.sex eq '1'">
+	                        	男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
+	                            女<input type="radio" class="radio" name="sex" value="0" />
+                            <elseif condition="$vo.sex eq '0'"/>
+	                            男<input type="radio" class="radio" name="sex" value="1" />
+	                            女<input type="radio" class="radio" name="sex" value="0" checked="checked"/>
+                            </if>
                         </dd>
                     </dl>
                     
@@ -58,23 +70,24 @@
                         <dd><input type="text" class="txt" name="cell_phone" id="idNo" value="{$vo.cell_phone}" /></dd>
                     </dl>
                     
-                    <dl class="jbrz jy">
+                    <dl class="jbrz">
                     	<dt>教育</dt>
                         <dd>
-                        	<input type="text" class="txt" name="education">
-                            <select>
-                            	<option>博士</option>
-                            	<option>硕士</option>
-                            	<option>研究生</option>
-                            	<option>本科</option>
-                            	<option>专科</option>
-                            </select>
-                            
+                            <select name="education"  class="inp50">
+                               <option value="高中">高中</option>
+                               <option value="博士以上">博士以上</option>    
+				               <option value="博士">博士</option>   
+				               <option value="硕士">硕士</option>   
+				               <option value="研究生">研究生</option>   
+				               <option value="本科">本科</option>
+				               <option value="专科">专科</option>
+				               <option value="小学">小学</option>      
+				            </select>   
                         </dd>
                     </dl>
                     
                     <dl class="jbrz">
-                    	<dt>地址</dt>
+                    	<dt>现居地址</dt>
                         <dd><input type="text" class="txt" name="address" value="{$vo.address}"></dd>
                     </dl>
                     <input type="submit" class="btn" value="保存"/>
@@ -87,4 +100,35 @@
     </div>
 
 	<!--content end-->
+	<script>
+	$('#card_img').on('click', function(){
+		// layer.msg('正在施工，无法更换')
+    $.layer({
+        type: 1,
+        title: [
+            '图片上传', 
+            'background:#2B2E37; height:40px; color:#fff; border:none;' //自定义标题样式
+        ],  //不显示默认标题栏
+        offset : ['250px', ''],
+        shade: [1], //不显示遮罩
+        area: ['260px', '100px'],
+        page: {html: '<form action="__URL__/upload" enctype="multipart/form-data" method="post"><input type="file"  name="filename" value=""><input  type="submit"  value="上传"></from>'},
+    });
+ });
+	$('#card_back_img').on('click', function(){
+		// layer.msg('正在施工，无法更换')
+    $.layer({
+        type: 1,
+        title: [
+            '图片上传', 
+            'background:#2B2E37; height:40px; color:#fff; border:none;' //自定义标题样式
+        ],  //不显示默认标题栏
+        offset : ['250px', ''],
+        shade: [1], //不显示遮罩
+        area: ['260px', '100px'],
+        page: {html: '<form action="__URL__/upload_back" enctype="multipart/form-data" method="post"><input type="file"  name="filename" value=""><input  type="submit"  value="上传"></from>'},
+    });
+ });
+
+</script>
 </block>
