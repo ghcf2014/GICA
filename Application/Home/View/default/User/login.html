@@ -31,7 +31,7 @@
 				<div>
 			        <img src="__PUBLIC__/Home/images/yanzheng.png">
 					<input type="text" value="" name="verify" class="txt txt1" style="width: 140px;" id="verifycode" placeholder="验证码" errormsg="" nullmsg="请填写验证码" datatype="*6-20"/>
-					<a href="{:U('Home/User/login')}"><img src="{:U('verify')}" width="101" height="44" alt="点击切换" style="cursor: pointer;width:90px;float: right;" /></a>
+					<img class="verifyimg reloadverify" src="{:U('verify')}" width="101" height="44" alt="点击切换" style="cursor: pointer;width:90px;float: right;">
 				</div>
 				<span style="color: red;" id="checkcode" class="formtips"></span>
 			</dl>
@@ -46,6 +46,44 @@
 	</form>
 </div>
 
+<script type="text/javascript">
+//验证码刷新
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("button:submit").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("button:submit").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			if(data.status){
+    				window.location.href = data.url;
+    			} else {
+    				self.find(".Validform_checktip").text(data.info);
+    				//刷新验证码
+    				$(".reloadverify").click();
+    			}
+    		}
+    	});
+
+		$(function(){
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+		});
+</script>
 <script>
 	$("#loginIn").click(
 			function() {
