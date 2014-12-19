@@ -386,12 +386,13 @@ line-height: 38px;}
 .xszy_cont .xszy_cont_l li{width:111px;height:57px;border-bottom:1px solid #d3cbc7;line-height:57px;text-align:center;font-size:18px;cursor:pointer;}
 .xszy_cont .xszy_cont_l .current{color:#ef681f;}
 /*-------------xszy_cont_r------------------------*/
-.xszy_cont .xszy_cont_r{width:903px;height:auto;float:left;padding-left:55px;}
-.xszy_cont .xszy_cont_r .tab{width:903px;height:auto;}
+.xszy_cont .xszy_cont_r{width:958px;height:auto;float:left;}
+.xszy_cont .xszy_cont_r .tab{width:838px;height:auto;}
 
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont{width:903px;height:auto;font-size:20px;line-height:32px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont h4{width:903px;height:32px;font-weight:normal;padding-top:14px;cursor:pointer;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont ul{width:798px;height:auto;padding-left:44px;display:none;}
+.xszy_cont .xszy_cont_r .xszy_cont_r_cont ul li{line-height:30px;}
 
 /*.xszy_cont .xszy_cont_r .xszy_cont_r_dl{width:903px;height:auto;font-size:20px;line-height:32px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_dl h4{width:903px;height:32px;font-weight:normal;padding-top:14px;cursor:pointer;}
