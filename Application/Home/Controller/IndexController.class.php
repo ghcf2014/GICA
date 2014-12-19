@@ -30,6 +30,8 @@ class IndexController extends HomeController {
 		// $searchMap['z_borrow_status']=array("in",'2,4,6,7');
 		// $searchMap['is_tuijian']=0;
 		// $parm=array();
+		
+        
 		// $parm['map'] = $searchMap;
 		// $parm['limit'] = 10;
 		// $parm['orderby']="b.borrow_status ASC,b.id DESC";
