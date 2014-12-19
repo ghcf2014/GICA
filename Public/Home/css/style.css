@@ -488,6 +488,30 @@ line-height: 38px;}
 
 
 
+
+
+/*---------------关于我们------------------------------------*/
+.about_cont_out{width:100%px;height:auto;border-top:1px solid #d3cbc7;margin-top:20px;padding-top:44px;}
+.about_cont{width:1068px;border:1px solid #d3cbc7;height:auto;margin:0 auto 70px;overflow:hidden;}
+.about_cont h2{width:1060px;height:46px;line-height:46px;border-bottom:1px solid #d3cbc7;font-size:22px;font-weight:normal;padding-left:10px;}
+
+/*--------------关于我们 左边栏--------------------------*/
+.about_cont .about_cont_l{width:120px;height:auto;float:left;text-align:center;font-size:18px;}
+.about_cont .about_cont_l ul{width:120px;height:auto;}
+.about_cont .about_cont_l ul li{width:120px;height:56px;line-height:56px;cursor:pointer;border-bottom:1px solid #d3cbc7;text-align:center;}
+.about_cont .about_cont_l ul .about_cont_l_cur{color:#ef681f;}
+.about_cont .about_cont_l ul .about_li_last{border-bottom:0;}
+
+/*--------------关于我们  右边栏---------------------------------*/
+.about_cont .about_cont_r{float:left;width:945px;height:auto;padding-bottom:10px;border-left:1px solid #d3cbc7;}
+.about_cont .about_cont_r .about_tab h3{width:912px;height:56px;line-height:56px;border-bottom:1px solid #d3cbc7;font-size:20px;font-weight:normal;padding-left:35px;}
+.about_cont .about_cont_r .about_tab .about_tab_gsjj{width:877px;padding:10px 35px 0 ;height:auto;line-height:32px;font-size:18px;}
+
+
+
+
+
+
 /*我的账户内页*/
 .tabtil { height: 38px; background: url(../rzg_images/neiye1_133.jpg) repeat-x; }
 .tabtil ul li { font-family: "微软雅黑"; font-size: 12px; line-height: 38px; color: #333; float: left;padding:0 20px; cursor: pointer; }
