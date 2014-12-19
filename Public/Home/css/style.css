@@ -120,10 +120,10 @@ line-height: 38px;}
 
 
 /*---------denglu  登录------------------------*/
-.dl_cont_out{width:100%;height:auto;border-top:1px solid #66ccfb;margin-top:20px;}
-.dl_cont{width:770px;height:auto;border:1px solid #90cae0;margin:40px auto;padding:0 0 30px 30px;}
+.dl_cont_out{width:100%;height:auto;border-top:1px solid #d3cbc7;margin-top:20px;}
+.dl_cont{width:790px;height:auto;border:1px solid #d3cbc7;margin:40px auto;padding:0 0 30px 10px;}
 .dl_cont h2{width:770px;height:80px;line-height:80px;font-size:24px;font-weight:normal;}
-.dl_cont dl{width:770px;height:52px;overflow:hidden;margin-bottom:30px; }
+.dl_cont dl{width:790px;height:52px;overflow:hidden;margin-bottom:30px; }
 .dl_cont dl div{width: 290px;height: 42px;border: 1px solid #D7D7D7;margin-bottom: 25px;margin: 0 auto;}
 .dl_cont dl div img{width: 43px;height: 42px;border-right: 1px solid #D7D7D7;float: left;}
 .dl_cont dl div .txt1 { width: 234px;height: 34px;line-height:40px;border:0px none; background: none repeat scroll 0% 0% #FBFBFB;font-size: 16px;color: #CFCFCF;float: left;}
@@ -148,7 +148,7 @@ line-height: 38px;}
 
 
 /*-----------zhuce  注册------------------------------*/
-.dl_cont .top{width:770px;height:80px;line-height:80px;;overflow:hidden;}
+.dl_cont .top{width:790px;height:80px;line-height:80px;overflow:hidden;}
 .dl_cont .top h2{float:left;width:120px;height:80px;font-size:24px;font-weight:normal}
 .dl_cont .top p{float:right;width:125px;height:80px;font-size:12px;}
 .dl_cont .top p a{color:#66ccfc;}

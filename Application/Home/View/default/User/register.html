@@ -26,33 +26,33 @@
 					<span>* </span>手机号码:
 				</dt>
 				<dd>
-					<input type="text" value="请输入您的手机号码" name="phone" id="phone"
+					<input type="text" value="" placeholder="请输入您的手机号码" name="phone" id="phone"
 						class="txt" />
 				</dd>
-				<span id="checkphone"></span>
+				<span id="checkphone" style="line-height:48px;"></span>
 			</dl>
 			<dl>
 				<dt>
 					<span>* </span>电子邮箱:
 				</dt>
 				<dd>
-					<input type="text" value="请输入您的电子邮箱" id="email"
+					<input type="text" value="" placeholder="请输入您的电子邮箱" id="email"
 						ajaxurl="/member/checkUserEmailUnique.html" errormsg="请填写正确格式的邮箱"
 						nullmsg="请填写邮箱" datatype="e" name="email" class="txt" />
 				</dd>
-				<span id="checkemail"></span>
+				<span id="checkemail" style="line-height:48px;"></span>
 			</dl>
 			<dl>
 				<dt>
 					<span>* </span>用户名:
 				</dt>
 				<dd>
-					<input type="text" value="请输入您的3-5位用户名" id="username"
+					<input type="text" value="" placeholder="请输入您的3-5位用户名" id="username"
 						name="username" class="txt"
 						ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名"
 						nullmsg="请填写用户名" datatype="*1-16" />
 				</dd>
-				<span id="checkuser"></span>
+				<span id="checkuser" style="line-height:48px;"></span>
 			</dl>
 			<dl>
 				<dt>
@@ -74,7 +74,7 @@
 						placeholder="再次输入您的密码" name="repassword" recheck="password"
 						errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" class="txt" />
 				</dd>
-				<span id="checkrepwd"></span>
+				<span id="checkrepwd" style="line-height:48px;"></span>
 			</dl>
 
 			<dl>
@@ -82,23 +82,23 @@
 					<span>* </span>验证码:
 				</dt>
 				<dd>
-					<input type="text" value="请输验证码"  class="yz"
+					<input type="text" value="" placeholder="请输验证码" class="yz"
 						errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify"
 						id="verify" /> <img class="yzBtn verifyimg reloadverify" alt="点击切换" src="{:U('verify')}"
 						style="cursor: pointer;">
 					<!-- <input type="button" value="手机验证" name="" class="yzBtn"/>
                     <p class="yz_call">如果收不到验证码，请拨打<span>400-123-4567</span></p> -->
 				</dd>
-				<span id="checkcode"></span>
+				<span id="checkcode" style="line-height:48px;"></span>
 			</dl>
 			<dl>
 				<dt>
 					<span>*</span>推荐人:
 				</dt>
 				<dd>
-					<input type="text" value="推荐人手机号码或用户名" name="introduce" class="txt" />
+					<input type="text" value="" placeholder="推荐人手机号码或用户名" name="introduce" class="txt" />
 				</dd>
-				<span id="checkintroduce"></span>
+				<span id="checkintroduce" style="line-height:48px;"></span>
 			</dl>
 			<div class="zcCheck">
 				<input type="checkbox" value="" name="" class="check"
