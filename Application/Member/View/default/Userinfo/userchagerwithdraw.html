@@ -6,10 +6,10 @@
     	<div class="zh_cont">
             <h2><a href="{:U('Index')}">我的账户</a></h2>	
             	<include file="Public/left"/>
-	            <div class="zh_cont_r">
-	            <div class="r_main">
-					<div class="tabtil">
-						<ul>
+	            	<div class="zh_cont_r">
+	            		<div class="r_main">
+							<div class="tabtil">
+								<ul>
 							<li class="on">
 								<a href="{:U('Userinfo/userchagerwithdraw')}">资金记录</a>
 							</li>
@@ -22,11 +22,11 @@
 								<a href="{:U('System/withdrawdeposit')}">提现</a>
 							</li>
 						</ul>
-					</div>
-					<div class="box" id="zjjl">
-					<div class="boxmain2"><volist name="list" id="vo">
-							<div class="tabmain">
-								<div class="biaoge">
+							</div>
+							<div class="box" id="zjjl">
+								<div class="boxmain2"><volist name="list" id="vo">
+									<div class="tabmain">
+										<div class="biaoge">
 									<table width="100%" border="0" cellspacing="0" cellpadding="0">
 										<tbody><tr>
 											<th>
@@ -50,48 +50,49 @@
 									</tbody></table>
 
 								</div>
-							</div></volist>
-						</div>
-						<h2 class="otherh2x">
-							资金记录
-						</h2>
-						<div class="boxmain2">
-							<div class="srh">
-								查询时间 起始时间：
-								<input id="startTime" type="text" class="inp140" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})">
-								结束时间：
-								<input id="endTime" type="text" class="inp140" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})">
-								类型:
-								<select name="momeyType" id="momeyType" class="inp80">
-							    <option value="">--请选择--</option>
-							    <option value="-1">国付宝</option>
-							    <option value="804">扣除VIP会费</option>
-							    <option value="251">好友邀请奖励</option>
-							    <option value="-1">手工充值</option>
-							    <option value="653">冻结投标金额</option>
-							    <option value="101">借款成功</option>
-							    <option value="601">扣除借款管理费</option>
-							    <option value="654">扣除投标冻结金额</option>
-							    <option value="804">申请VIP会员</option>
-							    <option value="-1">好友邀请奖励</option>
-							    <option value="-1">冻结提现金额</option>
-							    <option value="-1">提现成功</option>
-							    <option value="-1">奖励充值</option>
-							    <option value="801">扣除短信服务费</option>
-							    <option value="502">手动扣费</option>
-							    <option value="151">投资收到还款</option>
-							    <option value="156">收到逾期罚息</option>
-							    <option value="604">扣除还款金额</option>
-							    <option value="603">扣除逾期罚息</option>
-							    <option value="-1">取消提现</option>
-							    <option value="-1">提现失败</option>
-							    <option value="602">冻结秒还借款费</option>
-							    <option value="105">解冻秒还借款费</option>
-							</select>
+									</div>
+                                    </volist>
+							</div>
+							<h2 class="otherh2x">
+								资金记录
+							</h2>
+							<div class="boxmain2">
+								<div class="srh">
+									查询时间 起始时间：
+									<input id="startTime" type="text" class="inp140" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})">
+									结束时间：
+									<input id="endTime" type="text" class="inp140" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})">
+									类型:
+									<select name="momeyType" id="momeyType" class="inp80">
+							    		<option value="">--请选择--</option>
+							    		<option value="-1">国付宝</option>
+							    		<option value="804">扣除VIP会费</option>
+							    		<option value="251">好友邀请奖励</option>
+							    		<option value="-1">手工充值</option>
+							    		<option value="653">冻结投标金额</option>
+							    		<option value="101">借款成功</option>
+							    		<option value="601">扣除借款管理费</option>
+							    		<option value="654">扣除投标冻结金额</option>
+							    		<option value="804">申请VIP会员</option>
+							    		<option value="-1">好友邀请奖励</option>
+							    		<option value="-1">冻结提现金额</option>
+							    		<option value="-1">提现成功</option>
+							    		<option value="-1">奖励充值</option>
+							    		<option value="801">扣除短信服务费</option>
+							    		<option value="502">手动扣费</option>
+							    		<option value="151">投资收到还款</option>
+							    		<option value="156">收到逾期罚息</option>
+							    		<option value="604">扣除还款金额</option>
+							    		<option value="603">扣除逾期罚息</option>
+							    		<option value="-1">取消提现</option>
+							    		<option value="-1">提现失败</option>
+							    		<option value="602">冻结秒还借款费</option>
+							    		<option value="105">解冻秒还借款费</option>
+								</select>
 
-							<a href="javascript:void(0)" class="cxbtn" onclick="fundRecordList();;">查询</a>
-														</div>
-														<div class="biaoge" id="fundRecord">
+								<a href="javascript:void(0)" class="cxbtn" onclick="fundRecordList();;">查询</a>
+							</div>
+							<div class="biaoge" id="fundRecord">
 							    <table width="100%" border="0" cellspacing="0" cellpadding="0">
 									  <tbody><tr>
 									    <th>序号</th>

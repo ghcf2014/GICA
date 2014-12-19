@@ -57,7 +57,7 @@
         	<div class="cont_bot_l">
            	  <h2>投资列表</h2>
            	     <volist name="list2" id="vo">
-           	     <h4><a href="{:U('Article/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
+           	     <h4><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
             	<ul>
                 	<li>借款金额:<span>￥{$vo.borrow_money}</span></li>
                     <li>年利率:<span>{$vo.borrow_interest_rate}%</span></li>

@@ -319,30 +319,30 @@ line-height: 38px;}
 .zh_cont .zh_cont_l ul li .current{color:#ef681f;}
 .zh_cont .zh_cont_l .li_xhx{border-bottom:1px solid #d3cbc7;}
 
-.zh_cont .zh_cont_r{float:left;width:947px;height:auto;}
+.zh_cont .zh_cont_r{float:left;width:947px;height:auto;min-height:800px;border-left:1px solid #d3cbc7;}
 .zh_cont .zh_cont_r .img{border: 1px solid #DFDFDF;padding: 5px;}
 .zh_cont .zh_cont_r .tab{width:947px;height:auto;padding:0;}
-.zh_cont .zh_cont_r h3{width:927px;height:56px;line-height:56px;font-size:18px;padding:2px 0 0 20px;font-weight:normal;border-left:1px solid #d3cbc7;}
+.zh_cont .zh_cont_r h3{width:927px;height:56px;line-height:56px;font-size:18px;padding:2px 0 0 20px;font-weight:normal;}
 
 /*------------个人中心--------------------------*/
-.zh_cont .zh_cont_r dl{width:927px;padding:20px 0 0 20px;height:260px;overflow:hidden;border-left:1px solid #d3cbc7;}
+.zh_cont .zh_cont_r dl{width:927px;padding:20px 0 0 20px;height:260px;overflow:hidden;}
 .zh_cont .zh_cont_r dt{width:200px;height:260px;float:left;}
 .zh_cont .zh_cont_r dt img{display:block;}
 .zh_cont .zh_cont_r dt p{width:200px;height:60px;line-height:60px;text-align:center;font-size:16px;cursor:pointer;}
 .zh_cont .zh_cont_r dd{width:692px;height:260px;padding-left:35px;float:left;overflow:hidden;}
 .zh_cont .zh_cont_r dd p{width:345px;height:48px;line-height:48px;float:left;font-size:20px;}
 
-.zh_cont .zh_cont_r .ul01{border-left:1px solid #d3cbc7;overflow:hidden;width:927px;height:57px;border-bottom:1px solid #d3cbc7;padding-left:20px;}
+.zh_cont .zh_cont_r .ul01{overflow:hidden;width:927px;height:57px;border-bottom:1px solid #d3cbc7;padding-left:20px;}
 .zh_cont .zh_cont_r .ul01 li{float:left;width:auto;height:57px;margin-right:20px;line-height:57px;font-size:20px;}
 .zh_cont .zh_cont_r .ul01 li .btn{width:70px;height:35px;background:url(../images/70x35pxblue.png) no-repeat;font-size:20px;line-height:35px;margin-top:10px;cursor:pointer;}
 
-.zh_cont .zh_cont_r .ul02{border-left:1px solid #d3cbc7;width:927px;padding-left:20px;height:90px;border-bottom:1px solid #d3cbc7;overflow:hidden;}
+.zh_cont .zh_cont_r .ul02{width:927px;padding-left:20px;height:90px;border-bottom:1px solid #d3cbc7;overflow:hidden;}
 .zh_cont .zh_cont_r .ul02 li{width:px;height:85px;line-height:90px;float:left;font-size:20px;margin-right:38px;cursor:pointer;}
 .zh_cont .zh_cont_r .ul02 li a{line-height:90px;}
 .zh_cont .zh_cont_r .ul02 .ul02_li01 a{color:#ef681f;}
-.zh_cont .zh_cont_r h4{border-left:1px solid #d3cbc7;width:927px;padding-left:20px;font-size:20px;font-weight:normal;border-bottom:1px solid #d3cbc7;height:56px;line-height:56px;}
+.zh_cont .zh_cont_r h4{width:927px;padding-left:20px;font-size:20px;font-weight:normal;border-bottom:1px solid #d3cbc7;height:56px;line-height:56px;}
 
-.zh_cont .zh_cont_r .zh_cont_r_bot{border-left:1px solid #d3cbc7;width:892px;padding-left:55px;height:auto;border-bottom:1px solid #d3cbc7;font-size:18px;}
+.zh_cont .zh_cont_r .zh_cont_r_bot{width:892px;padding-left:55px;height:auto;border-bottom:1px solid #d3cbc7;font-size:18px;}
 .zh_cont .zh_cont_r .zh_cont_r_bot p{width:948px;height:40px;line-height:40px;}
 .zh_cont .zh_cont_r .zh_cont_r_bot ul{width:948px;height:auto;overflow:hidden;}
 .zh_cont .zh_cont_r .zh_cont_r_bot ul li{width:245px;height:48px;line-height:48px;float:left;margin-right:70px;}
@@ -353,7 +353,7 @@ line-height: 38px;}
 
 
 /*----------------基本认证---------------------------*/
-.zh_cont .zh_cont_r .tab .jbrz{border-left:1px solid #d3cbc7;width:650px;height:44px;overflow:hidden;font-size:18px;}
+.zh_cont .zh_cont_r .tab .jbrz{width:650px;height:44px;overflow:hidden;font-size:18px;}
 .zh_cont .zh_cont_r .tab .jbrz dt{float:left;width:200px;height:44px;line-height:44px;text-align:right;margin-right:18px;font-weight:normal;}
 .zh_cont .zh_cont_r .tab .jbrz dd{width:430px;height:44px;float:left;padding:0;}
 .zh_cont .zh_cont_r .tab .jbrz dd .txt{width:388px;height:42px;line-height:42px;padding:0 0 0 10px;border:1px solid #ccc;}
@@ -514,11 +514,13 @@ line-height: 38px;}
 
 
 /*我的账户内页*/
-.tabtil { height: 38px; background: url(../rzg_images/neiye1_133.jpg) repeat-x; }
-.tabtil ul li { font-family: "微软雅黑"; font-size: 12px; line-height: 38px; color: #333; float: left;padding:0 20px; cursor: pointer; }
+.tabtil {width:927px; height: 38px; background: url(../rzg_images/neiye1_133.jpg) repeat-x;}
+.tabtil ul{overflow:hidden;}
+.tabtil ul li { font-family: "微软雅黑"; font-size: 18px; line-height: 38px; color: #333; float: left;padding:0 20px; cursor: pointer; }
 .tabtil ul li:hover{ text-decoration:underline}
 .tabtil ul .on { line-height: 38px; color: #6ecefb; background-image: url(../images/neiye_menu_on.jpg); background-repeat: repeat-x; }
 .tabbox .tabmain { padding-top: 15px; padding-right: 15px; padding-bottom: 25px; padding-left: 15px; border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; border-right-color: #d1d9de; border-left-color: #d1d9de; }
+.box{width:927px;}
 .box  .biaoge { margin-top: 20px; }
 .box  .biaoge table a { color: #136dad; }
 .box  .biaoge table a:hover { color: #00315d; }
@@ -526,7 +528,7 @@ line-height: 38px;}
 .box  .biaoge table { line-height: 28px; }
 .box  .biaoge table tr td { border: 1px solid #ddd; }
 .box  .biaoge table tr th { background-color: #f9f9f9; border: 1px solid #ddd; font-weight: normal; }
-.box .otherh2x { font-family: "微软雅黑"; font-size: 12px; color: #333; padding-left: 15px; text-align: left; }
+.box .otherh2x {width:932px;  font-family: "微软雅黑"; font-size: 16px; color: #333; padding-left: 15px; text-align: left; }
 .box .boxmain2 { padding-top: 20px; padding-bottom: 25px; }
 .box .boxmain2 .srh { line-height: 32px; margin-bottom: 12px; }
 .box .boxmain2 .srh input{ vertical-align: middle}
@@ -552,6 +554,8 @@ line-height: 38px;}
 .box .boxmain2 .friend li .name:hover { color: #00315d; }
 .box .boxmain2 .friend li .sc { color: #999; }
 .box .boxmain2 .friend li .sc:hover { color: #666; }
+
+
 /*前台内页*/
 .til01 { background: url(../rzg_images/sqdk_03.jpg) repeat-x; height:40px; overflow: hidden; height: 100%; }
 .til01 li{ height:40px; float:left; padding:0 15px; line-height:38px; cursor:pointer; }
@@ -608,11 +612,10 @@ line-height: 38px;}
 
 /*--------------安全设置----------------------*/
 /*------身份证--------*/
-.zh_cont .zh_cont_r .tab .aqset_tabH{width:917px;height:111px;line-height:111px;border-bottom:1px dashed #d4ccc8;font-size:24px;overflow:hidden;padding-left:30px;border-left:1px solid #d3cbc7;}
+.zh_cont .zh_cont_r .tab .aqset_tabH{width:917px;height:111px;line-height:111px;border-bottom:1px dashed #d4ccc8;font-size:24px;overflow:hidden;padding-left:30px;}
 .zh_cont .zh_cont_r .tab .aqset_tabH li{float:left;padding-right:40px;width:110px;height:111px;cursor:pointer;line-height: 111px;font-weight:normal;}
 .zh_cont .zh_cont_r .tab .aqset_tabH .cur{color:#ef681f;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .sfz{border-left:1px solid #d3cbc7; 
-width:867px;height:auto;line-height:215px;text-align:center;font-size:20px;color:#666;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .sfz{width:867px;height:auto;line-height:215px;text-align:center;font-size:20px;color:#666;}
 /*-------银行卡---------*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .yhk{width:927px;height:42px;padding-bottom:30px;overflow:hidden;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .yhk dt{font-weight:normal;width:240px;height:42px;line-height:42px;float:left;font-size:18px;text-align:right;}
@@ -627,9 +630,9 @@ width:867px;height:auto;line-height:215px;text-align:center;font-size:20px;color
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_txt{width:330px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_btn{background:url(../images/imgBtn.gif) no-repeat;width:100px;height:41px;float:left;font-size:14px;line-height:40px;text-align:center;cursor:pointer;margin-left:28px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd span{float:left;line-height:40px;padding-left:10px;font-size:14px;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;font-size:18px;cursor:pointer;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;font-size:18px;cursor:pointer;margin-left:400px;}
 /*----------邮箱验证-----------*/
-.zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head{width:879px;height:55px;line-height:55px;font-size:16px;padding-left:68px;border-left:1px solid #d3cbc7; }
+.zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head{width:879px;height:55px;line-height:55px;font-size:16px;padding-left:68px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .email{width:927px;height:42px;overflow:hidden;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .email dt{width:240px;height:42px;line-height:42px;float:left;font-size:18px;text-align:right;font-weight:normal;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .email dd{width:660px;height:42px;float:left;padding-left:25px;overflow:hidden;}
@@ -642,14 +645,14 @@ width:867px;height:auto;line-height:215px;text-align:center;font-size:20px;color
 .zh_cont .zh_cont_r .tab .aqset_tabC .jymm dd .jymm_txt{width:330px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .jymm_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;margin:25px 0 0 400px;font-size:18px;cursor:pointer;}
 /*-----------登录密码-------------------*/
-.zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head2{width:900px;height:55px;line-height:55px;font-size:16px;padding-left:68px;border-left:1px solid #d3cbc7;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head2{width:900px;height:55px;line-height:55px;font-size:16px;padding-left:68px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm{width:968px;height:42px;padding-bottom:30px;overflow:hidden;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dt{width:240px;height:42px;line-height:42px;float:left;font-size:18px;text-align:right;font-weight:normal;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dd{width:703px;height:42px;float:left;padding-left:25px;overflow:hidden;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dd .dlmm_txt{width:330px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;margin:25px 0 0 400px;font-size:18px;cursor:pointer;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .aqset_btn{width:547px;height:300px;border-left:1px solid #d3cbc7;padding:0 0 0 400px;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .aqset_btn{width:547px;height:auto;padding:0 0 0 400px;}
 
 
 
