@@ -52,7 +52,6 @@ class IndexController extends HomeController {
         else {
            
         }
-       
         $this->assign('jindu',$jindu);//栏目
         $this->assign('category',$category);//栏目
         $this->assign('lists',$lists);//列表

@@ -17,6 +17,14 @@
  */
 defined('THINK_PATH') or exit();
 return  array(
+    'MAIL_HOST' =>'smtp.exmail.qq.com',
+     'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+     'MAIL_USERNAME' =>'admin@spiralcats.com',
+     'MAIL_FROM' =>'1763454262@qq.com',
+     'MAIL_FROMNAME' =>'cnsecer',
+     'MAIL_PASSWORD' =>'hzsj120192',
+     'MAIL_CHARSET' =>'utf-8',
+     'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
     /* 应用设定 */
     'APP_USE_NAMESPACE'     =>  true,    // 应用类库是否使用命名空间
     'APP_SUB_DOMAIN_DEPLOY' =>  false,   // 是否开启子域名部署

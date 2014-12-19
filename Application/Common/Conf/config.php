@@ -42,4 +42,26 @@ return array(
 
     /* 自定义标签集*/
     // 'TAGLIB_PRE_LOAD'=>"Html,Cx,Hzsj"
+
+    // 配置邮件发送服务器
+    
+    // 'MAIL_TYPE' =>'smtp',
+    //  'MAIL_SMTP_HOST' =>'smtp.exmail.qq.com',
+    //  'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+    //  'MAIL_SMTP_USER' =>'admin@spiralcats.com',
+    //  'MAIL_SMTP_CE' =>'380003832@qq.com',
+    //  'MAIL_FROMNAME' =>'cnsecer',
+    //  'MAIL_SMTP_PASS' =>'hzsj120192',
+    //  'MAIL_CHARSET' =>'utf-8',
+    //  'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
+
+      // 配置邮件发送服务器
+ 'MAIL_HOST' =>'smtp.exmail.qq.com',
+ 'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+ 'MAIL_USERNAME' =>'admin@spiralcats.com',
+ 'MAIL_FROM' =>'admin@spiralcats.com',
+ 'MAIL_FROMNAME' =>'cnsecer',
+ 'MAIL_PASSWORD' =>'hzsj120192',
+ 'MAIL_CHARSET' =>'utf-8',
+ 'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
 );

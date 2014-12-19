@@ -1040,47 +1040,75 @@ $    <-    4    ->    $    <-    4    ->    $    <-    4    ->
  }
 ///////////////////////////
 //发送邮件
-function send_mail($to = '', $subject = '', $body = '', $name = '', $attachment = null){ $from_email = C('MAIL_SMTP_USER'); $from_name = C('WEB_SITE'); $reply_email = '';
-        $reply_name = '';
+// function send_mail($to = '', $subject = '', $body = '', $name = '', $attachment = null){ $from_email = C('MAIL_SMTP_USER'); $from_name = C('WEB_SITE'); $reply_email = '';
+//         Vendor('PHPMailer.PHPMailerAutoload');
+//         $reply_name = '';
 
-        //new phpmailer();
-        //$mail = new ORG\PHPMailer\phpmailer();
-        import('ORG.PHPMailer.phpmailer');//从PHPMailer目录导入phpmailer.class.php类文件
-        $mail             = new PHPMailer; //实例化PHPMailer
-        $mail->CharSet    = 'UTF-8'; //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码
-        $mail->IsSMTP();  // 设定使用SMTP服务
-        $mail->SMTPDebug  = 0;                     // 关闭SMTP调试功能
-                                                   // 1 = errors and messages
-                                                   // 2 = messages only
-        $mail->SMTPAuth   = true;                  // 启用 SMTP 验证功能
-        $mail->SMTPSecure = '';                 // 使用安全协议
-        $mail->Host       = C('MAIL_SMTP_HOST');  // SMTP 服务器
-        $mail->Port       = C('MAIL_SMTP_PORT');  // SMTP服务器的端口号
-        $mail->Username   = C('MAIL_SMTP_USER');  // SMTP服务器用户名
-        $mail->Password   = C('MAIL_SMTP_PASS');  // SMTP服务器密码
-        $mail->SetFrom($from_email, $from_name);
-        $replyEmail       = $reply_email?$reply_email:$from_email;
-        $replyName        = $reply_name?$reply_name:$from_name;
-        if($to == ''){
-        $to = C('MAIL_SMTP_CE');//邮件地址为空时，默认使用后台默认邮件测试地址
-        }
-        if($name == ''){
-        $name = C('WEB_SITE');//发送者名称为空时，默认使用网站名称
-        }
-        if($subject == ''){
-        $subject = C('WEB_SITE_TITLE');//邮件主题为空时，默认使用网站标题
-        }
-        if($body == ''){
-        $body = C('WEB_SITE_DESCRIPTION');//邮件内容为空时，默认使用网站描述
-        }
-        $mail->AddReplyTo($replyEmail, $replyName);
-        $mail->Subject    = $subject;
-        $mail->MsgHTML($body);//解析
-        $mail->AddAddress($to, $name);
-        if(is_array($attachment)){ // 添加附件
-            foreach ($attachment as $file){
-                is_file($file) && $mail->AddAttachment($file);
-            }
-        }
-        return $mail->Send() ? true : $mail->ErrorInfo;//返回错误信息
+//         // new phpmailer();
+//         // $mail = new THINK\PHPMailer\phpmailer();
+//         import('THINK.PHPMailer.phpmailer');//从PHPMailer目录导入phpmailer.class.php类文件
+//         $mail             = new PHPMailer; //实例化PHPMailer
+//         $mail->CharSet    = 'UTF-8'; //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码
+//         $mail->IsSMTP();  // 设定使用SMTP服务
+//         $mail->SMTPDebug  = 0;                     // 关闭SMTP调试功能
+//                                                    // 1 = errors and messages
+//                                                    // 2 = messages only
+//         $mail->SMTPAuth   = true;                  // 启用 SMTP 验证功能
+//         $mail->SMTPSecure = '';                 // 使用安全协议
+//         $mail->Host       = C('MAIL_SMTP_HOST');  // SMTP 服务器
+//         $mail->Port       = C('MAIL_SMTP_PORT');  // SMTP服务器的端口号
+//         $mail->Username   = C('MAIL_SMTP_USER');  // SMTP服务器用户名
+//         $mail->Password   = C('MAIL_SMTP_PASS');  // SMTP服务器密码
+//         $mail->SetFrom($from_email, $from_name);
+//         $replyEmail       = $reply_email?$reply_email:$from_email;
+//         $replyName        = $reply_name?$reply_name:$from_name;
+//         if($to == ''){
+//         $to = C('MAIL_SMTP_CE');//邮件地址为空时，默认使用后台默认邮件测试地址
+//         }
+//         if($name == ''){
+//         $name = C('WEB_SITE');//发送者名称为空时，默认使用网站名称
+//         }
+//         if($subject == ''){
+//         $subject = C('WEB_SITE_TITLE');//邮件主题为空时，默认使用网站标题
+//         }
+//         if($body == ''){
+//         $body = C('WEB_SITE_DESCRIPTION');//邮件内容为空时，默认使用网站描述
+//         }
+//         $mail->AddReplyTo($replyEmail, $replyName);
+//         $mail->Subject    = $subject;
+//         $mail->MsgHTML($body);//解析
+//         $mail->AddAddress($to, $name);
+//         if(is_array($attachment)){ // 添加附件
+//             foreach ($attachment as $file){
+//                 is_file($file) && $mail->AddAttachment($file);
+//             }
+//         }
+//         return $mail->Send() ? true : $mail->ErrorInfo;//返回错误信息
+// }
+function sendMail($to, $subject, $content) {
+ 
+Vendor('PHPmailer.PHPMailerAutoload');
+ 
+$mail = new PHPMailer(); //实例化
+ $mail->IsSMTP(); // 启用SMTP
+ $mail->Host=C('MAIL_HOST'); //smtp服务器的名称（这里以126邮箱为例）
+ $mail->SMTPAuth = C('MAIL_SMTPAUTH'); //启用smtp认证
+ $mail->Username = C('MAIL_USERNAME'); //你的邮箱名
+ $mail->Password = C('MAIL_PASSWORD') ; //邮箱密码
+ $mail->From = C('MAIL_FROM'); //发件人地址（也就是你的邮箱地址）
+ $mail->FromName = C('MAIL_FROMNAME'); //发件人姓名
+ $mail->AddAddress($to,"name");
+ $mail->WordWrap = 50; //设置每行字符长度
+ $mail->IsHTML(C('MAIL_ISHTML')); // 是否HTML格式邮件
+ $mail->CharSet=C('MAIL_CHARSET'); //设置邮件编码
+ $mail->Subject =$subject; //邮件主题
+ $mail->Body = $content; //邮件内容
+ $mail->AltBody = "This is the body in plain text for non-HTML mail clients"; //邮件正文不支持HTML的备用显示
+ if(!$mail->Send()) {
+ echo "Message could not be sent. <p>";
+ echo "Mailer Error: " . $mail->ErrorInfo;
+ exit();
+ } else {
+ echo "Message has been sent";
+ }
 }
