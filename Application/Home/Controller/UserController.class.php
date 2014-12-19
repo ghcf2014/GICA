@@ -41,29 +41,15 @@ class UserController extends HomeController {
 
            		//TODO: 发送验证邮件
            		$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:
-
-欢迎注册工合财富，您的注册邮箱是：'.$email.' 点击下面的链接就可以完成邮箱认证：
-
-(如果链接无法点击，请将它拷贝到浏览器的地址栏中。)
-
-邮件发送时间： '.time().'
-
+欢迎注册工合财富，您的注册邮箱是：'.$email.' 。
+邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'
 请在24小时内激活
-
 本邮件由工合财富系统自动发出，请勿直接回复！
 如果您有任何疑问或建议，请登陆ghcf.com');
-		        if($a){
-		        $this->success('登录成功！');
-		        }else{
-		        $this->error('未成功');
-		        }
-
-				$this->success('注册成功！',U('login'));
-
+		       $this->success('注册成功！',U('login'));
 			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));
 			}
-
 		} else { //显示注册表单
 			$this->display();
 		}
@@ -88,13 +74,13 @@ class UserController extends HomeController {
 				$Member = D('Member');
 				if($Member->login($uid)){ //登录用户
 					//TODO:跳转到登录前页面
-					$this->success('登录成功！',U('Member/Index/index'));
-					$a->SendMail('1763454262@qq.com','1230','1235');
-			        if($a){
-			        $this->success('登录成功！');
-			        }else{
-			        $this->error('未成功');
-			        }
+					// $this->success('登录成功！',U('Member/Index/index'));
+					// $a->SendMail('1763454262@qq.com','1230','1235');
+			  //       if($a){
+			  //       $this->success('登录成功！');
+			  //       }else{
+			  //       $this->error('未成功');
+			  //       }
 			               
 
 				} else {
