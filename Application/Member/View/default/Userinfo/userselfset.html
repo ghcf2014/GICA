@@ -14,8 +14,8 @@
                 <!--基本认证-->
                 <div class="tab"><form action="{:U('add?id='.$vb['id'])}" method="post">
                     <h3>当前位置>基本认证</h3>
-                    <p style="background:#d3cbc7;width:968px;height:1px;"></p>
-                    <dl class="jbrz" style="margin-top:40px">
+                    <p style="background:#d3cbc7;width:948px;height:1px;"></p>
+                    <dl class="jbrz">
                     	<dt>真实姓名</dt>
                         <dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
                     </dl>
@@ -90,7 +90,9 @@
                     	<dt>现居地址</dt>
                         <dd><input type="text" class="txt" name="address" value="{$vo.address}"></dd>
                     </dl>
-                    <input type="submit" class="btn" value="保存"/>
+                    <div class="jbrz_sub_btn" style="border-left:1px solid #d3cbc7;">
+                    	<input type="submit" class="btn" value="保存"/>
+                    </div>
                     </form>
                 </div>
                 
