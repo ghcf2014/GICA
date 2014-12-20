@@ -152,8 +152,8 @@
 											</td>
 										</tr>
 										<tr>
-											<td align="right">
-												&nbsp;
+											<td align="right">&nbsp;
+												
 
 											</td>
 											<td class="tx">
@@ -162,8 +162,8 @@
 											</td>
 										</tr>
 										<tr>
-											<td align="right">
-												&nbsp;
+											<td align="right">&nbsp;
+												
 
 											</td>
 											<td class="tishi">
@@ -216,35 +216,35 @@
 	});
 </script>
 		<script>
-	$(function() {
-		dqzt(4);
-		var t = '${map.idNo}' == '' ? '' : '${map.idNo}';
-		var len = t.length;
-
-		if (len == 15) {
-			var tmplen = t.substr(0, 2);
-
-			$('#idNo1').html(tmplen + '***** **** ****');
-		} else if (len == 18) {
-			var tttttt = t.substr(0, 2);
-			$('#idNo1').html(tttttt + '**** **** **** ****');
-		}
-
-		//alert(t.substr);
-
-		var tt = '${map.cellPhone}' == '' ? '' : '${map.cellPhone}';
-		var len1 = tt.length;
-		var tmplen1;
-		var tmplen2;
-		if (len1 != 0) {
-			tmplen1 = tt.substr(0, 3);
-			tmplen2 = tt.substr(7, 11);
-			$('#cellPhone1').html(tmplen1 + ' **** ' + tmplen2);
-		}
-	});
-<%--  $("#grtx").hide(); --%>
+		$(function() {
+			dqzt(4);
+			var t = '${map.idNo}' == '' ? '' : '${map.idNo}';
+			var len = t.length;
 	
-</script>
+			if (len == 15) {
+				var tmplen = t.substr(0, 2);
+	
+				$('#idNo1').html(tmplen + '***** **** ****');
+			} else if (len == 18) {
+				var tttttt = t.substr(0, 2);
+				$('#idNo1').html(tttttt + '**** **** **** ****');
+			}
+	
+			//alert(t.substr);
+	
+			var tt = '${map.cellPhone}' == '' ? '' : '${map.cellPhone}';
+			var len1 = tt.length;
+			var tmplen1;
+			var tmplen2;
+			if (len1 != 0) {
+				tmplen1 = tt.substr(0, 3);
+				tmplen2 = tt.substr(7, 11);
+				$('#cellPhone1').html(tmplen1 + ' **** ' + tmplen2);
+			}
+		});
+		<%--  $("#grtx").hide(); --%>
+	
+	</script>
 		<script type="text/javascript">
 	//提交基本资料 start-->
 	var timers = 180;

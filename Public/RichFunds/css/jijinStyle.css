@@ -10,7 +10,7 @@ a:hover{color:#0A99DB;text-decoration:none;}
 
 /*--------基金首页--------------------*/
 /*----bar----------------*/
-.bar_out{width:100%;height:36px;background:url(../images/bar_bg.png) repeat-x;}
+.bar_out{width:100%;height:36px;background:#474747;}
 .bar{width:980px;height:36px;margin:0 auto;overflow:hidden;}
 .bar ul{float:left;width:240px;height:36px;overflow:hidden;}
 .bar ul li{float:left;width:60px;height:36px;line-height:36px;padding:0 30px;}
@@ -73,7 +73,7 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .con .con_bot .con_bot_l .con_bot_l_tab .con_bot_l_tab_conOut .con_bot_l_tab_con .con_bot_l_tab_con_ul li p{line-height:40px;}
 .con .con_bot .con_bot_l .con_bot_l_tab .con_bot_l_tab_conOut .con_bot_l_tab_con .con_bot_l_tab_con_ul li h2{font-size:36px;color:#343434;}
 /*-------con_bot_l_con2------------------*/
-.con .con_bot .con_bot_l .con_bot_l_con2{width:690px;height:175px;margin-top:20px;overflow:hidden;}
+.con .con_bot .con_bot_l .con_bot_l_con2{width:690px;height:200px;margin-top:20px;overflow:hidden;}
 .con .con_bot .con_bot_l .con_bot_l_con2 .con_bot_l_con2_dl{width:168px;height:172px;border:1px solid #e3e2de;margin-right:3px;float:left;}
 .con .con_bot .con_bot_l .con_bot_l_con2 .con_bot_l_con2_dl dt{width:168px;height:44px;border-bottom:1px solid #e3e2de;padding-top:8px;}
 .con .con_bot .con_bot_l .con_bot_l_con2 .con_bot_l_con2_dl dt h3{font-weight:normal;width:113px;height:22px;background:url(../images/tubiao3.png) no-repeat 20px center;padding-left:55px;line-height:22px;font-size:16px;}
