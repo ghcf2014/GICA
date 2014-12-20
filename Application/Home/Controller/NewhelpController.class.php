@@ -30,6 +30,7 @@ class NewhelpController extends HomeController {
 
         $this->display();
     }
+    
         public function cpi_tools(){
 
         $this->display();
