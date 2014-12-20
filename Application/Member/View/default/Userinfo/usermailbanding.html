@@ -8,84 +8,33 @@
             <h2><a href="{:U('Index')}">我的账户</a></h2>	
             	<include file="Public/left"/>
                 <div class="zh_cont_r">
-                	<div class="r_main">
-					<div class="tabtil">
-						<ul>
-							<li class="shigong">
-								个人详细信息
-							</li>
-								<li onclick="loadWorkInit('queryWorkInit.htm');">
-								工作认证信息
-							</li>
-							<li class="shigong">
-								修改密码
-							</li>
-							<li>
-								<a href="{:U('Userinfo/userfindpassbyphone')}">更换手机</a>
-							</li>
-							<li class="on" >
-								<a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a>
-							</li>
-							<li  class="shigong">
-								通知设置
-							</li>
-							<li id="li_tx">
-								<a href="{:U('Userinfo/userbankset')}">银行卡设置</a>
-							</li>
-						</ul>
-					</div>
-
-					<!-- 邮箱 -->
-					<div class="box">
-						<div class="boxmain2" style="padding-top: 10px;">
-							<div class="biaoge2" style="margin-top: 0px;">
-								<table width="100%" border="0" cellspacing="0" cellpadding="0"
-									style="line-height: 42px;">
-									<tr>
-										<th colspan="2" align="left" style="padding-top: 0px;">
-											邮箱设置
-										</th>
-									</tr>
-									<tr>
-										<td align="right" style="padding-right: 40px;">
-											邮箱地址：
-										</td>
-										<td>
-										<volist name="list" id="vo">
-<!-- 											<s:if test="paramMap.flag==2">
-     ${paramMap.email }<a style="color: red;">(该邮箱已绑定)</a>
-											</s:if>
-											<s:else> -->
-
-												<input type="text" name="paramMap.email" class="inp188"
-													id="mails" value="{$vo.email}" />
-										</volist>
-												<span style="color: red;">*<s:fielderror
-														fieldName="paramMap.email" /> </span>
-												<span><input type="button" class="chaxun shigong"
-														value="发送邮件" id="saveEmail" /><a style="color: red;">(您还没在邮箱里激活认证哦！赶紧认证吧。)</a>
-												</span>
-
-											</s:else>
-										</td>
-									</tr>
-									<tr>
-										<div id="ok" style="color: red; height: 20px;">
-											<!-- ${paramMap.msg } -->
-										</div>
-									</tr>
-									<tr>
-										<td align="right" style="padding-right: 40px;">
-
-										</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-
-
-				</div>
+                	<div class="tab">
+                    <h3>当前位置>安全设置</h3>
+                    <p style="background:#d3cbc7;width:947px;height:1px;"></p>
+                    <ul class="aqset_tabH">
+                    	<li><a href="{:U('Userinfo/usersaftyset')}">登录密码</a></li>
+                    	<li>交易密码</li>
+                    	<li><a href="{:U('Userinfo/usermailbanding')}"class="cur">邮箱设置</a></li>
+                    	<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
+                    	<li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
+                    	<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
+                    </ul>
+                    <div class="aqset_tabC_out"><volist name="list" id="vo">
+                        <!--邮箱验证-->
+                        <div class="aqset_tabC">
+                            <p class="aqset_tabC_head">邮箱验证</p>
+                            <dl class="email">
+                                <dt>邮件地址：</dt>
+                                <dd><input type="text" class="email_txt" value="{$vo.email}"><input type="button" class="email_btn" value="修改邮箱"></dd>
+                            </dl> 
+                        </div>
+                        <!--身份证验证-->
+                        <div class="aqset_tabC" style="display:none">
+                            <p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>	
+                        </div>
+                        
+                    	</volist>
+                    </div>
 
             </div>
         </div>

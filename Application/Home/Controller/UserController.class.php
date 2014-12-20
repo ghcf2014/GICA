@@ -74,15 +74,8 @@ class UserController extends HomeController {
 				$Member = D('Member');
 				if($Member->login($uid)){ //登录用户
 					//TODO:跳转到登录前页面
-					// $this->success('登录成功！',U('Member/Index/index'));
-					// $a->SendMail('1763454262@qq.com','1230','1235');
-			  //       if($a){
-			  //       $this->success('登录成功！');
-			  //       }else{
-			  //       $this->error('未成功');
-			  //       }
+					$this->success('登录成功！',U('Member/Index/index'));
 			               
-
 				} else {
 					$this->error($Member->getError());
 				}

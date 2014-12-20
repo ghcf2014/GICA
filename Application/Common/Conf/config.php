@@ -56,12 +56,12 @@ return array(
     //  'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
 
       // 配置邮件发送服务器
- 'MAIL_HOST' =>'smtp.exmail.qq.com',
- 'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
- 'MAIL_USERNAME' =>'admin@spiralcats.com',
- 'MAIL_FROM' =>'admin@spiralcats.com',
- 'MAIL_FROMNAME' =>'cnsecer',
- 'MAIL_PASSWORD' =>'hzsj120192',
- 'MAIL_CHARSET' =>'utf-8',
- 'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
-);
+	 'MAIL_HOST' =>'smtp.exmail.qq.com',
+	 'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+	 'MAIL_USERNAME' =>'admin@spiralcats.com',
+	 'MAIL_FROM' =>'admin@spiralcats.com',
+	 'MAIL_FROMNAME' =>'工合财富',
+	 'MAIL_PASSWORD' =>'hzsj120192',
+	 'MAIL_CHARSET' =>'utf-8',
+	 'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
+	);

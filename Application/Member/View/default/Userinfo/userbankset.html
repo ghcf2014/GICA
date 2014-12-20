@@ -8,123 +8,48 @@
             <h2><a href="{:U('Index')}">我的账户</a></h2>	
             	<include file="Public/left"/>
                 <div class="zh_cont_r">
-                	<div class="r_main">
-					<div class="tabtil">
-						<ul>
-							<li class="shigong">
-								个人详细信息
-							</li>
-						   <li class="shigong">
-								工作认证信息
-							</li>  
-							<li onclick="{:U('Userinfo/userbankset')}">
-							<li class="shigong">
-								修改密码
-							</li>
-							<li id="li_bp">
-								<a href="{:U('Userinfo/userfindpassbyphone')}">更换手机</a>
-							</li>
-							<li>
-								<a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a>
-							</li>
-							<li class="shigong">
-								通知设置
-							</li>
-							<li id="li_tx" class="on">
-								<a href="{:U('Userinfo/userbankset')}">银行卡设置</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="box">
-						<div class="boxmain2" style="padding-top: 10px;">
-							<div class="biaoge2" style="margin-top: 0px;"><volist name="list" id="vo">
-							<form action="{:U('userbankset_save')}" method="post">
-								<table width="100%" border="0" cellspacing="0" cellpadding="0">
-									<tr>
-										<th colspan="2" align="left" style="padding-top: 0px;">
-											提现银行
-											<br />
-										</th>
-									</tr>
-									<tr>
-										<td width="18%" align="right">
-											真实姓名：
-											<br />
-										</td>
-										<td width="83%">
-											<span class="txt" id="cardUserName1"> <s:if
-													test="%{#request.realName==''}">
-													<s:property value="#request.realName" default="---">{:get_username()}</s:property>
-												</s:if>
-												<s:else>
-													<shove:sub value="#request.realName" size="2" suffix="***" />*
-													</s:else> </span>
-											<br />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">
-											开户行：
-											<br />
-										</td>
-										<td>
-											<input type="text" class="inp188" name="bankName" value="{$vo.bank_name}" />
-											<span class="txt">输入您的开户银行名称</span>
-											<br />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">
-											支行：
-											<br />
-										</td>
-										<td>
-											<input type="text" class="inp188" name="subBankName" value="{$vo.bank_address}"/>
-											<span class="txt">输入您的开户支行</span>
-											<br />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">
-											卡号：
-											<br />
-										</td>
-										<td>
-											<input type="text" class="inp188" name="bankCard" value="{$vo.bank_num}"/>
-											<span class="txt">输入您的卡号</span>
-											<br />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">
-											&nbsp;
-											<br />
-										</td>
-										<td style="padding-top: 10px;">
-											<input  type="submit" class="bcbtn" value="保存">
-											<!-- <a href="javascript:void(0);" class="bcbtn" onclick="addBankInfo()">提交</a> -->
-											<br />
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<span style="color: red; float: none;" id="bk1_tip"
-												class="formtips"></span>
-										</td>
-									</tr>
-								</table>
-								</from></volist>
-
-							</div>
-							<div class="biaoge2">
-							</div>
-							<span id="bankInfo"></span>
-						</div>
-					</div>
-				</div>
-
-            </div>
+                	<div class="tab">
+                    <h3>当前位置>安全设置</h3>
+                    <p style="background:#d3cbc7;width:947px;height:1px;"></p>
+                    <ul class="aqset_tabH">
+                    	<li><a href="{:U('Userinfo/usersaftyset')}">登录密码</a></li>
+                    	<li>交易密码</li>
+                    	<li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
+                    	<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
+                    	<li ><a href="{:U('Userinfo/userbankset')}" class="cur">银行卡</a></li>
+                    	<li ><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
+                    </ul>
+                    <div class="aqset_tabC_out">  <volist name="list" id="vo">
+							<form action="{:U('userbankset_save')}" method="post">                      
+                        <!--银行卡验证-->
+                        <div class="aqset_tabC">
+                            <dl class="yhk">
+                                <dt>平台昵称：{:get_username()}</dt>
+                                <dd></dd>
+                            </dl>
+                            <dl class="yhk">
+                                <dt>开户行：</dt>
+                                <dd><input type="text" class="yhk_txt" name="bankName" value="{$vo.bank_name}"><span>输入您的开户银行名称</span></dd>
+                            </dl>
+                            <dl class="yhk">
+                                <dt>支行：</dt>
+                                <dd><input type="text" class="yhk_txt" name="subBankName" value="{$vo.bank_address}"><span>输入您的开户支行</span></dd>
+                            </dl>
+                            <dl class="yhk">
+                                <dt>卡号：</dt>
+                                <dd><input type="text" class="yhk_txt" name="bankCard" value="{$vo.bank_num}"><span>输入您的卡号 </span></dd>
+                            </dl>
+                            <input type="submit" class="yhk_btn" value="提交">
+                        </div>
+                        
+                        <!--身份证验证-->
+                        <div class="aqset_tabC" style="display:none">
+                            <p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>	
+                        </div>
+                        
+                    	</from></volist>
+                    </div>
+                </div>	
         </div>
     </div>
 	<!--content end-->
