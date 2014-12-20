@@ -139,12 +139,12 @@ line-height: 38px;}
 .dl_cont_out{width:100%;height:auto;border-top:1px solid #d3cbc7;margin-top:20px;}
 .dl_cont{width:790px;height:auto;border:1px solid #d3cbc7;margin:40px auto;padding:0 0 30px 10px;}
 .dl_cont h2{width:770px;height:80px;line-height:80px;font-size:24px;font-weight:normal;}
-.dl_cont dl{width:575px;height:52px;overflow:hidden;margin-bottom:30px; padding-left:215px;}
+.dl_cont dl{width:790px;height:52px;overflow:hidden;margin-bottom:30px; }
 .dl_cont dl div{width: 290px;height: 42px;border: 1px solid #D7D7D7;margin-bottom: 25px;float:left;}
 .dl_cont dl div img{width: 43px;height: 42px;border-right: 1px solid #D7D7D7;float: left;}
 .dl_cont dl div .txt1 { width: 234px;height: 34px;line-height:40px;border:0px none; background: none repeat scroll 0% 0% #FBFBFB;font-size: 16px;color: #CFCFCF;float: left;}
 .dl_cont dt{width:215px;height:44px;float:left;text-align:right;line-height:44px;font-size:18px;font-weight:normal;padding-right:12px;}
-.dl_cont dt span{color:#6acbff;float:left;}
+.dl_cont dt span{color:#6acbff;}
 .dl_cont dd{width:406px;height:52px;float:left;overflow:hidden;}
 .dl_cont dd .txt{width:388px;height:42px;border:1px solid #6acbff;background:#e1e5e6;line-height:42px;padding-left:10px;color:#4e4f51;}
 .dl_cont dd .yz{width:90px;height:42px;line-height:42px;background:#e1e5e6;border:1px solid #6acbff;float:left;padding-left:10px;margin-right:10px;}
