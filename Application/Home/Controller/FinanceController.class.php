@@ -10,14 +10,15 @@ use OT\DataDictionary;
 class FinanceController extends HomeController {
 
 	//系统首页
-    public function index(){
+    public function index($type=1){
+
             import('ORG.Util.Page');// 导入分页类
             $listBorrow  = M('z_borrow_info');
-            $count      = $listBorrow ->where('borrow_status not in (1,5,3)')->count();
+            $count      = $listBorrow ->where('borrow_status not in (1,5,3) ')->count();
             $Page = new  \Think\Page($count, 8);
             $show       = $Page->show();
             $orderby['borrow_status']='ASC';
-            $list = $listBorrow->where('borrow_status not in (1,5,3)')->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
+            $list = $listBorrow->where('borrow_status not in (1,5,3) and borrow_type = '.$type)->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
             $this->assign('list2',$list);
             $this->assign('page',$show);
             $this->display();

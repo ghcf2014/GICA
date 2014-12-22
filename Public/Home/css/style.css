@@ -142,7 +142,7 @@ line-height: 38px;}
 .dl_cont dl{width:790px;height:52px;overflow:hidden;margin-bottom:30px; }
 .dl_cont dl div{width: 290px;height: 42px;border: 1px solid #D7D7D7;margin-bottom: 25px;float:left;}
 .dl_cont dl div img{width: 43px;height: 42px;border-right: 1px solid #D7D7D7;float: left;}
-.dl_cont dl div .txt1 { width: 234px;height: 34px;line-height:40px;border:0px none; background: none repeat scroll 0% 0% #FBFBFB;font-size: 16px;color: #CFCFCF;float: left;}
+.dl_cont dl div .txt1 { width: 234px;height: 34px;line-height:40px;border:0px none; background: none repeat scroll 0% 0% #FBFBFB;font-size: 16px;float: left;}
 .dl_cont dt{width:215px;height:44px;float:left;text-align:right;line-height:44px;font-size:18px;font-weight:normal;padding-right:12px;}
 .dl_cont dt span{color:#6acbff;}
 .dl_cont dd{width:406px;height:52px;float:left;overflow:hidden;}

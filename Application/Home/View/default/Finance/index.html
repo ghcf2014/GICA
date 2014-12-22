@@ -1,17 +1,15 @@
-<block name="body">
 <extend name="Base/common"/>
 <block name="body">
- 
 <!-- 引用头部公共部分 -->
-<!--woyaotouzi_banner start--->
+<!-- woyaotouzi_banner start -->
     <div class="tz_banner">
     	<div class="tz_banner_in"></div>
     </div>
-	<!--woyaotouzi_banner end--->
+	<!-- woyaotouzi_banner end -->
     
     
-<!--content start-->
-  <div class="tz_cont">
+<!-- content start -->
+  <div class="tz_cont" id="tz_cont">
       <!--tz_cont_head01-->
       <ul class="tz_cont_head01">
           <li class="current">全部借款</li>
@@ -27,11 +25,11 @@
       <!--tz_cont_head02-->
         <ul class="tz_cont_head02">
           <li class="tz_cont_head02_li01">标的类型:</li>
-            <li class="current">信用标</li>
-            <li>净值标</li>
-            <li>秒还标</li>
-            <li>担保标</li>
-            <li>抵押标</li>
+            <li class="current"><a href="{:U('Finance/index?type=1#tz_cont')}">信用标</a></li>
+            <li><a href="{:U('Finance/index?type=2#tz_cont')}">净值标</a></li>
+            <li><a href="{:U('Finance/index?type=3#tz_cont')}">秒还标</a></li>
+            <li><a href="{:U('Finance/index?type=4#tz_cont')}">担保标</a></li>
+            <li><a href="{:U('Finance/index?type=5#tz_cont')}">抵押标</a></li>
         </ul>
 
       <!--tz_cont_head03-->       
@@ -51,7 +49,7 @@
         <!--tz_cont_head04-->  
             <ul class="tz_cont_head04">
                 <li><a href="{:U('Borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></li>
-                <li class="li02"><span>￥:</span>{$vo.borrow_money|money_upper=###}</li>
+                <li class="li02"><span>￥</span>{$vo.borrow_money}</li>
                 <li>{$vo.borrow_interest_rate}%</li>
                 <li>{$vo.borrow_duration}月</li>
                 <li>本息保护</li>
