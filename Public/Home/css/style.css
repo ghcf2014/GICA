@@ -547,7 +547,7 @@ line-height: 38px;}
 .box .otherh2x {width:932px;  font-family: "微软雅黑"; font-size: 16px; color: #333; padding-left: 15px; text-align: left; }
 .box .boxmain2 { padding-top: 20px; padding-bottom: 25px; }
 .box .boxmain2 .srh { line-height: 32px; margin-bottom: 12px; }
-.box .boxmain2 .srh input{ vertical-align: middle}
+.box .boxmain2 .srh input{width:78px; vertical-align: middle}
 .box .boxmain2 .srh a{ vertical-align: middle}
 .cxbtn { line-height: 18px; color: #333; background-image: url(../rzg_images/030213_3.jpg); background-repeat: repeat-x; text-align: center; display: inline-block; height: 18px; width: 58px; border: 1px solid #ccc; }
 .cxbtn:hover { color: #000; }
@@ -584,17 +584,18 @@ line-height: 38px;}
 /*前台内页上传区域*/
 .rmainbox .tab table tr th { font-size: 16px; background-color: #FAFAFA; padding-left: 30px; line-height: 28px; }
 .rmainbox .rzbox { margin-top: 8px; margin-bottom: 20px; }
-.rmainbox .rzbox h3 { font-size: 14px; line-height: 32px; font-weight: bold; color: #666; }
+.rmainbox .rzbox h3 {width:890px; font-size: 14px; line-height: 32px; font-weight: bold; color: #666; }
 .rmainbox .rzbox .txt { line-height: 24px; }
 .rmainbox .rzbox .jbrz { height: auto; }
 .rmainbox .rzbox .jbrz ul li { float: left; width: 170px; margin-right: 50px; border: 1px solid #ddd; height: 62px; padding: 15px; margin-bottom: 25px; position: relative; }
 .rmainbox .rzbox .jbrz ul li .pic { float: left; width: 62px; margin-right: 25px; }
-.rmainbox .rzbox .jbrz ul li .shangchuan { line-height: 28px; text-align: center; float: left; }
+.rmainbox .rzbox .jbrz ul li .shangchuan { line-height: 28px; text-align: center; float: left; width:78px;}
 .rmainbox .rzbox .jbrz ul li .shangchuan h3 { font-size: 12px; color: #136dad; font-weight: normal; }
 .rmainbox .rzbox .jbrz ul li .shico { line-height: 20px; color: #999; background-color: #f7f7f7; text-align: center; height: 20px; width: 52px; border: 1px solid #eee; position: absolute; left: 162px; top: -6px; z-index: 2; }
 
 .rmainbox .rzbox .kxrz { height: auto; }
-.rmainbox .rzbox .kxrz ul li { float: left; width: 82px; margin-right: 29px; border: 1px solid #ddd; height: 62px; padding: 15px; margin-bottom: 25px; position: relative; }
+.rmainbox .rzbox .kxrz ul{overflow:hidden;}
+.rmainbox .rzbox .kxrz ul li { float: left; width: 82px; margin-right: 29px; border: 1px solid #ddd; height: 62px; padding: 15px; margin-bottom: 25px; position: relative; overflow:hidden;}
 .rmainbox .rzbox .kxrz ul li .pic { float: left; width: 62px; margin-right: 25px; }
 .rmainbox .rzbox .kxrz ul li .shangchuan { line-height: 28px; text-align: center; }
 .rmainbox .rzbox .kxrz ul li .shangchuan h3 { font-size: 12px; color: #136dad; font-weight: normal; }
