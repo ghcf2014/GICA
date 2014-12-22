@@ -1,4 +1,4 @@
-<block name="body">
+﻿<block name="body">
 <extend name="Base/common"/>
 <block name="body">
 		  
@@ -43,11 +43,11 @@
 													</a>
 												</if></li>
                     <li><if condition="$vs.phone_status eq 0">
-													<a href="{:U('Userinfo/userchangephone')}"><img
+													<a href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img
 															src="__STATIC__/rzg_images/img/h_sj_pic.jpg" title="手机未认证" />
 													</a>
 												<elseif condition="$vs.phone_status eq 1"/>
-												     <a href="{:U('Userinfo/userchangephone')}"><img
+												     <a href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img
 															src="__STATIC__/rzg_images/img/l_sj_pic.jpg" title="手机已认证" />
 													</a>
 												</if></li>
