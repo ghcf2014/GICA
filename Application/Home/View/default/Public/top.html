@@ -36,3 +36,47 @@
 	</ul>
 </div>
 <!--nav end-->
+
+
+<!--浮动侧边栏  计算器  客服QQ-->
+<p class="flo_qq"><a href="#">客服 Q Q</a></p>
+<div class="flo">
+	<div class="flo_tit">
+        	<a href="javascript:;" class="cal">收益计算</a>
+        	<ul class="flo_jsq" style="display:none;">
+            	<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+            	<li><a href="#">CPI计算器</a></li>
+            	<li><a href="#">收益对比</a></li>
+            	<li><a href="#" style="border-bottom:none;border-radius:0 0 0 2px;"></a></li>
+            </ul>
+    </div>
+    
+</div>
+
+
+
+
+<script type="text/javascript" src="_PUBLIC_/Home/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//alert(1);	
+		$('.flo').hover(function(){
+			//alert(2);
+			$('.flo .flo_tit .flo_jsq').stop().show();	
+		},function(){
+			$('.flo .flo_tit .flo_jsq').stop().hide();
+		});
+	})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
