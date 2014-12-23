@@ -12,19 +12,16 @@ a:hover{color:#0A99DB;text-decoration:none;}
 /*----bar----------------*/
 .bar_out{width:100%;height:36px;background:#474747;}
 .bar{width:980px;height:36px;margin:0 auto;overflow:hidden;}
-.bar ul{float:left;width:auto;height:36px;overflow:hidden;}
-.bar ul li{float:left;width:90px;height:36px;line-height:36px;padding:0 30px 0 0;}
-.bar ul li a{color:#a09fa4;float:left;}
-.bar ul .phone{float:left;width:auto;height:36px;line-height:36px;color:#a09fa4;}
-.bar ul .phone div{background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px;width:30px;height:36px;float:left;}
-.bar ul .phone span{color:#cb6443;font-weight:bold;float:left;}
-/*.bar p{float:left;width:192px;height:36px;line-height:36px;color:#a09fa4;}*/
-/*.bar p span{color:#cb6443;font-weight:bold;float:left;}*/
+.bar ul{float:left;width:240px;height:36px;overflow:hidden;}
+.bar ul li{float:left;width:60px;height:36px;line-height:36px;padding:0 30px;}
+.bar ul li a{color:#a09fa4;}
+.bar p{float:left;width:172px;padding-left:20px;height:36px;line-height:36px;background:url(../images/phone.png) no-repeat left center;color:#a09fa4;}
+.bar p span{color:#cb6443;font-weight:bold;}
 
 /*----bar_aside----------------*/
-.bar_out .bar_aside{float:right;width:120px;height:36px;overflow:hidden;}
-.bar_out .bar_aside li{padding:0;float:left;width:30px;height:36px;margin-right:5px;}
-.bar_out .bar_aside li .bar_aside_btn{float:left;width:30px;height:36px;line-height:36px;cursor:pointer;background:none;}
+.bar_out .bar_aside{float:right;width:120px;height:35px;overflow:hidden;}
+.bar_out .bar_aside li{padding:0;float:left;width:48px;height:32px;margin-right:5px;}
+.bar_out .bar_aside li .bar_aside_btn{width:48px;height:32px;cursor:pointer;}
 
 
 /*-----------nav----------------*/
@@ -86,16 +83,16 @@ a:hover{color:#0A99DB;text-decoration:none;}
 /*-------con_bot_l_con3------------------*/
 .con .con_bot .con_bot_l .con_bot_l_con3{width:690px;height:auto;overflow:hidden;}
 .con .con_bot .con_bot_l .con_bot_l_con3 h3{width:690px;height:56px;line-height:56px;font-size:22px;}
-.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01{width:216px;height:233px;border:1px solid #b19a78;float:left;padding-top:15px;margin-right:18px;margin-bottom:25px;}
-.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl{width:186px;padding:0 15px;height:233px;border-bottom:1px solid #b19a78;}
+.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01{width:216px;height:280px;border:1px solid #b19a78;float:left;padding-top:15px;margin-right:18px;margin-bottom:25px;}
+.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl{width:185px;padding:0 15px;height:233px;border-bottom:1px solid #b19a78;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dt{width:185px;height:69px;background:url(../images/prince1.png) no-repeat;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd{width:185px;height:27px;line-height:27px;font-size:12px;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd span{color:#e09e64;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd b{font-weight:normal;color:#447fa7;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd .out{width:145px;height:6px;background:#cdcdcd;display:inline-block;border-radius:3px;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd .out .in{width:45%;height:6px;background:#f1b37a;display:inline-block;border-radius:3px;}
-.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 .con_bot_l_con3_01_btn{width:121px;height:32px;background:#ef8328;border-radius:3px;margin:10px 0 0 48px;color:#fff;font-size:16px;line-height:32px;cursor:pointer;display:none;}
-.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 .con_bot_l_con3_01_btn1{width:121px;height:32px;background:#ccc;border-radius:3px;margin:10px 0 0 48px;color:#fff;font-size:16px;line-height:32px;display:none;}
+.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 .con_bot_l_con3_01_btn{width:121px;height:32px;background:#ef8328;border-radius:3px;margin:10px 0 0 48px;color:#fff;font-size:16px;line-height:32px;cursor:pointer;}
+.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 .con_bot_l_con3_01_btn1{width:121px;height:32px;background:#ccc;border-radius:3px;margin:10px 0 0 48px;color:#fff;font-size:16px;line-height:32px;}
 
 /*-----con_bot_r-----------*/
 .con .con_bot .con_bot_r{float:right;width:250px;height:auto;padding-right:13px;}
