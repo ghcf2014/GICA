@@ -28,19 +28,20 @@
 				</div>
 				<span style="color: red;line-height:40px;" id="checkpwd" class="formtips"></span>
 			</dl>
-			<dl style="padding-left:215px;width:575px;">
+			<dl style="padding-left:215px;width:575px; margin-bottom:0px;">
 				<div>
 			        <img src="__PUBLIC__/Home/images/yanzheng.png">
 					<input type="text" value="" name="verify" class="txt txt1" style="width: 140px;" id="verifycode" placeholder="验证码" errormsg="" nullmsg="请填写验证码" datatype="*6-20"/>
 					<img class="verifyimg reloadverify" src="{:U('verify')}" width="101" height="44" alt="点击切换" style="cursor: pointer;width:90px;float: right;">
 				</div>
-				<span style="color: red;line-height:40px;" id="checkcode" class="formtips"></span>
+				
 			</dl>
-			<input type="button" value="登录" name="denglu" id="loginIn"
-				onclick="javascript:;" class="btn" />
+			<dl style="padding-left:215px;width:575px;height:40px; margin-bottom:0px;">
+					<span style="color: red;line-height:40px;" id="checkcode" class="formtips Validform_checktip "></span>
+			</dl>
+			<input type="button" value="登录" name="denglu" id="loginIn" onclick="javascript:;" class="btn" />
 			<div class="dl_cont_bot">
-				<span class="right"><a href="#">忘记密码？</a><a
-					href="#">|&nbsp;立即注册</a></span>
+				<span class="right"><a href="#">忘记密码？</a><a href="#">|&nbsp;立即注册</a></span>
 			</div>
 			<div id="show"></div>
 		</div>
@@ -91,28 +92,28 @@
 				var username = $("#username").val();
 				var password = $("#password").val();
 				var verifycode = $("#verifycode").val();
-				if (username == "") {
-					$("#checkname").html(
-							"<span><font color='red'>请输入用户名！</font></span>");
-					return false;
-				}
-				if (password == "") {
-					if (username != null) {
-						$("#checkname").hide();
-					}
-					$("#checkpwd").html("请输入登录命名！");
-					return false;
-				}
-				if (verifycode == "") {
-					if (username != null) {
-						$("#checkname").hide();
-					}
-					if (password != null) {
-						$("#checkpwd").hide();
-					}
-					$("#checkcode").html("请输入验证码！");
-					return false;
-				}
+				// if (username == "") {
+				// 	$("#checkname").html(
+				// 			"<span><font color='red'>请输入用户名！</font></span>");
+				// 	return false;
+				// }
+				// if (password == "") {
+				// 	if (username != null) {
+				// 		$("#checkname").hide();
+				// 	}
+				// 	$("#checkpwd").html("请输入登录命名！");
+				// 	return false;
+				// }
+				// if (verifycode == "") {
+				// 	if (username != null) {
+				// 		$("#checkname").hide();
+				// 	}
+				// 	if (password != null) {
+				// 		$("#checkpwd").hide();
+				// 	}
+				// 	$("#checkcode").html("请输入验证码！");
+				// 	return false;
+				// }
 				
 				$("#form").submit();
 			});
