@@ -26,13 +26,17 @@ class BorrowController extends HomeController {
         $this->assign('list',$m);
 		$this->display ();
 	}
-	public function circulation() {
+	public function circulation($id=0) {
+		is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
+
+        $this->assign ( 'id', $id);
 		$this->display ();
 	}
-	public function circulation_save() {
+	public function circulation_save($id = 0) {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "z_borrow_info" );
+		$data ['borrow_type'] = $id;
 		$data ['borrow_name'] = $_POST ['borrow_name'];
 		$data ['borrow_money'] = $_POST ["borrow_money"];
 		$data ['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];

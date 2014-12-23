@@ -7,7 +7,7 @@
             <h2><a href="{:U('Index')}">我的账户</a></h2> 
               <include file="Public/borrowleft"/>
             <div class="zh_cont_r">
-              <form action="{:U('circulation_save')}" method="post">
+              <form action="{:U('circulation_save?id='.$id)}" method="post">
                   <div class="r-main">
     <!-- <div class="til01"> -->
     <div class="til01">
@@ -23,7 +23,7 @@
     <th colspan="2" align="left">借款基本信息</th>
     </tr>
   <tr>
-    <td align="right"><span class="fred">*</span>借款标题：</td>
+    <td align="right"><span class="fred ">*</span>借款标题：</td>
     <td><input name="borrow_name" type="text" class="inp280" maxlength="30" id="s_borrow_name" value=""/>
     <span class="fred" id="t_borrow_name"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
     </td>
