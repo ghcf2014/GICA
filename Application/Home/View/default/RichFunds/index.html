@@ -6,12 +6,28 @@
 <!-- 添加基金版面         -->
 <link rel="stylesheet" href="__PUBLIC__/RichFunds/css/jijinStyle.css"
 	type="text/css" />
-	<script type="text/javascript"
+<script type="text/javascript"
 	src="__PUBLIC__/RichFunds/js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript"
 	src="__PUBLIC__/RichFunds/js/index_con_bot_l_tab.js"></script>
 <script type="text/javascript"
 	src="__PUBLIC__/RichFunds/js/jiJin_banner.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//alert(1);	
+		$('.flo_aside').hover(function(){
+			//alert(2);
+			$('.flo_aside .flo_l li').each(function(index,element){
+				$(element).hover(function(){
+					$('.flo_aside .flo_r').show();
+					$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
+				});
+			})	
+		},function(){
+			$('.flo_aside .flo_r').hide();	
+		});
+	})
+</script>
 </head>
 
 <body>
@@ -561,6 +577,43 @@
 	</div>
 	<!--banQuan end-->
 
+<!--浮动侧边栏  计算器  客服QQ-->
+<!--联系我们-->
+<div class="flo_aside">
+	<!--浮动框标题-->
+    <ul class="flo_l">
+    	<li>收<br />益<br />计<br />算</li>
+        <li>联<br />系<br />我<br />们</li>
+    </ul>
+    <div class="flo_r" style="display:none">
+    	<!--计算器-->
+    	<ul class="flo_jsq" style="display:none">
+            	<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+            	<li><a href="#">CPI计算器</a></li>
+            	<li><a href="#">收益对比</a></li>
+            	<li style="border:0;"><a href="#"></a></li>
+        </ul>
+        <!--联系方式-->
+        <ul class="flo_lx" style="display:none">
+            <li style="font-size:18px;line-height:30px">客服热线<br /><span>400-123-4567</span></li>
+            <li><a href="javascript:;">客服QQ</a></li>
+            <li>
+                <dl>
+                    <dt>官方微信</dt>
+                    <dd>ghcf</dd>
+                    <dd><img src="../../../../../Public/Home/images/code.png" width="100" height="100" /></dd>    
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>官方微博</dt>
+                    <dd style="margin-bottom:0;"><a href="javascript:;">点击关注</a></dd>
+                </dl>
+            </li>
+    	</ul>
+        
+    </div>
+</div>
 
 
 

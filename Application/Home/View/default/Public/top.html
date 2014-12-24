@@ -89,8 +89,8 @@
 			//alert(2);
 			$('.flo_aside .flo_l li').each(function(index,element){
 				$(element).hover(function(){
-					$('.flo_aside .flo_r').show();
-					$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
+					$('.flo_aside .flo_r').show('normal');
+					$('.flo_aside .flo_r ul').eq($(this).index()).show('slow').siblings().hide('slow');
 				});
 			})	
 		},function(){

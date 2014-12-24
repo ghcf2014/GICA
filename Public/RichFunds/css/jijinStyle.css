@@ -143,7 +143,25 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .banQuan .banQuan_in p{float:right;line-height:56px;color:#fff;}
 
 
+/*---------------浮动侧边栏----------------------------*/
+.flo_aside{width:auto;height:100%;position:fixed;top:0;right:0;z-index:100;}
+.flo_aside .flo_l{float:left;width:35px;height:300px;margin-top:270px;}
+.flo_aside .flo_l li{padding-top:20px;width:35px;height:100px;background:#66ccfb;margin-top:10px;text-align:center;border-radius:3px 0 0 3px;color:#f1fcfc;cursor:pointer;vertical-align:middle;}
 
+.flo_aside .flo_r{float:left;width:180px;height:100%;background:#66ccfb;}
+/*-----收益计算------*/
+.flo_aside .flo_r .flo_jsq{width:160px;height:200px;margin:280px 10px;border-radius:2px;border:1px dashed #fff;}
+.flo_aside .flo_r .flo_jsq li{border-bottom:1px dashed #fff;width:160px;height:49px;font-size:16px;text-align:center;line-height:49px;}
+.flo_aside .flo_r .flo_jsq li a{color:#EBFCFC;}
+/*-----联系我们------*/
+.flo_aside .flo_r .flo_lx{width:160px;height:auto;margin:200px 10px;}
+.flo_aside .flo_r .flo_lx li{border-bottom:1px dashed #fff;width:120px;height:auto;color:#ebfcfc;padding:15px 20px;}
+.flo_aside .flo_r .flo_lx li span{color:red;font-size:14px;}
+.flo_aside .flo_r .flo_lx li a{display:block;width:81px;height:23px;background:url(../images/90.gif) no-repeat;color:#333;line-height:23px;font-size:12px;text-align:center;}
+.flo_aside .flo_r .flo_lx li dl{width:120px;height:auto;}
+.flo_aside .flo_r .flo_lx li dl dt{font-size:18px;line-height:30px;font-weight:normal;} 
+.flo_aside .flo_r .flo_lx li dl dd{font-size:14px;line-height:25px;margin-bottom:10px;}
+.flo_aside .flo_r .flo_lx li dl dd a{background:none;text-align:left;font-size:14px;color:orange;}
 
 
 

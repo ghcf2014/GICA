@@ -25,8 +25,8 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .header_out .header ul .call div{width:25px;background: url(../images/top_icons.png) repeat scroll 0px -81px transparent;height:38px;float: left;}
 .header_out .header ul .call div:hover{width:25px;background: url(../images/top_icons.png) repeat scroll 40px -81px transparent;height:38px;float: left;}
 .header_out .header p{float:right;line-height:36px;}
-.header_out .header p .zc{color:#66ccfc; }
-.header_out .header p .dl{color:#f55728; }
+.header_out .header p .zc{color:#66ccfc;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
+.header_out .header p .dl{color:#f55728;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
 
 /*---------nav-------------------------*/
 .nav{width:1070px;height:94px;margin:auto;}
@@ -139,8 +139,8 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .dl_cont dt{width:215px;height:44px;float:left;text-align:right;line-height:44px;font-size:18px;font-weight:normal;padding-right:12px;}
 .dl_cont dt span{color:#6acbff;}
 .dl_cont dd{width:406px;height:52px;float:left;overflow:hidden;}
-.dl_cont dd .txt{width:388px;height:42px;border:1px solid #6acbff;background:#e1e5e6;line-height:42px;padding-left:10px;color:#4e4f51;}
-.dl_cont dd .yz{width:90px;height:42px;line-height:42px;background:#e1e5e6;border:1px solid #6acbff;float:left;padding-left:10px;margin-right:10px;}
+.dl_cont dd .txt{width:388px;height:42px;border:1px solid #d3cbc7;background:#F2F2F2;line-height:42px;padding-left:10px;color:#4e4f51;}
+.dl_cont dd .yz{width:90px;height:42px;line-height:42px;background:#F2F2F2;border:1px solid #d3cbc7;float:left;padding-left:10px;margin-right:10px;}
 .dl_cont dd img{float:left;margin-right:10px;}
 .dl_cont dd p{width:140px;height:42px;line-height:42px;float:left;}
 .dl_cont dd p a{color:#70d3fd;}
@@ -341,8 +341,8 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .zh_cont .zh_cont_r dd{width:692px;height:260px;padding-left:35px;float:left;overflow:hidden;}
 .zh_cont .zh_cont_r dd p{width:345px;height:48px;line-height:48px;float:left;font-size:20px;}
 
-.zh_cont .zh_cont_r .ul01{overflow:hidden;width:927px;height:57px;border-bottom:1px solid #d3cbc7;padding-left:20px;}
-.zh_cont .zh_cont_r .ul01 li{float:left;width:auto;height:57px;margin-right:20px;line-height:57px;font-size:20px;}
+.zh_cont .zh_cont_r .ul01{overflow:hidden;width:927px;height:37px;border-bottom:1px solid #d3cbc7;padding-left:20px;padding-top:20px;}
+.zh_cont .zh_cont_r .ul01 li{float:left;width:auto;height:37px;margin-right:20px;font-size:20px;}
 .zh_cont .zh_cont_r .ul01 li .btn{width:70px;height:35px;background:url(../images/70x35pxblue.png) no-repeat;font-size:20px;line-height:35px;margin-top:10px;cursor:pointer;}
 
 .zh_cont .zh_cont_r .ul02{width:927px;padding-left:20px;height:90px;border-bottom:1px solid #d3cbc7;overflow:hidden;}
@@ -550,28 +550,16 @@ a:hover{color:#0A99DB;text-decoration:none;}
 
 
 /*---------------浮动侧边栏----------------------------*/
-/*-----联系我们------*/
-/*.flo_contact{width:auto;height:auto;margin-left:100px;margin-bottom:5px;position:fixed;top:440px;right:0;overflow:hidden;}
-.flo_contact .flo_ctit{border-radius:2px 0 0 2px;display:block;width:20px;height:auto;text-align:center;line-height:20px;color:#EBFCFC;vertical-align:middle;background:#66ccfb;padding:5px 0;float:left;}
-.flo_contact .flo_ccon{float:left;width:auto;height:auto;background:#66ccfb;}
-/*-----收益计算------*/
-/*.flo{width:auto;height:auto;position:fixed;top:330px;right:0;}
-.flo .flo_tit{width:auto;height:auto;overflow:hidden;}
-.flo .flo_tit .cal{border-radius:2px 0 0 2px;background:#66ccfb;float:left;width:20px;height:auto;text-align:center;line-height:20px;color:#EBFCFC;padding:5px 0;}
-.flo .flo_tit .flo_jsq{float:left;height:auto;width:auto;}
-.flo .flo_tit .flo_jsq li{width:auto;height:auto;}
-.flo .flo_tit .flo_jsq li a{display:block;width:100px;height:25px;border-radius:0;border-bottom:1px dashed #fff;text-align:center;line-height:25px;color:#EBFCFC;background:#66ccfb;}
-background:#F1FCFC;
-*/
 .flo_aside{width:auto;height:100%;position:fixed;top:0;right:0;z-index:100;}
 .flo_aside .flo_l{float:left;width:35px;height:300px;margin-top:270px;}
 .flo_aside .flo_l li{padding-top:20px;width:35px;height:100px;background:#66ccfb;margin-top:10px;text-align:center;border-radius:3px 0 0 3px;color:#f1fcfc;cursor:pointer;vertical-align:middle;}
 
 .flo_aside .flo_r{float:left;width:180px;height:100%;background:#66ccfb;}
+/*-----收益计算------*/
 .flo_aside .flo_r .flo_jsq{width:160px;height:200px;margin:280px 10px;border-radius:2px;border:1px dashed #fff;}
 .flo_aside .flo_r .flo_jsq li{border-bottom:1px dashed #fff;width:160px;height:49px;font-size:16px;text-align:center;line-height:49px;}
 .flo_aside .flo_r .flo_jsq li a{color:#EBFCFC;}
-
+/*-----联系我们------*/
 .flo_aside .flo_r .flo_lx{width:160px;height:auto;margin:200px 10px;}
 .flo_aside .flo_r .flo_lx li{border-bottom:1px dashed #fff;width:120px;height:auto;color:#ebfcfc;padding:15px 20px;}
 .flo_aside .flo_r .flo_lx li span{color:red;font-size:14px;}
