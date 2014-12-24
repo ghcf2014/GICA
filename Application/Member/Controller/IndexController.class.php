@@ -37,7 +37,7 @@ class IndexController extends MemberController {
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
 
-        var_dump($list);
+        // var_dump($list);
         // var_dump($lists2);
         $this->display();
     }

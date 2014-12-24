@@ -101,7 +101,28 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userfindpassbyphone() {
+		$uid = is_login ();
+		$m = M ( 'ucenter_member' );
+		$m_id ['id'] = $uid;
+		$m = $m->where ( $m_id )->select ();
+		$this->assign ( 'list', $m );
+
 		$this->display ();
+	}
+	public function userphone_save() {
+		// 从表单中获取来的数据
+		$uid = is_login ();
+		$m = M ( "ucenter_member" );
+		$data ['mobile'] = $_POST ['mobile'];
+		$condition ['uid'] = $uid;
+		// 保存当前数据对象
+		if ($m = $m->where ( $condition )->save ($data)) { // 保存成功
+		    // 成功提示
+			$this->success('保存成功！');
+		} else {
+			// 失败提示
+			$this->error ('保存失败');
+		}
 	}
 	public function userfindpaypass() {
 		$this->display ();
@@ -118,8 +139,22 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
-		
 		$this->display ();
+	}
+	public function usermail_save() {
+		// 从表单中获取来的数据
+		$uid = is_login ();
+		$m = M ( "ucenter_member" );
+		$data ['email'] = $_POST ['email'];
+		$condition ['uid'] = $uid;
+		// 保存当前数据对象
+		if ($m = $m->where ( $condition )->save ($data)) { // 保存成功
+		    // 成功提示
+			$this->success('保存成功！');
+		} else {
+			// 失败提示
+			$this->error ('保存失败');
+		}
 	}
 	public function userpapersinfo() {
 		$this->display ();
@@ -303,5 +338,70 @@ class UserinfoController extends MemberController {
 	 */
 	public function usersaftyset() {
 		$this->display ();
+	}
+	public function usersaftyset_save() {
+		if ( !is_login() ) {
+			$this->error( '您还没有登陆',U('User/login') );
+		}
+        if ( IS_POST ) {
+            //获取参数
+            $uid        =   is_login();
+            $password   =   I('post.old');
+            $repassword = I('post.repassword');
+            $data['password'] = I('post.password');
+            empty($password) && $this->error('请输入原密码');
+            empty($data['password']) && $this->error('请输入新密码');
+            empty($repassword) && $this->error('请输入确认密码');
+
+            if($data['password'] !== $repassword){
+                $this->error('您输入的新密码与确认密码不一致');
+            }
+
+            $Api = new UserApi();
+            $res = $Api->updateInfo($uid, $password, $data);
+            if($res['status']){
+                $this->success('修改密码成功！');
+            }else{
+                $this->error($res['info']);
+            }
+        }else{
+            $this->display();
+        }
+	}
+	public function paypassword() {
+		$this->display ();
+	}
+	public function paypassword_save() {
+		if ( !is_login() ) {
+			$this->error( '您还没有登陆',U('User/login') );
+		}
+            //获取参数
+            $uid        =   is_login();
+            // $password   =   I('post.old');
+            // $repassword = I('post.repassword');
+            // $data['pin_pass'] = I('post.pin_pas');
+            // empty($password) && $this->error('请输入原密码');
+            // empty($data['pin_pass']) && $this->error('请输入新密码');
+            // empty($repassword) && $this->error('请输入确认密码');
+            // 从表单中获取来的数据
+
+
+
+            $m = M ( "ucenter_member");
+            $condition ['id'] = $uid;
+		    $pin = $m->where($condition)->field('pin_pass')->select ();
+            if(md5($_POST ['old']) == $pin[0]['pin_pass']){
+
+				$data ['pin_pass'] = md5($_POST ['pin_pass']);
+				$condition ['id'] = $uid;
+	            if($m = $m->where($condition)->save ($data)){
+	                $this->success('修改密码成功！');
+	            }else{
+	                $this->error('修改失败！');
+	            }
+            }
+            else{$this->error('修改失败！');
+            }
+			
 	}
 }

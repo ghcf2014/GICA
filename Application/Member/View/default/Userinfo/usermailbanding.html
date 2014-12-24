@@ -12,20 +12,25 @@
                     <h3>当前位置>安全设置</h3>
                     <p style="background:#d3cbc7;width:947px;height:1px;"></p>
                     <ul class="aqset_tabH">
-                    	<li><a href="{:U('Userinfo/usersaftyset')}">登录密码</a></li>
-                    	<li>交易密码</li>
+                    	<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
+                    	<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
                     	<li><a href="{:U('Userinfo/usermailbanding')}"class="cur">邮箱设置</a></li>
                     	<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
                     	<li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
                     	<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
                     </ul>
-                    <div class="aqset_tabC_out"><volist name="list" id="vo">
+                    <div class="aqset_tabC_out">
+                    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+			            <button class="close fixed" style="margin-top: 4px;">&times;</button>
+			            <div class="alert-content">这是内容</div>
+       				</div>
+                    <volist name="list" id="vo"><form action="{:U('usermail_save')}" method="post" class="form-horizontal">
                         <!--邮箱验证-->
                         <div class="aqset_tabC">
                             <p class="aqset_tabC_head">邮箱验证</p>
                             <dl class="email">
                                 <dt>邮件地址：</dt>
-                                <dd><input type="text" class="email_txt" value="{$vo.email}"><input type="button" class="email_btn" value="修改邮箱"></dd>
+                                <dd><input type="text" name="email" class="email_txt" value="{$vo.email}"><input type="submit" class="email_btn ajax-post" value="修改邮箱" target-form="form-horizontal"></dd>
                             </dl> 
                         </div>
                         <!--身份证验证-->
@@ -33,133 +38,13 @@
                             <p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>	
                         </div>
                         
-                    	</volist>
+                    	</form></volist>
                     </div>
 
             </div>
         </div>
     </div>
 	<!--content end-->
-
-		<script type="text/javascript" src="script/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="script/jquery.shove-1.0.js"></script>
-		<script type="text/javascript" src="script/nav-zh.js"></script>
-		<script type="text/javascript" src="script/jquery.zclip.min.js"></script>
-		<script type="text/javascript" src="common/date/calendar.js"></script>
-		<script type="text/javascript" src="css/popom.js"></script>
-		<script>
-	function jumpUrl(obj) {
-		window.location.href = obj;
-	}
-</script>
-		<script>
-	$(function() {
-		$("#zh_hover").attr('class', 'nav_first');
-		$("#zh_hover div").removeClass('none');
-		$('#li_16').addClass('on');
-		$('#yq_address_btn').css('cursor', 'pointer');
-		$('#yq_address_btn').click(
-				function() {
-					if ($.browser.msie) {
-						var txt = '复制文本到剪贴板:\n\n';
-						txt = txt + $('#yq_address_input').html();
-						window.clipboardData.setData('text', $(
-								'#yq_address_input').html());
-						alert(txt);
-					}
-				});
-		$("#attention").click(function() {
-			var param = {};
-			param["paramMap.id"] = $
-			{
-				user.id
-			}
-			param["paramMap.attention"] = "attention";
-			$.shovePost("userFrends.htm", param, function(data) {
-				$("#userfrends").html(data);
-			});
-		});
-
-		$('.tabtil').find('li').click(function() {
-			$('.tabtil').find('li').removeClass('on');
-			$(this).addClass('on');
-			$('.tabtil').nextAll('div').hide();
-			$('.tabtil').nextAll('div').eq($(this).index()).show();
-		});
-		init();
-	});
-	function init() {
-		if (!$.browser.msie) {
-			$('#yq_address_btn').zclip( {
-				path : 'script/ZeroClipboard.swf',
-				copy : function() {
-					return $('#yq_address_input').html();
-				}
-			});
-		}
-	}
-</script>
-		<script>
-	$(function() {
-
-		//提交邮箱添加
-		$("#saveEmail")
-				.click(
-						function() {
-
-							var param = {};
-							param["paramMap.email"] = $("#mails").val();
-							if (/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/
-									.test($("#mails").val())) {
-								$
-										.post(
-												"SendUserEmailSet.htm",
-												param,
-												function(data) {
-													if (data.mailAddress == '0') {
-														alert("邮箱不能为空");
-													} else if (data.mailAddress == '1') {
-														$("#ok").html("该邮箱不存在");
-													} else if (data.mailAddress == '4') {
-														$("#ok")
-																.html(
-																		"该邮箱已被绑定,请重新输入");
-													} else {
-														$("#ok")
-																.html(
-																		"邮件已经发送到你的邮箱,请__tag_160$44_登录__tag_160$99_到你的邮箱验证");
-													}
-												});
-							} else {
-								alert("邮箱输入有误");
-							}
-
-							/*
-							var param = {};
-							param["paramMap.email"] = $("#mails").val();
-							$.post("addEmails.htm",param,function(data){
-							     if(data.msg=="添加成功"){
-							      alert("添加成功");
-							      window.location.reload();
-							     }else{
-							       alert(data.msg);
-							     }
-							});
-							addEmails
-							 */
-
-						});
-
-	});
-</script>
-		<script>
-	$(function() {
-		var flag = '${paramMap.msg}';
-		if (flag == '邮箱绑定成功') {
-			alert(flag);
-			window.location.href = 'emailManagerInit.htm';
-		}
-	});
-</script>
+	<script type="text/javascript" src="__PUBLIC__/Admin/js/common.js"></script>
 </block>
 

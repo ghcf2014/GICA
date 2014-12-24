@@ -1,79 +1,57 @@
-<extend name="Base/common" />
-<block name="header">
-<header class="jumbotron subhead" id="overview">
-  <div class="container">
-    <h2>修改密码</h2>
-    <p><span><span class="pull-left"></span> </span></p>
-  </div>
-</header>
-</block>
-
 <block name="body">
-
-    <div class="nymain">
-      <div class="bigbox">
-        <div class="til">
-          修改密码
+<extend name="Base/common"/>
+  <!--content start-->
+  <div class="zh_cont_out">
+      <div class="zh_cont">
+            <h2>我的账户</h2> 
+            
+            <!--zh_cont_l-->
+              <include file="Member@default/Public/left"/>
+            <!--zh_cont_r-->
+            <div class="zh_cont_r">
+            
+              <!--安全设置-->
+                <div class="tab">
+                    <h3>当前位置>安全设置</h3>
+                    <p style="background:#d3cbc7;width:947px;height:1px;"></p>
+                    <ul class="aqset_tabH">
+                      <li><a href="{:U('Home/User/profile')}" class="cur">登录密码</a></li>
+                        <li><a href="{:U('Member/Userinfo/paypassword')}">交易密码</a></li>
+                        <li><a href="{:U('Member/Userinfo/usermailbanding')}">邮箱设置</a></li>
+                        <li><a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机设置</a></li>
+                        <li><a href="{:U('Member/Userinfo/userbankset')}">银行卡</a></li>
+                        <li><a href="{:U('Member/Userinfo/userselfset')}">身份证</a></li>
+                    </ul>
+                    <div class="aqset_tabC_out"><form class="login-form" action="__SELF__" method="post">
+                      <!--登录密码-->
+                        <div class="aqset_tabC">
+                            <p class="aqset_tabC_head2">上次登录时间：<span>2014-11-22</span></p>
+                            <dl class="dlmm">
+                                <dt>原始密码：</dt>
+                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old"></dd>
+                            </dl>
+                            <dl class="dlmm">
+                                <dt>新密码：</dt>
+                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password"></dd>
+                            </dl>
+                            <dl class="dlmm">
+                                <dt>确认密码：</dt>
+                                <dd><input type="password" class="dlmm_txt" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword"></dd>
+                            </dl>
+                            <input type="submit" class="yhk_btn" value="提交">
+                        </div>            
+                      </form>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-        <div class="sqdk"
-          style="padding-top: 55px; padding-bottom: 80px; padding-left: 60px;">
-          <div class="logintab">
-<section>
-  <div class="span12">
-        <form class="login-form" action="__SELF__" method="post">
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">原密码</label>
-            <div class="controls">
-              <input type="password" id="inputPassword"  class="span3" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">新密码</label>
-            <div class="controls">
-              <input type="password" id="inputPassword"  class="span3" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">确认密码</label>
-            <div class="controls">
-              <input type="password" id="inputPassword" class="span3" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword">
-            </div>
-            <div class="controls Validform_checktip text-warning"></div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <button type="submit" class="btn">提 交</button>
-            </div>
-          </div>
-        </form>
-  </div>
-</section>
-          </div>
-          <div class="tip">
-            <ul>
-              <li>
-                帮助他人 快乐自己 收获利息
-              </li>
-              <li>
-                助您创业 资金周转 分期偿还
-              </li>
-              <li>
-                收益稳定可靠回报高
-              </li>
-              <li>
-                交易安全快捷有保障
-              </li>
-            </ul>
-          </div>
-          <div class="renpic" style="top: 50px;">
-          </div>
-        </div>
-      </div>
     </div>
-</block>
+
+  <!--content end-->
+
 
 <block name="side"></block>
-<block name="script">
 	<script type="text/javascript">
 
     	$(document)

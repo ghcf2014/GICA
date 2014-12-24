@@ -16,37 +16,37 @@
                     <h3>当前位置>安全设置</h3>
                     <p style="background:#d3cbc7;width:947px;height:1px;"></p>
                     <ul class="aqset_tabH">
-                    	<li><a href="{:U('Userinfo/usersaftyset')}" >登录密码</a></li>
-                        <li>交易密码</li>
+                    	<li><a href="{:U('Home/User/profile')}" >登录密码</a></li>
+                        <li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
                         <li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
                         <li><a href="{:U('Userinfo/userfindpassbyphone')}" class="cur">手机设置</a></li>
                         <li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
                         <li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
                     </ul>
-                    <div class="aqset_tabC_out"><form class="login-form" action="Home/__SELF__" method="post">
+                    <div class="aqset_tabC_out">
+                    <volist name="list" id="vo"><form action="{:U('userphone_save')}" method="post" class="form-horizontal">
                     	<!--手机验证-->
                         <div class="aqset_tabC">
-                            <dl class="phone">
+                            <!-- <dl class="phone">
                                 <dt>手机绑定：</dt>
                                 <dd><input type="text" class="phone_txt"></dd>
-                            </dl>
+                            </dl> -->
                             <dl class="phone">
-                                <dt>手机变更：</dt>
-                                <dd><input type="text" class="phone_txt"><input type="button" class="phone_btn" value="验证码发送"></dd>
+                                <dt>手机绑定：</dt>
+                                <dd><input type="text" class="phone_txt" name="mobile" value="{$vo.mobile}"><input type="button" class="phone_btn" value="验证码发送"></dd>
                             </dl>
                             <dl class="phone">
                                 <dt>手机验证码：</dt>
                                 <dd><input type="text" class="phone_txt" style="width:150px;height:36px;"><span>输入您的手机验证码 </span></dd>
                             </dl>
-                            <input type="button" class="yhk_btn" value="提交">
+                            <input type="submit" class="yhk_btn ajax-post" value="提交" target-form="form-horizontal">
                         </div>           
-                    	</form>
+                    	</form></volist>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </div>
-
 	<!--content end-->
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/common.js"></script>
 </block>
