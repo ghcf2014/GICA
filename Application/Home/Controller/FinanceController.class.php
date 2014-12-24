@@ -11,6 +11,15 @@ class FinanceController extends HomeController {
 
 	//系统首页
     public function index($type=0){
+        //判断登陆赋值
+        if(is_login()){
+           $login=1;
+        } else {
+           $login=0;
+        }
+
+
+
         if($type==0){
 
             $type='1,2,3,4,5,6';
@@ -24,6 +33,7 @@ class FinanceController extends HomeController {
             $orderby['borrow_status']='ASC';
             $list = $listBorrow->where('borrow_status not in (1,5,3) and borrow_type in ('.$type.')')->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
             $this->assign('list2',$list);
+            $this->assign('login',$login);
             $this->assign('page',$show);
             $this->display();
     }
@@ -43,7 +53,7 @@ class FinanceController extends HomeController {
             /* 页码检测 */
             $p = intval($p);
             $p = empty($p) ? 1 : $p;
-            is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
+            is_login() || $this->error('您还没有登录，请先登录！');
             $uid        =   is_login();//获取当前用户UID
 
             $listMember = M('member');
@@ -61,6 +71,7 @@ class FinanceController extends HomeController {
             $listBorrow  = M('z_borrow_info');
             $list = $listBorrow->where($map)->select();
             $this->assign('list3',$list);
+            
             $this->display();
     }
     public function add($id= 0){

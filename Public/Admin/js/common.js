@@ -143,6 +143,7 @@
 	var content = $('#main');
 	var top_alert = $('#top-alert');
 	top_alert.find('.close').on('click', function () {
+
 		top_alert.removeClass('block').slideUp(200);
 		// content.animate({paddingTop:'-=55'},200);
 	});
