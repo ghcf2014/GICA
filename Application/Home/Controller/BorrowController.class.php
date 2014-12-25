@@ -51,6 +51,7 @@ class BorrowController extends HomeController {
 		$data ['borrow_status'] = 0;
 		$data ['borrow_uid'] = $uid;
 		$data ['add_time'] = time ();
+		$data ['deadline'] = strtotime ( '+'.intval ( $_POST ["collect_day"] ).' year' );
 		$data ['add_ip'] = get_client_ip ();
 		$condition ['uid'] = $uid;
 		// 保存当前数据对象
@@ -86,7 +87,7 @@ class BorrowController extends HomeController {
 		// $this->assign('model',$model);
 		// $this->assign('info', array('model_id'=>$model_id));
 		// $this->meta_title = '新增属性';
-		var_dump ( $data );
+		// var_dump ( $data );
 		
 		if ($listBorrow->add ( $data )) {
 			$this->success ( L ( '已提交发布，审核结果请注意查收邮箱!' ) );

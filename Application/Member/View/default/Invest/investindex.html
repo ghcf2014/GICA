@@ -92,12 +92,12 @@
 										<s:iterator value="pageBean.page" var="bean"><volist name="list" id="vo">
 											<tr>
 												<td align="center">
-													{$vo.borrow_uid}
+												
 												</td>
 												<td align="center">
-													<a href="{:U('Home/Borrow/detail?id='.$vo['id'])}"target="_blank">{$vo.borrow_name}</a>
+													<a href="{:U('Home/Borrow/detail?id='.$vo['id'])}"target="_blank"></a>
 												</td>
-												<td align="center">{$vo.borrow_duration}个月
+												<td align="center">个月
 												</td>
 												<td align="center">暂无
 												</td>

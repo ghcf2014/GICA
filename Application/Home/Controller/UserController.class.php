@@ -106,6 +106,7 @@ class UserController extends HomeController {
 
 	/* 验证码，用于登录和注册 */
 	public function verify(){
+		// ob_clean();//要正常显示验证码，这个是重点！
 		$verify = new \Think\Verify();
 		$verify->entry(1);
 	}

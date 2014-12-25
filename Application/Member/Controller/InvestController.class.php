@@ -278,9 +278,9 @@ class InvestController extends MemberController {
     }
     public function investindex(){
         $uid = is_login();//获取当前用户UID
-        $borrow_info = M('z_borrow_info');
+        $borrow_info = M('z_borrow_investor');
         $condition['investor_uid'] =$uid;
-        $borrow_info=$borrow_info->select();
+        $borrow_info=$borrow_info->where($condition)->select();
 
         $this->assign('list',$borrow_info);
         $this->display();
@@ -288,13 +288,26 @@ class InvestController extends MemberController {
     public function borrowmanager(){
         $uid = is_login();//获取当前用户UID
         $borrow_info = M('z_borrow_info');
-        $condition['investor_uid'] =$uid;
-        $borrow_info=$borrow_info->select();
+        $condition['borrow_uid'] =$uid;
+        $borrow_info=$borrow_info->where($condition)->select();
 
         $this->assign('list',$borrow_info);
         $this->display();
     }
-    public function borrowprotocol(){
+    public function borrowprotocol($id = 0){
+
+        /* 标识正确性检测 */
+        if (! ($id && is_numeric ( $id ))) {
+            $this->error ( '投标ID错误,协议打开失败！' );
+        }
+
+        $map = array (
+                'id' => $id 
+        );
+        $listBorrow = M ( 'z_borrow_info' );
+        $list = $listBorrow->where ( $map )->select ();
+        $this->assign ( 'list', $list );
+    
         $this->display();
     }
 

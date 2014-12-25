@@ -81,7 +81,7 @@ class UserinfoController extends MemberController {
 		$condition ['uid'] = $uid;
 		$money = $money->where ( $condition )->select ();
 		
-		var_dump ( $money );
+		// var_dump ( $money );
 		$this->assign ( 'list', $money );
 		$this->display ();
 	}
