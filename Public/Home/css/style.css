@@ -139,9 +139,9 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .dl_cont dt{width:215px;height:44px;float:left;text-align:right;line-height:44px;font-size:18px;font-weight:normal;padding-right:12px;}
 .dl_cont dt span{color:#6acbff;}
 .dl_cont dd{width:406px;height:52px;float:left;overflow:hidden;}
-.dl_cont dd .txt{width:388px;height:42px;border:1px solid #d3cbc7;background:#F2F2F2;line-height:42px;padding-left:10px;color:#4e4f51;}
-.dl_cont dd .yz{width:90px;height:42px;line-height:42px;background:#F2F2F2;border:1px solid #d3cbc7;float:left;padding-left:10px;margin-right:10px;}
-.dl_cont dd img{float:left;margin-right:10px;}
+.dl_cont dd .txt{width:388px;height:42px;border:1px solid #d7d7d7;background:#fbfbfb;line-height:42px;padding-left:10px;color:#4e4f51;border-radius:0px;}
+.dl_cont dd .yz{width:90px;height:42px;line-height:42px;background:#FBFBFB;border:1px solid #d7d7d7;float:left;padding-left:10px;margin-right:10px;}
+.dl_cont dd img{float:left;margin-right:10px;border-radius:0px;}
 .dl_cont dd p{width:140px;height:42px;line-height:42px;float:left;}
 .dl_cont dd p a{color:#70d3fd;}
 .dl_cont .btn{width:250px;height:50px;background:#66ccfc url(../images/250x50pxblue.png) no-repeat;border-radius:4px;color:#fff;margin-left:240px;font-size:16px;cursor:pointer;}
