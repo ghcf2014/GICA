@@ -349,4 +349,16 @@
 
 
 	<!--content end-->
+<script>
+    $(function(){
+		$('.xszy_cont_out .xszy_cont .xszy_cont_l li').each(function(index,element)
+		{
+			$(element).click(function(){
+				//alert(1);
+				$(element).css({'color':'#ef681f'}).siblings().css('color','#333');
+			});	
+		});
+	
+})
+</script>
 </block>
