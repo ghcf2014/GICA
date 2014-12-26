@@ -57,24 +57,25 @@
 							<strong id="bb" style="color: #166cb2;">0%</strong><br /> 本息总额：
 							<strong id="cc" style="color: #166cb2;">0元</strong>
 						</p>
-						<p class="gjjg">
+						<!-- <p class="gjjg"> -->
 							<table border="1" style="display: none; color: blue"
-							id="tabresult"><tr>
-								<td align="center">期数</td>
-								<td align="center">月收本息</td>
-								<td align="center">月收本金</td>
-								<td align="center">月收利息</td>
-								<td align="center">本息余额</td>
-							</tr>
-							<tr>
-								<td align="center" id="periods"></td>
-								<td align="center" id="principal"></td>
-								<td align="center" id="corpus"></td>
-								<td align="center" id="interest"></td>
-								<td align="center" id="remainder"></td>
-							</tr>
-						</table>
-						</p>
+							id="tabresult">
+								<tr>
+									<td align="center">期数</td>
+									<td align="center">月收本息</td>
+									<td align="center">月收本金</td>
+									<td align="center">月收利息</td>
+									<td align="center">本息余额</td>
+								</tr>
+								<tr>
+									<td align="center" id="periods"></td>
+									<td align="center" id="principal"></td>
+									<td align="center" id="corpus"></td>
+									<td align="center" id="interest"></td>
+									<td align="center" id="remainder"></td>
+								</tr>
+							</table>
+						<!-- </p> -->
 					</div>
 					<div id="result" style="display: none">
 						<p class="gjjg">
@@ -121,6 +122,8 @@
 						var yearRate = $("#yearRate").val();
 						if (!isNaN(yearRate)) { //判断是否是数字
 							if (yearRate == "") {
+								
+								
 								$("#yearRate").next().next().show().html(
 										"<font color='red'>年化利率不能为空！</font>");
 								return false;
@@ -154,9 +157,19 @@
 						var monthrate = yearRate / 12;//转换为月利率
 						//等额本息计算方法
 						if (repayWay == 0) {
+							$("#totalResult").show();
 							totalMoney = (investMoney * (rate / 12) * Math.pow(
 									(1 + (rate / 12)), borrowTime))
 									/ (Math.pow(1 + (rate / 12), borrowTime) - 1);
+							
+							//截取总金额
+							var totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
+							alert(totalMoney);
+							//$("#tabresult").hide();
+							$('#totalResult .gjjg').show();
+							$('#totalResult #tabresult').hide();
+							
+							
 							$("#aa").html(
 									"<font color='red'>" + totalMoney
 											+ "元</font>");
@@ -173,7 +186,13 @@
 
 						//先息后本的方法
 						if (repayWay == 1) {
+							$('#totalResult .gjjg').show();
+							$('#totalResult #tabresult').hide();
 							totalMoney = investMoney * (rate / 12);
+							//截取总金额
+							
+							
+							var totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
 							$("#aa").html(
 									"<font color='red'>" + totalMoney
 											+ "元</font>");
@@ -185,6 +204,7 @@
 											"<font color='red'>"
 													+ ((parseFloat(totalMoney) * parseFloat(borrowTime)) + parseFloat(investMoney))
 													+ "元</font>");
+						
 							//先息后本列表清单循环结构代码
 						}
 
@@ -192,6 +212,8 @@
 						if (repayWay == 2) {
 							totalMoney = investMoney
 									* Math.pow(((1 + (rate / 12))), borrowTime);
+							//截取总金额
+							var totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
 							$("#aa").html(
 									"<font color='red'>" + totalMoney
 											+ "元</font>");
@@ -202,8 +224,10 @@
 									"<font color='red'>"
 											+ (parseFloat(totalMoney))
 											+ "元</font>");
-							$("#tabresult").show();
-							$('.gjjg').hide();
+							//$("#tabresult").show();
+							$('#totalResult .gjjg').hide();
+							$('#totalResult #tabresult').show();
+							//$('.gjjg').hide();
 							$("#periods").html(borrowTime);
 							$("#principal").html(totalMoney);
 							$("#corpus").html(investMoney);
