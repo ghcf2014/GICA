@@ -396,7 +396,18 @@ function get_username($uid = 0){
     }
     return $name;
 }
-
+function get_borrow_username($borrow_uid = 0){
+        $map =$borrow_uid;
+        $name = M('member')->field('nickname')->find($map);
+         // var_dump($name['nickname']);
+    return $name['nickname'];
+}
+function get_borrow_name($id = 0){
+        $map =$id;
+        $name = M('z_borrow_info')->field('borrow_name')->find($map);
+         // var_dump($name['nickname']);
+    return $name['borrow_name'];
+}
 /**
  * 根据用户ID获取用户昵称
  * @param  integer $uid 用户ID

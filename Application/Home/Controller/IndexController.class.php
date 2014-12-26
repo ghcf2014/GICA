@@ -22,7 +22,7 @@ class IndexController extends HomeController {
         
 
         $lists2    = D('z_borrow_investor')->field('investor_uid,sum(investor_capital)investor_capital')->order('investor_capital desc')->group('investor_uid')->select();
-
+        
         
         //$this->assign('page',D('Document')->page);//分页
         //正在进行的贷款

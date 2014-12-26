@@ -88,7 +88,7 @@ class FinanceController extends HomeController {
             $map = array('id' => $id);
             $listBorrow  = M('z_borrow_info');
             $list3 = $listBorrow->where($map)->select();
-
+             var_dump($list3);
             //从表单中获取来的数据 
             $capital=$_POST["capital"];
             
@@ -96,6 +96,9 @@ class FinanceController extends HomeController {
             $m=M("z_borrow_investor");
             $m->investor_capital=$capital;
             $m->borrow_id=$bid;
+            $m->add_time=time();
+            $m->deadline=$list3[0]['deadline'];
+            $m->invest_fee=$list3[0]['borrow_interest_rate'];
             $m->investor_uid=$uid;
     // 判断余额不足
     if($list[0]['account_money'] >= $capital ){

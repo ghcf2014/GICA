@@ -9,15 +9,15 @@
  *******************************************/
 
 html,body,input,textarea,select,legend {
-	color: #635c73;
+	color: #0A99DB;
 	/*全局默认文字颜色*/
 }
 a {
-	color: #7b66ab;
+	color: #0A99DB;
 	/*全局默认链接颜色*/
 }
 a:hover{
-	color: #a47fe5;
+	color: #66CCFB;
 	/*全局默认链接悬停颜色*/
 }
 
@@ -210,12 +210,12 @@ select {
 .data-table thead th,
 .data-table tbody td {
 	/*非隔行变色时 用于行区分的单元格底线颜色 */
-    border-bottom-color:  #f4f4f4;
+    border-bottom-color:  #0A99DB;
 }
 /* 表头配色 */
 .data-table thead th {
 	color:#fff;
-    background-color: #4a4851;
+    background-color: #0A99DB;
 }
 /* 隔行变色 行默认颜色 */
 .table-striped tbody tr {
@@ -238,11 +238,11 @@ select {
 /* 普通按钮 */
 .btn {
     color: #ffffff;
-	background-color: #7963df;
+	background-color: #0A99DB;
 }
 .btn:hover {
     color: #ffffff;
-    background-color: #997eff;
+    background-color: #66CCFB;
 }
 
 /* 表单提交按钮(确定,保存,提交) */
@@ -306,7 +306,7 @@ select {
 
 /* 头部Logo,主导航*/
 .header {
-    background-color: #353535;
+    background-color: #0A99DB;
 }
 .header .logo {
     background: url(../images/blue_color/bg_icon.png) no-repeat 0 -45px;
@@ -316,13 +316,13 @@ select {
     color: #FFF;
 }
 .main-nav a:hover {
-    background-color: #5b5d74;
+    background-color: #66CCFB;
 }
 .main-nav .current{
     background-color: #656565;
 }
 .main-nav .current a {
-    background-color: #7963df;
+    background-color: #66CCFB;
 }
 
 /* 顶部右侧 用户bar */
@@ -345,7 +345,7 @@ select {
 ------------------------------------------ */
 .sidebar {
 	/* 左侧栏背景 */
-	background: url(../images/bg.png) repeat #4a4851;
+	background: url(../images/bg.png) repeat #66CCFB;
 }
 /* 子导航Group标题栏 */
 .subnav h3 {
@@ -375,11 +375,11 @@ select {
 }
 .side-sub-menu > li > .item:hover{
 	color: #ffffff;
-	background: #7c7c7c;
+	background: #0A99DB;
 }
 .side-sub-menu > li > .item:hover{
 	color: #ffffff;
-	background: #7c7c7c;
+	background: #0A99DB;
 }
 .side-sub-menu > .current > .item,
 .side-sub-menu > .hover > .item {
