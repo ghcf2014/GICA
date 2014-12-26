@@ -89,6 +89,7 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01{width:216px;height:280px;border:1px solid #b19a78;float:left;padding-top:15px;margin-right:18px;margin-bottom:25px;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl{width:186px;padding:0 15px;height:280px;border-bottom:1px solid #b19a78;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dt{width:185px;height:69px;background:url(../images/prince1.png) no-repeat;}
+
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd{width:185px;height:27px;line-height:27px;font-size:12px;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd span{color:#e09e64;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd b{font-weight:normal;color:#447fa7;}
@@ -96,6 +97,7 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd .out .in{width:45%;height:6px;background:#f1b37a;display:inline-block;border-radius:3px;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 .con_bot_l_con3_01_btn{width:121px;height:32px;background:#ef8328;border-radius:3px;margin:10px 0 0 48px;color:#fff;font-size:16px;line-height:32px;cursor:pointer;display:none;}
 .con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 .con_bot_l_con3_01_btn1{width:121px;height:32px;background:#ccc;border-radius:3px;margin:10px 0 0 48px;color:#fff;font-size:16px;line-height:32px;display:none;}
+.con .con_bot .con_bot_l .con_bot_l_con3 .con_bot_l_con3_01 dl dd a{color:#d64f3b;}
 
 /*-----con_bot_r-----------*/
 .con .con_bot .con_bot_r{float:right;width:250px;height:auto;padding-right:13px;}
@@ -150,8 +152,8 @@ a:hover{color:#0A99DB;text-decoration:none;}
 
 .flo_aside .flo_r{float:left;width:180px;height:100%;background:#66ccfb;}
 /*-----收益计算------*/
-.flo_aside .flo_r .flo_jsq{width:160px;height:200px;margin:280px 10px;border-radius:2px;border:1px dashed #fff;}
-.flo_aside .flo_r .flo_jsq li{border-bottom:1px dashed #fff;width:160px;height:49px;font-size:16px;text-align:center;line-height:49px;}
+.flo_aside .flo_r .flo_jsq{width:160px;/*height:200px;*/height:49px;/*margin:280px 10px;*/margin:320px 10px;border-radius:2px;border:1px dashed #fff;}
+.flo_aside .flo_r .flo_jsq li{/*border-bottom:1px dashed #fff;*/width:160px;height:49px;font-size:16px;text-align:center;line-height:49px;}
 .flo_aside .flo_r .flo_jsq li a{color:#EBFCFC;}
 /*-----联系我们------*/
 .flo_aside .flo_r .flo_lx{width:160px;height:auto;margin:200px 10px;}
