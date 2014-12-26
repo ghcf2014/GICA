@@ -283,8 +283,7 @@ class InvestController extends MemberController {
         $borrow_info = M('z_borrow_investor');
         $condition['investor_uid'] =$uid;
         $borrow_info=$borrow_info->field('borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee')->where($condition)->order('id asc','invest_fee desc','add_time desc')->group('borrow_id')->select();
-
-        var_dump($borrow_info);
+        
         $this->assign('list',$borrow_info);
         $this->display();
     }

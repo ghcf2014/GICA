@@ -9,9 +9,9 @@
                 <dt>
                     <div class="header"></div>
                     <ul>
-                        <li>用户名称：<span>小红</span></li>
-                        <li>注册时间：<span>2014-11-22</span></li>
-                        <li>最后登录：<span>2014-11-28</span></li>
+                        <li>用户名称：<span>{$vb.borrow_uid|get_borrow_username}</span></li>
+                        <li>注册时间：<span>{$vb.reg_time|date='Y-m-d',###}</span></li>
+                        <li>最后登录：<span>{$vb.last_login_time|date='Y-m-d',###}</span></li>
                         <li>居住地：<span>深圳市</span></li>
                     </ul>
                     <a href="#">关注此人</a><a href="#">关注此借款</a>
@@ -19,17 +19,26 @@
                 <dd>
                     <ul><volist name="list3" id="vb">
                         <li><h3>{$vb.borrow_name}</h3></li>
-                        <li><h3>（机构担保借款）</h3><input type="button" class="btn"></li>
+                        <li><h3>（机构担保借款）</h3><if condition="$vb.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vb['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
+                	    <elseif condition="$vb.borrow_status eq 2"/>
+                	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
+                	     <elseif condition="$vb.borrow_status eq 4"/>
+                	    <img alt="" src="__PUBLIC__/Home/images/checkref.png">
+                	    <elseif condition="$vb.borrow_status eq 6"/>
+                	    <img alt="" src="__PUBLIC__/Home/images/returning.png">
+                	     <elseif condition="$vb.borrow_status eq 7"/>
+                	     <img alt="" src="__PUBLIC__/Home/images/full.png">
+                	    </if></li>
                         <li>借款金额：<span style="color:#ef681f;">￥{$vb.borrow_money}元</span></li>
                         <li>借款目的：<span>短期周转</span></li>
-                        <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>（月利率：<span>1.50%</span>）</li>
+                        <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>（月利率：<span>{$vb[borrow_interest_rate]/12}%</span>）</li>
                         <li>借款期限：<span>{$vb.borrow_duration}月</span></li>
-                        <li>还差：<span>￥900,000.00</span></li>
-                        <li><strong>投标进度：</strong><span class="out"><span class="in"></span></span><span class="data">60%</span></li>
+                        <li>还差：<span>￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
+                        <li><strong>投标进度：</strong><span class="out"><span class="width:{$vb['has_borrow']/$vb['borrow_money']*100}%;"></span></span><span class="data">{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
                         <li style="color:#ef681f;">还款方式：<span>一次性还款</span></li>
                         <li>交易类型：<span>线下交易</span></li>
-                        <li>最小投标金额：<span>￥50.00</span></li>
-                        <li>最大投标金额：<span>不限</span></li>
+                        <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
+                        <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
                         <li>总投标数：<span style="margin-right:20px;">0</span>   浏览量：<span>0</span></li>
                         </volist>                             
                     </ul>
@@ -41,16 +50,12 @@
             <!--项目详情-->
            <div class="xmxq_out">
                <div class="xmxq">
-                    <h3>项目详情</h3>
-                    <p>借款人用户名：<span>小红</span></p>
+                    <h3>项目详情</h3><volist name="list3" id="vb">
+                    <p>借款人用户名：<span>{$vb.borrow_uid|get_borrow_username}</span></p>
                     <p>借款标类型：<span>其他个人经营性贷款</span></p>
-                    <p>借款人资质：<span>女，45岁，福建厦门人，已婚</span></p>
-                    <p>历史沿革：<span>公司成立于2008年10月，注册资本1000万元</span></p>
-                    <p>主营业务：<span>工程和技术研究和试验发展；耐火陶瓷制品及其他耐火材料制造；其他通用设备制造业</span></p>
-                    <p>经营概况：<span>优质企业</span></p>
-                    <p>年营业收入：<span>3000万元</span></p>
-                    <p>借款用途：<span>购买原材料</span></p>
-                    <p>还款来源：<span>营业收入</span></p>
+                    <p>借款说明：<span>{$vb.borrow_info}</span></p>
+                    <p>借款用途：<span>{$vb.borrow_use}</span></p>
+                    <p>还款来源：<span>营业收入</span></p></volist> 
                 </div>
                 <div class="jyjl">
                     <h4>工合交易信用记录</h4>
@@ -168,39 +173,15 @@
                     <li>状态</li>
                 </ul>
                 
-                <ul class="con">
-                	<li>***59</li>
-                    <li>16%/年</li>
-                    <li>5,000.00</li>
-                    <li>2014-12-11 10:44:11</li>
+                <ul class="con"><volist name="list" id="vb">
+                	<li>{$vb.investor_uid|get_borrow_username}</li>
+                    <li>{$vb['invest_fee']*1}%/年</li>
+                    <li>{$vb.investor_capital}</li>
+                    <li>{$vb.add_time|date='Y-m-d',###}</li>
                     <li>手动投标</li>
-                    <li>已中标</li>
+                    <li>已中标</li></volist>
                 </ul>
-                <ul class="con">
-                	<li>***59</li>
-                    <li>16%/年</li>
-                    <li>5,000.00</li>
-                    <li>2014-12-11 10:44:11</li>
-                    <li>手动投标</li>
-                    <li>已中标</li>
-                </ul>
-                <ul class="con">
-                	<li>***59</li>
-                    <li>16%/年</li>
-                    <li>5,000.00</li>
-                    <li>2014-12-11 10:44:11</li>
-                    <li>手动投标</li>
-                    <li>已中标</li>
-                </ul>
-                <ul class="con">
-                	<li>***59</li>
-                    <li>16%/年</li>
-                    <li>5,000.00</li>
-                    <li>2014-12-11 10:44:11</li>
-                    <li>手动投标</li>
-                    <li>已中标</li>
-                </ul>
-                
+
                 <ul class="tzjl_fy">
                 	<li><</li>
                     <li>1</li>
