@@ -86,12 +86,10 @@
 									<tr>
 										<td align="center">
 											￥
-											<s:if test="#request.financeStatisMap.investAmount !=''"></s:if>
-											<s:else>0</s:else>
+											{$suminvestor}
 										</td>
 										<td align="center">
-											<s:if test="#request.financeStatisMap.investCount !=''"></s:if>
-											<s:else>0</s:else>
+											{$countinvestor}
 										</td>
 										<td align="center">
 											￥
@@ -103,13 +101,9 @@
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											￥
-											<s:if test="#request.financeStatisMap.forPI !=''"></s:if>
-											<s:else>0</s:else>
-										</td>
+											￥{$suminvestor}
 										<td align="center">
-											<s:if test="#request.financeStatisMap.forCount !=''"></s:if>
-											<s:else>0</s:else>
+											{$countinvestor}
 										</td>
 									</tr>
 								</table>

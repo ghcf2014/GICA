@@ -81,6 +81,25 @@ function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true) {
     }
     return $suffix ? $slice.'...' : $slice;
 }
+//字符转换成"*"
+function hidestr($str, $start=0, $length, $charset="utf-8", $suffix=true) {
+    if(function_exists("mb_substr"))
+        $slice = mb_substr($str, $start, $length, $charset);
+    elseif(function_exists('iconv_substr')) {
+        $slice = iconv_substr($str,$start,$length,$charset);
+        if(false === $slice) {
+            $slice = '';
+        }
+    }else{
+        $re['utf-8']   = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|[\xe0-\xef][\x80-\xbf]{2}|[\xf0-\xff][\x80-\xbf]{3}/";
+        $re['gb2312'] = "/[\x01-\x7f]|[\xb0-\xf7][\xa0-\xfe]/";
+        $re['gbk']    = "/[\x01-\x7f]|[\x81-\xfe][\x40-\xfe]/";
+        $re['big5']   = "/[\x01-\x7f]|[\x81-\xfe]([\x40-\x7e]|\xa1-\xfe])/";
+        preg_match_all($re[$charset], $str, $match);
+        $slice = join("",array_slice($match[0], $start, $length));
+    }
+    return $suffix ? $slice.'****' : $slice;
+}
 
 /**
  * 系统加密方法
@@ -398,6 +417,12 @@ function get_username($uid = 0){
 }
 function get_borrow_username($borrow_uid = 0){
         $map =$borrow_uid;
+        $name = M('member')->field('nickname')->find($map);
+         // var_dump($name['nickname']);
+    return $name['nickname'];
+}
+function get_investor_username($investor_uid = 0){
+        $map =$investor_uid;
         $name = M('member')->field('nickname')->find($map);
          // var_dump($name['nickname']);
     return $name['nickname'];
@@ -1123,3 +1148,10 @@ $mail = new PHPMailer(); //实例化
  echo "Message has been sent";
  }
 }
+//这样在模版中调用的话，只需要用 {$vo.title|subtext=10} 这样即可，同时实现了，如果没超出长度，则不追加省略号的效果。
+function subtext($text, $length)
+ {
+    if(mb_strlen($text, 'utf8') > $length) 
+    return mb_substr($text, 0, $length, 'utf8').'...';
+    return $text;
+ }

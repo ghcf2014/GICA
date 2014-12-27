@@ -56,13 +56,10 @@
 									</tr>
 									<tr>
 										<td align="center">
-											￥
-											<s:if test="#request.loanStatisMap.borrowAmount !=''"></s:if>
-											<s:else>0</s:else>
+											￥{$sumborrow}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.publishBorrow !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow}
 										</td>
 										<td align="center">
 											￥
@@ -80,7 +77,7 @@
 										<td align="center">
 											￥
 											<s:if test="#request.loanStatisMap.forRepayPI !=''"></s:if>
-											<s:else>0</s:else>
+											<s:else>{$sumborrow}</s:else>
 										</td>
 										<td align="center">
 											<s:if test="#request.loanStatisMap.repayBorrow !=''"></s:if>
@@ -92,7 +89,7 @@
 										</td>
 										<td align="center">
 											<s:if test="#request.loanStatisMap.forRepayBorrow !=''"></s:if>
-											<s:else>0</s:else>
+											<s:else>{$countborrow}</s:else>
 										</td>
 									</tr>
 								</table>

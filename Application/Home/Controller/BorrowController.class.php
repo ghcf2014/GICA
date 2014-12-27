@@ -114,9 +114,10 @@ class BorrowController extends HomeController {
 		$this->assign ( 'list3', $list );
 
 		$borrow_info = M('z_borrow_investor');
-        $condition['borrow_uid'] =$list[0]['borrow_uid'];
-        $borrow_info=$borrow_info->field('borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee')->where($condition)->order('id asc','invest_fee desc','add_time desc')->group('borrow_id')->select();
+        $condition['borrow_id'] =41;
+        $borrow_info=$borrow_info->field('investor_uid,borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee')->where($condition)->order('id asc','invest_fee desc','add_time desc')->group('investor_uid')->select();
         
+        // var_dump($borrow_info['investor_uid']);
         $this->assign('list',$borrow_info);
 	
 		$this->display ();

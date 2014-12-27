@@ -172,23 +172,24 @@
                     <li>投资方式</li>
                     <li>状态</li>
                 </ul>
-                
-                <ul class="con"><volist name="list" id="vb">
-                	<li>{$vb.investor_uid|get_borrow_username}</li>
+                <volist name="list" id="vb">
+                <ul class="con">
+                	<li>{$vb.investor_uid|get_investor_username|hidestr=0,3}</li>
                     <li>{$vb['invest_fee']*1}%/年</li>
                     <li>{$vb.investor_capital}</li>
                     <li>{$vb.add_time|date='Y-m-d',###}</li>
                     <li>手动投标</li>
-                    <li>已中标</li></volist>
-                </ul>
+                    <li>已中标</li>
+                </ul></volist>
 
                 <ul class="tzjl_fy">
-                	<li><</li>
+                    没有更多数据了
+                	<!-- <li><</li>
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
                     <li>4</li>
-                    <li>></li>
+                    <li>></li> -->
                 </ul>
             </div>
         </div>

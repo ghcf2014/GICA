@@ -100,11 +100,11 @@
 									<tr>
 										<td align="center">
 											￥
-											<s:if test="#request.financeStatisMap.investAmount !=''">${financeStatisMap.investAmount}</s:if>
+											<s:if test="#request.financeStatisMap.investAmount !=''">{$suminvestor}</s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">
-											<s:if test="#request.financeStatisMap.investCount !=''">${financeStatisMap.investCount}</s:if>
+											<s:if test="#request.financeStatisMap.investCount !=''">{$countinvestor}</s:if>
 											<s:else>0</s:else>
 										</td>
 										<td align="center">

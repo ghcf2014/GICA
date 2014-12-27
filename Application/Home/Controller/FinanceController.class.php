@@ -143,7 +143,7 @@ class FinanceController extends HomeController {
 
                             if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
                                 //成功提示
-                                $this->success(L('投资成功。->>>>这不是真实金额'),U('Borrow/detail?id='.$bid));
+                                $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
                             } 
                             else {
                                 //失败提示
