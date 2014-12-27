@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /*------清空默认样式--------*/
@@ -198,7 +198,7 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .jjxq_l .jjxq_l_con .tzzbz dd{float:right;width:275px;height:180px;font-size:16px;line-height:32px;}
 .jjxq_l .jjxq_l_con .rglc{width:598px;height:308px;padding-bottom:30px;}
 /*---------jjxq_r----------------------*/
-.jjxq_r{float:right;width:330px;height:auto;position:static;}
+.jjxq_r{float:right;width:330px;height:auto;position:static;background:#fff;}
 .jjxq_r .jjxq_r_top01{width:328px;height:80px;border:1px solid #ccc;margin-bottom:30px;} 
 .jjxq_r .jjxq_r_top01 .jjxq_r_btn{width:80px;height:36px;margin:22px 0 0 54px;cursor:pointer;}
 .jjxq_r .jjxq_r_top02{width:328px;height:325px;border:1px solid #ccc;position:relative;margin-bottom:30px;}
