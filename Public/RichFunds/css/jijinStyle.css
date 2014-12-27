@@ -171,3 +171,124 @@ a:hover{color:#0A99DB;text-decoration:none;}
 
 
 
+/*----------基金详情页----------------------*/
+/*---------jjxq_ban---------*/
+.jjxq_ban{width:1600px;height:366px;margin:0 auto;}
+
+/*----------jjxq  content-----*/
+.jjxq{width:980px;height:auto;margin:0 auto 30px;overflow:hidden;position:relative;}
+/*----------jjxq_l-----------*/
+.jjxq_l{width:620px;height:auto;float:left;}
+.jjxq_l h2{font-size:30px;text-align:center;width:618px;height:80px;line-height:80px;border:1px solid #ccc;font-weight:normal;margin-bottom:30px;}
+.jjxq_l .jjxq_l_con{width:598px;height:auto;border:1px solid #ccc;padding:20px 10px;}
+.jjxq_l .jjxq_l_con img{display:block;}
+.jjxq_l .jjxq_l_con .img{width:563px;height:auto;margin:auto;}
+.jjxq_l .jjxq_l_con .wz{width:598px;height:auto;line-height:25px;font-size:16px;}
+.jjxq_l .jjxq_l_con h3{width:598px;height:30px;line-height:30px;text-align:center;color:#b70000;font-size:26px;margin-top:50px;}
+.jjxq_l .jjxq_l_con .lvshi{overflow:hidden;width:598px;height:auto;margin-top:20px;}
+.jjxq_l .jjxq_l_con .lvshi dt{width:286px;height:316px;float:left;}
+.jjxq_l .jjxq_l_con .lvshi dd{font-size:16px;line-height:28px;width:310px;height:316px;float:right;}
+.jjxq_l .jjxq_l_con h4{font-size:24px;color:#333;width:598px;height:32px;line-height:32px;font-weight:normal;margin-top:50px;}
+.jjxq_l .jjxq_l_con .lvshiteam{overflow:hidden;width:573px;height:auto;padding:10px 0 0 25px;}
+.jjxq_l .jjxq_l_con .lvshiteam dt{min-width:100px;min-height:145px;float:left;}
+.jjxq_l .jjxq_l_con .lvshiteam dd{min-height:125px;width:320px;line-height:28px;float:left;padding:10px 10px 10px 60px;}
+.jjxq_l .jjxq_l_con .lvshiteam dd p{font-size:16px;line-height:30px;}
+.jjxq_l .jjxq_l_con .tzzbz{overflow:hidden;width:558px;height:180px;padding:20px;}
+.jjxq_l .jjxq_l_con .tzzbz dt{float:right;width:283px;height:169px;}
+.jjxq_l .jjxq_l_con .tzzbz dd{float:right;width:275px;height:180px;font-size:16px;line-height:32px;}
+.jjxq_l .jjxq_l_con .rglc{width:598px;height:308px;padding-bottom:30px;}
+/*---------jjxq_r----------------------*/
+.jjxq_r{float:right;width:330px;height:auto;position:static;}
+.jjxq_r .jjxq_r_top01{width:328px;height:80px;border:1px solid #ccc;margin-bottom:30px;} 
+.jjxq_r .jjxq_r_top01 .jjxq_r_btn{width:80px;height:36px;margin:22px 0 0 54px;cursor:pointer;}
+.jjxq_r .jjxq_r_top02{width:328px;height:325px;border:1px solid #ccc;position:relative;margin-bottom:30px;}
+.jjxq_r .jjxq_r_top02 .qz{width:54px;height:86px;background:url(../images/rongzizhong.gif) no-repeat;position:absolute;right:8px;top:-4px;}
+.jjxq_r .jjxq_r_top02 .jjxq_r_top02_head{width:328px;height:103px;border-bottom:1px dashed #ccc;}
+.jjxq_r .jjxq_r_top02 .jjxq_r_top02_head .yrzj{width:308px;padding-left:20px;height:40px;line-height:40px;font-size:20px;}
+.jjxq_r .jjxq_r_top02 .jjxq_r_top02_head .yrzj_no{width:278px;height:50px;font-size:28px;font-weight:bold;color:#e93105;line-height:45px;padding-left:50px;}
+.jjxq_r .jjxq_r_top02 ul{width:288px;height:181px;padding:20px;}
+.jjxq_r .jjxq_r_top02 ul li{width:288px;height:32px;overflow:hidden;line-height:32px;}
+.jjxq_r .jjxq_r_top02 ul li span{width:100px;height:32px;float:left;font-size:18px;}
+.jjxq_r .jjxq_r_top02 ul li p{float:left;width:188px;height:32px;font-size:18px;line-height:32px;}
+.jjxq_r .jjxq_r_top02 ul li .jdt{float:left;margin-top:10px;border-radius:8px;width:180px;height:15px;background:#cbcbcb;}
+.jjxq_r .jjxq_r_top02 ul li .jdt .jdt_in{width:30%;border-radius:8px;height:15px;background:#ff7700;}
+.jjxq_r .jjxq_r_top03{width:318px;height:auto;border:1px solid #ccc;padding:5px;}
+.jjxq_r .jjxq_r_top03 .title{overflow:hidden;}
+.jjxq_r .jjxq_r_top03 .title dt{width:170px;height:44px;background:#079cf1;float:left;margin-right:12px;color:#fff;font-size:18px;line-height:44px;padding-left:20px;}
+.jjxq_r .jjxq_r_top03 .title dd{width:116px;height:44px;background:#079cf1;float:left;color:#fff;font-size:18px;line-height:44px;text-align:center;}
+.jjxq_r .jjxq_r_top03 .jjxq_r_top03_con{overflow:hidden;}
+.jjxq_r .jjxq_r_top03 .jjxq_r_top03_con dt{width:170px;height:44px;float:left;margin-right:12px;color:#333;font-size:16px;line-height:44px;padding-left:20px;}
+.jjxq_r .jjxq_r_top03 .jjxq_r_top03_con dd{width:116px;height:44px;float:left;color:#333;font-size:16px;line-height:44px;text-align:center;background:url(../images/pass.gif) no-repeat center center;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
