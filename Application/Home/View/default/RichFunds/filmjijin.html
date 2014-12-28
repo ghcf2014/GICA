@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>详情页</title>
+<!-- 添加基金版面         -->
+<link rel="stylesheet" href="__PUBLIC__/RichFunds/css/jijinStyle.css"
+	type="text/css" />
+<script type="text/javascript"
+	src="__PUBLIC__/RichFunds/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript"
+	src="__PUBLIC__/RichFunds/js/index_con_bot_l_tab.js"></script>
+<script type="text/javascript"
+	src="__PUBLIC__/RichFunds/js/jiJin_banner.js"></script>
+<script type="text/javascript"
+	src="__PUBLIC__/RichFunds/js/jiJinxiangqing.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//alert(1);	
+		$('.flo_aside').hover(
+				function() {
+					//alert(2);
+					$('.flo_aside .flo_l li').each(
+							function(index, element) {
+								$(element).hover(
+										function() {
+											$('.flo_aside .flo_r').show();
+											$('.flo_aside .flo_r ul').eq(
+													$(this).index()).show()
+													.siblings().hide();
+										});
+							})
+				}, function() {
+					$('.flo_aside .flo_r').hide();
+				});
+	})
+</script>
+</head>
+
+<body>
+
+	<!--头部  bar start-->
+	<div class="bar_out">
+		<div class="bar">
+			<ul>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 6px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微博</a></li>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微信</a></li>
+				<li class="phone"><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -84px; width: 30px; height: 36px; float: left;"></div>
+					<div style="width: 70px;">客户热线：</div> <span>400-123-4567</span></li>
+			</ul>
+			<ul class="bar_aside">
+				<li><a class="bar_aside_btn" style="color: #ef681f;"
+					href="{:U('User/login')}">登录</a></li>
+				<li><a class="bar_aside_btn" style="color: #65bae1;"
+					href="{:U('User/register')}">注册</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--头部  bar end-->
+
+
+	<!--导航栏 nav start-->
+	<div class="nav_out">
+		<h1>
+			<a href="{:u('Home/RichFunds/index')}"><img
+				src="__PUBLIC__/RichFunds/images/biaozhi.png" width="57" height="48"
+				class="logo" /><img
+				src="__PUBLIC__/RichFunds/images/gonghejijin.png" width="123"
+				height="40" class="logo_wz" /></a>
+		</h1>
+		<ul class="nav">
+			<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
+			<li><a href="{:U('Member/Index/index')}">基金产品</a></li>
+			<li><a href="{:U('Home/Index/index')}">工合财富</a></li>
+			<li><a href="{:U('Home/Borrow/index')}">工合众筹</a></li>
+			<li><a href="{:U('Home/Newhelp/borrowhelp')}">关于我们</a></li>
+		</ul>
+
+	</div>
+	<!--导航栏 nav end-->
+
+
+	<!--焦点图 banner start-->
+	<div class="jjxq_ban">
+		<img src="../../../../../Public/RichFunds/images/jjxq_ban_pic1.png"
+			width="1600" height="366" />
+	</div>
+	<!--焦点图 banner end-->
+
+
+	<!--内容 con start-->
+	<div class="jjxq">
+		<!--左边 jjxq_l   start-->
+		<div class="jjxq_l">
+			<h2>工合昆明之恋电影基金</h2>
+			<div class="jjxq_l_con">
+				<!--pic1-->
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/film_1.png"
+						width="526" height="308" style="margin-left: 20px;" />
+				</div>
+				<p class="wz">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电影是最受欢迎的文化产品之一，2010年国务院办公厅发布《关于促进电影产业繁荣发展的指导意见》积极引导和鼓励金融机构拓展适合电影产业发展的融资方式和金融服务。
+					2012年，中国电影票房收入突破170亿元。
+					2013年，中国电影票房收入一举突破217亿元，成为仅次于美国的世界第二大电影市场，其中国产电影票房达到127亿元。
+					2014年，中国电影票房再度飘红，上半年票房超过127亿元（2013年同期为107亿元，增长率超过30%）,截止9月21日，中国电影票房已突破212亿元，预计全年将达到280-300亿元，增长率高达30%以上。成为亚太最大电影市场，为成为“世界电影票仓”。
+					<br />
+				</p>
+
+				<!--pic2-->
+				<h4>影片主创团队</h4>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;①总监制李前宽</p>
+				<div class="img">
+					<img width="526" height="308"
+						src="../../../../../Public/RichFunds/images/film_person1.jpg"
+						style="margin-left: 15px;" />
+				</div>
+
+				<!--pic3-->
+				<p class="wz" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国家一级导演，首批享受国务院特俗津贴的有突出贡献的专家学者。
+					李前宽从事影视导演30余年，代表作品《佩剑将军》、《开国大典》、《决战之后》、《重庆谈判》。先后获电影“金鸡奖”、“百花奖”、“五个一工程奖”、“华表奖”、世界反法西斯“长城杯”优秀影片奖等多项国内外大奖。其中《开国大典》更是创下当年最高拷贝的记录。
+					李前宽创作的影片作品，具有史诗性的风格，具有强烈的时代感和使命感。他揽历史风云于电影，或泼墨挥洒、打气如虹；或笔走龙蛇、情意酣畅。在电影美学的追求上，张扬着烈烈如炽的“共和国情结”。
+					曾任第八届全国人大代表、第十届全国政协委员、中国电影家协会主席、中国电影基金会会长。
+					现任中国电影家协会名誉主席、国务院参事室参事、中央文史馆馆员。</p>
+				<p class="wz">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;②总编剧 罗星</p>
+
+				<div class="img">
+					<img width="526" height="308"
+						src="../../../../../Public/RichFunds/images/film_person2.jpg"
+						style="margin-left: 15px;" />
+				</div>
+
+				<!--pic4-->
+				<p class="wz" style="margin-top: 15px;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;罗星，电影剧作家、国家一级编剧。文化部五个一工程奖获得者，曾任峨眉电影制片厂专业编剧、紫禁城影业艺术总监、中国电影基金会副秘书长等职。
+					主要影视作品： 《车队从城市过》、《生活的马拉松》、《红十字作证》 《雄霸天下》（与台湾合拍）、《古咒》（与香港合拍）
+					《南行记》、《非法持枪》、《毛泽东的故事》、《反碟战场》 《西屯的儿子》、《中国出了个毛泽东》（20集） 《重案出击》（20集）
+					《人间烟火》（40集）、《风雨故人来》（30集）、《神舟》（40集）。</p>
+				<!--pic5-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;③总导演
+					姜帝圭</p>
+				<div class="img">
+					<img width="526" height="308"
+						src="../../../../../Public/RichFunds/images/film_person3.jpg"
+						style="margin-left: 15px;" />
+				</div>
+
+				<!--pic6-->
+				<h4>影片主演阵容</h4>
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;①艾米•汉莫（饰
+					汤姆）</p>
+				<div class="img">
+					<img width="526" height="308"
+						src="../../../../../Public/RichFunds/images/film_person4.jpg"
+						style="margin-left: 15px;" />
+				</div>
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;艾米•汉莫是近几年好莱坞当前最炙手可热的明星之一。
+					他家世显赫，父亲是知名商人，曾祖父是美国石油大亨和慈善家阿曼德•汉莫，阿曼德•汉莫是第一位与苏联发展贸易关系的美国企业家，有“红色资本家”的称号。而阿曼德•汉莫的父亲则是美国共产党的创始人。
+					在参与美国著名导演大卫•芬奇的金球奖最佳影片《社交网络》后，他的表演获得了一致好评，也被认为是好莱坞最具突破的年轻演员之一。艾米•汉莫获得极大的声誉，火速蹿红。凭借此次演出，他被芝加哥影评人协会提名最具潜力的演员。
+					之后艾米•汉莫出演了关于美国FBI联邦调查局局长的传记片《胡佛传》。他频繁出演重要电影和重要角色，上升势头十分强劲。</p>
+
+				<!--pic7-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;②李冰冰（饰
+					淑珍）</p>
+				<div class="img">
+					<img width="526" height="308"
+						src="../../../../../Public/RichFunds/images/film_person5.jpg"
+						style="margin-left: 15px;" />
+				</div>
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国内地著名女演员。刚出道凭电影《过年回家》摘得13届新加坡国际电影节最佳女主桂冠。
+					之后参与电影《天下无贼》。并凭电影《云水谣》获第12届中国电影华表奖及第29届大众电影百花奖。在《风声》中的表演让她荣膺46届台湾电影金马奖。
+					从2008年起，她因出演好莱坞电影《功夫之王》、《雪花秘扇》、《生化危机5》跻身国际影坛。
+					2012年担任上海国际电影节评委，年底签约美国经纪公司UTA。
+					2013年初荣升国际奢侈品牌Gucci全球代言人并接演《变形金刚4》，担任第50届金马奖决审评委。
+					毫无疑问，李冰冰是当前国内最顶级的明星，并且在国际上有很高影响力。</p>
+				<!--pic8-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;③切斯•克劳福（饰
+					约翰）</p>
+				<div class="img">
+					<img width="526" height="308"
+						src="../../../../../Public/RichFunds/images/film_person6.jpg"
+						style="margin-left: 15px;" />
+				</div>
+
+				<!--pic9-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;切斯•克劳福是美国著名偶像男演员，他在大热美剧《绯闻少女》中饰演男主角，引起广发关注，并凭借该剧获得2009至2011年间连续三年的最佳剧情男演员将及多个提名。
+					之后他主演了惊悚电影《如影随形》，被美国《人物》周刊选为“最炙手可热单身汉”第一名，“最性感男性”第一名。
+					切斯•克劳福拥有大量的粉丝，现在是美国非常火热的新生代偶像，人气常年保持火热。</p>
+
+				<!--律师事务所-->
+				<dl class="lvshi">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic11.gif"
+							width="268" height="316" />
+					</dt>
+					<dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东广和律师事务所成立于1995年4月，现有注册律师近288名（不含分所），是华南地区最大的综合型律师事务所，被司法部、全国律协评为"全国优秀律师事务所"。被《亚洲法律杂志》评为中国第四大律师事务所、广东最大的律师事务所、亚洲最值得关注的十家律师事务所之一；被国际法律服务市场分析与评级机构—钱伯斯评为"2010年度最佳地区律师事务所奖"；＂2013年度中国顶尖的律师事务所＂。
+					</dd>
+				</dl>
+				<!--律师团队-->
+				<h4>强大的律师团队</h4>
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic12.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>杨波&nbsp;律师</p>
+						<p>
+							广和律师事务所合伙人<br />精通私募股权投资基金的运作、管理。
+						</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic13.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>廖建业&nbsp;律师</p>
+						<p>
+							谙熟财经会计实务及法律实践<br />精通大型企业的财务、税务、经营管理及投融资实务精通私募股权投资基金的运作、管理。
+						</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic14.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>高翔&nbsp;律师</p>
+						<p>承办多家企业法律顾问事务，主要从事企业法律顾问、融资、新三板挂牌、IPO、再融资及债券发行法律业务。</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic15.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>周翔&nbsp;律师</p>
+						<p>主要从事公司融资、法律顾问、民商事案件诉讼，有丰富的融资专项顾问和商业诉讼案件办理经验。</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic16.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>陈梅&nbsp;律师</p>
+						<p>承办多起企业投资、融资、收购等专项法律服务、经济纠纷诉讼与非诉法律事务。</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic17.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>付永光&nbsp;律师</p>
+						<p>主要辅助合伙人律师办理了企业投资、融资、并购法律顾问、非诉业务、民商事纠纷。</p>
+					</dd>
+				</dl>
+
+				<!--投资者保障-->
+				<h4>安全有效的投资者保障</h4>
+				<dl class="tzzbz">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic18.gif" />
+					</dt>
+					<dd>根据2013年的审计报告，呼伦贝尔天竺苑旅游开发有限公司总资产约为9.57亿元，总负债约为3.8亿元，净资产约为5.77亿元，其股权可作为质押担保。</dd>
+				</dl>
+
+				<!--认购流程-->
+				<h3>认购流程：</h3>
+				<div class="rglc">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic19.gif"
+						width="598" height="308" />
+				</div>
+			</div>
+		</div>
+		<!--左边 jjxq_l   end-->
+
+		<!--右边 jjxq_r   start-->
+		<div class="jjxq_r">
+			<div class="jjxq_r_top01">
+				<input type="button" class="jjxq_r_btn"
+					style="background: url(../../../../../Public/RichFunds/images/guanzhu.gif) no-repeat;" /><input
+					type="button" class="jjxq_r_btn"
+					style="background: url(../../../../../Public/RichFunds/images/yuetan.gif) no-repeat;">
+			</div>
+
+			<div class="jjxq_r_top02">
+				<div class="qz"></div>
+				<div class="jjxq_r_top02_head">
+					<p class="yrzj">已融资金</p>
+					<p class="yrzj_no">￥20,0000</p>
+				</div>
+				<ul>
+					<li><span>项目规模：</span>
+						<p style="color: #e93105; font-weight: bold;">￥200,0000</p></li>
+					<li><span>年化收益：</span>
+						<p>10.5%</p></li>
+					<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span>
+						<p>1个月</p></li>
+					<li><span>担保机构：</span>
+						<p>广东工合基金</p></li>
+					<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span>
+						<div class="jdt">
+							<p class="jdt_in"></p>
+						</div></li>
+				</ul>
+			</div>
+
+			<div class="jjxq_r_top03">
+				<dl class="title">
+					<dt>审核项目</dt>
+					<dd>审核状态</dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>身份认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>工作认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>居住地认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>信用报告</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>房产</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>购车</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>其他资料</dt>
+					<dd></dd>
+				</dl>
+			</div>
+
+		</div>
+		<!--右边 jjxq_r   end-->
+	</div>
+	<!--内容 con end-->
+
+
+
+
+
+
+	<!--footer start-->
+	<div class="footer">
+		<div class="footer_in">
+			<ul>
+				<li><a href="guanyuwomen.html">关于我们</a></li>
+				<li><a href="#">法律指引</a></li>
+				<li><a href="#">新手指引</a></li>
+				<li><a href="#">理财攻略</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">论坛</a></li>
+				<li><a href="#">帮助中心</a></li>
+				<li><a href="#">网站地图</a></li>
+				<li><a href="#">友情链接</a></li>
+			</ul>
+			<dl>
+				<dt>合作伙伴</dt>
+				<dd>
+					<ul>
+						<li><a href="#"><img
+								src="__PUBLIC__/RichFunds/images/footer_pic1.png" width="122"
+								height="45" /></a></li>
+						<li><a href="#"><img
+								src="__PUBLIC__/RichFunds/images/footer_pic2.png" width="122"
+								height="45" /></a></li>
+						<li><a href="#"><img
+								src="__PUBLIC__/RichFunds/images/footer_pic3.png" width="122"
+								height="45" /></a></li>
+						<li><a href="#"><img
+								src="__PUBLIC__/RichFunds/images/footer_pic4.png" width="122"
+								height="45" /></a></li>
+						<li><a href="#"><img
+								src="__PUBLIC__/RichFunds/images/footer_pic5.png" width="122"
+								height="45" /></a></li>
+						<li><a href="#"><img
+								src="__PUBLIC__/RichFunds/images/footer_pic6.png" width="122"
+								height="45" /></a></li>
+					</ul>
+				</dd>
+			</dl>
+			<div class="footer_r">
+				<p style="font-size: 14px;">客服热线（工作时间8:00-22:00）</p>
+				<p style="font-size: 30px;">400 123 4567</p>
+				<p>客服邮箱 kefu@gog.com 在线服务</p>
+			</div>
+		</div>
+	</div>
+	<!--footer end-->
+
+	<!--banQuan start-->
+	<div class="banQuan">
+		<div class="banQuan_in">
+			<ul>
+				<li><img src="__PUBLIC__/RichFunds/images/banQuan_pic1.png" /></li>
+				<li><img src="__PUBLIC__/RichFunds/images/banQuan_pic2.png" /></li>
+				<li><img src="__PUBLIC__/RichFunds/images/banQuan_pic3.png" /></li>
+				<li><img src="__PUBLIC__/RichFunds/images/banQuan_pic4.png" /></li>
+			</ul>
+			<p>Copyrightc2011-2014工合财富 All rights reserved</p>
+		</div>
+	</div>
+	<!--banQuan end-->
+
+	<!--浮动侧边栏  计算器  客服QQ-->
+	<!--联系我们-->
+	<div class="flo_aside">
+		<!--浮动框标题-->
+		<ul class="flo_l">
+			<li>收<br />益<br />计<br />算
+			</li>
+			<li>联<br />系<br />我<br />们
+			</li>
+		</ul>
+		<div class="flo_r" style="display: none">
+			<!--计算器-->
+			<ul class="flo_jsq" style="display: none">
+				<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+				<!--<li><a href="#">CPI计算器</a></li>
+            	<li><a href="#">收益对比</a></li>
+            	<li style="border:0;"><a href="#"></a></li>-->
+			</ul>
+			<!--联系方式-->
+			<ul class="flo_lx" style="display: none">
+				<li style="font-size: 18px; line-height: 30px">客服热线<br /> <span>400-123-4567</span></li>
+				<li><a href="javascript:;">客服QQ</a></li>
+				<li>
+					<dl>
+						<dt>官方微信</dt>
+						<dd>微信号：ghcf</dd>
+						<dd>
+							<img src="../../../../../Public/Home/images/code.png" width="100"
+								height="100" />
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>官方微博</dt>
+						<dd style="margin-bottom: 0;">
+							<a href="javascript:;">点击关注</a>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+</body>
+
+</html>
