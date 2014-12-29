@@ -14,10 +14,11 @@
 		<p>
 			<a href="{:U('Home/User/register')}" class="zc btn">免费注册</a> |&nbsp;<a
 				href="{:U('Home/User/login')}" class="dl btn">立即登录</a>
-		</p>
+	      </p>
 		</if>
 
 	</div>
+    <a name="returntop" id="returntop"></a>
 </div>
 <!--header end-->
 
@@ -77,7 +78,7 @@
     </div>
 </div>
 
-
+<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/Home/images/returntop.png" width="23" height="72" /></a></div>
 
 
 
@@ -89,14 +90,27 @@
 			//alert(2);
 			$('.flo_aside .flo_l li').each(function(index,element){
 				$(element).hover(function(){
-					$('.flo_aside .flo_r').show('normal');
-					$('.flo_aside .flo_r ul').eq($(this).index()).show('slow').siblings().hide('slow');
+					$('.flo_aside .flo_r').show();
+					$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
 				});
 			})	
 		},function(){
 			$('.flo_aside .flo_r').hide();	
 		});
-	})
+		
+		
+		$(document).scroll(function(){
+			if($(document).scrollTop() > $(window).height())
+			{
+				$('.returnTop').show();				
+			}
+			else
+			{
+				$('.returnTop').hide();
+			}
+		});	
+		
+})
 </script>
 
 

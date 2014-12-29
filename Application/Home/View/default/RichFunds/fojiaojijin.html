@@ -28,6 +28,17 @@
 		},function(){
 			$('.flo_aside .flo_r').hide();	
 		});
+		
+		$(document).scroll(function(){
+			if($(document).scrollTop() > $(window).height())
+			{
+				$('.returnTop').show();				
+			}
+			else
+			{
+				$('.returnTop').hide();
+			}
+		});	
 	})
 </script>
 </head>
@@ -47,7 +58,7 @@
                 <li><a class="bar_aside_btn" style="color:#ef681f;" href="{:U('User/login')}">登录</a></li>
                 <li><a class="bar_aside_btn" style="color:#65bae1;" href="{:U('User/register')}">注册</a></li>
 			</ul>
-		</div>
+		</div><a name="returntop" id="returntop"></a>
 	</div>
 	<!--头部  bar end-->
 
@@ -387,6 +398,10 @@
         
     </div>
 </div>
+
+
+<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>
+
 
 </body>
 
