@@ -14,7 +14,6 @@ $(function(){
 			
 			$('.banner').mouseover(function(e) {
                 clearInterval(timer);
-				timer =null;
             }).mouseout(function(e) {
 				clearInterval(timer);
                 timer = setInterval(myFn,2500);
