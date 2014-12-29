@@ -417,7 +417,7 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .bdxq_cont dl dt .header{width:200px;height:200px;background:url(../images/200x200px.png) no-repeat;margin-bottom:12px;}
 .bdxq_cont dl dt ul{width:245px;height:110px;}
 .bdxq_cont dl dt ul li{width:245px;height:27px;line-height:27px;font-size:16px;font-weight:normal;}
-.bdxq_cont a{color:#333;font-weight:normal;font-size:14px;margin-right:20px;line-height:58px;}
+.bdxq_cont a{color:#333;font-weight:normal;font-size:14px;margin-right:20px;float:left;}
 .bdxq_cont dl dd{width:790px;height:350;float:left;padding:20px 0 0 30px;}
 .bdxq_cont dl dd ul{width:790px;height:240px;overflow:hidden;}
 .bdxq_cont dl dd ul li{float:left;width:338px;height:34px;line-height:34px;font-size:14px;overflow:hidden;}
