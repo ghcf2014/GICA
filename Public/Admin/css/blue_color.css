@@ -53,7 +53,7 @@ a:hover{
 }
 .tab-nav .current a,
 .tab-nav .current a:hover {
-	border-color: #7b66ab #e0e0e0 #f6f6f6;
+	border-color: #0A99DB #e0e0e0 #f6f6f6;
 }
 
 
@@ -248,12 +248,12 @@ select {
 /* 表单提交按钮(确定,保存,提交) */
 .submit-btn {
 	color: #fff;
-    background-color: #7d61dd;
+    background-color: #0A99DB;
 	/*background-color: #df7003;*/
 }
 .submit-btn:hover {
     color: #fff;
-    background-color: #a285ff;
+    background-color: #66CCFB;
 	/*background-color: #f48a05;*/
 }
 .save-btn {
@@ -269,7 +269,7 @@ select {
 	background-color: #8893ae;
 }
 .btn-return:hover {
-	background-color: #8080FF;
+	background-color: #66CCFB;
 }
 
 /*高级搜索箭头*/
@@ -434,7 +434,7 @@ select {
     background-color: #E1E1E1;
 }
 .page .current {
-	border-top: 3px solid #7963DF;
+	border-top: 3px solid #0A99DB;
 	height: 28px;
 	line-height: 26px;
 }
