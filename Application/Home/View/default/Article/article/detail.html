@@ -1,27 +1,4 @@
 <extend name="Base/common"/>
-
-<block name="header">
-    <header class="jumbotron subhead" id="overview">
-		<div class="container">
-			<h2>{$info.title}</h2>
-			<p>
-				<span  class="pull-left">
-					<span class="author">{$info.uid|get_username}</span>
-					<span> 发表于 {$info.create_time|date='Y-m-d H:i',###}</span>
-				</span>
-				<span class="pull-right">
-					<article:prev name="prev" info="info">
-                        <a href="{:U('?id='.$prev['id'])}">上一篇</a>
-                    </article:prev>
-                    <article:next name="next" info="info">
-                        <a href="{:U('?id='.$next['id'])}">下一篇</a>
-                    </article:next>
-				</span>
-			</p>
-		</div>
-	</header>
-</block>
-
 <block name="body">
 		<!-- 引用头部公共部分 -->
 		<jsp:include page="/include/top.jsp"></jsp:include>
@@ -47,7 +24,6 @@
 								{$info.title}
 							</h2>
 							<p class="time">
-								<!-- 发布者：{$info.uid|get_username} -->
 								发布时间：{$info.create_time|date='Y-m-d H:i',###} 点击次数：{$info.view}
 							</p>
 							<div id="imgxz">
@@ -83,12 +59,4 @@
 				</div>
 			</div>
 		</div>
-<!-- 留言 -->
-<!--     <div class="span9 main-content">
-        <!-- Contents
-        ================================================== 
-        <section id="contents">{$info.content}</section>
-        <hr/>
-        {:hook('documentDetailAfter',$info)}
-    </div> -->
 </block>
