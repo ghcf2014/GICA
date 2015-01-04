@@ -88,7 +88,7 @@ class FinanceController extends HomeController {
             $map = array('id' => $id);
             $listBorrow  = M('z_borrow_info');
             $list3 = $listBorrow->where($map)->select();
-             var_dump($list3);
+             // var_dump($list3);
             //从表单中获取来的数据 
             $capital=$_POST["capital"];
             
@@ -114,7 +114,6 @@ class FinanceController extends HomeController {
 
                 $m2h=intval ($m22[0]['has_borrow'])+intval ($capital);
 
-
                 $m222=intval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
 
                 $data2['has_borrow']=$m2h;
@@ -127,7 +126,6 @@ class FinanceController extends HomeController {
 
                     //判断是否满额
                     if ( $m222 >= 0){
-
 
                         $m2=$m2->where($condition2)->save($data2);
                         $count=$m->add();
@@ -142,6 +140,24 @@ class FinanceController extends HomeController {
                         $data1['account_money']=$money;
 
                             if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
+
+
+                                        $m2=M("z_borrow_info");
+                                        $condition2['id'] =$bid;
+                                        $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
+
+                                        $m2h=intval ($m22[0]['has_borrow'])+intval ($capital);
+
+                                        $m222=intval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
+
+                                        $data2['has_borrow']=$m2h;
+
+                                        if(intval ($m22[0]['has_borrow']) == intval ($m22[0]['borrow_money']))
+                                        {
+                                            $data3['borrow_status']=4;//标状态改变
+                                            $m2=$m2->where($condition2)->save($data3);          
+                                        }
+
                                 //成功提示
                                 $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
                             } 
