@@ -230,5 +230,26 @@ class OtherController extends AdminController {
         }
         return $error;
     }
+    public function msgonline(){
+        $this->display();
+    }
+    public function msgtemplet(){
+        $this->display();
+    }
+    public function payonline(){
+        $this->display();
+    }
+    public function qqcustomer(){
+        $this->display();
+    }
+    public function qun(){
+        $this->display();
+    }
+    public function scan(){
+        $this->display();
+    }
+    public function tel(){
+        $this->display();
+    }
 
 }

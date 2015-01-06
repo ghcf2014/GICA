@@ -230,5 +230,32 @@ class PayController extends AdminController {
         }
         return $error;
     }
+    public function not(){
+        $this->display();
+    }
+    public function paylist(){
+        $this->display();
+    }
+    public function paylogoffline(){
+        $this->display();
+    }
+    public function paylogonline(){
+        $this->display();
+    }
+    public function processing(){
+        $this->display();
+    }
+    public function reviewreflect(){
+        $this->display();
+    }
+    public function withdrawaled(){
+        $this->display();
+    }
+    public function withdrawallist(){
+        $this->display();
+    }
+    public function offset(){
+        $this->display();
+    }
 
 }

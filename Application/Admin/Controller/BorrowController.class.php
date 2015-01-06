@@ -230,5 +230,35 @@ class BorrowController extends AdminController {
         }
         return $error;
     }
+    public function fail(){
+    	$this->display();
+    }
+    public function overdue(){
+    	$this->display();
+    }
+    public function overduemember(){
+    	$this->display();
+    }
+    public function repaymenting(){
+    	$this->display();
+    }
+    public function reviewfail(){
+    	$this->display();
+    }
+    public function unfinish(){
+    	$this->display();
+    }
+    public function waitmoney(){
+    	$this->display();
+    }
+    public function waitverify(){
+    	$this->display();
+    }
+    public function done(){
+    	$this->display();
+    }
+    public function review(){
+    	$this->display();
+    }
 
 }

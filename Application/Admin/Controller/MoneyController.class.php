@@ -230,5 +230,23 @@ class MoneyController extends AdminController {
         }
         return $error;
     }
+    public function capitalAll(){
+        $this->display();
+    }
+    public function capitalDetail(){
+        $this->display();
+    }
+    public function recharge(){
+        $this->display();
+    }
+    public function customer(){
+        $this->display();
+    }
+    public function memberaccount(){
+        $this->display();
+    }
+    public function withdraw(){
+        $this->display();
+    }
 
 }
