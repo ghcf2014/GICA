@@ -20,10 +20,10 @@ class BorrowController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_borrow_info', $map);
         int_to_string($list);
         $this->assign('_list', $list);
-        $this->meta_title = '用户信息';
+        $this->meta_title = '管理信息';
         $this->display();
     }
 
@@ -231,34 +231,144 @@ class BorrowController extends AdminController {
         return $error;
     }
     public function fail(){
-    	$this->display();
+    	$nickname       =   I('nickname');
+        $map['borrow_status']  = 1;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function overdue(){
-    	$this->display();
+    	$nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function overduemember(){
-    	$this->display();
+    	$nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function repaymenting(){
     	$this->display();
     }
     public function reviewfail(){
-    	$this->display();
+    	$nickname       =   I('nickname');
+        $map['borrow_status']  = 5;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function unfinish(){
-    	$this->display();
+    	$nickname       =   I('nickname');
+        $map['borrow_status']  = 3;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function waitmoney(){
-    	$this->display();
+    	$nickname       =   I('nickname');
+        $map['borrow_status']  = 2;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function waitverify(){
-    	$this->display();
+        $nickname       =   I('nickname');
+        $map['borrow_status']  = 0;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+    
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function done(){
-    	$this->display();
+    	$nickname       =   I('nickname');
+        $map['borrow_status']  = 3;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
     public function review(){
-    	$this->display();
+        $nickname       =   I('nickname');
+        $map['borrow_status']  = 4;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_borrow_info', $map);
+
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
 
 }

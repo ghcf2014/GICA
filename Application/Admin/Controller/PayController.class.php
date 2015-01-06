@@ -231,30 +231,138 @@ class PayController extends AdminController {
         return $error;
     }
     public function not(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function paylist(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function paylogoffline(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function paylogonline(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function processing(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function reviewreflect(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function withdrawaled(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function withdrawallist(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
     public function offset(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
         $this->display();
     }
 

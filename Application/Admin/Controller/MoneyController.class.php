@@ -234,18 +234,78 @@ class MoneyController extends AdminController {
         $this->display();
     }
     public function capitalDetail(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '资金信息';
         $this->display();
     }
     public function recharge(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '资金信息';
         $this->display();
     }
     public function customer(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '资金信息';
         $this->display();
     }
     public function memberaccount(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '资金信息';
         $this->display();
     }
     public function withdraw(){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('Member', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '资金信息';
         $this->display();
     }
 
