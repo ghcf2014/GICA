@@ -12,87 +12,92 @@
             <!--zh_cont_r-->
             <div class="zh_cont_r"><volist name="mlist" id="vo">
                 <!--基本认证-->
-                <div class="tab"><form action="{:U('add?id='.$vb['id'])}" method="post">
-                    <h3>当前位置>基本认证</h3>
-                    <p style="background:#d3cbc7;width:948px;height:1px;"></p>
-                    <dl class="jbrz">
-                    	<dt>真实姓名</dt>
-                        <dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
-                    </dl>
-                    
-                    <dl class="jbrz">
-                    	<dt>身份证</dt>
-                        <dd><input type="text" class="txt" name="idcard" id="idNo" value="{$vo.idcard}" /></dd>
-                    </dl>
-                    
-                    <dl class="sfz" >
-                    	<dt>身份证正面</dt>
-                        <dd>
-                        	<input type="button" class="btn" value="上传" id="card_img" >
-                                <if condition="$vo.card_img eq ''">
-                                        <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
-                                <elseif condition="$vo.card_img  neq ''"/>
-                                        <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
+                <div class="tab">
+                    <form action="{:U('add?id='.$vb['id'])}" method="post">
+                        <h3>当前位置>基本认证</h3>
+                        <p style="background:#d3cbc7;width:948px;height:1px;"></p>
+                        <dl class="jbrz">
+                        	<dt>真实姓名</dt>
+                            <dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
+                        </dl>
+                        
+                        <dl class="jbrz">
+                        	<dt>身份证</dt>
+                            <dd><input type="text" class="txt" name="idcard" id="idNo" value="{$vo.idcard}" /></dd>
+                        </dl>
+                        
+                        <dl class="sfz" >
+                        	<dt>身份证正面</dt>
+                            <dd>
+                            	<input type="button" class="btn" value="上传" id="card_img" >
+                                    <if condition="$vo.card_img eq ''">
+                                            <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
+                                    <elseif condition="$vo.card_img  neq ''"/>
+                                            <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
+                                    </if>
+                            </dd>
+                        </dl>
+                        
+                        <dl class="jbrz sfz">
+                        	<dt>身份证反面</dt>
+    						<dd>
+                            	<input type="button"  class="btn" value="上传"id="card_back_img">
+                            	<if condition="$vo.card_back_img eq ''">
+                                            <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
+                                    <elseif condition="$vo.card_back_img  neq ''"/>
+                                            <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
+                                    </if>
+                            </dd>
+                        </dl>
+                        
+                        <dl class="jbrz sex">
+                        	<dt>性别</dt>
+                            <dd><if condition="$vo.sex eq '1'">
+    	                        	男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
+    	                            女<input type="radio" class="radio" name="sex" value="0" />
+                                <elseif condition="$vo.sex eq '0'"/>
+    	                            男<input type="radio" class="radio" name="sex" value="1" />
+    	                            女<input type="radio" class="radio" name="sex" value="0" checked="checked"/>
+                                <elseif condition="$vo.sex eq '2'"/>
+                                    男<input type="radio" class="radio" name="sex" value="1" />
+                                    女<input type="radio" class="radio" name="sex" value="0"/>
+                                    <a href="#">请选择</a>
                                 </if>
-                        </dd>
-                    </dl>
-                    
-                    <dl class="jbrz sfz">
-                    	<dt>身份证反面</dt>
-						<dd>
-                        	<input type="button"  class="btn" value="上传"id="card_back_img">
-                        	<if condition="$vo.card_back_img eq ''">
-                                        <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
-                                <elseif condition="$vo.card_back_img  neq ''"/>
-                                        <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
-                                </if>
-                        </dd>
-                    </dl>
-                    
-                    <dl class="jbrz sex">
-                    	<dt>性别</dt>
-                        <dd><if condition="$vo.sex eq '1'">
-	                        	男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
-	                            女<input type="radio" class="radio" name="sex" value="0" />
-                            <elseif condition="$vo.sex eq '0'"/>
-	                            男<input type="radio" class="radio" name="sex" value="1" />
-	                            女<input type="radio" class="radio" name="sex" value="0" checked="checked"/>
-                            </if>
-                        </dd>
-                    </dl>
-                    
-                    <dl class="jbrz">
-                    	<dt>职业</dt>
-                        <dd><input type="text" class="txt" name="zy" id="idNo" value="{$vo.zy}" /></dd>
-                    </dl>
-                    <dl class="jbrz">
-                    	<dt>手机号</dt>
-                        <dd><input type="text" class="txt" name="cell_phone" id="idNo" value="{$vo.cell_phone}" /></dd>
-                    </dl>
-                    
-                    <dl class="jbrz">
-                    	<dt>教育</dt>
-                        <dd>
-                            <select name="education"  class="inp50">
-                               <option value="高中">高中</option>
-                               <option value="博士以上">博士以上</option>    
-				               <option value="博士">博士</option>   
-				               <option value="硕士">硕士</option>   
-				               <option value="研究生">研究生</option>   
-				               <option value="本科">本科</option>
-				               <option value="专科">专科</option>
-				               <option value="小学">小学</option>      
-				            </select>   
-                        </dd>
-                    </dl>
-                    
-                    <dl class="jbrz">
-                    	<dt>现居地址</dt>
-                        <dd><input type="text" class="txt" name="address" value="{$vo.address}"></dd>
-                    </dl>
-                    <div class="jbrz_sub_btn">
-                    	<input type="submit" class="btn" value="保存"/>
-                    </div>
+                            </dd>
+                        </dl>
+                        
+                        <dl class="jbrz">
+                        	<dt>职业</dt>
+                            <dd><input type="text" class="txt" name="zy" id="idNo" value="{$vo.zy}" /></dd>
+                        </dl>
+                        <dl class="jbrz">
+                        	<dt>手机号</dt>
+                            <dd><input type="text" class="txt" name="cell_phone" id="idNo" value="{$vo.cell_phone}" /></dd>
+                        </dl>
+                        
+                        <dl class="jbrz">
+                        	<dt>教育</dt>
+                            <dd>
+                                <select name="education"  class="inp50">
+                                   <option value="高中">高中</option>
+                                   <option value="博士以上">博士以上</option>    
+    				               <option value="博士">博士</option>   
+    				               <option value="硕士">硕士</option>   
+    				               <option value="研究生">研究生</option>   
+    				               <option value="本科">本科</option>
+    				               <option value="专科">专科</option>
+    				               <option value="小学">小学</option>      
+    				            </select>   
+                            </dd>
+                        </dl>
+                        
+                        <dl class="jbrz">
+                        	<dt>现居地址</dt>
+                            <dd><input type="text" class="txt" name="address" value="{$vo.address}"></dd>
+                        </dl>
+                        <div class="jbrz_sub_btn">
+                        	<input type="submit" class="btn" value="保存"/>
+                        </div>
                     </form>
                 </div>
                 
