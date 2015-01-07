@@ -176,12 +176,18 @@ class UserinfoController extends MemberController {
 	}
 	public function userselfset() {
 		$uid = is_login ();
-		$m = M ( "z_member_info" );
+		$chk = M ( "z_member_info" );
 		$condition['uid'] =$uid;
-        $m=$m->where($condition)->select();
+        $m=$chk->where($condition)->select();
+        if ($m!==null){
+        	$this->assign('mlist', $m);
+        } else {
+        	$n=$chk->add($condition);
+        	$m=$chk->where($condition)->select();
+        	$this->assign('mlist', $m);
+        }
 
-
-        $this->assign('mlist', $m);
+        
 		$this->display ();
 	}
 	private function AddFile($fileinfo,$depict){
@@ -293,6 +299,7 @@ class UserinfoController extends MemberController {
 	public function add() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
+		
 		$m = M ( "z_member_info" );
 		$data ['real_name'] = $_POST ["real_name"];
 		$data ['idcard'] = $_POST ["idcard"];
@@ -304,18 +311,35 @@ class UserinfoController extends MemberController {
 		$data ['education'] = $_POST ["education"];
 		$data ['income'] = $_POST ["income"];
 		$data ['address'] = $_POST ["address"];
+		//dump($data);
 		$condition ['uid'] = $uid;
-		// 保存当前数据对象
+		
+		
+			// 保存当前数据对象
 		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
 		                                                     // 成功提示
-			$this->success ( L ( '保存成功' ) );
+			// $m = M ( "z_member_status" );
+			// //$status = M ("z_member_status");
+			// var_sump($m);
+			// $arr = array (
+			// 	"uid"=>$uid,
+			// 	"phone_status" => 1,
+			// 	"id_status" => 2,
+			// 	"email_status" => 1,
+			// 	"account_status" => 1,
+			// 	"credit_status" => 1,
+			// 	"safequestion_status" => 1,
+			// 	"video_status" => 1,
+			// 	"face_status" => 1
+			// );
+			// dump($arr);
+			// $relsult = $n->add($arr);
+			$this-> success ( L ( '保存成功' ) );
 		} else {
 			// 失败提示
-			$this->error ( L ( '保存失败' ) );
+			$this-> error ( L ( '您未做任何修改' ) );
 		}
-
-        
-
+		    
 	}
 	public function userselfset_2() {
 		$this->display ();
