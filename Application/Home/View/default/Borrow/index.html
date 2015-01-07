@@ -14,13 +14,22 @@
                             <li>21-25岁的大陆公民</li>
                             <li>手机绑定</li>
                             <li>借出信用大于20分</li>
+                            <li>申请额度大于2000元</li>
                         </ul>
                         <h4>申请资料</h4>
                         <ul>
                             <li>身份证</li>
                           
                         </ul>
-                        <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+
+                        <if condition="($session eq true)">
+
+                            <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        
+                        <else />
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login')}">立即申请</a></div>
+                        </if>  
+                        
                     </div>
                 </div>
                 
@@ -40,7 +49,13 @@
                             <li>房产证</li>
                        
                         </ul>
-                        <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        <if condition="($session eq true)">
+
+                            <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        
+                        <else />
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login')}">立即申请</a></div>
+                        </if>
                     </div>
                 </div>
                 
@@ -59,7 +74,13 @@
                    
                   
                     </ul>
-                    <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                    <if condition="($session eq true)">
+
+                        <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        
+                    <else />
+                        <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login')}">立即申请</a></div>
+                    </if>
                 </div>
                 
             	<!--模块4-->
@@ -78,7 +99,13 @@
                             <li>房产证</li>
                       
                         </ul>
-                        <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        <if condition="($session eq true)">
+
+                            <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        
+                        <else />
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login')}">立即申请</a></div>
+                        </if>
                 	</div>
                 </div>
                 
@@ -98,7 +125,13 @@
                             <li>抵押产物复印件</li>
                            
                         </ul>
-                        <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        <if condition="($session eq true)">
+
+                            <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        
+                        <else />
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login')}">立即申请</a></div>
+                        </if>
                 	</div>
                 </div>
 
@@ -117,7 +150,13 @@
                     	<li>各项台帐资料</li>
                     	
                     </ul>
-                    <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                    <if condition="($session eq true)">
+
+                            <div class="jk_btn"><a href="{:U('Borrow/circulation')}">立即申请</a></div>
+                        
+                        <else />
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login')}">立即申请</a></div>
+                        </if>
                 </div>
                 
             </div>
