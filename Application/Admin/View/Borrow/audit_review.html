@@ -1,0 +1,62 @@
+<extend name="Public/base" />
+<block name="body">
+	<div class="main-title">
+        <h2>借款标审核</h2>
+	</div>
+
+    <div id="auth_groups">
+        <form class="form-horizontal" action="{:U('audit_save?id='.$id)}" method="post" enctype="application/x-www-form-urlencoded" >
+			<label class="item-label">{$nickname} 所申请发布的借款表详情</label>
+            <volist name="_list" id="vo">
+                <label class="checkbox">
+                   标题：【{$vo.borrow_name}】
+                </label></br>
+                <label class="checkbox">
+                   借款会员id：{$vo.borrow_uid}
+                </label></br>
+                <label class="checkbox">
+                   借款金额：{$vo.borrow_money}
+                </label></br>
+                <label class="checkbox">
+                   借款期限：{$vo.borrow_duration}月
+                </label></br>
+                <label class="checkbox">
+                   借款利率：{$vo.borrow_interest_rate}%
+                </label></br>
+                <label class="checkbox">
+                   借款类型：{$vo.borrow_type}
+                </label></br>
+                <label class="checkbox">
+                   借款类型：{$vo.borrow_use}
+                </label></br>
+                <label class="checkbox">
+                   借款类型：{$vo.borrow_info}
+                </label></br>
+            </volist>
+                <label class="radio">
+                    <input type="radio" name="group_id" value="6">通过
+                </label>
+                <label class="radio">
+                    <input type="radio" name="group_id" value="5">不通过
+                </label>
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确定</button>
+                <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            </div>
+        </form>
+    </div>
+</block>
+<block name="script">
+<script type="text/javascript">
+    $(function(){
+        var group = [{$user_groups}];
+        $('.auth_groups').each(function(){
+            if( $.inArray( parseInt(this.value,1),group )>-1 ){
+                $(this).prop('checked',true);
+            }
+        });
+    });
+    // 导航高亮
+    highlight_subnav('{:U('User/index')}');
+</script>
+</block>

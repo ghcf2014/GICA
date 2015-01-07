@@ -242,7 +242,7 @@ class MoneyController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_moneylog', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '资金信息';
@@ -257,7 +257,7 @@ class MoneyController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_payonline', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '资金信息';
@@ -287,7 +287,7 @@ class MoneyController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_money', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '资金信息';
@@ -302,7 +302,7 @@ class MoneyController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_withdraw', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '资金信息';

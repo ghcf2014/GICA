@@ -13,7 +13,7 @@
         <!-- 高级搜索 -->
 		<div class="search-form fr cf">
 			<div class="sleft">
-				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入借款会员昵称或者ID">
+				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入标题或者会员ID">
 				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 			<td><span>{$vo.borrow_duration}月</span></td>
 			<td>{$vo.borrow_type}</td>
 			<td>
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">审核</a>
+				<a href="{:U('Borrow/audit?id='.$vo['id'])}" class="authorize">审核</a>
                 <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
                 </td>
 		</tr>

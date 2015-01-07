@@ -15,9 +15,9 @@ class BorrowController extends AdminController {
         $nickname       =   I('nickname');
         $map['status']  =   array('egt',0);
         if(is_numeric($nickname)){
-            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+            $map['borrow_uid|borrow_name']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
         }else{
-            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+            $map['borrow_name']    =   array('like', '%'.(string)$nickname.'%');
         }
 
         $list   = $this->lists('z_borrow_info', $map);
@@ -26,7 +26,6 @@ class BorrowController extends AdminController {
         $this->meta_title = '管理信息';
         $this->display();
     }
-
     /**
      * 修改昵称初始化
      */
@@ -366,6 +365,46 @@ class BorrowController extends AdminController {
         $list   = $this->lists('z_borrow_info', $map);
 
         int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
+    }
+    public function audit($id = 0){
+        $map['id']  = $id;
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->id = $id;
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
+    }
+    public function audit_review($id = 0){
+        $map['id']  = $id;
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        $this->id = $id;
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
+    }
+    public function audit_save($id = 0){
+        
+        
+
+        $map['id']  = $id;
+        $m = M ( 'z_borrow_info' ); // 用户头像
+        $data ['borrow_status'] = $_POST ['group_id'];
+        // 保存当前数据对象
+        if ($m = $m->where ( $map )->save ( $data )) { // 保存成功
+                                                             // 成功提示
+            $this->success('操作成功');
+        } else {
+            // 失败提示
+            $this->error ( L ( '操作失败' ) );
+        }
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        
         $this->assign('_list', $list);
         $this->meta_title = '借款信息';
         $this->display();

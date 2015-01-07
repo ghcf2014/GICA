@@ -26,11 +26,11 @@
 		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 		<th class="">UID</th>
 		<th class="">昵称</th>
-		<th class="">积分</th>
-		<th class="">登录次数</th>
-		<th class="">最后登录时间</th>
-		<th class="">最后登录IP</th>
-		<th class="">状态</th>
+		<th class="">可用余额</th>
+		<th class="">冻结金额</th>
+		<th class="">待收金额</th>
+		<th class="">借款担保总额</th>
+		<th class="">信用总额</th>
 		<th class="">操作</th>
 		</tr>
     </thead>
@@ -41,11 +41,11 @@
             <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
 			<td>{$vo.uid} </td>
 			<td>{$vo.nickname}</td>
-			<td>{$vo.score}</td>
-			<td>{$vo.login}</td>
-			<td><span>{$vo.last_login_time|time_format}</span></td>
-			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
-			<td>{$vo.status_text}</td>
+			<td>{$vo.account_money}</td>
+			<td>{$vo.money_freeze}</td>
+			<td><span>{$vo.money_collect}</span></td>
+			<td><span>{$vo.borrow_vouch_limit}</span></td>
+			<td>{$vo.credit_limit}</td>
 			<td><eq name="vo.status" value="1">
 				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
 				<else/>

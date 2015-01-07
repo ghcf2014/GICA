@@ -365,5 +365,9 @@ class PayController extends AdminController {
         $this->meta_title = '充值提现';
         $this->display();
     }
+    public function Paypaylogonline(){
+        $this->display();
+    }
+    
 
 }

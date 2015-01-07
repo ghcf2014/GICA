@@ -249,6 +249,18 @@ label.textarea ~ .check-tips {
     width: 100%;
     border-collapse: collapse;
 }
+.table-bordered {
+    border-width: 1px 1px 1px 0px;
+    border-style: solid solid solid none;
+    border-color: #DDD #DDD #DDD -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-collapse: separate;
+    border-radius: 4px;
+}
 .data-table caption {
     height: 30px;
     line-height: 30px;
