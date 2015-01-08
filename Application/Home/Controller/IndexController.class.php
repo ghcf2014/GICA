@@ -62,6 +62,15 @@ class IndexController extends HomeController {
         $this->assign('page',$show);
         $this->display();
     }
+    public function fankui(){
+        $this->display();
 
-
+    }
+    public function fankui_add(){
+        
+        $name = $_POST ['name'];
+        $content = $_POST ['content'];
+        
+        $a = SendMail('weishuyeblog@sina.com',$name.'技术反馈','【'.$content.'】  邮件发送时间： '.date( "l dS of F Y h：i：s A" ));
+    }
 }

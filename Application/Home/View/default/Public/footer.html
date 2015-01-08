@@ -67,7 +67,18 @@
         maxWidth:150,
         time: 4
     });
-   
     });
+$('.fankui').on('click', function(){
+  $.layer({
+    type: 2,
+    shade: [0],
+    fix: false,
+    title: '平台技术问题反馈',
+    maxmin: true,
+    iframe: {src :'Home/Index/fankui'},
+    area: ['600px' , '440px'],
+    shift: 'top'
+  })
+});
 
   </script>
