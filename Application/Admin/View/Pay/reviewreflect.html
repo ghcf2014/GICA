@@ -26,10 +26,11 @@
 		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 		<th class="">UID</th>
 		<th class="">昵称</th>
-		<th class="">积分</th>
-		<th class="">登录次数</th>
-		<th class="">最后登录时间</th>
-		<th class="">最后登录IP</th>
+		<th class="">姓名</th>
+		<th class="">提现金额</th>
+		<th class="">提现手续费</th>
+		<th class="">提现时间</th>
+		<th class="">银行卡</th>
 		<th class="">状态</th>
 		<th class="">操作</th>
 		</tr>
@@ -42,8 +43,9 @@
 			<td>{$vo.uid} </td>
 			<td>{$vo.nickname}</td>
 			<td>{$vo.score}</td>
-			<td>{$vo.login}</td>
-			<td><span>{$vo.last_login_time|time_format}</span></td>
+			<td>{$vo.withdraw_money}</td>
+			<td>{$vo.withdraw_fee}</td>
+			<td><span>{$vo.	add_time|time_format}</span></td>
 			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
 			<td>{$vo.status_text}</td>
 			<td><eq name="vo.status" value="1">

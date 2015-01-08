@@ -254,10 +254,10 @@ class PayController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_payonline', $map);
         int_to_string($list);
         $this->assign('_list', $list);
-        $this->meta_title = '充值提现';
+        $this->meta_title = '充值信息';
         $this->display();
     }
     public function paylogoffline(){
@@ -314,7 +314,7 @@ class PayController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_withdraw', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '充值提现';

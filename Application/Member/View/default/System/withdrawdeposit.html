@@ -44,7 +44,7 @@
 								<s:property value="#request.usableSum" default="---"></s:property>
 								元。
 							</p>
-							<div class="biaoge2">
+							<div class="biaoge2"><form action="{:U('withdrawdeposit_add')}" method="post"><volist name="list" id="vo">
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
 										<td width="11%">
@@ -70,8 +70,7 @@
 											账户余额：
 										</td>
 										<td>
-											<strong><s:property value="#request.handleSum"
-													default="---"></s:property>元 </strong>
+											<strong>{$vo.account_money}元 </strong>
 										</td>
 									</tr>
 									<tr>
@@ -79,8 +78,7 @@
 											可用余额：
 										</td>
 										<td>
-											<strong><s:property value="#request.usableSum"
-													default="---"></s:property>元 </strong>
+											<strong>{$vo.account_money}元 </strong>
 										</td>
 									</tr>
 									<tr>
@@ -88,8 +86,7 @@
 											冻结总额：
 										</td>
 										<td>
-											<strong><s:property value="#request.freezeSum"
-													default="---"></s:property>元 </strong>
+											<strong>{$vo.money_freeze}元 </strong>
 										</td>
 									</tr>
 									<tr>
@@ -143,7 +140,7 @@
 											<strong>*</strong>
 										</td>
 										<td>
-											<input type="text" class="inp140" id="dealMoney" />
+											<input type="text" class="inp140" name="withdraw_money" />
 											<span style="color: red; float: none;" id="money_tip"
 												class="formtips"></span>
 										</td>
@@ -167,7 +164,7 @@
 											&nbsp;
 										</td>
 										<td style="padding-top: 20px;">
-											<input id="btn_submit" class="btn tipshang" value="确认提交" />
+											<input id="btn_submit" type="submit" class="btn" value="确认提交" />
     <!-- <a  href="javascript:void(0);" id="btn_submit" class="bcbtn" onclick="addWithdraw();" >确认提交</a> -->
 										</td>
 									</tr>
@@ -180,6 +177,8 @@
 										</td>
 									</tr>
 								</table>
+								</form>
+								</volist>
 
 							</div>
 							<div class="biaoge" style="margin-top: 25px;">

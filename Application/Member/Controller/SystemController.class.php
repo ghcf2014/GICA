@@ -8,11 +8,36 @@ class SystemController extends MemberController {
         
     $this->display();
     }
-        public function withdrawdeposit(){
+    public function withdrawdeposit(){
             
-    	
-        
-    $this->display();
+    	$uid  = is_login();//获取当前用户UID
+        $condition['uid'] =$uid;
+        $money=M("z_member_money");
+        $money=$money->where($condition)->select();//余额查询
+
+        $this->assign('list',$money);
+        $this->display();
+    }
+    public function withdrawdeposit_add(){
+            
+        // 从表单中获取来的数据
+        $uid = is_login ();
+        $m = M ( "z_member_withdraw" );
+        $data ['withdraw_money'] = $_POST ['withdraw_money'];
+        $data ['withdraw_fee'] =5;
+        $data ['borrow_status'] = 0;
+        $data ['uid'] = $uid;
+        $data ['add_time'] = time ();
+        $data ['add_ip'] = get_client_ip ();
+        $condition ['uid'] = $uid;
+        // 保存当前数据对象
+        if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
+                                                            // 成功提示add_time
+            $this->success ( L ( '提现已提交，我们会尽快审核。' ) );
+        } else {
+            // 失败提示
+            $this->error ( L ( '提现失败' ) );
+        }
     }
         public function recharge(){
     	
