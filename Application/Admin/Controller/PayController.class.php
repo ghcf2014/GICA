@@ -232,14 +232,14 @@ class PayController extends AdminController {
     }
     public function not(){
         $nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
+        $map['withdraw_status']  =   array('egt',3);
         if(is_numeric($nickname)){
             $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
         }else{
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_withdraw', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '充值提现';
@@ -269,7 +269,7 @@ class PayController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_payonline', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '充值提现';
@@ -292,14 +292,14 @@ class PayController extends AdminController {
     }
     public function processing(){
         $nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
+        $map['withdraw_status']  =   array('egt',4);
         if(is_numeric($nickname)){
             $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
         }else{
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_withdraw', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '充值提现';
@@ -307,7 +307,7 @@ class PayController extends AdminController {
     }
     public function reviewreflect(){
         $nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
+        $map['withdraw_status']  =   array('egt',0);
         if(is_numeric($nickname)){
             $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
         }else{
@@ -322,14 +322,14 @@ class PayController extends AdminController {
     }
     public function withdrawaled(){
         $nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
+        $map['withdraw_status']  =   array('egt',2);
         if(is_numeric($nickname)){
             $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
         }else{
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_withdraw', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '充值提现';
@@ -344,7 +344,7 @@ class PayController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_withdraw', $map);
         int_to_string($list);
         $this->assign('_list', $list);
         $this->meta_title = '充值提现';
@@ -359,9 +359,14 @@ class PayController extends AdminController {
             $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
         }
 
-        $list   = $this->lists('Member', $map);
+        $list   = $this->lists('z_member_payonline', $map);
         int_to_string($list);
         $this->assign('_list', $list);
+        $this->meta_title = '充值提现';
+        $this->display();
+    }
+    public function offsetadd(){
+        
         $this->meta_title = '充值提现';
         $this->display();
     }

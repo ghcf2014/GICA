@@ -40,12 +40,12 @@ class UserController extends HomeController {
            		$count=$m->add();
 
            		//TODO: 发送验证邮件
-           		$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:
-欢迎注册工合财富，您的注册邮箱是：'.$email.' 。
-邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'
-请在24小时内激活
-本邮件由工合财富系统自动发出，请勿直接回复！
-如果您有任何疑问或建议，请登陆ghcf.com');
+//            		$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:
+// 欢迎注册工合财富，您的注册邮箱是：'.$email.' 。
+// 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'
+// 请在24小时内激活
+// 本邮件由工合财富系统自动发出，请勿直接回复！
+// 如果您有任何疑问或建议，请登陆ghcf.com');
 		       $this->success('注册成功！',U('login'));
 			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));

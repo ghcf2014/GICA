@@ -3,67 +3,67 @@
 <block name="body">
 	<!-- 标题栏 -->
 	<div class="main-title">
-		<h2>用户列表</h2>
+		<h2>360防注/查杀</h2>
 	</div>
-	<div class="cf">
-		<div class="fl">
-            <a class="btn" href="{:U('add')}">新 增</a>
-            <button class="btn ajax-post" url="{:U('changeStatus?method=resumeUser')}" target-form="ids">启 用</button>
-            <button class="btn ajax-post" url="{:U('changeStatus?method=forbidUser')}" target-form="ids">禁 用</button>
-            <button class="btn ajax-post confirm" url="{:U('changeStatus?method=deleteUser')}" target-form="ids">删 除</button>
-        </div>
-
-        <!-- 高级搜索 -->
-		<div class="search-form fr cf">
-			<div class="sleft">
-				<input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入用户昵称或者ID">
-				<a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
-			</div>
-		</div>
-    </div>
     <!-- 数据列表 -->
     <div class="data-table table-striped">
-	<table class="">
-    <thead>
-        <tr>
-		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
-		<th class="">UID</th>
-		<th class="">昵称</th>
-		<th class="">积分</th>
-		<th class="">登录次数</th>
-		<th class="">最后登录时间</th>
-		<th class="">最后登录IP</th>
-		<th class="">状态</th>
-		<th class="">操作</th>
-		</tr>
-    </thead>
-    <tbody>
-		<notempty name="_list">
-		<volist name="_list" id="vo">
-		<tr>
-            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
-			<td>{$vo.uid} </td>
-			<td>{$vo.nickname}</td>
-			<td>{$vo.score}</td>
-			<td>{$vo.login}</td>
-			<td><span>{$vo.last_login_time|time_format}</span></td>
-			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
-			<td>{$vo.status_text}</td>
-			<td><eq name="vo.status" value="1">
-				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
-				<else/>
-				<a href="{:U('User/changeStatus?method=resumeUser&id='.$vo['uid'])}" class="ajax-get">启用</a>
-				</eq>
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">授权</a>
-                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
-                </td>
-		</tr>
-		</volist>
-		<else/>
-		<td colspan="9" class="text-center"> 没有内容! </td>
-		</notempty>
-	</tbody>
-    </table>
+	<div class="so_main">
+  <div class="Toolbar_inbox">
+      <div class="page right"></div>
+    <a onclick="addWebSetting();" class="btn_a" href="{:U('scanview')}">
+        <span class="searchUser_action">木马查杀</span>
+    </a>
+    <a onclick="addWebSetting();" class="btn_a" href="{:U('scanReport')}">
+        <span class="searchUser_action">查杀报告</span>
+    </a>
+  </div>
+  
+  <div class="form2">
+      <form method="post" action="__URL__/updateConfig">
+    <dl class="lineD" >
+      <dt>查杀目录：</dt>
+      <dd>
+        <ul class="dirBox">
+        	<volist name='dirs' id='vo'>
+        	<li>
+            	<input type="checkbox" name="dir[]" value="{$vo.dir}" <if condition="$vo.selected eq 1">checked="checked"</if> >
+                <if condition="$vo.type eq 'dir'">
+            	<img src="__ROOT__/Style/A/images/ico/dir.png">
+                <else />
+                <img src="__ROOT__/Style/A/images/ico/php.png">
+                </if>
+                {$vo.file}
+            </li>
+            </volist>
+        </ul>
+      </dd>
+    </dl>
+    <dl class="lineD" >
+      <dt>文件类型：</dt>
+      <dd>
+        <input type="text" name="info[type]" id="type" value="{$info.type}" size="100">
+      </dd>
+    </dl>
+    <dl class="lineD" >
+      <dt>特征函数：</dt>
+      <dd>
+        <input type="text" name="info[func]" id="func" value="{$info.func}" size="100">
+      </dd>
+    </dl>
+    <dl class="lineD" >
+      <dt>特征代码：</dt>
+      <dd>
+        <input type="text" name="info[code]" id="code" value="{$info.code}" size="100">
+      </dd>
+    </dl>
+
+
+    <div class="page_btm">
+      <input type="submit" class="btn_b" value="提交" />
+    </div>
+    </form>
+    
+  </div>
 	</div>
     <div class="page">
         {$_page}

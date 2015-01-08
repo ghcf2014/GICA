@@ -42,7 +42,7 @@ class IndexController extends MemberController {
         $this->display();
     }
     //文件信息写入数据库
-    private function AddFile($fileinfo,$depict){
+    function AddFile($fileinfo,$depict){
           $i=0;
        // var_dump($fileinfo);
         $uid=is_login(); 

@@ -25,12 +25,15 @@
         <tr>
 		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 		<th class="">UID</th>
-		<th class="">昵称</th>
-		<th class="">积分</th>
-		<th class="">登录次数</th>
-		<th class="">最后登录时间</th>
-		<th class="">最后登录IP</th>
-		<th class="">状态</th>
+		<th class="">用户昵称</th>
+		<th class="">客服昵称</th>
+		<th class="">所在省</th>
+		<th class="">所在市</th>
+		<th class="">所在区</th>
+		<th class="">申请说明</th>
+		<th class="">申请状态</th>
+		<th class="">申请时间</th>
+		<th class="">审核人</th>
 		<th class="">操作</th>
 		</tr>
     </thead>
@@ -39,20 +42,18 @@
 		<volist name="_list" id="vo">
 		<tr>
             <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
-			<td>{$vo.uid} </td>
-			<td>{$vo.nickname}</td>
-			<td>{$vo.score}</td>
-			<td>{$vo.login}</td>
-			<td><span>{$vo.last_login_time|time_format}</span></td>
-			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
-			<td>{$vo.status_text}</td>
-			<td><eq name="vo.status" value="1">
-				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
-				<else/>
-				<a href="{:U('User/changeStatus?method=resumeUser&id='.$vo['uid'])}" class="ajax-get">启用</a>
-				</eq>
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">授权</a>
-                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
+			<td>{$vo.id} </td>
+			<td>{$vo.uid}</td>
+			<td>{$vo.kuid}</td>
+			<td>{$vo.province_now}</td>
+			<td><span>{$vo.city_now}</span></td>
+			<td><span>{$vo.area_now}</span></td>
+			<td>{$vo.des}</td>
+			<td>{$vo.status}</td>
+			<td>{$vo.add_time}</td>
+			<td>{$vo.deal_user}</td>
+			<td>
+				<a href="#" class="authorize">审核</a>
                 </td>
 		</tr>
 		</volist>

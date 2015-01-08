@@ -9,7 +9,7 @@ class AddonsController extends AdminController {
 
     public function _initialize(){
         $this->assign('_extra_menu',array(
-            '已装插件后台'=> D('Addons')->getAdminList(),
+            '管理列表'=> D('Addons')->getAdminList(),
         ));
         parent::_initialize();
     }

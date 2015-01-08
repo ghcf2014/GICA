@@ -12,6 +12,7 @@ class BorrowController extends HomeController {
 	
 	// 系统首页
 	public function index() {
+		
 		$this->display ();
 	}
 	// 
