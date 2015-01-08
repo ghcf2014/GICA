@@ -163,8 +163,11 @@
 									/ (Math.pow(1 + (rate / 12), borrowTime) - 1);
 							
 							//截取总金额
-							var totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
-							alert(totalMoney);
+							totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
+							
+							var totalCal=(parseFloat(totalMoney) * parseFloat(borrowTime));
+							totalCal=(totalCal+"").substring(0,(totalCal+"").indexOf(".")+3);
+							
 							//$("#tabresult").hide();
 							$('#totalResult .gjjg').show();
 							$('#totalResult #tabresult').hide();
@@ -179,7 +182,7 @@
 							$("#cc")
 									.html(
 											"<font color='red'>"
-													+ (parseFloat(totalMoney) * parseFloat(borrowTime))
+													+ totalCal
 													+ "元</font>");
 							//等额本息列表清单循环代码结构
 						}
@@ -193,6 +196,8 @@
 							
 							
 							var totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
+							var totalCal=((parseFloat(totalMoney) * parseFloat(borrowTime)) + parseFloat(investMoney));
+							totalCal=(totalCal+"").substring(0,(totalCal+"").indexOf(".")+3);
 							$("#aa").html(
 									"<font color='red'>" + totalMoney
 											+ "元</font>");
