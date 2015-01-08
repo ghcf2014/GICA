@@ -1120,12 +1120,16 @@ height:85px;}
 .yqhy_text1 .txta_1{width:672px; border:1px solid #ccc;height:72px;padding:8px;font-size:12px;line-height:20px;color:#666;}
 .fzfx_an{float:right;margin-top:10px;}
 
-.yqhy ul{overflow:hidden;margin-top:15px;border:1px solid #ccc;padding:15px;}
+.yqhy ul{overflow:hidden;margin-top:15px;padding:15px;}
 .yqhy ul li{ position: relative;margin-top:20px;}
 .yqhy ul li .lab1 {color: #000000;height: 22px;line-height: 22px;width: 85px;text-align: right;display:block;float:left; }
 .yqhy ul li .inp1 {height: 20px;line-height: 20px;width: 196px;}
 .yqhy ul li .red {color: #db1800;} 
-.yqhy ul li .txta_2 {height: 79px;line-height: 15px;overflow: auto;padding: 5px;width: 486px;font-size:12px;line-height:20px;color:#666;}
+.yqhy ul li .txta_2 {height: 79px;line-height: 15px;overflow: auto;padding: 5px;width: 486px;font-size:12px;line-height:20px;color:#666;resize: none;}
+
+.box .friend_tab table{margin: 20px 25px 25px;width: auto;border-top:1px solid #ccc ;border-left: 1px solid #ccc;}
+.box .friend_tab table tr{width: auto;height: 30px;line-height: 30px;text-align: center;}
+.box .friend_tab table tr td{width: 120px;height: 30px;border-bottom: 1px solid #ccc;border-right: 1px solid #ccc;}
 
 .boxsss  .biaoge { margin-top: 20px; }
 .boxsss  .biaoge table a { color: #136dad; }
