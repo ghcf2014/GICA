@@ -1,0 +1,264 @@
+<block name="body">
+<extend name="Base/common"/>
+<block name="body">
+    <!--content start-->
+    <div class="zh_cont_out">
+      <div class="zh_cont">
+            <h2><a href="{:U('Index')}">我的账户</a></h2> 
+            <include file="Public/borrowleft"/>
+            <div class="zh_cont_r">
+              <form action="{:U('circulation_save?id='.$id)}" method="post">
+                  <div class="r-main">
+              <!-- <div class="til01"> -->
+              <div class="til01">
+                <ul id="ul">
+                  <li class="on" style="font-size:18px;">发布贷款</li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;display:block;"><s:fielderror fieldName="enough"></s:fielderror></span>
+                </ul>
+              </div>
+                <!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
+              </div> -->
+              <div class="rmainbox">
+                <p class="tips"><span class="fred">*</span> 为必填项，所有资料均会严格保密。 </p>
+                <div class="tab">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th colspan="2" align="left">借款基本信息</th>
+                  </tr>
+                  <tr>
+                        <td align="right"><span class="fred ">*</span>借款标题：</td>
+                      <td><input name="borrow_name" type="text" class="inp280" maxlength="30" id="s_borrow_name" value=""/>
+                        <span class="fred" id="t_borrow_name"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+                      </td>
+                    </tr>
+                  <tr>
+                      <td align="right"><span class="fred">*</span>借款总金额：</td>
+                      <td><input name="borrow_money" type="text" class="inp280" maxlength="12" id="s_borrow_money" value=""/>
+                      <span class="fred" id="t_borrow_money"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+                      </td>
+                  </tr>
+  <!-- <tr>
+    <td align="right">&nbsp;</td>
+    <td>
+    <form action="{:U('upload')}" enctype="multipart/form-data" method="post" >
+    <div id="tab_1"><a href="javascript:void(0);" id="btn_personalHead" class="scbtn">上传图片</a></div>
+    <div id="tab_2"><input type='file'  name='photo'></div>
+    <div id="tab_3"><input type="submit" value="提交" class="btn trianglify-btn" ><div class="container">
+</div></div>
+     -->
+                  <tr>
+                    <td align="right"><span class="fred">*</span>年利率：</td>
+                    <td><input name="borrow_interest_rate" type="text" class="inp100" maxlength="30" id="s_borrow_interest_rate" value=""/>%
+                    <span class="fred" id="t_borrow_interest_rate"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>借款用途：</td>
+                    <td><input name="borrow_use" type="text" class="inp280" maxlength="12" id="s_borrow_use" value=""/>
+                    <span class="fred" id="t_borrow_use"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>借款期限：</td>
+                    <td><input name="collect_day" type="text" class="inp280" maxlength="12" id="s_collect_day" value=""/>月
+                    <span class="fred" id="t_collect_day"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right">&nbsp;</td>
+                    <td class="tishi">（推荐使用
+                    您的生活近照，或其他与借款用途相关的图片，<br />
+                      有助增加借款成功几率。严禁使用他人照片） </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>最低投标金额：</td>
+                    <td><input name="borrow_min" type="text" class="inp280" maxlength="12" id="s_borrow_min" value=""/>元
+                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>最多投标金额：</td>
+                    <td><input name="borrow_max" type="text" class="inp280" maxlength="12" id="s_borrow_max" value=""/>元
+                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>有效时间：</td>
+                    <td>
+                    <select name="collect_time"  class="inp50">   
+                              <option value="1">1</option>   
+                              <option value="2">2</option>   
+                              <option value="3">3</option>   
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>    
+                            </select>   天
+                    <!-- <input type="text" id="date_8" readonly style="height:16px" name="collect_time"  class="inp100"/> -->
+                    <span class="fred"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>还款方式：</td>
+                    <td>
+                          <select name="repayment_type"  class="inp50">   
+                              <option value="1">按天到期还款</option>   
+                              <option value="2">按月分期还款</option>   
+                              <option value="3">按季分期还款</option>   
+                              <option value="4">每月还息到期还本</option>    
+                            </select>   
+                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>投标奖励：</td>
+                    <td><input name="reward_vouch_rate" type="text" class="inp100" maxlength="12" value=""/>元
+                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="right"><span class="fred">*</span>上传必要资料：</td>
+                    <td>
+                      <select name="" id="pid">
+                        <option value="0">--请选择--</option>
+                        <option value="1">房产</option>
+                        <option value="2">担保</option>
+                        <option value="3">抵押</option>
+                        <option value="4">驾照</option>
+                      </select>
+                      <input type="button" onclick="msgBox('div1', '上传文件');" value="添加" style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;width: 48px;height: 20px;" />
+                    </td>
+                    <td></td>
+                    <td>
+                      <form action="" method="post">
+                      <div id="div1" style="display:none;width: 300px;height: 200px;">
+                        <table>
+                          <tr><input type="file" value="" name="file_upload" id="file_upload"/></tr>
+                          <tr>
+                            <td><input type="button" value="sure" style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;width: 48px;height: 20px;margin:20px 5px 0 0;" onclick="msgBox_close();" id="scBtn"/></td>
+                            <td><input type="button" value="cancel" onclick="msgBox_close();" style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;width: 48px;height: 20px;margin:20px 5px 0 0;" id="nscBtn"/></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </form>
+                  </td>                 
+                  </tr>
+                  
+                  <tr>
+                    <td align="right"></td>
+                    <td>
+                      <div style="width: auto;height: auto;margin-bottom: 10px;display: none;" class="yscfile">
+                        <ul class="fbdk_ziliao_tit" >
+                          <li>编号</li>
+                          <li class="slt">缩略图</li>
+                          <li class="fbdk_ziliao_li_last">操作</li>
+                        </ul>
+                        <ul class="fbdk_ziliao_con">
+                          <li>1</li>
+                          <li class="slt"><img src="" width="100" height="100"/></li>
+                          <li class="fbdk_ziliao_li_last"><a href="javascript:;">删除</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                    
+                  <tr>
+                    <td align="right"><span class="fred">*</span>借款说明：</td>
+                    <td>
+                    <textarea name="borrow_info" class="txt420" style="resize:none"></textarea>
+                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
+                    </td>
+                  </tr>
+  
+  <!--    <tr>
+    <td align="right">筹标期限：<span class="fred">*</span></td>
+    <td>
+        <s:select list="borrowRaiseTermList" id="raiseTerm" name="paramMap.raiseTerm" cssClass="sel_140" listKey="key" listValue="value"  headerKey="" headerValue="--请选择--"></s:select>
+        <span class="fred"><s:fielderror fieldName="paramMap['raiseTerm']"></s:fielderror></span>
+    </td>
+  </tr> -->
+                  <tr>
+                    <td align="right">&nbsp;</td>
+                
+                    <td style="padding-top:20px;"><input  type="submit" class="bcbtn" value="保存发布" style="width:88px;"></td>
+                
+                  </tr>
+                </table>
+    </div>
+    </div>
+    </div>
+              </form>
+            </div>
+            </div>
+        </div>
+    </div>
+  <!--content end-->    
+
+
+ <script type="text/javascript" src="__STATIC__/datepicker/js/jquery.min.js"></script> 
+ <script type="text/javascript" src="__STATIC__/datepicker/js/jquery-ui-datepicker.js"></script>  
+
+
+ <script type="text/javascript" src="script/nav-jk.js"></script>
+
+<script type="text/javascript">
+$(function(){
+ 
+  $("#date_8").datepicker({
+    showOn: "button",
+    buttonImage: "__STATIC__/datepicker/images/calendar.gif",
+    buttonImageOnly: true
+  });
+});
+</script>
+<script type="text/javascript">
+//不能为空
+  $("#s_borrow_name").blur(function() {
+    if ($("#s_borrow_name").val() == "") {
+      $("#t_borrow_name").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
+  $("#s_borrow_money").blur(function() {
+    if ($("#s_borrow_money").val() == "") {
+      $("#t_borrow_money").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
+  $("#s_borrow_interest_rate").blur(function() {
+    if ($("#s_borrow_interest_rate").val() == "") {
+      $("#t_borrow_interest_rate").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
+  $("#s_collect_day").blur(function() {
+    if ($("#s_collect_day").val() == "") {
+      $("#t_collect_day").html("*不能为空");
+    } else {
+      checkRegister();
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  $(function(){
+    
+    $('#scBtn').click(function(){
+      $('.yscfile').show()
+    })
+    
+    
+  })
+</script>
+
+
+
+
+
+
+
+
+</block>

@@ -12,7 +12,9 @@ class BorrowController extends HomeController {
 	
 	// 系统首页
 	public function index() {
-		
+		$session=isset($_SESSION['gica_home']['user_auth']['username']);
+
+		$this->assign('session',$session);
 		$this->display ();
 	}
 	// 
@@ -27,12 +29,89 @@ class BorrowController extends HomeController {
         $this->assign('list',$m);
 		$this->display ();
 	}
-	public function circulation($id=0) {
+	public function circulation($id=0,$uid=0) {
 		is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
+		$uid = is_login();
+		$status = M ('z_members_status');
+		$result=$status->where("uid=%s",$uid)->select();
+		if ($result!==null) {
+			$this->assign ( 'id', $id);
+			$this->redirect(("Home/Borrow/papersinfo"));
+		} else {
+			$this->error ( L ('对不起，您还没进行基本认证<br>请进入<a style="color:red">[个人中心]</a>处理') );
+		}
+		$this->display();     
+	}
+	//发布贷款
+	public function borrowinfo(){
 
-        $this->assign ( 'id', $id);
+		$this->display();
+	}
+	//基本信息
+	public function userinfo() {
+		$uid = is_login ();
+		$chk = M ( "z_member_info" );
+		$condition['uid'] =$uid;
+        $m=$chk->where($condition)->select();
+        if ($m!==null){
+        	$this->assign('mlist', $m);
+        } else {
+        	$n=$chk->add($condition);
+        	$m=$chk->where($condition)->select();
+        	$this->assign('mlist', $m);
+        }
 		$this->display ();
 	}
+	//发表时确认的基本信息
+	public function add() {
+		// 从表单中获取来的数据
+		$uid = is_login ();
+		
+		$m = M ( "z_member_info" );
+		$data ['real_name'] = $_POST ["real_name"];
+		$data ['idcard'] = $_POST ["idcard"];
+		// $data ['card_img'] = $_POST ["card_img"];
+		// $data ['card_back_img'] = $_POST ["card_back_img"];
+		$data ['sex'] = $_POST ["sex"];
+		$data ['zy'] = $_POST ["zy"];
+		$data ['cell_phone'] = $_POST ["cell_phone"];
+		$data ['education'] = $_POST ["education"];
+		$data ['income'] = $_POST ["income"];
+		$data ['address'] = $_POST ["address"];
+		//dump($data);
+		$condition ['uid'] = $uid;
+		
+		
+			// 保存当前数据对象
+		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
+		                                                   // 成功提示
+				//认证状态表更新字段
+				$arr = array (
+							"uid"=>$uid
+						);
+					//更新认证状态
+				$status = M ('z_members_status');
+
+				//查询是否已提交过资料
+				if ($re=$status->where("uid=%s",$uid)->select()){
+
+					$this-> success ( L ( '资料修改成功，等待审核...' ) );
+
+				} else {
+					//若没有提交过资料则更新认证状态
+					$result= $status->add($arr);
+					if ($result){
+						$this-> success ( L ( '认证资料已上传，等待后台审核...' ) );
+			
+					}
+				}
+		} else {
+			// 失败提示
+			$this-> error ( L ( '您未做任何修改' ) );
+		}
+		    
+	}
+
 	public function circulation_save($id = 0) {
 		// 从表单中获取来的数据
 		$uid = is_login ();
@@ -67,35 +146,7 @@ class BorrowController extends HomeController {
 	/**
 	 * 新增页面初始化
 	 */
-	public function circulation_add() {
-		$listBorrow = M ( 'z_borrow_info' );
-		$data ['borrow_uid'] = $this->uid;
-		$data ['borrow_name'] = $_POST ['title'];
-		$data ['borrow_name'] = $_POST ['title'];
-		$data ['borrow_name'] = $_POST ['title'];
-		$data ['borrow_name'] = $_POST ['title'];
-		$data ['borrow_name'] = $_POST ['title'];
-		// $data['borrow_interest'] = getBorrowInterest($data['repayment_type'],$data['borrow_money'],$data['borrow_duration'],$data['borrow_interest_rate']);
-		// $data['borrow_fee'] = getFloatValue($fee_rate*$data['borrow_money'],2);
-		$data ['borrow_status'] = 0;
-		$data ['add_time'] = time ();
-		$data ['add_ip'] = get_client_ip ();
-		$data ['total'] = ($data ['repayment_type'] == 1) ? $data ['borrow_duration'] : "1";
-		// $data['content'] = I('post.content');
-		// $data['cid'] = I('post.cid');
-		// $model_id = I('get.model_id');
-		// $model = M('Model')->field('title,name,field_group')->find($model_id);
-		// $this->assign('model',$model);
-		// $this->assign('info', array('model_id'=>$model_id));
-		// $this->meta_title = '新增属性';
-		// var_dump ( $data );
-		
-		if ($listBorrow->add ( $data )) {
-			$this->success ( L ( '已提交发布，审核结果请注意查收邮箱!' ) );
-		} else {
-			$this->error ( L ( '对不起，提交不成功。' ) );
-		}
-	}
+
 	public function detail($id = 0, $p = 1) {
 		/* 标识正确性检测 */
 		if (! ($id && is_numeric ( $id ))) {

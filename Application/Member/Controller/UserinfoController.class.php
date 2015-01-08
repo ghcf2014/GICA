@@ -317,24 +317,35 @@ class UserinfoController extends MemberController {
 		
 			// 保存当前数据对象
 		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
-		                                                     // 成功提示
-			// $m = M ( "z_member_status" );
-			// //$status = M ("z_member_status");
-			// var_sump($m);
-			// $arr = array (
-			// 	"uid"=>$uid,
-			// 	"phone_status" => 1,
-			// 	"id_status" => 2,
-			// 	"email_status" => 1,
-			// 	"account_status" => 1,
-			// 	"credit_status" => 1,
-			// 	"safequestion_status" => 1,
-			// 	"video_status" => 1,
-			// 	"face_status" => 1
-			// );
-			// dump($arr);
-			// $relsult = $n->add($arr);
-			$this-> success ( L ( '保存成功' ) );
+		                                                   // 成功提示
+				//认证状态表更新字段
+				$arr = array (
+							"uid"=>$uid,
+							"phone_status" => 1,
+							"id_status" => 2,
+							"email_status" => 1,
+							"account_status" => 1,
+							"credit_status" => 1,
+							"safequestion_status" => 1,
+							"video_status" => 1,
+							"face_status" => 1
+						);
+					//更新认证状态
+				$status = M ('z_members_status');
+
+				//查询是否已提交过资料
+				if ($re=$status->where("uid=%s",$uid)->select()){
+
+					$this-> success ( L ( '资料修改成功，等待审核！' ) );
+
+				} else {
+					//若没有提交过资料则更新认证状态
+					$result= $status->add($arr);
+					if ($result){
+						$this-> success ( L ( '认证资料已上传，等待后台审核...' ) );
+			
+					}
+				}
 		} else {
 			// 失败提示
 			$this-> error ( L ( '您未做任何修改' ) );
