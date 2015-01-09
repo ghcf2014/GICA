@@ -30,8 +30,8 @@
 		<th class="">提现金额</th>
 		<th class="">提现手续费</th>
 		<th class="">提现时间</th>
-		<th class="">银行卡</th>
-		<th class="">状态</th>
+		<th class="">提款人IP</th>
+		<th class="">备注信息</th>
 		<th class="">操作</th>
 		</tr>
     </thead>
@@ -41,20 +41,15 @@
 		<tr>
             <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
 			<td>{$vo.uid} </td>
-			<td>{$vo.nickname}</td>
-			<td>{$vo.score}</td>
+			<td>{$vo.uid|get_uname}</td>
+			<td>{$vo.uid|get_real_name}</td>
 			<td>{$vo.withdraw_money}</td>
 			<td>{$vo.withdraw_fee}</td>
 			<td><span>{$vo.	add_time|time_format}</span></td>
-			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
-			<td>{$vo.status_text}</td>
+			<td><span>{:long2ip($vo['add_ip'])}</span></td>
+			<td>{$vo.deal_info}详细</td>
 			<td><eq name="vo.status" value="1">
-				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
-				<else/>
-				<a href="{:U('User/changeStatus?method=resumeUser&id='.$vo['uid'])}" class="ajax-get">启用</a>
-				</eq>
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">授权</a>
-                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
+				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">审核</a>
                 </td>
 		</tr>
 		</volist>

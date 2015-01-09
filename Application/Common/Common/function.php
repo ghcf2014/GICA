@@ -415,12 +415,25 @@ function get_username($uid = 0){
     }
     return $name;
 }
+function get_uname($uid = 0){
+        $map =$uid;
+        $name = M('member')->field('nickname')->find($map);
+         // var_dump($name['nickname']);
+    return $name['nickname'];
+}
+function get_real_name($uid = 0){
+        $map =$uid;
+        $name = M('z_member_info')->field('real_name')->find($map);
+         // var_dump($name['nickname']);
+    return $name['real_name'];
+}
 function get_borrow_username($borrow_uid = 0){
         $map =$borrow_uid;
         $name = M('member')->field('nickname')->find($map);
          // var_dump($name['nickname']);
     return $name['nickname'];
 }
+
 function get_investor_username($investor_uid = 0){
         $map =$investor_uid;
         $name = M('member')->field('nickname')->find($map);

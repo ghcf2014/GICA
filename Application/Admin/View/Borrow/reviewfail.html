@@ -47,8 +47,7 @@
 			<td><span>{$vo.borrow_duration}月</span></td>
 			<td>{$vo.borrow_type}</td>
 			<td>
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">审核</a>
-                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
+				<a href="{:U('Borrow/audit?id='.$vo['id'])}" class="authorize">审核</a>
                 </td>
 		</tr>
 		</volist>
