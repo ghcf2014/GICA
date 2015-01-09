@@ -1,0 +1,67 @@
+<extend name="Public/base" />
+<block name="body">
+	<div class="main-title">
+        <h2>借款标审核</h2>
+	</div>
+
+    <div id="auth_groups">
+        <form class="form-horizontal" action="{:U('audit_save?id='.$id)}" method="post" enctype="application/x-www-form-urlencoded" >
+			<label class="item-label">{$nickname} 所申请发布的借款表详情</label>
+            <volist name="_list" id="vo">
+            <div class="data-table table-striped">
+                 <table>
+                    <tr>
+                        <td class="tableleft">提现会员id：</td>
+                        <td>{$vo.uid}</td>
+                    </tr>
+                    <tr>
+                        <td class="tableleft">提现金额：</td>
+                        <td>{$vo.withdraw_money}</td>
+                    </tr>
+                    <tr>
+                        <td class="tableleft">提现手续费：</td>
+                        <td>{$vo.withdraw_fee}</td>
+                    </tr>
+                    <tr>
+                        <td class="tableleft">提现时间：</td>
+                        <td>{$vo.add_time}</td>
+                    </tr>
+                    <tr>
+                        <td class="tableleft">提现后的手续费：</td>
+                        <td>{$vo.second_fee}</td>
+                    </tr>
+                    <tr>
+                        <td class="tableleft">备注说明：</td>
+                        <td>{$vo.deal_info}</td>
+                    </tr>
+                    <tr>
+                        <td class="tableleft">状态：</td>
+                        <td>
+                            <input type="radio" name="group_id" value="2">通过
+                            <input type="radio" name="group_id" value="1">不通过
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </volist>
+            <div style="margin-top: 10px;">
+                <button type="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确定</button>
+                <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            </div>
+        </form>
+    </div>
+</block>
+<block name="script">
+<script type="text/javascript">
+    $(function(){
+        var group = [{$user_groups}];
+        $('.auth_groups').each(function(){
+            if( $.inArray( parseInt(this.value,1),group )>-1 ){
+                $(this).prop('checked',true);
+            }
+        });
+    });
+    // 导航高亮
+    highlight_subnav('{:U('User/index')}');
+</script>
+</block>

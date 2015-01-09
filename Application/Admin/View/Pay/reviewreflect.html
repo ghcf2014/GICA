@@ -49,7 +49,7 @@
 			<td><span>{:long2ip($vo['add_ip'])}</span></td>
 			<td>{$vo.deal_info}详细</td>
 			<td><eq name="vo.status" value="1">
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">审核</a>
+				<a href="{:U('Pay/audit?id='.$vo['id'])}" class="authorize">审核</a>
                 </td>
 		</tr>
 		</volist>
