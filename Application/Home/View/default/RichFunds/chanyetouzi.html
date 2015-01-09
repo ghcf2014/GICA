@@ -17,19 +17,17 @@
 <script type="text/javascript">
 	$(function() {
 		//alert(1);	
-		$('.flo_aside').hover(
-				function() {
+		$('.flo_aside').hover(function() {
 					//alert(2);
-					$('.flo_aside .flo_l li').each(
-							function(index, element) {
-								$(element).hover(
-										function() {
-											$('.flo_aside .flo_r').show();
-											$('.flo_aside .flo_r ul').eq(
-													$(this).index()).show()
-													.siblings().hide();
-										});
-							})
+					$('.flo_aside .flo_l li').each(function(index, element) {
+						$(element).hover(function() {
+							if($(element).index()!=2)
+							{
+								$('.flo_aside .flo_r').show();
+								$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
+							}
+						});
+					})
 				}, function() {
 					$('.flo_aside .flo_r').hide();
 				});
@@ -425,8 +423,8 @@
 		<!--浮动框标题-->
 		<ul class="flo_l">
 			<li style="padding-top: 30px;">计<br />算<br />器</li>
-			<li>联<br />系<br />我<br />们
-			</li>
+			<li>联<br />系<br />我<br />们</li>
+			<li class="returnTop" style="display:none;height: 130px;"><a href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top</a></li>
 		</ul>
 		<div class="flo_r" style="display: none">
 			<!--计算器-->
@@ -463,7 +461,7 @@
 		</div>
 	</div>
 
-<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>
+<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
 
 </body>
 
