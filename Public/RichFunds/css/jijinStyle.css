@@ -201,6 +201,8 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .jjxq_r{float:right;width:330px;height:auto;position:static;background:#fff;}
 .jjxq_r .jjxq_r_top01{width:328px;height:80px;border:1px solid #ccc;margin-bottom:30px;} 
 .jjxq_r .jjxq_r_top01 .jjxq_r_btn{width:80px;height:36px;margin:22px 0 0 54px;cursor:pointer;}
+.jjxq_r .yuetan li{width: auto;height: auto;line-height: 22px;padding-left: 8px;color:#fff;font-size: 12px;}
+
 .jjxq_r .jjxq_r_top02{width:328px;height:325px;border:1px solid #ccc;position:relative;margin-bottom:30px;}
 .jjxq_r .jjxq_r_top02 .qz{width:54px;height:86px;background:url(../images/rongzizhong.gif) no-repeat;position:absolute;right:8px;top:-4px;}
 .jjxq_r .jjxq_r_top02 .jjxq_r_top02_head{width:328px;height:103px;border-bottom:1px dashed #ccc;}
