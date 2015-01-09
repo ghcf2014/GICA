@@ -73,8 +73,18 @@ class UserController extends HomeController {
 				/* 登录用户 */
 				$Member = D('Member');
 				if($Member->login($uid)){ //登录用户
-					//TODO:跳转到登录前页面
-					$this->success('登录成功！',U('Member/Index/index'));
+					//判断跳转来源页面
+					$msg=$_SERVER['HTTP_REFERER'];
+					str_replace('/','', $msg);
+					if (strpos($msg,"Borrow") == true){
+						//跳转到借款页面
+						$this->success('登录成功！',U('Borrow/circulation'));
+					} else {
+						
+						$this->success('登录成功！',U('Member/Index/index'));
+					}
+						
+					
 			               
 				} else {
 					$this->error($Member->getError());

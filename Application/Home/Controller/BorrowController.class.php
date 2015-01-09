@@ -20,6 +20,7 @@ class BorrowController extends HomeController {
 	// 
 	public function papersinfo() {
 		$uid = is_login ();
+
         $m=M("z_member_data_info");
         $condition['uid'] =$uid;
         $condition['type'] =2;
@@ -36,13 +37,14 @@ class BorrowController extends HomeController {
 		$result=$status->where("uid=%s",$uid)->select();
 		if ($result!==null) {
 			$this->assign ( 'id', $id);
-			$this->redirect(("Home/Borrow/papersinfo"));
-		} else {
-			$this->error ( L ('对不起，您还没进行基本认证<br>请进入<a style="color:red">[个人中心]</a>处理') );
+			$this->redirect("Home/Borrow/papersinfo");
+		} else {			
+			$this->error('对不起，您还没进行基本认证<br>请进入<a style="color:red">[基本认证]</a>处理', U('Home/Borrow/userinfo'));
 		}
 		$this->display();     
 	}
 	//发布贷款
+	
 	public function borrowinfo(){
 
 		$this->display();
@@ -62,7 +64,8 @@ class BorrowController extends HomeController {
         }
 		$this->display ();
 	}
-	//发表时确认的基本信息
+
+	//重新确认基本认证
 	public function add() {
 		// 从表单中获取来的数据
 		$uid = is_login ();

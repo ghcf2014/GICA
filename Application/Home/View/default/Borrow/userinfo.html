@@ -10,10 +10,10 @@
             <div class="zh_cont_r"><volist name="mlist" id="vo">
                 <!--基本认证-->
                 <div class="tab">
-                    <!--<form action="{:U('add?id='.$vb['id'])}" method="post">-->
+                    <form action="{:U('add?id='.$vb['id'])}" method="post">
                         <div class="til01">
-    <ul id="ul"><li class="on" style="font-size:18px;"><h3>当前位置>基本认证</h3></li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;display:block;"><s:fielderror fieldName="enough"></s:fielderror></span></ul>
-    </div>
+                        <ul id="ul"><li class="on" style="font-size:18px;"><h3>当前位置>基本认证</h3></li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;display:block;"><s:fielderror fieldName="enough"></s:fielderror></span></ul>
+                        </div>
                         <p style="background:#d3cbc7;width:948px;height:1px;"></p>
                         <dl class="jbrz">
                             <dt>真实姓名</dt>
@@ -93,16 +93,11 @@
                         <dl class="jbrz">
                             <dt>现居地址</dt>
                             <dd><input type="text" class="txt" name="address" value="{$vo.address}"></dd>
-                        </dl>
-                        <dl class="jbrz">
-                            <dt><a style="color:red">*</a>信息有误:</dt><!--href="__ROOT__/Member/Userinfo/userselfset"-->
-                            <dd class="txt"style="line-height:44px;text-align:left;">点击<a href="__ROOT__/Member/Userinfo/userselfset"  style="color:red">重新认证</a><dd> 
-                        </dl>
-                        <div class="jbrz_sub_btn">
-                            
-                            <input type="button" class="btn" value="下一步"/>
+                        </dl>  
+                        <div class="jbrz_sub_btn">  
+                            <input type="submit" class="btn" value="保存"/>
                         </div>
-                    <!--/form-->
+                    </form>
                 </div>
                 
                 </volist>
