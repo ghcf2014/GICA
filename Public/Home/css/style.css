@@ -8,7 +8,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*---------首页------------------------*/
-/*---------header--------------------*/
+/*---------top--------------------*/
 .header_out{width:100%;height:38px;position: relative;z-index: 1009;width: 100%;color: #FFF;font-size: 14px;background: none repeat scroll 0% 0% #474747;line-height: 38px;z-index:10;}
 .header_out .header{width:1070px;height:38px;margin:0 auto;overflow:hidden;}
 .header_out .header ul{float:left;width:500px;overflow:hidden;}
