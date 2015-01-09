@@ -11,7 +11,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 /*---------top--------------------*/
 .header_out{width:100%;height:38px;position: relative;z-index: 1009;width: 100%;color: #FFF;font-size: 14px;background: none repeat scroll 0% 0% #474747;line-height: 38px;z-index:10;}
 .header_out .header{width:1070px;height:38px;margin:0 auto;overflow:hidden;}
-.header_out .header ul{float:left;width:500px;overflow:hidden;}
+.header_out .header ul{float:left;width:600px;overflow:hidden;}
 .header_out .header ul li{float:left;line-height:38px;height:38px;}
 .header_out .header ul li a{color: #FFF;}
 .header_out .header ul li a:hover{color: #66ccfb;}
@@ -24,6 +24,9 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .header_out .header ul .call{width:200px;}
 .header_out .header ul .call div{width:25px;background: url(../images/top_icons.png) repeat scroll 0px -81px transparent;height:38px;float: left;}
 .header_out .header ul .call div:hover{width:25px;background: url(../images/top_icons.png) repeat scroll 40px -81px transparent;height:38px;float: left;}
+.header_out .header ul .hot{width:100px;}
+.header_out .header ul .hot div{width:100px;background: url(../images/img/hot029.gif) no-repeat scroll 20px 3px transparent;height:38px;float: left; margin-right: -80px;}
+.header_out .header ul .hot div:hover{width:100px;background: url(../images/img/hot029.gif) no-repeat scroll 20px 0px transparent;height:38px;float: left;margin-right: -80px;}
 .header_out .header p{float:right;line-height:36px;}
 .header_out .header p .zc{color:#66ccfc;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
 .header_out .header p .dl{color:#f55728;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
