@@ -18,16 +18,25 @@ class UserController extends HomeController {
         if(!C('USER_ALLOW_REGISTER')){
             $this->error('注册已关闭');
         }
+
 		if(IS_POST){ //注册用户
+			//手机发送验证码
+			// session_start();
+			// if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+			// $this->error('手机验证码输入错误。');
+			// }elseif($_POST['mobile']==$_SESSION['mobile'] or $_POST['mobile_code']==$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+			// 	$_SESSION['mobile'] = '';
+			// 	$_SESSION['mobile_code'] = '';	
+			// }
+			// $_SESSION['send_code'] = random(6,1);
 			/* 检测验证码 */
 			if(!check_verify($verify)){
 				$this->error('验证码输入错误！');
 			}
-
 			/* 检测密码 */
 			if($password != $repassword){
 				$this->error('密码和重复密码不一致！');
-			}			
+			}
 
 			/* 调用注册接口注册用户 */
             $User = new UserApi();
@@ -47,8 +56,23 @@ class UserController extends HomeController {
 		} else { //显示注册表单
 			$this->display();
 		}
-	}
 
+	}
+	//手机验证码随机生成方法
+	public function random($length = 6 , $numeric = 0) {
+		PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
+		if($numeric) {
+			$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
+		} else {
+			$hash = '';
+			$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
+			$max = strlen($chars) - 1;
+			for($i = 0; $i < $length; $i++) {
+				$hash .= $chars[mt_rand(0, $max)];
+			}
+		}
+		return $hash;
+	}
 	/* 登录页面 */
 	public function login($username = '', $password = '', $verify = '',$email = ''){
 		

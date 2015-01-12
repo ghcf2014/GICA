@@ -1169,3 +1169,37 @@ function subtext($text, $length)
     return mb_substr($text, 0, $length, 'utf8').'...';
     return $text;
  }
+
+
+ //短信发送函数方法
+
+function sendsms($mob,$content)
+{
+    $uid=$msgconfig['sms']['user3']; //分配给你的账号
+    $pwd=$msgconfig['sms']['pass3']; //密码
+    $mob=$mob; //发送号码用逗号分隔
+    $content=urlencode(auto_charset($content,"utf-8",'gbk')); //短信内容
+
+    $sendurl="http://106.ihuyi.cn/webservice/sms.php?method=Submit&";
+    $sendurl.='account='.$serialNumber.'&password='.$pwd.'&mobile='.$mob.'&content='.$content;
+    $d = @file_get_contents($sendurl,false);
+
+    preg_match_all('/
+    <response>
+    (.*)<\/response>/isU',$d,$arr);
+
+    foreach($arr[1] as $k=>$v){
+    preg_match_all('#
+    <error>(.*)</error>
+    #isU',$v,$ar[$k]);
+    $data[]=$ar[$k][1];
+    }
+
+    if($data[0][0]=="0"){
+    return true;
+    echo "消息发送成功。O(∩_∩)O";
+    }else{
+    return false;
+    echo "消息发送失败。";
+    }
+}

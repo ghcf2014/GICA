@@ -23,7 +23,7 @@ class OtherController extends AdminController {
         $list   = $this->lists('Member', $map);
         int_to_string($list);
         $this->assign('_list', $list);
-        $this->meta_title = '用户信息';
+        $this->meta_title = '其他管理中心';
         $this->display();
     }
 

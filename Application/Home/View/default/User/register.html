@@ -10,7 +10,8 @@
 	</div>
 </header> </block>
 
-<block name="body"> <!--content start-->
+<block name="body"> 
+<!--content start-->
 <div class="dl_cont_out">
 	<div class="dl_cont">
 		<div class="top">
@@ -25,8 +26,26 @@
 					<span>* </span>手机号码:
 				</dt>
 				<dd>
-					<input type="text" value="" placeholder="请输入您的手机号码" name="phone" id="phone"
-						class="txt" />
+					<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" />
+				</dd>
+				<span id="checkphone" style="line-height:48px;"></span>
+			</dl>
+			<dl>
+				<dt>
+					
+				</dt>
+				<dd>
+					
+					<input id="zphone" type="button" value=" 获取手机验证码 " onClick="get_mobile_code();" /><span style="color: red;">（手机验证码内部测试，无需填写）</span>
+				</dd>
+				<span id="checkphone" style="line-height:48px;color: red;"></span>
+			</dl>
+			<dl>
+				<dt>
+					<span>* </span>验证码:
+				</dt>
+				<dd>
+					<input type="text" size="8" name="mobile_code" class="inputBg" />
 				</dd>
 				<span id="checkphone" style="line-height:48px;"></span>
 			</dl>
@@ -112,7 +131,47 @@
 		</form>
 	</div>
 </div>
+<script language="javascript">
+	function get_mobile_code(){
 
+        // $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+            alert(jQuery.trim(unescape(msg)));
+			if(msg=='提交成功'){
+				RemainTime();
+			}
+        });
+	};
+	var iTime = 59;
+	var Account;
+	function RemainTime(){
+		document.getElementById('zphone').disabled = true;
+		var iSecond,sSecond="",sTime="";
+		if (iTime >= 0){
+			iSecond = parseInt(iTime%60);
+			iMinute = parseInt(iTime/60)
+			if (iSecond >= 0){
+				if(iMinute>0){
+					sSecond = iMinute + "分" + iSecond + "秒";
+				}else{
+					sSecond = iSecond + "秒";
+				}
+			}
+			sTime=sSecond;
+			if(iTime==0){
+				clearTimeout(Account);
+				sTime='获取手机验证码';
+				iTime = 59;
+				document.getElementById('zphone').disabled = false;
+			}else{
+				Account = setTimeout("RemainTime()",1000);
+				iTime=iTime-1;
+			}
+		}else{
+			sTime='没有倒计时';
+		}
+		document.getElementById('zphone').value = sTime;
+	}	
+</script>
 <script type="text/javascript">
 //验证码刷新
     	$(document)

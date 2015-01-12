@@ -48,7 +48,6 @@
 			<td>{$vo.borrow_type}</td>
 			<td>
 				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">审核</a>
-                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
                 </td>
 		</tr>
 		</volist>
