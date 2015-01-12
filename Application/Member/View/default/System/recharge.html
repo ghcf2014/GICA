@@ -47,20 +47,27 @@
                                             </tr>
 											<tr>
 												<td>充值类型：</td>
-                                                <td style="">
-                                                    <s:if test="#request.gopay==2">
+                                                <td style="overflow: hidden;">
+                                                    <div class="czlx" style="float: left;overflow: hidden;">
+                                                    	<s:if test="#request.gopay==2">
                                                         <input id="gopay" type="radio" name="pay" value="2"
-                                                            style="float: none;" />&nbsp;
-           <img src="__PUBLIC__/Home/images/gopay.png" width="121px" height="33px" />&nbsp;&nbsp;&nbsp;&nbsp; 
+                                                            style="float: left;margin-top: 10px;" />&nbsp;
+           <img src="__PUBLIC__/Home/images/gopay.png" width="121px" height="33px" style="float: left;"/>&nbsp;&nbsp;&nbsp;&nbsp; 
            </s:if>
-                                                    <s:if test="#request.IPS==2">
+                                                    </div>
+                                                    <div class="czlx" style="float: left;overflow: hidden;">
+                                                    	<s:if test="#request.IPS==2">
                                                         <input id="ipay" type="radio" name="pay" value="1"
-                                                            style="float: none;" />&nbsp;&nbsp;
-           <img src="__PUBLIC__/Home/images/ipay.png" width="121px" height="33px" />
+                                                            style="float: left;margin-top: 10px;" />&nbsp;&nbsp;
+           <img src="__PUBLIC__/Home/images/ipay.png" width="121px" height="33px" />&nbsp;&nbsp;&nbsp;&nbsp;
                                                     </s:if>
-        <!-- 											<input type="radio" name="pay" id="xxpay" value="3"
-                                                        style="float: none;" />
-                                                    &nbsp;线下充值 -->
+                                                    </div>
+                                                    <div class="czlx" style="float: left;overflow: hidden;">
+                                                    	<input type="radio" name="pay" id="xxpay" value="3"
+                                                        style="float: left;margin-top: 10px;" />
+                                                    &nbsp;<b style="font-weight: normal;line-height: 30px;">线下充值</b> &nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </div>
+         											
                                                 </td>
 											</tr>
 											<tr>
@@ -348,7 +355,7 @@
 
 							</div>
 							<div  id="btn_submit">
-							<input type="submit" class="btn" value="提交充值"id="addrecharge"/> 
+							<input type="submit" class="btn" value="提交充值" id="addrecharge"/> 
 								<!-- <input type="button" class="bcbtn" value="保存并继续"id="addrecharge" /> -->
         <!-- <a href="javascript:void(0);" class="bcbtn" onclick="addRechargeInfo();">保存并继续</a> -->
 							</div>

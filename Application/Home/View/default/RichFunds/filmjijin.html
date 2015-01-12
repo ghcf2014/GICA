@@ -20,16 +20,15 @@
 		$('.flo_aside').hover(
 				function() {
 					//alert(2);
-					$('.flo_aside .flo_l li').each(
-							function(index, element) {
-								$(element).hover(
-										function() {
-											$('.flo_aside .flo_r').show();
-											$('.flo_aside .flo_r ul').eq(
-													$(this).index()).show()
-													.siblings().hide();
-										});
-							})
+					$('.flo_aside .flo_l li').each(function(index, element) {
+						$(element).hover(function() {
+							if($(element).index()!=2)
+							{
+								$('.flo_aside .flo_r').show();
+								$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
+							}
+						});
+					})
 				}, function() {
 					$('.flo_aside .flo_r').hide();
 				});
@@ -111,196 +110,78 @@
 		<div class="jjxq_l">
 			<h2>工合昆明之恋电影基金</h2>
 			<div class="jjxq_l_con">
-				<!--pic1-->
-				<div class="img">
-					<img src="../../../../../Public/RichFunds/images/film_1.png"
-						width="526" height="308" style="margin-left: 20px;" />
-				</div>
-				<p class="wz">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电影是最受欢迎的文化产品之一，2010年国务院办公厅发布《关于促进电影产业繁荣发展的指导意见》积极引导和鼓励金融机构拓展适合电影产业发展的融资方式和金融服务。
-					2012年，中国电影票房收入突破170亿元。
-					2013年，中国电影票房收入一举突破217亿元，成为仅次于美国的世界第二大电影市场，其中国产电影票房达到127亿元。
-					2014年，中国电影票房再度飘红，上半年票房超过127亿元（2013年同期为107亿元，增长率超过30%）,截止9月21日，中国电影票房已突破212亿元，预计全年将达到280-300亿元，增长率高达30%以上。成为亚太最大电影市场，为成为“世界电影票仓”。
-					<br />
-				</p>
-
-				<!--pic2-->
-				<h4>影片主创团队</h4>
-				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;①总监制李前宽</p>
-				<div class="img">
-					<img width="526" height="308"
-						src="../../../../../Public/RichFunds/images/film_person1.jpg"
-						style="margin-left: 15px;" />
-				</div>
-
-				<!--pic3-->
-				<p class="wz" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国家一级导演，首批享受国务院特俗津贴的有突出贡献的专家学者。
-					李前宽从事影视导演30余年，代表作品《佩剑将军》、《开国大典》、《决战之后》、《重庆谈判》。先后获电影“金鸡奖”、“百花奖”、“五个一工程奖”、“华表奖”、世界反法西斯“长城杯”优秀影片奖等多项国内外大奖。其中《开国大典》更是创下当年最高拷贝的记录。
-					李前宽创作的影片作品，具有史诗性的风格，具有强烈的时代感和使命感。他揽历史风云于电影，或泼墨挥洒、打气如虹；或笔走龙蛇、情意酣畅。在电影美学的追求上，张扬着烈烈如炽的“共和国情结”。
-					曾任第八届全国人大代表、第十届全国政协委员、中国电影家协会主席、中国电影基金会会长。
-					现任中国电影家协会名誉主席、国务院参事室参事、中央文史馆馆员。</p>
-				<p class="wz">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;②总编剧 罗星</p>
-
-				<div class="img">
-					<img width="526" height="308"
-						src="../../../../../Public/RichFunds/images/film_person2.jpg"
-						style="margin-left: 15px;" />
-				</div>
-
-				<!--pic4-->
-				<p class="wz" style="margin-top: 15px;">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;罗星，电影剧作家、国家一级编剧。文化部五个一工程奖获得者，曾任峨眉电影制片厂专业编剧、紫禁城影业艺术总监、中国电影基金会副秘书长等职。
-					主要影视作品： 《车队从城市过》、《生活的马拉松》、《红十字作证》 《雄霸天下》（与台湾合拍）、《古咒》（与香港合拍）
-					《南行记》、《非法持枪》、《毛泽东的故事》、《反碟战场》 《西屯的儿子》、《中国出了个毛泽东》（20集） 《重案出击》（20集）
-					《人间烟火》（40集）、《风雨故人来》（30集）、《神舟》（40集）。</p>
-				<!--pic5-->
-				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;③总导演
-					姜帝圭</p>
-				<div class="img">
-					<img width="526" height="308"
-						src="../../../../../Public/RichFunds/images/film_person3.jpg"
-						style="margin-left: 15px;" />
-				</div>
-
-				<!--pic6-->
-				<h4>影片主演阵容</h4>
-				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;①艾米•汉莫（饰
-					汤姆）</p>
-				<div class="img">
-					<img width="526" height="308"
-						src="../../../../../Public/RichFunds/images/film_person4.jpg"
-						style="margin-left: 15px;" />
-				</div>
-				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;艾米•汉莫是近几年好莱坞当前最炙手可热的明星之一。
-					他家世显赫，父亲是知名商人，曾祖父是美国石油大亨和慈善家阿曼德•汉莫，阿曼德•汉莫是第一位与苏联发展贸易关系的美国企业家，有“红色资本家”的称号。而阿曼德•汉莫的父亲则是美国共产党的创始人。
-					在参与美国著名导演大卫•芬奇的金球奖最佳影片《社交网络》后，他的表演获得了一致好评，也被认为是好莱坞最具突破的年轻演员之一。艾米•汉莫获得极大的声誉，火速蹿红。凭借此次演出，他被芝加哥影评人协会提名最具潜力的演员。
-					之后艾米•汉莫出演了关于美国FBI联邦调查局局长的传记片《胡佛传》。他频繁出演重要电影和重要角色，上升势头十分强劲。</p>
-
-				<!--pic7-->
-				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;②李冰冰（饰
-					淑珍）</p>
-				<div class="img">
-					<img width="526" height="308"
-						src="../../../../../Public/RichFunds/images/film_person5.jpg"
-						style="margin-left: 15px;" />
-				</div>
-				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国内地著名女演员。刚出道凭电影《过年回家》摘得13届新加坡国际电影节最佳女主桂冠。
-					之后参与电影《天下无贼》。并凭电影《云水谣》获第12届中国电影华表奖及第29届大众电影百花奖。在《风声》中的表演让她荣膺46届台湾电影金马奖。
-					从2008年起，她因出演好莱坞电影《功夫之王》、《雪花秘扇》、《生化危机5》跻身国际影坛。
-					2012年担任上海国际电影节评委，年底签约美国经纪公司UTA。
-					2013年初荣升国际奢侈品牌Gucci全球代言人并接演《变形金刚4》，担任第50届金马奖决审评委。
-					毫无疑问，李冰冰是当前国内最顶级的明星，并且在国际上有很高影响力。</p>
-				<!--pic8-->
-				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;③切斯•克劳福（饰
-					约翰）</p>
-				<div class="img">
-					<img width="526" height="308"
-						src="../../../../../Public/RichFunds/images/film_person6.jpg"
-						style="margin-left: 15px;" />
-				</div>
-
-				<!--pic9-->
-				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;切斯•克劳福是美国著名偶像男演员，他在大热美剧《绯闻少女》中饰演男主角，引起广发关注，并凭借该剧获得2009至2011年间连续三年的最佳剧情男演员将及多个提名。
-					之后他主演了惊悚电影《如影随形》，被美国《人物》周刊选为“最炙手可热单身汉”第一名，“最性感男性”第一名。
-					切斯•克劳福拥有大量的粉丝，现在是美国非常火热的新生代偶像，人气常年保持火热。</p>
-
-				<!--律师事务所-->
-				<dl class="lvshi">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic11.gif"
-							width="268" height="316" />
-					</dt>
-					<dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东广和律师事务所成立于1995年4月，现有注册律师近288名（不含分所），是华南地区最大的综合型律师事务所，被司法部、全国律协评为"全国优秀律师事务所"。被《亚洲法律杂志》评为中国第四大律师事务所、广东最大的律师事务所、亚洲最值得关注的十家律师事务所之一；被国际法律服务市场分析与评级机构—钱伯斯评为"2010年度最佳地区律师事务所奖"；＂2013年度中国顶尖的律师事务所＂。
-					</dd>
-				</dl>
-				<!--律师团队-->
-				<h4>强大的律师团队</h4>
-				<dl class="lvshiteam">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic12.gif"
-							width="113" height="148" />
-					</dt>
-					<dd>
-						<p>杨波&nbsp;律师</p>
-						<p>
-							广和律师事务所合伙人<br />精通私募股权投资基金的运作、管理。
-						</p>
-					</dd>
-				</dl>
-
-				<dl class="lvshiteam">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic13.gif"
-							width="113" height="148" />
-					</dt>
-					<dd>
-						<p>廖建业&nbsp;律师</p>
-						<p>
-							谙熟财经会计实务及法律实践<br />精通大型企业的财务、税务、经营管理及投融资实务精通私募股权投资基金的运作、管理。
-						</p>
-					</dd>
-				</dl>
-
-				<dl class="lvshiteam">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic14.gif"
-							width="113" height="148" />
-					</dt>
-					<dd>
-						<p>高翔&nbsp;律师</p>
-						<p>承办多家企业法律顾问事务，主要从事企业法律顾问、融资、新三板挂牌、IPO、再融资及债券发行法律业务。</p>
-					</dd>
-				</dl>
-
-				<dl class="lvshiteam">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic15.gif"
-							width="113" height="148" />
-					</dt>
-					<dd>
-						<p>周翔&nbsp;律师</p>
-						<p>主要从事公司融资、法律顾问、民商事案件诉讼，有丰富的融资专项顾问和商业诉讼案件办理经验。</p>
-					</dd>
-				</dl>
-
-				<dl class="lvshiteam">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic16.gif"
-							width="113" height="148" />
-					</dt>
-					<dd>
-						<p>陈梅&nbsp;律师</p>
-						<p>承办多起企业投资、融资、收购等专项法律服务、经济纠纷诉讼与非诉法律事务。</p>
-					</dd>
-				</dl>
-
-				<dl class="lvshiteam">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic17.gif"
-							width="113" height="148" />
-					</dt>
-					<dd>
-						<p>付永光&nbsp;律师</p>
-						<p>主要辅助合伙人律师办理了企业投资、融资、并购法律顾问、非诉业务、民商事纠纷。</p>
-					</dd>
-				</dl>
-
-				<!--投资者保障-->
-				<h4>安全有效的投资者保障</h4>
-				<dl class="tzzbz">
-					<dt>
-						<img src="../../../../../Public/RichFunds/images/jjxq_pic18.gif" />
-					</dt>
-					<dd>根据2013年的审计报告，呼伦贝尔天竺苑旅游开发有限公司总资产约为9.57亿元，总负债约为3.8亿元，净资产约为5.77亿元，其股权可作为质押担保。</dd>
-				</dl>
-
-				<!--认购流程-->
-				<h3>认购流程：</h3>
-				<div class="rglc">
-					<img src="../../../../../Public/RichFunds/images/jjxq_pic19.gif"
-						width="598" height="308" />
-				</div>
+				<div class="jjjj">
+            		<h3>基金简介</h3>
+            		<ul class="jjjj_con" style="border-top: 1px solid #CCCCCC;">
+        				<li class="jjjj_con_tit">基金名称</li>
+        				<li>深圳市工合影视投资基金企业（有限合伙）</li>
+        				<li class="jjjj_con_tit">基金性质</li>
+        				<li style="line-height: 60px;">私募基金</li>
+            		</ul>
+            		<ul class="jjjj_con">
+            			<li class="jjjj_con_tit">基金规模</li>
+            			<li style="line-height: 60px;">人民币2亿元</li>
+            			<li class="jjjj_con_tit">认购金额</li>
+            			<li>基金认购以100万元为一份，按100万元的整数倍递增</li>
+            		</ul>
+            		<ul class="jjjj_con">
+            			<li class="jjjj_con_tit">存续期</li>
+            			<li style="line-height: 60px;">24个月</li>
+            			<li class="jjjj_con_tit">预期收益</li>
+            			<li style="line-height: 60px;">固定年化收益率12%</li>
+            		</ul>		
+            		<ul class="jjjj_con">
+            			<li class="jjjj_con_tit">收益说明</li>
+            			<li style="line-height: 60px;">到期还本付息</li>
+            			<li class="jjjj_con_tit">管理人</li>
+            			<li>广东工合股权基金有限公司（私募投资基金管理人登记编号：P1004629）</li>
+            		</ul>		
+            		<ul class="jjjj_con">
+            			<li class="jjjj_con_tit">投资标的</li>
+            			<li class="jjjj_con_li_last"  style="line-height: 60px;">电影《昆明之恋》</li>
+            		</ul>		            		
+            	</div>
+            	<div class="xmjj">
+            		<h3>项目简介</h3>
+            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《昆明之恋》，一部展现二战期间，飞虎队与中国人民共同抗击日本侵略的历史性大片，是习近平主席今年访韩带回来的一部交流影片。
+该片集合了中外电影一流制作团队，在制作模式上重构本土环境下的国际电影制作的新水准。编剧罗星、张昆剑、槐方翾等主创人员，历时5年数10次深入云南采风，整合二战期间遗失的人文素材，进行严谨的艺术再创造。从而写出讲述上世纪3、40年代，美国飞虎队援华抗日期间在南屏电影院（时称美军电影院）发生的一段跨越了60年的爱情故事。
+电影《昆明之恋》由中国电影基金会监制，北京华夏翰墨艺术交流有限公司摄制，并由中共云南省委、中共昆明市委参与联合协拍。
+</p>
+            		<img src="__PUBLIC__/RichFunds/images/jjxq_film_pic1.png" style="margin: 5px 25px;"/>
+            	</div>
+            	<div class="xmjj">
+            		<h3>基金管理人简介：</h3>
+            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东工合股权基金有限公司（“工合基金”）由广东省工业合作协会（“广东工合”）会长单位牵头、联合多家实力会员企业发起成立，是广东工合实施金融资源整合的执行单位。</p>
+            	</div>
+            	<div class="team">
+            		<h3>基金管理团队：</h3>
+            		<table border="0" cellspacing="0" cellpadding="0">
+            			<tr>
+            				<td>董事长</td>
+            				<td style="border-right: 0;">张绵彪</td>
+            			</tr>
+            			<tr>
+            				<td>金融事业中心总裁</td>
+            				<td style="border-right: 0;">黄澍铮</td>
+            			</tr>
+            			<tr>
+            				<td>投融资事业中心总裁</td>
+            				<td style="border-right: 0;">熊勇</td>
+            			</tr>
+            			<tr>
+            				<td>国际项目中心总裁</td>
+            				<td style="border-right: 0;">周雄盛</td>
+            			</tr>
+            			<tr>
+            				<td>投资经理</td>
+            				<td style="border-right: 0;">王其强</td>
+            			</tr>
+            			<tr>
+            				<td style="border-bottom: 0;">法律顾问</td>
+            				<td style="border-bottom: 0;border-right: 0;">杨波</td>
+            			</tr>
+            		</table>
+            	</div>
 			</div>
 		</div>
 		<!--左边 jjxq_l   end-->
@@ -320,23 +201,16 @@
 			<div class="jjxq_r_top02">
 				<div class="qz"></div>
 				<div class="jjxq_r_top02_head">
-					<p class="yrzj">已融资金</p>
-					<p class="yrzj_no">￥20,0000</p>
-				</div>
-				<ul>
-					<li><span>项目规模：</span>
-						<p style="color: #e93105; font-weight: bold;">￥200,0000</p></li>
-					<li><span>年化收益：</span>
-						<p>10.5%</p></li>
-					<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span>
-						<p>1个月</p></li>
-					<li><span>担保机构：</span>
-						<p>广东工合基金</p></li>
-					<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span>
-						<div class="jdt">
-							<p class="jdt_in"></p>
-						</div></li>
-				</ul>
+                	<p class="yrzj">已融资金</p>
+                    <p class="yrzj_no">￥1000,0000</p>
+                </div>
+                <ul>
+                	<li><span>项目规模：</span><p style="color:#e93105;font-weight:bold;">￥2,0000,0000</p></li>
+                	<li><span>年化收益：</span><p>10.5%</p></li>
+                	<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span><p>2年</p></li>
+                	<li><span>担保机构：</span><p>广东工合基金</p></li>
+                	<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span><div class="jdt"><p class="jdt_in"></p></div></li>
+                </ul>
 			</div>
 
 			<div class="jjxq_r_top03">
@@ -460,8 +334,8 @@
 		<!--浮动框标题-->
 		<ul class="flo_l">
 			<li style="padding-top: 30px;">计<br />算<br />器</li>
-			<li>联<br />系<br />我<br />们
-			</li>
+			<li>联<br />系<br />我<br />们</li>
+			<li class="returnTop" style="display:none;height: 130px;"><a href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top</a></li>
 		</ul>
 		<div class="flo_r" style="display: none">
 			<!--计算器-->
@@ -499,7 +373,7 @@
 	</div>
 
 
-<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>
+<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
 
 
 
