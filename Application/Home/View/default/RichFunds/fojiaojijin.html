@@ -21,12 +21,8 @@
 			//alert(2);
 			$('.flo_aside .flo_l li').each(function(index,element){
 				$(element).hover(function(){
-					if($(element).index()!=2)
-					{
-						$('.flo_aside .flo_r').show();
-						$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
-					}
-					
+					$('.flo_aside .flo_r').show();
+					$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
 				});
 			})	
 		},function(){
@@ -99,77 +95,132 @@
     	<div class="jjxq_l">
        	  <h2>工合佛教文化旅游基金</h2>
             <div class="jjxq_l_con">
-            	<div class="jjjj">
-            		<h3>基金简介</h3>
-            		<ul class="jjjj_con" style="border-top: 1px solid #CCCCCC;">
-        				<li class="jjjj_con_tit">基金名称</li>
-        				<li>深圳市工合佛教文化旅游基金企业（有限合伙）</li>
-        				<li class="jjjj_con_tit">基金性质</li>
-        				<li style="line-height: 60px;">私募基金</li>
-            		</ul>
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">基金规模</li>
-            			<li style="line-height: 60px;">人民币10亿元</li>
-            			<li class="jjjj_con_tit">认购金额</li>
-            			<li>基金认购以200万元为一份额，按 100 万元的整数倍递增</li>
-            		</ul>
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">存续期</li>
-            			<li style="line-height: 60px;">24个月</li>
-            			<li class="jjjj_con_tit">预期收益</li>
-            			<li style="line-height: 60px;">固定年化收益率12%</li>
-            		</ul>		
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">收益说明</li>
-            			<li>到期后，合伙人可自行选择退出或继续持有至36个月</li>
-            			<li class="jjjj_con_tit">管理人</li>
-            			<li>广东工合股权基金有限公司（私募投资基金管理人登记编号：P1004629）</li>
-            		</ul>		
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">投资标的</li>
-            			<li class="jjjj_con_li_last"  style="line-height: 60px;">中华天竺苑及其配套设施</li>
-            		</ul>
-            				
-            		
-            	</div>
-            	<div class="xmjj">
-            		<h3>项目简介</h3>
-            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中华天竺苑作为全球最大的佛教文化主题公园，以及东北亚最大的佛教道场，其建成后必将成为呼伦贝尔市的标志性建筑及旅游名片，社会效益和经济效益不可估量，项目占地340.8公顷，总建筑面积7.32万平方米，由三门、阿育王柱、菩提广场、华藏世界和佛教八大圣景组成。项目位于内蒙古自治区呼伦贝尔市海拉尔城区北部的敖包山，地理位置独特，交通条件方便。</p>
-            		<img src="__PUBLIC__/RichFunds/images/jjxq_pic1.gif" style="margin: 5px 25px;"/>
-            	</div>
-            	<div class="xmjj">
-            		<h3>基金管理人简介：</h3>
-            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东工合股权基金有限公司（“工合基金”）由广东省工业合作协会（“广东工合”）会长单位牵头、联合多家实力会员企业发起成立，是广东工合实施金融资源整合的执行单位。</p>
-            	</div>
-            	<div class="team">
-            		<h3>基金管理团队：</h3>
-            		<table border="0" cellspacing="0" cellpadding="0">
-            			<tr>
-            				<td>董事长</td>
-            				<td style="border-right: 0;">张绵彪</td>
-            			</tr>
-            			<tr>
-            				<td>金融事业中心总裁</td>
-            				<td style="border-right: 0;">黄澍铮</td>
-            			</tr>
-            			<tr>
-            				<td>投融资事业中心总裁</td>
-            				<td style="border-right: 0;">熊勇</td>
-            			</tr>
-            			<tr>
-            				<td>国际项目中心总裁</td>
-            				<td style="border-right: 0;">周雄盛</td>
-            			</tr>
-            			<tr>
-            				<td>投资经理</td>
-            				<td style="border-right: 0;">王其强</td>
-            			</tr>
-            			<tr>
-            				<td style="border-bottom: 0;">法律顾问</td>
-            				<td style="border-bottom: 0;border-right: 0;">杨波</td>
-            			</tr>
-            		</table>
-            	</div>
+            	<!--pic1-->
+       	    	<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic1.gif" width="526" height="308" style="margin-left:20px;"/>
+                </div>	
+                <p class="wz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中华天竺苑作为全球最大的佛教文化主题公园，以及东北亚最大的佛教道场，其建成后必将成为呼伦贝尔市的标志性建筑及旅游名片，社会效益和经济效益不可估量。<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目占地340.8公顷，总建筑面积7.32万平方米，由三门、阿育王柱、菩提广场、华藏世界和佛教八大圣景组成。项目位于内蒙古自治区呼伦贝尔市海拉尔城区北部的敖包山，地理位置独特、交通方便。
+      			</p>
+                
+                <!--pic2-->
+                <p class="wz" style="margin-top:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宗教影响力："中华天竺苑"由一诚长老亲自主持建造，一诚长老是中国佛教协会荣誉会长、前中国佛学院院长，被誉为"中国佛教领袖"。</p>
+				<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic2.gif" style="margin-left:15px;"/>
+                </div>
+                
+                <!--pic3-->
+                <p class="wz" style="margin-top:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目有诸多世界第一：全世界最大的佛教三门；全世界最大的阿育王柱；全世界最大的佛教宫殿"华藏世界"等；融合印、尼两国佛教"圣景"，加入中国佛教的历史文化元素，将世界佛教的核心及脉络全部纳入其中。
+</p>
+				<p class="wz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阿育王柱：<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;直径2.6米，高20米的阿育王柱，气势恢宏。</p>
+             
+             	<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic3.gif" style=""/>
+                </div>
+                
+                <!--pic4-->
+              <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华藏世界：<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总建筑面积48,000平方米，其中地宫20,000平方米，建筑南北朝向，从东向西横跨408米，超过凡赛尔宫，由主殿、心经殿、金刚经殿、罗汉堂组成。</p>
+             	<div class="img">
+               	  <img src="__PUBLIC__/RichFunds/images/jjxq_pic4.gif" style=""/>
+                </div> 
+                
+                 <!--pic5-->
+                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全国最大的唐卡艺术博物馆
+</p>
+             	<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic5.gif" style=""/>
+                </div>
+                
+                <!--pic6-->
+                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;心经殿</p>
+             	<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic6.gif" style=""/>
+                </div>
+                
+                <!--pic7-->
+                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金刚经殿
+</p>
+             	<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic7.gif" style=""/>
+                </div>
+                
+                <!--pic8-->
+                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五百罗汉宫
+
+</p>
+             	<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic8.gif" style=""/>
+                </div>
+                
+                <!--pic9-->
+                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最多可容纳800人的梵音剧场。</p>
+             	<div class="img">
+                	<img src="__PUBLIC__/RichFunds/images/jjxq_pic9.gif" style=""/>
+                </div>
+                
+                
+                <!--基金条款-->
+       	  	  <!-- <h3>基金条款</h3>
+                <div class="img">
+                    <img src="../../../../../Public/RichFunds/images/jjxq_pic10.gif" style=""/>
+                </div> -->
+                <!--律师事务所-->
+              <dl class="lvshi">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic11.gif" width="268" height="316" /></dt>
+                    <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东广和律师事务所成立于1995年4月，现有注册律师近288名（不含分所），是华南地区最大的综合型律师事务所，被司法部、全国律协评为"全国优秀律师事务所"。被《亚洲法律杂志》评为中国第四大律师事务所、广东最大的律师事务所、亚洲最值得关注的十家律师事务所之一；被国际法律服务市场分析与评级机构—钱伯斯评为"2010年度最佳地区律师事务所奖"；＂2013年度中国顶尖的律师事务所＂。
+</dd>
+                </dl>
+                <!--律师团队-->
+              <h4>强大的律师团队</h4>
+                <dl class="lvshiteam">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic12.gif" width="113" height="148" /></dt>
+                    <dd><p>杨波&nbsp;律师</p><p>广和律师事务所合伙人<br/>精通私募股权投资基金的运作、管理。</p>
+                    </dd>
+                </dl>
+                
+                <dl class="lvshiteam">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic13.gif" width="113" height="148" /></dt>
+                    <dd><p>廖建业&nbsp;律师</p><p>谙熟财经会计实务及法律实践<br/>精通大型企业的财务、税务、经营管理及投融资实务精通私募股权投资基金的运作、管理。</p>
+                    </dd>
+                </dl>               
+
+                <dl class="lvshiteam">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic14.gif" width="113" height="148" /></dt>
+                    <dd><p>高翔&nbsp;律师</p><p>承办多家企业法律顾问事务，主要从事企业法律顾问、融资、新三板挂牌、IPO、再融资及债券发行法律业务。</p>
+                    </dd>
+                </dl>
+                
+                <dl class="lvshiteam">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic15.gif" width="113" height="148" /></dt>
+                    <dd><p>周翔&nbsp;律师</p><p>主要从事公司融资、法律顾问、民商事案件诉讼，有丰富的融资专项顾问和商业诉讼案件办理经验。
+</p>
+                    </dd>
+                </dl>
+                
+                <dl class="lvshiteam">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic16.gif" width="113" height="148" /></dt>
+                    <dd><p>陈梅&nbsp;律师</p><p>承办多起企业投资、融资、收购等专项法律服务、经济纠纷诉讼与非诉法律事务。
+</p>
+                    </dd>
+                </dl>
+                
+                <dl class="lvshiteam">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic17.gif" width="113" height="148" /></dt>
+                    <dd><p>付永光&nbsp;律师</p><p>主要辅助合伙人律师办理了企业投资、融资、并购法律顾问、非诉业务、民商事纠纷。
+</p>
+                    </dd>
+                </dl>
+                
+                <!--投资者保障-->
+              <h4>安全有效的投资者保障</h4>
+                <dl class="tzzbz">
+                	<dt><img src="__PUBLIC__/RichFunds/images/jjxq_pic18.gif"/></dt>
+                    <dd>根据2013年的审计报告，呼伦贝尔天竺苑旅游开发有限公司总资产约为9.57亿元，总负债约为3.8亿元，净资产约为5.77亿元，其股权可作为质押担保。</dd>
+                </dl>
+                
+                <!--认购流程-->
+              <h3>认购流程：</h3>
+                <div class="rglc"><img src="__PUBLIC__/RichFunds/images/jjxq_pic19.gif" width="598" height="308" /></div>
             </div>
         </div>
         <!--左边 jjxq_l   end-->
@@ -188,12 +239,12 @@
             	<div class="qz"></div>
             	<div class="jjxq_r_top02_head">
                 	<p class="yrzj">已融资金</p>
-                    <p class="yrzj_no">￥200,0000</p>
+                    <p class="yrzj_no">￥20,0000</p>
                 </div>
                 <ul>
-                	<li><span>项目规模：</span><p style="color:#e93105;font-weight:bold;">￥10,0000,0000</p></li>
+                	<li><span>项目规模：</span><p style="color:#e93105;font-weight:bold;">￥200,0000</p></li>
                 	<li><span>年化收益：</span><p>10.5%</p></li>
-                	<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span><p>1年</p></li>
+                	<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span><p>1个月</p></li>
                 	<li><span>担保机构：</span><p>广东工合基金</p></li>
                 	<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span><div class="jdt"><p class="jdt_in"></p></div></li>
                 </ul>
@@ -321,7 +372,6 @@
     <ul class="flo_l">
     	<li style="padding-top: 30px;">计<br />算<br />器</li>
         <li>联<br />系<br />我<br />们</li>
-        <li class="returnTop" style="display:none;height: 130px;"><a href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top</a></li>
     </ul>
     <div class="flo_r" style="display:none">
     	<!--计算器-->
@@ -354,7 +404,7 @@
 </div>
 
 
-<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
+<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>
 
 
 </body>

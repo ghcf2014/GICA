@@ -39,12 +39,12 @@ class BorrowController extends HomeController {
 			$this->assign ( 'id', $id);
 			$this->redirect("Home/Borrow/papersinfo");
 		} else {			
-			$this->error('对不起，您还没进行基本认证<br>请进入<a style="color:red">[基本认证]</a>处理', U('Home/Borrow/userinfo'));
+			$this->error('对不起，您还没进行基本认证！', U('Home/Borrow/userinfo'));
 		}
 		$this->display();     
 	}
 	//发布贷款
-	
+
 	public function borrowinfo(){
 
 		$this->display();
@@ -94,17 +94,14 @@ class BorrowController extends HomeController {
 						);
 					//更新认证状态
 				$status = M ('z_members_status');
-
 				//查询是否已提交过资料
 				if ($re=$status->where("uid=%s",$uid)->select()){
-
-					$this-> success ( L ( '资料修改成功，等待审核...' ) );
-
+					$this-> success ('资料修改成功，等待审核...',U('Borrow/papersinfo'));	
 				} else {
 					//若没有提交过资料则更新认证状态
 					$result= $status->add($arr);
 					if ($result){
-						$this-> success ( L ( '认证资料已上传，等待后台审核...' ) );
+						$this-> success ('认证资料已上传，等待后台审核...',U('Borrow/papersinfo'));
 			
 					}
 				}
@@ -140,7 +137,7 @@ class BorrowController extends HomeController {
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
 		                                                    // 成功提示add_time
-			$this->success ( L ( '发布审核已提交' ) );
+			$this->success ( L ( '发布审核已提交' ),U('Home/Borrow/index') );
 		} else {
 			// 失败提示
 			$this->error ( L ( '发布失败' ) );

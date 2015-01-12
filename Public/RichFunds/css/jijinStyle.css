@@ -181,30 +181,26 @@ a:hover{color:#0A99DB;text-decoration:none;}
 .jjxq_l{width:620px;height:auto;float:left;}
 .jjxq_l h2{font-size:30px;text-align:center;width:618px;height:80px;line-height:80px;border:1px solid #ccc;font-weight:normal;margin-bottom:30px;}
 .jjxq_l .jjxq_l_con{width:598px;height:auto;border:1px solid #ccc;padding:20px 10px;}
-
-.jjxq_l .jjxq_l_con .jjjj{width: auto;padding: 5px;height: auto;margin-bottom: 20px;}
-.jjxq_l .jjxq_l_con .jjjj h3{width: auto;height: 48px;text-align: center;font-weight: normal;font-size: 20px;line-height: 48px;}
-.jjxq_l .jjxq_l_con .jjjj .jjjj_con{width: 584px;height: auto;overflow: hidden;border-bottom: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;}
-.jjxq_l .jjxq_l_con .jjjj .jjjj_con li{float:left;width: 170px;padding: 10px;height: 60px;line-height:22px;border-right:1px solid #ccc;text-align: center;}
-.jjxq_l .jjxq_l_con .jjjj .jjjj_con .jjjj_con_tit{width: 80px;line-height:60px}
-.jjxq_l .jjxq_l_con .jjjj .jjjj_con .jjjj_con_li_last{width: 462px;}
-
-.jjxq_l .jjxq_l_con .xmjj{width: auto;padding: 10px;height: auto;margin-bottom: 20px;}
-.jjxq_l .jjxq_l_con .xmjj h3{width: auto;height: 48px;text-align: center;font-weight: normal;font-size: 20px;line-height: 48px;}
-.jjxq_l .jjxq_l_con .xmjj p{width: auto;height: auto;line-height: 30px;font-size:16px}
-
-.jjxq_l .jjxq_l_con .team{width: auto;padding: 10px;height: auto;margin-bottom: 20px;padding: 0 97px;}
-.jjxq_l .jjxq_l_con .team h3{width: auto;height: 48px;text-align: center;font-weight: normal;font-size: 20px;line-height: 48px;}
-.jjxq_l .jjxq_l_con .team table{width: auto;height: auto;border: 1px solid #333;}
-.jjxq_l .jjxq_l_con .team table tr{width: auto;height: 40px;line-height: 40px;}
-.jjxq_l .jjxq_l_con .team table tr td{width: 200px;height: 40px;line-height: 40px;text-align: center;border-bottom: 1px solid #333;border-right: 1px solid #333;}
-
+.jjxq_l .jjxq_l_con img{display:block;}
+.jjxq_l .jjxq_l_con .img{width:563px;height:auto;margin:auto;}
+.jjxq_l .jjxq_l_con .wz{width:598px;height:auto;line-height:25px;font-size:16px;}
+.jjxq_l .jjxq_l_con h3{width:598px;height:30px;line-height:30px;text-align:center;color:#b70000;font-size:26px;margin-top:50px;}
+.jjxq_l .jjxq_l_con .lvshi{overflow:hidden;width:598px;height:auto;margin-top:20px;}
+.jjxq_l .jjxq_l_con .lvshi dt{width:286px;height:316px;float:left;}
+.jjxq_l .jjxq_l_con .lvshi dd{font-size:16px;line-height:28px;width:310px;height:316px;float:right;}
+.jjxq_l .jjxq_l_con h4{font-size:24px;color:#333;width:598px;height:32px;line-height:32px;font-weight:normal;margin-top:50px;}
+.jjxq_l .jjxq_l_con .lvshiteam{overflow:hidden;width:573px;height:auto;padding:10px 0 0 25px;}
+.jjxq_l .jjxq_l_con .lvshiteam dt{min-width:100px;min-height:145px;float:left;}
+.jjxq_l .jjxq_l_con .lvshiteam dd{min-height:125px;width:320px;line-height:28px;float:left;padding:10px 10px 10px 60px;}
+.jjxq_l .jjxq_l_con .lvshiteam dd p{font-size:16px;line-height:30px;}
+.jjxq_l .jjxq_l_con .tzzbz{overflow:hidden;width:558px;height:180px;padding:20px;}
+.jjxq_l .jjxq_l_con .tzzbz dt{float:right;width:283px;height:169px;}
+.jjxq_l .jjxq_l_con .tzzbz dd{float:right;width:275px;height:180px;font-size:16px;line-height:32px;}
+.jjxq_l .jjxq_l_con .rglc{width:598px;height:308px;padding-bottom:30px;}
 /*---------jjxq_r----------------------*/
 .jjxq_r{float:right;width:330px;height:auto;position:static;background:#fff;}
 .jjxq_r .jjxq_r_top01{width:328px;height:80px;border:1px solid #ccc;margin-bottom:30px;} 
 .jjxq_r .jjxq_r_top01 .jjxq_r_btn{width:80px;height:36px;margin:22px 0 0 54px;cursor:pointer;}
-.jjxq_r .yuetan li{width: auto;height: auto;line-height: 22px;padding-left: 8px;color:#fff;font-size: 12px;}
-
 .jjxq_r .jjxq_r_top02{width:328px;height:325px;border:1px solid #ccc;position:relative;margin-bottom:30px;}
 .jjxq_r .jjxq_r_top02 .qz{width:54px;height:86px;background:url(../images/rongzizhong.gif) no-repeat;position:absolute;right:8px;top:-4px;}
 .jjxq_r .jjxq_r_top02 .jjxq_r_top02_head{width:328px;height:103px;border-bottom:1px dashed #ccc;}

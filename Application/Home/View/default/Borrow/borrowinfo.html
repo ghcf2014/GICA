@@ -126,19 +126,21 @@
                         <option value="3">抵押</option>
                         <option value="4">驾照</option>
                       </select>
-                      
+                      <input type="button" onclick="msgBox('div1', '上传文件');" value="添加" style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;width: 48px;height: 20px;" />
                     </td>
                     <td></td>
                     <td>
-                      
-                      <div id="div1" style="position: absolute;z-index: 10;top: 200px;left: 40%;display: none;">
-								  			<div id="div1_in" style="width: 140px;height: 180px;background: rgba(0,0,0,0.8) ;border: 2px solid #000000;padding: 20px;position: relative;">
-												<input type="file" value="" name="file_upload" id="file_upload" style="width: 100px;height:auto;margin:50px 0 0 30px;"/>				
-												<input type="submit" value="上传"  id="scBtn" style="width: 48px;height: 20px;margin:20px 0 0 40px;background: url(__PUBLIC__/Home/images/button.gif) no-repeat;"/>
-												<span id="nscBtn" style="background: url(__PUBLIC__/Home/images/closeX.png) no-repeat;width: 40px;height: 40px;position: absolute;top: 0;right: 0;cursor: pointer;"></span>
-											</div>
-								  		</div>
-                    
+                      <form action="" method="post">
+                      <div id="div1" style="display:none;width: 300px;height: 200px;">
+                        <table>
+                          <tr><input type="file" value="" name="file_upload" id="file_upload"/></tr>
+                          <tr>
+                            <td><input type="button" value="sure" style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;width: 48px;height: 20px;margin:20px 5px 0 0;" onclick="msgBox_close();" id="scBtn"/></td>
+                            <td><input type="button" value="cancel" onclick="msgBox_close();" style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;width: 48px;height: 20px;margin:20px 5px 0 0;" id="nscBtn"/></td>
+                          </tr>
+                        </table>
+                      </div>
+                    </form>
                   </td>                 
                   </tr>
                   
@@ -244,35 +246,9 @@ $(function(){
 <script type="text/javascript">
   $(function(){
     
-    $('#pid').change(function(event) {
-            		var txt=$(this).val();
-            		if(txt!=0){
-//	            		if(txt==1)
-//	            		{
-//	                		//alert('你选择了第一个');
-//	            		}
-//	            		else if(txt==2)
-//	            		{
-//	                		//alert('你选择了第二个');
-//	            		}
-//	            		else if(txt==3)
-//	            		{
-//	                		//alert('你选择了第三个');
-//	            		}
-//	            		else
-//	            		{
-//	                		//alert('你选择了第四个');
-//	            		}
-						$('#div1').show();
-						$('#nscBtn').click(function(){
-        					$('#div1').hide();
-        				});
-        				$('#scBtn').click(function(){
-        					$('#div1').hide();
-        					$('.yscfile').show();
-        				});
-            		}
-        		});
+    $('#scBtn').click(function(){
+      $('.yscfile').show()
+    })
     
     
   })

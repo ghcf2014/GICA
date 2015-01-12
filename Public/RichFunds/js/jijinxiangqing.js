@@ -23,13 +23,6 @@ $(function(){
 			$('.jjxq .jjxq_r').css({'position':'static'});
 		}
 	});	
-	
-	//约谈
-	$('.jjxq .jjxq_r .jjxq_r_top01 .jjxq_r_btn').eq(1).hover(function(){
-		$('.jjxq .jjxq_r .yuetan').show();
-	},function(){
-		$('.jjxq .jjxq_r .yuetan').hide();
-	})
 })
 
 

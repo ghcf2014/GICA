@@ -8,6 +8,9 @@
 	<div class="cf">
 		<div class="fl">
             <a class="btn" href="{:U('add')}">新 增</a>
+            <button class="btn ajax-post" url="{:U('changeStatus?method=resumeUser')}" target-form="ids">启 用</button>
+            <button class="btn ajax-post" url="{:U('changeStatus?method=forbidUser')}" target-form="ids">禁 用</button>
+            <button class="btn ajax-post confirm" url="{:U('changeStatus?method=deleteUser')}" target-form="ids">删 除</button>
         </div>
 
         <!-- 高级搜索 -->
@@ -46,8 +49,13 @@
 			<td><span>{$vo.last_login_time|time_format}</span></td>
 			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
 			<td>{$vo.status_text}</td>
-			<td>
-				<a href="{:U('Borrow/audit?id='.$vo['id'])}" class="authorize">审核</a>
+			<td><eq name="vo.status" value="1">
+				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
+				<else/>
+				<a href="{:U('User/changeStatus?method=resumeUser&id='.$vo['uid'])}" class="ajax-get">启用</a>
+				</eq>
+				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">授权</a>
+                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
                 </td>
 		</tr>
 		</volist>

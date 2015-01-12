@@ -373,15 +373,6 @@ class PayController extends AdminController {
     public function Paypaylogonline(){
         $this->display();
     }
-    public function audit($id = 0){
-        $map['id']  = $id;
-        $list   = $this->lists('z_member_withdraw', $map);
-        int_to_string($list);
-        $this->id = $id;
-        $this->assign('_list', $list);
-        $this->meta_title = '提现信息';
-        $this->display();
-    }
     
 
 }

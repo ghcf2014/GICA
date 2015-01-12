@@ -76,7 +76,7 @@ class UserController extends HomeController {
 					//判断跳转来源页面
 					$msg=$_SERVER['HTTP_REFERER'];
 					str_replace('/','', $msg);
-					if (strpos($msg,"Borrow") == true){
+					if (strpos($msg,"Borrow") == false){
 						//跳转到借款页面
 						$this->success('登录成功！',U('Borrow/circulation'));
 					} else {
