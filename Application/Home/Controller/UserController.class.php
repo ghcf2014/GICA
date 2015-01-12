@@ -30,23 +30,17 @@ class UserController extends HomeController {
 			}			
 
 			/* 调用注册接口注册用户 */
-            $User = new UserApi;
+            $User = new UserApi();
 			$uid = $User->register($username, $password, $email,$mobile);
+			if($email != ''){ //TODO: 发送验证邮件
+			$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.ghcf.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
+			}
 			if(0 < $uid){ //注册成功
-				
-
 				$m=M("z_member_money");//关联会员资金表
            		$m->uid=$uid;
            		$count=$m->add();
-
-           		//TODO: 发送验证邮件
-//            		$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:
-// 欢迎注册工合财富，您的注册邮箱是：'.$email.' 。
-// 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'
-// 请在24小时内激活
-// 本邮件由工合财富系统自动发出，请勿直接回复！
-// 如果您有任何疑问或建议，请登陆ghcf.com');
-		       $this->success('注册成功！',U('login'));
+           		
+		       $this->success('注册成功！邮件已发送，注意查收。',U('login'));
 			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));
 			}
@@ -56,7 +50,9 @@ class UserController extends HomeController {
 	}
 
 	/* 登录页面 */
-	public function login($username = '', $password = '', $verify = ''){
+	public function login($username = '', $password = '', $verify = '',$email = ''){
+		
+
 		if(IS_POST){ //登录验证
 			
 			/* 检测验证码 */
@@ -65,7 +61,7 @@ class UserController extends HomeController {
 			}
 
 			/* 调用UC登录接口登录 */
-			$user = new UserApi;
+			$user = new UserApi();
 			$uid = $user->login($username, $password);
 			//$uidPhone=$user->loginPhone($username, $password);||$uidPhone>0; ||$Member->loginPhone($uidPhone)
 			
@@ -101,6 +97,14 @@ class UserController extends HomeController {
 
 		} else { //显示登录表单
 			$this->display();
+		}
+	}
+	/* 退出登录 */
+	public function emailyz($emailyz = 0){
+		if(0 < $emailyz){
+			$this->success('邮箱验证成功！', U('Member/Index/index'));
+		} else {
+			$this->error( '非法邮箱认证链接！',U('User/register') );
 		}
 	}
 

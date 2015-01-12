@@ -12,7 +12,6 @@ class UserApi extends Api {
 	protected function _init() {
 		$this->model = new UcenterMemberModel ();
 	}
-	
 	/**
 	 * 注册一个新用户
 	 * 
