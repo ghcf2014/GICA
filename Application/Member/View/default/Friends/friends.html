@@ -33,30 +33,34 @@
 									class="bds_weixin" data-cmd="weixin"></a>
 							</div>
 							<script>
-	window._bd_share_config = {
-		"common" : {
-			"bdSnsKey" : {},
-			"bdText" : "中国工合实业集团旗下 网贷平台，P2P理财首选平台。综合年化收益18%以上，100%本息安全保障！您的好友邀请链接:${url}reg.htm?param=${userId}",
-			"bdMini" : "2",
-			"bdPic" : "",
-			"bdStyle" : "0",
-			"bdSize" : "16"
-		},
-		"share" : {},
-		"image" : {
-			"viewList" : [ "qzone", "tsina", "tqq", "renren", "weixin" ],
-			"viewText" : "分享到：",
-			"viewSize" : "16"
-		},
-		"selectShare" : {
-			"bdContainerClass" : null,
-			"bdSelectMiniList" : [ "qzone", "tsina", "tqq", "renren", "weixin" ]
-		}
-	};
-	with (document)
-		0[(getElementsByTagName('head')[0] || body)
-				.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
-</script>
+								window._bd_share_config = {
+									"common" : {
+										"bdSnsKey" : {},
+										"bdText" : "中国工合实业集团旗下 网贷平台，P2P理财首选平台。综合年化收益18%以上，100%本息安全保障！您的好友邀请链接:${url}reg.htm?param=${userId}",
+										"bdMini" : "2",
+										"bdPic" : "",
+										"bdStyle" : "0",
+										"bdSize" : "16"
+									},
+									"share" : {},
+									"image" : {
+										"viewList" : [ "qzone", "tsina", "tqq",
+												"renren", "weixin" ],
+										"viewText" : "分享到：",
+										"viewSize" : "16"
+									},
+									"selectShare" : {
+										"bdContainerClass" : null,
+										"bdSelectMiniList" : [ "qzone",
+												"tsina", "tqq", "renren",
+												"weixin" ]
+									}
+								};
+								with (document)
+									0[(getElementsByTagName('head')[0] || body)
+											.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+											+ ~(-new Date() / 36e5)];
+							</script>
 							<div class="yqhy_text1">
 								<h4>复制链接发给QQ/MSN上的好友</h4>
 								<div style="width: auto; height: auto; overflow: hidden;">
@@ -107,37 +111,38 @@
 											src="./images/img/fzfx_an.jpg" width="103" height="29" /> </a>
 								</div>  -->
 							</div>
-
-							<div class="yqhy_text1">
-								<h4>还可以通过邮件推荐</h4>
-								<ul class="yjtj">
-									<li><label class="lab1 "> 好友邮箱： </label> <input
-										type="text" maxlength="100" value=""
-										class="inp1 no_ol pl5 fc999 b_ddd" id="emails"></li>
-									<li><label class="lab1"> 您的姓名： </label> <input type="text"
-										maxlength="20" class="inp1 no_ol pl5 fc999 b_ddd" value=""
-										id="name"></li>
-									<!--<li>
+							<form action="__SELF__" method="post" id="form">
+								<div class="yqhy_text1">
+									<h4>还可以通过邮件推荐</h4>
+									<ul class="yjtj">
+										<li><label class="lab1 "> 好友邮箱： </label> <input
+											type="text" maxlength="100" value=""
+											class="inp1 no_ol pl5 fc999 b_ddd" id="emails" name="email"></li>
+										<li><label class="lab1"> 您的姓名： </label> <input
+											type="text" maxlength="20" class="inp1 no_ol pl5 fc999 b_ddd"
+											value="{$realName}" id="name" disabled="disabled"></li>
+										<!--<li>
 										<label class="lab1">
 											邮件标题：
 										</label>
 										<input type="text" class="inp1 no_ol pl5 fc999 b_ddd"
 											value="教您稳赚赢大奖" id="title">
 									</li>-->
-									<li><label class="lab1"> 邮件内容： </label> <textarea
-											class="txta_2 no_ol b_ddd fc999" id="content" name="content"
-											rows="20">中国工合实业集团旗下 网贷平台【ghcf】，P2P理财首选平台。综合年化收益18%以上，100%本息安全保障，50元超低门槛，是草根、家庭的理财专属通道！你也赶快来投资，别被银行榨取我们的存款利息！进入平台先注册:${url}reg.htm?param=${userId}</textarea>
-									</li>
-								</ul>
-								<div class="fzfx_an">
-									<span style="color: red; float: none;" id="s_tip"
-										class="formtips"></span> <a href="javascript:void(0);"
-										onclick=sendMail();> <img
-										src="__PUBLIC__/Member/images/fs_an.png" width="103"
-										height="29" />
-									</a>
+										<li><label class="lab1"> 邮件内容： </label> <textarea
+												class="txta_2 no_ol b_ddd fc999" id="content" name="content"
+												rows="20">中国工合实业集团旗下 网贷平台【ghcf】，P2P理财首选平台。综合年化收益18%以上，100%本息安全保障，50元超低门槛，是草根、家庭的理财专属通道！你也赶快来投资，别被银行榨取我们的存款利息！进入平台先注册:http://www.gitback.com/Home/User/register.html?reffer={$username}</textarea>
+										</li>
+									</ul>
+									<div class="fzfx_an">
+										<span style="color: red; float: none;" id="s_tip"
+											class="formtips"></span> <a href="javascript:void(0);"
+											id="sendmail"> <img
+											src="__PUBLIC__/Member/images/fs_an.png" width="103"
+											height="29" />
+										</a>
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 					<div class="friend_tab" style="display: none;">
@@ -151,21 +156,19 @@
 								<td>充值</td>
 								<td>充值时间</td>
 							</tr>
+							<volist name="friendList" id="vo" key="i">
 							<tr>
-								<td>1</td>
-								<td>pig</td>
-								<td>2015-01-01</td>
-								<td>￥100.00</td>
-								<td>2015-01-05</td>
-								<td>￥1000.00</td>
-								<td>2015-01-02</td>
+								<td>{$i}</td>
+								<td>{$vo.username}</td>
+								<td>{$vo.reg_time|date='Y-m-d',###}</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
+							</volist>
 						</table>
 					</div>
-
-
-
-
 				</div>
 
 			</div>
@@ -175,14 +178,32 @@
 </div>
 </div>
 <!--content end--> <script src="__PUBLIC__/Home/js/jquery-1.7.2.min.js"
-	type="text/javascript" charset="utf-8"></script> <script
-	type="text/javascript">
-		$(function(){
-			$('.zh_cont_out .zh_cont .r_main .tabtil ul li').each(function(index,element){
-				$(element).click(function(){
-					$(element).addClass('on').siblings().removeClass('on');
-					$('.box .friend_tab').eq($(element).index()).show().siblings().hide();
-				})
-			})
+	type="text/javascript" charset="utf-8"></script> <script>
+		$("#sendmail").click(function() {
+			var email = $('#emails').val();
+			var content = $('#content').val();
+			if (email == "") {
+				alert("好友邮箱地址不能为空！");
+				return false;
+			}
+			if (content == "") {
+				alert("邮件内容不能为空！");
+				return false;
+			}
+			$('#form').submit();
+		});
+	</script> <script type="text/javascript">
+		$(function() {
+			$('.zh_cont_out .zh_cont .r_main .tabtil ul li').each(
+					function(index, element) {
+						$(element).click(
+								function() {
+									$(element).addClass('on').siblings()
+											.removeClass('on');
+									$('.box .friend_tab')
+											.eq($(element).index()).show()
+											.siblings().hide();
+								})
+					})
 		})
 	</script> </block>

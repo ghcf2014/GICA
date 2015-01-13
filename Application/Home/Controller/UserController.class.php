@@ -51,7 +51,7 @@ class UserController extends HomeController {
 				$count = $m->add ();
 				
 				 // 如果推荐人不为空
-				/* if ($reffer != null) {
+				 if ($reffer != null) {
 					$userinfo = M ( 'ucenter_member' )->field ( "id" )->where ( $reffer )->select ();
 					// 添加相关联的好友关系数据
 					$friend = M ( 'z_member_friend' );
@@ -59,7 +59,7 @@ class UserController extends HomeController {
 					$sql = "insert into gica_z_member_friend(uid,friend_id,apply_status,add_time) values({$uid},{$userinfo[0]['id']},'1',{$time})";
 					var_dump ( $sql );
 					$friend->query ( $sql );
-				}  */
+				}  
 				
 				$this->success ( '注册成功！邮件已发送，注意查收。', U ( 'login' ) );
 			} else { // 注册失败，显示错误信息
