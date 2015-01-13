@@ -156,6 +156,14 @@
 				});
 	});
 </script> <script>
+	$(function() {
+		$(document).keydown(function(event) {
+			if (event.keyCode == 13) {
+				$("#registerSub").click();
+			}
+		});
+	});
+
 	$("#registerSub").click(function() {
 		var phone = $("#phone").val();
 		var email = $("#email").val();

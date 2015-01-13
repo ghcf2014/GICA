@@ -15,33 +15,49 @@
 	<form class="login-form" action="__SELF__" method="post" id="form">
 		<div class="dl_cont">
 			<h2>登陆工合财富</h2>
-			<dl style="padding-left:215px;width:575px;"><div>
-			        <img src="__PUBLIC__/Home/images/loginname.png">
-					<input type="text" value="" name="username" class="txt txt1"id="username" placeholder="用户名/手机号/邮箱" ajaxurl="/member/checkUserNameUnique.html"errormsg="请填写1-16位用户名" datatype="*1-16" />
-				</div>
-				<span style="color: red;line-height:40px;" id="checkname" class="formtips" ></span>
-			</dl>
-			<dl style="padding-left:215px;width:575px;">
+			<dl style="padding-left: 215px; width: 575px;">
 				<div>
-			        <img src="__PUBLIC__/Home/images/password.png">
-					<input type="password" value="" name="password" class="txt txt1"id="password" placeholder="密 码"errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"/>
+					<img src="__PUBLIC__/Home/images/loginname.png"> <input
+						type="text" value="" name="username" class="txt txt1"
+						id="username" placeholder="用户名/手机号/邮箱"
+						ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名"
+						datatype="*1-16" />
 				</div>
-				<span style="color: red;line-height:40px;" id="checkpwd" class="formtips"></span>
+				<span style="color: red; line-height: 40px;" id="checkname"
+					class="formtips"></span>
 			</dl>
-			<dl style="padding-left:215px;width:575px; margin-bottom:0px;">
+			<dl style="padding-left: 215px; width: 575px;">
 				<div>
-			        <img src="__PUBLIC__/Home/images/yanzheng.png">
-					<input type="text" value="" name="verify" class="txt txt1" style="width: 140px;" id="verifycode" placeholder="验证码" errormsg="" nullmsg="请填写验证码" datatype="*6-20"/>
-					<img class="verifyimg reloadverify" src="{:U('verify')}" width="101" height="44" alt="点击切换" style="cursor: pointer;width:90px;float: right;">
+					<img src="__PUBLIC__/Home/images/password.png"> <input
+						type="password" value="" name="password" class="txt txt1"
+						id="password" placeholder="密 码" errormsg="密码为6-20位"
+						nullmsg="请填写密码" datatype="*6-20" />
 				</div>
-				
+				<span style="color: red; line-height: 40px;" id="checkpwd"
+					class="formtips"></span>
 			</dl>
-			<dl style="padding-left:215px;width:575px;height:40px; margin-bottom:0px;">
-					<span style="color: red;line-height:40px;" id="checkcode" class="formtips Validform_checktip "></span>
+			<dl style="padding-left: 215px; width: 575px; margin-bottom: 0px;">
+				<div>
+					<img src="__PUBLIC__/Home/images/yanzheng.png"> <input
+						type="text" value="" name="verify" class="txt txt1"
+						style="width: 140px;" id="verifycode" placeholder="验证码"
+						errormsg="" nullmsg="请填写验证码" datatype="*6-20" /> <img
+						class="verifyimg reloadverify" src="{:U('verify')}" width="101"
+						height="44" alt="点击切换"
+						style="cursor: pointer; width: 90px; float: right;">
+				</div>
+
 			</dl>
-			<input type="button" value="登录" name="denglu" id="loginIn" onclick="javascript:;" class="btn" />
+			<dl
+				style="padding-left: 215px; width: 575px; height: 40px; margin-bottom: 0px;">
+				<span style="color: red; line-height: 40px;" id="checkcode"
+					class="formtips Validform_checktip "></span>
+			</dl>
+			<input type="button" value="登录" name="denglu" id="loginIn"
+				onclick="javascript:;" class="btn" />
 			<div class="dl_cont_bot">
-				<span class="right"><a href="#">忘记密码？</a><a href="{:U('User/register')}">|&nbsp;立即注册</a></span>
+				<span class="right"><a href="#">忘记密码？</a><a
+					href="{:U('User/register')}">|&nbsp;立即注册</a></span>
 			</div>
 			<div id="show"></div>
 		</div>
@@ -49,74 +65,82 @@
 </div>
 
 <script type="text/javascript">
-//验证码刷新
-    	$(document)
-	    	.ajaxStart(function(){
-	    		$("button:submit").addClass("log-in").attr("disabled", true);
-	    	})
-	    	.ajaxStop(function(){
-	    		$("button:submit").removeClass("log-in").attr("disabled", false);
-	    	});
+	//验证码刷新
+	$(document).ajaxStart(function() {
+		$("button:submit").addClass("log-in").attr("disabled", true);
+	}).ajaxStop(function() {
+		$("button:submit").removeClass("log-in").attr("disabled", false);
+	});
 
+	$("form").submit(function() {
+		var self = $(this);
+		$.post(self.attr("action"), self.serialize(), success, "json");
+		return false;
 
-    	$("form").submit(function(){
-    		var self = $(this);
-    		$.post(self.attr("action"), self.serialize(), success, "json");
-    		return false;
+		function success(data) {
+			if (data.status) {
+				window.location.href = data.url;
+			} else {
+				self.find(".Validform_checktip").text(data.info);
+				// layer.alert(data.info);
 
-    		function success(data){
-    			if(data.status){
-    				window.location.href = data.url;
-    			} else {
-    				self.find(".Validform_checktip").text(data.info);
-    				// layer.alert(data.info);
+				//刷新验证码
+				$(".reloadverify").click();
+			}
+		}
+	});
 
-    				//刷新验证码
-    				$(".reloadverify").click();
-    			}
-    		}
-    	});
-
-		$(function(){
-			var verifyimg = $(".verifyimg").attr("src");
-            $(".reloadverify").click(function(){
-                if( verifyimg.indexOf('?')>0){
-                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
-                }else{
-                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
-                }
-            });
+	$(function() {
+		var verifyimg = $(".verifyimg").attr("src");
+		$(".reloadverify").click(
+				function() {
+					if (verifyimg.indexOf('?') > 0) {
+						$(".verifyimg").attr("src",
+								verifyimg + '&random=' + Math.random());
+					} else {
+						$(".verifyimg").attr(
+								"src",
+								verifyimg.replace(/\?.*$/, '') + '?'
+										+ Math.random());
+					}
+				});
+	});
+</script> <script>
+	$(function() {
+		$(document).keydown(function(event) {
+			if (event.keyCode == 13) {
+				$("#loginIn").click();
+			}
 		});
-</script>
-<script>
-	$("#loginIn").click(
-			function() {
-				var username = $("#username").val();
-				var password = $("#password").val();
-				var verifycode = $("#verifycode").val();
-				// if (username == "") {
-				// 	$("#checkname").html(
-				// 			"<span><font color='red'>请输入用户名！</font></span>");
-				// 	return false;
-				// }
-				// if (password == "") {
-				// 	if (username != null) {
-				// 		$("#checkname").hide();
-				// 	}
-				// 	$("#checkpwd").html("请输入登录命名！");
-				// 	return false;
-				// }
-				// if (verifycode == "") {
-				// 	if (username != null) {
-				// 		$("#checkname").hide();
-				// 	}
-				// 	if (password != null) {
-				// 		$("#checkpwd").hide();
-				// 	}
-				// 	$("#checkcode").html("请输入验证码！");
-				// 	return false;
-				// }
-				
-				$("#form").submit();
-			});
+	});
+
+	$("#loginIn").click(function() {
+		var username = $("#username").val();
+		var password = $("#password").val();
+		var verifycode = $("#verifycode").val();
+		// if (username == "") {
+		// 	$("#checkname").html(
+		// 			"<span><font color='red'>请输入用户名！</font></span>");
+		// 	return false;
+		// }
+		// if (password == "") {
+		// 	if (username != null) {
+		// 		$("#checkname").hide();
+		// 	}
+		// 	$("#checkpwd").html("请输入登录命名！");
+		// 	return false;
+		// }
+		// if (verifycode == "") {
+		// 	if (username != null) {
+		// 		$("#checkname").hide();
+		// 	}
+		// 	if (password != null) {
+		// 		$("#checkpwd").hide();
+		// 	}
+		// 	$("#checkcode").html("请输入验证码！");
+		// 	return false;
+		// }
+
+		$("#form").submit();
+	});
 </script> <!--content end--> </block>
