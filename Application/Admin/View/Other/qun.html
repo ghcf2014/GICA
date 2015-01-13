@@ -3,7 +3,7 @@
 <block name="body">
 	<!-- 标题栏 -->
 	<div class="main-title">
-		<h2>用户列表</h2>
+		<h2>QQ群列表</h2>
 	</div>
 	<div class="cf">
 		<div class="fl">
@@ -28,10 +28,10 @@
         <tr>
 		<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
 		<th class="">UID</th>
-		<th class="">昵称</th>
-		<th class="">积分</th>
-		<th class="">登录次数</th>
-		<th class="">最后登录时间</th>
+		<th class="">群号</th>
+		<th class="">客服昵称</th>
+		<th class="">群主</th>
+		<th class="">显示/隐藏</th>
 		<th class="">最后登录IP</th>
 		<th class="">状态</th>
 		<th class="">操作</th>
@@ -43,19 +43,15 @@
 		<tr>
             <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
 			<td>{$vo.uid} </td>
-			<td>{$vo.nickname}</td>
-			<td>{$vo.score}</td>
-			<td>{$vo.login}</td>
-			<td><span>{$vo.last_login_time|time_format}</span></td>
+			<td>{$vo.qq_num}</td>
+			<td>{$vo.qq_title}</td>
+			<td>{$vo.qq_order}</td>
+			<td><span>{$vo.is_show}</span></td>
 			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
 			<td>{$vo.status_text}</td>
-			<td><eq name="vo.status" value="1">
-				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
-				<else/>
-				<a href="{:U('User/changeStatus?method=resumeUser&id='.$vo['uid'])}" class="ajax-get">启用</a>
-				</eq>
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">授权</a>
-                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
+			<td>
+				<a href="javascript:void(0);" class="authorize">修改</a>
+                <a href="#" class="confirm ajax-get">删除</a>
                 </td>
 		</tr>
 		</volist>
