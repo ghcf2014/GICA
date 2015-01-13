@@ -92,20 +92,21 @@
             	<dl>
                 	<dt><span>网站公告</span> <a href="{:U('Article/lists?category='.get_category_name(2))}" class="more"></a></dt>
                 	 <volist name="lists"  id="list"> <!-- class="current" -->
-                         <dd><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a><span>{$list1.date}</span></dd>
+                         <dd><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a><span>{$list.create_time|date='Y-m-d',###}</span></dd>
                     </volist>
                 </dl>
+                
                 <dl>
                 	<dt><span>行业动态</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more"></a></dt>
                      <volist name="lists1" id="list1">
-                        <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.date}</span></dd>
+                        <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span></dd>
                     </volist>
                 </dl>
 
                 <dl>
                     <dt><span>媒体新闻</span> <a href="{:U('Article/lists?category='.get_category_name(43))}" class="more"></a></dt>
                      <volist name="lists3" id="list3">
-                        <dd> <a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a><span>{$list3.date}</span></dd>
+                        <dd> <a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span></dd>
                     </volist>
                     
                 </dl>
