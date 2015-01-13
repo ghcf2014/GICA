@@ -255,12 +255,36 @@ class OtherController extends AdminController {
         $this->display();
     }
     public function qun(){
+        $nickname       =   I('nickname');
+        $map['type']  =   array('egt',1);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_qq', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = 'QQ群信息';
         $this->display();
     }
     public function scan(){
         $this->display();
     }
     public function tel(){
+        $nickname       =   I('nickname');
+        $map['type']  =   array('egt',2);
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_qq', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '其他信息';
         $this->display();
     }
 
