@@ -1,297 +1,126 @@
-<block name="body">
-<extend name="Base/common"/>
-<block name="body">
-		  
-	<!--content start-->
-	<div class="zh_cont_out">
-    	<div class="zh_cont">
-            <h2><a href="{:U('Index')}">我的账户</a></h2>	
-            	<include file="Public/left"/>
-                <div class="zh_cont_r">
-                	<div class="tab">
-                    <h3>当前位置>安全设置</h3>
-                    <p style="background:#d3cbc7;width:947px;height:1px;"></p>
-                    <ul class="aqset_tabH">
-                    	<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
-                    	<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
-                    	<li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
-                    	<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
-                    	<li ><a href="{:U('Userinfo/userbankset')}" class="cur">银行卡</a></li>
-                    	<li ><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
-                    </ul>
-                    <div class="aqset_tabC_out">  <volist name="list" id="vo">
-							<form action="{:U('userbankset_save')}" method="post">                      
-                        <!--银行卡验证-->
-                        <div class="aqset_tabC">
-                            <dl class="yhk">
-                                <dt>平台昵称：{:get_username()}</dt>
-                                <dd></dd>
-                            </dl>
-                            <dl class="yhk">
-                                <dt>开户行：</dt>
-                                <dd><input type="text" class="yhk_txt" name="bankName" value="{$vo.bank_name}"><span>输入您的开户银行名称</span></dd>
-                            </dl>
-                            <dl class="yhk">
-                                <dt>支行：</dt>
-                                <dd><input type="text" class="yhk_txt" name="subBankName" value="{$vo.bank_address}"><span>输入您的开户支行</span></dd>
-                            </dl>
-                            <dl class="yhk">
-                                <dt>卡号：</dt>
-                                <dd><input type="text" class="yhk_txt" name="bankCard" value="{$vo.bank_num}"><span>输入您的卡号 </span></dd>
-                            </dl>
-                            <input type="submit" class="yhk_btn" value="提交">
-                        </div>
-                        
-                        <!--身份证验证-->
-                        <div class="aqset_tabC" style="display:none">
-                            <p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>	
-                        </div>
-                        
-                    	</from></volist>
-                    </div>
-                </div>	
-        </div>
-    </div>
+<block name="body"> <extend name="Base/common" /> <block
+	name="body"> <!--content start-->
+<div class="zh_cont_out">
+	<div class="zh_cont">
+		<h2>
+			<a href="{:U('Index')}">我的账户</a>
+		</h2>
+		<include file="Public/left" />
+		<div class="zh_cont_r">
+			<div class="tab">
+				<h3>当前位置>安全设置</h3>
+				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
+				<ul class="aqset_tabH">
+					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
+					<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
+					<li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
+					<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
+					<li><a href="{:U('Userinfo/userbankset')}" class="cur">银行卡</a></li>
+					<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
+				</ul>
+				<div class="aqset_tabC_out">
+				<empty name="list">
+					<form action="{:U('userbankset_save')}" method="post" id="form">
+						<!--银行卡验证-->
+						<div class="aqset_tabC">
+							<dl class="yhk">
+								<dt>平台昵称：{:get_username()}</dt>
+								<dd></dd>
+							</dl>
+							<dl class="yhk">
+								<dt>开户行：</dt>
+								<dd>
+									<input type="text" class="yhk_txt" name="bankName"
+										id="bankName" value=""><span color="red"
+										id="sBankName">输入您的开户银行名称</span>
+								</dd>
+							</dl>
+							<dl class="yhk">
+								<dt>支行：</dt>
+								<dd>
+									<input type="text" class="yhk_txt" name="subBankName"
+										id="subBankName" value=""><span color="red"
+										id="subBankNode">输入您的开户支行</span>
+								</dd>
+							</dl>
+							<dl class="yhk">
+								<dt>卡号：</dt>
+								<dd>
+									<input type="text" class="yhk_txt" name="bankCard"
+										id="bankCard" value=""><span color="red"
+										id="sBankCard">输入您的卡号 </span>
+								</dd>
+							</dl>
+							<input type="button" class="yhk_btn" id="submitBank" value="提交">
+						</div>
+						</from>
+						<!--身份证验证-->
+						<div class="aqset_tabC" style="display: none">
+							<p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+						</div>
+						<else />
+						<volist name="list" id="vo"> <!--银行卡验证-->
+						<div class="aqset_tabC">
+							<dl class="yhk">
+								<dt>平台昵称：{:get_username()}</dt>
+								<dd></dd>
+							</dl>
+							<dl class="yhk">
+								<dt>开户行：</dt>
+								<dd>
+									<input type="text" class="yhk_txt" name="bankName"
+										value="{$vo.bank_name}">
+								</dd>
+							</dl>
+							<dl class="yhk">
+								<dt>支行：</dt>
+								<dd>
+									<input type="text" class="yhk_txt" name="subBankName"
+										value="{$vo.bank_address}">
+								</dd>
+							</dl>
+							<dl class="yhk">
+								<dt>卡号：</dt>
+								<dd>
+									<input type="text" class="yhk_txt" name="bankCard"
+										value="{$vo.bank_num}">
+								</dd>
+							</dl>
+						</div>
+						</volist>
+						<!--身份证验证-->
+						<div class="aqset_tabC" style="display: none">
+							<p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+						</div>
+					</empty>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!--content end-->
 
-		<script type="text/javascript" src="script/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="script/jquery.shove-1.0.js"></script>
-		<script type="text/javascript" src="script/nav-zh.js"></script>
-		<script type="text/javascript" src="common/date/calendar.js"></script>
-		<script type="text/javascript" src="css/popom.js"></script>
-		<script>
-	function jumpUrl(obj) {
-		window.location.href = obj;
-	}
-</script>
-		<script>
-	$(function() {
-		dqzt(4);
-		$('#li_121').addClass('on');
-		var bb = '${person}';//设置提现银行卡必须先填写个人资料
-		if (bb == "0") {
-			alert("请先完善个人信息");
-			window.location.href = "owerInformationInit.htm";
-		}
-	});
-</script>
-		<script>
-	$(function() {
-		$.shovePost("queryBankInfoInit.htm", null, function(data) {
-			$("#bankInfo").html(data);
-		});
-		//提现银行卡设置1
-		$("#bankName1").blur(function() {
-			if ($("#bankName1").val() == "") {
-				$("#bk1_tip").html("开户银行名称不能为空");
-			} else {
-				$("#bk1_tip").html("");
+	<script type="text/javascript" src="script/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript">
+		$("#submitBank").click(function() {
+			var bankName = $("#bankName").val();
+			var subBankName = $("#subBankName").val();
+			var bankCard = $("#bankCard").val();
+			if (bankName == "") {
+				$("#sBankName").html("<font color='red'>请输入开户银行名称</font>");
+				return false;
 			}
-		});
-
-		$("#subBankName1").blur(function() {
-			if ($("#subBankName1").val() == "") {
-				$("#bk1_tip").html("开户支行不能为空");
-			} else {
-				$("#bk1_tip").html("");
+			if (subBankName == "") {
+				$("#sBankName").hide();
+				$("#subBankNode").html("<font color='red'>请输入开户支行名称</font>");
+				return false;
 			}
-		});
-
-		$("#bankCard1").blur(function() {
-			if ($("#bankCard1").val() == "") {
-				$("#bk1_tip").html("卡号不能为空");
-			} else if (isNaN($("#bankCard1").val())) {
-				$("#bk1_tip").html("请输入正确的银行卡号");
-			} else {
-				$("#bk1_tip").html("");
+			if (bankCard == "") {
+				$("#sBankName").hide();
+				$("#subBankNode").hide();
+				$("#sBankCard").html("<font color='red'>请输入开户银行名称</font>");
+				return false;
 			}
+			$("#form").submit();
 		});
-
-		//提现银行卡设置2
-		$("#bankName2").blur(function() {
-			if ($("#bankName2").val() == "") {
-				$("#bk2_tip").html("开户银行名称不能为空");
-			} else {
-				$("#bk2_tip").html("");
-			}
-		});
-
-		$("#subBankName2").blur(function() {
-			if ($("#subBankName2").val() == "") {
-				$("#bk2_tip").html("开户支行不能为空");
-			} else {
-				$("#bk2_tip").html("");
-			}
-		});
-
-		$("#bankCard2").blur(function() {
-			if ($("#bankCard2").val() == "") {
-				$("#bk2_tip").html("卡号不能为空");
-			} else if (isNaN($("#bankCard2").val())) {
-				$("#bk2_tip").html("请输入正确的银行卡号");
-			} else {
-				$("#bk2_tip").html("");
-			}
-		});
-	});
-
-	$("#addbank").click(function() {
-		addBankInfo();
-
-	});
-	//添加提现银行信息
-	function addBankInfo() {
-		if ($("#bankName1").val() == "" || $("#subBankName1").val() == ""
-				|| $("#bankCard1").val() == "") {
-			$("#bk1_tip").html("请完整填写信息");
-			return;
-		} else if (isNaN($("#bankCard1").val())) {
-			$("#bk1_tip").html("请输入正确的银行卡号");
-			return;
-		}
-
-		param["paramMap.bankName"] = $("#bankName1").val();
-		param["paramMap.subBankName"] = $("#subBankName1").val();
-		param["paramMap.bankCard"] = $("#bankCard1").val();
-		param["paramMap.cardUserName"] = $("#cardUserName1").text();
-
-		if (!window.confirm("确定要添加银行卡绑定吗?")) {
-			return;
-		} else {
-			$("#addbank").attr("disabled", true);
-		}
-
-		$.shovePost("addBankInfo.htm", param, function(data) {
-			if (data == 1) {
-				$("#bk1_tip").html("请输入有效的银行卡信息");
-				$("#bankCard1").attr("value", "");//银行卡信息错误，只清空银行卡信息
-				return;
-			} else if (data == 2) {
-				alert("你已经添加了两张银行卡信息，未绑定的银行卡信息可以删除\n否则需要申请更换银行");
-			} else {
-				$("#bankInfo").html(data);
-			}
-
-			$("#bankName1").attr("value", "");
-			$("#subBankName1").attr("value", "");
-			$("#bankCard1").attr("value", "");
-			$("#addbank").attr("disabled", false);
-		});
-	}
-
-	function addBankInfo2() {
-		if ($("#bankName2").val() == "" || $("#subBankName2").val() == ""
-				|| $("#bankCard2").val() == "") {
-			$("#bk2_tip").html("请完整填写信息");
-			return;
-		} else if (isNaN($("#bankCard2").val())) {
-			$("#bk2_tip").html("请输入正确的银行卡号");
-			return;
-		}
-		param["paramMap.bankName"] = $("#bankName2").val();
-		param["paramMap.subBankName"] = $("#subBankName2").val();
-		param["paramMap.bankCard"] = $("#bankCard2").val();
-		param["paramMap.cardUserName"] = $("#cardUserName2").text();
-
-		if (!window.confirm("确定要添加银行卡绑定吗?")) {
-			return;
-		}
-
-		$.shovePost("addBankInfo.htm", param, function(data) {
-			if (data == 1) {
-				$("#bk2_tip").html("请输入有效的银行卡信息");
-				$("#bankCard2").attr("value", "");//银行卡信息错误，只清空银行卡信息
-				return;
-			} else if (data == 2) {
-				alert("你已经添加了两张银行卡信息，未绑定的银行卡信息可以删除\n否则需要申请更换银行");
-			} else {
-				$("#bankInfo").html(data);
-			}
-			$("#bankName2").attr("value", "");
-			$("#subBankName2").attr("value", "");
-			$("#bankCard2").attr("value", "");
-		});
-	}
-	function tipjBox(content) {
-		$.jBox.tip(content);
-	}
-
-	function closejBox() {
-		tipjBox("变更成功，请等待审核");
-		history.go(0);
-	}
-	//删除添加的银行卡信息
-	function del(id) {
-		if (!window.confirm("确定要删除吗?")) {
-			return;
-		}
-		$.shovePost("deleteBankInfo.htm", {
-			bankId : id
-		}, function(data) {
-			$("#bankInfo").html(data);
-		});
-	}
-
-	function changeBankCancel(id) {
-		if (!window.confirm("确定要取消变更吗?")) {
-			return;
-		}
-		$.shovePost("bankChangeCancel.htm", {
-			bankId : id
-		}, function(data) {
-			if (data == 1) {
-				alert("取消失败，请重新取消");
-				return;
-			}
-			$("#bankInfo").html(data);
-		});
-	}
-</script>
-
-		<script>
-	//工作认证
-	function loadWorkInit(url) {
-		var bb = '${person}';//填写工作信息必须先填写个人资料
-		if (bb == "0") {
-			alert("请先完善个人信息");
-			window.location.href = "owerInformationInit.htm";
-		} else {
-			window.location.href = url;
-		}
-	}
-	function bindingPhoneLoad(url) {
-		/**	var bb = '${person}';//申请手机绑定必须先填写个人资料
-			var cc = '${pass}';
-			if (bb == "0") {
-				alert("请先完善个人信息");
-				window.location.href='owerInformationInit.htm';
-			} else if (cc != 3) {
-				alert("请等待个人信息审核通过");
-				return ;
-			} else {*/
-		window.location.href = url;
-		//		}
-	}
-
-	//加载该用户提现银行卡信息
-	function loadBankInfo(url) {
-		var bb = '${person}';//设置提现银行卡必须先填写个人资料
-		if (bb == "0") {
-			alert("请先完善个人信息");
-			window.location.href = "owerInformationInit.htm";
-		} else {
-			window.location.href = url;
-		}
-
-	}
-	function changeBankInfos(id) {
-		var url = "queryOneBankInfo.htm?bankId=" + id;
-		$.jBox("iframe:" + url, {
-			title : "银行卡变更",
-			width : 600,
-			height : 400,
-			buttons : {}
-		});
-	}
-</script>
+	</script>
 </block>

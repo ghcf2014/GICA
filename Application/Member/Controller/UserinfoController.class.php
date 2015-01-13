@@ -46,7 +46,6 @@ class UserinfoController extends MemberController {
 		$m_id ['uid'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
-		
 		$this->display ();
 	}
 	public function userbankset_save() {

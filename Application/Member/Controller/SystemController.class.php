@@ -19,12 +19,16 @@ class SystemController extends MemberController {
 		$model = new Model ();
 		$sql = "select * from gica_z_member_info as m , gica_z_member_banks as b where m.uid=b.uid and m.uid={$uid}";
 		$voList = $model->query ( $sql );
-		/*
-		 * echo "<pre>"; var_dump($voList); echo "</pre>";
-		 */
-		$this->assign ( 'userinfo', $voList );
-		$this->assign ( 'list', $money );
-		$this->display ();
+		if ($voList [0] ['bank_num'] == "") {
+			$this->error ( '您还未绑定银行卡，请您绑定银行卡！', U ( 'Userinfo/userbankset' ) );
+		} else {
+			/*
+			 * echo "<pre>"; var_dump($voList); echo "</pre>";
+			 */
+			$this->assign ( 'userinfo', $voList );
+			$this->assign ( 'list', $money );
+			$this->display ();
+		}
 	}
 	public function withdrawdeposit_add() {
 		
@@ -39,12 +43,8 @@ class SystemController extends MemberController {
 		$data ['add_ip'] = get_client_ip ();
 		$condition ['uid'] = $uid;
 		
-		
-		
-		//提现时扣除可用余额，未进行提现审核通过，冻结金额为提现金额
-		$money=M('z_member_money')->where($uid)->select();
-		
-		
+		// 提现时扣除可用余额，未进行提现审核通过，冻结金额为提现金额
+		$money = M ( 'z_member_money' )->where ( $uid )->select ();
 		
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
@@ -67,11 +67,12 @@ class SystemController extends MemberController {
 		$model = new Model (); // 实例化当前模型驱动
 		$sql = "select * from gica_z_member_info as m , gica_z_member_banks as b where m.uid=b.uid and m.uid={$uid}";
 		$voList = $model->query ( $sql );
-		/*
-		 * echo "<pre>"; var_dump($voList); echo "</pre>";
-		 */
-		$this->assign ( 'userinfo', $voList );
-		$this->display ();
+		if ($voList [0] ['bank_num'] == "") {
+			$this->error ( '您还未绑定银行卡，请您绑定银行卡！', U ( 'Userinfo/userbankset' ) );
+		} else {
+			$this->assign ( 'userinfo', $voList );
+			$this->display ();
+		}
 	}
 	public function usermailindex() {
 		$this->display ();
