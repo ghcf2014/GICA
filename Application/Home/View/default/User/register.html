@@ -4,14 +4,14 @@
 	<div class="container">
 		<h2>用户注册</h2>
 		<p>
-			<span><span class="pull-left"><span>已经有账号? <a href="{:U('User/login')}">点此登录</a>
+			<span><span class="pull-left"><span>已经有账号? <a
+						href="{:U('User/login')}">点此登录</a>
 				</span> </span>
 		</p>
 	</div>
 </header> </block>
 
-<block name="body"> 
-<!--content start-->
+<block name="body"> <!--content start-->
 <div class="dl_cont_out">
 	<div class="dl_cont">
 		<div class="top">
@@ -26,28 +26,10 @@
 					<span>* </span>手机号码:
 				</dt>
 				<dd>
-					<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" />
+					<input type="text" value="" placeholder="请输入您的手机号码" name="phone"
+						id="phone" class="txt" />
 				</dd>
-				<span id="checkphone" style="line-height:48px;"></span>
-			</dl>
-			<dl>
-				<dt>
-					
-				</dt>
-				<dd>
-					
-					<input id="zphone" type="button" value=" 获取手机验证码 " onClick="get_mobile_code();" /><span style="color: red;">（手机验证码内部测试，无需填写）</span>
-				</dd>
-				<span id="checkphone" style="line-height:48px;color: red;"></span>
-			</dl>
-			<dl>
-				<dt>
-					<span>* </span>验证码:
-				</dt>
-				<dd>
-					<input type="text" size="8" name="mobile_code" class="inputBg" />
-				</dd>
-				<span id="checkphone" style="line-height:48px;"></span>
+				<span id="checkphone" style="line-height: 48px;"></span>
 			</dl>
 			<dl>
 				<dt>
@@ -58,19 +40,19 @@
 						ajaxurl="/member/checkUserEmailUnique.html" errormsg="请填写正确格式的邮箱"
 						nullmsg="请填写邮箱" datatype="e" name="email" class="txt" />
 				</dd>
-				<span id="checkemail" style="line-height:48px;"></span>
+				<span id="checkemail" style="line-height: 48px;"></span>
 			</dl>
 			<dl>
 				<dt>
 					<span>* </span>用户名:
 				</dt>
 				<dd>
-					<input type="text" value="" placeholder="请输入您的3-5位用户名" id="username"
-						name="username" class="txt"
+					<input type="text" value="" placeholder="请输入您的3-5位用户名"
+						id="username" name="username" class="txt"
 						ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名"
 						nullmsg="请填写用户名" datatype="*1-16" />
 				</dd>
-				<span id="checkuser" style="line-height:48px;"></span>
+				<span id="checkuser" style="line-height: 48px;"></span>
 			</dl>
 			<dl>
 				<dt>
@@ -81,7 +63,7 @@
 						placeholder="请输入您的6-16位密码" errormsg="密码为6-20位" nullmsg="请填写密码"
 						datatype="*6-20" name="password" class="txt" />
 				</dd>
-				<span id="checkpwd" style="line-height:48px;"></span>
+				<span id="checkpwd" style="line-height: 48px;"></span>
 			</dl>
 			<dl>
 				<dt>
@@ -92,7 +74,7 @@
 						placeholder="再次输入您的密码" name="repassword" recheck="password"
 						errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" class="txt" />
 				</dd>
-				<span id="checkrepwd" style="line-height:48px;"></span>
+				<span id="checkrepwd" style="line-height: 48px;"></span>
 			</dl>
 
 			<dl>
@@ -102,23 +84,27 @@
 				<dd>
 					<input type="text" value="" placeholder="请输验证码" class="yz"
 						errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify"
-						id="verify" /> <img class="yzBtn verifyimg reloadverify" alt="点击切换" src="{:U('verify')}"
-						style="cursor: pointer;">
+						id="verify" /> <img class="yzBtn verifyimg reloadverify"
+						alt="点击切换" src="{:U('verify')}" style="cursor: pointer;">
 					<!-- <input type="button" value="手机验证" name="" class="yzBtn"/>
                     <p class="yz_call">如果收不到验证码，请拨打<span>400-123-4567</span></p> -->
 				</dd>
-				<span id="checkcode" style="line-height:48px;"></span>
+				<span id="checkcode" style="line-height: 48px;"></span>
 			</dl>
 			<dl>
 				<dt>
 					<span>*</span>推荐人:
 				</dt>
 				<dd>
-					<input type="text" value="" placeholder="推荐人手机号码或用户名" name="introduce" class="txt" />
+					<input type="text" value="{$reffer}" placeholder="推荐人手机号码或用户名"
+						name="reffer" class="txt" />
 				</dd>
-				<span id="checkintroduce" style="line-height:48px;"></span>
-			</dl><dl style="padding-left:215px;width:575px;height:40px; margin-bottom:0px;">
-					<span style="color: red;line-height:40px;" id="checkcode" class="formtips Validform_checktip "></span>
+				<span id="checkintroduce" style="line-height: 48px;"></span>
+			</dl>
+			<dl
+				style="padding-left: 215px; width: 575px; height: 40px; margin-bottom: 0px;">
+				<span style="color: red; line-height: 40px;" id="checkcode"
+					class="formtips Validform_checktip "></span>
 			</dl>
 			<div class="zcCheck">
 				<input type="checkbox" value="" name="" class="check"
@@ -131,86 +117,45 @@
 		</form>
 	</div>
 </div>
-<script language="javascript">
-	function get_mobile_code(){
 
-        // $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
-            alert(jQuery.trim(unescape(msg)));
-			if(msg=='提交成功'){
-				RemainTime();
-			}
-        });
-	};
-	var iTime = 59;
-	var Account;
-	function RemainTime(){
-		document.getElementById('zphone').disabled = true;
-		var iSecond,sSecond="",sTime="";
-		if (iTime >= 0){
-			iSecond = parseInt(iTime%60);
-			iMinute = parseInt(iTime/60)
-			if (iSecond >= 0){
-				if(iMinute>0){
-					sSecond = iMinute + "分" + iSecond + "秒";
-				}else{
-					sSecond = iSecond + "秒";
-				}
-			}
-			sTime=sSecond;
-			if(iTime==0){
-				clearTimeout(Account);
-				sTime='获取手机验证码';
-				iTime = 59;
-				document.getElementById('zphone').disabled = false;
-			}else{
-				Account = setTimeout("RemainTime()",1000);
-				iTime=iTime-1;
-			}
-		}else{
-			sTime='没有倒计时';
-		}
-		document.getElementById('zphone').value = sTime;
-	}	
-</script>
 <script type="text/javascript">
-//验证码刷新
-    	$(document)
-    	.ajaxStart(function(){
-	    		$("button:submit").addClass("log-in").attr("disabled", true);
-	    	})
-	    	.ajaxStop(function(){
-	    		$("button:submit").removeClass("log-in").attr("disabled", false);
-	    	});
-    	$("form").submit(function(){
-    		var self = $(this);
-    		$.post(self.attr("action"), self.serialize(), success, "json");
-    		return false;
+	//验证码刷新
+	$(document).ajaxStart(function() {
+		$("button:submit").addClass("log-in").attr("disabled", true);
+	}).ajaxStop(function() {
+		$("button:submit").removeClass("log-in").attr("disabled", false);
+	});
+	$("form").submit(function() {
+		var self = $(this);
+		$.post(self.attr("action"), self.serialize(), success, "json");
+		return false;
 
-    		function success(data){
-    			if(data.status){
-    				layer.msg(data.info, 3,1, function(){
-					
-							window.location.href = data.url;
-					});	
-    			} else {
-    				self.find(".Validform_checktip").text(data.info);
-    				//刷新验证码
-    				$(".reloadverify").click();
-    			}
-    		}
-    	});
-		$(function(){
-			var verifyimg = $(".verifyimg").attr("src");
-            $(".reloadverify").click(function(){
-                if( verifyimg.indexOf('?')>0){
-                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
-                }else{
-                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
-                }
-            });
-		});
-	</script>
-<script>
+		function success(data) {
+			if (data.status) {
+				window.location.href = data.url;
+			} else {
+				self.find(".Validform_checktip").text(data.info);
+				//刷新验证码
+				$(".reloadverify").click();
+			}
+		}
+	});
+	$(function() {
+		var verifyimg = $(".verifyimg").attr("src");
+		$(".reloadverify").click(
+				function() {
+					if (verifyimg.indexOf('?') > 0) {
+						$(".verifyimg").attr("src",
+								verifyimg + '&random=' + Math.random());
+					} else {
+						$(".verifyimg").attr(
+								"src",
+								verifyimg.replace(/\?.*$/, '') + '?'
+										+ Math.random());
+					}
+				});
+	});
+</script> <script>
 	$("#registerSub").click(function() {
 		var phone = $("#phone").val();
 		var email = $("#email").val();
@@ -218,108 +163,108 @@
 		var password = $("#password").val();
 		var repassword = $("#repassword").val();
 		var verify = $("#verify").val();
-		
-		//var isMobile=/^(?:13\d|15\d|18\d)\d{5}(\d{3}|\*{3})$/;  //手机号码验证正则表达式
-	// 	if (phone == "") {
-	// 		$("#checkphone").html("<font color='red'>手机号码不能为空！</font>");
-	// 		return false;
-	// 	}else{
-	// 		/* if(!isMobile.test(phone)){
-	// 			$("#checkphone").html("<font color='red'>请输入正确的手机号码！</font>");
-	// 			return false;
-	// 		} */
-	// 	}
-		
-	// //	var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
-	// 	if (email == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		$("#checkemail").html("<font color='red'>邮箱地址不能为空！</font>");
-	// 		return false;
-	// 	}else{
-	// 		/* if(！re.test(email)){
-	// 			$("#checkemail").html("<font color='red'>请输入正确的邮箱地址！</font>");
-	// 			return false;
-	// 		} */
-	// 	}
-	// 	if (username == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		$("#checkuser").html("<font color='red'>用户名不能为空！</font>");
-	// 		return false;
-	// 	}
-	// 	if (password == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		$("#checkpwd").html("<font color='red'>注册密码不能为空！</font>");
-	// 		return false;
-	// 	}
 
-	// 	if (repassword == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		if (password != null) {
-	// 			$("#checkpwd").hide();
-	// 		}
-	// 		$("#checkrepwd").html("<font color='red'>确认注册密码不能为空！</font>");
-	// 		return false;
-	// 	}else{
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		if (password != null) {
-	// 			$("#checkpwd").hide();
-	// 		}
-	// 		if(password!=repassword){
-	// 			$("#checkrepwd").html("<font color='red'>两次输入的密码不一致！</font>");
-	// 			return false;
-	// 		}
-	// 	}
-		
-	// 	if(verify==""){
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		if (password != null) {
-	// 			$("#checkpwd").hide();
-	// 		}
-	// 		if(repassword!=null){
-	// 			$("#checkrepwd").hide();
-	// 		}
-	// 		$("#checkcode").html("<font color='red'>验证码不能为空！</font>");
-	// 		return false;
-	// 	}
+		//var isMobile=/^(?:13\d|15\d|18\d)\d{5}(\d{3}|\*{3})$/;  //手机号码验证正则表达式
+		// 	if (phone == "") {
+		// 		$("#checkphone").html("<font color='red'>手机号码不能为空！</font>");
+		// 		return false;
+		// 	}else{
+		// 		/* if(!isMobile.test(phone)){
+		// 			$("#checkphone").html("<font color='red'>请输入正确的手机号码！</font>");
+		// 			return false;
+		// 		} */
+		// 	}
+
+		// //	var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+		// 	if (email == "") {
+		// 		if (phone != null) {
+		// 			$("#checkphone").hide();
+		// 		}
+		// 		$("#checkemail").html("<font color='red'>邮箱地址不能为空！</font>");
+		// 		return false;
+		// 	}else{
+		// 		/* if(！re.test(email)){
+		// 			$("#checkemail").html("<font color='red'>请输入正确的邮箱地址！</font>");
+		// 			return false;
+		// 		} */
+		// 	}
+		// 	if (username == "") {
+		// 		if (phone != null) {
+		// 			$("#checkphone").hide();
+		// 		}
+		// 		if (email != null) {
+		// 			$("#checkemail").hide();
+		// 		}
+		// 		$("#checkuser").html("<font color='red'>用户名不能为空！</font>");
+		// 		return false;
+		// 	}
+		// 	if (password == "") {
+		// 		if (phone != null) {
+		// 			$("#checkphone").hide();
+		// 		}
+		// 		if (email != null) {
+		// 			$("#checkemail").hide();
+		// 		}
+		// 		if (username != null) {
+		// 			$("#checkuser").hide();
+		// 		}
+		// 		$("#checkpwd").html("<font color='red'>注册密码不能为空！</font>");
+		// 		return false;
+		// 	}
+
+		// 	if (repassword == "") {
+		// 		if (phone != null) {
+		// 			$("#checkphone").hide();
+		// 		}
+		// 		if (email != null) {
+		// 			$("#checkemail").hide();
+		// 		}
+		// 		if (username != null) {
+		// 			$("#checkuser").hide();
+		// 		}
+		// 		if (password != null) {
+		// 			$("#checkpwd").hide();
+		// 		}
+		// 		$("#checkrepwd").html("<font color='red'>确认注册密码不能为空！</font>");
+		// 		return false;
+		// 	}else{
+		// 		if (phone != null) {
+		// 			$("#checkphone").hide();
+		// 		}
+		// 		if (email != null) {
+		// 			$("#checkemail").hide();
+		// 		}
+		// 		if (username != null) {
+		// 			$("#checkuser").hide();
+		// 		}
+		// 		if (password != null) {
+		// 			$("#checkpwd").hide();
+		// 		}
+		// 		if(password!=repassword){
+		// 			$("#checkrepwd").html("<font color='red'>两次输入的密码不一致！</font>");
+		// 			return false;
+		// 		}
+		// 	}
+
+		// 	if(verify==""){
+		// 		if (phone != null) {
+		// 			$("#checkphone").hide();
+		// 		}
+		// 		if (email != null) {
+		// 			$("#checkemail").hide();
+		// 		}
+		// 		if (username != null) {
+		// 			$("#checkuser").hide();
+		// 		}
+		// 		if (password != null) {
+		// 			$("#checkpwd").hide();
+		// 		}
+		// 		if(repassword!=null){
+		// 			$("#checkrepwd").hide();
+		// 		}
+		// 		$("#checkcode").html("<font color='red'>验证码不能为空！</font>");
+		// 		return false;
+		// 	}
 		$("#form").submit();
 
 	});
