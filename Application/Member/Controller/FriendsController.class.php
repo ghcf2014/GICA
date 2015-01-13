@@ -17,10 +17,9 @@ class FriendsController extends MemberController {
 	 */
 	public function friends() {
 		
-		//获取邮箱发送地址已经邮箱内容!
+		// 获取邮箱发送地址已经邮箱内容!
 		$email = $_POST ['email'];
-		$content=$_POST['content'];
-		var_dump ( $email );
+		$content = $_POST ['content'];
 		$uid = is_login (); // 获取当前用户的Id
 		$userinfo = M ( 'ucenter_member' );
 		$userlist = $userinfo->where ( "id=" . $uid )->select (); // 查询当前用户的信息
@@ -32,18 +31,26 @@ class FriendsController extends MemberController {
 		$this->assign ( 'realName', $realName [0] ['real_name'] );
 		
 		if ($email != '') { // TODO: 发送验证邮件
-			$a = SendMail ( $email, '工合财富好友注册通知!', '您好！我是您的好友： ' . $realName [0] ['real_name'] . '!特意邀请您注册工合财富'.$content.' 邮件发送时间： ' . date ( "l dS of F Y h：i：s A" ) . '如有疑问可以与您的好友进行联系,谢谢!' );
+			$a = SendMail ( $email, '工合财富好友注册通知!', '亲，您好！我是您的好友： ' . $realName [0] ['real_name'] . '!' . $content . ' 邮件发送时间： ' . date ( "l dS of F Y h：i：s A" ) . '如有疑问可以与您的好友进行联系,谢谢!' );
+			$this->success ( "邮件发送成功！", U ( 'Friends/friends' ) );
 		}
 		
-		// 查询好友注册信息以及平台的投资充值信息
-		/*
-		 * $friend = M ( 'z_member_friend' ); $friendList = $friend->where ( "friend_id=" . $uid )->select (); // 通过当前用户ID查询好友列表 var_dump($friendList); $this->assign('friendList',$friendList);
-		 */
 		$model = new Model ();
 		$sql = "select * from (select * from gica_ucenter_member as m right join(select f.uid as fuid from gica_z_member_friend as f
-	    		where friend_id={$uid} ) t on m.id=t.fuid) f left join gica_z_member_payonline as p on f.fuid=p.uid";
+	    		 where friend_id={$uid} ) t on m.id=t.fuid) f left join gica_z_borrow_investor as p on f.fuid=p.investor_uid";
 		$friendList = $model->query ( $sql );
-		// var_dump($friendList);
+		
+		/*
+		 * $sql_count = "select count(*) as count from (select * from gica_ucenter_member as m right join(select f.uid as fuid from gica_z_member_friend as f where friend_id={$uid} ) t on m.id=t.fuid) f left join gica_z_borrow_investor as p on f.fuid=p.investor_uid";
+		 */
+		
+		/* import('ORG.Util.Page');// 导入分页类
+		$count=$model->query($sql_count);
+		$Page = new  \Think\Page($count, 10);
+		var_dump($count[0]['count']);
+		$show=$Page->show();
+		$this->assign('page',$show);  */
+		
 		$this->assign ( "friendList", $friendList );
 		$this->display ();
 	}
