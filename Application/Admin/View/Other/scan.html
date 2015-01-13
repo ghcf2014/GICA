@@ -1,34 +1,35 @@
 <extend name="Public/base" />
 
 <block name="body">
-	<!-- 标题栏 -->
-	<div class="main-title">
-		<h2>360防注/查杀</h2>
-	</div>
-    <!-- 数据列表 -->
-    <div class="data-table table-striped">
-	<div class="so_main">
-  <div class="Toolbar_inbox">
-      <div class="page right"></div>
-    <a onclick="addWebSetting();" class="btn_a" href="{:U('scanview')}">
-        <span class="searchUser_action">木马查杀</span>
-    </a>
-    <a onclick="addWebSetting();" class="btn_a" href="{:U('scanReport')}">
-        <span class="searchUser_action">查杀报告</span>
-    </a>
+  <script type="text/javascript" src="/Public/static/uploadify/jquery.uploadify.min.js"></script>
+  <div class="main-title cf">
+    <h2>360防注/查杀</h2>
   </div>
-  
-  <div class="form2">
+  <form action="/admin.php?s=/Addons/saveConfig.html" class="form-horizontal" method="post">
+    <div class="form-item cf">
+          <label class="item-label">
+                                  </label>
+            <ul class="tab-nav nav">
+                  <li class="current"  id="ttab1"><a href="javascript:void(0);">木马查杀</a></li><li  id="ttab2"><a href="javascript:void(0);">查杀报告</a></li>               </ul>
+                <div class="tab-content">
+                <div id="tab1" class="tab-pane tab1 in">
+                    <label class="item-label">
+                      是否启用采集插件:                     <span class="check-tips">必须在这里开启以后才能使用此功能</span>                    </label>
+                    <div class="controls">
+                      <label class="radio">
+                              <input name="config[codelogin]" value="1" checked="" type="radio">开启                            </label><label class="radio">
+                              <input name="config[codelogin]" value="0" type="radio">关闭                           </label>                      </div>
+                              <div class="form2">
       <form method="post" action="__URL__/updateConfig">
     <dl class="lineD" >
       <dt>查杀目录：</dt>
       <dd>
         <ul class="dirBox">
-        	<volist name='dirs' id='vo'>
-        	<li>
-            	<input type="checkbox" name="dir[]" value="{$vo.dir}" <if condition="$vo.selected eq 1">checked="checked"</if> >
+          <volist name='dirs' id='vo'>
+          <li>
+              <input type="checkbox" name="dir[]" value="{$vo.dir}" <if condition="$vo.selected eq 1">checked="checked"</if> >
                 <if condition="$vo.type eq 'dir'">
-            	<img src="__ROOT__/Style/A/images/ico/dir.png">
+              <img src="__ROOT__/Style/A/images/ico/dir.png">
                 <else />
                 <img src="__ROOT__/Style/A/images/ico/php.png">
                 </if>
@@ -63,38 +64,59 @@
     </div>
     </form>
     
-  </div>
-	</div>
-    <div class="page">
-        {$_page}
-    </div>
+  </div>                  </div>
+                <div id="tab2" class="tab-pane  tab2">
+                    <label class="item-label">
+                      关键词:                      <span class="check-tips">关键词(要采集的文章所包含的关键词，多个关键词用“|”分割)</span>                    </label>
+                    <div class="controls">
+                      <label class="textarea input-large">
+                            <textarea name="config[KEYWORDS]"></textarea>
+                          </label>                      </div><label class="item-label">
+                      目标地址:                     <span class="check-tips">所要采集的目标网址（多个网址词用数字加“@”分割，如：2@http://www.topthink.com/）</span>                    </label>
+                    <div class="controls">
+                      <label class="textarea input-large">
+                            <textarea name="config[URL]"></textarea>
+                          </label>                      </div><label class="item-label">
+                      列表规则:                     <span class="check-tips">正则规则(采集列表页面规则，多个正则词用数字加“@”分割)</span>                   </label>
+                    <div class="controls">
+                      <label class="textarea input-large">
+                            <textarea name="config[LIST]"></textarea>
+                          </label>                      </div><label class="item-label">
+                      标题规则:                     <span class="check-tips">正则规则(采集标题规则，多个正则词用数字加“@”分割)</span>                   </label>
+                    <div class="controls">
+                      <label class="textarea input-large">
+                            <textarea name="config[TITLE]"></textarea>
+                          </label>                      </div><label class="item-label">
+                      终端规则:                     <span class="check-tips">正则规则(采集正文规则，多个正则词用数字加“@”分割)</span>                   </label>
+                    <div class="controls">
+                      <label class="textarea input-large">
+                            <textarea name="config[CONTENT]"></textarea>
+                          </label>                      </div>                  </div>                </div>
+          </div>        <input name="id" value="39" readonly="" type="hidden">
+    <button type="submit" class="btn submit-btn ajax-post" target-form="form-horizontal">确 定</button>
+    <button style="display: none;" class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+  </form>
 </block>
 
 <block name="script">
-	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+	<script src="__STATIC__/jquery-2.0.3.js"></script>
 
 	<script type="text/javascript">
-	//搜索功能
-	$("#search").click(function(){
-		var url = $(this).attr('url');
-        var query  = $('.search-form').find('input').serialize();
-        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
-        query = query.replace(/^&/g,'');
-        if( url.indexOf('?')>0 ){
-            url += '&' + query;
-        }else{
-            url += '?' + query;
-        }
-		window.location.href = url;
-	});
-	//回车搜索
-	$(".search-input").keyup(function(e){
-		if(e.keyCode === 13){
-			$("#search").click();
-			return false;
-		}
-	});
-    //导航高亮
-    highlight_subnav('{:U('User/index')}');
+  //选项卡切换
+      $("#ttab1").click(function(){
+              $(this).addClass("current");
+              $("#ttab2").removeClass("current");
+              $("#tab1").addClass("in");
+              $("#tab2").removeClass("in");
+              
+       });
+       $("#ttab2").click(function(){
+              $(this).addClass("current");
+              $("#ttab1").removeClass("current");
+              $("#tab2").addClass("in");
+              $("#tab1").removeClass("in");
+              
+       });
+
 	</script>
 </block>

@@ -1,0 +1,83 @@
+<extend name="Public/base" />
+
+<block name="body">                   
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>合作单位内容列表</h2>
+	</div>
+
+	<div class="cf">
+		<div class="fl">
+				</div>
+		<!-- 高级搜索 -->
+		<div class="search-form fr cf">
+			<div class="sleft">
+				<input name="title" class="search-input" value="" placeholder="请输入关键字" type="text">
+				<a class="sch-btn" href="javascript:;" id="search" url="/admin.php?s=/Addons/adminList/name/SuperLinks"><i class="btn-search"></i></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 数据列表 -->
+	<div class="data-table table-striped">
+					<div class="tools" style="margin-bottom:10px;">
+    <a class="btn" href="/admin.php?s=/Addons/execute/_addons/SuperLinks/_controller/SuperLinks/_action/add.html">新 增</a>
+    <button class="btn ajax-post" target-form="ids" url="/admin.php?s=/Addons/execute/_addons/SuperLinks/_controller/SuperLinks/_action/savestatus/status/1.html">启 用</button>
+    <button class="btn ajax-post" target-form="ids" url="/admin.php?s=/Addons/execute/_addons/SuperLinks/_controller/SuperLinks/_action/savestatus/status/0.html">禁用</button>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th class="row-selected row-selected"><input class="check-all" type="checkbox"></th>
+			<th>序号</th>
+			<th>站点名称</th><th>类型</th><th>显示状态</th><th>优先级</th><th>开始时间</th>			<th width="70">操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><input class="ids" name="id[]" value="4" type="checkbox"></td>
+			<td>4</td>
+			<td></td><td>图片连接</td><td>正常</td><td>0</td><td>2015-01-13</td>			<td>
+				<a href="{:U('Other/linksedit')}">编辑</a>
+				<a class="confirm ajax-get" href="/admin.php?s=/Addons/execute/_addons/SuperLinks/_controller/SuperLinks/_action/forbidden/id/4.html">禁用</a>
+								<a class="confirm ajax-get" href="/admin.php?s=/Addons/execute/_addons/SuperLinks/_controller/SuperLinks/_action/del/id/4.html">删除</a>
+			</td>
+		</tr>	</tbody>
+</table>
+
+<script type="text/javascript" src="/Public/static/uploadify/jquery.uploadify.min.js"></script>	</div>
+	<!-- 分页 -->
+    <div class="page">
+        <div>    </div>    </div>
+
+        
+</block>
+
+<block name="script">
+	<script src="__STATIC__/thinkbox/jquery.thinkbox.js"></script>
+
+	<script type="text/javascript">
+	//搜索功能
+	$("#search").click(function(){
+		var url = $(this).attr('url');
+        var query  = $('.search-form').find('input').serialize();
+        query = query.replace(/(&|^)(\w*?\d*?\-*?_*?)*?=?((?=&)|(?=$))/g,'');
+        query = query.replace(/^&/g,'');
+        if( url.indexOf('?')>0 ){
+            url += '&' + query;
+        }else{
+            url += '?' + query;
+        }
+		window.location.href = url;
+	});
+	//回车搜索
+	$(".search-input").keyup(function(e){
+		if(e.keyCode === 13){
+			$("#search").click();
+			return false;
+		}
+	});
+    //导航高亮
+    highlight_subnav('{:U('User/index')}');
+	</script>
+</block>

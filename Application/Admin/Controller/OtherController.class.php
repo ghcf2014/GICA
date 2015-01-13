@@ -234,7 +234,33 @@ class OtherController extends AdminController {
         $this->display();
     }
     public function msgtemplet(){
+        $tem = M("sms_template");
+        $jihuo =$tem->field('template')->where('id=1')->select();
+        $zhuce =$tem->field('template')->where('id=3')->select();
+        $zhaohui =$tem->field('template')->where('id=2')->select();
+
+
+        $this->assign('jihuo', $jihuo[0]['template']);
+        $this->assign('zhuce', $zhuce[0]['template']);
+        $this->assign('zhaohui', $zhaohui[0]['template']);
+        $this->meta_title = '模板信息';
         $this->display();
+    }
+    public function msgtemplet_add(){
+        // 从表单中获取来的数据
+        $tem = M("sms_template");
+        // 更改用户的name值
+        $tem -> where('id=2')->setField('template',$_POST ["zhaohui"]);
+        $tem -> where('id=3')->setField('template',$_POST ["zhuce"]);
+        if ($tem -> where('id=1')->setField('template',$_POST ["jihuo"])) { // 保存成功
+                                                           // 成功提示
+               
+            $this-> success ('模板修改成功');  
+
+        } else {
+            // 失败提示
+            $this-> error ( '模板修改失败');
+        }
     }
     public function payonline(){
         $this->display();
