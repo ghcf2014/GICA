@@ -24,19 +24,20 @@
 <!--header end-->
 
 <!--nav start-->
-<div class="nav">
-	<h1>
-		<a href="{:U('Home/Index/index')}"><img src="__PUBLIC__/Home/images/logo.png" width="62" height="47" /><img src="__PUBLIC__/Home/images/gonghe.png" width="136" height="50" /></a>
-	</h1>
-	<ul class="nav_wrap">
-    	<li style="width: 40px;"><a href="{:U('Home/Index/index')}"
-			class="current">首页</a></li>
-		<li><a href="{:U('Home/Borrow/index')}">我要融资</a></li>
-		<li><a href="{:U('Home/Finance/index')}">我要投资</a></li>
-		<li><a href="{:U('Member/Index/index')}">我的账户</a></li>
-		<li><a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></li>
-		<li><a href="{:U('Home/RichFunds/index')}">工合基金</a></li>
-	</ul>
+<div class="nav_out">
+	<div class="nav">
+		<h1>
+			<a href="{:U('Home/Index/index')}"><img src="__PUBLIC__/Home/images/logo.png" width="62" height="47" /><img src="__PUBLIC__/Home/images/gonghe.png" width="136" height="50" /></a>
+		</h1>
+		<ul class="nav_wrap">
+	    	<li style="width: 40px;"><a href="{:U('Home/Index/index')}" class="current">首页</a></li>
+			<li><a href="{:U('Home/Borrow/index')}">我要融资</a></li>
+			<li><a href="{:U('Home/Finance/index')}">我要投资</a></li>
+			<li><a href="{:U('Member/Index/index')}">我的账户</a></li>
+			<li><a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></li>
+			<li><a href="{:U('Home/RichFunds/index')}">工合基金</a></li>
+		</ul>
+	</div>
 </div>
 <!--nav end-->
 
@@ -89,6 +90,7 @@
 <script type="text/javascript">
 	$(function(){
 		//alert(1);	
+		//浮动侧边栏
 		$('.flo_aside').hover(function(){
 			//alert(2);
 			$('.flo_aside .flo_l li').each(function(index,element){
@@ -104,7 +106,7 @@
 			$('.flo_aside .flo_r').hide();	
 		});
 		
-		
+		//返回顶部
 		$(document).scroll(function(){
 			if($(document).scrollTop() > $(window).height())
 			{
@@ -115,6 +117,22 @@
 				$('.returnTop').hide();
 			}
 		});	
+		
+		//导航栏
+		var urlstr = location.href;
+  		//alert((urlstr + '/').indexOf($(this).attr('href')));
+  		var urlstatus=false;
+ 		$(".nav_out .nav .nav_wrap li a").each(function (index,element) {
+    		if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href')!='') {
+      			$(element).addClass('current'); 
+      			urlstatus = true;
+
+    		} 
+    		else {
+      			$(element).removeClass('current');
+    		}
+  		});
+  		if (!urlstatus) {$(".nav_out .nav .nav_wrap li").eq(0).children().addClass('current'); }
 		
 })
 </script>
