@@ -4,25 +4,26 @@ namespace Admin\Controller;
 use User\Api\UserApi;
 
 /**
- * 后台用户控制器
+ * 后台资金控制器
  */
 class MoneyController extends AdminController {
 
     /**
-     * 借款管理首页
+     * 资金管理首页
      */
     public function index(){
-        $nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
-        if(is_numeric($nickname)){
-            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
-        }else{
-            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
-        }
-
-        $list   = $this->lists('Member', $map);
-        int_to_string($list);
-        $this->assign('_list', $list);
+        //投资总额
+        $investor = M('z_borrow_investor')->field('sum(investor_capital)investor_capital')->select();
+        $this->assign('investor', $investor[0]['investor_capital']);
+        //借款总额
+        $borrow_money = M('z_borrow_info')->field('sum(borrow_money)borrow_money')->select();
+        $this->assign('borrow_money', $borrow_money[0]['borrow_money']);
+        //信用总额
+        $credit_limit = M('z_member_money')->field('sum(credit_limit)credit_limit')->select();
+        $this->assign('credit_limit', $credit_limit[0]['credit_limit']);
+        //总积分
+        $credits = M('ucenter_member')->field('sum(credits)credits')->select();
+        $this->assign('credits', $credits[0]['credits']);
         $this->meta_title = '资金统计中心';
         $this->display();
     }

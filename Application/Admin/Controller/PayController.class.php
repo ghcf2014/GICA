@@ -4,25 +4,26 @@ namespace Admin\Controller;
 use User\Api\UserApi;
 
 /**
- * 后台用户控制器
+ * 充值提现控制器
  */
 class PayController extends AdminController {
 
     /**
-     * 借款管理首页
+     * 充值提现管理首页
      */
     public function index(){
-        $nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
-        if(is_numeric($nickname)){
-            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
-        }else{
-            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
-        }
-
-        $list   = $this->lists('Member', $map);
-        int_to_string($list);
-        $this->assign('_list', $list);
+        //投资总额
+        $money = M('z_member_payonline')->field('sum(money)money')->select();
+        $this->assign('money', $money[0]['money']);
+        //借款总额
+        $withdraw_money = M('z_member_withdraw')->field('sum(withdraw_money)withdraw_money')->select();
+        $this->assign('withdraw_money', $withdraw_money[0]['withdraw_money']);
+        //信用总额
+        $credit_limit = M('z_member_money')->field('sum(credit_limit)credit_limit')->select();
+        $this->assign('credit_limit', $credit_limit[0]['credit_limit']);
+        //总积分
+        $credits = M('ucenter_member')->field('sum(credits)credits')->select();
+        $this->assign('credits', $credits[0]['credits']);
         $this->meta_title = '充值提现中心';
         $this->display();
     }

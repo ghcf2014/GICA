@@ -4,16 +4,16 @@
 	<!--content start-->
   	<div class="xszy_cont_out">
     	<div class="xszy_cont">
-        	<h2>新手指引</h2>
-            <ul class="xszy_cont_l">
-			<li class="current">注册登录</li>
-			<li>实名认证</li>
-			<li>我要借款</li>
-			<li>我要投资</li>
-			<li>我要充值</li>
-			<li>我要提现</li>
-			<li>其他指引</li>
-		</ul>
+        	
+	        <ul class="xszy_cont_l">
+				<li class="current">注册登录</li>
+				<li>实名认证</li>
+				<li>我要借款</li>
+				<li>我要投资</li>
+				<li>我要充值</li>
+				<li>我要提现</li>
+				<li>其他指引</li>
+			</ul>
             <div class="xszy_cont_r">
             	<!--注册与登录-->
             	<div class="tab">
@@ -355,10 +355,14 @@
 		{
 			$(element).click(function(){
 				//alert(1);
-				$(element).css({'color':'#ef681f'}).siblings().css('color','#333');
-			});	
-		});
+				$(element).addClass('current').siblings().removeClass('current');
+				
+			});
+		});	
+			
+			
+	});
 	
-})
+
 </script>
 </block>

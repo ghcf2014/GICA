@@ -55,6 +55,25 @@ class SystemController extends MemberController {
 			$this->error ( L ( '提现失败' ) );
 		}
 	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *        
+	 *         2015-1-12用户充值
+	 */
+	public function recharge() {
+		$uid = is_login (); // 获取当前登录用户ID
+		$model = new Model (); // 实例化当前模型驱动
+		$sql = "select * from gica_z_member_info as m , gica_z_member_banks as b where m.uid=b.uid and m.uid={$uid}";
+		$voList = $model->query ( $sql );
+		if ($voList [0] ['bank_num'] == "") {
+			$this->error ( '您还未绑定银行卡，请您绑定银行卡！', U ( 'Userinfo/userbankset' ) );
+		} else {
+			$this->assign ( 'userinfo', $voList );
+			$this->display ();
+		}
+	}
     public function usermailindex(){
         $sendname=$_SESSION["gica_home"]["user_auth"]['username'];
         $uid=is_login();
@@ -117,24 +136,6 @@ class SystemController extends MemberController {
             $this->display();
         }
 	
-	/**
-	 *
-	 * @author liuy
-	 *        
-	 *         2015-1-12用户充值
-	 */
-	public function recharge() {
-		$uid = is_login (); // 获取当前登录用户ID
-		$model = new Model (); // 实例化当前模型驱动
-		$sql = "select * from gica_z_member_info as m , gica_z_member_banks as b where m.uid=b.uid and m.uid={$uid}";
-		$voList = $model->query ( $sql );
-		if ($voList [0] ['bank_num'] == "") {
-			$this->error ( '您还未绑定银行卡，请您绑定银行卡！', U ( 'Userinfo/userbankset' ) );
-		} else {
-			$this->assign ( 'userinfo', $voList );
-			$this->display ();
-		}
-	}	
 	public function recharge_save() {
 		$uid = is_login ();
 		$condition ['uid'] = $uid;

@@ -388,12 +388,40 @@ class BorrowController extends AdminController {
         $this->display();
     }
     public function audit_save($id = 0){
-        
-        
-
         $map['id']  = $id;
         $m = M ( 'z_borrow_info' ); // 用户头像
-        $data ['borrow_status'] = $_POST ['group_id'];
+        $s =$m ->where($map)->select();
+
+        $s=$s[0]['borrow_status'];
+
+        $sta = $_POST ["group_id"];
+       
+       
+        if($sta ==1){
+        	 if ($s==0) {
+        	 	$sb=2;
+        	 }
+        	 if ($s==2) {
+        	 	$sb=4;
+        	 }
+        	 if ($s==4) {
+        	 	$sb=6;
+        	 }
+        }
+        if ($sta ==0) {
+        	if ($s==0) {
+        	 	$sb=1;
+        	 }
+        	 if ($s==2) {
+        	 	$sb=3;
+        	 }
+        	 if ($s==4) {
+        	 	$sb=5;
+        	 }
+        }
+
+        
+        $data ['borrow_status']=$sb ;
         // 保存当前数据对象
         if ($m = $m->where ( $map )->save ( $data )) { // 保存成功
                                                              // 成功提示
