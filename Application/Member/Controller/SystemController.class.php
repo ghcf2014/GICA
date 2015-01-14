@@ -77,6 +77,7 @@ class SystemController extends MemberController {
 	public function usermailindex() {
 		$this->display ();
 	}
+	
 	public function recharge_save() {
 		$uid = is_login ();
 		$condition ['uid'] = $uid;
@@ -115,7 +116,6 @@ class SystemController extends MemberController {
 		
 		$this->display ();
 	}
-	
 	public function userbankset_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
@@ -130,8 +130,7 @@ class SystemController extends MemberController {
 		} else {
 			// 失败提示
 			$this->error ( L ( '保存失败' ) );
-		} 
-		
+		}
 	}
 	public function userbasicdata() {
 		$this->display ();

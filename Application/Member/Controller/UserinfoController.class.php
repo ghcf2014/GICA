@@ -4,6 +4,7 @@ namespace Member\Controller;
 
 use OT\DataDictionary;
 use Think\Controller;
+use Think\Model;
 
 class UserinfoController extends MemberController {
 	public function index() {
@@ -55,20 +56,27 @@ class UserinfoController extends MemberController {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "z_member_banks" );
+		// 获取表单数据
+		$data ['uid'] = $uid;
 		$data ['bank_num'] = $_POST ['bankCard'];
-		$data ['bank_name'] = $_POST ["bankName"];
+		$data ['bank_province'] = '';
+		$data ['bank_city'] = '';
 		$data ['bank_address'] = $_POST ["subBankName"];
+		$data ['bank_name'] = $_POST ["bankName"];
+		$data ['add_time'] = time;
+		$data ['add_ip'] = '';
 		$condition ['uid'] = $uid;
-		
+		var_dump ( $_POST ['bankCard'] );
 		$banksinfo = $m->where ( "uid=" . $uid )->select ();
 		// 如果没有银行卡，添加银行卡信息
-		if ($banksinfo == "") {
-			$time = time ();
-			$sql = "insert into gica_z_member_banks(uid,bank_num,bank_name,bank_address,add_time)values('{$uid}','{$data ['bank_num']}','{$data ['bank_name'] }','{$data ['bank_address']}','{$time}')";
-			$count = $m->query ( $sql );
-			if ($count > 0) { // 保存成功
-				var_dump ( "进入此方法来了！" );
-				$this->success ( "保存成功！", U ( "userbankset" ) );
+		if ($banksinfo == null) {
+			// $Model = new Model ();
+			// $time = time ();
+			// $sql = "insert into gica_z_member_banks(uid,bank_num,bank_name,bank_address,add_time)values('{$uid}','{$data ['bank_num']}','{$data ['bank_name'] }','{$data ['bank_address']}','{$time}')";
+			// $count = $$Model->query ( $sql );
+			$count = $m->add ( $data );
+			if ($count) { // 保存成功
+				$this->success ( "保存成功！", U ( "Userinfo/userbankset" ) );
 			} else {
 				// 失败提示
 				$this->error ( L ( '保存失败!' ) );
