@@ -622,7 +622,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .box .boxmain2 .biaoge2 table tr td strong { font-weight: normal; color: #ea0000; }
 .box .boxmain2 .bank { background-color: #fffcf3; padding-top: 20px; padding-right: 50px; padding-bottom: 20px; padding-left: 50px; border: 2px solid #f7efd5; overflow: hidden; height: 100%; }
 .box .boxmain2 .bank ul li { float: left; margin-right: 10px; margin-bottom: 15px; width: 170px; }
-.box .boxmain2 .btn { text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 270px;}
+.box .boxmain2 .btn { }
 .box .boxmain2 .tips2 { color: #999; margin-bottom: 10px; padding-bottom: 5px; border-bottom-width: 1px; border-bottom-style: dotted; border-bottom-color: #ccc; line-height:24px}
 .biaoge2 table .txt { color: #999; line-height: 24px; }
 .box .boxmain2 .biaoge2 table .tx { padding-top: 10px; padding-bottom: 10px; }
