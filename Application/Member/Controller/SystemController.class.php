@@ -115,6 +115,7 @@ class SystemController extends MemberController {
 		
 		$this->display ();
 	}
+	
 	public function userbankset_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
@@ -125,12 +126,12 @@ class SystemController extends MemberController {
 		$condition ['uid'] = $uid;
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
-		                                                     // 成功提示
 			$this->success ( L ( '保存成功' ) );
 		} else {
 			// 失败提示
 			$this->error ( L ( '保存失败' ) );
-		}
+		} 
+		
 	}
 	public function userbasicdata() {
 		$this->display ();
