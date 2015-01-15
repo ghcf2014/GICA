@@ -60,7 +60,6 @@ class SystemController extends MemberController {
 			if ($memberMoney [0] ['account_money'] == null) {
 				$this->error ( L ( '您的账户余额不足无法提现！' ) );
 			}
-			var_dump ( $memberMoney );
 			$account_money = $memberMoney [0] ['account_money']; // 获取用户的可用余额
 			$money_freeze = $memberMoney [0] ['money_freeze']; // 获取冻结金额
 			$account_money = floatval ( $account_money ) - floatval ( $_POST ['withdraw_money'] ); // 提现时可用余额减少
@@ -92,7 +91,6 @@ class SystemController extends MemberController {
 		// 系统消息
 		$sysdata = $msg->table ( 'gica_z_inner_msg stats,gica_member profile' )->where ( 'stats.tid = profile.uid and stats.tid=1' )->field ( 'stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time, profile.nickname as sysname' )->order ( 'stats.tid desc' )->select ();
 		
-<<<<<<< HEAD
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
 			//资金日志记录                                                                                              
@@ -103,14 +101,16 @@ class SystemController extends MemberController {
 		    $logdata ['info'] = '会员提现';
 		    $logdata ['add_time'] = time ();
 		    $log = $log->add($logdata);
+
+
 			$this->success ( L ( '提现已提交，我们会尽快审核。' ) );
-=======
-		$this->assign ( 'receive', $receive );
-		$this->assign ( 'post', $post );
-		$this->assign ( 'sysdata', $sysdata );
-		$this->assign ( 'sendname', $sendname );
-		$this->assign ( 'uid', $uid );
-		$this->display ();
+
+			$this->assign ( 'receive', $receive );
+			$this->assign ( 'post', $post );
+			$this->assign ( 'sysdata', $sysdata );
+			$this->assign ( 'sendname', $sendname );
+			$this->assign ( 'uid', $uid );
+			$this->display ();
 	}
 	public function usermailindex_add() {
 		$username = $_POST ['username'];
@@ -119,9 +119,7 @@ class SystemController extends MemberController {
 		$usermodel = new Model ();
 		$sql = "select * from gica_member where nickname='{$username}'";
 		$data = $usermodel->query ( $sql );
-		// dump($data);
 		$tid = $data [0] ['uid'];
-		// dump($tid);
 		// 查询是否存在收件人信息
 		if ($data !== null) {
 			
@@ -139,14 +137,11 @@ class SystemController extends MemberController {
 			} else {
 				$this->error ( '发送失败！' );
 			}
->>>>>>> origin/master
 		} else {
 			$this->error ( '对不起，收件人不存在！请重新确认再发送' );
 		}
 	}
-	public function usermailindex_del() {
-		dump ( $_GET );
-		
+	public function usermailindex_del() {		
 		$this->display ();
 	}
 	
