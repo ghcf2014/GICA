@@ -1,119 +1,123 @@
 ﻿<block name="body">
 <extend name="Base/common"/>
      <!--banner start-->
-    <div class="banner">
-        <ul style="z-index:0">
-           
-            <li style="z-index:1"><img src="__PUBLIC__/Home/images/banner_pic5.jpg" width="1600" height="339" /></li>
-            <li><img src="__PUBLIC__/Home/images/banner_pic6.jpg" width="1600" height="339" /></li>
-            <li><img src="__PUBLIC__/Home/images/banner_pic8.jpg" width="1600" height="339" /></li>
-            
-            <li><img src="__PUBLIC__/Home/images/banner_pic4.jpg" width="1600" height="339" /></li>
-            
-        </ul>
-        <ol style="z-index:2">
-        	<li class="current">1</li>
-        	<li>2</li>
-        	<li>3</li>
-            <li>4</li>
-        </ol>
-    </div>
+     <div class="banner_out">	     
+	    <div class="banner">
+	        <ul style="z-index:0">
+	           
+	            <li style="z-index:1"><img src="__PUBLIC__/Home/images/banner_pic5.jpg" width="1600" height="339" /></li>
+	            <li><img src="__PUBLIC__/Home/images/banner_pic6.jpg" width="1600" height="339" /></li>
+	            <li><img src="__PUBLIC__/Home/images/banner_pic8.jpg" width="1600" height="339" /></li>
+	            
+	            <li><img src="__PUBLIC__/Home/images/banner_pic4.jpg" width="1600" height="339" /></li>
+	            
+	        </ul>
+	        <ol style="z-index:2">
+	        	<li class="current">1</li>
+	        	<li>2</li>
+	        	<li>3</li>
+	            <li>4</li>
+	        </ol>
+	    </div>
+	</div>
     <!--banner end-->
 
 	<!--content start-->
-  <div class="cont">
-    	<!--content_top start-->
-    	<div class="cont_top">
-        	<dl>
-            	<dt>
-                	<h2><a href="{:U('Home/RichFunds/index')}">理财投资</a></h2>
-                	<p>了解我们</p>
-                </dt>
-                <dd>投资理财 成为理财人，通过主动投标或加入U计划将资金进行投资，最高获得12%-18%的预期年化收益。 </dd>
-            </dl>
-            <dl class="rongzi">
-            	<dt>
-                	<h2><a href="javascript:;">融资借款</a></h2>
-                	<p>帮助您解决所有问题</p>
-                </dt>
-                <dd>如果你现在需要资金周转，可以向我们提交借款申请，通过考察、资料审核、办理借款手续后手续后，可以及时解决资金问题。 </dd>
-            </dl>
-            <dl class="safety">
-            	<dt>
-                	<h2><a href="{:U('Home/Newhelp/compare_tools')}">安全保障</a></h2>
-                	<p>100%本息担保</p>
-                </dt>
-                <dd>我们的客户来自于公司业务一手客户及银行合作推荐客户，借助于银行大数据风控团队及自身专业的风控体系，更有第三方担保公司兜底，让您放心投资。</dd>
-            </dl>
-            <dl  class="helpCenter">
-            	<dt>
-                	<h2><a href="#">新手指引</a></h2>
-                	<p>了解我们</p>
-                </dt>
-                <dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需要的人，获得年化12%-18%的投资收益。</dd>
-            </dl>
-        </div>
-        <!--content_top end-->
-        
-        <!--content_bottom start-->
-        <div class="cont_bot">
-        	<div class="cont_bot_l">
-           	  <h2><span style="display: inline-block;width: auto;height: 41px;border-bottom: 3px solid #66ccfb;">投资列表</span></h2>
-           	     <volist name="list2" id="vo">
-           	     <h4><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
-            	<ul>
-                	<li>借款金额:<span>￥{$vo.borrow_money}</span></li>
-                    <li>年利率:<span>{$vo.borrow_interest_rate}%</span></li>
-                	<li>借款期限:<span>{$vo.borrow_duration}</span> <s:if test="%{#finance.isDayThe ==1}">个月</s:if><span><!-- <s:else>天</s:else> --></span></li>
-                	<li>发标时间:<span>{$vo.add_time|date='Y-m-d',###}</span></li>
-                	<li><p>借款类型:</p><p><img src="__PUBLIC__/Home/images/icon1.png" width="21" height="24" /></p><p><img src="__PUBLIC__/Home/images/icon2.png" width="21" height="24" /></p>
-                	</li>
-                	<li><p>借款进度:</p><span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;"><!-- {$vo['has_borrow']/$vo['borrow_money']*100}% --></span></span></li>
-                	<li>完成投标:<span>{$vo.has_borrow}</span></li>
-                	<li>&nbsp;&nbsp; 
-                	   <if condition="$vo.borrow_status eq 2"><a  href="{:U('Finance/invest?id='.$vo['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
-                	    <elseif condition="$vo.borrow_status eq 0"/>
-                	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
-                	     <elseif condition="$vo.borrow_status eq 4"/>
-                	    <img alt="" src="__PUBLIC__/Home/images/checkref.png">
-                	    <elseif condition="$vo.borrow_status eq 6"/>
-                	    <img alt="" src="__PUBLIC__/Home/images/returning.png">
-                	     <elseif condition="$vo.borrow_status eq 7"/>
-                	     <img alt="" src="__PUBLIC__/Home/images/full.png">
-                	    </if>
-                	</li>
-                </ul>
-               </volist>
-                <a href="{:U('Finance/index')}" class="more">点击查看更多</a>
-            </div>
-            
-            <!-- 网站行业动态 start -->
-            <div class="cont_bot_r">
-            	<dl>
-                	<dt><span>网站公告</span> <a href="{:U('Article/lists?category='.get_category_name(2))}" class="more"></a></dt>
-                	 <volist name="lists"  id="list"> <!-- class="current" -->
-                         <dd><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a><span>{$list.create_time|date='Y-m-d',###}</span></dd>
-                    </volist>
-                </dl>
-                
-                <dl>
-                	<dt><span>行业动态</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more"></a></dt>
-                     <volist name="lists1" id="list1">
-                        <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span></dd>
-                    </volist>
-                </dl>
-
-                <dl>
-                    <dt><span>媒体新闻</span> <a href="{:U('Article/lists?category='.get_category_name(43))}" class="more"></a></dt>
-                     <volist name="lists3" id="list3">
-                        <dd> <a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span></dd>
-                    </volist>
-                    
-                </dl>
-          <!-- 网站行业动态 end -->
-            </div>
-        </div>
-        <!--content_bottom end-->
+	<div class="cont_out">		
+		  <div class="cont">
+		    	<!--content_top start-->
+		    	<div class="cont_top">
+		        	<dl>
+		            	<dt>
+		                	<h2><a href="{:U('Home/RichFunds/index')}">理财投资</a></h2>
+		                	<p>了解我们</p>
+		                </dt>
+		                <dd>投资理财 成为理财人，通过主动投标或加入U计划将资金进行投资，最高获得12%-18%的预期年化收益。 </dd>
+		            </dl>
+		            <dl class="rongzi">
+		            	<dt>
+		                	<h2><a href="javascript:;">融资借款</a></h2>
+		                	<p>帮助您解决所有问题</p>
+		                </dt>
+		                <dd>如果你现在需要资金周转，可以向我们提交借款申请，通过考察、资料审核、办理借款手续后手续后，可以及时解决资金问题。 </dd>
+		            </dl>
+		            <dl class="safety">
+		            	<dt>
+		                	<h2><a href="{:U('Home/Newhelp/compare_tools')}">安全保障</a></h2>
+		                	<p>100%本息担保</p>
+		                </dt>
+		                <dd>我们的客户来自于公司业务一手客户及银行合作推荐客户，借助于银行大数据风控团队及自身专业的风控体系，更有第三方担保公司兜底，让您放心投资。</dd>
+		            </dl>
+		            <dl  class="helpCenter">
+		            	<dt>
+		                	<h2><a href="#">新手指引</a></h2>
+		                	<p>了解我们</p>
+		                </dt>
+		                <dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需要的人，获得年化12%-18%的投资收益。</dd>
+		            </dl>
+		        </div>
+		        <!--content_top end-->
+		        
+		        <!--content_bottom start-->
+		        <div class="cont_bot">
+		        	<div class="cont_bot_l">
+		           	  <h2><span style="display: inline-block;width: auto;height: 41px;border-bottom: 3px solid #66ccfb;">投资列表</span></h2>
+		           	     <volist name="list2" id="vo">
+		           	     <h4><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>
+		            	<ul>
+		                	<li>借款金额:<span>￥{$vo.borrow_money}</span></li>
+		                    <li>年利率:<span>{$vo.borrow_interest_rate}%</span></li>
+		                	<li>借款期限:<span>{$vo.borrow_duration}</span> <s:if test="%{#finance.isDayThe ==1}">个月</s:if><span><!-- <s:else>天</s:else> --></span></li>
+		                	<li>发标时间:<span>{$vo.add_time|date='Y-m-d',###}</span></li>
+		                	<li><p>借款类型:</p><p><img src="__PUBLIC__/Home/images/icon1.png" width="21" height="24" /></p><p><img src="__PUBLIC__/Home/images/icon2.png" width="21" height="24" /></p>
+		                	</li>
+		                	<li><p>借款进度:</p><span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;"><!-- {$vo['has_borrow']/$vo['borrow_money']*100}% --></span></span></li>
+		                	<li>完成投标:<span>{$vo.has_borrow}</span></li>
+		                	<li>&nbsp;&nbsp; 
+		                	   <if condition="$vo.borrow_status eq 2"><a  href="{:U('Finance/invest?id='.$vo['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
+		                	    <elseif condition="$vo.borrow_status eq 0"/>
+		                	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
+		                	     <elseif condition="$vo.borrow_status eq 4"/>
+		                	    <img alt="" src="__PUBLIC__/Home/images/checkref.png">
+		                	    <elseif condition="$vo.borrow_status eq 6"/>
+		                	    <img alt="" src="__PUBLIC__/Home/images/returning.png">
+		                	     <elseif condition="$vo.borrow_status eq 7"/>
+		                	     <img alt="" src="__PUBLIC__/Home/images/full.png">
+		                	    </if>
+		                	</li>
+		                </ul>
+		               </volist>
+		                <a href="{:U('Finance/index')}" class="more">点击查看更多</a>
+		            </div>
+		            
+		            <!-- 网站行业动态 start -->
+		            <div class="cont_bot_r">
+		            	<dl>
+		                	<dt><span>网站公告</span> <a href="{:U('Article/lists?category='.get_category_name(2))}" class="more"></a></dt>
+		                	 <volist name="lists"  id="list"> <!-- class="current" -->
+		                         <dd><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a><span>{$list.create_time|date='Y-m-d',###}</span></dd>
+		                    </volist>
+		                </dl>
+		                
+		                <dl>
+		                	<dt><span>行业动态</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more"></a></dt>
+		                     <volist name="lists1" id="list1">
+		                        <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span></dd>
+		                    </volist>
+		                </dl>
+		
+		                <dl>
+		                    <dt><span>媒体新闻</span> <a href="{:U('Article/lists?category='.get_category_name(43))}" class="more"></a></dt>
+		                     <volist name="lists3" id="list3">
+		                        <dd> <a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span></dd>
+		                    </volist>
+		                    
+		                </dl>
+		          <!-- 网站行业动态 end -->
+		            </div>
+		        </div>
+		        <!--content_bottom end-->
+		    </div>
     </div>
 	<!--content end-->
     {:hook('indexAliPlay')}
