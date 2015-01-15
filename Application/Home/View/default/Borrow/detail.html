@@ -19,7 +19,7 @@
                 <dd>
                     <ul><volist name="list3" id="vb">
                         <li><h3>{$vb.borrow_name}</h3></li>
-                        <li><h3>（机构担保借款）</h3><if condition="$vb.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vb['id'])}"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
+                        <li><h3>（机构担保借款）</h3><if condition="$vb.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vb['id'])}" style="background: none;width: 92px;height: 23px;"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
                 	    <elseif condition="$vb.borrow_status eq 2"/>
                 	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
                 	     <elseif condition="$vb.borrow_status eq 4"/>
@@ -48,16 +48,16 @@
             </dl>
         	
             <!--项目详情-->
-           <div class="xmxq_out">
-               <div class="xmxq">
+            <div class="xmxq_out">
+                <!--<div class="xmxq">
                     <h3>项目详情</h3><volist name="list3" id="vb">
                     <p>借款人用户名：<span>{$vb.borrow_uid|get_borrow_username}</span></p>
                     <p>借款标类型：<span>其他个人经营性贷款</span></p>
                     <p>借款说明：<span>{$vb.borrow_info}</span></p>
                     <p>借款用途：<span>{$vb.borrow_use}</span></p>
                     <p>还款来源：<span>营业收入</span></p></volist> 
-                </div>
-                <div class="jyjl">
+                </div>-->
+                <!--<div class="jyjl">
                     <h4>工合交易信用记录</h4>
                     <p>发布借款笔数：<span>3</span>笔</p>
                     <p>累计逾期次数：<span>0</span></p>
@@ -65,7 +65,28 @@
                     <p>当前是否有逾期：<span>无</span></p>
                     <p>累计借入总额：<span>￥0.00</span></p>
                     <p>当前逾期待还金额：<span>0.00</span></p>
-                </div>
+                </div>-->
+                <table border="0" cellspacing="0" cellpadding="0" class="jyjl_table">
+                	<tr>
+                		<th>工合交易信用记录</th>
+                	</tr>
+                	<tr>
+                		<td>发布借款笔数</td>
+                		<td>累计逾期次数</td>
+                		<td>成功借入笔数</td>
+                		<td>当前是否有逾期</td>
+                		<td>累计借入总额</td>
+                		<td>当前逾期待还金额</td>
+                	</tr>
+                	<tr>
+                		<td>3</td>
+                		<td>0</td>
+                		<td>0</td>
+                		<td>无</td>
+                		<td>0.00</td>
+                		<td>0.00</td>
+                	</tr>
+                </table>
             </div>
         	
             <!--审核-->
