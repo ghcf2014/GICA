@@ -69,10 +69,15 @@
 			}
 		});
 		$("#updatePhone").click(function() {
+			var reg = /^(?:13\d|15\d|18\d)\d{5}(\d{3}|\*{3})$/;
 			var mobile = $("#mobile").val();
 			var checkcode = $("#checkcode").val();
 			if (mobile == "") {
 				alert("请填写变更的手机号码！");
+				return false;
+			}
+			if (!reg.test(mobile)) {
+				alert("请填写正确的手机号码！！");
 				return false;
 			}
 			if (checkcode == "") {

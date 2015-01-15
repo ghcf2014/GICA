@@ -131,13 +131,14 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
-		var_dump ( $m );
+		//var_dump ( $m );
 		$this->display ();
 	}
 	public function userphone_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "ucenter_member" );
+		
 		$data ['mobile'] = $_POST ['mobile'];
 		$condition ['uid'] = $uid;
 		
