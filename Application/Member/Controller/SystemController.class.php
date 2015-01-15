@@ -30,11 +30,17 @@ class SystemController extends MemberController {
 			$this->display ();
 		}
 	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *         2015-1-14会用提现
+	 */
 	public function withdrawdeposit_add() {
-		
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "z_member_withdraw" );
+		$dealpwd = $_POST ['dealpwd'];
 		$data ['withdraw_money'] = $_POST ['withdraw_money'];
 		$data ['withdraw_fee'] = 5;
 		$data ['borrow_status'] = 0;
@@ -43,79 +49,92 @@ class SystemController extends MemberController {
 		$data ['add_ip'] = get_client_ip ();
 		$condition ['uid'] = $uid;
 		
-		// 提现时扣除可用余额，未进行提现审核通过，冻结金额为提现金额
-		$money = M ( 'z_member_money' )->where ( $uid )->select ();
-		
-		// 保存当前数据对象
-		if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
-		                                                    // 成功提示add_time
-			$this->success ( L ( '提现已提交，我们会尽快审核。' ) );
+		// 查询当前登录用户信息
+		$userinfo = M ( 'ucenter_member' )->where ( 'id=' . $uid )->select ();
+		$paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
+		if ($dealpwd != $paypass) {
+			$this->error ( L ( '您输入的交易密码有误！' ) );
 		} else {
-			// 失败提示
-			$this->error ( L ( '提现失败' ) );
+			$moneyMember = M ( 'z_member_money' );
+			$memberMoney = $moneyMember->where ( 'uid=' . $uid )->select (); // 提现时扣除可用余额，未进行提现审核通过，冻结金额为提现金额
+			if ($memberMoney [0] ['account_money'] == null) {
+				$this->error ( L ( '您的账户余额不足无法提现！' ) );
+			}
+			var_dump ( $memberMoney );
+			$account_money = $memberMoney [0] ['account_money']; // 获取用户的可用余额
+			$money_freeze = $memberMoney [0] ['money_freeze']; // 获取冻结金额
+			$account_money = floatval ( $account_money ) - floatval ( $_POST ['withdraw_money'] ); // 提现时可用余额减少
+			$money_freeze = floatval ( $money_freeze ) + floatval ( $_POST ['withdraw_money'] ); // 提现时冻结金额增加
+			$datamoney ['account_money'] = $account_money;
+			$datamoney ['money_freeze'] = $money_freeze;
+			$count = $moneyMember->where ( "uid=" . $uid )->save ( $datamoney ); // 修改会员金额数据
+			if ($count) {
+				if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
+					$this->success ( L ( '提现已提交，我们会尽快审核。' ) ); // 成功提示add_time
+				} else {
+					// 失败提示
+					$this->error ( L ( '提现失败!' ) );
+				}
+			} else {
+				// 失败提示
+				$this->error ( L ( '提现失败!' ) );
+			}
 		}
 	}
-    public function usermailindex(){
-        $sendname=$_SESSION["gica_home"]["user_auth"]['username'];
-        $uid=is_login();
-        $msg=M('z_inner_msg');
-        //收件箱
-        $receive=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.uid = profile.uid and stats.tid=%s',$uid)->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time,stats.msg as msg, profile.nickname as postname')->order('stats.tid desc' )->select();
-        //发件箱
-        $post=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.uid=%s',$uid)->field('stats.id as id, stats.title as title,stats.send_time as send_time, profile.nickname as recvname')->order('stats.tid desc' )->select();
-        //系统消息
-        $sysdata=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.tid=1')->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time, profile.nickname as sysname')->order('stats.tid desc' )->select();
-
-        $this->assign('receive',$receive);
-        $this->assign('post',$post);
-        $this->assign('sysdata',$sysdata);
-        $this->assign('sendname',$sendname);
-        $this->assign('uid',$uid);
-        $this->display();
-    }
-
-
-
-    public function usermailindex_add(){
-        $username=$_POST['username'];
-        // $user = M('gica_member');
-        // $data=$user->where("nickname=",$username)->select();
-        $usermodel=new Model();
-        $sql="select * from gica_member where nickname='{$username}'";
-        $data=$usermodel->query($sql);
-        // dump($data);
-        $tid=$data[0]['uid'];
-        // dump($tid);
-        //查询是否存在收件人信息
-        if ($data!==null){
-            
-            $arr=array(
-                "uid"=>$_POST['uid'],
-                "tid"=>$tid,
-                "title"=>$_POST['title'],
-                "msg"=>$_POST['msg'],
-                );
-            $msg = M('z_inner_msg');
-            $result=$msg->add($arr);
-            //发送数据 
-            if ($result!==null){
-                $this->success('发送成功!');
-            }else {
-                $this->error('发送失败！');
-            } 
-        }else {
-            $this->error('对不起，收件人不存在！请重新确认再发送');
-        }
-        
-    }
-
-        public function usermailindex_del(){
-            dump($_GET);
-
-
-
-            $this->display();
-        }
+	public function usermailindex() {
+		$sendname = $_SESSION ["gica_home"] ["user_auth"] ['username'];
+		$uid = is_login ();
+		$msg = M ( 'z_inner_msg' );
+		// 收件箱
+		$receive = $msg->table ( 'gica_z_inner_msg stats,gica_member profile' )->where ( 'stats.uid = profile.uid and stats.tid=%s', $uid )->field ( 'stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time,stats.msg as msg, profile.nickname as postname' )->order ( 'stats.tid desc' )->select ();
+		// 发件箱
+		$post = $msg->table ( 'gica_z_inner_msg stats,gica_member profile' )->where ( 'stats.tid = profile.uid and stats.uid=%s', $uid )->field ( 'stats.id as id, stats.title as title,stats.send_time as send_time, profile.nickname as recvname' )->order ( 'stats.tid desc' )->select ();
+		// 系统消息
+		$sysdata = $msg->table ( 'gica_z_inner_msg stats,gica_member profile' )->where ( 'stats.tid = profile.uid and stats.tid=1' )->field ( 'stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time, profile.nickname as sysname' )->order ( 'stats.tid desc' )->select ();
+		
+		$this->assign ( 'receive', $receive );
+		$this->assign ( 'post', $post );
+		$this->assign ( 'sysdata', $sysdata );
+		$this->assign ( 'sendname', $sendname );
+		$this->assign ( 'uid', $uid );
+		$this->display ();
+	}
+	public function usermailindex_add() {
+		$username = $_POST ['username'];
+		// $user = M('gica_member');
+		// $data=$user->where("nickname=",$username)->select();
+		$usermodel = new Model ();
+		$sql = "select * from gica_member where nickname='{$username}'";
+		$data = $usermodel->query ( $sql );
+		// dump($data);
+		$tid = $data [0] ['uid'];
+		// dump($tid);
+		// 查询是否存在收件人信息
+		if ($data !== null) {
+			
+			$arr = array (
+					"uid" => $_POST ['uid'],
+					"tid" => $tid,
+					"title" => $_POST ['title'],
+					"msg" => $_POST ['msg'] 
+			);
+			$msg = M ( 'z_inner_msg' );
+			$result = $msg->add ( $arr );
+			// 发送数据
+			if ($result !== null) {
+				$this->success ( '发送成功!' );
+			} else {
+				$this->error ( '发送失败！' );
+			}
+		} else {
+			$this->error ( '对不起，收件人不存在！请重新确认再发送' );
+		}
+	}
+	public function usermailindex_del() {
+		dump ( $_GET );
+		
+		$this->display ();
+	}
 	
 	/**
 	 *
@@ -134,7 +153,7 @@ class SystemController extends MemberController {
 			$this->assign ( 'userinfo', $voList );
 			$this->display ();
 		}
-	}	
+	}
 	public function recharge_save() {
 		$uid = is_login ();
 		$condition ['uid'] = $uid;
@@ -159,35 +178,6 @@ class SystemController extends MemberController {
 	}
 	public function userbankInfo() {
 		$this->display ();
-	}
-	
-	/**
-	 * 设置银行卡
-	 */
-	public function userbankset() {
-		$uid = is_login ();
-		$m = M ( 'z_member_banks' );
-		$m_id ['uid'] = $uid;
-		$m = $m->where ( $m_id )->select ();
-		$this->assign ( 'list', $m );
-		
-		$this->display ();
-	}
-	public function userbankset_save() {
-		// 从表单中获取来的数据
-		$uid = is_login ();
-		$m = M ( "z_member_banks" );
-		$data ['bank_num'] = $_POST ['bankCard'];
-		$data ['bank_name'] = $_POST ["bankName"];
-		$data ['bank_address'] = $_POST ["subBankName"];
-		$condition ['uid'] = $uid;
-		// 保存当前数据对象
-		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
-			$this->success ( L ( '保存成功' ) );
-		} else {
-			// 失败提示
-			$this->error ( L ( '保存失败' ) );
-		}
 	}
 	public function userbasicdata() {
 		$this->display ();

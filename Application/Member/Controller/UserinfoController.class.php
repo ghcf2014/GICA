@@ -166,19 +166,35 @@ class UserinfoController extends MemberController {
 		$this->assign ( 'list', $m );
 		$this->display ();
 	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *         2015-1-15修改邮箱地址
+	 */
 	public function usermail_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "ucenter_member" );
 		$data ['email'] = $_POST ['email'];
-		$condition ['uid'] = $uid;
-		// 保存当前数据对象
-		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
-		                                                     // 成功提示
-			$this->success ( '保存成功！' );
+		
+		// 邮箱修改前需进行邮箱唯一性判断，如果存在相同邮箱不可进行修改！
+		$mList = $m->select ();
+		
+		// 如果有相同的邮箱就终止循环
+		for($i = 0; $i < count ( $mList ); $i ++) {
+			if ($mList [$i] ['email'] == $_POST ['email']) {
+				$this->error ( '该邮箱地址已存在！' );
+				break;
+			}
+		}
+		
+		$count = $m->where ( "id=" . $uid )->save ( $data );
+		if ($count) { // 保存成功
+			$this->success ( '修改成功！！' );
 		} else {
 			// 失败提示
-			$this->error ( '保存失败' );
+			$this->error ( '修改失败！' );
 		}
 	}
 	public function userpapersinfo() {

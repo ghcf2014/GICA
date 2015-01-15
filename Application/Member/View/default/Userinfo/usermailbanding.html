@@ -1,50 +1,103 @@
-<block name="body">
-<extend name="Base/common"/>
-<block name="body">
-		  
-	<!--content start-->
-	<div class="zh_cont_out">
-    	<div class="zh_cont">
-            <h2><a href="{:U('Index')}">我的账户</a></h2>	
-            	<include file="Public/left"/>
-                <div class="zh_cont_r">
-                	<div class="tab">
-                    <h3>当前位置>安全设置</h3>
-                    <p style="background:#d3cbc7;width:947px;height:1px;"></p>
-                    <ul class="aqset_tabH">
-                    	<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
-                    	<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
-                    	<li><a href="{:U('Userinfo/usermailbanding')}"class="cur">邮箱设置</a></li>
-                    	<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
-                    	<li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
-                    	<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
-                    </ul>
-                    <div class="aqset_tabC_out">
-                    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
-			            <button class="close fixed" style="margin-top: 4px;">&times;</button>
-			            <div class="alert-content">这是内容</div>
-       				</div>
-                    <volist name="list" id="vo"><form action="{:U('usermail_save')}" method="post" class="form-horizontal">
-                        <!--邮箱验证-->
-                        <div class="aqset_tabC">
-                            <p class="aqset_tabC_head">邮箱验证</p>
-                            <dl class="email">
-                                <dt>邮件地址：</dt>
-                                <dd><input type="text" name="email" class="email_txt" value="{$vo.email}"><input type="submit" class="email_btn ajax-post" value="修改邮箱" target-form="form-horizontal"></dd>
-                            </dl> 
-                        </div>
-                        <!--身份证验证-->
-                        <div class="aqset_tabC" style="display:none">
-                            <p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>	
-                        </div>
-                        
-                    	</form></volist>
-                    </div>
+<block name="body"> <extend name="Base/common" /> <block
+	name="body"> <!--content start-->
+<div class="zh_cont_out">
+	<div class="zh_cont">
+		<h2>
+			<a href="{:U('Index')}">我的账户</a>
+		</h2>
+		<include file="Public/left" />
+		<div class="zh_cont_r">
+			<div class="tab">
+				<h3>当前位置>安全设置</h3>
+				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
+				<ul class="aqset_tabH">
+					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
+					<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
+					<li><a href="{:U('Userinfo/usermailbanding')}" class="cur">邮箱设置</a></li>
+					<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
+					<li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
+					<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
+				</ul>
+				<div class="aqset_tabC_out">
+					<div id="top-alert" class="fixed alert alert-error"
+						style="display: none;">
+						<button class="close fixed" style="margin-top: 4px;">&times;</button>
+						<div class="alert-content">这是内容</div>
+					</div>
+					<volist name="list" id="vo"> <!--邮箱验证-->
+					<div class="aqset_tabC" id="oldemail">
+						<p class="aqset_tabC_head">邮箱验证</p>
+						<dl class="email">
+							<dt>已绑定邮件：</dt>
+							<dd>
+								{$vo.email}&nbsp;&nbsp;&nbsp;<input
+									onclick="javascript:void(0);" id="upEmail" type="button"
+									value="修改邮箱" />
+							</dd>
+						</dl>
+					</div>
+					</volist>
+					<form action="{:U('usermail_save')}" method="post" id="form"
+						class="form-horizontal">
+						<div class="aqset_tabC" id="newemail" style="display: none;">
+							<dl class="email">
+								<dt>新邮箱地址：</dt>
+								<dd>
+									<input type="text" name="email" value="" id="emaildata" /><span
+										id="msgSpan"></span>
+								</dd>
+							</dl>
+							<input type="button" value="修改" id="queryok" />
+							&nbsp;&nbsp;&nbsp;<input type="button" value="取消" id="cancel" />
+						</div>
+					</form>
+					<!--身份证验证-->
+					<div class="aqset_tabC" style="display: none">
+						<p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+					</div>
 
-            </div>
-        </div>
-    </div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
 	<!--content end-->
 	<script type="text/javascript" src="__PUBLIC__/Admin/js/common.js"></script>
-</block>
+	<script>
+		//因此显示邮箱
+		$("#upEmail").click(function() {
+			$("#oldemail").hide();
+			$("#newemail").show();
 
+		});
+
+		//隐藏修改邮箱地址
+		$("#cancel").click(function() {
+			$("#oldemail").show();
+			$("#newemail").hide();
+		});
+	</script>
+	<script>
+		//确认修改邮箱地址
+		$("#queryok")
+				.click(
+						function() {
+							var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+							var emaildata = $('#emaildata').val();
+							if (emaildata == "") {
+								$('#msgSpan').html(
+										"<font color='red'>变更邮箱地址不能为空！</font>");
+								return false;
+							} else {
+								if (!reg.test(emaildata)) {
+									$('#msgSpan')
+											.html(
+													"<font color='red'>请您输入正确的邮箱地址！</font>");
+									return false;
+								}
+							}
+							$("#form").submit();
+						});
+	</script>
+</block>
