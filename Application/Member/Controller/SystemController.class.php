@@ -93,24 +93,24 @@ class SystemController extends MemberController {
 		
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
-			//资金日志记录                                                                                              
-			$log =M('z_member_moneylog');
-            $logdata ['uid'] = $uid;
-		    $logdata ['type'] = 2;
-		    $logdata ['affect_money'] = $_POST ['withdraw_money'];
-		    $logdata ['info'] = '会员提现';
-		    $logdata ['add_time'] = time ();
-		    $log = $log->add($logdata);
-
-
+		                                                    // 资金日志记录
+			$log = M ( 'z_member_moneylog' );
+			$logdata ['uid'] = $uid;
+			$logdata ['type'] = 2;
+			$logdata ['affect_money'] = $_POST ['withdraw_money'];
+			$logdata ['info'] = '会员提现';
+			$logdata ['add_time'] = time ();
+			$log = $log->add ( $logdata );
+			
 			$this->success ( L ( '提现已提交，我们会尽快审核。' ) );
-
+			
 			$this->assign ( 'receive', $receive );
 			$this->assign ( 'post', $post );
 			$this->assign ( 'sysdata', $sysdata );
 			$this->assign ( 'sendname', $sendname );
 			$this->assign ( 'uid', $uid );
 			$this->display ();
+		}
 	}
 	public function usermailindex_add() {
 		$username = $_POST ['username'];
@@ -141,7 +141,7 @@ class SystemController extends MemberController {
 			$this->error ( '对不起，收件人不存在！请重新确认再发送' );
 		}
 	}
-	public function usermailindex_del() {		
+	public function usermailindex_del() {
 		$this->display ();
 	}
 	
@@ -177,21 +177,21 @@ class SystemController extends MemberController {
 		$data ['uid'] = $uid;
 		$data ['money'] = $_POST ['account_money'];
 		// 保存当前数据对象
-		if ($m = $m->where ( $condition )->add( $data ) && $m1 = $m1->where ( $condition )->save ( $data1 )) { // 保存成功
-		    
-		    //资金日志记录                                                                                              
-			$log =M('z_member_moneylog');
-            $logdata ['uid'] = $uid;
-		    $logdata ['type'] = 1;
-		    $logdata ['affect_money'] = $_POST ['account_money'];
-		    $logdata ['info'] = '会员充值';
-		    $logdata ['add_time'] = time ();
-		    $log = $log->add($logdata);
-
-			$this->success ('充值成功!');
+		if ($m = $m->where ( $condition )->add ( $data ) && $m1 = $m1->where ( $condition )->save ( $data1 )) { // 保存成功
+		                                                                                                        
+			// 资金日志记录
+			$log = M ( 'z_member_moneylog' );
+			$logdata ['uid'] = $uid;
+			$logdata ['type'] = 1;
+			$logdata ['affect_money'] = $_POST ['account_money'];
+			$logdata ['info'] = '会员充值';
+			$logdata ['add_time'] = time ();
+			$log = $log->add ( $logdata );
+			
+			$this->success ( '充值成功!' );
 		} else {
 			// 失败提示
-			$this->error ('充值失败!');
+			$this->error ( '充值失败!' );
 		}
 	}
 	public function userbankInfo() {
