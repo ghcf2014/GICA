@@ -9,6 +9,7 @@ use OT\DataDictionary;
  * 主要获取首页聚合数据
  */
 class IndexController extends HomeController {
+
 	
 	// 系统首页
 	public function index() {

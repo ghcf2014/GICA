@@ -244,6 +244,8 @@ label.textarea ~ .check-tips {
 ------------------------------------------ */
 .data-table {
 	margin: 10px 0;
+	border: 1px solid #C5C5C5;
+
 }
 .data-table table {
     width: 100%;
@@ -260,11 +262,13 @@ label.textarea ~ .check-tips {
     border-image: none;
     border-collapse: separate;
     border-radius: 4px;
+
 }
 .data-table caption {
     height: 30px;
     line-height: 30px;
     font-weight: 700;
+
 }
 .data-table thead th,
 .data-table tbody td {
@@ -275,8 +279,10 @@ label.textarea ~ .check-tips {
 }
 .data-table thead th {
     text-align: left;
-    color:#fff;
-    background-color: #353535;
+    color:#414DA7;
+    border-bottom: 1px solid #C5C5C5;
+text-align: left;
+cursor: default;
 }
 .data-table tbody tr {
 	background-color: #fefefe;
@@ -300,32 +306,36 @@ label.textarea ~ .check-tips {
     padding: 6px 16px;
     font-size: 14px;
     line-height: 18px;
-    color: #edffd1;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     border: 0 none;
-	background-color: #4bbd00;
 	*outline: 0 none;
+	color: #333;
+    text-decoration: none;
+    background-color: #E6E6E6;
+    
+    transition: background-position 0.1s linear 0s;
+    border-radius: 3px;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px 1px 2px rgba(0, 0, 0, 0.05);
+    background-image: -moz-linear-gradient(center top , #FFF, #E4E4E4);
+	border-width: 1px;
+	border-style: solid;
+	border-color: #CCC #CCC #B3B3B3;
 }
 .btn:hover {
-    color: #ffffff;
     text-decoration: none;
     background-color: #4cdb00;
-    border-bottom: 0 none;
 }
 .submit-btn,
 .btn-return {
     padding: 10px 50px;
-    color: #fff;
     font-weight: bold;
-    border-color: transparent;
 }
 .submit-btn {
     background-color: #CC3900;
 }
 .submit-btn:hover {
-    color: #fff;
     background-color: #ff2610;
 }
 .btn[disabled],
@@ -436,7 +446,7 @@ label.textarea ~ .check-tips {
 }
 .tab-nav .current a,
 .tab-nav .current a:hover {
-	border-color: #34b4e0 #e0e0e0 #f6f6f6;
+	border-color: #414DA7 #e0e0e0 #f6f6f6;
 }
 .tab-content .tab-pane {
 	display: none;
@@ -488,10 +498,10 @@ label.textarea ~ .check-tips {
 .page a:hover
  {
     text-decoration: none;
-    background-color: #387C0B;
+    background-color: #414DA7;
 }
 .page .current {
-	border-top: 1px solid #387C0B;
+	border-top: 1px solid #414DA7;
 }
 .page .next,
 .page .prev {

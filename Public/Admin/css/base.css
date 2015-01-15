@@ -27,12 +27,12 @@ img {
 	border:0 none;
 }
 a {
-	color: #2d7200;
+	color: #414DA7;
 	text-decoration:none;
 }
 a:hover{
-	color: #4bbd00;
-	border-bottom: 1px solid;
+	color: #9045D9;
+	/*border-bottom: 1px solid;*/
 }
 input,button,textarea,select,option {
 	font-family:inherit;

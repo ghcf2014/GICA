@@ -40,19 +40,14 @@
 		<tr>
             <td><input class="ids" type="checkbox" name="id[]" value="{$vo.uid}" /></td>
 			<td>{$vo.uid} </td>
-			<td>{$vo.uid}</td>
+			<td>{$vo.uid|get_uname}</td>
 			<td>{$vo.money}</td>
 			<td>{$vo.fee}</td>
 			<td><span>{$vo.add_time|time_format}</span></td>
 			<td><span>{:long2ip($vo['add_ip'])}</span></td>
 			<td>{$vo.way}</td>
-			<td><eq name="vo.status" value="1">
-				<a href="{:U('User/changeStatus?method=forbidUser&id='.$vo['uid'])}" class="ajax-get">禁用</a>
-				<else/>
-				<a href="{:U('User/changeStatus?method=resumeUser&id='.$vo['uid'])}" class="ajax-get">启用</a>
-				</eq>
-				<a href="{:U('AuthManager/group?uid='.$vo['uid'])}" class="authorize">授权</a>
-                <a href="{:U('User/changeStatus?method=deleteUser&id='.$vo['uid'])}" class="confirm ajax-get">删除</a>
+			<td>
+				<a href="#" class="authorize">详情</a>
                 </td>
 		</tr>
 		</volist>

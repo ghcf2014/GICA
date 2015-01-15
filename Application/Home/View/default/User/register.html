@@ -209,32 +209,8 @@
                 }
             });
 		});
-	});
-	$(function() {
-		var verifyimg = $(".verifyimg").attr("src");
-		$(".reloadverify").click(
-				function() {
-					if (verifyimg.indexOf('?') > 0) {
-						$(".verifyimg").attr("src",
-								verifyimg + '&random=' + Math.random());
-					} else {
-						$(".verifyimg").attr(
-								"src",
-								verifyimg.replace(/\?.*$/, '') + '?'
-										+ Math.random());
-					}
-				});
-	});
-</script> 
+	</script>
 <script>
-	$(function() {
-		$(document).keydown(function(event) {
-			if (event.keyCode == 13) {
-				$("#registerSub").click();
-			}
-		});
-	});
-
 	$("#registerSub").click(function() {
 		var phone = $("#phone").val();
 		var email = $("#email").val();

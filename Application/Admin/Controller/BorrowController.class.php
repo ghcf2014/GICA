@@ -246,7 +246,7 @@ class BorrowController extends AdminController {
     }
     public function overdue(){
     	$nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
+        $map['borrow_status']  =   array('egt',8);
         if(is_numeric($nickname)){
             $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
         }else{
@@ -261,7 +261,7 @@ class BorrowController extends AdminController {
     }
     public function overduemember(){
     	$nickname       =   I('nickname');
-        $map['status']  =   array('egt',0);
+        $map['borrow_status']  =   array('egt',8);
         if(is_numeric($nickname)){
             $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
         }else{
