@@ -8,7 +8,7 @@
 		<include file="Public/left" />
 		<div class="zh_cont_r">
 			<div class="tab">
-				<h3>当前位置>安全设置</h3>
+				<h3>当前位置 > <span style="color: #D41010;">安全设置</span></h3>
 				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
 				<ul class="aqset_tabH">
 					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
@@ -26,13 +26,11 @@
 					</div>
 					<volist name="list" id="vo"> <!--邮箱验证-->
 					<div class="aqset_tabC" id="oldemail">
-						<p class="aqset_tabC_head">邮箱验证</p>
+						<!--<p class="aqset_tabC_head">邮箱验证</p>-->
 						<dl class="email">
 							<dt>已绑定邮件：</dt>
 							<dd>
-								{$vo.email}&nbsp;&nbsp;&nbsp;<input
-									onclick="javascript:void(0);" id="upEmail" type="button"
-									value="修改邮箱" />
+								<div style="width: 190px;height: 44px;line-height: 44px;display: inline-block;">{$vo.email}&nbsp;&nbsp;&nbsp;</div><input onclick="javascript:void(0);" id="upEmail" type="button" value="修改邮箱" style="width: 100px;height: 30px;background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat;color:#fff;"/>
 							</dd>
 						</dl>
 					</div>
@@ -43,12 +41,12 @@
 							<dl class="email">
 								<dt>新邮箱地址：</dt>
 								<dd>
-									<input type="text" name="email" value="" id="emaildata" /><span
+									<input type="text" name="email" value="" id="emaildata" style="margin-top: 7px;"/><span
 										id="msgSpan"></span>
 								</dd>
 							</dl>
-							<input type="button" value="修改" id="queryok" />
-							&nbsp;&nbsp;&nbsp;<input type="button" value="取消" id="cancel" />
+							<input type="button" value="修改" id="queryok" style="width: 60px;height: 20px;background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat;color:#fff;margin-left: 320px;margin-top: 20px;"/>
+							&nbsp;&nbsp;&nbsp;<input type="button" value="取消" id="cancel" style="width: 60px;height: 20px;background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat;color:#fff;margin-top: 20px;" />
 						</div>
 					</form>
 					<!--身份证验证-->
