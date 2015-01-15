@@ -26,8 +26,8 @@
 
         <!-- 主导航 -->
         <ul class="main-nav">
-            <volist name="__MENU__.main" id="menu">
-                <li class="{$menu.class|default=''}"><div class="nav-inner"><a class="nav-inner" href="{$menu.url|U}">{$menu.title}</a></div></li>
+            <volist name="__MENU__.main" id="menu" key="k" >
+                <li class="{$menu.class|default=''}_{$k}"><div class="nav-inner_{$k}"><a class="nav-inner" href="{$menu.url|U}">{$menu.title}</a></div></li>
             </volist>
         </ul>
         <!-- /主导航 -->

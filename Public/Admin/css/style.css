@@ -78,14 +78,111 @@ background: url("../images/img/tab-140-120.gif") no-repeat;
 .main-nav .current{
     
 }
-.nav-inner{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -594px -476px transparent;
+/*.nav-inner{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -294px -476px transparent;
+}*/
+.nav-inner_1{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll 30px -476px transparent;
 }
-.main-nav .current a {
-    color: #43478E;
-    background-color: #E8E9EE;
-
+.nav-inner_2{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -476px transparent;
+}
+.nav-inner_3{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -476px transparent;
+}
+.nav-inner_4{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -476px transparent;
+}
+.nav-inner_5{
     
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -476px transparent;
+}
+.nav-inner_6{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll 24px -324px transparent;
+}
+.nav-inner_7{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -324px transparent;
+}
+.nav-inner_8{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -324px transparent;
+}
+.nav-inner_9{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -324px transparent;
+}
+.nav-inner_10{
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -324px transparent;
+}
+
+.main-nav .current_1 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE;
+}
+.main-nav .current_2 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE; 
+}
+.main-nav .current_3 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE;
+}
+.main-nav .current_4 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE;  
+}
+.main-nav .current_5 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE; 
+}
+.main-nav .current_6 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE; 
+}
+.main-nav .current_7 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE;
+}
+.main-nav .current_8 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE; 
+}
+.main-nav .current_9 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE;  
+}
+.main-nav .current_10 div{
+    border-radius: 2px 2px 0px 0px;
+    background-color: #E8E9EE; 
+}
+.main-nav .current_1 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll 30px -426px transparent;
+}.main-nav .current_2 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -426px transparent;
+}.main-nav .current_3 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -426px transparent;
+}.main-nav .current_4 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -426px transparent;
+}.main-nav .current_5 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -426px transparent;
+}.main-nav .current_6 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll 24px -274px transparent;
+}.main-nav .current_7 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -274px transparent;
+}.main-nav .current_8 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -274px transparent;
+}.main-nav .current_9 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -274px transparent;
+}.main-nav .current_10 div a{
+    color: #43478E;
+    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -274px transparent;
 }
 
 /* 用户 */
