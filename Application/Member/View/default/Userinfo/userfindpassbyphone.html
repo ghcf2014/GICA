@@ -1,52 +1,84 @@
-<block name="body">
-<extend name="Base/common"/>
-<block name="body">
-		<!--content start-->
-	<div class="zh_cont_out">
-    	<div class="zh_cont">
-            <h2>我的账户</h2>	
-            
-            <!--zh_cont_l-->
-              <include file="Public/left"/>
-            <!--zh_cont_r-->
-            <div class="zh_cont_r">
-            
-            	<!--安全设置-->
-           	  	<div class="tab">
-                    <h3>当前位置>安全设置</h3>
-                    <p style="background:#d3cbc7;width:947px;height:1px;"></p>
-                    <ul class="aqset_tabH">
-                    	<li><a href="{:U('Home/User/profile')}" >登录密码</a></li>
-                        <li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
-                        <li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
-                        <li><a href="{:U('Userinfo/userfindpassbyphone')}" class="cur">手机设置</a></li>
-                        <li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
-                        <li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
-                    </ul>
-                    <div class="aqset_tabC_out">
-                    <volist name="list" id="vo"><form action="{:U('userphone_save')}" method="post" class="form-horizontal">
-                    	<!--手机验证-->
-                        <div class="aqset_tabC">
-                            <!-- <dl class="phone">
+<block name="body"> <extend name="Base/common" /> <block
+	name="body"> <!--content start-->
+<div class="zh_cont_out">
+	<div class="zh_cont">
+		<h2>我的账户</h2>
+
+		<!--zh_cont_l-->
+		<include file="Public/left" />
+		<!--zh_cont_r-->
+		<div class="zh_cont_r">
+
+			<!--安全设置-->
+			<div class="tab">
+				<h3>当前位置>安全设置</h3>
+				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
+				<ul class="aqset_tabH">
+					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
+					<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
+					<li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
+					<li><a href="{:U('Userinfo/userfindpassbyphone')}" class="cur">手机设置</a></li>
+					<li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
+					<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
+				</ul>
+				<div class="aqset_tabC_out">
+					<form action="{:U('userphone_save')}" method="post"
+						class="form-horizontal" id="form">
+						<!--手机验证-->
+						<volist name="list" id="vo">
+						<div class="aqset_tabC">
+							<!-- <dl class="phone">
                                 <dt>手机绑定：</dt>
                                 <dd><input type="text" class="phone_txt"></dd>
                             </dl> -->
-                            <dl class="phone">
-                                <dt>手机绑定：</dt>
-                                <dd><input type="text" class="phone_txt" name="mobile" value="{$vo.mobile}"><input type="button" class="phone_btn" value="验证码发送"></dd>
-                            </dl>
-                            <dl class="phone">
-                                <dt>手机验证码：</dt>
-                                <dd><input type="text" class="phone_txt" style="width:150px;height:36px;"><span>输入您的手机验证码 </span></dd>
-                            </dl>
-                            <input type="submit" class="yhk_btn ajax-post" value="提交" target-form="form-horizontal">
-                        </div>           
-                    	</form></volist>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<!--content end-->
-    <script type="text/javascript" src="__PUBLIC__/Admin/js/common.js"></script>
-</block>
+
+							<dl class="phone">
+								<dt>原手机号码：{$vo.mobile}</dt>
+								<dt>手机变更：</dt>
+								<dd>
+									<input type="text" class="phone_txt" name="mobile" id="mobile"
+										value=""><input type="button" class="phone_btn"
+										id="phone_btn" value="验证码发送">
+								</dd>
+							</dl>
+							<dl class="phone">
+								<dt>手机验证码：</dt>
+								<dd>
+									<input type="text" class="phone_txt"
+										style="width: 150px; height: 36px;" id="checkcode"><span>输入您的手机验证码
+									</span>
+								</dd>
+							</dl>
+							<input type="button" class="yhk_btn ajax-post" value="提交"
+								id="updatePhone" target-form="form-horizontal">
+						</div>
+						</volist>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--content end--> <script type="text/javascript"
+	src="__PUBLIC__/Admin/js/common.js"></script> <script>
+		$("#phone_btn").click(function() {
+			var mobile = $("#mobile").val();
+			if (mobile == "") {
+				alert("请填写变更的手机号码！");
+				return false;
+			}
+		});
+		$("#updatePhone").click(function() {
+			var mobile = $("#mobile").val();
+			var checkcode = $("#checkcode").val();
+			if (mobile == "") {
+				alert("请填写变更的手机号码！");
+				return false;
+			}
+			if (checkcode == "") {
+				alert("请填写手机验证码！");
+				return false;
+			}
+			$("#form").submit();
+		});
+	</script> </block>

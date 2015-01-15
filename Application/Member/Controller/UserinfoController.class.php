@@ -131,7 +131,7 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
-		
+		var_dump ( $m );
 		$this->display ();
 	}
 	public function userphone_save() {
@@ -140,6 +140,19 @@ class UserinfoController extends MemberController {
 		$m = M ( "ucenter_member" );
 		$data ['mobile'] = $_POST ['mobile'];
 		$condition ['uid'] = $uid;
+		
+		if ($_POST ['mobile'] == null) {
+			$this->error ( '您未输入变更的手机号码！' );
+		}
+		
+		$mList = $m->select ();
+		// 如果有相同的邮箱就终止循环
+		for($i = 0; $i < count ( $mList ); $i ++) {
+			if ($mList [$i] ['mobile'] == $_POST ['mobile']) {
+				$this->error ( '该手机号码已经存在！' );
+				break;
+			}
+		}
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
 		                                                     // 成功提示
