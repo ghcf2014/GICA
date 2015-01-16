@@ -313,5 +313,67 @@ class OtherController extends AdminController {
         $this->meta_title = '其他信息';
         $this->display();
     }
+    public function img(){
+    	$img = M('z_ad');//用户头像
+        $condition['ad_type'] =1;
+        $img=$img->where($condition)->select();
+        $this->assign('img', $img);
+        $this->display();
+    }
+    private function AddFile($fileinfo,$depict){
+          $i=0;
+       // var_dump($fileinfo);
+        // $uid=is_login(); 
+        $dateline=date("Y-m-d H:m:s");
+        $file=M('z_ad');
+        // $condition['uid'] =$uid;
+
+        foreach($fileinfo as $vo)
+        {
+            $data['content']=$vo['savepath'].$vo['savename'];
+            $data['add_time']=time();
+            $data['ad_type']=1;
+            // $data['deal_time']=$dateline;
+                if($file->add($data)){
+                    //
+                    $i++;
+                }else{
+                      return false;
+                }
+        }
+
+        return true;
+    }
+     //上传
+    public function upload(){
+        $config=array(
+            // 'maxSize'=>100*1024*1024*1024,
+            // 'mimes'=>array(),
+            // 'rootPath'=>'./Uploads/',
+            // 'ext'=>array(),
+            // 'autoSub'=>true,
+        );
+        $upload = new \Think\Upload($config);// 实例化上传类
+        $depict=$_POST['filename'];
+
+        $info =$upload->upload(); // 上传文件
+        if(!$info){// 上传错误提示错误信息
+            $this->error($upload->getError());
+        }
+        else{// 上传成功
+
+           // var_dump($info);
+            if($this->AddFile($info,$depict))//写入数据库
+            {
+                $this->success('上传成功！');
+            }
+            else{
+               $this->error('写入数据库失败');
+            }
+        }
+    }
+    public function links_add(){
+    	$this->display();
+    }
 
 }

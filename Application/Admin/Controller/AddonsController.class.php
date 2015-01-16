@@ -1,15 +1,15 @@
 <?php
-
 namespace Admin\Controller;
 
 /**
  * 扩展后台管理页面
+ * @author yangweijie <yangweijiester@gmail.com>
  */
 class AddonsController extends AdminController {
 
     public function _initialize(){
         $this->assign('_extra_menu',array(
-            '管理列表'=> D('Addons')->getAdminList(),
+            '已装插件后台'=> D('Addons')->getAdminList(),
         ));
         parent::_initialize();
     }
