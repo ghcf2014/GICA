@@ -1157,7 +1157,8 @@ $mail = new PHPMailer(); //实例化
  echo "邮箱出现错误: " . $mail->ErrorInfo;
  exit();
  } else {
-     
+     $text="消息发送成功。O(∩_∩)O";
+     return $text;
      echo "消息发送成功。O(∩_∩)O";
  }
 }
