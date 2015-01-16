@@ -57,7 +57,7 @@ class UserController extends HomeController {
 					$friend = M ( 'z_member_friend' );
 					$time = time ();
 					$sql = "insert into gica_z_member_friend(uid,friend_id,apply_status,add_time) values({$uid},{$userinfo[0]['id']},'1',{$time})";
-					var_dump ( $sql );
+					//var_dump ( $sql );
 					$friend->query ( $sql );
 				}  
 				
