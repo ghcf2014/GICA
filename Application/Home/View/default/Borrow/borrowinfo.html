@@ -7,7 +7,7 @@
             <h2><a href="{:U('Index')}">我的账户</a></h2> 
             <include file="Public/borrowleft"/>
             <div class="zh_cont_r">
-              <form action="{:U('circulation_save?id='.$id)}" method="post">
+              <form action="{:U('circulation_save?id='.$id)}" method="post" enctype="multipart/form-data">
                   <div class="r-main">
               <!-- <div class="til01"> -->
               <div class="til01">
@@ -63,12 +63,7 @@
                     <span class="fred" id="t_collect_day"></span>
                     </td>
                   </tr>
-                  <tr>
-                    <td align="right">&nbsp;</td>
-                    <td class="tishi">（推荐使用
-                    您的生活近照，或其他与借款用途相关的图片，<br />
-                      有助增加借款成功几率。严禁使用他人照片） </td>
-                  </tr>
+                  
                   <tr>
                     <td align="right"><span class="fred">*</span>最低投标金额：</td>
                     <td><input name="borrow_min" type="text" class="inp280" maxlength="12" id="s_borrow_min" value=""/>元
@@ -117,44 +112,32 @@
                     </td>
                   </tr>
                   <tr>
+                    <td align="right">&nbsp;</td>
+                    <td class="tishi">（<b>温馨提示</b>：与借款用途相关的图片，
+                      有助于增加借款成功几率，严禁上传虚假信息图片！） </td>
+                  </tr>
+                  <tr>
                     <td align="right"><span class="fred">*</span>上传必要资料：</td>
                     <td>
-                      <select name="" id="pid">
+                      <select name="bid" id="pid">
                         <option value="0">--请选择--</option>
                         <option value="1">房产</option>
                         <option value="2">担保</option>
                         <option value="3">抵押</option>
                         <option value="4">驾照</option>
                       </select>
-                      
-                    </td>
-                    <td></td>
-                    <td>
-                      
-                      <div id="div1" style="position: absolute;z-index: 10;top: 200px;left: 40%;display: none;">
-								  			<div id="div1_in" style="width: 140px;height: 180px;background: rgba(0,0,0,0.8) ;border: 2px solid #000000;padding: 20px;position: relative;">
-												<input type="file" value="" name="file_upload" id="file_upload" style="width: 100px;height:auto;margin:50px 0 0 30px;"/>				
-												<input type="submit" value="上传"  id="scBtn" style="width: 48px;height: 20px;margin:20px 0 0 40px;background: url(__PUBLIC__/Home/images/button.gif) no-repeat;"/>
-												<span id="nscBtn" style="background: url(__PUBLIC__/Home/images/closeX.png) no-repeat;width: 40px;height: 40px;position: absolute;top: 0;right: 0;cursor: pointer;"></span>
-											</div>
-								  		</div>
-                    
-                  </td>                 
+                      <input type="file" id="nscBtn" name="img"  style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;" />
+                      <input type="hidden" name="typeid" value="{$type}">
+                    </td>          
                   </tr>
                   
                   <tr>
                     <td align="right"></td>
                     <td>
                       <div style="width: auto;height: auto;margin-bottom: 10px;display: none;" class="yscfile">
-                        <ul class="fbdk_ziliao_tit" >
-                          <li>编号</li>
-                          <li class="slt">缩略图</li>
-                          <li class="fbdk_ziliao_li_last">操作</li>
-                        </ul>
                         <ul class="fbdk_ziliao_con">
-                          <li>1</li>
-                          <li class="slt"><img src="" width="100" height="100"/></li>
-                          <li class="fbdk_ziliao_li_last"><a href="javascript:;">删除</a></li>
+                          <li>示意图：</li>
+                          <li class="slt"><img src="./Uploads/Image/fangchan.jpg" width="200" height="200"/></li>
                         </ul>
                       </div>
                     </td>
@@ -245,44 +228,30 @@ $(function(){
   $(function(){
     
     $('#pid').change(function(event) {
-            		var txt=$(this).val();
-            		if(txt!=0){
-//	            		if(txt==1)
-//	            		{
-//	                		//alert('你选择了第一个');
-//	            		}
-//	            		else if(txt==2)
-//	            		{
-//	                		//alert('你选择了第二个');
-//	            		}
-//	            		else if(txt==3)
-//	            		{
-//	                		//alert('你选择了第三个');
-//	            		}
-//	            		else
-//	            		{
-//	                		//alert('你选择了第四个');
-//	            		}
-						$('#div1').show();
-						$('#nscBtn').click(function(){
-        					$('#div1').hide();
-        				});
-        				$('#scBtn').click(function(){
-        					$('#div1').hide();
-        					$('.yscfile').show();
-        				});
-            		}
-        		});
+                var txt=$(this).val();
+                if(txt!=0){
+                 if(txt==1)
+                 {
+                     alert('你选择了房产证');
+                 }
+                 else if(txt==2)
+                 {
+                     alert('你选择了担保凭证');
+                 }
+                 else if(txt==3)
+                 {
+                     alert('你选择了抵押凭证');
+                 }
+                 else
+                 {
+                     alert('你选择了驾照');
+                 }
+            
+                 $('.yscfile').show();
+                }
+            });
     
     
   })
 </script>
-
-
-
-
-
-
-
-
 </block>

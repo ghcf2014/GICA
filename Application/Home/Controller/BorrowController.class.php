@@ -25,7 +25,7 @@ class BorrowController extends HomeController {
         $condition['uid'] =$uid;
         $condition['type'] =2;
         $m=$m->where($condition)->select();
-        // var_dump($m);
+
 
         $this->assign('list',$m);
 		$this->display ();
@@ -33,25 +33,28 @@ class BorrowController extends HomeController {
 	public function circulation($id=0,$uid=0) {
 		is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
 		$uid = is_login();
+		$type=$_GET['type'];
 		$status = M ('z_members_status');
 		$result=$status->where("uid=%s",$uid)->select();
 		if ($result!==null) {
 			$this->assign ( 'id', $id);
-			$this->redirect("Home/Borrow/papersinfo");
+			$this->redirect("Home/Borrow/borrowinfo?type={$type}");
 		} else {			
-			$this->error('对不起，您还没进行基本认证！', U('Home/Borrow/userinfo'));
+			$this->error('对不起，您还没进行基本认证！', U('Home/Borrow/userinfo?type={$type}'));
 		}
 		$this->display();     
 	}
 	//发布贷款
 
 	public function borrowinfo(){
-
+		$type=$_GET['type'];
+		$this->assign('type',$type);
 		$this->display();
 	}
 	//基本信息
 	public function userinfo() {
 		$uid = is_login ();
+		$type=$_GET['type'];
 		$chk = M ( "z_member_info" );
 		$condition['uid'] =$uid;
         $m=$chk->where($condition)->select();
@@ -64,7 +67,6 @@ class BorrowController extends HomeController {
         }
 		$this->display ();
 	}
-
 	//重新确认基本认证
 	public function add() {
 		// 从表单中获取来的数据
@@ -116,6 +118,8 @@ class BorrowController extends HomeController {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "z_borrow_info" );
+		$files=($_FILES['img']);
+		$depict=$_POST;
 		$data ['borrow_type'] = $id;
 		$data ['borrow_name'] = $_POST ['borrow_name'];
 		$data ['borrow_money'] = $_POST ["borrow_money"];
@@ -134,14 +138,19 @@ class BorrowController extends HomeController {
 		$data ['deadline'] = strtotime ( '+'.intval ( $_POST ["collect_day"] ).' year' );
 		$data ['add_ip'] = get_client_ip ();
 		$condition ['uid'] = $uid;
-		// 保存当前数据对象
-		if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
-		                                                    // 成功提示add_time
-			$this->success ( L ( '发布审核已提交' ),U('Home/Borrow/index') );
-		} else {
-			// 失败提示
-			$this->error ( L ( '发布失败' ) );
+		if ($this->upload($files,$depict)){
+			// 保存当前数据对象
+			if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
+			                                                    // 成功提示add_time
+				$this->success ( L ( '发布审核已提交' ),U('Home/Borrow/index') );
+			} else {
+				// 失败提示
+				$this->error ( L ( '发布失败' ) );
+			}
+		}else {
+			$this->error('写入数据库失败！');
 		}
+		
 	}
 	/**
 	 * 新增页面初始化
@@ -175,9 +184,8 @@ class BorrowController extends HomeController {
 		$this->display ();
 	}
 	// 上传
-	private function AddFile($fileinfo,$depict){
+	private function AddFile($fileinfo,$depict,$type){
           $i=0;
-       // var_dump($fileinfo);
         $uid=is_login(); 
         $dateline=date("Y-m-d H:m:s");
         $file=M('z_member_data_info');
@@ -188,8 +196,11 @@ class BorrowController extends HomeController {
             $data['data_url']=$vo['savepath'].$vo['savename'];
             $data['uid']=$uid;
             $data['add_time']=time();
-            $data['type']=2;
-            // $data['deal_time']=$dateline;
+            $data['type']=$type;
+            
+
+
+
 	            if($file->where($condition)->data($data)->add($data)){
 	                //
 	                $i++;
@@ -201,7 +212,7 @@ class BorrowController extends HomeController {
         return true;
     }
      //上传
-    public function upload(){
+    public function upload($files,$depict){
         $config=array(
             'maxSize'=>100*1024*1024*1024,
             'mimes'=>array(),
@@ -211,19 +222,19 @@ class BorrowController extends HomeController {
         );
         $upload = new \Think\Upload($config);// 实例化上传类
         $depict=$_POST['depict'];
+
        $info   =   $upload->upload(); // 上传文件
         if(!$info){// 上传错误提示错误信息
             $this->error($upload->getError());
         }
         else{// 上传成功
 
-          //  var_dump($info);
-            if($this->AddFile($info,$depict))//写入数据库
+            if($this->AddFile($info,$files,$depict))//写入数据库
             {
-                $this->success('上传成功！');
+                return true;
             }
             else{
-               $this->error('写入数据库失败');
+              	return false;
             }
         }
     }
