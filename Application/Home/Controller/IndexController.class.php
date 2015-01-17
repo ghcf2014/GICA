@@ -13,6 +13,13 @@ class IndexController extends HomeController {
 	
 	// 系统首页
 	public function index() {
+		//判断登陆赋值
+        if(is_login()){
+           $login=1;
+        } else {
+           $login=0;
+        }
+
 		$category = D ( 'Category' )->getTree ();
 		$map = array (
 				'category_id' => 2 
@@ -21,7 +28,7 @@ class IndexController extends HomeController {
 				'category_id' => 40 
 		);
 		$map2 = array (
-				'category_id' => 43 
+				'category_id' => 43
 		);
 		$lists = D ( 'Document' )->where ( $map )->limit ( 6 )->select ();
 		$lists1 = D ( 'Document' )->where ( $map1 )->lists ( null );
@@ -54,6 +61,7 @@ class IndexController extends HomeController {
 			$jindu = 0;
 		} else {
 		}
+		$this->assign('login',$login);
 		$this->assign ( 'jindu', $jindu ); // 栏目
 		$this->assign ( 'category', $category ); // 栏目
 		$this->assign ( 'lists', $lists ); // 列表
