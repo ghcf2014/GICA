@@ -14,7 +14,7 @@ class UserApi extends Api {
 	}
 	/**
 	 * 注册一个新用户
-	 *
+	 * 
 	 * @param string $username
 	 *        	用户名
 	 * @param string $password
@@ -25,13 +25,13 @@ class UserApi extends Api {
 	 *        	用户手机号码
 	 * @return integer 注册成功-用户信息，注册失败-错误编号
 	 */
-	public function register($username, $password, $email, $mobile = '', $reffer = '') {
-		return $this->model->register ( $username, $password, $email, $mobile, $reffer );
+	public function register($username, $password, $email, $mobile = '') {
+		return $this->model->register ( $username, $password, $email, $mobile );
 	}
 	
 	/**
 	 * 用户登录认证
-	 *
+	 * 
 	 * @param string $username
 	 *        	用户名
 	 * @param string $password
@@ -46,13 +46,10 @@ class UserApi extends Api {
 	
 	/**
 	 * 用户登录认证 ，通过手机号码进行登录
-	 *
-	 * @param unknown $phone
-	 *        	手机号码
-	 * @param unknown $password
-	 *        	用户名称
-	 * @param number $type
-	 *        	用户名类型 （1-用户名，2-邮箱，3-手机，4-UID）
+	 * 
+	 * @param unknown $phone   手机号码       	
+	 * @param unknown $password     用户名称   	
+	 * @param number $type     	用户名类型 （1-用户名，2-邮箱，3-手机，4-UID）    	
 	 */
 	public function loginPhone($mobile, $password, $type = 3) {
 		return $this->model->loginPhone ( $mobile, $password, $type );
@@ -60,7 +57,7 @@ class UserApi extends Api {
 	
 	/**
 	 * 获取用户信息
-	 *
+	 * 
 	 * @param string $uid
 	 *        	用户ID或用户名
 	 * @param boolean $is_username
@@ -73,7 +70,7 @@ class UserApi extends Api {
 	
 	/**
 	 * 检测用户名
-	 *
+	 * 
 	 * @param string $field
 	 *        	用户名
 	 * @return integer 错误编号
@@ -84,7 +81,7 @@ class UserApi extends Api {
 	
 	/**
 	 * 检测邮箱
-	 *
+	 * 
 	 * @param string $email
 	 *        	邮箱
 	 * @return integer 错误编号
@@ -95,7 +92,7 @@ class UserApi extends Api {
 	
 	/**
 	 * 检测手机
-	 *
+	 * 
 	 * @param string $mobile
 	 *        	手机
 	 * @return integer 错误编号
@@ -106,7 +103,7 @@ class UserApi extends Api {
 	
 	/**
 	 * 更新用户信息
-	 *
+	 * 
 	 * @param int $uid
 	 *        	用户id
 	 * @param string $password

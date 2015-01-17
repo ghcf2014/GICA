@@ -1199,6 +1199,7 @@ function sendsms($mob,$content)
     echo "消息发送成功。O(∩_∩)O";
     }else{
     return false;
+    
     echo "消息发送失败。";
     }
 }
