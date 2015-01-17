@@ -98,42 +98,38 @@ class SystemController extends MemberController {
         $this->assign('uid',$uid);
         $this->display();
     }
-    public function usermailindex_add(){
-        $username=$_POST['username'];
-        // $user = M('gica_member');
-        // $data=$user->where("nickname=",$username)->select();
-        $usermodel=new Model();
-        $sql="select * from gica_member where nickname='{$username}'";
-        $data=$usermodel->query($sql);
-      
-        $tid=$data[0]['uid'];
-     
-        //查询是否存在收件人信息
-        if ($data!==null){
-            
-            $arr=array(
-                "uid"=>$_POST['uid'],
-                "tid"=>$tid,
-                "title"=>$_POST['title'],
-                "msg"=>$_POST['msg'],
-                );
-            $msg = M('z_inner_msg');
-            $result=$msg->add($arr);
-            //发送数据 
-            if ($result!==null){
-                $this->success('发送成功!');
-            }else {
-                $this->error('发送失败！');
-            } 
-        }else {
-            $this->error('对不起，收件人不存在！请重新确认再发送');
-        }
-        
-    }
-
-        public function usermailindex_del(){
-            $this->display();
-        }
+	public function usermailindex_add() {
+		$username = $_POST ['username'];
+		// $user = M('gica_member');
+		// $data=$user->where("nickname=",$username)->select();
+		$usermodel = new Model ();
+		$sql = "select * from gica_member where nickname='{$username}'";
+		$data = $usermodel->query ( $sql );
+		$tid = $data [0] ['uid'];
+		// 查询是否存在收件人信息
+		if ($data !== null) {
+			
+			$arr = array (
+					"uid" => $_POST ['uid'],
+					"tid" => $tid,
+					"title" => $_POST ['title'],
+					"msg" => $_POST ['msg'] 
+			);
+			$msg = M ( 'z_inner_msg' );
+			$result = $msg->add ( $arr );
+			// 发送数据
+			if ($result !== null) {
+				$this->success ( '发送成功!' );
+			} else {
+				$this->error ( '发送失败！' );
+			}
+		} else {
+			$this->error ( '对不起，收件人不存在！请重新确认再发送' );
+		}
+	}
+	public function usermailindex_del() {
+		$this->display ();
+	}
 	
 	/**
 	 *
