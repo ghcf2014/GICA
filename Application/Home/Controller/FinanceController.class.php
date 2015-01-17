@@ -10,7 +10,9 @@ use OT\DataDictionary;
 class FinanceController extends HomeController {
 
 	//系统首页
-    public function index($type=0){
+    public function index($type=0,$order=borrow_status){
+        $nickname  =   I('nickname');
+
         //判断登陆赋值
         if(is_login()){
            $login=1;
@@ -18,20 +20,22 @@ class FinanceController extends HomeController {
            $login=0;
         }
 
-
-
         if($type==0){
 
             $type='1,2,3,4,5,6';
         }
+        //标字符模糊查询
+        $map['borrow_name']    =   array('like', '%'.(string)$nickname.'%','and');
+        $map['borrow_status']    =   array('not in', '1,5,3','and');
+        $map['borrow_type']    =   array('in',$type,'and');
 
             import('ORG.Util.Page');// 导入分页类
             $listBorrow  = M('z_borrow_info');
-            $count      = $listBorrow ->where('borrow_status not in (1,5,3) ')->count();
+            $count      = $listBorrow ->where('borrow_status not in (1,5,3)')->count();
             $Page = new  \Think\Page($count, 8);
             $show       = $Page->show();
-            $orderby['borrow_status']='ASC';
-            $list = $listBorrow->where('borrow_status not in (1,5,3) and borrow_type in ('.$type.')')->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
+            $orderby[''.$order.'']='DESC';
+            $list = $listBorrow->where($map)->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
             $this->assign('list2',$list);
             $this->assign('login',$login);
             $this->assign('page',$show);
