@@ -31,7 +31,7 @@
                             <dd>
                             	<input type="button" class="btn" value="上传" id="card_img" >
                                     <if condition="$vo.card_img eq ''">
-                                            <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
+                                            <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
                                     <elseif condition="$vo.card_img  neq ''"/>
                                             <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
                                     </if>
@@ -43,7 +43,7 @@
     						<dd>
                             	<input type="button"  class="btn" value="上传"id="card_back_img">
                             	<if condition="$vo.card_back_img eq ''">
-                                            <img src="__STATIC__/rzg_images/default-img.jpg" width="100" height="50">
+                                            <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
                                     <elseif condition="$vo.card_back_img  neq ''"/>
                                             <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
                                     </if>
