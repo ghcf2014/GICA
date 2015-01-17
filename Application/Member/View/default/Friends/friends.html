@@ -2,11 +2,10 @@
 	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
-		<h2>
-			<a href="{:U('Index')}">我的账户</a>
-		</h2>
+		
 		<include file="Public/left" />
 		<div class="zh_cont_r">
+			<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">好友管理</span></h3>
 			<div class="r_main">
 				<div class="tabtil">
 					<ul>
@@ -65,7 +64,7 @@
 								<h4>复制链接发给QQ/MSN上的好友</h4>
 								<div style="width: auto; height: auto; overflow: hidden;">
 									<span id="testcopy"
-										style="float: left; width: 180px; height: 19px; padding-top: 5px; color: red; margin-right: 400px;">http://www.gitback.com/Home/register.html&&reffer={$username}</span><a
+										style="float: left; width: 580px; height: 19px; padding-top: 5px; color: red;">http://www.gitback.com/Home/register.html&&reffer={$username}</span><a
 										href="javascript:;" id="copy" style="float: left;"><embed
 											width="62" height="24" align="middle"
 											flashvars="txt=http://www.gitback.com/Home/User/register.html?reffer={$username}"
@@ -78,7 +77,7 @@
 
 
 								<!--复制代码-->
-								<br> <br> <br> <br> <span
+								<span
 									id="url_box_clippy" style="display: none">http://www.gitback.com/Home/User/register.html?reffer={$username}</span>
 								<span id="clippy_tooltip_url_box_clippy"
 									class="clippy-tooltip tooltipped" title="copy to clipboard">
