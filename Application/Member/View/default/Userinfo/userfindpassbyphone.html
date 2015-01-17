@@ -2,7 +2,7 @@
 	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
-		<h2>我的账户</h2>
+		
 
 		<!--zh_cont_l-->
 		<include file="Public/left" />
@@ -11,7 +11,7 @@
 
 			<!--安全设置-->
 			<div class="tab">
-				<h3>当前位置>安全设置</h3>
+				<h3>当前位置 > <span style="color: #D41010;">安全设置</span></h3>
 				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
 				<ul class="aqset_tabH">
 					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
@@ -33,13 +33,12 @@
                             </dl> -->
 
 							<dl class="phone">
-								<dt>原手机号码：{$vo.mobile}</dt>
+								<dt>原手机号码：</dt>
+								<dd>{$vo.mobile}</dd>
+							</dl>
+							<dl class="phone">
 								<dt>手机变更：</dt>
-								<dd>
-									<input type="text" class="phone_txt" name="mobile" id="mobile"
-										value=""><input type="button" class="phone_btn"
-										id="phone_btn" value="验证码发送">
-								</dd>
+								<dd><input type="text" class="phone_txt" name="mobile" id="mobile" value=""><input type="button" class="phone_btn" id="phone_btn" value="验证码发送"></dd>
 							</dl>
 							<dl class="phone">
 								<dt>手机验证码：</dt>

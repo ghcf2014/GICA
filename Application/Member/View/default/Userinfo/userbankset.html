@@ -2,13 +2,11 @@
 	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
-		<h2>
-			<a href="{:U('Index')}">我的账户</a>
-		</h2>
+		
 		<include file="Public/left" />
 		<div class="zh_cont_r">
 			<div class="tab">
-				<h3>当前位置>安全设置</h3>
+				<h3>当前位置 > <span style="color: #D41010;">安全设置</span></h3>
 				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
 				<ul class="aqset_tabH">
 					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
@@ -53,13 +51,25 @@
 							</dl>
 							<input type="button" class="yhk_btn" id="submitBank" value="提交">
 						</div>
-						</from>
+					</form>
 						<!--身份证验证-->
 						<div class="aqset_tabC" style="display: none">
-							<p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+							<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+							<dl class="sfz">
+                            	<dt>身份证正面：</dt>
+                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
+                            	</dd>
+                            </dl>
+                            <dl class="sfz">
+                            	<dt>身份证反面：</dt>
+                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
+                            	</dd>
+                            </dl>
+                            <input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
 						</div>
 						<else />
-						<volist name="list" id="vo"> <!--银行卡验证-->
+						<volist name="list" id="vo"> 
+						<!--银行卡验证-->
 						<div class="aqset_tabC">
 							<dl class="yhk">
 								<dt>平台昵称：{:get_username()}</dt>
@@ -90,7 +100,18 @@
 						</volist>
 						<!--身份证验证-->
 						<div class="aqset_tabC" style="display: none">
-							<p class="sfz">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+							<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+							<dl class="sfz">
+                            	<dt>身份证正面：</dt>
+                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
+                            	</dd>
+                            </dl>
+                            <dl class="sfz">
+                            	<dt>身份证反面：</dt>
+                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
+                            	</dd>
+                            </dl>
+                            <input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
 						</div>
 					</empty>
 				</div>
