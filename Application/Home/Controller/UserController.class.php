@@ -110,15 +110,15 @@ class UserController extends HomeController {
 				/* 登录用户 */
 				$Member = D('Member');
 				if($Member->login($uid)){ //登录用户
-					//判断跳转来源页面
-					$msg=(strtolower(str_replace('/','',$_SERVER['HTTP_REFERER'])));
-					if(strpos('borrow',$msg)!==false){
+					//判断跳转来源页
+					// $msg=(strtolower(str_replace('/','',$_SERVER['HTTP_REFERER'])));
+					// if(strpos('borrow',$msg)!==false){
+					// 	$this->success('登录成功！',U('Borrow/circulation'));
+					// }else{
+					// 	$this->success('登录成功！',U('Member/Index/index'));
+					// }
 
-						$this->success('登录成功！',U('Borrow/circulation'));
-
-					}else{
-						$this->success('登录成功！',U('Member/Index/index'));
-					}
+					$this->success('登录成功！',U('Member/Index/index'));
 											               
 				} else {
 					$this->error($Member->getError());

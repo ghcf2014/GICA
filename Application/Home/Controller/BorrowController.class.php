@@ -115,44 +115,40 @@ class BorrowController extends HomeController {
 	}
 
 	public function circulation_save() {
-		// 从表单中获取来的数据
-		$uid = is_login ();
-		$m = M ( "z_borrow_info" );
-		$files=($_FILES['img']);
 
-		$data['updata']=$files['name'];
 
-		$data ['borrow_type'] = $_POST['typeid'];
-		$data ['borrow_name'] = $_POST ['borrow_name'];
-		$data ['borrow_money'] = $_POST ["borrow_money"];
-		$data ['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
-		$data ['borrow_use'] = $_POST ["borrow_use"];
-		$data ['borrow_duration'] = $_POST ["collect_day"];
-		$data ['borrow_min'] = $_POST ["borrow_min"];
-		$data ['borrow_max'] = $_POST ["borrow_max"];
-		$data ['collect_time'] = $_POST ["collect_time"];
-		$data ['repayment_type'] = $_POST ["repayment_type"];
-		$data ['reward_vouch_rate'] = $_POST ["reward_vouch_rate"];
-		$data ['borrow_info'] = $_POST ["borrow_info"];
-		$data ['borrow_status'] = 0;
-		$data ['borrow_uid'] = $uid;
-		$data ['add_time'] = time ();
-		$data ['deadline'] = strtotime ( '+'.intval ( $_POST ["collect_day"] ).' year' );
-		$data ['add_ip'] = get_client_ip ();
-		$condition ['uid'] = $uid;
-		dump($data);
-		if ($this->upload($files,$depict)){
+		$uid=is_login(); 
+		$depict['borrow_type'] = $_POST['typeid'];
+		$depict['borrow_name'] = $_POST ['borrow_name'];
+		$depict['borrow_money'] = $_POST ["borrow_money"];
+		$depict['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
+		$depict['borrow_use'] = $_POST ["borrow_use"];
+		$depict['borrow_duration'] = $_POST ["collect_day"];
+		$depict['borrow_min'] = $_POST ["borrow_min"];
+		$depict['borrow_max'] = $_POST ["borrow_max"];
+		$depict['collect_time'] = $_POST ["collect_time"];
+		$depict['repayment_type'] = $_POST ["repayment_type"];
+		$depict['reward_vouch_rate'] = $_POST ["reward_vouch_rate"];
+		$depict['borrow_info'] = $_POST ["borrow_info"];
+		$depict['borrow_status'] = 0;
+		$depict['borrow_uid'] = $uid;
+		$depict['add_time'] = time ();
+		$depict['deadline'] = strtotime ( '+'.intval ( $_POST ["collect_day"] ).' year' );
+		$depict['add_ip'] = get_client_ip ();
+
+
+		// $files=($_FILES['img']);
+
+
 			// 保存当前数据对象
-			if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
+			if ($this->borrow_upload($depict)) { // 保存成功
 			                                                    // 成功提示add_time
 				$this->success ( L ( '发布审核已提交' ),U('Home/Borrow/index') );
 			} else {
 				// 失败提示
 				$this->error ( L ( '发布失败' ) );
 			}
-		}else {
-			$this->error('写入数据库失败！');
-		}
+
 		
 	}
 	/**
@@ -200,9 +196,6 @@ class BorrowController extends HomeController {
             $data['add_time']=time();
             $data['type']=$type;
             
-
-
-
 	            if($file->where($condition)->data($data)->add($data)){
 	                //
 	                $i++;
@@ -231,7 +224,59 @@ class BorrowController extends HomeController {
         }
         else{// 上传成功
 
-            if($this->AddFile($info,$files,$depict))//写入数据库
+            if($this->AddFile($info,$depict))//写入数据库
+            {
+                return true;
+            }
+            else{
+              	return false;
+            }
+        }
+    }
+    private function borrow_AddFile($fileinfo,$depict,$type){
+          $i=0;
+        $uid=is_login(); 
+        $dateline=date("Y-m-d H:m:s");
+        $file=M('z_borrow_info');
+        $condition['uid'] =$uid;
+
+        foreach($fileinfo as $vo)
+        {
+
+	        $data['updata']=$vo['savepath'].$vo['savename'];
+			$data['borrow_name']=$depict['borrow_name'];
+            $data['uid']=$uid;
+            $data['add_time']=time();
+            $data['type']=$type;
+
+    
+	            if($file->where($condition)->data($data)->add($data)){
+	                //
+	                $i++;
+	            }else{
+	                  return false;
+	            }
+        }
+
+        return true;
+    }
+    public function borrow_upload($depict){
+        $config=array(
+            'maxSize'=>100*1024*1024*1024,
+            'mimes'=>array(),
+            'rootPath'=>'./Uploads/',
+            'ext'=>array(),
+            'autoSub'=>true,
+        );
+        $upload = new \Think\Upload($config);// 实例化上传类
+
+       $info   =   $upload->upload(); // 上传文件
+        if(!$info){// 上传错误提示错误信息
+            $this->error($upload->getError());
+        }
+        else{// 上传成功
+
+            if($this->borrow_AddFile($info,$depict))//写入数据库
             {
                 return true;
             }
