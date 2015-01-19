@@ -69,7 +69,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .cont .cont_top dt{width:205px;height:80px;position:relative;}
 
 .cont .cont_top dt h2{width:205px;height:80px;font-size:20px;font-weight:normal;}
-.cont .cont_top dt h2 a{display:block;width:130px;height:80px;background:url(../images/touzil.png) no-repeat;padding:0 0 0 75px;color: #cf000e;}
+.cont .cont_top dt h2 a{display:block;width:130px;height:80px;line-height:70px;background:url(../images/touzil.png) no-repeat;padding:0 0 0 75px;color: #cf000e;}
 .cont .cont_top dt h2 a:hover{display:block;width:130px;height:80px;padding:0 0 0 75px;}
 .cont .cont_top dt p{font-size:14px;font-weight:normal;line-height:22px;position:absolute;left:75px;top:45px;}
 .cont .cont_top dd{width:210px;height:145px;line-height:24px;padding-top:15px;}
