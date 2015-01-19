@@ -51,7 +51,7 @@ class UserApi extends Api {
 	 * @param unknown $password     用户名称   	
 	 * @param number $type     	用户名类型 （1-用户名，2-邮箱，3-手机，4-UID）    	
 	 */
-	public function loginPhone($mobile, $password, $type = 3) {
+	public function loginPhone($mobile, $password, $type = 1) {
 		return $this->model->loginPhone ( $mobile, $password, $type );
 	}
 	

@@ -102,8 +102,10 @@ class UserController extends HomeController {
 			}
 
 			/* 调用UC登录接口登录 */
+
+
 			$user = new UserApi();
-			$uid = $user->login($username, $password);
+			$uid = $user->login($username, $password,$type = 3);
 			//$uidPhone=$user->loginPhone($username, $password);||$uidPhone>0; ||$Member->loginPhone($uidPhone)
 			
 			if(0 < $uid){ //UC登录成功

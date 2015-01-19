@@ -187,8 +187,9 @@ class BorrowController extends HomeController {
 		$this->display ();
 	}
 	// 上传
-	private function AddFile($fileinfo,$depict,$type){
+	private function AddFile($fileinfo,$depict){
           $i=0;
+       // var_dump($fileinfo);
         $uid=is_login(); 
         $dateline=date("Y-m-d H:m:s");
         $file=M('z_member_data_info');
@@ -199,8 +200,8 @@ class BorrowController extends HomeController {
             $data['data_url']=$vo['savepath'].$vo['savename'];
             $data['uid']=$uid;
             $data['add_time']=time();
-            $data['type']=$type;
-            
+            $data['type']=2;
+            // $data['deal_time']=$dateline;
 	            if($file->where($condition)->data($data)->add($data)){
 	                //
 	                $i++;
@@ -212,7 +213,7 @@ class BorrowController extends HomeController {
         return true;
     }
      //上传
-    public function upload($files,$depict){
+    public function upload(){
         $config=array(
             'maxSize'=>100*1024*1024*1024,
             'mimes'=>array(),
@@ -222,40 +223,35 @@ class BorrowController extends HomeController {
         );
         $upload = new \Think\Upload($config);// 实例化上传类
         $depict=$_POST['depict'];
-
        $info   =   $upload->upload(); // 上传文件
         if(!$info){// 上传错误提示错误信息
             $this->error($upload->getError());
         }
         else{// 上传成功
 
+          //  var_dump($info);
             if($this->AddFile($info,$depict))//写入数据库
             {
-                return true;
+                $this->success('上传成功！');
             }
             else{
-              	return false;
+               $this->error('写入数据库失败');
             }
         }
     }
     private function borrow_AddFile($fileinfo,$depict,$type){
           $i=0;
         $uid=is_login(); 
-        $dateline=date("Y-m-d H:m:s");
         $file=M('z_borrow_info');
         $condition['uid'] =$uid;
-
+        
         foreach($fileinfo as $vo)
         {
 
-	        $data['updata']=$vo['savepath'].$vo['savename'];
-			$data['borrow_name']=$depict['borrow_name'];
-            $data['uid']=$uid;
-            $data['add_time']=time();
-            $data['type']=$type;
-
+	        $depict['updata']=$vo['savepath'].$vo['savename'];
+			
     
-	            if($file->where($condition)->data($data)->add($data)){
+	            if($file->where($condition)->data($depict)->add($depict)){
 	                //
 	                $i++;
 	            }else{

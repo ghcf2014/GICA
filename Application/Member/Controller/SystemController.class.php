@@ -178,7 +178,7 @@ class SystemController extends MemberController {
 			$logdata ['add_time'] = time ();
 			$log = $log->add ( $logdata );
 			
-			$this->success ( '充值成功!' );
+			$this->success ( '线下充值金额已提交! ' );
 		} else {
 			// 失败提示
 			$this->error ( '充值失败!' );
