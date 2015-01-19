@@ -114,13 +114,15 @@ class BorrowController extends HomeController {
 		    
 	}
 
-	public function circulation_save($id = 0) {
+	public function circulation_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "z_borrow_info" );
 		$files=($_FILES['img']);
-		$depict=$_POST;
-		$data ['borrow_type'] = $id;
+
+		$data['updata']=$files['name'];
+
+		$data ['borrow_type'] = $_POST['typeid'];
 		$data ['borrow_name'] = $_POST ['borrow_name'];
 		$data ['borrow_money'] = $_POST ["borrow_money"];
 		$data ['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
@@ -138,6 +140,7 @@ class BorrowController extends HomeController {
 		$data ['deadline'] = strtotime ( '+'.intval ( $_POST ["collect_day"] ).' year' );
 		$data ['add_ip'] = get_client_ip ();
 		$condition ['uid'] = $uid;
+		dump($data);
 		if ($this->upload($files,$depict)){
 			// 保存当前数据对象
 			if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
@@ -175,10 +178,9 @@ class BorrowController extends HomeController {
 		$this->assign ( 'list3', $list );
 
 		$borrow_info = M('z_borrow_investor');
-        $condition['borrow_id'] =41;
+        $condition['borrow_id'] =$id;
         $borrow_info=$borrow_info->field('investor_uid,borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee')->where($condition)->order('id asc','invest_fee desc','add_time desc')->group('investor_uid')->select();
-        
-        // var_dump($borrow_info['investor_uid']);
+        dump($borrow_info);
         $this->assign('list',$borrow_info);
 	
 		$this->display ();

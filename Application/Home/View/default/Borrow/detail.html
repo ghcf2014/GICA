@@ -7,7 +7,7 @@
         	<h2>标的详情</h2>
             <dl>
                 <dt>
-                    <div class="header"></div>
+                    <div class="header"></div><volist name="list3" id="vb">
                     <ul>
                         <li>用户名称：<span>{$vb.borrow_uid|get_borrow_username}</span></li>
                         <li>注册时间：<span>{$vb.reg_time|date='Y-m-d',###}</span></li>
@@ -17,7 +17,7 @@
                     <a href="#">关注此人</a><a href="#">关注此借款</a>
                 </dt>
                 <dd>
-                    <ul><volist name="list3" id="vb">
+                    <ul>
                         <li><h3>{$vb.borrow_name}</h3></li>
                         <li><h3>（机构担保借款）</h3><if condition="$vb.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vb['id'])}" style="background: none;width: 92px;height: 23px;"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
                 	    <elseif condition="$vb.borrow_status eq 2"/>
@@ -155,6 +155,21 @@
                     <li></li>
                     <li></li>
                     <li></li>
+                </ul>
+            </div>
+            <div class="tab" style="display:none">
+                <p>此为计划表，还款日期以实际日期为准</p>
+                <ul class="tit2">
+                    <li>期次</li>
+                    <li>还款日期</li>
+                    <li>还款金额</li>
+                    <li>应还本金</li>
+                    <li>应还利息</li>
+                </ul>
+                <ul class="con2">
+                    <li>资料图片：</li>
+                    <li></li>
+                 
                 </ul>
             </div>
             </div>
