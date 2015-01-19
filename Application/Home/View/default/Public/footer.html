@@ -1,84 +1,97 @@
-  
-    <!--footer start-->
-    <div class="footer">
-  		<div class="footer_in">
-            <ul>
-                <li><a href="{:U('Newhelp/aboutus')}">关于我们</a></li>
-                <li><a href="#">法律指引</a></li>
-                <li><a href="#">新手指引</a></li>
-                <li><a href="#">理财攻略</a></li>           
-            </ul>
-            <ul>
-              <li><a href="#">论坛</a></li>
-              <li><a href="#">帮助中心</a></li>
-              <li><a href="#">网站地图</a></li>
-              <li><a href="#">友情链接</a></li>           
-            </ul>
-          <dl>
-              <dt>合作伙伴</dt>
-              <dd>
-                  <ul>
-                      <li><a href="#"><img src="__PUBLIC__/Home/images/footer_pic1.png" width="122" height="45" /></a></li>
-                      <li><a href="#"><img src="__PUBLIC__/Home/images/footer_pic2.png" width="122" height="45" /></a></li>
-                      <li><a href="#"><img src="__PUBLIC__/Home/images/footer_pic3.png" width="122" height="45" /></a></li>
-                      <li><a href="#"><img src="__PUBLIC__/Home/images/footer_pic4.png" width="122" height="45" /></a></li>
-                      <li><a href="#"><img src="__PUBLIC__/Home/images/footer_pic5.png" width="122" height="45" /></a></li>
-                      <li><a href="#"><img src="__PUBLIC__/Home/images/footer_pic6.png" width="122" height="45" /></a></li>
-                  </ul>
-              </dd>
-          </dl>
-          <div class="footer_r">
-            <p style="font-size:14px;">客服热线（工作时间8:00-22:00）</p>
-            <p style="font-size:30px;">400 123 4567</p>
-            <p>客服邮箱 kefu@gog.com  在线服务</p>
-          </div>
-   		</div>
-    </div>
-    <!--footer end-->
-	
-    <!--banQuan start-->
-    <div class="banQuan">
-    	<div class="banQuan_in">
-        	<ul>
-            	<li><img src="__PUBLIC__/Home/images/banQuan_pic1.png"/></li>
-            	<li><img src="__PUBLIC__/Home/images/banQuan_pic2.png"/></li>
-                <li><img src="__PUBLIC__/Home/images/banQuan_pic3.png"/></li>
-                <li><img src="__PUBLIC__/Home/images/banQuan_pic4.png"/></li>
-            </ul>
-            <p>Copyrightc2011-2014工合财富 All rights reserved</p>
-        </div>
-    </div>
-	<!--banQuan end-->
-  <script type="text/javascript">
-  $('.shigong').on('click', function(){
-     layer.msg('前方页面正在施工ing...', 2, 0);
-     area: ['310px', '130px']
-     });
 
-  $('.tipshang').on('click', function(){
-    layer.tips('此处正在施工ing...', this, {
-        style: ['background-color:#0FA6D8; color:#fff', '#0FA6D8'],
-        maxWidth:150
-    });
-    });
-  $('.tipxia').on('click', function(){
-      layer.tips('非常感谢大家对工合财富的支持，正因为你们，才让稳步的我们有了大大的关注。活动策划中，2015加油！', this, {
-        guide: 2,
-        maxWidth:150,
-        time: 4
-    });
-    });
-$('.fankui').on('click', function(){
-  $.layer({
-    type: 2,
-    shade: [0],
-    fix: false,
-    title: '平台技术问题反馈',
-    maxmin: true,
-    iframe: {src :'Home/Index/fankui'},
-    area: ['600px' , '440px'],
-    shift: 'top'
-  })
-});
+<!--footer start-->
+<div class="footer">
+	<div class="footer_in">
+		<ul>
+			<li><a href="{:U('Home/Newhelp/aboutus')}">关于我们</a></li>
+			<li><a href="{:U('Home/Article/lists/category/default_blog')}">行业动态</a></li>
+			<!--   <li><a href="#">理财攻略</a></li>          -->
+		</ul>
+		<ul>
+			<li><a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></li>
+			<!--   <li><a href="#">论坛</a></li> -->
+			<!--    <li><a href="#">帮助中心</a></li> -->
+			<!--  <li><a href="#">网站地图</a></li> -->
+			<li><a href="#">友情链接</a></li>
+		</ul>
+		<dl>
+			<dt>合作伙伴</dt>
+			<dd>
+				<ul>
+					<li><a href="#"><img
+							src="__PUBLIC__/Home/images/footer_pic1.png" width="122"
+							height="45" /></a></li>
+					<li><a href="#"><img
+							src="__PUBLIC__/Home/images/footer_pic2.png" width="122"
+							height="45" /></a></li>
+					<li><a href="#"><img
+							src="__PUBLIC__/Home/images/footer_pic3.png" width="122"
+							height="45" /></a></li>
+					<li><a href="#"><img
+							src="__PUBLIC__/Home/images/footer_pic4.png" width="122"
+							height="45" /></a></li>
+					<li><a href="#"><img
+							src="__PUBLIC__/Home/images/footer_pic5.png" width="122"
+							height="45" /></a></li>
+					<li><a href="#"><img
+							src="__PUBLIC__/Home/images/footer_pic6.png" width="122"
+							height="45" /></a></li>
+				</ul>
+			</dd>
+		</dl>
+		<div class="footer_r">
+			<p style="font-size: 14px;">客服热线（工作时间8:00-22:00）</p>
+			<p style="font-size: 30px;">400 123 4567</p>
+			<p>客服邮箱 kefu@gog.com 在线服务</p>
+		</div>
+	</div>
+</div>
+<!--footer end-->
 
-  </script>
+<!--banQuan start-->
+<div class="banQuan">
+	<div class="banQuan_in">
+		<ul>
+			<li><img src="__PUBLIC__/Home/images/banQuan_pic1.png" /></li>
+			<li><img src="__PUBLIC__/Home/images/banQuan_pic2.png" /></li>
+			<li><img src="__PUBLIC__/Home/images/banQuan_pic3.png" /></li>
+			<li><img src="__PUBLIC__/Home/images/banQuan_pic4.png" /></li>
+		</ul>
+		<p>Copyrightc2011-2014工合财富 All rights reserved</p>
+	</div>
+</div>
+<!--banQuan end-->
+<script type="text/javascript">
+	$('.shigong').on('click', function() {
+		layer.msg('前方页面正在施工ing...', 2, 0);
+		area: [ '310px', '130px' ]
+	});
+
+	$('.tipshang').on('click', function() {
+		layer.tips('此处正在施工ing...', this, {
+			style : [ 'background-color:#0FA6D8; color:#fff', '#0FA6D8' ],
+			maxWidth : 150
+		});
+	});
+	$('.tipxia').on('click', function() {
+		layer.tips('非常感谢大家对工合财富的支持，正因为你们，才让稳步的我们有了大大的关注。活动策划中，2015加油！', this, {
+			guide : 2,
+			maxWidth : 150,
+			time : 4
+		});
+	});
+	$('.fankui').on('click', function() {
+		$.layer({
+			type : 2,
+			shade : [ 0 ],
+			fix : false,
+			title : '平台技术问题反馈',
+			maxmin : true,
+			iframe : {
+				src : 'Home/Index/fankui'
+			},
+			area : [ '600px', '440px' ],
+			shift : 'top'
+		})
+	});
+</script>
