@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>详情页 </title>
+<title>详情页</title>
 <!-- 添加基金版面         -->
 <link rel="stylesheet" href="__PUBLIC__/RichFunds/css/jijinStyle.css"
 	type="text/css" />
@@ -15,30 +15,32 @@
 <script type="text/javascript"
 	src="__PUBLIC__/RichFunds/js/jiJinxiangqing.js"></script>
 <script type="text/javascript">
-	$(function(){
+	$(function() {
 		//alert(1);	
-		$('.flo_aside').hover(function(){
-			//alert(2);
-			$('.flo_aside .flo_l li').each(function(index,element){
-				$(element).hover(function(){
-					$('.flo_aside .flo_r').show();
-					$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
+		$('.flo_aside').hover(
+				function() {
+					//alert(2);
+					$('.flo_aside .flo_l li').each(
+							function(index, element) {
+								$(element).hover(
+										function() {
+											$('.flo_aside .flo_r').show();
+											$('.flo_aside .flo_r ul').eq(
+													$(this).index()).show()
+													.siblings().hide();
+										});
+							})
+				}, function() {
+					$('.flo_aside .flo_r').hide();
 				});
-			})	
-		},function(){
-			$('.flo_aside .flo_r').hide();	
-		});
-		
-		$(document).scroll(function(){
-			if($(document).scrollTop() > $(window).height())
-			{
-				$('.returnTop').show();				
-			}
-			else
-			{
+
+		$(document).scroll(function() {
+			if ($(document).scrollTop() > $(window).height()) {
+				$('.returnTop').show();
+			} else {
 				$('.returnTop').hide();
 			}
-		});	
+		});
 	})
 </script>
 </head>
@@ -49,16 +51,25 @@
 	<div class="bar_out">
 		<div class="bar">
 			<ul>
-				<li><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 6px;width:30px;height:36px;float:left;"></div><a
-					href="javascript:;">官方微博</a></li>
-				<li><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px;width:30px;height:36px;float:left;"></div><a href="javascript:;">官方微信</a></li>
-                <li class="phone"><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -84px;width:30px;height:36px;float:left;"></div><div style="width:70px;">客户热线：</div><span>400-123-4567</span></li>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 6px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微博</a></li>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微信</a></li>
+				<li class="phone"><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -84px; width: 30px; height: 36px; float: left;"></div>
+					<div style="width: 70px;">客户热线：</div>
+					<span>400-123-4567</span></li>
 			</ul>
-            <ul class="bar_aside">
-                <li><a class="bar_aside_btn" style="color:#ef681f;" href="{:U('User/login')}">登录</a></li>
-                <li><a class="bar_aside_btn" style="color:#65bae1;" href="{:U('User/register')}">注册</a></li>
+			<ul class="bar_aside">
+				<li><a class="bar_aside_btn" style="color: #ef681f;"
+					href="{:U('User/login')}">登录</a></li>
+				<li><a class="bar_aside_btn" style="color: #65bae1;"
+					href="{:U('User/register')}">注册</a></li>
 			</ul>
-		</div><a name="returntop" id="returntop"></a>
+		</div>
+		<a name="returntop" id="returntop"></a>
 	</div>
 	<!--头部  bar end-->
 
@@ -73,229 +84,296 @@
 				height="40" class="logo_wz" /></a>
 		</h1>
 		<ul class="nav">
-        	<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
-			<li><a href="{:U('Member/Index/index')}">基金产品</a></li>
+			<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">基金产品</a></li>
 			<li><a href="{:U('Home/Index/index')}">工合财富</a></li>
-			<li><a href="{:U('Home/Borrow/index')}">工合众筹</a></li>
-			<li><a href="{:U('Home/Newhelp/borrowhelp')}">关于我们</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">工合众筹</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">关于我们</a></li>
 		</ul>
-		
+
 	</div>
 	<!--导航栏 nav end-->
 
 
 	<!--焦点图 banner start-->
-	<div class="jjxq_ban"><img src="../../../../../Public/RichFunds/images/jjxq_ban_pic1.png" width="1600" height="366" /></div>
+	<div class="jjxq_ban">
+		<img src="../../../../../Public/RichFunds/images/jjxq_ban_pic1.png"
+			width="1600" height="366" />
+	</div>
 	<!--焦点图 banner end-->
 
 
 	<!--内容 con start-->
 	<div class="jjxq">
-    	<!--左边 jjxq_l   start-->
-    	<div class="jjxq_l">
-       	  <h2>工合佛教文化旅游基金</h2>
-            <div class="jjxq_l_con">
-            	<!--pic1-->
-       	    	<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic1.gif" width="526" height="308" style="margin-left:20px;"/>
-                </div>	
-                <p class="wz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中华天竺苑作为全球最大的佛教文化主题公园，以及东北亚最大的佛教道场，其建成后必将成为呼伦贝尔市的标志性建筑及旅游名片，社会效益和经济效益不可估量。<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目占地340.8公顷，总建筑面积7.32万平方米，由三门、阿育王柱、菩提广场、华藏世界和佛教八大圣景组成。项目位于内蒙古自治区呼伦贝尔市海拉尔城区北部的敖包山，地理位置独特、交通方便。
-      			</p>
-                
-                <!--pic2-->
-                <p class="wz" style="margin-top:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宗教影响力："中华天竺苑"由一诚长老亲自主持建造，一诚长老是中国佛教协会荣誉会长、前中国佛学院院长，被誉为"中国佛教领袖"。</p>
+		<!--左边 jjxq_l   start-->
+		<div class="jjxq_l">
+			<h2>工合佛教文化旅游基金</h2>
+			<div class="jjxq_l_con">
+				<!--pic1-->
 				<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic2.gif" style="margin-left:15px;"/>
-                </div>
-                
-                <!--pic3-->
-                <p class="wz" style="margin-top:30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目有诸多世界第一：全世界最大的佛教三门；全世界最大的阿育王柱；全世界最大的佛教宫殿"华藏世界"等；融合印、尼两国佛教"圣景"，加入中国佛教的历史文化元素，将世界佛教的核心及脉络全部纳入其中。
-</p>
-				<p class="wz">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阿育王柱：<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;直径2.6米，高20米的阿育王柱，气势恢宏。</p>
-             
-             	<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic3.gif" style=""/>
-                </div>
-                
-                <!--pic4-->
-              <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华藏世界：<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总建筑面积48,000平方米，其中地宫20,000平方米，建筑南北朝向，从东向西横跨408米，超过凡赛尔宫，由主殿、心经殿、金刚经殿、罗汉堂组成。</p>
-             	<div class="img">
-               	  <img src="../../../../../Public/RichFunds/images/jjxq_pic4.gif" style=""/>
-                </div> 
-                
-                 <!--pic5-->
-                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全国最大的唐卡艺术博物馆
-</p>
-             	<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic5.gif" style=""/>
-                </div>
-                
-                <!--pic6-->
-                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;心经殿</p>
-             	<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic6.gif" style=""/>
-                </div>
-                
-                <!--pic7-->
-                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金刚经殿
-</p>
-             	<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic7.gif" style=""/>
-                </div>
-                
-                <!--pic8-->
-                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五百罗汉宫
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic1.gif"
+						width="526" height="308" style="margin-left: 20px;" />
+				</div>
+				<p class="wz">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中华天竺苑作为全球最大的佛教文化主题公园，以及东北亚最大的佛教道场，其建成后必将成为呼伦贝尔市的标志性建筑及旅游名片，社会效益和经济效益不可估量。<br />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目占地340.8公顷，总建筑面积7.32万平方米，由三门、阿育王柱、菩提广场、华藏世界和佛教八大圣景组成。项目位于内蒙古自治区呼伦贝尔市海拉尔城区北部的敖包山，地理位置独特、交通方便。
+				</p>
 
-</p>
-             	<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic8.gif" style=""/>
-                </div>
-                
-                <!--pic9-->
-                <p class="wz" style="margin-top:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最多可容纳800人的梵音剧场。</p>
-             	<div class="img">
-                	<img src="../../../../../Public/RichFunds/images/jjxq_pic9.gif" style=""/>
-                </div>
-                
-                
-                <!--基金条款-->
-       	  	  <h3>基金条款</h3>
-                <div class="img">
-                    <img src="../../../../../Public/RichFunds/images/jjxq_pic10.gif" style=""/>
-                </div>
-                <!--律师事务所-->
-              <dl class="lvshi">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic11.gif" width="268" height="316" /></dt>
-                    <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东广和律师事务所成立于1995年4月，现有注册律师近288名（不含分所），是华南地区最大的综合型律师事务所，被司法部、全国律协评为"全国优秀律师事务所"。被《亚洲法律杂志》评为中国第四大律师事务所、广东最大的律师事务所、亚洲最值得关注的十家律师事务所之一；被国际法律服务市场分析与评级机构—钱伯斯评为"2010年度最佳地区律师事务所奖"；＂2013年度中国顶尖的律师事务所＂。
-</dd>
-                </dl>
-                <!--律师团队-->
-              <h4>强大的律师团队</h4>
-                <dl class="lvshiteam">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic12.gif" width="113" height="148" /></dt>
-                    <dd><p>杨波&nbsp;律师</p><p>广和律师事务所合伙人<br/>精通私募股权投资基金的运作、管理。</p>
-                    </dd>
-                </dl>
-                
-                <dl class="lvshiteam">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic13.gif" width="113" height="148" /></dt>
-                    <dd><p>廖建业&nbsp;律师</p><p>谙熟财经会计实务及法律实践<br/>精通大型企业的财务、税务、经营管理及投融资实务精通私募股权投资基金的运作、管理。</p>
-                    </dd>
-                </dl>               
+				<!--pic2-->
+				<p class="wz" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宗教影响力："中华天竺苑"由一诚长老亲自主持建造，一诚长老是中国佛教协会荣誉会长、前中国佛学院院长，被誉为"中国佛教领袖"。</p>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic2.gif"
+						style="margin-left: 15px;" />
+				</div>
 
-                <dl class="lvshiteam">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic14.gif" width="113" height="148" /></dt>
-                    <dd><p>高翔&nbsp;律师</p><p>承办多家企业法律顾问事务，主要从事企业法律顾问、融资、新三板挂牌、IPO、再融资及债券发行法律业务。</p>
-                    </dd>
-                </dl>
-                
-                <dl class="lvshiteam">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic15.gif" width="113" height="148" /></dt>
-                    <dd><p>周翔&nbsp;律师</p><p>主要从事公司融资、法律顾问、民商事案件诉讼，有丰富的融资专项顾问和商业诉讼案件办理经验。
-</p>
-                    </dd>
-                </dl>
-                
-                <dl class="lvshiteam">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic16.gif" width="113" height="148" /></dt>
-                    <dd><p>陈梅&nbsp;律师</p><p>承办多起企业投资、融资、收购等专项法律服务、经济纠纷诉讼与非诉法律事务。
-</p>
-                    </dd>
-                </dl>
-                
-                <dl class="lvshiteam">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic17.gif" width="113" height="148" /></dt>
-                    <dd><p>付永光&nbsp;律师</p><p>主要辅助合伙人律师办理了企业投资、融资、并购法律顾问、非诉业务、民商事纠纷。
-</p>
-                    </dd>
-                </dl>
-                
-                <!--投资者保障-->
-              <h4>安全有效的投资者保障</h4>
-                <dl class="tzzbz">
-                	<dt><img src="../../../../../Public/RichFunds/images/jjxq_pic18.gif"/></dt>
-                    <dd>根据2013年的审计报告，呼伦贝尔天竺苑旅游开发有限公司总资产约为9.57亿元，总负债约为3.8亿元，净资产约为5.77亿元，其股权可作为质押担保。</dd>
-                </dl>
-                
-                <!--认购流程-->
-              <h3>认购流程：</h3>
-                <div class="rglc"><img src="../../../../../Public/RichFunds/images/jjxq_pic19.gif" width="598" height="308" /></div>
-            </div>
-        </div>
-        <!--左边 jjxq_l   end-->
-        
-        <!--右边 jjxq_r   start-->
-        <div class="jjxq_r">
-        	<div class="jjxq_r_top01">
-            	<input type="button" class="jjxq_r_btn" style="background:url(../../../../../Public/RichFunds/images/guanzhu.gif) no-repeat;" /><input type="button" class="jjxq_r_btn" style="background:url(../../../../../Public/RichFunds/images/yuetan.gif) no-repeat;">
-            </div>
-            
-            <div class="jjxq_r_top02">
-            	<div class="qz"></div>
-            	<div class="jjxq_r_top02_head">
-                	<p class="yrzj">已融资金</p>
-                    <p class="yrzj_no">￥20,0000</p>
-                </div>
-                <ul>
-                	<li><span>项目规模：</span><p style="color:#e93105;font-weight:bold;">￥200,0000</p></li>
-                	<li><span>年化收益：</span><p>10.5%</p></li>
-                	<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span><p>1个月</p></li>
-                	<li><span>担保机构：</span><p>广东工合基金</p></li>
-                	<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span><div class="jdt"><p class="jdt_in"></p></div></li>
-                </ul>
-            </div>
-            
-            <div class="jjxq_r_top03">
-            	<dl class="title">
-                	<dt>审核项目</dt>
-                    <dd>审核状态</dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>身份认证</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>工作认证</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>居住地认证</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>信用报告</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>房产</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>购车</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>其他资料</dt>
-                    <dd></dd>
-                </dl>
-            </div>
-            
-        </div>
-        <!--右边 jjxq_r   end-->
-    </div>
+				<!--pic3-->
+				<p class="wz" style="margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目有诸多世界第一：全世界最大的佛教三门；全世界最大的阿育王柱；全世界最大的佛教宫殿"华藏世界"等；融合印、尼两国佛教"圣景"，加入中国佛教的历史文化元素，将世界佛教的核心及脉络全部纳入其中。
+				</p>
+				<p class="wz">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阿育王柱：<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;直径2.6米，高20米的阿育王柱，气势恢宏。
+				</p>
+
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic3.gif"
+						style="" />
+				</div>
+
+				<!--pic4-->
+				<p class="wz" style="margin-top: 15px;">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;华藏世界：<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总建筑面积48,000平方米，其中地宫20,000平方米，建筑南北朝向，从东向西横跨408米，超过凡赛尔宫，由主殿、心经殿、金刚经殿、罗汉堂组成。
+				</p>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic4.gif"
+						style="" />
+				</div>
+
+				<!--pic5-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全国最大的唐卡艺术博物馆
+				</p>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic5.gif"
+						style="" />
+				</div>
+
+				<!--pic6-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;心经殿</p>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic6.gif"
+						style="" />
+				</div>
+
+				<!--pic7-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金刚经殿
+				</p>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic7.gif"
+						style="" />
+				</div>
+
+				<!--pic8-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五百罗汉宫
+
+				</p>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic8.gif"
+						style="" />
+				</div>
+
+				<!--pic9-->
+				<p class="wz" style="margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最多可容纳800人的梵音剧场。</p>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic9.gif"
+						style="" />
+				</div>
+
+
+				<!--基金条款-->
+				<h3>基金条款</h3>
+				<div class="img">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic10.gif"
+						style="" />
+				</div>
+				<!--律师事务所-->
+				<dl class="lvshi">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic11.gif"
+							width="268" height="316" />
+					</dt>
+					<dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东广和律师事务所成立于1995年4月，现有注册律师近288名（不含分所），是华南地区最大的综合型律师事务所，被司法部、全国律协评为"全国优秀律师事务所"。被《亚洲法律杂志》评为中国第四大律师事务所、广东最大的律师事务所、亚洲最值得关注的十家律师事务所之一；被国际法律服务市场分析与评级机构—钱伯斯评为"2010年度最佳地区律师事务所奖"；＂2013年度中国顶尖的律师事务所＂。
+					</dd>
+				</dl>
+				<!--律师团队-->
+				<h4>强大的律师团队</h4>
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic12.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>杨波&nbsp;律师</p>
+						<p>
+							广和律师事务所合伙人<br />精通私募股权投资基金的运作、管理。
+						</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic13.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>廖建业&nbsp;律师</p>
+						<p>
+							谙熟财经会计实务及法律实践<br />精通大型企业的财务、税务、经营管理及投融资实务精通私募股权投资基金的运作、管理。
+						</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic14.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>高翔&nbsp;律师</p>
+						<p>承办多家企业法律顾问事务，主要从事企业法律顾问、融资、新三板挂牌、IPO、再融资及债券发行法律业务。</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic15.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>周翔&nbsp;律师</p>
+						<p>主要从事公司融资、法律顾问、民商事案件诉讼，有丰富的融资专项顾问和商业诉讼案件办理经验。</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic16.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>陈梅&nbsp;律师</p>
+						<p>承办多起企业投资、融资、收购等专项法律服务、经济纠纷诉讼与非诉法律事务。</p>
+					</dd>
+				</dl>
+
+				<dl class="lvshiteam">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic17.gif"
+							width="113" height="148" />
+					</dt>
+					<dd>
+						<p>付永光&nbsp;律师</p>
+						<p>主要辅助合伙人律师办理了企业投资、融资、并购法律顾问、非诉业务、民商事纠纷。</p>
+					</dd>
+				</dl>
+
+				<!--投资者保障-->
+				<h4>安全有效的投资者保障</h4>
+				<dl class="tzzbz">
+					<dt>
+						<img src="../../../../../Public/RichFunds/images/jjxq_pic18.gif" />
+					</dt>
+					<dd>根据2013年的审计报告，呼伦贝尔天竺苑旅游开发有限公司总资产约为9.57亿元，总负债约为3.8亿元，净资产约为5.77亿元，其股权可作为质押担保。</dd>
+				</dl>
+
+				<!--认购流程-->
+				<h3>认购流程：</h3>
+				<div class="rglc">
+					<img src="../../../../../Public/RichFunds/images/jjxq_pic19.gif"
+						width="598" height="308" />
+				</div>
+			</div>
+		</div>
+		<!--左边 jjxq_l   end-->
+
+		<!--右边 jjxq_r   start-->
+		<div class="jjxq_r">
+			<div class="jjxq_r_top01">
+				<input type="button" class="jjxq_r_btn"
+					style="background: url(../../../../../Public/RichFunds/images/guanzhu.gif) no-repeat;" /><input
+					type="button" class="jjxq_r_btn"
+					style="background: url(../../../../../Public/RichFunds/images/yuetan.gif) no-repeat;">
+			</div>
+
+			<div class="jjxq_r_top02">
+				<div class="qz"></div>
+				<div class="jjxq_r_top02_head">
+					<p class="yrzj">已融资金</p>
+					<p class="yrzj_no">￥20,0000</p>
+				</div>
+				<ul>
+					<li><span>项目规模：</span>
+					<p style="color: #e93105; font-weight: bold;">￥200,0000</p></li>
+					<li><span>年化收益：</span>
+					<p>10.5%</p></li>
+					<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span>
+					<p>1个月</p></li>
+					<li><span>担保机构：</span>
+					<p>广东工合基金</p></li>
+					<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span>
+					<div class="jdt">
+							<p class="jdt_in"></p>
+						</div></li>
+				</ul>
+			</div>
+
+			<div class="jjxq_r_top03">
+				<dl class="title">
+					<dt>审核项目</dt>
+					<dd>审核状态</dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>身份认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>工作认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>居住地认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>信用报告</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>房产</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>购车</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>其他资料</dt>
+					<dd></dd>
+				</dl>
+			</div>
+
+		</div>
+		<!--右边 jjxq_r   end-->
+	</div>
 	<!--内容 con end-->
-    
-     
-    
-     
+
+
+
+
 
 
 	<!--footer start-->
@@ -361,46 +439,59 @@
 	</div>
 	<!--banQuan end-->
 
-<!--浮动侧边栏  计算器  客服QQ-->
-<!--联系我们-->
-<div class="flo_aside">
-	<!--浮动框标题-->
-    <ul class="flo_l">
-    	<li style="padding-top: 30px;">计<br />算<br />器</li>
-        <li>联<br />系<br />我<br />们</li>
-    </ul>
-    <div class="flo_r" style="display:none">
-    	<!--计算器-->
-    	<ul class="flo_jsq" style="display:none">
-            	<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
-            	<!--<li><a href="#">CPI计算器</a></li>-->
-            	<li><a href="#">收益对比</a></li>
-            	<li><a href="#">身价计算器</a></li>
-        </ul>
-        <!--联系方式-->
-        <ul class="flo_lx" style="display:none">
-            <li style="font-size:18px;line-height:30px">客服热线<br /><span>400-123-4567</span></li>
-            <li><a href="javascript:;">客服QQ</a></li>
-            <li>
-                <dl>
-                    <dt>官方微信</dt>
-                    <dd>微信号：ghcf</dd>
-                    <dd><img src="../../../../../Public/Home/images/code.png" width="100" height="100" /></dd>    
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>官方微博</dt>
-                    <dd style="margin-bottom:0;"><a href="javascript:;">点击关注</a></dd>
-                </dl>
-            </li>
-    	</ul>
-        
-    </div>
-</div>
+	<!--浮动侧边栏  计算器  客服QQ-->
+	<!--联系我们-->
+	<div class="flo_aside">
+		<!--浮动框标题-->
+		<ul class="flo_l">
+			<li style="padding-top: 30px;">计<br />算<br />器
+			</li>
+			<li>联<br />系<br />我<br />们
+			</li>
+		</ul>
+		<div class="flo_r" style="display: none">
+			<!--计算器-->
+			<ul class="flo_jsq" style="display: none">
+				<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+				<!--<li><a href="#">CPI计算器</a></li>-->
+				<li><a href="#">收益对比</a></li>
+				<li><a href="#">身价计算器</a></li>
+			</ul>
+			<!--联系方式-->
+			<ul class="flo_lx" style="display: none">
+				<li style="font-size: 18px; line-height: 30px">客服热线<br />
+				<span>400-123-4567</span></li>
+				<li><a href="javascript:;">客服QQ</a></li>
+				<li>
+					<dl>
+						<dt>官方微信</dt>
+						<dd>微信号：ghcf</dd>
+						<dd>
+							<img src="../../../../../Public/Home/images/code.png" width="100"
+								height="100" />
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>官方微博</dt>
+						<dd style="margin-bottom: 0;">
+							<a href="javascript:;">点击关注</a>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+
+		</div>
+	</div>
 
 
-<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>
+	<div class="returnTop"
+		style="display: none; position: fixed; bottom: 300px; right: 100px;">
+		<a href="#returntop"><img
+			src="__PUBLIC__/RichFunds/images/returntop.png" width="23"
+			height="72" /></a>
+	</div>
 
 
 </body>

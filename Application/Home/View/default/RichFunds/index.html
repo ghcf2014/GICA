@@ -13,30 +13,32 @@
 <script type="text/javascript"
 	src="__PUBLIC__/RichFunds/js/jiJin_banner.js"></script>
 <script type="text/javascript">
-	$(function(){
+	$(function() {
 		//alert(1);	
-		$('.flo_aside').hover(function(){
-			//alert(2);
-			$('.flo_aside .flo_l li').each(function(index,element){
-				$(element).hover(function(){
-					$('.flo_aside .flo_r').show();
-					$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
+		$('.flo_aside').hover(
+				function() {
+					//alert(2);
+					$('.flo_aside .flo_l li').each(
+							function(index, element) {
+								$(element).hover(
+										function() {
+											$('.flo_aside .flo_r').show();
+											$('.flo_aside .flo_r ul').eq(
+													$(this).index()).show()
+													.siblings().hide();
+										});
+							})
+				}, function() {
+					$('.flo_aside .flo_r').hide();
 				});
-			})	
-		},function(){
-			$('.flo_aside .flo_r').hide();	
-		});
-		
-		$(document).scroll(function(){
-			if($(document).scrollTop() > $(window).height())
-			{
-				$('.returnTop').show();				
-			}
-			else
-			{
+
+		$(document).scroll(function() {
+			if ($(document).scrollTop() > $(window).height()) {
+				$('.returnTop').show();
+			} else {
 				$('.returnTop').hide();
 			}
-		});	
+		});
 	})
 </script>
 </head>
@@ -47,16 +49,25 @@
 	<div class="bar_out">
 		<div class="bar">
 			<ul>
-				<li><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 6px;width:30px;height:36px;float:left;"></div><a
-					href="javascript:;">官方微博</a></li>
-				<li><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px;width:30px;height:36px;float:left;"></div><a href="javascript:;">官方微信</a></li>
-                <li class="phone"><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -84px;width:30px;height:36px;float:left;"></div><div style="width:70px;">客户热线：</div><span>400-123-4567</span></li>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 6px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微博</a></li>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微信</a></li>
+				<li class="phone"><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -84px; width: 30px; height: 36px; float: left;"></div>
+					<div style="width: 70px;">客户热线：</div>
+					<span>400-123-4567</span></li>
 			</ul>
-            <ul class="bar_aside">
-                <li><a class="bar_aside_btn" style="color:#ef681f;" href="{:U('User/login')}">登录</a></li>
-                <li><a class="bar_aside_btn" style="color:#65bae1;" href="{:U('User/register')}">注册</a></li>
+			<ul class="bar_aside">
+				<li><a class="bar_aside_btn" style="color: #ef681f;"
+					href="{:U('User/login')}">登录</a></li>
+				<li><a class="bar_aside_btn" style="color: #65bae1;"
+					href="{:U('User/register')}">注册</a></li>
 			</ul>
-		</div><a name="returntop" id="returntop"></a>
+		</div>
+		<a name="returntop" id="returntop"></a>
 	</div>
 	<!--头部  bar end-->
 
@@ -71,13 +82,13 @@
 				height="40" class="logo_wz" /></a>
 		</h1>
 		<ul class="nav">
-        	<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
-			<li><a href="javascript:;">基金产品</a></li>
+			<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">基金产品</a></li>
 			<li><a href="{:U('Home/Index/index')}">工合财富</a></li>
-			<li><a href="javascript:;">工合众筹</a></li>
-			<li><a href="javascript:;">关于我们</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">工合众筹</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">关于我们</a></li>
 		</ul>
-		
+
 	</div>
 	<!--导航栏 nav end-->
 
@@ -85,20 +96,23 @@
 	<!--焦点图 banner start-->
 	<div class="banner">
 		<ul class="ban">
-			
-			<li style="z-index: 1;"><img src="__PUBLIC__/RichFunds/images/banner_pic2.jpg"
-				width="1600" height="338" /></li>
+
+			<li style="z-index: 1;"><img
+				src="__PUBLIC__/RichFunds/images/banner_pic2.jpg" width="1600"
+				height="338" /></li>
 			<li><img src="__PUBLIC__/RichFunds/images/banner_pic3.jpg"
 				width="1600" height="338" /></li>
-            <li><img src="__PUBLIC__/Home/images/jiJinBanner.jpg" width="1600" height="338" /></li>
-            <li><img src="__PUBLIC__/RichFunds/images/banner.jpg" width="1600" height="338" /></li>
+			<li><img src="__PUBLIC__/Home/images/jiJinBanner.jpg"
+				width="1600" height="338" /></li>
+			<li><img src="__PUBLIC__/RichFunds/images/banner.jpg"
+				width="1600" height="338" /></li>
 		</ul>
 		<ol>
 			<li class="current">1</li>
 			<li>2</li>
 			<li>3</li>
 			<li>4</li>
-            
+
 		</ol>
 	</div>
 	<!--焦点图 banner end-->
@@ -109,18 +123,24 @@
 		<!--con_top start-->
 		<div class="con_top">
 			<dl style="margin-right: 56px;">
-				<dt style="line-height: 52px; background:url(__PUBLIC__/RichFunds/images/tubiao1.png)  no-repeat left top; padding-left: 65px; width: 215px;height:70px;">
-					<p style="font-size: 24px; color: #333; line-height: 52px;">用户总收益<!--￥6,862,980,025,35--></p>
+				<dt
+					style="line-height: 52px; background: url(__PUBLIC__/RichFunds/images/tubiao1.png) no-repeat left top; padding-left: 65px; width: 215px; height: 70px;">
+					<p style="font-size: 24px; color: #333; line-height: 52px;">
+						用户总收益
+						<!--￥6,862,980,025,35-->
+					</p>
 					<!--<p style="font-size: 14px; line-height: 20px;">用户总收益</p>
 					<p style="font-size: 18px; line-height: 25px;">用户总收益</p>-->
-                    
+
 				</dt>
-				<dd><b style="color:red;font-weight:normal;font-size:20px;">￥6,862,980,025,35</b><br />成为理财人，通过主动或者加入优先理财计划将资金进行出借投资，获得预期12%-14%的稳定年化收益。</dd>
+				<dd>
+					<b style="color: red; font-weight: normal; font-size: 20px;">￥6,862,980,025,35</b><br />成为理财人，通过主动或者加入优先理财计划将资金进行出借投资，获得预期12%-14%的稳定年化收益。
+				</dd>
 			</dl>
 
 			<dl style="margin-right: 56px;">
 				<dt
-					style="line-height: 52px; background:url(__PUBLIC__/RichFunds/images/tubiao.png)  no-repeat left top; padding-left: 65px; width: 215px;height:70px;">
+					style="line-height: 52px; background: url(__PUBLIC__/RichFunds/images/tubiao.png) no-repeat left top; padding-left: 65px; width: 215px; height: 70px;">
 					<a href="javascript:;">我的资金安全吗？</a>
 				</dt>
 				<dd>成为理财人，通过主动或者加入优先理财计划将资金进行出借投资，获得预期12%-14%的稳定年化收益。</dd>
@@ -128,7 +148,7 @@
 
 			<dl>
 				<dt
-					style="line-height: 52px; background: url(__PUBLIC__/RichFunds/images/tubiao2.png) no-repeat left top; padding-left: 65px; width: 215px;height:70px;">
+					style="line-height: 52px; background: url(__PUBLIC__/RichFunds/images/tubiao2.png) no-repeat left top; padding-left: 65px; width: 215px; height: 70px;">
 					<a href="javascript:;">我该怎么开始？</a>
 				</dt>
 				<dd>成为理财人，通过主动或者加入优先理财计划将资金进行出借投资，获得预期12%-14%的稳定年化收益。</dd>
@@ -277,7 +297,10 @@
 					<div class="con_bot_l_con3_01">
 						<dl>
 							<dt></dt>
-							<dd style="color: #d64f3b; font-weight: bold; font-size: 16px;height:55px;"><a href="{:U('Home/RichFunds/chanyetouzi')}">产业投资基金</a></dd>
+							<dd
+								style="color: #d64f3b; font-weight: bold; font-size: 16px; height: 55px;">
+								<a href="{:U('Home/RichFunds/chanyetouzi')}">产业投资基金</a>
+							</dd>
 							<dd>
 								项目规模：<span>$200,0000</span>
 							</dd>
@@ -298,7 +321,10 @@
 						<dl>
 							<dt
 								style="background: url(__PUBLIC__/RichFunds/images/prince2.png) no-repeat;"></dt>
-							<dd style="color: #d64f3b; font-weight: bold; font-size: 16px;height:55px;"><a href="{:U('Home/RichFunds/filmjijin')}">《昆明之恋》电影基金</a></dd>
+							<dd
+								style="color: #d64f3b; font-weight: bold; font-size: 16px; height: 55px;">
+								<a href="{:U('Home/RichFunds/filmjijin')}">《昆明之恋》电影基金</a>
+							</dd>
 							<dd>
 								项目规模：<span>$2,0000,0000</span>
 							</dd>
@@ -319,7 +345,10 @@
 						<dl>
 							<dt
 								style="background: url(__PUBLIC__/RichFunds/images/prince3.png) no-repeat;"></dt>
-							<dd style="color: #d64f3b; font-weight: bold; font-size: 16px;height:55px;"><a href="{:U('Home/RichFunds/fojiaojijin')}">佛教文化旅游基金</a></dd>
+							<dd
+								style="color: #d64f3b; font-weight: bold; font-size: 16px; height: 55px;">
+								<a href="{:U('Home/RichFunds/fojiaojijin')}">佛教文化旅游基金</a>
+							</dd>
 							<dd>
 								项目规模：<span>$10,0000,0000</span>
 							</dd>
@@ -336,7 +365,7 @@
 						</dl>
 						<input type="button" class="con_bot_l_con3_01_btn" value="购买" />
 					</div>
-					<div class="con_bot_l_con3_01" style="display:none;">
+					<div class="con_bot_l_con3_01" style="display: none;">
 						<dl>
 							<dt></dt>
 							<dd style="color: #d64f3b; font-weight: bold; font-size: 16px;">翡翠山写字楼</dd>
@@ -356,7 +385,7 @@
 						</dl>
 						<input type="button" class="con_bot_l_con3_01_btn" value="购买" />
 					</div>
-					<div class="con_bot_l_con3_01" style="display:none;">
+					<div class="con_bot_l_con3_01" style="display: none;">
 						<dl>
 							<dt
 								style="background: url(__PUBLIC__/RichFunds/images/prince2.png) no-repeat;"></dt>
@@ -377,7 +406,8 @@
 						</dl>
 						<input type="button" class="con_bot_l_con3_01_btn1" value="已完成" />
 					</div>
-					<div class="con_bot_l_con3_01" style="margin-right: 0;display:none;">
+					<div class="con_bot_l_con3_01"
+						style="margin-right: 0; display: none;">
 						<dl>
 							<dt
 								style="background: url(__PUBLIC__/RichFunds/images/prince3.png) no-repeat;"></dt>
@@ -400,19 +430,25 @@
 					</div>
 				</div>
 				<!--con_bot_l_con3 end-->
-                
-                
+
+
 			</div>
 			<!--con_bot_l end-->
 
 			<!--con_bot_r start-->
 			<div class="con_bot_r">
-				<div class="con_bot_r_img"><a href="{:U('Home/Borrow/index')}"><img src="__PUBLIC__/RichFunds/images/woyaojiekuan.png" width="248" height="48" /></a></div>
+				<div class="con_bot_r_img">
+					<a href="{:U('Home/Borrow/index')}"><img
+						src="__PUBLIC__/RichFunds/images/woyaojiekuan.png" width="248"
+						height="48" /></a>
+				</div>
 				<ul class="con_bot_r_ul">
 					<li
-						style="background: url(__PUBLIC__/RichFunds/images/tubiao8.png) no-repeat 9px center;"><a href="{:u('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+						style="background: url(__PUBLIC__/RichFunds/images/tubiao8.png) no-repeat 9px center;"><a
+						href="{:u('Home/Newhelp/compare_tools')}">收益计算器</a></li>
 					<li
-						style="background: url(__PUBLIC__/RichFunds/images/tubiao9.png) no-repeat 9px center; margin-right: 0;"><a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></li>
+						style="background: url(__PUBLIC__/RichFunds/images/tubiao9.png) no-repeat 9px center; margin-right: 0;"><a
+						href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></li>
 					<li
 						style="background: url(__PUBLIC__/RichFunds/images/tubiao10.png) no-repeat 9px center;">投资模拟器</li>
 					<li
@@ -587,48 +623,58 @@
 	</div>
 	<!--banQuan end-->
 
-<!--浮动侧边栏  计算器  客服QQ-->
-<!--联系我们-->
-<div class="flo_aside">
-	<!--浮动框标题-->
-    <ul class="flo_l">
-    	<li style="padding-top: 30px;">计<br />算<br />器</li>
-        <li>联<br />系<br />我<br />们</li>
-        <li class="returnTop" style="display:none;height: 130px;"><a href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top</a></li>
-    </ul>
-    <div class="flo_r" style="display:none">
-    	<!--计算器-->
-    	<ul class="flo_jsq" style="display:none">
-            	<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
-            	<!--<li><a href="#">CPI计算器</a></li>
+	<!--浮动侧边栏  计算器  客服QQ-->
+	<!--联系我们-->
+	<div class="flo_aside">
+		<!--浮动框标题-->
+		<ul class="flo_l">
+			<li style="padding-top: 30px;">计<br />算<br />器
+			</li>
+			<li>联<br />系<br />我<br />们
+			</li>
+			<li class="returnTop" style="display: none; height: 130px;"><a
+				href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top
+			</a></li>
+		</ul>
+		<div class="flo_r" style="display: none">
+			<!--计算器-->
+			<ul class="flo_jsq" style="display: none">
+				<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+				<!--<li><a href="#">CPI计算器</a></li>
             	<li><a href="#">收益对比</a></li>
             	<li><a href="#">身价计算器</a></li>-->
-        </ul>
-        <!--联系方式-->
-        <ul class="flo_lx" style="display:none">
-            <li style="font-size:18px;line-height:30px">客服热线<br /><span>400-123-4567</span></li>
-            <li><a href="javascript:;">客服QQ</a></li>
-            <li>
-                <dl>
-                    <dt>官方微信</dt>
-                    <dd>微信号：ghcf</dd>
-                    <dd><img src="__PUBLIC__/Home/images/code.png" width="100" height="100" /></dd>    
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>官方微博</dt>
-                    <dd style="margin-bottom:0;"><a href="javascript:;">点击关注</a></dd>
-                </dl>
-            </li>
-    	</ul>
-        
-    </div>
-</div>
+			</ul>
+			<!--联系方式-->
+			<ul class="flo_lx" style="display: none">
+				<li style="font-size: 18px; line-height: 30px">客服热线<br />
+				<span>400-123-4567</span></li>
+				<li><a href="javascript:;">客服QQ</a></li>
+				<li>
+					<dl>
+						<dt>官方微信</dt>
+						<dd>微信号：ghcf</dd>
+						<dd>
+							<img src="__PUBLIC__/Home/images/code.png" width="100"
+								height="100" />
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>官方微博</dt>
+						<dd style="margin-bottom: 0;">
+							<a href="javascript:;">点击关注</a>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+
+		</div>
+	</div>
 
 
 
-<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
+	<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
 
 
 

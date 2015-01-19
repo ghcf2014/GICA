@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>详情页 </title>
+<title>详情页</title>
 <!-- 添加基金版面         -->
 <link rel="stylesheet" href="__PUBLIC__/RichFunds/css/jijinStyle.css"
 	type="text/css" />
@@ -15,34 +15,35 @@
 <script type="text/javascript"
 	src="__PUBLIC__/RichFunds/js/jiJinxiangqing.js"></script>
 <script type="text/javascript">
-	$(function(){
+	$(function() {
 		//alert(1);	
-		$('.flo_aside').hover(function(){
-			//alert(2);
-			$('.flo_aside .flo_l li').each(function(index,element){
-				$(element).hover(function(){
-					if($(element).index()!=2)
-					{
-						$('.flo_aside .flo_r').show();
-						$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
-					}
-					
+		$('.flo_aside').hover(
+				function() {
+					//alert(2);
+					$('.flo_aside .flo_l li').each(
+							function(index, element) {
+								$(element).hover(
+										function() {
+											if ($(element).index() != 2) {
+												$('.flo_aside .flo_r').show();
+												$('.flo_aside .flo_r ul').eq(
+														$(this).index()).show()
+														.siblings().hide();
+											}
+
+										});
+							})
+				}, function() {
+					$('.flo_aside .flo_r').hide();
 				});
-			})	
-		},function(){
-			$('.flo_aside .flo_r').hide();	
-		});
-		
-		$(document).scroll(function(){
-			if($(document).scrollTop() > $(window).height())
-			{
-				$('.returnTop').show();				
-			}
-			else
-			{
+
+		$(document).scroll(function() {
+			if ($(document).scrollTop() > $(window).height()) {
+				$('.returnTop').show();
+			} else {
 				$('.returnTop').hide();
 			}
-		});	
+		});
 	})
 </script>
 </head>
@@ -53,16 +54,25 @@
 	<div class="bar_out">
 		<div class="bar">
 			<ul>
-				<li><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 6px;width:30px;height:36px;float:left;"></div><a
-					href="javascript:;">官方微博</a></li>
-				<li><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px;width:30px;height:36px;float:left;"></div><a href="javascript:;">官方微信</a></li>
-                <li class="phone"><div style="background:url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -84px;width:30px;height:36px;float:left;"></div><div style="width:70px;">客户热线：</div><span>400-123-4567</span></li>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 6px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微博</a></li>
+				<li><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -39px; width: 30px; height: 36px; float: left;"></div>
+					<a href="javascript:;">官方微信</a></li>
+				<li class="phone"><div
+						style="background: url(__PUBLIC__/Home/images/top_icons.png) no-repeat 0 -84px; width: 30px; height: 36px; float: left;"></div>
+					<div style="width: 70px;">客户热线：</div>
+					<span>400-123-4567</span></li>
 			</ul>
-            <ul class="bar_aside">
-                <li><a class="bar_aside_btn" style="color:#ef681f;" href="{:U('User/login')}">登录</a></li>
-                <li><a class="bar_aside_btn" style="color:#65bae1;" href="{:U('User/register')}">注册</a></li>
+			<ul class="bar_aside">
+				<li><a class="bar_aside_btn" style="color: #ef681f;"
+					href="{:U('User/login')}">登录</a></li>
+				<li><a class="bar_aside_btn" style="color: #65bae1;"
+					href="{:U('User/register')}">注册</a></li>
 			</ul>
-		</div><a name="returntop" id="returntop"></a>
+		</div>
+		<a name="returntop" id="returntop"></a>
 	</div>
 	<!--头部  bar end-->
 
@@ -77,178 +87,193 @@
 				height="40" class="logo_wz" /></a>
 		</h1>
 		<ul class="nav">
-        	<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
-			<li><a href="{:U('Member/Index/index')}">基金产品</a></li>
+			<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">基金产品</a></li>
 			<li><a href="{:U('Home/Index/index')}">工合财富</a></li>
-			<li><a href="{:U('Home/Borrow/index')}">工合众筹</a></li>
-			<li><a href="{:U('Home/Newhelp/borrowhelp')}">关于我们</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">工合众筹</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">关于我们</a></li>
 		</ul>
-		
+
 	</div>
 	<!--导航栏 nav end-->
 
 
 	<!--焦点图 banner start-->
-	<div class="jjxq_ban"><img src="__PUBLIC__/RichFunds/images/jjxq_ban_pic1.png" width="1600" height="366" /></div>
+	<div class="jjxq_ban">
+		<img src="__PUBLIC__/RichFunds/images/jjxq_ban_pic1.png" width="1600"
+			height="366" />
+	</div>
 	<!--焦点图 banner end-->
 
 
 	<!--内容 con start-->
 	<div class="jjxq">
-    	<!--左边 jjxq_l   start-->
-    	<div class="jjxq_l">
-       	  <h2>工合佛教文化旅游基金</h2>
-            <div class="jjxq_l_con">
-            	<div class="jjjj">
-            		<h3>基金简介</h3>
-            		<ul class="jjjj_con" style="border-top: 1px solid #CCCCCC;">
-        				<li class="jjjj_con_tit">基金名称</li>
-        				<li>深圳市工合佛教文化旅游基金企业（有限合伙）</li>
-        				<li class="jjjj_con_tit">基金性质</li>
-        				<li style="line-height: 60px;">私募基金</li>
-            		</ul>
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">基金规模</li>
-            			<li style="line-height: 60px;">人民币10亿元</li>
-            			<li class="jjjj_con_tit">认购金额</li>
-            			<li>基金认购以200万元为一份额，按 100 万元的整数倍递增</li>
-            		</ul>
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">存续期</li>
-            			<li style="line-height: 60px;">24个月</li>
-            			<li class="jjjj_con_tit">预期收益</li>
-            			<li style="line-height: 60px;">固定年化收益率12%</li>
-            		</ul>		
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">收益说明</li>
-            			<li>到期后，合伙人可自行选择退出或继续持有至36个月</li>
-            			<li class="jjjj_con_tit">管理人</li>
-            			<li>广东工合股权基金有限公司（私募投资基金管理人登记编号：P1004629）</li>
-            		</ul>		
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">投资标的</li>
-            			<li class="jjjj_con_li_last"  style="line-height: 60px;">中华天竺苑及其配套设施</li>
-            		</ul>
-            				
-            		
-            	</div>
-            	<div class="xmjj">
-            		<h3>项目简介</h3>
-            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中华天竺苑作为全球最大的佛教文化主题公园，以及东北亚最大的佛教道场，其建成后必将成为呼伦贝尔市的标志性建筑及旅游名片，社会效益和经济效益不可估量，项目占地340.8公顷，总建筑面积7.32万平方米，由三门、阿育王柱、菩提广场、华藏世界和佛教八大圣景组成。项目位于内蒙古自治区呼伦贝尔市海拉尔城区北部的敖包山，地理位置独特，交通条件方便。</p>
-            		<img src="__PUBLIC__/RichFunds/images/jjxq_pic1.gif" style="margin: 5px 25px;"/>
-            	</div>
-            	<div class="xmjj">
-            		<h3>基金管理人简介：</h3>
-            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东工合股权基金有限公司（“工合基金”）由广东省工业合作协会（“广东工合”）会长单位牵头、联合多家实力会员企业发起成立，是广东工合实施金融资源整合的执行单位。</p>
-            	</div>
-            	<div class="team">
-            		<h3>基金管理团队：</h3>
-            		<table border="0" cellspacing="0" cellpadding="0">
-            			<tr>
-            				<td>董事长</td>
-            				<td style="border-right: 0;">张绵彪</td>
-            			</tr>
-            			<tr>
-            				<td>金融事业中心总裁</td>
-            				<td style="border-right: 0;">黄澍铮</td>
-            			</tr>
-            			<tr>
-            				<td>投融资事业中心总裁</td>
-            				<td style="border-right: 0;">熊勇</td>
-            			</tr>
-            			<tr>
-            				<td>国际项目中心总裁</td>
-            				<td style="border-right: 0;">周雄盛</td>
-            			</tr>
-            			<tr>
-            				<td>投资经理</td>
-            				<td style="border-right: 0;">王其强</td>
-            			</tr>
-            			<tr>
-            				<td style="border-bottom: 0;">法律顾问</td>
-            				<td style="border-bottom: 0;border-right: 0;">杨波</td>
-            			</tr>
-            		</table>
-            	</div>
-            </div>
-        </div>
-        <!--左边 jjxq_l   end-->
-        
-        <!--右边 jjxq_r   start-->
-        <div class="jjxq_r" >
-        	<div class="jjxq_r_top01" style="position: relative;">
-            	<input type="button" class="jjxq_r_btn" style="background:url(__PUBLIC__/RichFunds/images/guanzhu.gif) no-repeat;" /><input type="button" class="jjxq_r_btn" style="background:url(__PUBLIC__/RichFunds/images/yuetan.gif) no-repeat;" />
-            	
-            </div>
-            <ul class="yuetan" style="width: 150px;height: 60px;background:url(__PUBLIC__/RichFunds/images/duihuaqipao.png) no-repeat;position: absolute;top: 60px;right: 28px;z-index: 3;padding-top: 20px;border-radius: 5px;display: none;">
-	            	<li>联系人：王其强</li>
-	            	<li>联系方式：13923876667</li>
-            </ul>
-            <div class="jjxq_r_top02">
-            	<div class="qz"></div>
-            	<div class="jjxq_r_top02_head">
-                	<p class="yrzj">已融资金</p>
-                    <p class="yrzj_no">￥200,0000</p>
-                </div>
-                <ul>
-                	<li><span>项目规模：</span><p style="color:#e93105;font-weight:bold;">￥10,0000,0000</p></li>
-                	<li><span>年化收益：</span><p>10.5%</p></li>
-                	<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span><p>1年</p></li>
-                	<li><span>担保机构：</span><p>广东工合基金</p></li>
-                	<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span><div class="jdt"><p class="jdt_in"></p></div></li>
-                </ul>
-            </div>
-            
-            <div class="jjxq_r_top03">
-            	<dl class="title">
-                	<dt>审核项目</dt>
-                    <dd>审核状态</dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>身份认证</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>工作认证</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>居住地认证</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>信用报告</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>房产</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>购车</dt>
-                    <dd></dd>
-                </dl>
-                
-                <dl class="jjxq_r_top03_con">
-                	<dt>其他资料</dt>
-                    <dd></dd>
-                </dl>
-            </div>
-            
-        </div>
-        <!--右边 jjxq_r   end-->
-    </div>
+		<!--左边 jjxq_l   start-->
+		<div class="jjxq_l">
+			<h2>工合佛教文化旅游基金</h2>
+			<div class="jjxq_l_con">
+				<div class="jjjj">
+					<h3>基金简介</h3>
+					<ul class="jjjj_con" style="border-top: 1px solid #CCCCCC;">
+						<li class="jjjj_con_tit">基金名称</li>
+						<li>深圳市工合佛教文化旅游基金企业（有限合伙）</li>
+						<li class="jjjj_con_tit">基金性质</li>
+						<li style="line-height: 60px;">私募基金</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">基金规模</li>
+						<li style="line-height: 60px;">人民币10亿元</li>
+						<li class="jjjj_con_tit">认购金额</li>
+						<li>基金认购以200万元为一份额，按 100 万元的整数倍递增</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">存续期</li>
+						<li style="line-height: 60px;">24个月</li>
+						<li class="jjjj_con_tit">预期收益</li>
+						<li style="line-height: 60px;">固定年化收益率12%</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">收益说明</li>
+						<li>到期后，合伙人可自行选择退出或继续持有至36个月</li>
+						<li class="jjjj_con_tit">管理人</li>
+						<li>广东工合股权基金有限公司（私募投资基金管理人登记编号：P1004629）</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">投资标的</li>
+						<li class="jjjj_con_li_last" style="line-height: 60px;">中华天竺苑及其配套设施</li>
+					</ul>
+
+
+				</div>
+				<div class="xmjj">
+					<h3>项目简介</h3>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中华天竺苑作为全球最大的佛教文化主题公园，以及东北亚最大的佛教道场，其建成后必将成为呼伦贝尔市的标志性建筑及旅游名片，社会效益和经济效益不可估量，项目占地340.8公顷，总建筑面积7.32万平方米，由三门、阿育王柱、菩提广场、华藏世界和佛教八大圣景组成。项目位于内蒙古自治区呼伦贝尔市海拉尔城区北部的敖包山，地理位置独特，交通条件方便。</p>
+					<img src="__PUBLIC__/RichFunds/images/jjxq_pic1.gif"
+						style="margin: 5px 25px;" />
+				</div>
+				<div class="xmjj">
+					<h3>基金管理人简介：</h3>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东工合股权基金有限公司（“工合基金”）由广东省工业合作协会（“广东工合”）会长单位牵头、联合多家实力会员企业发起成立，是广东工合实施金融资源整合的执行单位。</p>
+				</div>
+				<div class="team">
+					<h3>基金管理团队：</h3>
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>董事长</td>
+							<td style="border-right: 0;">张绵彪</td>
+						</tr>
+						<tr>
+							<td>金融事业中心总裁</td>
+							<td style="border-right: 0;">黄澍铮</td>
+						</tr>
+						<tr>
+							<td>投融资事业中心总裁</td>
+							<td style="border-right: 0;">熊勇</td>
+						</tr>
+						<tr>
+							<td>国际项目中心总裁</td>
+							<td style="border-right: 0;">周雄盛</td>
+						</tr>
+						<tr>
+							<td>投资经理</td>
+							<td style="border-right: 0;">王其强</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 0;">法律顾问</td>
+							<td style="border-bottom: 0; border-right: 0;">杨波</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--左边 jjxq_l   end-->
+
+		<!--右边 jjxq_r   start-->
+		<div class="jjxq_r">
+			<div class="jjxq_r_top01" style="position: relative;">
+				<input type="button" class="jjxq_r_btn"
+					style="background: url(__PUBLIC__/RichFunds/images/guanzhu.gif) no-repeat;" /><input
+					type="button" class="jjxq_r_btn"
+					style="background: url(__PUBLIC__/RichFunds/images/yuetan.gif) no-repeat;" />
+
+			</div>
+			<ul class="yuetan"
+				style="width: 150px; height: 60px; background: url(__PUBLIC__/RichFunds/images/duihuaqipao.png) no-repeat; position: absolute; top: 60px; right: 28px; z-index: 3; padding-top: 20px; border-radius: 5px; display: none;">
+				<li>联系人：王其强</li>
+				<li>联系方式：13923876667</li>
+			</ul>
+			<div class="jjxq_r_top02">
+				<div class="qz"></div>
+				<div class="jjxq_r_top02_head">
+					<p class="yrzj">已融资金</p>
+					<p class="yrzj_no">￥200,0000</p>
+				</div>
+				<ul>
+					<li><span>项目规模：</span>
+					<p style="color: #e93105; font-weight: bold;">￥10,0000,0000</p></li>
+					<li><span>年化收益：</span>
+					<p>10.5%</p></li>
+					<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span>
+					<p>1年</p></li>
+					<li><span>担保机构：</span>
+					<p>广东工合基金</p></li>
+					<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span>
+					<div class="jdt">
+							<p class="jdt_in"></p>
+						</div></li>
+				</ul>
+			</div>
+
+			<div class="jjxq_r_top03">
+				<dl class="title">
+					<dt>审核项目</dt>
+					<dd>审核状态</dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>身份认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>工作认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>居住地认证</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>信用报告</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>房产</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>购车</dt>
+					<dd></dd>
+				</dl>
+
+				<dl class="jjxq_r_top03_con">
+					<dt>其他资料</dt>
+					<dd></dd>
+				</dl>
+			</div>
+
+		</div>
+		<!--右边 jjxq_r   end-->
+	</div>
 	<!--内容 con end-->
-    
-     
-    
-     
+
+
+
+
 
 
 	<!--footer start-->
@@ -314,47 +339,57 @@
 	</div>
 	<!--banQuan end-->
 
-<!--浮动侧边栏  计算器  客服QQ-->
-<!--联系我们-->
-<div class="flo_aside">
-	<!--浮动框标题-->
-    <ul class="flo_l">
-    	<li style="padding-top: 30px;">计<br />算<br />器</li>
-        <li>联<br />系<br />我<br />们</li>
-        <li class="returnTop" style="display:none;height: 130px;"><a href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top</a></li>
-    </ul>
-    <div class="flo_r" style="display:none">
-    	<!--计算器-->
-    	<ul class="flo_jsq" style="display:none">
-            	<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
-            	<!--<li><a href="#">CPI计算器</a></li>
+	<!--浮动侧边栏  计算器  客服QQ-->
+	<!--联系我们-->
+	<div class="flo_aside">
+		<!--浮动框标题-->
+		<ul class="flo_l">
+			<li style="padding-top: 30px;">计<br />算<br />器
+			</li>
+			<li>联<br />系<br />我<br />们
+			</li>
+			<li class="returnTop" style="display: none; height: 130px;"><a
+				href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top
+			</a></li>
+		</ul>
+		<div class="flo_r" style="display: none">
+			<!--计算器-->
+			<ul class="flo_jsq" style="display: none">
+				<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+				<!--<li><a href="#">CPI计算器</a></li>
             	<li><a href="#">收益对比</a></li>
             	<li>身价计算器<a href="#"></a></li>-->
-        </ul>
-        <!--联系方式-->
-        <ul class="flo_lx" style="display:none">
-            <li style="font-size:18px;line-height:30px">客服热线<br /><span>400-123-4567</span></li>
-            <li><a href="javascript:;">客服QQ</a></li>
-            <li>
-                <dl>
-                    <dt>官方微信</dt>
-                    <dd>微信号：ghcf</dd>
-                    <dd><img src="__PUBLIC__/Home/images/code.png" width="100" height="100" /></dd>    
-                </dl>
-            </li>
-            <li>
-                <dl>
-                    <dt>官方微博</dt>
-                    <dd style="margin-bottom:0;"><a href="javascript:;">点击关注</a></dd>
-                </dl>
-            </li>
-    	</ul>
-        
-    </div>
-</div>
+			</ul>
+			<!--联系方式-->
+			<ul class="flo_lx" style="display: none">
+				<li style="font-size: 18px; line-height: 30px">客服热线<br />
+				<span>400-123-4567</span></li>
+				<li><a href="javascript:;">客服QQ</a></li>
+				<li>
+					<dl>
+						<dt>官方微信</dt>
+						<dd>微信号：ghcf</dd>
+						<dd>
+							<img src="__PUBLIC__/Home/images/code.png" width="100"
+								height="100" />
+						</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>官方微博</dt>
+						<dd style="margin-bottom: 0;">
+							<a href="javascript:;">点击关注</a>
+						</dd>
+					</dl>
+				</li>
+			</ul>
+
+		</div>
+	</div>
 
 
-<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
+	<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
 
 
 </body>

@@ -20,30 +20,30 @@
 		$('.flo_aside').hover(
 				function() {
 					//alert(2);
-					$('.flo_aside .flo_l li').each(function(index, element) {
-						$(element).hover(function() {
-							if($(element).index()!=2)
-							{
-								$('.flo_aside .flo_r').show();
-								$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
-							}
-						});
-					})
+					$('.flo_aside .flo_l li').each(
+							function(index, element) {
+								$(element).hover(
+										function() {
+											if ($(element).index() != 2) {
+												$('.flo_aside .flo_r').show();
+												$('.flo_aside .flo_r ul').eq(
+														$(this).index()).show()
+														.siblings().hide();
+											}
+										});
+							})
 				}, function() {
 					$('.flo_aside .flo_r').hide();
 				});
-				
-				$(document).scroll(function(){
-			if($(document).scrollTop() > $(window).height())
-			{
-				$('.returnTop').show();				
-			}
-			else
-			{
+
+		$(document).scroll(function() {
+			if ($(document).scrollTop() > $(window).height()) {
+				$('.returnTop').show();
+			} else {
 				$('.returnTop').hide();
 			}
-		});	
-				
+		});
+
 	})
 </script>
 </head>
@@ -70,7 +70,8 @@
 				<li><a class="bar_aside_btn" style="color: #65bae1;"
 					href="{:U('User/register')}">注册</a></li>
 			</ul>
-		</div><a name="returntop" id="returntop"></a>
+		</div>
+		<a name="returntop" id="returntop"></a>
 	</div>
 	<!--头部  bar end-->
 
@@ -86,10 +87,10 @@
 		</h1>
 		<ul class="nav">
 			<li><a href="{:u('Home/RichFunds/index')}" class="nav_cur">首页</a></li>
-			<li><a href="{:U('Member/Index/index')}">基金产品</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">基金产品</a></li>
 			<li><a href="{:U('Home/Index/index')}">工合财富</a></li>
-			<li><a href="{:U('Home/Borrow/index')}">工合众筹</a></li>
-			<li><a href="{:U('Home/Newhelp/borrowhelp')}">关于我们</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">工合众筹</a></li>
+			<li><a href="{:u('Home/RichFunds/jijinbuild')}">关于我们</a></li>
 		</ul>
 
 	</div>
@@ -111,77 +112,77 @@
 			<h2>工合昆明之恋电影基金</h2>
 			<div class="jjxq_l_con">
 				<div class="jjjj">
-            		<h3>基金简介</h3>
-            		<ul class="jjjj_con" style="border-top: 1px solid #CCCCCC;">
-        				<li class="jjjj_con_tit">基金名称</li>
-        				<li>深圳市工合影视投资基金企业（有限合伙）</li>
-        				<li class="jjjj_con_tit">基金性质</li>
-        				<li style="line-height: 60px;">私募基金</li>
-            		</ul>
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">基金规模</li>
-            			<li style="line-height: 60px;">人民币2亿元</li>
-            			<li class="jjjj_con_tit">认购金额</li>
-            			<li>基金认购以100万元为一份，按100万元的整数倍递增</li>
-            		</ul>
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">存续期</li>
-            			<li style="line-height: 60px;">24个月</li>
-            			<li class="jjjj_con_tit">预期收益</li>
-            			<li style="line-height: 60px;">固定年化收益率12%</li>
-            		</ul>		
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">收益说明</li>
-            			<li style="line-height: 60px;">到期还本付息</li>
-            			<li class="jjjj_con_tit">管理人</li>
-            			<li>广东工合股权基金有限公司（私募投资基金管理人登记编号：P1004629）</li>
-            		</ul>		
-            		<ul class="jjjj_con">
-            			<li class="jjjj_con_tit">投资标的</li>
-            			<li class="jjjj_con_li_last"  style="line-height: 60px;">电影《昆明之恋》</li>
-            		</ul>		            		
-            	</div>
-            	<div class="xmjj">
-            		<h3>项目简介</h3>
-            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《昆明之恋》，一部展现二战期间，飞虎队与中国人民共同抗击日本侵略的历史性大片，是习近平主席今年访韩带回来的一部交流影片。
-该片集合了中外电影一流制作团队，在制作模式上重构本土环境下的国际电影制作的新水准。编剧罗星、张昆剑、槐方翾等主创人员，历时5年数10次深入云南采风，整合二战期间遗失的人文素材，进行严谨的艺术再创造。从而写出讲述上世纪3、40年代，美国飞虎队援华抗日期间在南屏电影院（时称美军电影院）发生的一段跨越了60年的爱情故事。
-电影《昆明之恋》由中国电影基金会监制，北京华夏翰墨艺术交流有限公司摄制，并由中共云南省委、中共昆明市委参与联合协拍。
-</p>
-            		<img src="__PUBLIC__/RichFunds/images/jjxq_film_pic1.png" style="margin: 5px 25px;"/>
-            	</div>
-            	<div class="xmjj">
-            		<h3>基金管理人简介：</h3>
-            		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东工合股权基金有限公司（“工合基金”）由广东省工业合作协会（“广东工合”）会长单位牵头、联合多家实力会员企业发起成立，是广东工合实施金融资源整合的执行单位。</p>
-            	</div>
-            	<div class="team">
-            		<h3>基金管理团队：</h3>
-            		<table border="0" cellspacing="0" cellpadding="0">
-            			<tr>
-            				<td>董事长</td>
-            				<td style="border-right: 0;">张绵彪</td>
-            			</tr>
-            			<tr>
-            				<td>金融事业中心总裁</td>
-            				<td style="border-right: 0;">黄澍铮</td>
-            			</tr>
-            			<tr>
-            				<td>投融资事业中心总裁</td>
-            				<td style="border-right: 0;">熊勇</td>
-            			</tr>
-            			<tr>
-            				<td>国际项目中心总裁</td>
-            				<td style="border-right: 0;">周雄盛</td>
-            			</tr>
-            			<tr>
-            				<td>投资经理</td>
-            				<td style="border-right: 0;">王其强</td>
-            			</tr>
-            			<tr>
-            				<td style="border-bottom: 0;">法律顾问</td>
-            				<td style="border-bottom: 0;border-right: 0;">杨波</td>
-            			</tr>
-            		</table>
-            	</div>
+					<h3>基金简介</h3>
+					<ul class="jjjj_con" style="border-top: 1px solid #CCCCCC;">
+						<li class="jjjj_con_tit">基金名称</li>
+						<li>深圳市工合影视投资基金企业（有限合伙）</li>
+						<li class="jjjj_con_tit">基金性质</li>
+						<li style="line-height: 60px;">私募基金</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">基金规模</li>
+						<li style="line-height: 60px;">人民币2亿元</li>
+						<li class="jjjj_con_tit">认购金额</li>
+						<li>基金认购以100万元为一份，按100万元的整数倍递增</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">存续期</li>
+						<li style="line-height: 60px;">24个月</li>
+						<li class="jjjj_con_tit">预期收益</li>
+						<li style="line-height: 60px;">固定年化收益率12%</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">收益说明</li>
+						<li style="line-height: 60px;">到期还本付息</li>
+						<li class="jjjj_con_tit">管理人</li>
+						<li>广东工合股权基金有限公司（私募投资基金管理人登记编号：P1004629）</li>
+					</ul>
+					<ul class="jjjj_con">
+						<li class="jjjj_con_tit">投资标的</li>
+						<li class="jjjj_con_li_last" style="line-height: 60px;">电影《昆明之恋》</li>
+					</ul>
+				</div>
+				<div class="xmjj">
+					<h3>项目简介</h3>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;《昆明之恋》，一部展现二战期间，飞虎队与中国人民共同抗击日本侵略的历史性大片，是习近平主席今年访韩带回来的一部交流影片。
+						该片集合了中外电影一流制作团队，在制作模式上重构本土环境下的国际电影制作的新水准。编剧罗星、张昆剑、槐方翾等主创人员，历时5年数10次深入云南采风，整合二战期间遗失的人文素材，进行严谨的艺术再创造。从而写出讲述上世纪3、40年代，美国飞虎队援华抗日期间在南屏电影院（时称美军电影院）发生的一段跨越了60年的爱情故事。
+						电影《昆明之恋》由中国电影基金会监制，北京华夏翰墨艺术交流有限公司摄制，并由中共云南省委、中共昆明市委参与联合协拍。</p>
+					<img src="__PUBLIC__/RichFunds/images/jjxq_film_pic1.png"
+						style="margin: 5px 25px;" />
+				</div>
+				<div class="xmjj">
+					<h3>基金管理人简介：</h3>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;广东工合股权基金有限公司（“工合基金”）由广东省工业合作协会（“广东工合”）会长单位牵头、联合多家实力会员企业发起成立，是广东工合实施金融资源整合的执行单位。</p>
+				</div>
+				<div class="team">
+					<h3>基金管理团队：</h3>
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>董事长</td>
+							<td style="border-right: 0;">张绵彪</td>
+						</tr>
+						<tr>
+							<td>金融事业中心总裁</td>
+							<td style="border-right: 0;">黄澍铮</td>
+						</tr>
+						<tr>
+							<td>投融资事业中心总裁</td>
+							<td style="border-right: 0;">熊勇</td>
+						</tr>
+						<tr>
+							<td>国际项目中心总裁</td>
+							<td style="border-right: 0;">周雄盛</td>
+						</tr>
+						<tr>
+							<td>投资经理</td>
+							<td style="border-right: 0;">王其强</td>
+						</tr>
+						<tr>
+							<td style="border-bottom: 0;">法律顾问</td>
+							<td style="border-bottom: 0; border-right: 0;">杨波</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 		</div>
 		<!--左边 jjxq_l   end-->
@@ -194,23 +195,31 @@
 					type="button" class="jjxq_r_btn"
 					style="background: url(../../../../../Public/RichFunds/images/yuetan.gif) no-repeat;">
 			</div>
-			<ul class="yuetan" style="width: 150px;height: 60px;background:url(__PUBLIC__/RichFunds/images/duihuaqipao.png) no-repeat;position: absolute;top: 60px;right: 28px;z-index: 3;padding-top: 20px;border-radius: 5px;display: none;">
-	            	<li>联系人：王其强</li>
-	            	<li>联系方式：13923876667</li>
-            </ul>
+			<ul class="yuetan"
+				style="width: 150px; height: 60px; background: url(__PUBLIC__/RichFunds/images/duihuaqipao.png) no-repeat; position: absolute; top: 60px; right: 28px; z-index: 3; padding-top: 20px; border-radius: 5px; display: none;">
+				<li>联系人：王其强</li>
+				<li>联系方式：13923876667</li>
+			</ul>
 			<div class="jjxq_r_top02">
 				<div class="qz"></div>
 				<div class="jjxq_r_top02_head">
-                	<p class="yrzj">已融资金</p>
-                    <p class="yrzj_no">￥1000,0000</p>
-                </div>
-                <ul>
-                	<li><span>项目规模：</span><p style="color:#e93105;font-weight:bold;">￥2,0000,0000</p></li>
-                	<li><span>年化收益：</span><p>10.5%</p></li>
-                	<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span><p>2年</p></li>
-                	<li><span>担保机构：</span><p>广东工合基金</p></li>
-                	<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span><div class="jdt"><p class="jdt_in"></p></div></li>
-                </ul>
+					<p class="yrzj">已融资金</p>
+					<p class="yrzj_no">￥1000,0000</p>
+				</div>
+				<ul>
+					<li><span>项目规模：</span>
+					<p style="color: #e93105; font-weight: bold;">￥2,0000,0000</p></li>
+					<li><span>年化收益：</span>
+					<p>10.5%</p></li>
+					<li><span>期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;限：</span>
+					<p>2年</p></li>
+					<li><span>担保机构：</span>
+					<p>广东工合基金</p></li>
+					<li><span>进&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span>
+					<div class="jdt">
+							<p class="jdt_in"></p>
+						</div></li>
+				</ul>
 			</div>
 
 			<div class="jjxq_r_top03">
@@ -333,9 +342,13 @@
 	<div class="flo_aside">
 		<!--浮动框标题-->
 		<ul class="flo_l">
-			<li style="padding-top: 30px;">计<br />算<br />器</li>
-			<li>联<br />系<br />我<br />们</li>
-			<li class="returnTop" style="display:none;height: 130px;"><a href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top</a></li>
+			<li style="padding-top: 30px;">计<br />算<br />器
+			</li>
+			<li>联<br />系<br />我<br />们
+			</li>
+			<li class="returnTop" style="display: none; height: 130px;"><a
+				href="#returntop" style="color: #fff;">返<br />回<br />顶<br />部<br />top
+			</a></li>
 		</ul>
 		<div class="flo_r" style="display: none">
 			<!--计算器-->
@@ -373,7 +386,7 @@
 	</div>
 
 
-<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
+	<!--<div class="returnTop" style="display:none;position:fixed;bottom:300px;right:100px;"><a href="#returntop"><img src="__PUBLIC__/RichFunds/images/returntop.png" width="23" height="72" /></a></div>-->
 
 
 
