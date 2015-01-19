@@ -64,28 +64,28 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .cont{width:1070px;margin:auto;padding-top:45px;}
 
 /*--------content_top---------------------*/
-.cont .cont_top{width:1070px;height:245px;background:url(../images/cont_bg.png) repeat-x bottom left;overflow:hidden;}
+.cont .cont_top{width:1070px;height:245px;overflow:hidden;}
 .cont .cont_top dl{width:210px;height:245px;float:left;margin-right:75px;}
 .cont .cont_top dt{width:205px;height:80px;position:relative;}
 
 .cont .cont_top dt h2{width:205px;height:80px;font-size:20px;font-weight:normal;}
-.cont .cont_top dt h2 a{display:block;width:130px;height:80px;background:url(../images/touzil.png) no-repeat;padding:0 0 0 75px;}
-.cont .cont_top dt h2 a:hover{display:block;width:130px;height:80px;background:url(../images/touzi.png) no-repeat;padding:0 0 0 75px;color:#ef681f;}
+.cont .cont_top dt h2 a{display:block;width:130px;height:80px;background:url(../images/touzil.png) no-repeat;padding:0 0 0 75px;color: #cf000e;}
+.cont .cont_top dt h2 a:hover{display:block;width:130px;height:80px;padding:0 0 0 75px;}
 .cont .cont_top dt p{font-size:14px;font-weight:normal;line-height:22px;position:absolute;left:75px;top:45px;}
 .cont .cont_top dd{width:210px;height:145px;line-height:24px;padding-top:15px;}
 
 .cont .cont_top .rongzi dt{width:205px;}
-.cont .cont_top .rongzi dt a{width:130px;background:url(../images/icons.png) no-repeat 0 0;}
-.cont .cont_top .rongzi dt a:hover{width:130px;background:url(../images/pri.png) no-repeat;color:#ef681f;}
+.cont .cont_top .rongzi dt a{width:130px;background:url(../images/icons.png) no-repeat 0 0;color: #faa142;}
+.cont .cont_top .rongzi dt a:hover{width:130px;}
 
 
 .cont .cont_top .safety dt{width:205px;}
-.cont .cont_top .safety dt a{width:130px;background:url(../images/icons.png) no-repeat 0 -83px;}
-.cont .cont_top .safety dt a:hover{width:130px;background:url(../images/auquan.png) no-repeat;color:#ef681f;}
+.cont .cont_top .safety dt a{width:130px;background:url(../images/icons.png) no-repeat 0 -83px;color: #66ccfb;}
+.cont .cont_top .safety dt a:hover{width:130px;}
 
 .cont .cont_top .helpCenter{margin-right:0;width:210px;}
-.cont .cont_top .helpCenter dt a{width:130px;background:url(../images/bangzhub.png) no-repeat;}
-.cont .cont_top .helpCenter dt a:hover{width:130px;background:url(../images/priii.png) no-repeat;color:#ef681f;}
+.cont .cont_top .helpCenter dt a{width:130px;background:url(../images/bangzhub.png) no-repeat;color: #95ff95;}
+.cont .cont_top .helpCenter dt a:hover{width:130px;}
 
 
 /*----------content_bottom---------------------*/
@@ -181,11 +181,11 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .dl_cont dd .yz_call{width:135px;height:42px;line-height:20px;float:left;font-size:14px;margin-left:10px;}
 .dl_cont dd .yz_call span{color:#66ccfc;}
 .dl_cont .zcBtn{width:140px;height:40px;background:url(../images/140x40pxblue.png) no-repeat;color:#fff;margin-left:300px;font-size:16px;cursor:pointer;}
-.dl_cont .zcCheck{width:260px;height:25px;line-height:20px;margin:0 auto 30px;overflow:hidden;}
+.dl_cont .zcCheck{width:350px;height:25px;line-height:20px;margin:0 auto 30px;overflow:hidden;}
 .dl_cont .zcCheck .check{width:20px;height:20px;float:left;}
-.dl_cont .zcCheck p{float:left;width:220px;height:20px;line-height:24px;margin-left:10px;}
-
-
+.dl_cont .zcCheck p{float:left;width:320px;height:20px;line-height:24px;margin-left:10px;overflow: hidden;}
+.dl_cont .zcCheck p b{font-weight: normal;float: left;}
+.dl_cont .zcCheck p a{float: left;}
 
 
 
@@ -768,7 +768,11 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 
-
+/*------------服务协议   使用协议-------------------------------------------*/
+.fwxy{width: 800px;height: auto;padding:40px 133px;background: #fff;margin: 30px auto;border: 2px solid #ddd;}
+.fwxy h2{width: 800px;height: 60px;line-height: 60px;font-size: 18px;color: #ae1c27;text-align: center;margin-bottom: 20px;}
+.fwxy p{width: 800px;line-height: 30px;height: auto;}
+.fwxy h3{width: 800px;height: 40px;line-height: 40px;color: #ae1c27;font-size: 16px;margin-top: 20px;}
 
 
 

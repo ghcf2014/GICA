@@ -121,13 +121,12 @@
 					<span style="color: red;line-height:40px;" id="checkcode" class="formtips Validform_checktip "></span>
 			</dl>
 			<div class="zcCheck">
-				<input type="checkbox" value="" name="" class="check"
-					checked="checked" />
+				<input type="checkbox" class="check" checked="checked" id="testcheck"/>
 				<p>
-					我已阅读并同意<a href="#">《网站服务协议》</a>
+					<b>我已阅读并同意</b><a href="#">《网站服务协议》</a><b>和</b><a href="#">《使用条款》</a>
 				</p>
 			</div>
-			<button type="submit" class="btn">注 册</button>
+			<button type="submit" class="btn" id="zc">注 册</button>
 		</form>
 	</div>
 </div>
@@ -323,5 +322,60 @@
 		$("#form").submit();
 
 	});
-</script> <!--content end--> </block>
+</script> <!--content end--> 
+
+
+<!--
+	作者：1339070342@qq.com
+	时间：2015-01-19
+	描述：服务条款是否选择同意
+-->
+<script type="text/javascript">
+	$(function(){
+		//alert(1);			
+		//alert($('.check').prop( "checked"));
+//		$('.check').click(function(event) {
+//          if($(this).prop( "checked", true)){
+//              $('#zc').prop( "disabled", false);
+//          }
+//         
+//      });
+
+		$('.check').bind("change",function() {
+           if($(this).is(':checked')){
+                $('#zc').prop( "disabled", false);
+           }else{
+                $('#zc').prop( "disabled", true);
+           }
+        });
+		
+	})
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</block>
 
