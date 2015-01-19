@@ -207,7 +207,7 @@ table{ border-collapse:collapse;}
 .main .main_r .imgs .img { margin-top:2px; }
 
 /* 我要理财 */
-.nymain{ width: 1000px; margin:0 auto; overflow: hidden; height: auto;  color: #666; margin-top:15px }
+.nymain{ width: 1000px; margin:30px auto; overflow: hidden; height: auto;  color: #666; }
 .nymain a{ vertical-align:baseline;}
 .nymain .lcnav { background-image: url(../rzg_images/neiye1_133.jpg); background-repeat: repeat-x; background-position: left top; height: 36px; }
 .nymain .lcnav .tab { height: 32px; }
@@ -330,8 +330,8 @@ height:0px;
 .nymain .ifbox2 .boxmain .tytab table tr .name a { color: #136dad; }
 
 /*我要借款*/
-.nymain .bigbox { border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: #c6d0d6; border-bottom-color: #c6d0d6; border-left-color: #c6d0d6; overflow: hidden; height: auto; }
-.nymain .bigbox .til { font-family: "微软雅黑"; font-size: 18px; line-height: 36px; color: #333; background-image: url(../rzg_images/neiye5_03.jpg); background-repeat: repeat-x; text-align: center; height: 40px; font-weight: normal; }
+.nymain .bigbox { border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;border-top-width: 1px;border-top-style: solid;border-top-color: #c6d0d6; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: #c6d0d6; border-bottom-color: #c6d0d6; border-left-color: #c6d0d6; overflow: hidden; height: auto; background:#fff;}
+.nymain .bigbox .til { font-family: "微软雅黑"; font-size: 18px; line-height: 50px; color: #333; background-image: url(../rzg_images/neiye5_03.jpg); background-repeat: repeat-x; text-align: center; height: 50px; font-weight: normal; }
 .nymain .bigbox .sqdk { overflow: hidden; height: 100%; position: relative; }
 .nymain .bigbox .sqdk .jk { float: left; width: 420px; margin-right: 62px; }
 .nymain .bigbox .sqdk .jk .jkimg { margin-bottom: 42px; }
