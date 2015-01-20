@@ -4,18 +4,18 @@
      <div class="banner_out">	     
 	    <div class="banner">
 	        <ul style="z-index:0">
-	           
 	            <li style="z-index:1"><img src="__PUBLIC__/Home/images/banner.jpg" width="1600" height="339" /></li>
+	            <li><img src="__PUBLIC__/Home/images/banner_new.jpg" width="1600" height="339" /></li>
 	            <li><img src="__PUBLIC__/Home/images/banner_pic6.jpg" width="1600" height="339" /></li>
 	            <li><img src="__PUBLIC__/Home/images/banner_pic8.jpg" width="1600" height="339" /></li>
 	            <li><img src="__PUBLIC__/Home/images/banner_pic4.jpg" width="1600" height="339" /></li>
-	            
 	        </ul>
 	        <ol style="z-index:2">
 	        	<li class="current">1</li>
 	        	<li>2</li>
 	        	<li>3</li>
 	            <li>4</li>
+	            <li>5</li>
 	        </ol>
 	    </div>
 	</div>
@@ -72,7 +72,7 @@
 		                    <li>年利率:<span>{$vo.borrow_interest_rate}%</span></li>
 		                	<li>借款期限:<span>{$vo.borrow_duration}</span> <s:if test="%{#finance.isDayThe ==1}">个月</s:if><span><!-- <s:else>天</s:else> --></span></li>
 		                	<li>发标时间:<span>{$vo.add_time|date='Y-m-d',###}</span></li>
-		                	<li><p>借款类型:</p><p><img src="__PUBLIC__/Home/images/icon1.png" width="21" height="24" /></p><p><img src="__PUBLIC__/Home/images/icon2.png" width="21" height="24" /></p>
+		                	<li><p>借款类型:</p><p><img src="__PUBLIC__/Home/images/bao.png" width="21" height="24" /></p><p><img src="__PUBLIC__/Home/images/jian.png" width="21" height="24" /></p>
 		                	</li>
 		                	<li><p>借款进度:</p><span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;"><!-- {$vo['has_borrow']/$vo['borrow_money']*100}% --></span></span></li>
 		                	<li>完成投标:<span>{$vo.has_borrow}</span></li>
