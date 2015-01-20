@@ -30,7 +30,7 @@
 				</dd>
 				<span id="checkphone" style="line-height:48px;"></span>
 			</dl>
-			<dl>
+			<!-- <dl>
 				<dt>
 					
 				</dt>
@@ -39,8 +39,8 @@
 					<input id="zphone" type="button" value=" 获取手机验证码 " onClick="get_mobile_code();" /><span style="color: red;">（手机验证码内部测试，无需填写）</span>
 				</dd>
 				<span id="checkphone" style="line-height:48px;color: red;"></span>
-			</dl>
-			<dl>
+			</dl> -->
+			<!-- <dl>
 				<dt>
 					<span>* </span>验证码:
 				</dt>
@@ -48,7 +48,7 @@
 					<input type="text" size="8" name="mobile_code" class="inputBg" />
 				</dd>
 				<span id="checkphone" style="line-height:48px;"></span>
-			</dl>
+			</dl> -->
 			<dl>
 				<dt>
 					<span>* </span>电子邮箱:
@@ -65,9 +65,9 @@
 					<span>* </span>用户名:
 				</dt>
 				<dd>
-					<input type="text" value="" placeholder="请输入您的3-5位用户名" id="username"
+					<input type="text" value="" placeholder="请输入您的5-20位用户名" id="username"
 						name="username" class="txt"
-						ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名"
+						ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写5-20位用户名"
 						nullmsg="请填写用户名" datatype="*1-16" />
 				</dd>
 				<span id="checkuser" style="line-height:48px;"></span>
@@ -114,7 +114,7 @@
 					<span>*</span>推荐人:
 				</dt>
 				<dd>
-					<input type="text" value="{$reffer}" placeholder="推荐人手机号码或用户名" name="introduce" class="txt" />
+					<input type="text" value="{$reffer}" placeholder="推荐人(无则不用填写)" name="introduce" class="txt" />
 				</dd>
 				<span id="checkintroduce" style="line-height:48px;"></span>
 			</dl><dl style="padding-left:215px;width:575px;height:40px; margin-bottom:0px;">

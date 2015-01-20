@@ -44,9 +44,7 @@ class UserController extends HomeController {
 			/* 调用注册接口注册用户 */
             $User = new UserApi();
 			$uid = $User->register($username, $password, $email,$mobile);
-			if($email != ''){ //TODO: 发送验证邮件
-			$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.ghcf.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
-			}
+			
 			if(0 < $uid){ //注册成功
 				$m=M("z_member_money");//关联会员资金表
            		$m->uid=$uid;
@@ -62,6 +60,10 @@ class UserController extends HomeController {
 					//var_dump ( $sql );
 					$friend->query ( $sql );
 				} 
+				
+				if($email != ''){ //TODO: 发送验证邮件
+				$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.ghcf.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
+				}
            		
 		       $this->success('注册成功！邮件已发送，注意查收。',U('login'));
 			} else { //注册失败，显示错误信息
