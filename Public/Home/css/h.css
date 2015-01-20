@@ -115,3 +115,86 @@ input, button, textarea, select, option {
     font-size: 100%;
     outline: 0px none;
 }
+
+
+
+
+//提示信息
+
+.height100 {
+    height: 100%;
+}
+.prompt_wrap {
+    top: 50%;
+    margin-top: -170px;
+}
+.Prompt {
+    width: 640px;
+    margin: 0px auto;
+    text-align: left;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.Prompt_con {
+    border-top: 0px none;
+    overflow: hidden;
+}
+.width100 {
+    width: 100%;
+}
+.posiabso{
+position: absolute;
+}
+.alC{
+text-align: center;
+}
+
+.nymain8 dl {
+    overflow: hidden;
+    margin: 0px;
+}
+.nymain8 dt {
+    font-size: 18px;
+    padding: 20px 30px;
+    border-bottom: 1px solid #E1E1E1;
+}
+.nymain8 dd {
+    display: block;
+    padding: 30px 30px;
+    float: left;
+}
+
+.nymain8 {
+    /*top: 50%;*/
+    width: 800px;
+    margin: 4%  auto 24%;
+    overflow: hidden;
+    height:auto;
+    color: #666;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.ifbox18 {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    /*background: url("../images/df.jpg") repeat-x scroll 0% 0% transparent;*/
+    background:#fff;
+}
+.boxmain8 {
+    overflow: hidden;
+    padding: 15px;
+}
+.Prompt_x {
+display: inline-block;
+width: 68px;
+height: 68px;
+background-image: url(../images/pic_rw.png);
+background-repeat: no-repeat;
+background-position: 0 0;
+}
+.Prompt_o {
+display: inline-block;
+width: 68px;
+height: 68px;
+background-image: url(../images/pic_rw.png);
+background-repeat: no-repeat;
+background-position: -68px 0px;
+}

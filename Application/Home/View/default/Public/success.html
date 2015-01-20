@@ -1,27 +1,22 @@
 <block name="body">
 <extend name="Base/common"/>
 <block name="body">
-        <div class="nymain">
-            <div class="ifbox1">
-                <h2>
-                    系统提示：
-                    <img src="__STATIC__/rzg_images/neiye2_06.jpg" width="4" height="7" />
-                </h2>
-                <div class="boxmain" style="padding-top: 100px; padding-bottom: 300px;padding-left:300px;">
-
-                <h1><?php echo($message); ?></h1>
-<p class="detail"></p>
-<p class="jump">
-<b id="wait"><?php echo($waitSecond); ?></b> 秒后页面将自动跳转
-</p>
-<div>
-    <a id="href" id="btn-now" href="<?php echo($jumpUrl); ?>">立即跳转</a> 
-    <button id="btn-stop" type="button" onclick="stop()">停止跳转</button> 
-</div>
-                </div>
-                </div>
-                </div>
-
+        <div class="nymain8">
+            <div class="ifbox18">
+                <dl>
+                <dt>提示信息</dt>
+                    <dd>
+                        <span class="Prompt_o"></span> 
+                    </dd>
+                    <dd>
+                    <h2><?php echo($message); ?></h2>
+                        <p>
+                        系统将在 <span id="wait" style="color:blue;font-weight:bold"><?php echo($waitSecond); ?></span> 秒后自动跳转,如果不想等待,直接点击 <a id="href" id="btn-now" href="<?php echo($jumpUrl); ?>">【这里】</a>跳转 <br>或者<button id="btn-stop" type="button" onclick="stop()">【停止跳转】</button> 
+                        </p> 
+                    </dd>
+                </dl>
+            </div>
+        </div>
 <script type="text/javascript">
 // layer.msg('<?php echo($message); ?>', 2, 0);
 (function(){ 
