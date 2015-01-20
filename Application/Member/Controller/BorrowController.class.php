@@ -87,4 +87,20 @@ class BorrowController extends MemberController {
 	 */
 	public function payborrowdetails() {
 	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *         2015-1-20借款明细
+	 */
+	public function borrowdetails() {
+	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *         2015-1-20已还完的借款
+	 */
+	public function payborrowok() {
+	}
 }
