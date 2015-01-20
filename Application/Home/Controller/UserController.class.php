@@ -33,6 +33,9 @@ class UserController extends HomeController {
 			if(!check_verify($verify)){
 				$this->error('验证码输入错误！');
 			}
+			if(!isusername($username)){
+			 $this->error('用户名长度必须在5-20个字符以内！');
+		    }
 			/* 检测密码 */
 			if($password != $repassword){
 				$this->error('密码和重复密码不一致！');
@@ -94,19 +97,25 @@ class UserController extends HomeController {
 	public function login($username = '', $password = '', $verify = '',$email = ''){
 		
 
+
 		if(IS_POST){ //登录验证
-			
+
 			/* 检测验证码 */
 			if(!check_verify($verify)){
 				$this->error('验证码输入错误！');
 			}
-
-			/* 调用UC登录接口登录 */
-
+			if(isusername($username)){
+			 $type = 1;
+		    }
+			if(isEmail($username)){
+			$type = 2;
+		    }
+		    if(isMobile($username)){
+			$type = 3;
+		    }
 
 			$user = new UserApi();
-			$uid = $user->login($username, $password,$type = 3);
-			//$uidPhone=$user->loginPhone($username, $password);||$uidPhone>0; ||$Member->loginPhone($uidPhone)
+			$uid = $user->login($username, $password,$type);
 			
 			if(0 < $uid){ //UC登录成功
 				/* 登录用户 */

@@ -1474,3 +1474,33 @@ function sendsms($mob, $content) {
 	// 	$m->limit ( $p->firstRow, $p->listRows );
 	// 	return $p;
 	// }
+    function isPersonalCard($username) {
+        if (!$username) {
+            return false;
+        }
+        return preg_match('#^[\d]{15}$|^[\d]{18}$#', $username) ? true : false;
+    }
+    function isEmail($username) {
+        if (!$username) {
+            return false;
+        }
+        return preg_match('#[a-z0-9&\-_.]+@[\w\-_]+([\w\-.]+)?\.[\w\-]+#is', $username) ? true : false;
+    }
+    function isMobile($username) {
+        if (!$username) {
+            return false;
+        }
+        return preg_match('#^13[\d]{9}$|14^[0-9]\d{8}|^15[0-9]\d{8}$|^18[0-9]\d{8}$#', $username) ? true : false;
+    }
+    function isInvalidStr($username) {
+        if (!$username) {
+            return false;
+        }
+        return preg_match('#[!#$%^&*(){}~`"\';:?+=<>/\[\]]+#', $username) ? true : false;
+    }
+    function isusername($username) {
+        if (!$username) {
+            return false;
+        }
+        return preg_match('/^[a-z\d_]{5,20}$/i', $username) ? true : false;
+    }
