@@ -9,9 +9,9 @@
                 <dt>
                     <div class="header"></div><volist name="list3" id="vb">
                     <ul>
-                        <li>用户名称：<span>{$vb.borrow_uid|get_borrow_username}</span></li>
-                        <li>注册时间：<span>{$vb.reg_time|date='Y-m-d',###}</span></li>
-                        <li>最后登录：<span>{$vb.last_login_time|date='Y-m-d',###}</span></li>
+                        <li>用户名称：<span>{$data.username}</span></li>
+                        <li>注册时间：<span>{$data.reg_time|date='Y-m-d H:i:s',###}</span></li>
+                        <li>最后登录：<span>{$data.last_login_time|date='Y-m-d H:i:s',###}</span></li>
                         <li>居住地：<span>深圳市</span></li>
                     </ul>
                     <a href="#">关注此人</a><a href="#">关注此借款</a>
@@ -149,28 +149,23 @@
                     <li>应还本金</li>
                     <li>应还利息</li>
                 </ul>
-                <ul class="con2">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ul class="con2" style="height:20px;">
+                    <li>{$list3[0]['borrow_duration']}个月</li>
+                    <li>{$list3[0]['deadline|date='Y-m-d H:i:s',###']}</li>
+                    <li>￥:{$list3[0]['repayment_money']}</li>
+                    <li>￥:{$list3[0]['borrow_money']}</li>
+                    <li>￥:{$list3[0]['repayment_interest']}</li>
                 </ul>
             </div>
             <div class="tab" style="display:none">
-                <p>此为计划表，还款日期以实际日期为准</p>
-                <ul class="tit2">
-                    <li>期次</li>
-                    <li>还款日期</li>
-                    <li>还款金额</li>
-                    <li>应还本金</li>
-                    <li>应还利息</li>
-                </ul>
+				<volist name="list3" id="val">
                 <ul class="con2">
-                    <li>资料图片：</li>
-                    <li></li>
+                    <li>
+						<img src="Uploads/{$val.updata}" width="300"height="200" id="img_identiy" style="margin:20px;" />
+					</li>
                  
                 </ul>
+                </volist>
             </div>
             </div>
             
@@ -181,7 +176,7 @@
             <!--标的详情-->
             <div class="bdxq">
             	<h4>标的详情</h4>
-                <p>借款人是四川南充人，来深十多年，已婚并育有两个孩子，名下还有多套物业，资金实力强。<br/>客户做实体经营起家，经营电子显示屏多年，上下游客户出名，还款能力强。其抵押物现值90万元。</p>
+                <p>{$list3[0]['borrow_info']}</p>
             </div>
             
             <!--留言板-->

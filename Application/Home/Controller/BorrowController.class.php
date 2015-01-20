@@ -177,6 +177,9 @@ class BorrowController extends HomeController {
 		$data=$userlist->field('username,reg_time,last_login_time')->where('id=%s',$uid)->select();
 		$this->assign('data',$data[0]);
 		$this->assign ( 'list3', $list);
+		//   查询用户资料审核状态
+		$checkmsg = M('z_members_status');
+		$result=$checkmsg->where('uid=%s',$uid)->select();
 		//查询投标详情
 		$borrow_info = M('z_borrow_investor');
         $condition['borrow_id'] =$id;
