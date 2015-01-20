@@ -57,7 +57,7 @@ class BorrowController extends MemberController {
 	/**
 	 *
 	 * @author liuy
-	 *         2015-1-15借款管理，成功的借款数据查询页
+	 *         2015-1-19借款管理，成功的借款数据查询页
 	 */
 	public function borrowmanager() {
 		$uid = is_login (); // 获取当前用户UID
@@ -70,7 +70,7 @@ class BorrowController extends MemberController {
 	/**
 	 *
 	 * @author liuy
-	 *         2015-1-15借款管理，还款中的借款
+	 *         2015-1-19借款管理，还款中的借款
 	 */
 	public function repaymentborrow() {
 		$uid = is_login (); // 获取当前用户UID
@@ -78,5 +78,13 @@ class BorrowController extends MemberController {
 		$borrow_info = $borrow_info->where ( "borrow_uid=" . $uid . " and borrow_status=6" )->select ();
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
+	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *         2015-1-20借款管理的还款明细
+	 */
+	public function payborrowdetails() {
 	}
 }
