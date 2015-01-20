@@ -19,8 +19,8 @@
                 <dd>
                     <ul>
                         <li><h3>{$vb.borrow_name}</h3></li>
-                        <li><h3>（机构担保借款）</h3><if condition="$vb.borrow_status eq 0"><a  href="{:U('Finance/invest?id='.$vb['id'])}" style="background: none;width: 92px;height: 23px;"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
-                	    <elseif condition="$vb.borrow_status eq 2"/>
+                        <li><h3>（机构担保借款）</h3><if condition="$vb.borrow_status eq 2"><a  href="{:U('Finance/invest?id='.$vb['id'])}" style="background: none;width: 92px;height: 23px;"><img alt="" src="__PUBLIC__/Home/images/invest.png"></a>
+                	    <elseif condition="$vb.borrow_status eq 0"/>
                 	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
                 	     <elseif condition="$vb.borrow_status eq 4"/>
                 	    <img alt="" src="__PUBLIC__/Home/images/checkref.png">

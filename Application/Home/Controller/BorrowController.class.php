@@ -289,5 +289,106 @@ class BorrowController extends HomeController {
             }
         }
     }
+	private function AddFile_first($fileinfo, $depict) {
+		$i = 0;
+		// var_dump($fileinfo);
+		$uid = is_login ();
+		$dateline = date ( "Y-m-d H:m:s" );
+		$file = M ( 'z_member_info' );
+		$condition ['uid'] = $uid;
+		foreach ( $fileinfo as $vo ) {
+			
+			$data ['card_img'] = $vo ['savepath'] . $vo ['savename'];
+			// $data['data_name']=$depict[$i];
+			// $data['add_time']=$vo['savepath'];
+			// $data['deal_time']=$dateline;
+			if ($file->where ( $condition )->data ( $data )->save ()) {
+				//
+				$i ++;
+			} else {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	public function upload_first() {
+		$uid = is_login ();
+		$config = array (
+				'maxSize' => 100 * 1024 * 1024 * 1024,
+				'mimes' => array (),
+				'rootPath' => './Uploads/User/',
+				'savePath' => $uid . '/',
+				'ext' => array (),
+				'autoSub' => true 
+		);
+		$upload = new \Think\Upload ( $config ); // 实例化上传类
+		$depict = $_POST ['depict'];
+		$info = $upload->upload (); // 上传文件
+		if (! $info) { // 上传错误提示错误信息
+			$this->error ( $upload->getError () );
+		} else { // 上传成功
+		         
+			// var_dump($info);
+			if ($this->AddFile_first ( $info, $depict )) 			// 写入数据库
+			{
+				$this->success ( '上传成功！' );
+			} else {
+				// $this->error('写入数据库失败');
+			}
+		}
+	}
+	private function AddFile_back($fileinfo, $depict) {
+		$i = 0;
+		// var_dump($fileinfo);
+		$uid = is_login ();
+		$dateline = date ( "Y-m-d H:m:s" );
+		$file = M ( 'z_member_info' );
+		$condition ['uid'] = $uid;
+		foreach ( $fileinfo as $vo ) {
+			
+			$data ['card_back_img'] = $vo ['savepath'] . $vo ['savename'];
+			// $data['data_name']=$depict[$i];
+			// $data['add_time']=$vo['savepath'];
+			// $data['deal_time']=$dateline;
+			if ($file->where ( $condition )->data ( $data )->save ()) {
+				//
+				$i ++;
+			} else {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	public function upload_back() {
+		$uid = is_login ();
+		$config = array (
+				'maxSize' => 100 * 1024 * 1024 * 1024,
+				'mimes' => array (),
+				'rootPath' => './Uploads/User/',
+				'savePath' => $uid . '/',
+				'ext' => array (),
+				'autoSub' => true 
+		);
+		$upload = new \Think\Upload ( $config ); // 实例化上传类
+		$depict = $_POST ['depict'];
+		$info = $upload->upload (); // 上传文件
+		if (! $info) { // 上传错误提示错误信息
+			$this->error ( $upload->getError () );
+		} else { // 上传成功
+		         
+			// var_dump($info);
+			if ($this->AddFile_back ( $info, $depict )) 			// 写入数据库
+			{
+				$this->success ( '上传成功！' );
+			} else {
+				// $this->error('写入数据库失败');
+			}
+		}
+	}
+
+
+    
 	
 }
