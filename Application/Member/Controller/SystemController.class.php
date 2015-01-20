@@ -52,17 +52,29 @@ class SystemController extends MemberController {
 		// 查询当前登录用户信息
 		$userinfo = M ( 'ucenter_member' )->where ( 'id=' . $uid )->select ();
 		$paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
+
+		
 		if ($dealpwd != $paypass) {
 			$this->error ( L ( '您输入的交易密码有误！' ) );
 		} else {
 			$moneyMember = M ( 'z_member_money' );
 			$memberMoney = $moneyMember->where ( 'uid=' . $uid )->select (); // 提现时扣除可用余额，未进行提现审核通过，冻结金额为提现金额
-			if ($memberMoney [0] ['account_money'] == null) {
+			if ($memberMoney [0] ['account_money'] < 0) {
 				$this->error ( L ( '您的账户余额不足无法提现！' ) );
 			}
-			$account_money = $memberMoney [0] ['account_money']; // 获取用户的可用余额
-			$money_freeze = $memberMoney [0] ['money_freeze']; // 获取冻结金额
-			$account_money = floatval ( $account_money ) - floatval ( $_POST ['withdraw_money'] ); // 提现时可用余额减少
+			
+             $account_money = $memberMoney [0] ['account_money']; // 获取用户的可用余额
+             $account_money = floatval ( $account_money ) - floatval ( $_POST ['withdraw_money'] ); // 提现时可用余额减少
+
+
+             // var_dump($account_money);
+			if($account_money < 0){
+				$this->error ( L ( '您的账户余额不足无法提现！' ) );
+			}
+
+			
+			$money_freeze = $memberMoney [0] ['money_freeze']; // 获取冻结金
+			
 			$money_freeze = floatval ( $money_freeze ) + floatval ( $_POST ['withdraw_money'] ); // 提现时冻结金额增加
 			$datamoney ['account_money'] = $account_money;
 			$datamoney ['money_freeze'] = $money_freeze;
