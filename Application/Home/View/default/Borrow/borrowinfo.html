@@ -3,20 +3,21 @@
 <block name="body">
     <!--content start-->
     <div class="zh_cont_out">
-      <div class="zh_cont">
-            <h2><a href="{:U('Index')}">我的账户</a></h2> 
+      <div class="zh_cont" style="background: #fff;border: 1px solid #ddd;">
+            <!--<h2><a href="{:U('Index')}">我的账户</a></h2>--> 
             <include file="Public/borrowleft"/>
-            <div class="zh_cont_r">
+            <div class="zh_cont_r" style="border-top: none;">
               <form action="{:U('circulation_save?id='.$id)}" method="post" enctype="multipart/form-data">
-                  <div class="r-main">
+                  <div class="r-main" style="border: none;">
               <!-- <div class="til01"> -->
               <div class="til01">
                 <ul id="ul">
-                  <li class="on" style="font-size:18px;">发布贷款</li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;display:block;"><s:fielderror fieldName="enough"></s:fielderror></span>
+                  <li style="font-size:18px;"><h3 style="height: 38px;line-height: 20px;color: red;">当前位置 > 发布贷款</h3></li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;display:block;"><s:fielderror fieldName="enough"></s:fielderror></span>
                 </ul>
               </div>
                 <!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
               </div> -->
+              <p style="background:#ddd;width:948px;height:1px;"></p>
               <div class="rmainbox">
                 <p class="tips"><span class="fred">*</span> 为必填项，所有资料均会严格保密。 </p>
                 <div class="tab">
@@ -126,7 +127,7 @@
                         <option value="3">抵押</option>
                         <option value="4">驾照</option>
                       </select>
-                      <input type="file" id="nscBtn" name="img"  style="background: url(__PUBLIC__/Home/images/button.gif) no-repeat;" />
+                      <input type="file" id="nscBtn" name="img"  style="margin-bottom: 10px;" />
                       <input type="hidden" name="typeid" value="{$type}">
                     </td>          
                   </tr>
@@ -161,7 +162,7 @@
                   <tr>
                     <td align="right">&nbsp;</td>
                 
-                    <td style="padding-top:20px;"><input  type="submit" class="bcbtn" value="保存发布" style="width:88px;"></td>
+                    <td style="padding-top:20px;"><input  type="submit" class="bcbtn" value="保存发布" style="width:88px;background: #0597D9;border-radius:2px ;color:#fff ;"></td>
                 
                   </tr>
                 </table>
