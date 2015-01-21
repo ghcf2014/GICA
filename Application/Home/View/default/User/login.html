@@ -15,51 +15,61 @@
 	<form class="login-form" action="__SELF__" method="post" id="form">
 		<div class="dl_cont">
 			<h2>登陆工合财富</h2>
-			<dl style="padding-left: 215px; width: 575px;">
-				<div>
-					<img src="__PUBLIC__/Home/images/loginname.png"> <input
-						type="text" value="" name="username" class="txt txt1"
-						id="username" placeholder="用户名/手机号/邮箱"
-						ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名"
-						datatype="*1-16" />
+			<div class="dl_cont_in" style="overflow: hidden;">
+				<!--左边-->
+				<div class="dl_cont_l" style="width: auto; height: auto;float: left;">
+					<dl style="width: 300px;padding-left: 50px;">
+						<div>
+							<img src="__PUBLIC__/Home/images/loginname.png"> <input
+								type="text" value="" name="username" class="txt txt1"
+								id="username" placeholder="用户名/手机号/邮箱"
+								ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名"
+								datatype="*1-16" />
+						</div>
+						<span style="color: red; line-height: 40px;" id="checkname"
+							class="formtips"></span>
+					</dl>
+					<dl style="width: 300px;padding-left: 50px;">
+						<div>
+							<img src="__PUBLIC__/Home/images/password.png"> <input
+								type="password" value="" name="password" class="txt txt1"
+								id="password" placeholder="密 码" errormsg="密码为6-20位"
+								nullmsg="请填写密码" datatype="*6-20" />
+						</div>
+						<span style="color: red; line-height: 40px;" id="checkpwd"
+							class="formtips"></span>
+					</dl>
+					<dl style="width: 300px;padding-left: 50px; margin-bottom: 0px;">
+						<div>
+							<img src="__PUBLIC__/Home/images/yanzheng.png"> <input
+								type="text" value="" name="verify" class="txt txt1"
+								style="width: 140px;" id="verifycode" placeholder="验证码"
+								errormsg="" nullmsg="请填写验证码" datatype="*6-20" /> <img
+								class="verifyimg reloadverify" src="{:U('verify')}" width="101"
+								height="44" alt="点击切换"
+								style="cursor: pointer; width: 90px; float: right;">
+						</div>
+		
+					</dl>
+					<dl style="width: 300px;padding-left: 50px; height: 40px; margin-bottom: 0px;">
+						<span style="color: red; line-height: 40px;" id="checkcode" class="formtips Validform_checktip "></span>
+					</dl>
+					<input type="button" value="登录" name="denglu" id="loginIn"
+						onclick="javascript:;" class="btn"  style="margin-left: 72px;"/>
+					<div class="dl_cont_bot" style="margin-left: 15px;">
+						<span class="right"><a href="#">忘记密码？</a><a
+							href="{:U('User/register')}">|&nbsp;立即注册</a></span>
+					</div>
+					<div id="show"></div>
 				</div>
-				<span style="color: red; line-height: 40px;" id="checkname"
-					class="formtips"></span>
-			</dl>
-			<dl style="padding-left: 215px; width: 575px;">
-				<div>
-					<img src="__PUBLIC__/Home/images/password.png"> <input
-						type="password" value="" name="password" class="txt txt1"
-						id="password" placeholder="密 码" errormsg="密码为6-20位"
-						nullmsg="请填写密码" datatype="*6-20" />
-				</div>
-				<span style="color: red; line-height: 40px;" id="checkpwd"
-					class="formtips"></span>
-			</dl>
-			<dl style="padding-left: 215px; width: 575px; margin-bottom: 0px;">
-				<div>
-					<img src="__PUBLIC__/Home/images/yanzheng.png"> <input
-						type="text" value="" name="verify" class="txt txt1"
-						style="width: 140px;" id="verifycode" placeholder="验证码"
-						errormsg="" nullmsg="请填写验证码" datatype="*6-20" /> <img
-						class="verifyimg reloadverify" src="{:U('verify')}" width="101"
-						height="44" alt="点击切换"
-						style="cursor: pointer; width: 90px; float: right;">
-				</div>
-
-			</dl>
-			<dl
-				style="padding-left: 215px; width: 575px; height: 40px; margin-bottom: 0px;">
-				<span style="color: red; line-height: 40px;" id="checkcode"
-					class="formtips Validform_checktip "></span>
-			</dl>
-			<input type="button" value="登录" name="denglu" id="loginIn"
-				onclick="javascript:;" class="btn" />
-			<div class="dl_cont_bot">
-				<span class="right"><a href="#">忘记密码？</a><a
-					href="{:U('User/register')}">|&nbsp;立即注册</a></span>
-			</div>
-			<div id="show"></div>
+				
+				<!--右边-->
+				<div class="dl_cont_r" style="width: 250px;height:auto;float: right;padding-right: 80px;">
+            		<div style="height: 250px;"><img src="__PUBLIC__/Home/images/weixin_eweima.jpg" width="250" height="250"/></div>
+            		<p style="text-align: center;line-height: 20px;">扫描上方二维码<br />关注工合财富官方微信<br />随时随地掌握最新财富资讯</p>
+            	</div>
+            </div>
+				
 		</div>
 	</form>
 </div>
