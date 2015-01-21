@@ -533,6 +533,24 @@ function get_borrow_name($id = 0) {
 	// var_dump($name['nickname']);
 	return $name ['borrow_name'];
 }
+function get_borrow_type_name($id = 0) {
+	if($id == 1){
+		$name='信用标';
+	}
+	if($id == 2){
+		$name='担保标';
+	}if($id == 3){
+		$name='秒还标';
+	}if($id == 4){
+		$name='净值标';
+	}if($id == 5){
+		$name='抵押标';
+	}
+
+
+	// var_dump($name['nickname']);
+	return $name;
+}
 /**
  * 根据用户ID获取用户昵称
  *

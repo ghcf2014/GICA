@@ -242,6 +242,9 @@ class BorrowController extends HomeController {
             }
         }
     }
+    public function uploadindex(){
+    	$this->display ();
+    }
     private function borrow_AddFile($fileinfo,$depict,$type){
           $i=0;
         $uid=is_login(); 

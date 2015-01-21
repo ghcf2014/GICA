@@ -12,7 +12,7 @@
               <!-- <div class="til01"> -->
               <div class="til01">
                 <ul id="ul">
-                  <li style="font-size:18px;"><h3 style="height: 38px;line-height: 20px;color: red;">当前位置 > 发布贷款</h3></li><span class="fred" style="color: red;font-size: 12px; padding-left: 80px;line-height: 50px;display:block;"><s:fielderror fieldName="enough"></s:fielderror></span>
+                  <li style="font-size:18px;"><h3 style="height: 38px;line-height: 20px;color: red;">当前位置 > 发布贷款</h3></li><span style="color: red;font-size: 24px; padding-left: 80px;display:block; float: right;">{$type|get_borrow_type_name}</span>
                 </ul>
               </div>
                 <!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
@@ -21,151 +21,168 @@
               <div class="rmainbox">
                 <p class="tips"><span class="fred">*</span> 为必填项，所有资料均会严格保密。 </p>
                 <div class="tab">
-                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <th colspan="2" align="left">借款基本信息</th>
-                  </tr>
-                  <tr>
-                        <td align="right"><span class="fred ">*</span>借款标题：</td>
-                      <td><input name="borrow_name" type="text" class="inp280" maxlength="30" id="s_borrow_name" value=""/>
-                        <span class="fred" id="t_borrow_name"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
-                      </td>
-                    </tr>
-                  <tr>
-                      <td align="right"><span class="fred">*</span>借款总金额：</td>
-                      <td><input name="borrow_money" type="text" class="inp280" maxlength="12" id="s_borrow_money" value=""/>
-                      <span class="fred" id="t_borrow_money"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
-                      </td>
-                  </tr>
-  <!-- <tr>
-    <td align="right">&nbsp;</td>
-    <td>
-    <form action="{:U('upload')}" enctype="multipart/form-data" method="post" >
-    <div id="tab_1"><a href="javascript:void(0);" id="btn_personalHead" class="scbtn">上传图片</a></div>
-    <div id="tab_2"><input type='file'  name='photo'></div>
-    <div id="tab_3"><input type="submit" value="提交" class="btn trianglify-btn" ><div class="container">
-</div></div>
-     -->
-                  <tr>
-                    <td align="right"><span class="fred">*</span>年利率：</td>
-                    <td><input name="borrow_interest_rate" type="text" class="inp100" maxlength="30" id="s_borrow_interest_rate" value=""/>%
-                    <span class="fred" id="t_borrow_interest_rate"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right"><span class="fred">*</span>借款用途：</td>
-                    <td><input name="borrow_use" type="text" class="inp280" maxlength="12" id="s_borrow_use" value=""/>
-                    <span class="fred" id="t_borrow_use"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right"><span class="fred">*</span>借款期限：</td>
-                    <td><input name="collect_day" type="text" class="inp280" maxlength="12" id="s_collect_day" value=""/>月
-                    <span class="fred" id="t_collect_day"></span>
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td align="right"><span class="fred">*</span>最低投标金额：</td>
-                    <td><input name="borrow_min" type="text" class="inp280" maxlength="12" id="s_borrow_min" value=""/>元
-                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right"><span class="fred">*</span>最多投标金额：</td>
-                    <td><input name="borrow_max" type="text" class="inp280" maxlength="12" id="s_borrow_max" value=""/>元
-                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right"><span class="fred">*</span>有效时间：</td>
-                    <td>
-                    <select name="collect_time"  class="inp50">   
-                              <option value="1">1</option>   
-                              <option value="2">2</option>   
-                              <option value="3">3</option>   
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>    
-                            </select>   天
-                    <!-- <input type="text" id="date_8" readonly style="height:16px" name="collect_time"  class="inp100"/> -->
-                    <span class="fred"></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right"><span class="fred">*</span>还款方式：</td>
-                    <td>
-                          <select name="repayment_type"  class="inp50">   
-                              <option value="1">按天到期还款</option>   
-                              <option value="2">按月分期还款</option>   
-                              <option value="3">按季分期还款</option>   
-                              <option value="4">每月还息到期还本</option>    
-                            </select>   
-                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right"><span class="fred">*</span>投标奖励：</td>
-                    <td><input name="reward_vouch_rate" type="text" class="inp100" maxlength="12" value=""/>元
-                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td align="right">&nbsp;</td>
-                    <td class="tishi">（<b>温馨提示</b>：与借款用途相关的图片，
-                      有助于增加借款成功几率，严禁上传虚假信息图片！） </td>
-                  </tr>
-                  <tr>
-                    <td align="right"><span class="fred">*</span>上传必要资料：</td>
-                    <td>
-                      <select name="bid" id="pid">
-                        <option value="0">--请选择--</option>
-                        <option value="1">房产</option>
-                        <option value="2">担保</option>
-                        <option value="3">抵押</option>
-                        <option value="4">驾照</option>
-                      </select>
-                      <input type="file" id="nscBtn" name="img"  style="margin-bottom: 10px;" />
-                      <input type="hidden" name="typeid" value="{$type}">
-                    </td>          
-                  </tr>
-                  
-                  <tr>
-                    <td align="right"></td>
-                    <td>
-                      <div style="width: auto;height: auto;margin-bottom: 10px;display: none;" class="yscfile">
-                        <ul class="fbdk_ziliao_con">
-                          <li>示意图：</li>
-                          <li class="slt"><img src="./Uploads/Image/fangchan.jpg" width="200" height="200"/></li>
-                        </ul>
+<!-- 分割线 -->
+        <table>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1">
+                借款标题
+            </td>
+            <td width="233" valign="top" style="word-break: break-all;">
+                金额
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1">
+                <input name="borrow_name" id="s_borrow_name" type="text" title="借款标题" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 340px;"/> <span class="fred" id="t_borrow_name"></span>
+            </td>
+            <td width="233" valign="top">
+                <input name="borrow_money"id="s_borrow_money" type="text" title="金额" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/><span class="fred" id="t_borrow_money"></span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1">
+                年化率
+            </td>
+            <td width="233" valign="top" style="word-break: break-all;">
+                借款期限
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+               
+                <div class="User_ratings User_grade" id="div_fraction0">
+                      <div class="ratings_bars"> 
+                        <!-- <span id="title0">0</span> -->
+                        <span class="bars_10" style="display:none;">0</span>
+                        <div class="scale" id="bar0">
+                          <div></div>
+                          <span id="btn0"></span>
+                        </div>
+                        <span class="bars_10" style="display:none;">100</span><input name="borrow_interest_rate" id="title0" type="text" title="年化率" value="0"  leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 30px;"/><span class="span" >%</span>
                       </div>
-                    </td>
-                  </tr>
-                    
-                  <tr>
-                    <td align="right"><span class="fred">*</span>借款说明：</td>
-                    <td>
-                    <textarea name="borrow_info" class="txt420" style="resize:none"></textarea>
-                    <span class="fred"><s:fielderror fieldName="paramMap['title']"></s:fielderror></span>
-                    </td>
-                  </tr>
-  
-  <!--    <tr>
-    <td align="right">筹标期限：<span class="fred">*</span></td>
-    <td>
-        <s:select list="borrowRaiseTermList" id="raiseTerm" name="paramMap.raiseTerm" cssClass="sel_140" listKey="key" listValue="value"  headerKey="" headerValue="--请选择--"></s:select>
-        <span class="fred"><s:fielderror fieldName="paramMap['raiseTerm']"></s:fielderror></span>
-    </td>
-  </tr> -->
-                  <tr>
-                    <td align="right">&nbsp;</td>
+                    </div>
+            </td>
+            <td rowspan="1" valign="top" align="null" width="227" style="word-break: break-all;">
+                <input name="borrow_money"id="s_borrow_money" type="text" title="借款期限" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/><span class="fred" id="t_borrow_money"></span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                借款用途<br/>
+            </td>
+            <td width="233" valign="top"></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="3" rowspan="1">
+                <textarea title="借款用途" id="s_borrow_use" name="borrow_use" leipiplugins="textarea" placeholder="借款用途" value="" orgrich="0" orgfontsize="" orgwidth="300" orgheight="80" style="width: 720px; height: 80px; margin: 0px;"></textarea><span class="fred" id="t_borrow_use"></span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                还款方式
+            </td>
+            <td valign="top" colspan="1" rowspan="1"></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="3" rowspan="1">
+                <span leipiplugins="radios" title="还款方式" name="leipiNewField"><input name="leipiNewField" value="按天到期还款" type="radio" checked/>按天到期还款&nbsp;<input name="leipiNewField" value="按月分期还款" type="radio"/>按月分期还款&nbsp;<input name="leipiNewField" value="按季分期还款" type="radio"/>按季分期还款&nbsp;<input name="leipiNewField" value="每月还息到期还本" type="radio"/>每月还息到期还本&nbsp;</span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                投资金额范围
+            </td>
+            <td valign="top" colspan="1" rowspan="1"></td>
+        </tr>
+        <script>
+        function senfe_id(sid){
+        bmfw.style.display=sid;
+        bmfw1.style.display=sid;
+        }
+        </script>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1">
+                <span leipiplugins="radios" title="投资金额范围" name="leipiNewField"><input name="radio_bmfw"  value="1" type="radio" onchange="senfe_id('');"/>开启&nbsp;<input name="radio_bmfw" value="0" type="radio"  onchange="senfe_id('none');" checked />关闭(默认)&nbsp;</span>
+            </td>
+            <td valign="top" colspan="1" rowspan="1"></td>
+        </tr>
+        <tr id="bmfw" style="display:none;">
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                最低投资金额<br/>
+            </td>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
+                最高投资金额
+            </td>
+        </tr>
+        <tr id="bmfw1" style="display:none;">
+            <td valign="top" colspan="2" rowspan="1">
+                <input name="borrow_min" id="s_borrow_min" type="text" title="最低" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>元<span class="fred"></span>
+            </td>
+            <td valign="top" colspan="1" rowspan="1">
+                <input name="borrow_max" id="s_borrow_max" type="text" title="最高" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>元<span class="fred"></span>
+            </td>
+        </tr>
+        
+        <tr>
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                项目介绍<br/>
+            </td>
+            <td valign="top" colspan="1" rowspan="1"></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="3" rowspan="1">
+                <textarea title="项目说明" name="borrow_info" leipiplugins="textarea" value="" placeholder="吸引投资者的项目说明" orgrich="0" orgfontsize="" orgwidth="300" orgheight="80" style="width: 719px; height: 90px; margin: 0px;"></textarea><span class="fred"></span>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                上传必要审核的文件（目前仅支持jpg，png两种格式）<br/>
+            </td>
+            <td valign="top" colspan="1" rowspan="1"></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;" >
+                <label for="imageInput">
+                  <div id="drop-zone" class="hover">&nbsp;
+                    <div class="drop-label">拖动图片或点击+项目认证资料</div>
+                  </div>
+                </label>
+                <input type="file" id="imageInput"  name="img" style="display:none"/>
+
+                <!-- <div class="img_add">
+                <a href="javascript:void(0);" id="test2">+项目认证资料</a>
+                </div> -->
+            </td>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;" >
                 
-                    <td style="padding-top:20px;"><input  type="submit" class="bcbtn" value="保存发布" style="width:88px;background: #0597D9;border-radius:2px ;color:#fff ;"></td>
-                
-                  </tr>
-                </table>
+                <!-- <label for="imageInput">
+                  <div id="drop-zone" class="hover">&nbsp;
+                    <div class="drop-label">拖动图片或点击+项目认证资料</div>
+                  </div>
+                </label>
+                <input type="file" id="imageInput" style="display:none"/> -->
+            </td>
+            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
+                <!-- <div class="img_add">
+                <a href="/user/bank/to" target="_blank">+项目认证资料</a>
+                </div> -->
+            </td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+            <td valign="top" colspan="1" rowspan="1"><input  type="submit" class="bcbtn" value="保存发布" style="width:88px;background: #0597D9;border-radius:2px ;color:#fff ;"></td>
+            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+        </tr>
+</table>
+
+
+                <!-- 分割线 -->
+                  
     </div>
     </div>
     </div>
@@ -174,15 +191,107 @@
             </div>
         </div>
     </div>
+
   <!--content end-->    
+  <script src="d3.min.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="triangloid.js"></script>
+  <script>
+var cellsize =30;
+var image, imageHeight, imageWidth, backgroundSize, svg;
 
+function getImagePixelData(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  var imageData = ctx.getImageData(0, 0, img.width, img.height);
+  var mappedData = [];
+  for (var i = 0; i < imageData.data.length; i += 4) {
+    mappedData.push([imageData.data[i], imageData.data[i + 1], imageData.data[i + 2]]);
+  }
+  return mappedData;
+}
+var dropZone = document.getElementById('drop-zone');
+dropZone.ondragover = function() {
+  this.className = 'hover';
+  return false;
+};
+dropZone.ondragleave = function() {
+  dropZone.className = "";
+}
+dropZone.ondragend = function() {
+  dropZone.className = "";
+  return false;
+};
+dropZone.ondrop = processInput;
+document.getElementById("imageInput").onchange = processInput;
 
- <script type="text/javascript" src="__STATIC__/datepicker/js/jquery.min.js"></script> 
- <script type="text/javascript" src="__STATIC__/datepicker/js/jquery-ui-datepicker.js"></script>  
+$("#cell-size-input").keyup(function() {
+  cellsize = parseInt($(this).val());
+});
+$(".trianglify-btn").click(function() {
+  draw(image);
+  $(".download-btn").addClass("visible");
+});
+$(".download-btn").click(function() {
+  document.location.href = svg.replace("image/svg+xml", "image/octet-stream");
+});
 
+function processInput(e) {
+  dropZone.className = "";
+  e.preventDefault();
+  if (e.target.files) {
+    var file = e.target.files[0];
+  } else {
+    var file = e.dataTransfer.files[0];
+  }
 
- <script type="text/javascript" src="script/nav-jk.js"></script>
-
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    image = new Image();
+    image.onload = function() {
+      var dropZoneWidth = $(dropZone).width();
+      var dropZoneHeight = $(dropZone).height();
+      var dropZoneRatio = dropZoneWidth / dropZoneHeight;
+      var imageRatio = image.width / image.height;
+      backgroundSize = "";
+      if (image.width > dropZoneWidth) { //Could be expressed in smaller chunks...
+        if (image.height > dropZoneHeight) {
+          if (imageRatio > dropZoneRatio) {
+            backgroundSize += dropZoneWidth + "px";
+            backgroundSize += " ";
+            backgroundSize += dropZoneWidth / imageRatio + "px";
+          } else {
+            backgroundSize += dropZoneHeight * imageRatio + "px";
+            backgroundSize += " ";
+            backgroundSize += dropZoneHeight + "px";
+          }
+        } else {
+          backgroundSize += dropZoneWidth + "px";
+          backgroundSize += " ";
+          backgroundSize += dropZoneWidth / imageRatio + "px";
+        }
+      } else if (image.height > dropZoneHeight) {
+        backgroundSize += dropZoneHeight * imageRatio + "px";
+        backgroundSize += " ";
+        backgroundSize += dropZoneHeight + "px";
+      } else {
+        backgroundSize = image.width + "px " + image.height + "px";
+      }
+      dropZone.style.background = 'url(' + imageData + ') no-repeat center';
+      dropZone.style.backgroundSize = backgroundSize;
+      console.log(dropZone.style.backgroundSize);
+      $(".trianglify-btn").addClass("visible");
+      $(".download-btn").removeClass("visible");
+    }
+    image.src = imageData = event.target.result;
+  };
+  reader.readAsDataURL(file);
+  return false;
+}
+</script>
 <script type="text/javascript">
 $(function(){
  
@@ -254,5 +363,79 @@ $(function(){
     
     
   })
+</script>
+<script>
+  // $('#test2')
+  //     .on(
+  //         'click',
+  //         function() {
+  //           // layer.msg('正在施工，无法更换')
+  //           $.layer({
+  //                 type : 1,
+  //                 title : [ '图片上传',
+  //                     'background:#2B2E37; height:40px; color:#fff; border:none;' //自定义标题样式
+  //                 ], //不显示默认标题栏
+  //                 offset : [ '250px', '' ],
+  //                 shade : [ 1 ], //不显示遮罩
+  //                 area : [ '260px', '100px' ],
+  //                 page : {
+  //                   html : '<form action="__URL__/upload" enctype="multipart/form-data" method="post"><input type="file"  name="filename" value=""><input  type="submit"  value="上传"></from>'
+  //                 },
+  //               });
+  //         });
+
+
+            $('#test2').on('click',function() {
+                    $.layer({
+                    type: 2,
+                    shade: [0],
+                    fix: false,
+                    title: [ '图片上传','background:#4AC0FF; height:40px; color:#fff; border:none;'],
+                    maxmin: true,
+                    iframe: {src : 'iframe.html'},
+                    area: ['800px' , '440px'],
+                    close: function(index){
+                        layer.msg('您获得了子窗口标记：' + layer.getChildFrame('#name', index).val(),3,1);
+                    }
+                }); 
+            });
+</script>
+<script type="text/javascript">
+scale = function (btn, bar, title) {
+  this.btn = document.getElementById(btn);
+  this.bar = document.getElementById(bar);
+  this.title = document.getElementById(title);
+  this.step = this.bar.getElementsByTagName("DIV")[0];
+  this.init();
+};
+scale.prototype = {
+  init: function () {
+    var f = this, g = document, b = window, m = Math;
+    f.btn.onmousedown = function (e) {
+      var x = (e || b.event).clientX;
+      var l = this.offsetLeft;
+      var max = f.bar.offsetWidth - this.offsetWidth;
+      g.onmousemove = function (e) {
+        var thisX = (e || b.event).clientX;
+        var to = m.min(max, m.max(-10, l + (thisX - x)));
+        f.btn.style.left = to + 'px';
+        f.ondrag(m.round(m.max(0, to / max) * 100), to);
+        b.getSelection ? b.getSelection().removeAllRanges() : g.selection.empty();
+      };
+      g.onmouseup = new Function('this.onmousemove=null');
+    };
+  },
+  ondrag: function (pos, x) {
+    this.step.style.width = Math.max(0, x) + 'px';
+    // this.title.innerHTML = pos / 1 + '';
+    var rval= pos / 1 + '';
+    $("#title0").val(rval);
+  }
+}
+new scale('btn0', 'bar0', 'title0');
+new scale('btn1', 'bar1', 'title1');
+new scale('btn2', 'bar2', 'title2');
+new scale('btn3', 'bar3', 'title3');
+new scale('btn4', 'bar4', 'title4');
 </script>
 </block>

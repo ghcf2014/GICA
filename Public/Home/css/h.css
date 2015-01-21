@@ -198,3 +198,90 @@ background-image: url(../images/pic_rw.png);
 background-repeat: no-repeat;
 background-position: -68px 0px;
 }
+
+.img_add{
+    text-align: center;
+    line-height: 148px;
+    width: 232px;
+    height: 148px;
+    float: left;
+    margin: 20px 10px 10px 10px;
+    border: 1px solid #ddd;
+}
+.img_add a{
+    width: 232px;
+    height: 148px;
+    color: #4ac0ff;
+    
+}
+.img_add:hover{
+    border: 1px solid #4ac0ff;
+}
+
+
+
+.drop-label {
+    text-align: center;
+    width: 214px;
+    display: block;
+    transition: 0.5s opacity;
+    -webkit-transition: 0.5s opacity;
+    -ms-transition: 0.5s opacity;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+}
+.hover .drop-label,
+#drop-zone:hover .drop-label {
+    opacity: 0.7;
+}
+#drop-zone {
+    margin: 20px 10px 10px 10px;
+    width: 234px;
+    height: 148px;
+    /*cursor: pointer;*/
+    border: 1px solid #ddd;
+}
+#drop-zone:hover {
+
+    border: 1px solid #4ac0ff;
+}
+#drop-zone a{
+    margin-left:70px;
+    color: #4ac0ff;
+    
+}
+
+
+.block{
+        display:block;
+}
+.none{
+        display:none;
+}
+.User_grade{width:420px;overflow:hidden;float:left;}
+.User_ratings .ratings_title{width:815px;height:78px;font-family:"微软雅黑","宋体";font-size:24px;color:#aaaaaa;}
+.User_ratings .ratings_title01{width:407px;height:auto;font-family:"微软雅黑","宋体";font-size:14px;color:#aaaaaa;}
+.User_ratings .ratings_title p{float:left;}
+.User_ratings .ratings_title p span{font-size:48px;}
+.User_ratings .ratings_title p i{color:#7dc234;font-style:normal;}
+.User_ratings .ratings_title01 p span{font-size:18px;}
+.User_ratings .ratings_title01 p i{color:#7dc234;font-style:normal;}
+.User_ratings .ratings_title01 input{width:120px;height:48px;border:0;margin:15px auto auto 45px;float:left;background:url(../images/batton_01.png) -202px -2441px no-repeat;}
+.User_ratings .ratings_title01 input:hover{background:url(../images/batton_01.png) -202px -2489px no-repeat;}
+.User_ratings .ratings_title01 input01{background:url(../images/batton_01.png) -202px -2537px no-repeat;}
+.User_ratings .ratings_title input{width:120px;height:48px;border:0;margin:15px auto auto 45px;float:left;background:url(../images/batton_01.png) -202px -2441px no-repeat;}
+.User_ratings .ratings_title input:hover{background:url(../images/batton_01.png) -202px -2489px no-repeat;}
+.User_ratings .ratings_title input01{background:url(../images/batton_01.png) -202px -2537px no-repeat;}
+.User_ratings .ratings_bars{width:407px;height:35px;float:left;}
+.User_ratings .ratings_bars #title0{width:25px;height:25px;text-align:center;border:1px solid #bfbebe;line-height:25px;font-family:Georgia, "Times New Roman", Times, serif;font-size:14px;float:left;color:#a0a0a0;margin-right:10px;background:#fff;}
+.User_ratings .ratings_bars #title1{width:25px;height:25px;text-align:center;border:1px solid #bfbebe;line-height:25px;font-family:Georgia, "Times New Roman", Times, serif;font-size:14px;float:left;color:#a0a0a0;margin-right:10px;background:#fff;}
+.User_ratings .ratings_bars #title2{width:25px;height:25px;text-align:center;border:1px solid #bfbebe;line-height:25px;font-family:Georgia, "Times New Roman", Times, serif;font-size:14px;float:left;color:#a0a0a0;margin-right:10px;background:#fff;}
+.User_ratings .ratings_bars #title3{width:25px;height:25px;text-align:center;border:1px solid #bfbebe;line-height:25px;font-family:Georgia, "Times New Roman", Times, serif;font-size:14px;float:left;color:#a0a0a0;margin-right:10px;background:#fff;}
+.User_ratings .ratings_bars #title4{width:25px;height:25px;text-align:center;border:1px solid #bfbebe;line-height:25px;font-family:Georgia, "Times New Roman", Times, serif;font-size:14px;float:left;color:#a0a0a0;margin-right:10px;background:#fff;}
+.User_ratings .ratings_bars .bars_10{font-family:Georgia, "Times New Roman", Times, serif;font-size:18px;line-height:35px;float:left;color:#a0a0a0;}
+.User_ratings .ratings_bars .scale{width:264px;height:13px;float:left;margin:10px 10px auto 10px;position:relative;background:url(../images/progress02.png) 0 0 no-repeat;}
+.User_ratings .ratings_bars .scale div{width:0px;position:absolute;width:0;left:0;height:13px;bottom:0;background:url(../images/progress02.png) 0 -14px no-repeat;}
+.User_ratings .ratings_bars .scale span{width:10px;height:26px;position:absolute;left:-2px;top:-7px;cursor:pointer;background:url(../images/j.png) no-repeat;}
+.span{line-height:35px;float: left; margin-left: 0px;}

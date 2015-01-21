@@ -51,11 +51,11 @@ class IndexController extends HomeController {
 		
 		import ( 'ORG.Util.Page' ); // 导入分页类
 		$listBorrow = M ( 'z_borrow_info' );
-		$count = $listBorrow->where ( 'borrow_status not in (0,1,5,3)' )->count ();
+		$count = $listBorrow->where ( 'borrow_status not in (1,5,3)' )->count ();
 		$Page = new \Think\Page ( $count, 8 );
 		$show = $Page->show ();
 		$orderby ['borrow_status'] = 'ASC';
-		$list = $listBorrow->where ( 'borrow_status not in (0,1,5,3)' )->order ( $orderby )->limit ( $Page->firstRow . ',' . $Page->listRows )->select ();
+		$list = $listBorrow->where ( 'borrow_status not in (1,5,3)' )->order ( $orderby )->limit ( $Page->firstRow . ',' . $Page->listRows )->select ();
 		
 		if ($list [0] ['has_borrow'] == 0) {
 			$jindu = 0;
