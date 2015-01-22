@@ -30,16 +30,16 @@
                 	     <img alt="" src="__PUBLIC__/Home/images/full.png">
                 	    </if></li>
                         <li>借款金额：<span style="color:#ef681f;">￥{$vb.borrow_money}元</span></li>
-                        <li>借款目的：<span>短期周转</span></li>
+                        <li>借款目的：<span>{$vb.borrow_use}</span></li>
                         <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>（月利率：<span>{$vb[borrow_interest_rate]/12}%</span>）</li>
-                        <li>借款期限：<span>{$vb.borrow_duration}月</span></li>
+                        <li>借款期限：<span>{$vb.borrow_duration}个月</span></li>
                         <li>还差：<span>￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
                         <li><strong>投标进度：</strong><span class="out"><span class="width:{$vb['has_borrow']/$vb['borrow_money']*100}%;"></span></span><span class="data">{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
                         <li style="color:#ef681f;">还款方式：<span>一次性还款</span></li>
                         <li>交易类型：<span>线下交易</span></li>
                         <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
                         <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
-                        <li>总投标数：<span style="margin-right:20px;">0</span>   浏览量：<span>0</span></li>
+                        <li>总投标数：<span style="margin-right:20px;">0</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="../../../../../Public/Home/images/page_view.jpg" style="height:20px;"></span></li>
                         </volist>                             
                     </ul>
                     <p>投标<span>10000.0</span>元，年利率：<span>15.0%</span>，期限<span>1个月</span>，可获得利息收益：<span>￥150.00元</span></p>
