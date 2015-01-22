@@ -820,3 +820,65 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 
+
+
+/*------------信用额度---------------------------------------------------*/
+.zh_cont .zh_cont_r .tab .xyed{width: 947px;height: auto;}
+.zh_cont .zh_cont_r .tab .xyed p{width: 810px;padding: 20px 65px 50px;line-height: 25px;}
+.zh_cont .zh_cont_r .tab .xyed dl{width: 810px;padding:10px 65px;height: auto;overflow: hidden;}
+.zh_cont .zh_cont_r .tab .xyed dl dt{float: left;width: 75px;height:30px;line-height: 30px;}
+.zh_cont .zh_cont_r .tab .xyed dl dd{width: 200px;float: left;height: 30px;padding: 0;}
+.zh_cont .zh_cont_r .tab .xyed dl dd .xyed_text{width: 193px;height: 28px;border: 1px solid #ddd;border-radius: 5px;line-height: 28px;padding-left: 5px;color: #555;}
+.zh_cont .zh_cont_r .tab .xyed dl dd textarea{width: 400px;height: auto;resize: none;border: 1px solid #ddd;border-radius: 5px;padding: 10px;}
+.zh_cont .zh_cont_r .tab .xyed .xyed_btn{width: 100px;height: 40px;background: #58cae7;border-radius:3px;color: #fff;font-size: 16px;line-height: 40px;margin-left: 175px;margin-top: 15px;}
+
+
+
+
+
+
+
+
+
+/*----------------自动投标------------------------------------------*/
+.zh_cont .zh_cont_r .zdtb_js{width: 928px;height: auto;line-height: 25px;padding:20px;}
+.zh_cont .zh_cont_r .zdtb_js p{width: 868px;height: auto;line-height: 25px;padding: 8px 30px;}
+.zh_cont .zh_cont_r .zdtb_con{width: 860px;height: auto;padding: 20px 34px;}
+.zh_cont .zh_cont_r .zdtb_con dl{overflow: hidden;padding: 0;width: 860px;height: auto;}
+.zh_cont .zh_cont_r .zdtb_con dl dt{float: left;width: 240px;height: 45px;font-size: 16px;line-height: 45px;overflow: hidden;}
+.zh_cont .zh_cont_r .zdtb_con dl dt span{float: right;width: auto;height: 45px;line-height: 45px;}
+
+.zh_cont .zh_cont_r .zdtb_con dl dd{float: left;width: 500px;height: 45px;padding-left: 30px;line-height: 45px;overflow: hidden;}
+.zh_cont .zh_cont_r .zdtb_con dl dd span{float: left;width: auto;height: auto;color: red;}
+.zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_btn{float: left;width: 100px;height: 25px;background: #0697DA;border-radius: 3px;color: #fff;margin: 10px 0 0 10px;cursor: pointer;}
+.zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_txt{float: left;width: 160px;border: 1px solid #ddd;border-radius: 3px;height: 30px;margin-top: 7px;line-height: 30px;padding-left: 5px;}
+.zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_txt2{float: left;width: 70px;border: 1px solid #ddd;border-radius: 3px;height: 30px;margin-top: 7px;line-height: 30px;padding-left: 5px;}
+.zh_cont .zh_cont_r .zdtb_con .zdtb_con_btn2{width: 100px;height: 35px;color: #fff;background: #0697DA;border-radius: 3px;margin: 30px 0 10px 270px;cursor: pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
