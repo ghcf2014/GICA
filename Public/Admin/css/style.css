@@ -21,7 +21,7 @@ body{
     height: 70px;
     line-height: 50px;
     background-color: #1B3160;
-    background: url("../images/img/main-nav-bg.png") repeat-x scroll 0px 0px #204077;
+    background: url("../images/images/main-nav-bg.png") repeat-x scroll 0px 0px #204077;
 }
 /*.header-bar{
 
@@ -30,7 +30,7 @@ width: 100%;
 height: 70px;
 background-position: 0px 20px;
 background-color: #E8E9EE;
-background: url("../images/img/tab-140-120.gif") no-repeat;
+background: url("../images/images/tab-140-120.gif") no-repeat;
 
 }*/
 .header .logo {
@@ -67,7 +67,7 @@ background: url("../images/img/tab-140-120.gif") no-repeat;
     color: #E8E9EE;
     text-align: center; 
     border-radius: 2px 2px 0px 0px;
-    /*background: url(../images/img/icon-806-614.png) no-repeat scroll -444px -375px transparent;*/
+    /*background: url(../images/images/icon-806-614.png) no-repeat scroll -444px -375px transparent;*/
 }
 .main-nav a:hover {
 
@@ -79,38 +79,38 @@ background: url("../images/img/tab-140-120.gif") no-repeat;
     
 }
 /*.nav-inner{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -294px -476px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -294px -476px transparent;
 }*/
 .nav-inner_1{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll 30px -476px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll 30px -476px transparent;
 }
 .nav-inner_2{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -476px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -130px -476px transparent;
 }
 .nav-inner_3{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -476px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -576px -476px transparent;
 }
 .nav-inner_4{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -476px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -430px -476px transparent;
 }
 .nav-inner_5{
     
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -476px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -280px -476px transparent;
 }
 .nav-inner_6{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll 24px -324px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll 24px -324px transparent;
 }
 .nav-inner_7{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -324px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -130px -324px transparent;
 }
 .nav-inner_8{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -324px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -280px -324px transparent;
 }
 .nav-inner_9{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -324px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -430px -324px transparent;
 }
 .nav-inner_10{
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -324px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -576px -324px transparent;
 }
 
 .main-nav .current_1 div{
@@ -155,34 +155,34 @@ background: url("../images/img/tab-140-120.gif") no-repeat;
 }
 .main-nav .current_1 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll 30px -426px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll 30px -426px transparent;
 }.main-nav .current_2 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -426px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -130px -426px transparent;
 }.main-nav .current_3 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -426px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -576px -426px transparent;
 }.main-nav .current_4 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -426px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -430px -426px transparent;
 }.main-nav .current_5 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -426px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -280px -426px transparent;
 }.main-nav .current_6 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll 24px -274px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll 24px -274px transparent;
 }.main-nav .current_7 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -130px -274px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -130px -274px transparent;
 }.main-nav .current_8 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -280px -274px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -280px -274px transparent;
 }.main-nav .current_9 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -430px -274px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -430px -274px transparent;
 }.main-nav .current_10 div a{
     color: #43478E;
-    background: url(../images/img/icon-806-614.png) no-repeat scroll -576px -274px transparent;
+    background: url(../images/images/icon-806-614.png) no-repeat scroll -576px -274px transparent;
 }
 
 /* 用户 */
@@ -769,23 +769,23 @@ background: url("../images/img/tab-140-120.gif") no-repeat;
 /*后台登录首页样式*/
 /*-------清空默认样式---------*/
 *{padding: 0;margin: 0;list-style: none;border: 0;}
-body{background: url('../images/body_bgbig.png') repeat;
-
-font-family: tahoma,arial,"SimSun","Helvetica Neue",Helvetica,sans-serif;
-font-size: 12px;
-color: #333;text-decoration: none;}
+body{font-family: "黑体","宋体";font-size: 16px;background: 	url(../images/body_bgbig.png) repeat;}
 
 
 /*---登录框-----*/
-.frame{width: 792px;height: 470px;background: url('../images/frame_bg.png') no-repeat;margin:200px auto 0;overflow: hidden;border-radius:12px ;border: 1px solid #eaeaea;}
-.frame .logo{float: left;width: 396px;height: 470px;background: url(../images/logo.png) no-repeat 117px 106px;}
+.frame{width: 792px;height: 470px;background: url(../images/frame_bg.png) no-repeat;margin:150px auto 0;overflow: hidden;border-radius:12px ;border: 1px solid #eaeaea;}
+.frame .logo{float: left;width: 394px;height: 470px;background: url(../images/logo.png) no-repeat 117px 106px;}
+
+.frame .line{float: left;width: 2px;height: 390px;background: url(../images/line.png) no-repeat;margin-top: 80px;}
+
 .frame .frame_r{float: right;width: 268px;height: 364px;padding: 106px 64px 0;}
 .frame .frame_r li{width: 268px;height: auto;overflow:hidden;margin-bottom: 10px;}
 .frame .frame_r li .head01{width: 50px;height: 48px;background: url(../images/denglu_head_bg01.png) no-repeat;float: left;}
 .frame .frame_r li .head02{width: 50px;height: 48px;background: url(../images/denglu_head_bg02.png) no-repeat;float: left;}
 .frame .frame_r li .head03{width: 50px;height: 48px;background: url(../images/denglu_head_bg03.png) no-repeat;float: left;}
-.frame .frame_r li .txt{width: 200px;height: 30px;padding:5px;float:left;background: url(../images/denglu_input_bg.png) repeat-x;margin: 4px 0;color: #ccc;}
-.frame .frame_r li .yzm_txt{width: 100px;height: 30px;padding:5px;float:left;background: url(../images/denglu_input_bg.png) repeat-x;margin: 4px 0;color: #ccc;}
-.frame .frame_r li .yzm_img{width: 90px;height: 40px;float: left;background: #cfc;margin:4px 0 0 10px;;}
+.frame .frame_r li .txt{width: 200px;height: 30px;padding:5px;float:left;background: url(../images/denglu_input_bg.png) repeat-x;margin: 4px 0;color: #333;}
+.frame .frame_r li .yzm_txt{width: 100px;height: 30px;padding:5px;float:left;background: url(../images/denglu_input_bg.png) repeat-x;margin: 4px 0;color: #333;}
+.frame .frame_r li .yzm_images{width: 90px;height: 40px;float: left;background: #cfc;margin:4px 0 0 10px;;}
 .frame .frame_r li .btn{width: 138px;height: 39px;margin: 20px 60px;background: url(../images/login_btn_bg.png) no-repeat;font-size: 16px;font-weight: bold;text-shadow: 0 90 10px #fff;color:#333;line-height: 38px;text-align: center;cursor: pointer;}
 .frame_shadow{width: 792px;height: 212px;margin:2px auto;background: url(../images/frame_shadow_bg.png) no-repeat;}
+

@@ -60,7 +60,11 @@
 		        <!--content_bottom start-->
 		        <div class="cont_bot">
 		        	<div class="cont_bot_l">
-		           	  <h2><span style="display: inline-block;width: auto;height: 41px;border-bottom: 3px solid #66ccfb;">投资列表</span></h2>
+		           	  <h2><span style="display: inline-block;width: auto;height: 41px;border-
+
+
+
+bottom: 3px solid #66ccfb;">投资列表</span></h2>
 		           	 	<div id="top-alert" class="alert alert-error" style="display: none;">
 				            <button class="close fixed" style="margin-top: 4px;">&times;</button>
 				            <div class="alert-content">这是内容</div>
@@ -77,6 +81,7 @@
 		                	<li><p>借款进度:</p><span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;"><!-- {$vo['has_borrow']/$vo['borrow_money']*100}% --></span></span></li>
 		                	<li>完成投标:<span>{$vo.has_borrow}</span></li>
 		                	<li>&nbsp;&nbsp; 
+		                	
 		                	   <if condition="$vo.borrow_status eq 2">
 			                	   <if condition="$login eq 1">
 	                                    <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/invest.png"></a>
