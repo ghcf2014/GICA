@@ -772,6 +772,8 @@ background: url("../images/images/tab-140-120.gif") no-repeat;
 body{font-family: "黑体","宋体";font-size: 16px;background: 	url(../images/body_bgbig.png) repeat;}
 
 
+
+
 /*---登录框-----*/
 .frame{width: 792px;height: 470px;background: url(../images/frame_bg.png) no-repeat;margin:150px auto 0;overflow: hidden;border-radius:12px ;border: 1px solid #eaeaea;}
 .frame .logo{float: left;width: 394px;height: 470px;background: url(../images/logo.png) no-repeat 117px 106px;}
