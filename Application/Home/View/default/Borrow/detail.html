@@ -103,42 +103,11 @@
                         <li>状态</li>
                         <li>通过时间</li>
                     </ul>
-                
-                    <ul class="con">
-                        <li>身份认证</li>
-                        <li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li>
-                        <li>2014-11-22</li>
-                    </ul>
-                    <ul class="con">
-                        <li>工作认证</li>
-                        <li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li>
-                        <li>2014-11-22</li>
-                    </ul>
-                    <ul class="con">
-                        <li>居住地认证</li>
-                        <li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li>
-                        <li>2014-11-22</li>
-                    </ul>
-                    <ul class="con">
-                        <li>信用报告</li>
-                        <li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li>
-                        <li>2014-11-22</li>
-                    </ul>
-                    <ul class="con">
-                        <li>房产</li>
-                        <li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li>
-                        <li>2014-11-22</li>
-                    </ul>
-                    <ul class="con">
-                        <li>购车</li>
-                        <li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li>
-                        <li>2014-11-22</li>
-                    </ul>
-                    <ul class="con">
-                        <li>其它资料</li>
-                        <li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li>
-                        <li>2014-11-22</li>
-                    </ul>
+                	<volist name="status" id="value" key="k" empty="暂时没有数据">
+	                    <ul class="con">	                    	
+							<li>{$value}认证</li><li style="background:url(../../../../../Public/Home/images/pass_Bg.png) no-repeat center center">pass</li><li>2014-11-22</li>              
+	                    </ul>
+                    </volist>
                 </div>
                 <div class="tab" style="display:none">
                 <p>此为计划表，还款日期以实际日期为准</p>

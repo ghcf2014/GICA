@@ -154,7 +154,6 @@ class BorrowController extends HomeController {
 	/**
 	 * 新增页面初始化
 	 */
-
 	public function detail($id = 0, $p = 1) {
 		/* 标识正确性检测 */
 		if (! ($id && is_numeric ( $id ))) {
@@ -180,6 +179,61 @@ class BorrowController extends HomeController {
 		//   查询用户资料审核状态
 		$checkmsg = M('z_members_status');
 		$result=$checkmsg->where('uid=%s',$uid)->select();
+		$arr=array_keys($result[0],1);
+		$phone=array_keys($arr,'phone_status');
+		$idcard=array_keys($arr,'id_status');
+		$email=array_keys($arr,'email_status');
+		$account=array_keys($arr,'account_status');
+		$credit=array_keys($arr,'credit_status');
+		$video=array_keys($arr,'video_status');
+		$face=array_keys($arr,'face_status');
+		$work=array_keys($arr,'work_status');
+		$building=array_keys($arr,'building_status');
+		$license=array_keys($arr,'license_status');
+		$cars=array_keys($arr,'cars_status');
+		$live=array_keys($arr,'live_status');
+		$others=array_keys($arr,'others_status');
+		$arr1=array();	
+		if (empty($phone)==false){
+			$arr1['phone_status']='手机';
+		}
+		if (empty($idcard)==false){
+			$arr1['id_status']='身份';
+		}
+		if (empty($email)==false){
+			$arr1['email_status']='邮箱';
+		}
+		if (empty($account)==false){
+			$arr1['account_status']='账户';
+		}
+		if (empty($credit)==false){
+			$arr1['credit_status']='信用';
+		}
+		if (empty($video)==false){
+			$arr1['video_status']='视频';
+		}
+		if (empty($face)==false){
+			$arr1['face_status']='现场';
+		}
+		if (empty($work)==false){
+			$arr1['work_status']='工作';
+		}
+		if (empty($building)==false){
+			$arr1['building_status']='房产';
+		}
+		if (empty($license)==false){
+			$arr1['license_status']='驾照';
+		}
+		if (empty($cars)==false){
+			$arr1['cars_status']='购车';
+		}
+		if (empty($live)==false){
+			$arr1['live_status']='居住地';
+		}
+		if (empty($others)==false){
+			$arr1['others_status']='其他';
+		}
+		$this->assign('status',$arr1);
 		//查询投标详情
 		$borrow_info = M('z_borrow_investor');
         $condition['borrow_id'] =$id;
