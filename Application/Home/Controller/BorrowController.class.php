@@ -114,16 +114,16 @@ class BorrowController extends HomeController {
 		    
 	}
 
-	public function circulation_save() {
+	public function circulation_save($id=1) {
 
 
 		$uid=is_login(); 
-		$depict['borrow_type'] = $_POST['typeid'];
+		$depict['borrow_type'] =$id;
 		$depict['borrow_name'] = $_POST ['borrow_name'];
 		$depict['borrow_money'] = $_POST ["borrow_money"];
 		$depict['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
 		$depict['borrow_use'] = $_POST ["borrow_use"];
-		$depict['borrow_duration'] = $_POST ["collect_day"];
+		$depict['borrow_duration'] = $_POST ["borrow_duration"];
 		$depict['borrow_min'] = $_POST ["borrow_min"];
 		$depict['borrow_max'] = $_POST ["borrow_max"];
 		$depict['collect_time'] = $_POST ["collect_time"];
@@ -135,7 +135,17 @@ class BorrowController extends HomeController {
 		$depict['add_time'] = time ();
 		$depict['deadline'] = strtotime ( '+'.intval ( $_POST ["collect_day"] ).' year' );
 		$depict['add_ip'] = get_client_ip ();
+		// $depict['repayment_interest'] = intval ($_POST ["borrow_money"])*intval ($_POST ["borrow_interest_rate"])/ 100;
+		// $depict['repayment_interest']=(intval($_POST["borrow_money"])*(intval($_POST ["borrow_interest_rate"])/100/12)*(1+(intval($_POST["borrow_interest_rate"])/ 100/12))^intval($_POST["borrow_duration"]))/((1+(0.12/12)^intval($_POST["borrow_duration"])-1);//等额本息公式
+		
 
+		// $depict['repayment_interest']=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
+		if($_POST ["repayment_type"] == 5){
+			$depict['repayment_interest']=(intval($_POST["borrow_money"])*(intval($_POST ["borrow_interest_rate"])/100/12)*pow((1+(intval($_POST ["borrow_interest_rate"])/100/12)),intval($_POST["borrow_duration"]))/(pow((1+(intval($_POST ["borrow_interest_rate"])/100/12)),intval($_POST["borrow_duration"]))-1))*intval($_POST["borrow_duration"])-intval($_POST["borrow_money"]);
+		    $depict['repayment_money']=(intval($_POST["borrow_money"])*(intval($_POST ["borrow_interest_rate"])/100/12)*pow((1+(intval($_POST ["borrow_interest_rate"])/100/12)),intval($_POST["borrow_duration"]))/(pow((1+(intval($_POST ["borrow_interest_rate"])/100/12)),intval($_POST["borrow_duration"]))-1))*intval($_POST["borrow_duration"]);
+		    $depict['total'] = $_POST ["borrow_duration"];
+		}
+		
 
 		// $files=($_FILES['img']);
 
