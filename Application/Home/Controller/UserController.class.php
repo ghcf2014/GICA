@@ -153,6 +153,12 @@ class UserController extends HomeController {
 	/* 退出登录 */
 	public function emailyz($emailyz = 0){
 		if(0 < $emailyz){
+
+			$m=M("z_members_status");//关联会员资金表
+           	$condition['uid'] =$emailyz;
+           	$data ['email_status'] =1;
+           	$count=$m->where($condition)->save();
+
 			$this->success('邮箱验证成功！', U('Member/Index/index'));
 		} else {
 			$this->error( '非法邮箱认证链接！',U('User/register') );

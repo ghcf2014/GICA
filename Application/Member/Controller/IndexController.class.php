@@ -31,14 +31,17 @@ class IndexController extends MemberController {
         $m = M('ucenter_member');//用户头像
         $condition1['gica_ucenter_member.id'] =$uid;
         $m=$m->where($condition1)->select();
-        
+
+        $mstatus = M('z_members_status');//用户验证状态
+        $condition2['uid'] =$uid;
+        $mstatus=$mstatus->where($condition2)->select();
+
         $this->assign('list', $list);
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
+        $this->assign('mstatus', $mstatus);
 
-        // var_dump($list);
-        // var_dump($lists2);
         $this->display();
     }
     //文件信息写入数据库

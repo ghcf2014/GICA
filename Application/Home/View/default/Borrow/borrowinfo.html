@@ -141,30 +141,11 @@
             <td valign="top" colspan="1" rowspan="1"></td>
         </tr>
         <tr>
-            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;" >
-                <label for="imageInput">
-                  <div id="drop-zone" class="hover">&nbsp;
-                    <div class="drop-label">拖动图片或点击+项目认证资料</div>
-                  </div>
-                </label>
-                <input type="file" id="imageInput"  name="img" style="display:none"/>
-
+            <td valign="top" colspan="3" rowspan="1">
+                
+                <div id="demo" class="demo"></div>   
                 <!-- <div class="img_add">
                 <a href="javascript:void(0);" id="test2">+项目认证资料</a>
-                </div> -->
-            </td>
-            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;" >
-                
-                <!-- <label for="imageInput">
-                  <div id="drop-zone" class="hover">&nbsp;
-                    <div class="drop-label">拖动图片或点击+项目认证资料</div>
-                  </div>
-                </label>
-                <input type="file" id="imageInput" style="display:none"/> -->
-            </td>
-            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
-                <!-- <div class="img_add">
-                <a href="/user/bank/to" target="_blank">+项目认证资料</a>
                 </div> -->
             </td>
         </tr>
@@ -196,112 +177,8 @@
   <script src="d3.min.js"></script>
   <script src="jquery.min.js"></script>
   <script src="triangloid.js"></script>
-  <script>
-var cellsize =30;
-var image, imageHeight, imageWidth, backgroundSize, svg;
-
-function getImagePixelData(img) {
-  var canvas = document.createElement("canvas");
-  canvas.width = img.width;
-  canvas.height = img.height;
-  var ctx = canvas.getContext("2d");
-  ctx.drawImage(img, 0, 0);
-  var imageData = ctx.getImageData(0, 0, img.width, img.height);
-  var mappedData = [];
-  for (var i = 0; i < imageData.data.length; i += 4) {
-    mappedData.push([imageData.data[i], imageData.data[i + 1], imageData.data[i + 2]]);
-  }
-  return mappedData;
-}
-var dropZone = document.getElementById('drop-zone');
-dropZone.ondragover = function() {
-  this.className = 'hover';
-  return false;
-};
-dropZone.ondragleave = function() {
-  dropZone.className = "";
-}
-dropZone.ondragend = function() {
-  dropZone.className = "";
-  return false;
-};
-dropZone.ondrop = processInput;
-document.getElementById("imageInput").onchange = processInput;
-
-$("#cell-size-input").keyup(function() {
-  cellsize = parseInt($(this).val());
-});
-$(".trianglify-btn").click(function() {
-  draw(image);
-  $(".download-btn").addClass("visible");
-});
-$(".download-btn").click(function() {
-  document.location.href = svg.replace("image/svg+xml", "image/octet-stream");
-});
-
-function processInput(e) {
-  dropZone.className = "";
-  e.preventDefault();
-  if (e.target.files) {
-    var file = e.target.files[0];
-  } else {
-    var file = e.dataTransfer.files[0];
-  }
-
-  var reader = new FileReader();
-  reader.onload = function(event) {
-    image = new Image();
-    image.onload = function() {
-      var dropZoneWidth = $(dropZone).width();
-      var dropZoneHeight = $(dropZone).height();
-      var dropZoneRatio = dropZoneWidth / dropZoneHeight;
-      var imageRatio = image.width / image.height;
-      backgroundSize = "";
-      if (image.width > dropZoneWidth) { //Could be expressed in smaller chunks...
-        if (image.height > dropZoneHeight) {
-          if (imageRatio > dropZoneRatio) {
-            backgroundSize += dropZoneWidth + "px";
-            backgroundSize += " ";
-            backgroundSize += dropZoneWidth / imageRatio + "px";
-          } else {
-            backgroundSize += dropZoneHeight * imageRatio + "px";
-            backgroundSize += " ";
-            backgroundSize += dropZoneHeight + "px";
-          }
-        } else {
-          backgroundSize += dropZoneWidth + "px";
-          backgroundSize += " ";
-          backgroundSize += dropZoneWidth / imageRatio + "px";
-        }
-      } else if (image.height > dropZoneHeight) {
-        backgroundSize += dropZoneHeight * imageRatio + "px";
-        backgroundSize += " ";
-        backgroundSize += dropZoneHeight + "px";
-      } else {
-        backgroundSize = image.width + "px " + image.height + "px";
-      }
-      dropZone.style.background = 'url(' + imageData + ') no-repeat center';
-      dropZone.style.backgroundSize = backgroundSize;
-      console.log(dropZone.style.backgroundSize);
-      $(".trianglify-btn").addClass("visible");
-      $(".download-btn").removeClass("visible");
-    }
-    image.src = imageData = event.target.result;
-  };
-  reader.readAsDataURL(file);
-  return false;
-}
-</script>
-<script type="text/javascript">
-$(function(){
+  
  
-  $("#date_8").datepicker({
-    showOn: "button",
-    buttonImage: "__STATIC__/datepicker/images/calendar.gif",
-    buttonImageOnly: true
-  });
-});
-</script>
 <script type="text/javascript">
 //不能为空
   $("#s_borrow_name").blur(function() {

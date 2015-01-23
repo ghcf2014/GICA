@@ -285,3 +285,8 @@ background-position: -68px 0px;
 .User_ratings .ratings_bars .scale div{width:0px;position:absolute;width:0;left:0;height:13px;bottom:0;background:url(../images/progress02.png) 0 -14px no-repeat;}
 .User_ratings .ratings_bars .scale span{width:10px;height:26px;position:absolute;left:-2px;top:-7px;cursor:pointer;background:url(../images/j.png) no-repeat;}
 .span{line-height:35px;float: left; margin-left: 0px;}
+
+
+.yuanlai_ke{
+    float: left;
+}

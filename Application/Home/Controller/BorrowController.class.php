@@ -185,6 +185,8 @@ class BorrowController extends HomeController {
 		$userlist= M ('ucenter_member');
 		$data=$userlist->field('username,reg_time,last_login_time')->where('id=%s',$uid)->select();
 		$this->assign('data',$data[0]);
+		$updata = unserialize($list[0]['updata']);
+		$this->assign ( 'updata', $updata );
 		$this->assign ( 'list3', $list);
 		//   查询用户资料审核状态
 		$checkmsg = M('z_members_status');
@@ -310,24 +312,21 @@ class BorrowController extends HomeController {
     	$this->display ();
     }
     private function borrow_AddFile($fileinfo,$depict,$type){
-          $i=0;
+        $i=0;
         $uid=is_login(); 
         $file=M('z_borrow_info');
         $condition['uid'] =$uid;
         
         foreach($fileinfo as $vo)
         {
-
-	        $depict['updata']=$vo['savepath'].$vo['savename'];
-			
-    
-	            if($file->where($condition)->data($depict)->add($depict)){
-	                //
-	                $i++;
-	            }else{
-	                  return false;
-	            }
+	        $data[$i]['updata']=$vo['savepath'].$vo['savename'];
+			$i++;    
         }
+        $depict['updata']= serialize($data);
+
+        if(!$file->where($condition)->data($depict)->add($depict)){
+          	return false;
+            }
 
         return true;
     }
@@ -342,6 +341,7 @@ class BorrowController extends HomeController {
         $upload = new \Think\Upload($config);// 实例化上传类
 
        $info   =   $upload->upload(); // 上传文件
+       dump($info);
         if(!$info){// 上传错误提示错误信息
             $this->error($upload->getError());
         }

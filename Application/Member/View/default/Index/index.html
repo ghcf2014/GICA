@@ -47,41 +47,41 @@
 					</p>
 				</dd>
 			</dl>
-			<ul class="ul01">
+			<ul class="ul01"><volist name="mstatus" id="ms">
 				<li>认证管理：</li>
-				<li><if condition="$vs.email_status eq 0"> <a
+				<li><if condition="$ms.email_status eq 0"> <a
 						href="{:U('Userinfo/usermailbanding')}"><img
 						src="__PUBLIC__/Home/images/img/h_yx_pic.jpg" title="邮箱未认证" /> </a> <elseif
-						condition="$vs.email_status eq 1" /> <a
+						condition="$ms.email_status eq 1" /> <a
 						href="{:U('Userinfo/usermailbanding')}"><img
 						src="__PUBLIC__/Home/images/img/l_yx_pic.jpg" title="邮箱已认证" /> </a> </if></li>
-				<li><if condition="$vs.phone_status eq 0"> <a
+				<li><if condition="$ms.phone_status eq 0"> <a
 						href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img
 						src="__PUBLIC__/Home/images/img/h_sj_pic.jpg" title="手机未认证" /> </a> <elseif
-						condition="$vs.phone_status eq 1" /> <a
+						condition="$ms.phone_status eq 1" /> <a
 						href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img
 						src="__PUBLIC__/Home/images/img/l_sj_pic.jpg" title="手机已认证" /> </a> </if></li>
-				<li><if condition="$vs.id_status eq 0"> <a
+				<li><if condition="$ms.id_status eq 0"> <a
 						href="{:U('Userinfo/userselfset')}"> <img
 						src="__PUBLIC__/Home/images/img/h_sfz_pic.jpg" title="身份证未认证" />
 					</a> <elseif condition="$vs.id_status eq 1" /> <a
 						href="{:U('Userinfo/userselfset')}"> <img
 						src="__PUBLIC__/Home/images/img/l_sfz_pic.jpg" title="身份证已认证" />
 					</a> </if></li>
-				<li><if condition="$vs.credit_status eq 0"> <a
+				<li><if condition="$ms.credit_status eq 0"> <a
 						href="{:U('Userinfo/userbankset')}"> <img
 						src="__PUBLIC__/Home/images/img/h_yhk_pic.jpg" title="银行卡未认证" />
 					</a> <elseif condition="$vs.credit_status eq 1" /> <a
 						href="{:U('Userinfo/userbankset')}"> <img
 						src="__PUBLIC__/Home/images/img/l_yhk_pic.jpg" title="银行卡已认证" />
 					</a> </if></li>
-				<li><if condition="$vs.video_status eq 0"> <a
+				<li><if condition="$ms.video_status eq 0"> <a
 						href="{:U('Userinfo/userrenewalvip')}"> <img
 						src="__PUBLIC__/Home/images/img/h_vip_pic.jpg" title="VIP未认证" />
 					</a> <elseif condition="$vs.video_status eq 1" /> <a
 						href="{:U('Userinfo/userrenewalvip')}"> <img
 						src="__PUBLIC__/Home/images/img/l_vip_pic.jpg" title="VIP已认证" />
-					</a> </if></li>
+					</a> </if></li></volist>
 			</ul>
 
 			<ul class="ul02">
@@ -97,7 +97,6 @@
 			<h4>账户详情：</h4>
 			<if condition="$list neq ''">
 			<div class="zh_cont_r_bot">
-				<p>账户总汇</p>
 				<volist name="list" id="vo">
 				<ul>
 					<li>账户总额：￥ {$vo.account_money}</li>
@@ -107,7 +106,6 @@
 			</div>
 			<else />
 			<div class="zh_cont_r_bot">
-				<p>账户总汇</p>
 				<ul>
 					<li>账户总额：￥ 0.00</li>
 					<li>可用余额：￥0.00</li>
@@ -118,7 +116,6 @@
 			<!-- 投资总汇 -->
 			<if condition="$list2 neq ''">
 			<div class="zh_cont_r_bot">
-				<p>投资总汇</p>
 				<volist name="list2" id="list2">
 				<ul>
 					<li><p>待收总额：￥ {$list2['investor_capital']}</p></li>
@@ -128,7 +125,6 @@
 			</div>
 			<else />
 			<div class="zh_cont_r_bot">
-				<p>投资总汇</p>
 				<ul>
 					<li><p>待收总额：￥ 0.00</p></li>
 					<li><p>待收本金：￥ 0.00</p></li>
@@ -140,7 +136,6 @@
 			<!-- 借款总汇 -->
 			<if condition="$borrow_money neq ''">
 			<div class="zh_cont_r_bot zh_cont_r_bot last">
-				<p>借款总汇</p>
 				<volist name="borrow_money" id="bm">
 				<ul>
 					<li>待还总额：￥ {$bm.borrow_money}</li>
@@ -150,7 +145,6 @@
 			</div>
 			<else />
 			<div class="zh_cont_r_bot zh_cont_r_bot last">
-				<p>借款总汇</p>
 				<ul>
 					<li>待还总额：￥0.00</li>
 					<li>待还本金：￥0.00
