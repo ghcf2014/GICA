@@ -98,8 +98,8 @@
 			                    
 			                </dl>
 			                
-			                <dl style="border: 0;">
-			                	<dt><span>资讯</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more"></a></dt>
+			                <dl style="">
+			                	<dt><span>行业资讯</span> <a href="{:U('Article/lists?category='.get_category_name(40))}" class="more"></a></dt>
 			                     <volist name="lists1" id="list1">
 			                        <dd> <a href="{:U('Article/detail?id='.$list1['id'])}">{$list1.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span></dd>
 			                    </volist>
@@ -111,7 +111,7 @@
 		        
 		        <!--投资列表 start-->
 		        <div class="cont_bot2">
-		        	<h2 class="title" style="background: url(__PUBLIC__/Home/images/mo.png) no-repeat 1010px center;"><p>投资列表</p></h2>
+		        	<h2 class="title" style=""><p>投资列表</p><a style="float: right;width: 90px;height: 50px;background: url(__PUBLIC__/Home/images/mo.png) no-repeat center center;" href="#"></a></h2>
 		        	<!--<ul>
 		        		<li style="width: 165px;">借款项目</li>
 		        		<li>借款金额</li>
@@ -124,17 +124,17 @@
 		        	</ul>-->
 		        	<table border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 20px;">		       
 		        		<tr>
-		        			<td style="width: 165px;">借款项目</td>
-		        			<td>借款金额</td>
-		        			<td style="width: 60px;">年利率</td>
-		        			<td style="width: 80px;">期限</td>
-		        			<td style="width: 100px;">类型</td>
-		        			<td>进度</td>
-		        			<td>发布时间</td>
-		        			<td style="width: 80px;"></td>
+		        			<td style="width: 165px;font-weight: bold;">借款项目</td>
+		        			<td style="font-weight: bold;">借款金额</td>
+		        			<td style="width: 60px;font-weight: bold;">年利率</td>
+		        			<td style="width: 80px;font-weight: bold;">期限</td>
+		        			<td style="width: 100px;font-weight: bold;">类型</td>
+		        			<td style="font-weight: bold;">进度</td>
+		        			<td style="font-weight: bold;">发布时间</td>
+		        			<td style="width: 80px;font-weight: bold;"></td>
 		        		</tr>
 		        		<tr>
-		        			<td style="width: 165px;">房地产开发第十期</td>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
 		        			<td>￥100,0000</td>
 		        			<td style="width: 60px;">12%</td>
 		        			<td style="width: 80px;">30天</td>
@@ -144,7 +144,7 @@
 		        			<td style="width: 80px;"><input type="button" value="投&nbsp;&nbsp;标" /></td>
 		        		</tr>
 		        		<tr>
-		        			<td style="width: 165px;">房地产开发第十期</td>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
 		        			<td>￥100,0000</td>
 		        			<td style="width: 60px;">12%</td>
 		        			<td style="width: 80px;">30天</td>
@@ -154,7 +154,7 @@
 		        			<td style="width: 80px;"><input type="button" value="投&nbsp;&nbsp;标" /></td>
 		        		</tr>
 		        		<tr>
-		        			<td style="width: 165px;">房地产开发第十期</td>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
 		        			<td>￥100,0000</td>
 		        			<td style="width: 60px;">12%</td>
 		        			<td style="width: 80px;">30天</td>
@@ -164,7 +164,7 @@
 		        			<td style="width: 80px;"><input type="button" value="投&nbsp;&nbsp;标" /></td>
 		        		</tr>
 		        		<tr>
-		        			<td style="width: 165px;">房地产开发第十期</td>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
 		        			<td>￥100,0000</td>
 		        			<td style="width: 60px;">12%</td>
 		        			<td style="width: 80px;">30天</td>
@@ -174,7 +174,7 @@
 		        			<td style="width: 80px;"><input type="button" value="投&nbsp;&nbsp;标" /></td>
 		        		</tr>
 		        		<tr>
-		        			<td style="width: 165px;">房地产开发第十期</td>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
 		        			<td>￥100,0000</td>
 		        			<td style="width: 60px;">12%</td>
 		        			<td style="width: 80px;">30天</td>
@@ -184,7 +184,7 @@
 		        			<td style="width: 80px;"><input type="button" value="投&nbsp;&nbsp;标" /></td>
 		        		</tr>
 		        		<tr>
-		        			<td style="width: 165px;">房地产开发第十期</td>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
 		        			<td>￥100,0000</td>
 		        			<td style="width: 60px;">12%</td>
 		        			<td style="width: 80px;">30天</td>
@@ -194,7 +194,17 @@
 		        			<td style="width: 80px;"><input type="button" value="投&nbsp;&nbsp;标" /></td>
 		        		</tr>
 		        		<tr>
-		        			<td style="width: 165px;">房地产开发第十期</td>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
+		        			<td>￥100,0000</td>
+		        			<td style="width: 60px;">12%</td>
+		        			<td style="width: 80px;">30天</td>
+		        			<td style="width: 100px;"><img src="__PUBLIC__/Home/images/bao.png"/><img src="__PUBLIC__/Home/images/jian.png"/></td>
+		        			<td><span class="out"><span class="in"></span></span></td>
+		        			<td>2015-01-20</td>
+		        			<td style="width: 80px;"><input type="button" value="投&nbsp;&nbsp;标" /></td>
+		        		</tr>
+		        		<tr>
+		        			<td style="width: 165px;"><a href="#">房地产开发第十期</a></td>
 		        			<td>￥100,0000</td>
 		        			<td style="width: 60px;">12%</td>
 		        			<td style="width: 80px;">30天</td>

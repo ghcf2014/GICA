@@ -154,7 +154,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .cont .cont_bot .cont_bot1 dd a:hover{display:block;width:185px;height:32px;background:url(../images/cont_bot_r_hover_bg.png) no-repeat left center;padding-left:15px;color:#EF681F;float:left;}
 .cont .cont_bot .cont_bot1 dd .current{display:block;width:185px;height:32px;background:url(../images/cont_bot_r_hover_bg.png) no-repeat left center;padding-left:15px;color:#EF681F;}
 .cont .cont_bot .cont_bot1 dd span{display:block;float:right;}
-.cont .cont_bot .cont_bot1 .cont_bot1_con01{float: left;width: 295px;height: auto;}
+.cont .cont_bot .cont_bot1 .cont_bot1_con01{float: left;width: 295px;height: auto;padding: 0 30px;}
 .cont .cont_bot .cont_bot1 .cont_bot1_con01 .cont_bot1_con01_in{width: 270px;height: auto;padding: 10px 0 10px 25px;}
 .cont .cont_bot .cont_bot1 .cont_bot1_con01 .cont_bot1_con01_in h3{font-size: 20px;font-weight: normal;line-height: 40px;}
 .cont .cont_bot .cont_bot1 .cont_bot1_con01 .cont_bot1_con01_in p{font-size: 40px;color: red;line-height: 50px;padding-left: 50px;}
