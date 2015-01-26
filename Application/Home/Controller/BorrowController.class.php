@@ -341,7 +341,6 @@ class BorrowController extends HomeController {
         $upload = new \Think\Upload($config);// 实例化上传类
 
        $info   =   $upload->upload(); // 上传文件
-       dump($info);
         if(!$info){// 上传错误提示错误信息
             $this->error($upload->getError());
         }
