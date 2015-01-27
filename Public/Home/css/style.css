@@ -710,7 +710,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .box .otherh2x {width:932px;  font-family: "微软雅黑"; font-size: 16px; color: #333; padding-left: 15px; text-align: left; }
 .box .boxmain2 { padding-top: 20px; padding-bottom: 25px; }
 .box .boxmain2 .srh { line-height: 32px; margin-bottom: 12px; }
-.box .boxmain2 .srh input{width:78px; vertical-align: middle}
+.box .boxmain2 .srh input{width:140px; vertical-align: middle}
 .box .boxmain2 .srh a{ vertical-align: middle}
 .cxbtn { line-height: 18px; color: #333; background-image: url(../rzg_images/030213_3.jpg); background-repeat: repeat-x; text-align: center; display: inline-block; height: 18px; width: 58px; border: 1px solid #ccc; }
 .cxbtn:hover { color: #000; }

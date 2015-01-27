@@ -67,7 +67,7 @@
 									</s:if> -->
 								<s:else>
 									<s:iterator value="pageBean.page" var="bean">
-										<volist name="list" id="vo">
+										<volist name="list" id="vo" key="k">
 										<tr>
 											<td align="center">{$vo.borrow_uid|get_borrow_username}
 											</td>
@@ -85,10 +85,9 @@
 											</td>
 											<td align="center">{$vo['investor_capital']*$vo['invest_fee']/100}
 											</td>
-											<td align="center"><a
-												href="{:U('Invest/borrowprotocol?id='.$vo['borrow_id'])}"
-												target="_blank">查看协议</a></td>
+											<td align="center"><a href="javascript:void(0);" class="xiangqing_{$k}">详情</a><a href="{:U('Invest/borrowprotocol?id='.$vo['borrow_id'])}" target="_blank">|查看协议</a><input  id="borrow_id_{$k}" value="{$vo.borrow_id}" style="display: none;" /></td>
 										</tr>
+										
 										</volist>
 									</s:iterator>
 								</s:else>
@@ -103,4 +102,265 @@
 		</div>
 	</div>
 </div>
-<!--content end--> </block>
+<!--content end--> 
+<script>
+  // $('#test2')
+  //     .on(
+  //         'click',
+  //         function() {
+  //           // layer.msg('正在施工，无法更换')
+  //           $.layer({
+  //                 type : 1,
+  //                 title : [ '图片上传',
+  //                     'background:#2B2E37; height:40px; color:#fff; border:none;' //自定义标题样式
+  //                 ], //不显示默认标题栏
+  //                 offset : [ '250px', '' ],
+  //                 shade : [ 1 ], //不显示遮罩
+  //                 area : [ '260px', '100px' ],
+  //                 page : {
+  //                   html : '<form action="__URL__/upload" enctype="multipart/form-data" method="post"><input type="file"  name="filename" value=""><input  type="submit"  value="上传"></from>'
+  //                 },
+  //               });
+  //         });
+
+
+            // $('.xiangqing').on('click',function() {
+            //         $.layer({
+            //         type: 2,
+            //         shade: [0],
+            //         fix: false,
+            //         title: [ '图片上传','background:#4AC0FF; height:40px; color:#fff; border:none;'],
+            //         maxmin: true,
+            //         iframe: {src : 'iframe.html'},
+            //         area: ['800px' , '440px'],
+            //         close: function(index){
+            //             layer.msg('您获得了子窗口标记：' + layer.getChildFrame('#name', index).val(),3,1);
+            //         }
+            //     }); 
+            // });
+
+$('.xiangqing_1').click(function(){
+               var bid = document.getElementById("borrow_id_1").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				        html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_2').click(function(){
+               var bid = document.getElementById("borrow_id_2").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_3').click(function(){
+               var bid = document.getElementById("borrow_id_3").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_4').click(function(){
+               var bid = document.getElementById("borrow_id_4").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_5').click(function(){
+               var bid = document.getElementById("borrow_id_5").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_6').click(function(){
+               var bid = document.getElementById("borrow_id_6").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_7').click(function(){
+               var bid = document.getElementById("borrow_id_7").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_8').click(function(){
+               var bid = document.getElementById("borrow_id_8").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_9').click(function(){
+               var bid = document.getElementById("borrow_id_9").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+$('.xiangqing_10').click(function(){
+               var bid = document.getElementById("borrow_id_10").value;
+             $.post('__URL__/investindex_ajax',{bid:bid},function success(data){
+             	// alert(data.borrow_id);
+             	var pagei = $.layer({
+				    type: 1,   //0-4的选择,
+				    title: false,
+				    border: [0],
+				    closeBtn: [0],
+				    shadeClose: true,
+				    area: ['680px', '570px'],
+				    page: {
+				         html: '<div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">'+data.get_borrow_name+'</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">'+data.collect_day+'天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">'+data.borrow_interest_rate*1+'%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">'+data.add_time+'</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">'+data.deadline+'</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">{$bf.investor_capital}</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">{$bf.reward_money}</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><volist name="binfo1" id="bf1"><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>'+data.borrow_duration+'</td><td>{$vo.'+data.deadline+'|date="Y-m-d",###}</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>'+data.investor_capital+'</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="btn" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+				    }
+				});
+				$('#pagebtn').on('click', function(){
+				    layer.close(pagei);
+				});
+             });
+         });
+
+
+
+// $('.xiangqing').on('click',function() {
+// 	var pagei = $.layer({
+// 	    type: 1,   //0-4的选择,
+// 	    title: false,
+// 	    border: [0],
+// 	    closeBtn: [0],
+// 	    shadeClose: true,
+// 	    area: ['720px', '570px'],
+// 	    page: {
+// 	        html: '<volist name="list" id="vo"><div class="hfb-modal-container"><div class="hfb-modal-header">投资详情</div><div class="hfb-modal-content tender-detail"><div class="t-top">投资概览</div><ul class="ul-1 clearfix"><li style="width: 100%;"><span class="span-1">投资项目：</span><span class="span-2">{$bf.borrow_id|get_borrow_name}</span></li><li style="width: 33.33%;"><span class="span-1">投资期限：</span><span class="span-2">7天</span></li><li style="width: 33.33%;"><span class="span-1">年化利率：</span><span class="span-2">13.30%</span></li><li style="width: 33.33%;"><span class="span-1">收益方式：</span><span class="span-2">按天到期还款</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">起息日：</span><span class="span-2">2015-01-22</span></li><li style="width: 49.999%;border-bottom:1px solid #d9d9de;padding-bottom: 10px;"><span class="span-1">到期日：</span><span class="span-2">2015-01-30</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资金额：</span><span class="span-2">300.00</span></li><li style="width: 49.999%; padding-top: 6px;"><span class="span-1">投资奖励：</span><span class="span-2">0.00%</span></li><li style="width: 25%;"><span class="span-1">总收益：</span><span class="span-2">0.78</span></li><li style="width: 25%;"><span class="span-1">已收本息：</span><span class="span-2 color-1">0.00</span></li><li style="width: 25%;"><span class="span-1">待收本息：</span><span class="span-2">300.78</span></li><li style="width: 25%;"><span class="span-1">已收奖励：</span><span class="span-2">0.00 </span></li></ul><div class="t-top">收益详情</div><div class="t-table-wrap"><table  cellpadding="0" cellspacing="1"><tbody><tr><th>收款期数</th><th>收款日</th><th>应收金额(元)</th><th>实收本金(元)</th><th>实收收益(元)</th><th>状态</th><th></th></tr><tr><td>1</td><td>2015-01-30</td><td>300.78</td><td>0.00</td><td>0.00</td><td>待收</td></tr></tbody></table></div></div><div class="hfb-modal-footer"><a class="t-close" id="pagebtn">关闭</a></div></div>' //此处放了防止html被解析，用了\转义，实际使用时可去掉
+// 	    }
+// 	});
+// 	$('#pagebtn').on('click', function(){
+// 	    layer.close(pagei);
+// 	});
+
+//  }); 
+
+
+</script>
+
+</block>

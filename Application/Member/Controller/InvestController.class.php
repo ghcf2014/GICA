@@ -252,9 +252,38 @@ class InvestController extends MemberController {
 		$borrow_info = M ( 'z_borrow_investor' );
 		$condition ['investor_uid'] = $uid;
 		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where ( $condition )->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
+
+
+        if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
 		
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
+	}
+	public function investindex_ajax() {
+		$uid = is_login (); // 获取当前用户UID
+		$borrow_info = M ( 'z_borrow_investor' );
+		// $condition ['investor_uid'] = $uid;
+		$condition ['borrow_id'] = $_POST['bid'];
+		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where ( $condition )->order ( 'id desc')->group ( 'borrow_id' )->select ();
+
+		// $data['bid']=$_POST['bid'];
+		$borrow_info1 = M ( 'z_borrow_info' );
+		// $condition ['investor_uid'] = $uid;
+		$condition1['id'] = $_POST['bid'];
+		$borrow_info1 = $borrow_info1->where ($condition1)->select ();
+
+
+		// $data=$borrow_info[0];
+		$data=$borrow_info1[0]+$borrow_info[0];
+
+		$data['get_borrow_name']=get_borrow_name($borrow_info1[0]['id']);
+		$data['deadline']=time_format($borrow_info[0]['deadline'],$format = 'Y-m-d');
+		$data['add_time']=time_format($borrow_info[0]['add_time'],$format = 'Y-m-d');
+
+		// $this->assign ( 'binfo', $borrow_info );
+		// $this->assign ( 'binfo1', $borrow_info1 );
+        if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
+	
 	}
 	public function borrowmanager() {
 		$uid = is_login (); // 获取当前用户UID

@@ -101,12 +101,34 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userchagerwithdraw() {
+
+		// $nickname       =   I('nickname');
+  //       $map['status']  =   array('egt',0);
+  //       if(is_numeric($nickname)){
+  //           $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+  //       }else{
+  //           $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+  //       }
+
+  //       $list   = $this->lists('z_member_moneylog', $map);
+  //       int_to_string($list);
+  //       $this->assign('_list', $list);
+  //       $this->meta_title = '资金信息';
+  //       $this->display();
+
+
 		$uid = is_login ();
+		$ml = M ( "z_member_moneylog" );
+		$condition ['uid'] = $uid;
+		$ml = $ml->where ( $condition )->select ();
+
 		$money = M ( "z_member_money" );
 		$condition ['uid'] = $uid;
 		$money = $money->where ( $condition )->select ();
 		
-		// var_dump ( $money );
+		
+		$this->assign ( 'ml', $ml );
+		var_dump ( $uid);
 		$this->assign ( 'list', $money );
 		$this->display ();
 	}

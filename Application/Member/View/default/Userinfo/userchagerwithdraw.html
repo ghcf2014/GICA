@@ -58,11 +58,11 @@
 								资金记录
 							</h2>
 							<div class="boxmain2">
-								<div class="srh">
-									查询时间 起始时间：
-									<input id="startTime" type="text" class="inp140" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})">
-									结束时间：
-									<input id="endTime" type="text" class="inp140" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})">
+								<div class="srh"><form action="{:U('userchagerwithdraw')}" method="post">
+									交易时间：
+									<input id="startTime" type="text" name="startTime" />
+									到
+									<input id="endTime" type="text" name="endTime">
 									类型:
 									<select name="momeyType" id="momeyType" class="inp80">
 							    		<option value="">--请选择--</option>
@@ -91,7 +91,7 @@
 							    		<option value="105">解冻秒还借款费</option>
 								</select>
 
-								<a href="javascript:void(0)" class="cxbtn" onclick="fundRecordList();;">查询</a>
+								<input  type="submit" class="cxbtn" value="保存发布" style="width:88px;"></form>
 							</div>
 							<div class="biaoge" id="fundRecord">
 							    <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -102,16 +102,21 @@
 									    <th>备注</th>
 									    <th>收入</th>
 									    <th>支出</th>
-									    <th>可用余额</th>
-									    <th>冻结金额</th>
-									    <th>待收金额</th>
-									    <th>总金额</th>
+									    <th>状态</th>
 									  </tr>
-									  
-									  <tr><td colspan="11" align="center">暂无信息</td></tr>
+									  <volist name="ml" id="vo">
+									  <tr>
+									  <td>{$vo.id} </td>
+									  <td>{$vo.uid}</td>
+										<td>{$vo.type}</td>
+										<td>{$vo.affect_money}</td>
+										<td><span>{$vo.account_money}</span></td>
+										<td><span>{$vo.account_money}</span></td>
+										<td><span>{$vo.account_money}</span></td>
+									    <!-- <td colspan="11" align="center">暂无信息</td></tr></volist> -->
 									  </tbody></table>
 								
-								<div class="page">
+									<div class="page">
 								<p>
 								</p>
 							</div> </div>
@@ -123,12 +128,9 @@
     </div>
 	<!--content end-->
 		<!-- 引用底部公共部分 -->
-		<jsp:include page="/include/footer.jsp"></jsp:include>
-		<script type="text/javascript" src="/script/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="script/jquery.shove-1.0.js"></script>
-		<script type="text/javascript" src="script/nav-zh.js"></script>
-		<script language="javascript" type="text/javascript"
-			src="My97DatePicker/WdatePicker.js"></script>
+ <script type="text/javascript" src="__STATIC__/datepicker/js/jquery.min.js"></script> 
+ <script type="text/javascript" src="__STATIC__/datepicker/js/jquery-ui-datepicker.js"></script>  
+
 		<script>
 	$(function() {
 		//样式选中
@@ -143,6 +145,23 @@
 	function jumpUrl(obj) {
 		window.location.href = obj;
 	}
+</script>
+ 
+
+<script type="text/javascript">
+$(function(){
+ 
+  $("#startTime").datepicker({
+    showOn: "button",
+    buttonImage: "__STATIC__/datepicker/images/calendar.gif",
+    buttonImageOnly: true
+  });
+  $("#endTime").datepicker({
+    showOn: "button",
+    buttonImage: "__STATIC__/datepicker/images/calendar.gif",
+    buttonImageOnly: true
+  });
+});
 </script>
 		<script>
 	function fundRecordList() {
