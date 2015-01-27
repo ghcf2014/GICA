@@ -8,7 +8,7 @@
 		<!--qrb_cont_top-->
 		<div class="qrb_cont_top">
 			<!--qrb_cont_top 左边-->
-			<volist name="list3" id="vb">
+			<!--<volist name="list3" id="vb">-->
 			<dl>
 				<dt>
 					<img src="__PUBLIC__/Home/images/qrb_cont_top_pic.png" width="200"
@@ -16,17 +16,17 @@
 				</dt>
 				<dd>
 					<p>
-						<strong>借款用户：</strong><span>{$vb.borrow_uid|get_username}</span>
+						<strong>借款用户：</strong><span><!--{$vb.borrow_uid|get_username}--></span>
 					</p>
 					<p>
-						<strong>借款日期：</strong><span>{$vo.add_time|date='Y-m-d',###}</span>
+						<strong>借款日期：</strong><span><!--{$vo.add_time|date='Y-m-d',###}--></span>
 					</p>
 					<p>
-						<strong>居 住 地 ：</strong><span>{$vb.location}&nbsp;{$vblocation_now}</span>
+						<strong>居 住 地 ：</strong><span><!--{$vb.location}&nbsp;{$vblocation_now}--></span>
 					</p>
 				</dd>
 			</dl>
-			</volist>
+			<!--</volist>-->
 			<!--qrb_cont_top 右边-->
 			<volist name="list" id="vo">
 			<ul>
@@ -40,11 +40,9 @@
 		<!--qrb_cont_bot-->
 		<div class="qrb_cont_bot">
 			<!--qrb_cont_bot 左边-->
-			<volist name="list3" id="vb">
+			<!--<volist name="list3" id="vb">-->
 			<ul class="qrb_cont_bot_l">
-				<li class="li01"><h3>
-					借款标题：<b>{$vb.borrow_name}</b>
-					</h3></li>
+				<li class="li01"><h3>借款标题：<b>{$vb.borrow_name}</b></h3></li>
 				<li>借款金额：<span>￥{$vb.borrow_money}</span></li>
 				<li>借款年利率：<span>{$vb.borrow_interest_rate}%</span></li>
 				<li>已经完成：<span>{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
@@ -58,7 +56,7 @@
 				</li>
 				<li class="li_last">交易类型：<span>线上</span></li>
 			</ul>
-			</volist>
+			<!--</volist>-->
 			<!--qrb_cont_bot 右边-->
 			<volist name="list" id="vo">
 			<div class="qrb_cont_bot_r">
@@ -80,10 +78,10 @@
 				<form id="form" action="{:U('add?id='.$vb['id'])}" method="post">
 				</volist>
 				<div class="tzje">
-					<span>投资金额</span><input type="text" class="txt" style="color: red;"id="amount" name="capital" maxlength="20" value=""/><span>元</span><input type="button" value="最大金额" class="btn" id="maxMoney"onclick="javascript:;">
-									</p>
-								</div>
-								<p>注意：点击按钮表示您将确认投标金额并同意支付贷款</p>
+					<p><span>投资金额</span><input type="text" class="txt" style="color: red;"id="amount" name="capital" maxlength="20" value=""/><span>元</span><input type="button" value="最大金额" class="btn" id="maxMoney"onclick="javascript:;"></p>
+					<p><span>交易密码</span><input type="password" class="txt" style="width: 250px;"id="amount" name="capital" maxlength="20" value=""/></p>
+				</div>
+				<p style="color: red;width: 453px;padding-left: 65px;">注意：点击按钮表示您将确认投标金额并同意支付贷款</p>
 				<!-- <input type="button" value="确认投标" class="btn2" id="confirmInvest"/> -->
 				<input type="submit" value="确认投标" class="btn2"/>
 

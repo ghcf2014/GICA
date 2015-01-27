@@ -1,12 +1,13 @@
-<block name="body">
+﻿<block name="body">
 <extend name="Base/common"/>
 <block name="body">
 		<!--content start-->
 	<div class="zh_cont_out">
     	<div class="zh_cont">
-            <h2><a href="{:U('Index')}">我的账户</a></h2>	
+            
             	<include file="Public/left"/>
             <div class="zh_cont_r">
+            	<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">消息中心</span></h3>	
             	<div class="r_main">
 					<div class="tabtil">
 						<ul>
@@ -49,10 +50,10 @@
 							  <foreach name="sysdata" item="vals" > 
 								<tr>
 									<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
-									<th>{$vals['status']}</th>
-									<th>{$vals[sysname]}</th>
-									<th>{$vals['title']}</th>
-									<th>{$vals['send_time']}</th>
+									<th>未查看</th>
+									<th>系统管理员</th>
+									<th>{$danger['boorow_name']}</th>
+									<th>{$danger['borrow_time']}</th>
 								</tr>
 							  </foreach>
 							  	<tr><td colspan="10" align="center">暂无信息</td></tr>
