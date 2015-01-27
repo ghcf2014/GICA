@@ -1,122 +1,74 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@include file="/include/taglib.jsp"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-	<head> 
-	<jsp:include page="/include/head.jsp"></jsp:include>
-		<link href="css/base.css" rel="stylesheet" />
-		<link href="css/style.css" rel="stylesheet" />
-		<link id="skin" rel="stylesheet" href="css/jbox.css" />
-		<script src="script/jquery-1.7.1.min.js" type="text/javascript"></script>
-	</head>
-	<body>
-		<%-- 引用头部公共部分 --%>
-		<jsp:include page="/include/topref.jsp"></jsp:include>
-
-		<%--banner--%>
-		<div class="xsbz_banner">
-			<img src="images/img/wyrz_banner.jpg" width="1440" height="246" />
-		</div>
-		<%-- banner end--%>
-
-		<%--我要融资--%>
-		<div class="jkbz_box">
-			<div class="wyrz_box">
-				<div class="lcbz_title">
-					立即申请借款
-				</div>
-				<form id="form" action="applyfor.htm" method="post">
-					<s:hidden name="paramMap.param" id="param" />
-					<ul>
-						<li>
-							<span>申请金额</span>
-							<input id="applymoney" name="applymoney" type="text" class="srk" />
-						</li>
-						<li>
-							<span>资金用途</span>
-							<input id="purpose" name="purpose" type="text" class="srk" />
-						</li>
-						<li>
-							<span>贷款期限</span>
-							<input id="deadline" name="deadline" type="text" class="srk" />
-						</li>
-						<li>
-							<span>姓名</span>
-							<input id="name" name="username" type="text" class="srk" />
-						</li>
-						<li>
-							<span>身份证号</span>
-							<input id="idcard" name="idcard" type="text" class="srk" />
-						</li>
-						<li>
-							<span>联系电话</span>
-							<input id="phone" name="phone" type="text" class="srk" />
-						</li>
-					</ul>
-				</form>
+<block name="body"> <extend name="Base/common" /> <block
+	name="body">
+	<div class="sqjk_cont_out">
+		<div class="sqjk_cont">
+			<div class="sqjk_cont_top">
+				<h2>借款流程</h2>
+				<div class="sqjk_pic"><img src="__PUBLIC__/Home/images/jklc.png" width="1000" height="374"/></div>
 			</div>
-			<div class="jkbz_link">
-				<a href="javascript:;" id="applyfor">立即申请</a>
+			
+			<div class="sqjk_cont_bot">
+				<dl class="sqjk_cont_foucs">
+				<dt>借款须知</dt>
+				<dd>1．仅适用于非VIP会员用于提交借款意向，非正式借款申<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请。</dd>
+				<dd>2．提交后合拍或担保机构进行初步审核，并可能与您本人沟<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通，出具受理意见,但在您成为VIP会员之前不会在本网站<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发布您的借款标。</dd>
+				<dd>3．您必须成为VIP会员后，才能提交正式借款申请。</dd>
+			</dl>
+			<div class="tjsqjk">
+				<h2>借款意向</h2>
+				<dl>
+					<dt>姓名</dt>
+					<dd><input type="text" class="txt" /></dd>
+				</dl>
+				<dl>
+					<dt>联系电话</dt>
+					<dd><input type="text" class="txt" /></dd>
+				</dl>
+				<dl>
+					<dt>身份证号码</dt>
+					<dd><input type="text" class="txt" /></dd>
+				</dl>
+				<dl>
+					<dt>借款金额</dt>
+					<dd><input type="text" class="txt" /></dd>
+				</dl>
+				<dl>
+					<dt>借款期限</dt>
+					<dd><input type="text" class="txt2" />
+						<select class="date">
+							<option value="1">年</option>
+							<option value="1">月</option>
+							<option value="1">日</option>
+						</select>
+					</dd>
+				</dl>
+				<dl>
+					<dt>所在地区</dt>
+					<dd>
+						<select class="sheng">
+							<option value="1">北京市</option>
+						</select>
+						<select class="shi">
+							<option value="1">
+								朝阳区
+							</option>
+						</select>
+					</dd>
+				</dl>
+				<dl>
+					<dt>借款说明</dt>
+					<dd><textarea></textarea></dd>
+				</dl>
+				<input type="button" class="btn" value="提交申请" />
 			</div>
+			</div>
+			
 		</div>
-		<%--end我要融资--%>
-		<script>
-	$("#applyfor").click(function() {
-		var applymoney = $("#applymoney").val();
-		var purpose = $("#purpose").val();
-		var deadline = $("#deadline").val();
-		var name = $("#name").val();
-		var idcard = $("#idcard").val();
-		var phone = $("#phone").val();
-		if (applymoney == "") {
-			alert("申请金额不能为空！");
-			$("#applymoney").focus();
-			return false;
-		}
+	</div>
+</block>
 
-		if (purpose == "") {
-			alert("资金用途填写不能为空！");
-			$("#purpose").focus();
-			return false;
-		}
 
-		if (deadline == "") {
-			alert("申请期限不能为空!");
-			return false;
-		}
 
-		if (name == "") {
-			alert("请填写申请的真实姓名!");
-			return false;
-		}
 
-		if (idcard == "") {
-			alert("请填写身份证号码！");
-			return false;
-		}
 
-		if ((!/^[1-9]{1}[0-9]{14}$|^[1-9]{1}[0-9]{16}([0-9]|[xX])$/
-						.test(idcard))) {
-					//验证身份证号码的有效性
-					alert("身份证号码不合法！");
-					return false;
-		}
 
-		if (phone == "") {
-			alert("联系号码不能为空!");
-			return false;
-		} 
-
-        if ((!/^1[3,4,5,8]\d{9}$/.test(phone))) {
-					alert("请正确填写手机号码！");
-					return false;
-		}
-
-		//提交表dan
-			$("#form").submit();
-		});
-</script>
-		<%-- 引用底部公共部分 --%>
-		<jsp:include page="/include/footer.jsp"></jsp:include>
-	</body>
-</html>
