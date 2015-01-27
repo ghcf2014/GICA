@@ -5,7 +5,7 @@
 		<include file="Public/left" />
 		<div class="zh_cont_r">
 			<h3>当前位置 > <span style="color: #D41010;">账户详情</span></h3>
-			<dl>
+			<dl style="border-bottom: 1px solid #ddd;padding-bottom: 10px;">
 				<dt>
 					<div class="img">
 						<volist name="list3" id="vo"> <if
@@ -40,12 +40,10 @@
 								color="#66ccfb;">0</font></a>）
 						</span>条
 					</p>
-					<p>
-						登录IP:<span>{:get_client_ip()}</span>
-					</p>
-				</dd>
-			</dl>
-			<ul class="ul01"><volist name="mstatus" id="ms">
+					<p>登录IP:<span>{:get_client_ip()}</span></p>
+					
+					<ul class="ul01">
+				<volist name="mstatus" id="ms">
 				<li>认证管理：</li>
 				<li><if condition="$ms.email_status eq 0"> <a
 						href="{:U('Userinfo/usermailbanding')}"><img
@@ -81,6 +79,10 @@
 						src="__PUBLIC__/Home/images/img/l_vip_pic.jpg" title="VIP已认证" />
 					</a> </if></li></volist>
 			</ul>
+					
+				</dd>
+			</dl>
+			
 
 			<ul class="ul02">
 				<li class="ul02_li01"><a href="javascript:;">会员续费</a></li>
