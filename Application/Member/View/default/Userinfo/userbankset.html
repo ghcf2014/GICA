@@ -2,22 +2,19 @@
 	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
-		
+
 		<include file="Public/left" />
 		<div class="zh_cont_r">
 			<div class="tab">
-				<h3>当前位置 > <span style="color: #D41010;">安全设置</span></h3>
+				<h3>
+					当前位置 > <span style="color: #D41010;">安全设置</span>
+				</h3>
 				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
 				<ul class="aqset_tabH">
-					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
-					<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
-					<li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
-					<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
-					<li><a href="{:U('Userinfo/userbankset')}" class="cur">银行卡</a></li>
-					<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
+					<li><a href="#" class="cur">银行卡</a></li>
 				</ul>
 				<div class="aqset_tabC_out">
-				<empty name="list">
+					<empty name="list">
 					<form action="{:U('userbankset_save')}" method="post" id="form">
 						<!--银行卡验证-->
 						<div class="aqset_tabC">
@@ -52,67 +49,72 @@
 							<input type="button" class="yhk_btn" id="submitBank" value="提交">
 						</div>
 					</form>
-						<!--身份证验证-->
-						<div class="aqset_tabC" style="display: none">
-							<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
-							<dl class="sfz">
-                            	<dt>身份证正面：</dt>
-                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
-                            	</dd>
-                            </dl>
-                            <dl class="sfz">
-                            	<dt>身份证反面：</dt>
-                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
-                            	</dd>
-                            </dl>
-                            <input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
-						</div>
-						<else />
-						<volist name="list" id="vo"> 
-						<!--银行卡验证-->
-						<div class="aqset_tabC">
-							<!-- <dl class="yhk">
+					<!--身份证验证-->
+					<div class="aqset_tabC" style="display: none">
+						<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+						<dl class="sfz">
+							<dt>身份证正面：</dt>
+							<dd>
+								<img src="" /><input type="file" name="" id="" class="sfz_btn"
+									value="修改" />
+							</dd>
+						</dl>
+						<dl class="sfz">
+							<dt>身份证反面：</dt>
+							<dd>
+								<img src="" /><input type="file" name="" id="" class="sfz_btn"
+									value="修改" />
+							</dd>
+						</dl>
+						<input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
+					</div>
+					<else /> <volist name="list" id="vo"> <!--银行卡验证-->
+					<div class="aqset_tabC">
+						<!-- <dl class="yhk">
 								<dt>平台昵称：{:get_username()}</dt>
 								<dd></dd>
 							</dl> -->
-							<dl class="yhk">
-								<dt>开户行：</dt>
-								<dd>
-									<input type="text" class="yhk_txt" name="bankName"
-										value="{$vo.bank_name}" disabled="disabled">
-								</dd>
-							</dl>
-							<dl class="yhk">
-								<dt>支行：</dt>
-								<dd>
-									<input type="text" class="yhk_txt" name="subBankName"
-										value="{$vo.bank_address}" disabled="disabled">
-								</dd>
-							</dl>
-							<dl class="yhk">
-								<dt>卡号：</dt>
-								<dd>
-									<input type="text" class="yhk_txt" name="bankCard"
-										value="{$vo.bank_num}" disabled="disabled">
-								</dd>
-							</dl>
-						</div>
-						</volist>
-						<!--身份证验证-->
-						<div class="aqset_tabC" style="display: none">
-							<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
-							<dl class="sfz">
-                            	<dt>身份证正面：</dt>
-                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
-                            	</dd>
-                            </dl>
-                            <dl class="sfz">
-                            	<dt>身份证反面：</dt>
-                            	<dd><img src=""/><input type="file" name="" id="" class="sfz_btn" value="修改" />                            		
-                            	</dd>
-                            </dl>
-                            <input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
-						</div>
+						<dl class="yhk">
+							<dt>开户行：</dt>
+							<dd>
+								<input type="text" class="yhk_txt" name="bankName"
+									value="{$vo.bank_name}" disabled="disabled">
+							</dd>
+						</dl>
+						<dl class="yhk">
+							<dt>支行：</dt>
+							<dd>
+								<input type="text" class="yhk_txt" name="subBankName"
+									value="{$vo.bank_address}" disabled="disabled">
+							</dd>
+						</dl>
+						<dl class="yhk">
+							<dt>卡号：</dt>
+							<dd>
+								<input type="text" class="yhk_txt" name="bankCard"
+									value="{$vo.bank_num}" disabled="disabled">
+							</dd>
+						</dl>
+					</div>
+					</volist> <!--身份证验证-->
+					<div class="aqset_tabC" style="display: none">
+						<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
+						<dl class="sfz">
+							<dt>身份证正面：</dt>
+							<dd>
+								<img src="" /><input type="file" name="" id="" class="sfz_btn"
+									value="修改" />
+							</dd>
+						</dl>
+						<dl class="sfz">
+							<dt>身份证反面：</dt>
+							<dd>
+								<img src="" /><input type="file" name="" id="" class="sfz_btn"
+									value="修改" />
+							</dd>
+						</dl>
+						<input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
+					</div>
 					</empty>
 				</div>
 			</div>
