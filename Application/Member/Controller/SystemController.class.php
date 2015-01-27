@@ -95,6 +95,20 @@ class SystemController extends MemberController {
     public function usermailindex(){
         $sendname=$_SESSION["gica_home"]["user_auth"]['username'];
         $uid=is_login();
+        $sysmsg=$_SESSION['borrow'];
+        unset($_SESSION['borrow']);
+        //系统敏感操作提示消息
+        if ($_SESSION['borrow']!==null){
+        	$this->assign('danger',$sysmsg);
+
+        	dump($sysmsg); 
+
+
+
+        }
+
+
+        
         $msg=M('z_inner_msg');
         //收件箱
         $receive=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.uid = profile.uid and stats.tid=%s',$uid)->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time,stats.msg as msg, profile.nickname as postname')->order('stats.tid desc' )->select();

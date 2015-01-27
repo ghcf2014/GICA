@@ -22,7 +22,27 @@ function is_login() {
 		return session ( 'user_auth_sign' ) == data_auth_sign ( $user ) ? $user ['uid'] : 0;
 	}
 }
-
+/**敏感操作提醒
+*提示用户为敏感信息操作
+*/
+function is_danger(){
+	$borrow=$_SESSION['borrow'];//发布新标生成记录
+	if (!empty($borrow)){
+		return true && $borrow;
+	} 
+	$chpassword=$_SESSION['chpassword'];//修改密码生成记录
+	if (!empty($chpassword)){
+		return  true && $chpassword;
+	}
+	$chemail=$_SESSION['chemail'];//修改邮箱生成记录
+	if (!empty($chemail)){
+		return true && $chemail;
+	}
+	$chphone=$_SESSION['chphone'];
+	if (!empty($chphone)){
+		return true;
+	}
+}
 /**
  * 检测当前用户是否为管理员
  *
