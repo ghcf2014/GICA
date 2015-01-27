@@ -64,15 +64,6 @@ function arr2str($arr, $glue = ',') {
  *
  * @static
  *
- *
- *
- *
- *
- *
- *
- *
- *
- *
  * @access public
  * @param string $str
  *        	需要转换的字符串
@@ -364,7 +355,6 @@ function format_bytes($size, $delimiter = '') {
  * 设置跳转页面URL
  * 使用函数再次封装，方便以后选择不同的存储方式（目前使用cookie存储）
  *
- * @author 麦当苗儿 <zuojiazi@vip.qq.com>
  */
 function set_redirect_url($url) {
 	cookie ( 'redirect_url', $url );
@@ -545,6 +535,27 @@ function get_borrow_type_name($id = 0) {
 		$name='净值标';
 	}if($id == 5){
 		$name='抵押标';
+	}
+
+
+	// var_dump($name['nickname']);
+	return $name;
+}
+function get_jilu_type($type = 0) {
+	if($type == 1){
+		$name='线下充值';
+	}
+	if($type == 2){
+		$name='手动充值';
+	}if($type == 3){
+		$name='取消提现';
+	}if($type == 4){
+		$name='提现失败';
+	}if($type == 5){
+		$name='提现成功';
+	}
+	if($type == 6){
+		$name='待审核提现';
 	}
 
 

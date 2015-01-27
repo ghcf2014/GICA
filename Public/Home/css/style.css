@@ -451,7 +451,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .zh_cont_r_bot{width:892px;padding-left:55px;height:auto;border-bottom:1px solid #d3cbc7;font-size:18px;}
 .zh_cont .zh_cont_r .zh_cont_r_bot p{width:948px;height:40px;line-height:40px;}
 .zh_cont .zh_cont_r .zh_cont_r_bot ul{width:948px;height:auto;overflow:hidden;}
-.zh_cont .zh_cont_r .zh_cont_r_bot ul li{width:245px;height:48px;line-height:48px;float:left;margin-right:70px;}
+.zh_cont .zh_cont_r .zh_cont_r_bot ul li{width:40%;height:48px;line-height:48px;float:left;margin-right:70px;}
 .zh_cont .zh_cont_r .zh_cont_r_bot ul li p{display:inline-block;text-align:right;width:auto;height:48px;}
 .zh_cont .zh_cont_r .last{border-bottom:0;}
 

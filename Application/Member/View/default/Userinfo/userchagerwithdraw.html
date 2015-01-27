@@ -99,21 +99,23 @@
 									    <th>序号</th>
 									    <th>时间</th>
 									    <th>操作类型</th>
-									    <th>备注</th>
 									    <th>收入</th>
 									    <th>支出</th>
+									    <th>备注</th>
 									    <th>状态</th>
 									  </tr>
 									  <volist name="ml" id="vo">
 									  <tr>
 									  <td>{$vo.id} </td>
-									  <td>{$vo.uid}</td>
-										<td>{$vo.type}</td>
-										<td>{$vo.affect_money}</td>
+									  <td>{$vo.add_time||date='Y年m月d日 H时:i分',###}</td>
+										<td>{$vo.type|get_jilu_type}</td>
+										<td><span>{$vo.affect_money}</span></td>
 										<td><span>{$vo.account_money}</span></td>
-										<td><span>{$vo.account_money}</span></td>
-										<td><span>{$vo.account_money}</span></td>
-									    <!-- <td colspan="11" align="center">暂无信息</td></tr></volist> -->
+										<td>{$vo.info}</td>
+										<td><span>成功</span></td>
+									    <!-- <td colspan="11" align="center">暂无信息</td> -->
+									    </tr>
+									   </volist>
 									  </tbody></table>
 								
 									<div class="page">

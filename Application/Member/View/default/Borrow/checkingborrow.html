@@ -78,6 +78,11 @@
 									<td align="center"><if condition="$vo.borrow_type eq '0'">初审中<else />复审中</if></td>
 								</volist>
 								</tr>
+								<tr>
+								<if condition="$i eq null">
+									<td align="center" colspan="10">亲！你还没成功借过款哦。</td>
+								</if>
+								</tr>
 							</table>
 							<div class="page"></div>
 						</div>

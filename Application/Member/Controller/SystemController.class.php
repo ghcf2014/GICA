@@ -30,12 +30,6 @@ class SystemController extends MemberController {
 			$this->display ();
 		}
 	}
-	
-	/**
-	 *
-	 * @author liuy
-	 *         2015-1-14会用提现
-	 */
 	public function withdrawdeposit_add() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
@@ -54,7 +48,7 @@ class SystemController extends MemberController {
 		$paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
 
 		
-		if ($dealpwd != $paypass) {
+		if (md5($dealpwd) != $paypass) {
 			$this->error ( L ( '您输入的交易密码有误！' ) );
 		} else {
 			$moneyMember = M ( 'z_member_money' );
@@ -81,6 +75,14 @@ class SystemController extends MemberController {
 			$count = $moneyMember->where ( "uid=" . $uid )->save ( $datamoney ); // 修改会员金额数据
 			if ($count) {
 				if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
+					$log = M ( 'z_member_moneylog' );
+					$logdata ['uid'] = $uid;
+					$logdata ['type'] = 6;
+					$logdata ['affect_money'] = $_POST ['account_money'];
+					$logdata ['info'] = '提现已冻结'.$_POST ['withdraw_money'];
+					$logdata ['add_time'] = time ();
+					$log = $log->add ( $logdata );
+
 					$this->success ( L ( '提现已提交，我们会尽快审核。' ) ); // 成功提示add_time
 				} else {
 					// 失败提示

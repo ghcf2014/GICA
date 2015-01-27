@@ -84,6 +84,9 @@
 										target="_blank">查看协议</a></td>
 								</volist>
 								</tr>
+								<if condition="$i eq null">
+									<td align="center" colspan="10">亲！你没有还款中的借标哦。</td>
+								</if>
 							</table>
 							<div class="page">
 								<shove:page url="homeBorrowInvestList.htm"

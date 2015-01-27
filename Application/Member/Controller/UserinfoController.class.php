@@ -128,7 +128,6 @@ class UserinfoController extends MemberController {
 		
 		
 		$this->assign ( 'ml', $ml );
-		var_dump ( $uid);
 		$this->assign ( 'list', $money );
 		$this->display ();
 	}
@@ -468,6 +467,14 @@ class UserinfoController extends MemberController {
 		}
 	}
 	public function paypassword() {
+		if (! is_login ()) {
+			$this->error ( '您还没有登陆', U ( 'User/login' ) );
+		}
+		$uid = is_login ();
+		$m = M ( "ucenter_member" );
+		$condition ['id'] = $uid;
+		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
+		$this->assign ( 'pin', $pin [0] ['pin_pass']);
 		$this->display ();
 	}
 	public function paypassword_save() {
@@ -487,6 +494,15 @@ class UserinfoController extends MemberController {
 		$m = M ( "ucenter_member" );
 		$condition ['id'] = $uid;
 		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
+
+		if($pin [0] ['pin_pass'] == ""){
+			$data ['pin_pass'] = md5 ( $_POST ['pin_pass'] );
+			$condition ['id'] = $uid;
+			if ($m = $m->where ( $condition )->save ( $data )) {
+				$this->success ( '新建交易密码成功！' );
+				}
+		}
+
 		if (md5 ( $_POST ['old'] ) == $pin [0] ['pin_pass']) {
 			
 			$data ['pin_pass'] = md5 ( $_POST ['pin_pass'] );

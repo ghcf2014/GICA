@@ -63,7 +63,6 @@ class BorrowController extends MemberController {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
 		$borrow_info = $borrow_info->where ( "borrow_uid=" . $uid . " and borrow_status=7" )->select ();
-		
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
