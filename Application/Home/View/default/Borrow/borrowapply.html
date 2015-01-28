@@ -27,52 +27,57 @@
 			</div>
 			
 			<div class="tjsqjk">
+			<form action="{:U('borrowapply_save')}" method="post">
 				<h2>借款意向</h2>
 				<dl>
 					<dt>姓名</dt>
 					<dd>
-						<input type="text" class="txt" />
+						<input type="text" name="username" class="txt" />
 					</dd>
 				</dl>
 				<dl>
 					<dt>联系电话</dt>
 					<dd>
-						<input type="text" class="txt" />
+						<input type="text" name="tel" class="txt" />
 					</dd>
 				</dl>
 				<dl>
 					<dt>身份证号码</dt>
 					<dd>
-						<input type="text" class="txt" />
+						<input type="text" name="id_card" class="txt" />
 					</dd>
 				</dl>
 				<dl>
 					<dt>借款金额</dt>
 					<dd>
-						<input type="text" class="txt" />
+						<input type="text" name="borrow_money" class="txt" />
 					</dd>
 				</dl>
 				<dl>
 					<dt>借款期限</dt>
 					<dd>
-						<input type="text" class="txt2" /> 
-						<select class="date">
-							<option value="1">年</option>
-							<option value="2">月</option>
-							<option value="3">日</option>
+						<input type="text" name="borrow_duration" class="txt2" /> 
+						<select class="date" name="time_type">
+							<option value="年">年</option>
+							<option value="月">月</option>
+							<option value="日">日</option>
 						</select>
 					</dd>
 				</dl>
 				<dl>
 					<dt>所在地区</dt>
 					<dd>
-						<select class="sheng">
-							<option value="1">北京省</option>
+						<select class="sheng" name="province">
+							<option value="1">北京市</option>
+							<option value="2">河北省</option>
+							<option value="3">黑龙江省</option>
+							<option value="4">吉林省</option>
+							<option value="5">湖北省</option>
 						</select>
-						<select class="shi">
+						<select class="shi" name="city">
 							<option value="1">北京市</option>
 						</select>
-						<select class="qu">
+						<select class="qu" name="area">
 							<option value="1">朝阳区</option>
 						</select>
 					</dd>
@@ -80,10 +85,11 @@
 				<dl>
 					<dt>借款说明</dt>
 					<dd>
-						<textarea></textarea>
+						<textarea name="borrow_info"></textarea>
 					</dd>
 				</dl>
-				<input type="button" class="btn" value="提交申请" />
+					<input type="submit" class="btn" value="提交申请" />
+				</form>
 			</div>
 		</div>
 

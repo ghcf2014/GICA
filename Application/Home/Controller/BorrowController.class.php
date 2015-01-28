@@ -12,16 +12,39 @@ class BorrowController extends HomeController {
 	
 	// 系统首页
 	public function index() {
+		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
+		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
-		$borrowapply =M('z_borrow_apply');
-		
+		$applymsg =M('z_borrow_apply');
+		//查询是否存在申请记录
+		$result=$applymsg->where('apply_uid=%s',$uid)->select();
+		if (is_array($result)==false){
+			$this->error('对不起，您还没有进行贷款申请！',U('Borrow/borrowapply'));
+		}else {
+			//查询没有通过的申请
+			$data=$applymsg->where('status!=1 and apply_uid=%s',$uid)->select();
+			if (is_array($data)==true){
+				$waited=$applymsg->where('status=0 and apply_uid=%s',$uid)->select();
+				if (is_array($waited)==true){
+					$this->error('您的申请正在审核中，请耐心等待',U('Member/Index/index'));
+				}else {
+					$failed=$applymsg->where('status=2 and apply_uid=%s',$uid)->select();
+					if (is_array($failed)==true){
+					$this->error('您的申请没有通过，请重新申请',U('Borrow/borrowapply'));
+					}else{
+						$this->error('您的申请已经过期，请重新申请',U('Borrow/borrowapply'));
+					}
+				}
+				
+			}
+		}
 		$this->assign ( 'session', $session );
 		$this->display ();
 	}
 	//
 	public function papersinfo() {
 		$uid = is_login ();
-		
+		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$m = M ( "z_member_data_info" );
 		$condition ['uid'] = $uid;
 		$condition ['type'] = 2;
@@ -33,7 +56,7 @@ class BorrowController extends HomeController {
 	public function circulation($id = 0, $uid = 0) {
 		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$uid = is_login ();
-		$type = $_GET ['type'];
+		$type = $_GET ['type'];  
 		$status = M ( 'z_members_status' );
 		$result = $status->where ( "uid=%s", $uid )->select ();
 		if ($result !== null) {
@@ -49,6 +72,50 @@ class BorrowController extends HomeController {
 		$type = $_GET ['type'];
 		$this->assign ( 'type', $type );
 		$this->display ();
+	}
+		/**
+	 *
+	 * @author liuy
+	 *        
+	 *         2015-1-27申请借款
+	 */
+	public function borrowapply() {
+		$uid=is_login();
+		$data=M('z_borrow_apply');
+		$result=$data->where('status=2 and apply_uid=%s',$uid)->select();
+		// dump(is_array($result));
+		if (is_array($result)==false){
+			$apply1=$data->where('status=3 and apply_uid=%s',$uid)->select();
+			if (is_array($apply1)==false){
+				$apply2=$data->where('status=0 and apply_uid=%s',$uid)->select();
+				if (is_array($apply2)==true){
+					$this->error('您已经申请过一次，目前正在审核阶段，不能重复申请！',U('Member/Index/index'));
+				}else {
+					$this->error('您上次的申请已通过，不能重复申请，请进入个人中心查看',U('Member/Index/index'));
+				}
+				
+			}
+			
+
+		}
+		
+		$this->display ();
+	}
+	public function borrowapply_save(){
+		$uid=is_login();
+		$arr=array(
+			'apply_ip'=>ip2long($_SERVER['REMOTE_ADDR']),
+			'apply_uid'=>$uid
+			);
+		$receive=$_POST;
+		$data = array_merge($receive,$arr);
+		$model=M('z_borrow_apply');
+		$result=$model->add($data);
+		if ($result>0){
+			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Index/index'));
+		}else {
+			$this->error("信息提交失败，请重新核对信息！");
+		}
 	}
 	// 基本信息
 	public function userinfo() {
@@ -393,6 +460,7 @@ class BorrowController extends HomeController {
 		$depict = $_POST ['depict'];
 		$info = $upload->upload (); // 上传文件
 		if (! $info) { // 上传错误提示错误信息
+
 			$this->error ( $upload->getError () );
 		} else { // 上传成功
 		         
@@ -455,13 +523,5 @@ class BorrowController extends HomeController {
 		}
 	}
 	
-	/**
-	 *
-	 * @author liuy
-	 *        
-	 *         2015-1-27申请借款
-	 */
-	public function borrowapply() {
-		$this->display ();
-	}
+
 }
