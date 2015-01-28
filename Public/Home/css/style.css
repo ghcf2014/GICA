@@ -398,16 +398,16 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 /*----------qrb_cont_bot 右边----------------------*/
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r{width:518px;height:auto;padding-top:40px;float:left;}
-.qrb_cont .qrb_cont_bot .qrb_cont_bot_r h3{width:512px;height:48px;line-height:48px;font-size:16px;padding-left:22px;font-weight:normal;color:#333;}
-.qrb_cont .qrb_cont_bot .qrb_cont_bot_r ul{width:534px;height:120px;overflow:hidden;}
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r h3{width:496px;height:48px;line-height:48px;font-size:16px;padding-left:22px;font-weight:normal;color:#333;}
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r ul{width:518px;height:120px;overflow:hidden;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r ul li{width:210px;height:48px;padding-left:40px;float:left;line-height:48px;font-size:16px;}
-.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje{width:494px;height:120px;line-height:30px;font-size:20px;padding:10px 0 0 40px;overflow:hidden;}
-.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje span{display:inline-block;float:left;margin-right:20px;}
-.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje .txt{width:93px;height:28px;background:#fff;border:1px solid #ddd;float:left;margin-right:20px;line-height:28px;padding-left:5px;margin-top: 12px;}
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje{width:478px;height:120px;line-height:30px;font-size:20px;padding:10px 0 0 40px;overflow:hidden;}
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje span{display:inline-block;float:left;margin-right:10px;}
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje .txt{width:112px;height:28px;background:#fff;border:1px solid #ddd;float:left;margin-right:5px;line-height:28px;padding-left:5px;margin-top: 12px;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje .btn{width:100px;height:31px;background:url(../images/100x30pxbule.png) no-repeat;line-height:20px;font-size:14px;color:#fff;float:left;cursor:pointer;margin-top: 15px;}
-.qrb_cont .qrb_cont_bot .qrb_cont_bot_r p{width:494px;height:60px;padding-left:40px;font-size:16px;line-height:60px;}
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r p{width:438px;height:60px;padding-left:40px;font-size:16px;line-height:60px;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r .btn2{width:120px;height:40px;background:url(../images/120x40pxgreen.png) no-repeat;line-height:40px;font-size:18px;margin-left:210px;cursor:pointer;color: #fff;}
-
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje p a{float: left;width: 90px;height: 30px;text-align: center;line-height: 30px;background: #66ccfb;border-radius: 3px;color: #fff;font-size: 14px;margin-top:15px;}
 
 
 
@@ -938,23 +938,23 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .sqjk_cont .sqjk_cont_top .sqjk_pic{width: 100%;height: auto;text-align: center;vertical-align: middle;}
 
 .sqjk_cont .sqjk_cont_bot{overflow: hidden;margin: 20px 0;}
-.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs{width: 35%;height: auto;min-height:460px;float: left;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
-.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dt{width: 100%;height: 40px;font-size: 20px;color: #0597D9;line-height: 40px;border-bottom: 1px solid #ddd;margin-bottom: 15px;}
-.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dd{width: 100%;height: auto;line-height: 32px;}
+.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs{width: 35%;height:560px;float: left;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
+.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dl{width:100%;height: 485px;}
+.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dl dt{width: 100%;height: 40px;font-size: 20px;font-weight:normal;color: #0597D9;line-height: 40px;border-bottom: 1px solid #ddd;margin-bottom: 15px;}
+.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dl dd{width: 100%;height: auto;line-height: 32px;}
 
-
-.sqjk_cont .sqjk_cont_bot .tjsqjk{float: right;width: 50%;height: auto;min-height:460px;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk{float: right;width: 50%;height:560px;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk h2{width: 100%;height: 40px;font-size: 20px;color: #0597D9;line-height: 40px;border-bottom: 1px solid #ddd;margin-bottom: 15px;font-weight: normal;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl{overflow: hidden;}
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dt{float: left;width: 30%;text-align: right;font-size: 16px;height: auto;line-height: 40px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dt{float: left;width: 30%;text-align: right;font-size: 16px;font-weight:normal;height: auto;line-height: 40px;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dd{float: right;width: 67%;height: auto;}
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt{border: 1px solid #ddd;height: 28px;margin: 5px 0;width: 50%;padding-left: 5px;line-height: 28px;}
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd select{float: left;width:25%;margin:5px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt{border: 1px solid #ddd;height: 28px;margin: 5px 0;width: 67%;padding-left: 5px;line-height: 28px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd select{float: left;width:28%;margin:5px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
 
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd textarea{resize: none;width:50%;height:auto;min-height:100px;border: 1px solid #ddd;padding-left: 5px;line-height: 22px;font-size: 14px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd textarea{resize: none;width:67%;height:auto;min-height:100px;border: 1px solid #ddd;padding-left: 5px;line-height: 22px;font-size: 14px;}
 
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt2{border: 1px solid #ddd;height: 28px;margin: 5px 2% 0 0;width: 28%;padding-left: 5px;line-height: 28px;float: left;}
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .date{float: left;width:20%;margin:5px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt2{border: 1px solid #ddd;height: 28px;margin: 5px 2% 0 0;width: 67%;padding-left: 5px;line-height: 28px;float: left;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .date{float: left;width:15%;margin:9px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
 
 .sqjk_cont .sqjk_cont_bot .tjsqjk .btn{width: 25%;height: 35px;background:#0597D9;border-radius: 3px;color: #fff;font-size: 16px;margin: 5% 38% 0;}
 
