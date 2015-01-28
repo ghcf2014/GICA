@@ -110,6 +110,19 @@ class BorrowController extends HomeController {
 	}
 	public function circulation_save($id = 1) {
 		$uid = is_login ();
+		if ($id==1){
+			$action="发布了一次信用标";
+		}elseif ($id==2) {
+			$action="发布了一次净值标";
+		}elseif ($id==3) {
+			$action="发布了一次秒还标";
+		}elseif ($id==4) {
+			$action="发布了一次担保标";
+		}elseif ($id==5) {
+			$action="发布了一次抵押标";
+		}else{
+			$action="发布了一次实地考察标";
+		}
 		$depict ['borrow_type'] = $id;
 		$depict ['borrow_name'] = $_POST ['borrow_name'];
 		$depict ['borrow_money'] = $_POST ["borrow_money"];

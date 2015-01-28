@@ -45,9 +45,11 @@
 							    <th>发件人</th>
 							    <th>标题</th>
 							    <th>发送时间</th>
+							    <th>操作</th>
 							  </tr>
 							  <!--系统消息-->
-							  <foreach name="sysdata" item="vals" > 
+							  <if condition="$danger neq null">
+							  <foreach name="danger" item="danger" > 
 								<tr>
 									<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
 									<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
@@ -57,7 +59,9 @@
 									<th><a href="#" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
 								</tr>
 							  </foreach>
+							  	<else/>
 							  	<tr><td colspan="10" align="center">暂无信息</td></tr>
+							  	</if>
 									</tbody></table>
 							<div class="page">
 									<p>
