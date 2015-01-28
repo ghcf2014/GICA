@@ -13,6 +13,7 @@ class BorrowController extends HomeController {
 	// 系统首页
 	public function index() {
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
+		$borrowapply =M('z_borrow_apply');
 		
 		$this->assign ( 'session', $session );
 		$this->display ();
