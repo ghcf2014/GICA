@@ -22,24 +22,25 @@
                       <!--   <li><a href="{:U('Member/Userinfo/userbankset')}">银行卡</a></li> -->
                         <li><a href="{:U('Member/Userinfo/userselfset')}">身份证</a></li>
                     </ul>
-                    <div class="aqset_tabC_out"><form class="login-form" action="__SELF__" method="post">
-                      <!--登录密码-->
-                        <div class="aqset_tabC">
-                           <!--  <p class="aqset_tabC_head2">上次登录时间：<span>2014-11-22</span></p> -->
-                            <dl class="dlmm">
-                                <dt>原始密码：</dt>
-                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old"></dd>
-                            </dl>
-                            <dl class="dlmm">
-                                <dt>新密码：</dt>
-                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password"></dd>
-                            </dl>
-                            <dl class="dlmm">
-                                <dt>确认密码：</dt>
-                                <dd><input type="password" class="dlmm_txt" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword"></dd>
-                            </dl>
-                            <input type="submit" class="yhk_btn" value="提交">
-                        </div>            
+                    <div class="aqset_tabC_out">
+                    	<form class="login-form" action="__SELF__" method="post">
+	                      	<!--登录密码-->
+	                        <div class="aqset_tabC">
+	                           <!--  <p class="aqset_tabC_head2">上次登录时间：<span>2014-11-22</span></p> -->
+	                            <dl class="dlmm" style="padding-top: 40px;">
+	                                <dt>原始密码：</dt>
+	                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old"></dd>                             
+	                            </dl>
+	                            <dl class="dlmm">
+	                                <dt>新密码：</dt>
+	                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password"></dd>
+	                            </dl>
+	                            <dl class="dlmm">
+	                                <dt>确认密码：</dt>
+	                                <dd><input type="password" class="dlmm_txt" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword"></dd>
+	                            </dl>
+	                            <input type="submit" class="yhk_btn" value="提交">                            
+	                        </div>           
                       </form>
                     </div>
                     
@@ -49,6 +50,9 @@
     </div>
 
   <!--content end-->
+
+
+
 
 
 <block name="side"></block>
@@ -76,4 +80,7 @@
     		}
     	});
 	</script>
+	
+	
+	
 </block>

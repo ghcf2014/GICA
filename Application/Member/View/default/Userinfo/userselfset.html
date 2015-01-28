@@ -12,7 +12,7 @@
                 <div class="tab">
                     <form action="{:U('add?id='.$vb['id'])}" method="post">
                         <h3>当前位置 > <span style="color:#D41010;">基本认证</span></h3>
-                        <p style="background:#d3cbc7;width:948px;height:1px;"></p>
+                        <p style="background:#ddd;width:948px;height:1px;margin-bottom: 20px;"></p>
                         <dl class="jbrz">
                         	<dt>真实姓名</dt>
                             <dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
@@ -23,7 +23,7 @@
                             <dd><input type="text" class="txt" name="idcard" id="idNo" value="{$vo.idcard}" /></dd>
                         </dl>
                         
-                        <dl class="sfz" >
+                        <!--<dl class="sfz" >
                         	<dt>身份证正面</dt>
                             <dd>
                             	<input type="button" class="btn" value="上传" id="card_img" >
@@ -33,9 +33,9 @@
                                             <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
                                     </if>
                             </dd>
-                        </dl>
+                        </dl>-->
                         
-                        <dl class="jbrz sfz">
+                        <!--<dl class="jbrz sfz">
                         	<dt>身份证反面</dt>
     						<dd>
                             	<input type="button"  class="btn" value="上传"id="card_back_img">
@@ -45,7 +45,7 @@
                                             <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
                                     </if>
                             </dd>
-                        </dl>
+                        </dl>-->
                         
                         <dl class="jbrz sex">
                         	<dt>性别</dt>
@@ -67,30 +67,42 @@
                         	<dt>职业</dt>
                             <dd><input type="text" class="txt" name="zy" id="idNo" value="{$vo.zy}" /></dd>
                         </dl>
-                        <dl class="jbrz">
+                        <!--<dl class="jbrz">
                         	<dt>手机号</dt>
                             <dd><input type="text" class="txt" name="cell_phone" id="idNo" value="{$vo.cell_phone}" /></dd>
-                        </dl>
+                        </dl>-->
                         
                         <dl class="jbrz">
                         	<dt>教育</dt>
                             <dd>
-                                <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">
-                                   <option value="高中">高中</option>
+                                <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">                                
                                    <option value="博士以上">博士以上</option>    
     				               <option value="博士">博士</option>   
     				               <option value="硕士">硕士</option>   
     				               <option value="研究生">研究生</option>   
     				               <option value="本科">本科</option>
     				               <option value="专科">专科</option>
+    				               <option value="高中">高中</option>
+    				               <option value="初中">初中</option>
     				               <option value="小学">小学</option>      
     				            </select>   
                             </dd>
                         </dl>
                         
-                        <dl class="jbrz">
+                        <dl class="jbrz adress">
                         	<dt>现居地址</dt>
-                            <dd><input type="text" class="txt" name="address" value="{$vo.address}"></dd>
+                            <dd>
+                            	<!--<input type="text" class="txt" name="address" value="{$vo.address}">-->
+                            	<select name="adress_sheng" class="adress_sheng">
+                            		<option value="1">广东省</option>
+                            	</select>
+                            	<select name="adress_shi" class="adress_shi">
+                            		<option value="1">深圳市</option>
+                            	</select>
+                            	<select name="adress_qu" class="adress_qu">
+                            		<option value="1">福田区</option>
+                            	</select>
+                            </dd>
                         </dl>
                         <div class="jbrz_sub_btn">
                         	<input type="submit" class="btn" value="保存"/>
