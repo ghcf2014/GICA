@@ -260,7 +260,6 @@ class BorrowController extends HomeController {
 		$borrow_info = $borrow_info->field ( 'investor_uid,borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where ( $condition )->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'investor_uid' )->select ();
 		
 		$this->assign ( 'list', $borrow_info );
-		
 		$this->display ();
 	}
 	// 上传

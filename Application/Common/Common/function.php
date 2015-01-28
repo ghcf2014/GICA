@@ -569,6 +569,9 @@ function get_jilu_type($type = 0) {
 	if($type == 6){
 		$name='待审核提现';
 	}
+	if($type == 8){
+		$name='投标成功';
+	}
 
 
 	// var_dump($name['nickname']);

@@ -267,14 +267,11 @@ class InvestController extends MemberController {
         if($pp == ''){
         	$pp=00;
         }
-       
 		$borrow_info = M ( 'z_borrow_investor' );
-		// $condition ['investor_uid'] = $uid;
-		// $condition ['borrow_id not in'] = 41;
 		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
 
         if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
-		
+
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}

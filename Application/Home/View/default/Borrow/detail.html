@@ -31,24 +31,20 @@
                         <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
                         <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
                         <li>总投标数：<span style="margin-right:20px;">0</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="../../../../../Public/Home/images/page_view.jpg" style="height:20px;"></span></li>
-                        <li>  <if condition="$vo.borrow_status eq 2">
-                              <if condition="$login eq 1">
-                                    <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
-                                  <elseif condition="$login eq 0"/>
-                                    <a class="ajax-get"  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" />
-                              </if>
-                          <elseif condition="$vo.borrow_status eq 0"/>
+                        <li>  <if condition="$vb.borrow_status eq 2">
+                                    <a  href="{:U('Finance/invest?id='.$vb['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
+                          <elseif condition="$vb.borrow_status eq 0"/>
                           <img alt="" src="__PUBLIC__/Home/images/shenhe.png" style="width:80px;height:30px;" />
-                           <elseif condition="$vo.borrow_status eq 4"/>
+                           <elseif condition="$vb.borrow_status eq 4"/>
                           <img alt="" src="__PUBLIC__/Home/images/fushen.png" style="width:80px;height:30px;" />
-                          <elseif condition="$vo.borrow_status eq 6"/>
+                          <elseif condition="$vb.borrow_status eq 6"/>
                           <img alt="" src="__PUBLIC__/Home/images/huankuan.png" style="width:80px;height:30px;" />
-                           <elseif condition="$vo.borrow_status eq 7"/>
+                           <elseif condition="$vb.borrow_status eq 7"/>
                            <img alt="" src="__PUBLIC__/Home/images/manbiao.png" style="width:80px;height:30px;" />
                           </if></li>
                         </volist>                             
                     </ul>
-                    <p>投标<span>10000.0</span>元，年利率：<span>15.0%</span>，期限<span>1个月</span>，可获得利息收益：<span>￥150.00元</span></p>
+                    <p></p>
                     <p><input type="button" class="share" style="background:url(../../../../../Public/Home/images/share.png) no-repeat 0 0"><input type="button" class="share" style="background:url(../../../../../Public/Home/images/share.png) no-repeat -22px 0"><input type="button" class="share" style="background:url(../../../../../Public/Home/images/share.png) no-repeat -44px 0"><a href="#" class="more">更多</a></p>
                 </dd>
             </dl>

@@ -79,6 +79,15 @@ class FinanceController extends HomeController {
     }
     public function add($id= 0){
             $uid  = is_login();//获取当前用户UID
+
+            $dealpwd = $_POST ['dealpwd'];
+            $userinfo = M ( 'ucenter_member' )->where ( 'id=' . $uid )->select ();
+			$paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
+
+			
+			if (md5($dealpwd) != $paypass) {
+				$this->error ( L ( '您输入的交易密码有误！' ) );
+			}
             
             $bid = $id;//投标id赋值
             $listMember = M('member');
@@ -91,18 +100,28 @@ class FinanceController extends HomeController {
             $map = array('id' => $id);
             $listBorrow  = M('z_borrow_info');
             $list3 = $listBorrow->where($map)->select();
-             // var_dump($list3);
             //从表单中获取来的数据 
             $capital=$_POST["capital"];
+
+
+            if ($list3[0]['repayment_type']== 5) {
+					 		$b= (intval ($capital)* (intval ($list3[0]['borrow_interest_rate']) / 100 / 12) * pow ( (1 + (intval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) / (pow ( (1 + (intval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) - 1)) * intval ($list3[0]['borrow_duration']) - intval ($capital);
+			// $b=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
+
+			}
+			
             
             //创建一个表对象，将传来的数据插入到数据库中
             $m=M("z_borrow_investor");
             $m->investor_capital=$capital;
             $m->borrow_id=$bid;
+            $m->borrow_uid=$list3[0]['borrow_uid'];
             $m->add_time=time();
             $m->deadline=$list3[0]['deadline'];
             $m->invest_fee=$list3[0]['borrow_interest_rate'];
             $m->investor_uid=$uid;
+            $m->investor_interest=$b;
+            
     // 判断余额不足
     if($list[0]['account_money'] >= $capital ){
             if($capital <= 0){// 上传错误提示错误信息
@@ -142,6 +161,8 @@ class FinanceController extends HomeController {
                         $money=intval ($money[0]['account_money'])-intval ($capital);//余额减掉金额
                         $data1['account_money']=$money;
 
+                        
+
                             if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
 
 
@@ -160,6 +181,16 @@ class FinanceController extends HomeController {
                                             $data3['borrow_status']=4;//标状态改变
                                             $m2=$m2->where($condition2)->save($data3);          
                                         }
+
+
+                                        //日志
+                                        $log = M ( 'z_member_moneylog' );
+										$logdata ['uid'] = $uid;
+										$logdata ['type'] = 8;
+										$logdata ['affect_money'] = $capital;
+										$logdata ['info'] = '您投资了'.$list3[0]['id'].'号标'.$capital.'元';
+										$logdata ['add_time'] = time ();
+										$log = $log->add ( $logdata );
 
                                 //成功提示
                                 $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
