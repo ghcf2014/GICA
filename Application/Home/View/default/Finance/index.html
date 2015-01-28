@@ -75,8 +75,17 @@
                            <img alt="" src="__PUBLIC__/Home/images/manbiao.png" style="width:80px;height:30px;" />
                           </if>
                       </li>
+
+                
+                    
+                
             </ul>
         </volist>
+                    <if condition="$k eq null">
+                           <ul class="tz_cont_head04">
+                                <li style="width: 100%;text-align: center;">亲！找不到与“{:I('nickname')}”信息相关的内容。╮(╯_╰)╭</li>
+                            </ul>
+                    </if>
         <!--tz_cont_bottom-->
         <!-- <ul class="tz_cont_bottom">
           <li>首页</li>

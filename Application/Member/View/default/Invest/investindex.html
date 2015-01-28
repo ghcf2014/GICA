@@ -9,16 +9,15 @@
 			<div class="r_main">
 				<div class="tabtil">
 					<ul>
-						<li id="lab_1" class="on"
-							onclick="jumpUrl('homeBorrowInvestList.htm');">我的投资</li>
-						<li id="lab_2" onclick="jumpUrl('homeBorrowTenderInList.htm');">
-							招标中的借款</li>
-						<li id="lab_3" onclick="jumpUrl('homeBorrowRecycleList.htm');">
-							回收中的借款</li>
-						<li id="lab_4" onclick="jumpUrl('homeBorrowRecycledList.htm');">
-							已回收的借款</li>
-						<li id="lab_5" onclick="jumpUrl('homeBorrowBackAcountList.htm');">
-							回账查询</li>
+						<li id="lab_1" class="on"><a href="{:U('Member/Invest/investindex')}">我的投资</a></li>
+						<li id="lab_2">
+							<a href="{:U('Member/Invest/investindex?st=2')}">招标中的借款</a></li>
+						<li id="lab_3">
+							<a href="{:U('Member/Invest/investindex?st=6')}">回收中的借款</a></li>
+						<li id="lab_4">
+							<a href="{:U('Member/Invest/investindex?st=7')}">已回收的借款</a></li>
+						<li id="lab_5">
+							<a href="{:U('Member/Invest/investindex?st=8')}">回账查询</a></li>
 					</ul>
 				</div>
 				<div class="box">
@@ -58,16 +57,8 @@
 									<th>回款利息</th>
 									<th>协议书</th>
 								</tr>
-								<!-- 									<s:if test="pageBean.page==null || pageBean.page.size==0">
-										<tr align="center">
-											<td colspan="10">
-												暂无数据
-											</td>
-										</tr>
-									</s:if> -->
-								<s:else>
-									<s:iterator value="pageBean.page" var="bean">
-										<volist name="list" id="vo" key="i">
+							
+										<volist name="list" id="vo" key="k">
 										<tr>
 											<td align="center">{$vo.borrow_uid|get_borrow_username}
 											</td>
@@ -90,12 +81,10 @@
 										
 										</volist>
 										<tr>
-										<if condition="$i eq null">
-											<td align="center" colspan="10">亲！你还没成功借过款哦。</td>
+										<if condition="$k eq null">
+											<td align="center" colspan="10">亲！还没有内容哦。</td>
 										</if>
 										</tr>
-									</s:iterator>
-								</s:else>
 							</table>
 							<div class="page">
 								{$page}

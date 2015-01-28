@@ -95,7 +95,8 @@
 							</div>
 							<div class="biaoge" id="fundRecord">
 							    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-									  <tbody><tr>
+									  <tbody>
+									  <tr>
 									    <th>序号</th>
 									    <th>时间</th>
 									    <th>操作类型</th>
@@ -104,10 +105,10 @@
 									    <th>备注</th>
 									    <th>状态</th>
 									  </tr>
-									  <volist name="ml" id="vo">
+									  <volist name="ml" id="vo" key="k">
 									  <tr>
-									  <td>{$vo.id} </td>
-									  <td>{$vo.add_time||date='Y年m月d日 H时:i分',###}</td>
+									  <td>{$k} </td>
+									  <td>{$vo.add_time|date='Y年m月d日 H时:i分',###}</td>
 										<td>{$vo.type|get_jilu_type}</td>
 										<td><span>{$vo.affect_money}</span></td>
 										<td><span>{$vo.account_money}</span></td>
@@ -116,6 +117,12 @@
 									    <!-- <td colspan="11" align="center">暂无信息</td> -->
 									    </tr>
 									   </volist>
+									   <tr>
+									   <if condition="$k eq null">
+									  	<td colspan="10" align="center">亲！你还没成功借过款哦。</td>
+									    </if>
+										
+									    </tr>
 									  </tbody></table>
 								
 									<div class="page">

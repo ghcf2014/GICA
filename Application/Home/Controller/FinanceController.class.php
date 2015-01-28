@@ -34,8 +34,7 @@ class FinanceController extends HomeController {
             $count      = $listBorrow ->where('borrow_status not in (1,5,3)')->count();
             $Page = new  \Think\Page($count, 8);
             $show       = $Page->show();
-            $orderby[''.$order.'']='DESC';
-            $list = $listBorrow->where($map)->order($orderby)->limit($Page->firstRow.','.$Page->listRows)->select();
+            $list = $listBorrow->where($map)->order (array('borrow_status not in (0,6) DESC','add_time  DESC'))->limit($Page->firstRow.','.$Page->listRows)->select();
             $this->assign('list2',$list);
             $this->assign('login',$login);
             $this->assign('page',$show);

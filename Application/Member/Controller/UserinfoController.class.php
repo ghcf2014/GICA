@@ -125,7 +125,7 @@ class UserinfoController extends MemberController {
 		$money = M ( "z_member_money" );
 		$condition ['uid'] = $uid;
 		$money = $money->where ( $condition )->select ();
-		
+		// var_dump($ml);
 		
 		$this->assign ( 'ml', $ml );
 		$this->assign ( 'list', $money );

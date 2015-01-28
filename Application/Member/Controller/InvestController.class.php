@@ -247,12 +247,31 @@ class InvestController extends MemberController {
 		$data = I ( 'post.all_school' );
 		$this->ajaxReturn ( $data );
 	}
-	public function investindex() {
+	public function investindex($st=0) {
 		$uid = is_login (); // 获取当前用户UID
-		$borrow_info = M ( 'z_borrow_investor' );
-		$condition ['investor_uid'] = $uid;
-		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where ( $condition )->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
+		
+		$status['borrow_status'] = $st;
+		if($st == 0){
+        	$status='';
+        }
+        $st= M ( 'z_borrow_info' );
+        $stcount=$st->where($status)->count ();
+        $st=$st->field ('id')->where($status)->select();
 
+		for($i=0;$i<=$stcount;$i++)
+        {
+           $p1=$st[$i]['id'];
+           $pp.=$p1.',';
+        }
+        $pp=rtrim($pp, ",");
+        if($pp == ''){
+        	$pp=00;
+        }
+       
+		$borrow_info = M ( 'z_borrow_investor' );
+		// $condition ['investor_uid'] = $uid;
+		// $condition ['borrow_id not in'] = 41;
+		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
 
         if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
 		
