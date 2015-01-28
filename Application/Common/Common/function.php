@@ -26,21 +26,13 @@ function is_login() {
 *提示用户为敏感信息操作
 */
 function is_danger(){
-	$borrow=$_SESSION['borrow'];//发布新标生成记录
-	if (!empty($borrow)){
-		return true && $borrow;
-	} 
-	$chpassword=$_SESSION['chpassword'];//修改密码生成记录
-	if (!empty($chpassword)){
-		return  true && $chpassword;
-	}
-	$chemail=$_SESSION['chemail'];//修改邮箱生成记录
-	if (!empty($chemail)){
-		return true && $chemail;
-	}
-	$chphone=$_SESSION['chphone'];
-	if (!empty($chphone)){
+	//系统敏感操作提示消息
+	$uid=$_SESSION[gica_home]['user_auth']['uid'];
+    $danger =M('z_system_msg')->where("status=0 and uid=%s",$uid)->select();
+	if (!empty($danger)){
 		return true;
+	}else{
+		return false;
 	}
 }
 /**

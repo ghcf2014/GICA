@@ -127,18 +127,17 @@ class BorrowController extends HomeController {
 		$depict ['add_time'] = time ();
 		$depict ['deadline'] = strtotime ( '+' . intval ( $_POST ["collect_day"] ) . ' year' );
 		$depict ['add_ip'] = get_client_ip ();
-		// $depict['repayment_interest'] = intval ($_POST ["borrow_money"])*intval ($_POST ["borrow_interest_rate"])/ 100;
-		// $depict['repayment_interest']=(intval($_POST["borrow_money"])*(intval($_POST ["borrow_interest_rate"])/100/12)*(1+(intval($_POST["borrow_interest_rate"])/ 100/12))^intval($_POST["borrow_duration"]))/((1+(0.12/12)^intval($_POST["borrow_duration"])-1);//等额本息公式
-
+		//生成敏感信息
 		if ($uid=1){
-			session_start();
-			$_SESSION['borrow']['borrow_name']=$_POST ['borrow_name'];
-			$_SESSION['borrow']['borrow_time']=$depict['add_time'];
-			$_SESSION['borrow']['borrow_id']=$id;
-			$_SESSION['borrow']['borrow_action']="发布了一次标";
-		}
-
-		
+			$danger =array(
+					"username"=>$_SESSION[gica_home]['user_auth']['username'],
+					"uid" =>$_SESSION[gica_home]['user_auth']['uid'],
+					"tid"=>$id,
+					"action" =>$action,
+					"status" =>'0'
+				);
+			$msgs =M('z_system_msg')->add($danger);
+		}		
 		// $depict['repayment_interest']=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
 		if ($_POST ["repayment_type"] == 5) {
 			$depict ['repayment_interest'] = (intval ( $_POST ["borrow_money"] ) * (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] ) - intval ( $_POST ["borrow_money"] );

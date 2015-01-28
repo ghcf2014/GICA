@@ -50,10 +50,11 @@
 							  <foreach name="sysdata" item="vals" > 
 								<tr>
 									<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
-									<th>未查看</th>
+									<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
 									<th>系统管理员</th>
-									<th>{$danger['boorow_name']}</th>
-									<th>{$danger['borrow_time']}</th>
+									<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您刚刚<b style="color:red;">{$danger['action']}</b></th>
+									<th>{$danger['add_time']}</th>
+									<th><a href="#" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
 								</tr>
 							  </foreach>
 							  	<tr><td colspan="10" align="center">暂无信息</td></tr>
