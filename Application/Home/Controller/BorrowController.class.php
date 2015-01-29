@@ -32,7 +32,7 @@ class BorrowController extends HomeController {
 					if (is_array($failed)==true){
 					$this->error('您的申请没有通过，请重新申请',U('Borrow/borrowapply'));
 					}else{
-						$this->error('您的申请已经过期，请重新申请',U('Borrow/borrowapply'));
+						$this->error('您的申请已经完成，请重新申请',U('Borrow/borrowapply'));
 					}
 				}
 				
@@ -82,24 +82,19 @@ class BorrowController extends HomeController {
 	public function borrowapply() {
 		$uid=is_login();
 		$data=M('z_borrow_apply');
-		$result=$data->where('status=2 and apply_uid=%s',$uid)->select();
-		// dump(is_array($result));
-		if (is_array($result)==false){
-			$apply1=$data->where('status=3 and apply_uid=%s',$uid)->select();
-			if (is_array($apply1)==false){
-				$apply2=$data->where('status=0 and apply_uid=%s',$uid)->select();
-				if (is_array($apply2)==true){
-					$this->error('您已经申请过一次，目前正在审核阶段，不能重复申请！',U('Member/Index/index'));
-				}else {
-					$this->error('您上次的申请已通过，不能重复申请，请进入个人中心查看',U('Member/Index/index'));
-				}
-				
+		//申请审核中
+		$applydata=$data->where('status=0 and apply_uid=%s',$uid)->select();
+		if (is_array($applydata)==false){
+			//申请已通过
+			$applydata1=$data->where('status=1 and apply_uid=%s',$uid)->select();
+			if (is_array($applydata1)==true){
+				$this->error('您的申请已通过，请进入个人中心查看',U('Member/Index/index'));				
+			}else {
+				$this->display ();
 			}
-			
-
+		}else{
+			$this->error('您的申请正在审核，请进入个人中心查看',U('Member/Index/index'));
 		}
-		
-		$this->display ();
 	}
 	public function borrowapply_save(){
 		$uid=is_login();
