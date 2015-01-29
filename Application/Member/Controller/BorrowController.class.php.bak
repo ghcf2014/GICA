@@ -104,7 +104,7 @@ class BorrowController extends MemberController {
 	 */
 	public function payborrowok() {
 	}
-	public function myborrowapply(){
+		public function myborrowapply(){
 		$uid=is_login();
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();

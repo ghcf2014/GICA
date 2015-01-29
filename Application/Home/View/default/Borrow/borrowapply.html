@@ -54,13 +54,27 @@
 					</dd>
 				</dl>
 				<dl>
+					<dt>借款类型</dt>
+					<dd>
+						<select class="borrow" name="borrow_type">
+							<option selected="selected">---请选择---</option>
+							<option value="1">信用标</option>
+							<option value="2">净值标</option>
+							<option value="3">秒还标</option>
+							<option value="4">担保标</option>
+							<option value="5">抵押标</option>
+							<option value="6">实地考察标</option>
+						</select>
+					</dd>
+				</dl>
+				<dl>
 					<dt>借款期限</dt>
 					<dd>
 						<input type="text" name="borrow_duration" class="txt2" /> 
 						<select class="date" name="time_type">
-							<option value="年">年</option>
-							<option value="月">月</option>
-							<option value="日">日</option>
+							<option value="1">年</option>
+							<option value="2">月</option>
+							<option value="3">日</option>
 						</select>
 					</dd>
 				</dl>

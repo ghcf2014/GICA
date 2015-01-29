@@ -990,6 +990,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dd textarea{resize: none;width:67%;height:auto;min-height:100px;border: 1px solid #ddd;padding-left: 5px;line-height: 22px;font-size: 14px;}
 
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt2{border: 1px solid #ddd;height: 28px;margin: 5px 2% 0 0;width: 67%;padding-left: 5px;line-height: 28px;float: left;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .borrow{float: left;width:35%;margin:9px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .date{float: left;width:15%;margin:9px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
 
 .sqjk_cont .sqjk_cont_bot .tjsqjk .btn{width: 25%;height: 35px;background:#0597D9;border-radius: 3px;color: #fff;font-size: 16px;margin: 5% 38% 0;}

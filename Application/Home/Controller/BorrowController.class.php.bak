@@ -19,21 +19,20 @@ class BorrowController extends HomeController {
 		//查询是否存在申请记录
 		$result=$applymsg->where('apply_uid=%s',$uid)->select();
 		if (is_array($result)==false){
-			//没有申请记录跳转至申请页面
-			$this->redirect('Borrow/borrowapply');
+			$this->error('对不起，您还没有进行贷款申请！',U('Borrow/borrowapply'));
 		}else {
 			//查询没有通过的申请
-			$data=$applymsg->where('status=1 and apply_uid=%s',$uid)->select();
-			if (is_array($data)==false){
+			$data=$applymsg->where('status!=1 and apply_uid=%s',$uid)->select();
+			if (is_array($data)==true){
 				$waited=$applymsg->where('status=0 and apply_uid=%s',$uid)->select();
 				if (is_array($waited)==true){
-					$this->error('您的申请正在审核中，请耐心等待',U('Member/Borrow/checkingapply'));
+					$this->error('您的申请正在审核中，请耐心等待',U('Member/Index/index'));
 				}else {
 					$failed=$applymsg->where('status=2 and apply_uid=%s',$uid)->select();
 					if (is_array($failed)==true){
 					$this->error('您的申请没有通过，请重新申请',U('Borrow/borrowapply'));
 					}else{
-						$this->redirect('Borrow/borrowapply');
+						$this->error('您的申请已经完成，请重新申请',U('Borrow/borrowapply'));
 					}
 				}
 				
@@ -81,7 +80,6 @@ class BorrowController extends HomeController {
 	 *         2015-1-27申请借款
 	 */
 	public function borrowapply() {
-		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$uid=is_login();
 		$data=M('z_borrow_apply');
 		//申请审核中
@@ -90,12 +88,12 @@ class BorrowController extends HomeController {
 			//申请已通过
 			$applydata1=$data->where('status=1 and apply_uid=%s',$uid)->select();
 			if (is_array($applydata1)==true){
-				$this->redirect('Member/Borrow/passapply');				
+				$this->error('您的申请已通过，请进入个人中心查看',U('Member/Index/index'));				
 			}else {
 				$this->display ();
 			}
 		}else{
-			$this->error('您的申请正在审核...',U('Member/Borrow/checkingapply'));
+			$this->error('您的申请正在审核，请进入个人中心查看',U('Member/Index/index'));
 		}
 	}
 	public function borrowapply_save(){
