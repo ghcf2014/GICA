@@ -591,7 +591,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 /*---------------审核-----------------------------------*/
 .bdxq_cont .sh{width:1028px;height:auto;border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom: 1px solid #ddd;margin-bottom: 15px;}
-.bdxq_cont .tab{width:1030px;height:auto;padding:0;}
+.bdxq_cont .tab{width:1028px;height:auto;padding:0;}
 .bdxq_cont .title{width:1018px;padding-left:10px;height:53px;border:1px solid #ddd;overflow:hidden;font-size:20px;}
 .bdxq_cont .title li{float:left;width:86px;height:53px;line-height:53px;padding-right:20px;cursor:pointer;}
 .bdxq_cont .title .current{color:#ef681f;}
@@ -606,7 +606,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 /*-------------还款计划--------------------------*/
 .bdxq_cont .tab .tit2{width:1028px;height:53px;border-bottom:1px solid #ddd;overflow:hidden;font-size:16px;line-height:53px;}
 .bdxq_cont .tab .tit2 li{float:left;width:210px;height:53px;text-align:center;line-height:53px;}
-.bdxq_cont .tab .con2{width:1070px;height:198px;overflow:hidden;font-size:16px;line-height:53px;}
+.bdxq_cont .tab .con2{width:1028px;height:200px;overflow:hidden;font-size:16px;line-height:53px;}
 .bdxq_cont .tab .con2 li{float:left;width:210px;height:53px;text-align:center;line-height: 53px;}
 
 
@@ -861,14 +861,13 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*-----------找回密码------------------------*/
-.zhmm{width: 1068px;height: auto;min-height:500px;border: 1px solid #ddd;background: #fff;margin: 20px auto;padding: 0px 0px 60px;}
-.zhmm h2{width: 1048;border-bottom: 1px solid #ddd;height: 50px;margin-bottom: 80px;font-weight: normal;font-size: 18px;line-height: 50px;padding-left: 20px;}
-.zhmm .zhmm_way{overflow: hidden;height: 45px;width: 705px;margin:0 auto 15px;}
-.zhmm .zhmm_way dt{float: left;width: 240px;height:45px;line-height: 45px;text-align: right;font-weight: normal;font-size: 16px;}
-.zhmm .zhmm_way dd{float: left;width: 100px;padding-left: 0px;height: 38px;border: 1px solid #ddd;font-size: 16px;margin-left: 20px;line-height: 38px;text-align: center;cursor: pointer;}
-.zhmm .zhmm_way .cur{background: #66ccfb;color: #fff;}
-
-.zhmm .zhmm_tab{width: 640px;margin: auto;height: auto;}
+.zhmm{width: 750px;height: auto;min-height:500px;border: 1px solid #ddd;background: #fff;margin: 20px auto;padding: 0px 0px 60px;}
+/*标题*/
+.zhmm .zhmm_way{overflow: hidden;height: 45px;width: 750px;}
+.zhmm .zhmm_way li{float: left;width: 375px;padding-left: 0px;height: 38px;border-bottom: 1px solid #ddd;font-size: 16px;line-height: 38px;text-align: center;cursor: pointer;}
+.zhmm .zhmm_way .cur{background: #444;color: #fff;}
+/*tab*/
+.zhmm .zhmm_tab{width: 640px;margin: auto;height: auto;padding-top: 30px;}
 .zhmm .zhmm_tab .tab{width: 80%;margin: auto;height: auto;}
 .zhmm .zhmm_tab .tab dl{width: 100%;height: 40px;overflow: hidden;margin-bottom: 15px;}
 .zhmm .zhmm_tab .tab dl dt{float:left;width: 145px;height: 40px;text-align: right;font-size: 16px;font-weight: normal;line-height: 40px;}
