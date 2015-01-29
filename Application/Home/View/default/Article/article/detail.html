@@ -7,7 +7,7 @@
 				<div class="tab">
 					<div class="tabmain">
 						<ul>
-							<li class="on" style="padding: 0 20px;">
+							<li class="on" style="padding: 0 20px;color: #fff;background: #b30000;">
 								公告详情
 							</li>
 						</ul>
@@ -27,17 +27,17 @@
 								发布时间：{$info.create_time|date='Y-m-d H:i',###} 点击次数：{$info.view}
 							</p>
 							<div id="imgxz">
-								<section id="contents">{$info.content}</section>
+								<section id="contents" style="color: #333;">{$info.content}</section>
 							</div>
 						</div>
 						<div class="sxnews">
 							<ul>
-								<li style="background: none; line-height: 20px">
+								<li style="background: none; line-height: 30px">
                     <article:prev name="prev" info="info">
                         <a href="{:U('?id='.$prev['id'])}">上一篇： </a><a href="{:U('?id='.$prev['id'])}">{$prev['title']|msubstr=0,18}</a>
                     </article:prev>
 								</li>
-								<li style="background: none; line-height: 20px">
+								<li style="background: none; line-height: 30px">
                     <article:next name="next" info="info">
                         <a href="{:U('?id='.$next['id'])}">下一篇：</a><a href="{:U('?id='.$next['id'])}">{$next['title']|msubstr=0,18}</a>
                     </article:next>
@@ -48,7 +48,7 @@
 				</div>
 				<div id="showDongtai" class="lcmain_r">
 				<div class="lbox">
-                   <h2>网站动态</h2>
+                   <h2 style="color: #fff;background: #b30000;">网站动态</h2>
                    <div class="dongtai" style="padding-bottom:30px">
                    <ul><article:list name="list" category="1" child="true">
           	            <li><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a></li>
