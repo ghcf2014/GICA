@@ -292,6 +292,7 @@ class InvestController extends MemberController {
 		// $data=$borrow_info[0];
 		$data=$borrow_info1[0]+$borrow_info[0];
 
+		$data['repayment_type']=get_repayment_type($borrow_info1[0]['repayment_type']);
 		$data['get_borrow_name']=get_borrow_name($borrow_info1[0]['id']);
 		$data['yingshou']=intval($borrow_info[0]['investor_capital'])+intval($borrow_info[0]['investor_interest']);
 		$data['deadline']=time_format($borrow_info[0]['deadline'],$format = 'Y-m-d');

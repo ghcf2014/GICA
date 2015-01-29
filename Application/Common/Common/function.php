@@ -548,6 +548,9 @@ function get_borrow_type_name($id = 0) {
 	}if($id == 5){
 		$name='抵押标';
 	}
+	if($id == 6){
+		$name='实地考察标';
+	}
 
 
 	// var_dump($name['nickname']);
@@ -571,6 +574,30 @@ function get_jilu_type($type = 0) {
 	}
 	if($type == 8){
 		$name='投标成功';
+	}
+
+
+	// var_dump($name['nickname']);
+	return $name;
+}
+function get_repayment_type($type = 0) {
+	if($type == 1){
+		$name='按月还款';
+	}
+	if($type == 2){
+		$name='手动充值';
+	}if($type == 3){
+		$name='取消提现';
+	}if($type == 4){
+		$name='提现失败';
+	}if($type == 5){
+		$name='等额本息';
+	}
+	if($type == 6){
+		$name='先息后本';
+	}
+	if($type == 7){
+		$name='一次性还款';
 	}
 
 

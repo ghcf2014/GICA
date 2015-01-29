@@ -16,13 +16,13 @@
 				</dt>
 				<dd>
 					<p>
-						<strong>借款用户：</strong><span><!--{$vb.borrow_uid|get_username}--></span>
+						<strong>借款用户：</strong><span>{$vb.borrow_uid|get_username}</span>
 					</p>
 					<p>
-						<strong>借款日期：</strong><span><!--{$vo.add_time|date='Y-m-d',###}--></span>
+						<strong>借款日期：</strong><span>{$vo.add_time|date='Y-m-d',###}</span>
 					</p>
 					<p>
-						<strong>居 住 地 ：</strong><span><!--{$vb.location}&nbsp;{$vblocation_now}--></span>
+						<strong>居 住 地 ：</strong><span>{$vb.location}&nbsp;{$vblocation_now}</span>
 					</p>
 				</dd>
 			</dl>
@@ -48,11 +48,7 @@
 				<li>已经完成：<span>{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
 				<li>还要借款：<span id="needMoney">￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
 				<li>借款期限：<span>{$vb.borrow_duration}月</span></li>
-				<li class="li_last">还款方式： <if
-						condition="$vb.repayment_type eq 1"> <span>按月分期</span> <elseif
-						condition="$vb.repayment_type eq 2" /> <span>按月分期</span> <elseif
-						condition="$vb.repayment_type eq 3" /> <span>按月分期</span> <elseif
-						condition="$vb.repayment_type eq 4" /> <span>按月分期</span></if>
+				<li class="li_last">还款方式：<span>{$vb.repayment_type|get_repayment_type}</span>
 				</li>
 				<li class="li_last">交易类型：<span>线上</span></li>
 			</ul>

@@ -109,6 +109,17 @@ class FinanceController extends HomeController {
 			// $b=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
 
 			}
+            if ($list3[0]["repayment_type"] == 6) {
+                            $b=intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
+            // $depict ['repayment_money'] = intval ($capital)+(intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12));
+
+            }
+            //一次性还款公式带进
+            if ($list3[0]["repayment_type"] == 7) {
+                
+                            $b=intval ($capital)*((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12)*intval($list3[0]["borrow_duration"]));
+                // $depict ['repayment_money']=intval ($capital)*(1+((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12))*intval ($list3[0]["borrow_duration"] ));
+            }
 			
             
             //创建一个表对象，将传来的数据插入到数据库中
