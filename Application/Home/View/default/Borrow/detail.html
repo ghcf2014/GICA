@@ -25,13 +25,8 @@
                         <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>（月利率：<span>{$vb[borrow_interest_rate]/12}%</span>）</li>
                         <li>借款期限：<span>{$vb.borrow_duration}个月</span></li>
                         <li>还差：<span>￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
-<<<<<<< HEAD
-                        <li><strong>投标进度：</strong><span class="out"><span class="width:{$vb['has_borrow']/$vb['borrow_money']*100}%;"></span></span><span class="data">{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
-                        <li style="color:#ef681f;">还款方式：<span>{$vb.repayment_type|get_repayment_type}</span></li>
-=======
                         <li><strong>投标进度：</strong><span class="out"><span style="width:{$vb['has_borrow']/$vb['borrow_money']*100}%;" class="in"></span></span><span class="data">{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
-                        <li style="color:#ef681f;">还款方式：<span>一次性还款</span></li>
->>>>>>> origin/master
+                        <li style="color:#ef681f;">还款方式：<span>{$vb.repayment_type|get_repayment_type}</span></li>
                         <li>交易类型：<span>线下交易</span></li>
                         <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
                         <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
