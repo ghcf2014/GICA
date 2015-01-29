@@ -268,7 +268,7 @@ class InvestController extends MemberController {
         	$pp=00;
         }
 		$borrow_info = M ( 'z_borrow_investor' );
-		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
+		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,sum(investor_interest)investor_interest,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
 
         if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
 
@@ -280,7 +280,7 @@ class InvestController extends MemberController {
 		$borrow_info = M ( 'z_borrow_investor' );
 		// $condition ['investor_uid'] = $uid;
 		$condition ['borrow_id'] = $_POST['bid'];
-		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where ( $condition )->order ( 'id desc')->group ( 'borrow_id' )->select ();
+		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,sum(investor_interest)investor_interest,deadline,add_time,invest_fee' )->where ( $condition )->order ( 'id desc')->group ( 'borrow_id' )->select ();
 
 		// $data['bid']=$_POST['bid'];
 		$borrow_info1 = M ( 'z_borrow_info' );
@@ -293,6 +293,7 @@ class InvestController extends MemberController {
 		$data=$borrow_info1[0]+$borrow_info[0];
 
 		$data['get_borrow_name']=get_borrow_name($borrow_info1[0]['id']);
+		$data['yingshou']=intval($borrow_info[0]['investor_capital'])+intval($borrow_info[0]['investor_interest']);
 		$data['deadline']=time_format($borrow_info[0]['deadline'],$format = 'Y-m-d');
 		$data['add_time']=time_format($borrow_info[0]['add_time'],$format = 'Y-m-d');
 
