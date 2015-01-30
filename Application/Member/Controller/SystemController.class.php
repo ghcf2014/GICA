@@ -77,7 +77,7 @@ class SystemController extends MemberController {
 				if ($m = $m->where ( $condition )->add ( $data )) { // 保存成功
 					$log = M ( 'z_member_moneylog' );
 					$logdata ['uid'] = $uid;
-					$logdata ['type'] = 6;
+					$logdata ['type'] = 203;
 					$logdata ['affect_money'] = $_POST ['account_money'];
 					$logdata ['info'] = '提现已冻结'.$_POST ['withdraw_money'];
 					$logdata ['add_time'] = time ();
@@ -199,9 +199,9 @@ class SystemController extends MemberController {
 			// 资金日志记录
 			$log = M ( 'z_member_moneylog' );
 			$logdata ['uid'] = $uid;
-			$logdata ['type'] = 1;
+			$logdata ['type'] = 102;
 			$logdata ['affect_money'] = $_POST ['account_money'];
-			$logdata ['info'] = '会员充值';
+			$logdata ['info'] = '在线充值';
 			$logdata ['add_time'] = time ();
 			$log = $log->add ( $logdata );
 			

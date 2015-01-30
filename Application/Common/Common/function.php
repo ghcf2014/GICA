@@ -557,24 +557,20 @@ function get_borrow_type_name($id = 0) {
 	return $name;
 }
 function get_jilu_type($type = 0) {
-	if($type == 1){
-		$name='线下充值';
-	}
-	if($type == 2){
-		$name='手动充值';
-	}if($type == 3){
-		$name='取消提现';
-	}if($type == 4){
-		$name='提现失败';
-	}if($type == 5){
-		$name='提现成功';
-	}
-	if($type == 6){
-		$name='待审核提现';
-	}
-	if($type == 8){
-		$name='投标成功';
-	}
+	//收入
+	if($type == 101){$name='线下充值';}
+	if($type == 102){$name='手动充值';}
+	// if($type == 3){
+	// 	$name='取消提现';
+	// }
+
+	//支出
+	if($type == 201){$name='提现失败';}
+	if($type == 202){$name='提现成功';}
+	if($type == 203){$name='待审核提现';}
+	if($type == 204){$name='投标成功';}
+	//状态审核
+
 
 
 	// var_dump($name['nickname']);

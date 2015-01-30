@@ -26,6 +26,73 @@ class BorrowController extends MemberController {
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
+	public function reimbursement($id=0) {
+		$uid = is_login (); // 获取当前用户UID
+		$borrow_info = M ( 'z_borrow_info' );
+		$condition ['borrow_uid'] = $uid;
+		$condition ['id'] = $id;
+
+		$borrow_info = $borrow_info->where ( $condition )->select ();
+
+
+		if ($borrow_info[0]["repayment_type"] == 5) {
+	        for($i=1;$i<=intval ($borrow_info[0]['total']);$i++){
+
+	        	$huan[$i]['lixi'] =round(doubleval($borrow_info[0]["repayment_money"])/intval ($borrow_info[0]['total']),2);
+	        	// $huan[$i]['yingxi'] =((intval ( $borrow_info[0]["borrow_money"] ) * (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), $i ) / (pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), $i ) - 1)) * $i - intval ( $borrow_info[0]["borrow_money"] ));
+	        	$huan[$i]['yubenxi'] = round(doubleval($borrow_info[0]["repayment_money"])-((doubleval($borrow_info[0]["borrow_money"]) * (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), doubleval( $borrow_info[0]['total']) ) / (pow ( (1 + (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), doubleval($borrow_info[0]['total']) ) - 1)) * $i),2);
+
+	        	$t=$i;
+	        	$huan[$i]['time'] =strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$borrow_info[0]["add_time"].'').''));
+	        }
+		}
+        if ($borrow_info[0]["repayment_type"] == 6) {
+	        for($i=1;$i<=intval ($borrow_info[0]['total']);$i++){
+				// $huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
+				$huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )/intval ($borrow_info[0]['total']);
+				$t=$i+1;
+				$huan[$i]['time'] =strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$borrow_info[0]["add_time"].'').''));
+				 // date('Y-m-d',strtotime('+1 d',strtotime('2009-07-08')));
+			}
+			$huan[1]['lixi'] =intval ($huan[0]['lixi'])+intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
+		}
+		// dump($huan);
+
+		$this->assign ( 'huan', $huan);
+
+		$this->assign ( 'list', $borrow_info );
+		$this->display ();
+	}
+	public function reimbursement_del($id=0) {
+
+
+		$this->success ( L ( '还款成功！' ));
+
+	}
+	public function reimbursement_huan($id=0) {
+		$uid = is_login (); // 获取当前用户UID
+		$borrow_info = M ( 'z_borrow_info' );
+		$condition ['borrow_uid'] = $uid;
+		$condition ['id'] = $id;
+		$borrow_info = $borrow_info->where ( $condition )->select ();
+
+  //       if ($borrow_info[0]["repayment_type"] == 5) {
+		// 	$depict ['repayment_interest'] = (intval ( $borrow_info[0]["borrow_money"] ) * (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), intval ( $borrow_info[0]["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] ) - intval ( $_POST ["borrow_money"] );
+		// 	$depict ['repayment_money'] = (intval ( $_POST ["borrow_money"] ) * (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] );
+		// 	$depict ['total'] = $_POST ["borrow_duration"];
+		// }
+		// if ($_POST ["repayment_type"] == 6) {
+		// 	$depict ['repayment_interest'] =intval ( $_POST ["borrow_money"] )*(intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12);
+		// 	$depict ['repayment_money'] = intval ( $_POST ["borrow_money"] )+(intval ( $_POST ["borrow_money"] )*(intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12));
+		// 	$depict ['total'] = $_POST ["borrow_duration"];
+		// }
+
+
+
+
+		$this->assign ( 'list', $borrow_info );
+		$this->display ();
+	}
 	
 	/**
 	 *

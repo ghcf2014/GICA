@@ -110,8 +110,9 @@
 									  <td>{$k} </td>
 									  <td>{$vo.add_time|date='Y年m月d日 H时:i分',###}</td>
 										<td>{$vo.type|get_jilu_type}</td>
-										<td><span>{$vo.affect_money}</span></td>
-										<td><span>{$vo.account_money}</span></td>
+										<td><span>
+										<if condition="$vo.type elt 199">{$vo.affect_money}<else/>0.00</if></span></td>
+										<td><span><if condition="$vo.type egt 200">{$vo.affect_money}<else/>0.00</if></span></td>
 										<td>{$vo.info}</td>
 										<td><span>成功</span></td>
 									    <!-- <td colspan="11" align="center">暂无信息</td> -->

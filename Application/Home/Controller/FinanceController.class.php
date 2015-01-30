@@ -197,7 +197,7 @@ class FinanceController extends HomeController {
                                         //日志
                                         $log = M ( 'z_member_moneylog' );
 										$logdata ['uid'] = $uid;
-										$logdata ['type'] = 8;
+										$logdata ['type'] = 204;
 										$logdata ['affect_money'] = $capital;
 										$logdata ['info'] = '您投资了'.$list3[0]['id'].'号标'.$capital.'元';
 										$logdata ['add_time'] = time ();

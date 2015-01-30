@@ -6,17 +6,13 @@
 		<include file="Public/left" />
 		<div class="zh_cont_r">
 			<h3 style="border-bottom: 1px solid #ddd;">
-				当前位置 > <span style="color: #D41010;">我的借款</span>
+				当前位置 > <span style="color: #D41010;">我的还款</span>
 			</h3>
 			<div class="r_main">
 				<div class="tabtil">
 					<ul>
-						<li id="lab_1" class="on"><a
-							href="{:U('Member/Borrow/myborrowmanager')}">全部的借款</a></li>
-						<li id="lab_2"><a href="{:U('Member/Borrow/checkingborrow')}">审核中的借款</a></li>
-						<li id="lab_3" ><a href="{:U('Member/Borrow/issueborrow')}">招标中的借款</a></li>
-						<!--<li id="lab_4" onclick="jumpUrl('homeBorrowRecycledList.htm');">已回收的借款</li>
-						<li id="lab_5" onclick="jumpUrl('homeBorrowBackAcountList.htm');">回账查询</li> -->
+						<li id="lab_1" class="on"><a href="javascript:void(0);">我要还款</a></li>
+						<li id="lab_1" ><a href="{:U('Member/Borrow/myborrowmanager')}">返回</a></li>
 					</ul>
 				</div>
 				<div class="box">
@@ -44,34 +40,27 @@
 									<a href="javascript:void(0);" id="search" class="scbtn"> 搜索</a>
 								</form>
 							</div> -->
-						<div class="biaoge">
+						<div class="biaoge"><volist name="list" id="vo" key="i">
+						<h2 style="text-align: center;">【{$vo.borrow_name}】</h2>
+						</volist>
 							<table width="100%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
-									<th>编号</th>
-									<th>标题</th>
-									<th>借款金额</th>
-									<th>年化利率</th>
-									<th>借款期数</th>
-									<th>借款期限</th>
-									<th>发布时间</th>
+									<th>期号</th>
 									<th>还款时间</th>
-									<th>借款类型</th>
-									<th>协议书</th>
+									<th>应还金额</th>
+									<th>实还金额</th>
+									<th>状态</th>
+									<th>操作</th>
+
 								</tr>
-								<volist name="list" id="vo" key="i">
+								<volist name="huan" id="vo" key="i">
 								<tr>
 									<td align="center">{$i}</td>
-									<td align="center"><a
-										href="{:U('Home/borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a>
-									</td>
-									<td align="center">{$vo.borrow_money}</td>
-									<td align="center">{$vo.borrow_interest_rate}%</td>
-									<td align="center">{$vo.total}</td>
-									<td align="center">{$vo.borrow_duration}个月</td>
-									<td align="center">{$vo.add_time|date='Y-m-d',###}</td>
-									<td align="center">{$vo.deadline|date='Y-m-d',###}</td>
-									<td align="center">{$vo.borrow_type|get_borrow_type_name}</td>
-									<td align="center"><a href="{:U('Member/Borrow/reimbursement?id='.$vo['id'])}">还款</a><a href="{:U('Invest/borrowprotocol?id='.$vo['id'])}" target="_blank">|查看协议</a></td>
+									<td align="center">{$vo.time|date='Y-m-d',###}</td>
+									<td align="center">{$vo.lixi}</td>
+									<td align="center"></td>
+									<td align="center">待还</td>
+									<td align="center"><a href="{:U('Member/Borrow/reimbursement_del?id='.$vo['id'])}">立即还款</a></td>
 								</volist>
 								</tr>
 								<tr>

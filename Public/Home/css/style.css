@@ -416,9 +416,9 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*--------------我的账户-------------------------*/
-.zh_cont_out{width:100%px;height:auto;padding-top:30px;}
+.zh_cont_out{width:100%;height:auto;padding-top:30px;}
 .zh_cont{width:1068px;height:auto;border-bottom:1px solid #ddd;margin:0 auto 70px;background: #fff url(../images/borderline.png) repeat-y 6px top;overflow: hidden;border-right:1px solid #ddd;}
-.zh_cont h2{width:1060px;padding-left:10px;height:65px;border-bottom:1px solid #ddd;line-height:65px;font-size:22px;font-weight:normal;}
+.zh_cont h2{width:840px;padding-left:10px;height:65px;border-bottom:1px solid #ddd;line-height:65px;font-size:22px;font-weight:normal;}
 /*--左边--*/
 .zh_cont .zh_cont_l{width:120px;height:auto;text-align:center;font-size:18px;float:left;}
 .zh_cont .zh_cont_l ul{width:120px;height:auto;}
