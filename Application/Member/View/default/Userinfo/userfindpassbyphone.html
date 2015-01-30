@@ -2,7 +2,7 @@
 	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
-		
+
 
 		<!--zh_cont_l-->
 		<include file="Public/left" />
@@ -11,15 +11,17 @@
 
 			<!--安全设置-->
 			<div class="tab">
-				<h3>当前位置 > <span style="color: #D41010;">安全设置</span></h3>
+				<h3>
+					当前位置 > <span style="color: #D41010;">安全设置</span>
+				</h3>
 				<p style="background: #d3cbc7; width: 947px; height: 1px;"></p>
 				<ul class="aqset_tabH">
 					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
 					<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
 					<li><a href="{:U('Userinfo/usermailbanding')}">邮箱设置</a></li>
 					<li><a href="{:U('Userinfo/userfindpassbyphone')}" class="cur">手机设置</a></li>
-					<li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li>
-					<li><a href="{:U('Userinfo/userselfset')}">身份证</a></li>
+					<!-- 	<li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li> -->
+					<li><a href="{:U('Member/Userinfo/userselfidcard')}">身份证</a></li>
 				</ul>
 				<div class="aqset_tabC_out">
 					<form action="{:U('userphone_save')}" method="post"
@@ -34,11 +36,15 @@
 
 							<dl class="phone">
 								<dt>原手机号码：</dt>
-								<dd style="line-height:42px;">{$vo.mobile}</dd>
+								<dd style="line-height: 42px;">{$vo.mobile}</dd>
 							</dl>
 							<dl class="phone">
 								<dt>手机变更：</dt>
-								<dd><input type="text" class="phone_txt" name="mobile" id="mobile" value=""><input type="button" class="phone_btn" id="phone_btn" value="验证码发送"></dd>
+								<dd>
+									<input type="text" class="phone_txt" name="mobile" id="mobile"
+										value=""><input type="button" class="phone_btn"
+										id="phone_btn" value="验证码发送">
+								</dd>
 							</dl>
 							<dl class="phone">
 								<dt>手机验证码：</dt>

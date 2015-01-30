@@ -101,27 +101,25 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userchagerwithdraw() {
-
-		// $nickname       =   I('nickname');
-  //       $map['status']  =   array('egt',0);
-  //       if(is_numeric($nickname)){
-  //           $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
-  //       }else{
-  //           $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
-  //       }
-
-  //       $list   = $this->lists('z_member_moneylog', $map);
-  //       int_to_string($list);
-  //       $this->assign('_list', $list);
-  //       $this->meta_title = '资金信息';
-  //       $this->display();
-
-
+		
+		// $nickname = I('nickname');
+		// $map['status'] = array('egt',0);
+		// if(is_numeric($nickname)){
+		// $map['uid|nickname']= array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+		// }else{
+		// $map['nickname'] = array('like', '%'.(string)$nickname.'%');
+		// }
+		
+		// $list = $this->lists('z_member_moneylog', $map);
+		// int_to_string($list);
+		// $this->assign('_list', $list);
+		// $this->meta_title = '资金信息';
+		// $this->display();
 		$uid = is_login ();
 		$ml = M ( "z_member_moneylog" );
 		$condition ['uid'] = $uid;
 		$ml = $ml->where ( $condition )->select ();
-
+		
 		$money = M ( "z_member_money" );
 		$condition ['uid'] = $uid;
 		$money = $money->where ( $condition )->select ();
@@ -152,7 +150,7 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
-		//var_dump ( $m );
+		// var_dump ( $m );
 		$this->display ();
 	}
 	public function userphone_save() {
@@ -247,7 +245,27 @@ class UserinfoController extends MemberController {
 	public function userricelist() {
 		$this->display ();
 	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *        
+	 *         身份证设置2015-1-30
+	 */
 	public function userselfidcard() {
+		$uid = is_login ();
+		$userinfo = M ( 'z_member_info' );
+		$meminfo = $userinfo->where ( "uid=" . $uid )->select ();
+		// var_dump($userinfo);
+		$realName = $meminfo [0] ['real_name'];
+		$idcard = $meminfo [0] ['idcard'];
+		if ($realName != null && $idcard != null) {
+			$this->assign ( "realName", $realName );
+			$this->assign ( "idcard", $idcard );
+			$this->display ();
+		} else {
+			$this->error ( "您还没有进行基本身份认证！", U ( 'Member/Userinfo/userselfset' ) );
+		}
 		$this->display ();
 	}
 	public function userselfset() {
@@ -474,7 +492,7 @@ class UserinfoController extends MemberController {
 		$m = M ( "ucenter_member" );
 		$condition ['id'] = $uid;
 		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
-		$this->assign ( 'pin', $pin [0] ['pin_pass']);
+		$this->assign ( 'pin', $pin [0] ['pin_pass'] );
 		$this->display ();
 	}
 	public function paypassword_save() {
@@ -494,15 +512,15 @@ class UserinfoController extends MemberController {
 		$m = M ( "ucenter_member" );
 		$condition ['id'] = $uid;
 		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
-
-		if($pin [0] ['pin_pass'] == ""){
+		
+		if ($pin [0] ['pin_pass'] == "") {
 			$data ['pin_pass'] = md5 ( $_POST ['pin_pass'] );
 			$condition ['id'] = $uid;
 			if ($m = $m->where ( $condition )->save ( $data )) {
 				$this->success ( '新建交易密码成功！' );
-				}
+			}
 		}
-
+		
 		if (md5 ( $_POST ['old'] ) == $pin [0] ['pin_pass']) {
 			
 			$data ['pin_pass'] = md5 ( $_POST ['pin_pass'] );
