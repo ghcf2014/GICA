@@ -30,7 +30,7 @@
 					</ul>
 					<ul class="items">
 						<li class="txt">还款方式：</li>
-						<li><select id="repayWay" name="select" style="width:135px;">
+						<li><select id="repayWay" name="select" style="width: 135px;">
 								<option selected="selected" value="0">等额本息</option>
 								<option value="1">先息后本</option>
 								<option value="2">一次性还款</option>
@@ -43,7 +43,8 @@
 				</div>
 				<div class="btn-submit">
 					<a href="javascript:void(0);" id="calcultor" class="gbtn">计算</a> <a
-						href="" class="gbtn gbtn-gray">重置</a> <!-- <input id="manual"
+						href="" class="gbtn gbtn-gray">重置</a>
+					<!-- <input id="manual"
 						class="helpId" type="checkbox" value="" name="cb_ids"
 						onclick="changeStatus();" /> &nbsp;天标 -->
 				</div>
@@ -52,29 +53,31 @@
 				<div class="jsqyb_con1" id="calcResult">
 					<h2>计算结果</h2>
 					<div id="totalResult">
-						<p class="gjjg" style="line-height: 30px;font-size: 16px;padding-top: 30px;">
+						<!-- <p class="gjjg"
+							style="line-height: 30px; font-size: 16px; padding-top: 30px;">
 							每月收益： <strong id="aa" style="color: #166cb2;">0.00元</strong> <br />月利率：
 							<strong id="bb" style="color: #166cb2;">0%</strong><br /> 本息总额：
 							<strong id="cc" style="color: #166cb2;">0元</strong>
-						</p>
+						</p> -->
 						<!-- <p class="gjjg"> -->
-							<table border="1" style="display: none; color: blue;line-height: 30px; font-size: 16px; padding-top: 30px;"
+						<table border="1"
+							style="color: blue; line-height: 30px; font-size: 16px; padding-top: 30px;"
 							id="tabresult">
-								<tr>
-									<td align="center">期数</td>
-									<td align="center">月收本息</td>
-									<td align="center">月收本金</td>
-									<td align="center">月收利息</td>
-									<td align="center">本息余额</td>
-								</tr>
-								<tr>
+							<tr>
+								<td align="center">期数</td>
+								<td align="center">月收本息</td>
+								<td align="center">月收本金</td>
+								<td align="center">月收利息</td>
+								<td align="center">本息余额</td>
+							</tr>
+							<!-- <tr>
 									<td align="center" id="periods"></td>
 									<td align="center" id="principal"></td>
 									<td align="center" id="corpus"></td>
 									<td align="center" id="interest"></td>
 									<td align="center" id="remainder"></td>
-								</tr>
-							</table>
+								</tr> -->
+						</table>
 						<!-- </p> -->
 					</div>
 					<div id="result" style="display: none">
@@ -84,9 +87,10 @@
 					</div>
 					<br /> <span id="showPayTable"></span>
 				</div>
-				<div class="jsqyb_con1" style="margin-top: 60px;display: none;">
+				<div class="jsqyb_con1" style="margin-top: 60px; display: none;">
 					<h2>收益计算器简介</h2>
-					<p style="width:327px;height:140px;margin:auto;line-height:25px;font-size:16px;padding:0 100px;">
+					<p
+						style="width: 327px; height: 140px; margin: auto; line-height: 25px; font-size: 16px; padding: 0 100px;">
 						收益计算器用于计算您在工合财富投资将会获得的收益，理财更加透明高效，固定日还款项目由于计息方式略有不同，具体收益请参见投资后的统计。
 					</p>
 				</div>
@@ -101,9 +105,8 @@
 	$("#calcultor")
 			.click(
 					function() {
-						//alert("123456");
 						var repayWay = $("#repayWay").val();
-						var investMoney = $("#borrowSum").val();
+						var investMoney = parseFloat($("#borrowSum").val());
 						if (!isNaN(investMoney)) { //判断是否是数字
 							if (investMoney == "" || investMoney < 200) {
 								$("#borrowSum").next().next().show();
@@ -118,12 +121,10 @@
 											"<i class='icons reg-error'></i><font color='red'>请输入正确的数字!</font></span></li>");
 							return false;
 						}
-
 						var yearRate = $("#yearRate").val();
 						if (!isNaN(yearRate)) { //判断是否是数字
 							if (yearRate == "") {
-								
-								
+
 								$("#yearRate").next().next().show().html(
 										"<font color='red'>年化利率不能为空！</font>");
 								return false;
@@ -151,93 +152,129 @@
 									"<font color='red'>请输入正常的投入时常!</font>");
 							return false;
 						}
-
-						var totalMomey = "";//总金额全局变量
+						var totalMoney = 0;//总金额全局变量
 						var rate = yearRate / 100;//先转换为百分数
 						var monthrate = yearRate / 12;//转换为月利率
+
+						var interest = 0;//每月应还利息
+						var capital = 0;//每月应还本金
+						var balance = 0;//初始化本息余额等于投资金额
 						//等额本息计算方法
 						if (repayWay == 0) {
-							$("#totalResult").show();
+							$("#tabresult").show();
 							totalMoney = (investMoney * (rate / 12) * Math.pow(
 									(1 + (rate / 12)), borrowTime))
 									/ (Math.pow(1 + (rate / 12), borrowTime) - 1);
-							
+
 							//截取总金额
-							totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
-							
-							var totalCal=(parseFloat(totalMoney) * parseFloat(borrowTime));
-							totalCal=(totalCal+"").substring(0,(totalCal+"").indexOf(".")+3);
-							
-							//$("#tabresult").hide();
-							$('#totalResult .gjjg').show();
-							$('#totalResult #tabresult').hide();
-							
-							
-							$("#aa").html(
-									"<font color='red'>" + totalMoney
-											+ "元</font>");
-							$("#bb").html(
-									"<font color='red'>" + monthrate
-											+ "%</font>");
-							$("#cc")
-									.html(
-											"<font color='red'>"
-													+ totalCal
-													+ "元</font>");
-							//等额本息列表清单循环代码结构
+							totalMoney = parseFloat((totalMoney + "")
+									.substring(0, (totalMoney + "")
+											.indexOf(".") + 3));
+							//计算出还款总额(总利息+本金)
+							var rental = investMoney
+									+ (borrowTime * totalMoney - investMoney);
+							rental = rental.toFixed(2);
+							for ( var i = 1; i <= borrowTime; i++) {
+								//防止用户第二次点击时，自动叠加数据,先清空数据，重新计算,开始位置从当前的标签的字标签开始
+								$("#tabresult tr:eq('" + i + "')").remove();
+								//每月应该还的利息
+								interest = investMoney
+										* (rate / 12)
+										* (Math
+												.pow(1 + (rate / 12),
+														borrowTime) - Math.pow(
+												1 + (rate / 12), (i - 1)))
+										/ (Math
+												.pow(1 + (rate / 12),
+														borrowTime) - 1);
+								//每月应该还的利息保留两位小数
+								interest = interest.toFixed(2);
+								//每月应还本金
+								capital = (investMoney * (rate / 12) * (Math
+										.pow(1 + (rate / 12), (i - 1))))
+										/ (Math
+												.pow(1 + (rate / 12),
+														borrowTime) - 1);
+								capital = capital.toFixed(2);//每月应还本金保留两位小数
+								balance = rental - (totalMoney * i);//计算本金余额  （每期减掉的本息一样）
+								balance = balance.toFixed(2);
+								$("#tabresult tr:eq('" + (i - 1) + "')").after(
+										"<tr><td align='center'>" + i
+												+ "</td><td align='center'>"
+												+ totalMoney
+												+ "</td><td align='center'>"
+												+ capital
+												+ "</td><td align='center'>"
+												+ interest
+												+ "</td><td align='center'>"
+												+ balance + "</td></tr>");
+							}
 						}
 
 						//先息后本的方法
+						var benxi = 0;
 						if (repayWay == 1) {
-							$('#totalResult .gjjg').show();
-							$('#totalResult #tabresult').hide();
-							totalMoney = investMoney * (rate / 12);
-							//截取总金额
-							
-							
-							var totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
-							var totalCal=((parseFloat(totalMoney) * parseFloat(borrowTime)) + parseFloat(investMoney));
-							totalCal=(totalCal+"").substring(0,(totalCal+"").indexOf(".")+3);
-							$("#aa").html(
-									"<font color='red'>" + totalMoney
-											+ "元</font>");
-							$("#bb").html(
-									"<font color='red'>" + monthrate
-											+ "%</font>");
-							$("#cc")
-									.html(
-											"<font color='red'>"
-													+ ((parseFloat(totalMoney) * parseFloat(borrowTime)) + parseFloat(investMoney))
-													+ "元</font>");
-						
-							//先息后本列表清单循环结构代码
+							$("#tabresult").show();
+							//每月月收利息
+							interest = investMoney * (rate / 12);
+							interest = interest.toFixed(2);
+							//收款本息总额
+							totalMoney = investMoney + interest * borrowTime;
+							for ( var i = 1; i <= borrowTime; i++) {
+								//防止用户第二次点击时，自动叠加数据,先清空数据，重新计算,开始位置从当前的标签的字标签开始
+								$("#tabresult tr:eq('" + i + "')").remove();
+
+								//本息余额
+								if (i == borrowTime) {
+									balance = 0.00;
+									balance = balance.toFixed(2);//本息余额
+									capital = investMoney;//月收本金等于投资金额
+									capital = capital.toFixed(2);//月还本金
+									benxi = totalMoney
+											- (interest * (borrowTime - 1));
+									benxi = benxi.toFixed(2);
+								} else {
+									benxi = interest;
+									capital = 0.00;//月还本金
+									capital = capital.toFixed(2);
+									balance = totalMoney - (interest * i);
+									balance = balance.toFixed(2);//月还本息
+								}
+
+								$("#tabresult tr:eq('" + (i - 1) + "')").after(
+										"<tr><td align='center'>" + i
+												+ "</td><td align='center'>"
+												+ benxi
+												+ "</td><td align='center'>"
+												+ capital
+												+ "</td><td align='center'>"
+												+ interest
+												+ "</td><td align='center'>"
+												+ balance + "</td></tr>");
+							}
 						}
 
 						//一次性还款的计算方法
 						if (repayWay == 2) {
-							totalMoney = investMoney
-									* Math.pow(((1 + (rate / 12))), borrowTime);
-							//截取总金额
-							var totalMoney=(totalMoney+"").substring(0,(totalMoney+"").indexOf(".")+3);
-							$("#aa").html(
-									"<font color='red'>" + totalMoney
-											+ "元</font>");
-							$("#bb").html(
-									"<font color='red'>" + monthrate
-											+ "%</font>");
-							$("#cc").html(
-									"<font color='red'>"
-											+ (parseFloat(totalMoney))
-											+ "元</font>");
-							//$("#tabresult").show();
-							$('#totalResult .gjjg').hide();
-							$('#totalResult #tabresult').show();
-							//$('.gjjg').hide();
-							$("#periods").html(borrowTime);
-							$("#principal").html(totalMoney);
-							$("#corpus").html(investMoney);
-							$("#interest").html(monthrate);
-							$("#remainder").html('0.00');
+							$("#tabresult").show();
+							$("#tabresult tr:gt('0')").remove();//清除当前tr下面的所有tr
+							interest = parseFloat(investMoney)
+									* ((rate / 12) * borrowTime);
+							interest = interest.toFixed(2);//一次性还款利息
+							investMoney = investMoney.toFixed(2);//月还本金
+							var benxi = (parseFloat(investMoney) + parseFloat(interest));
+							benxi = benxi.toFixed(2);
+							$("#tabresult tr:eq('0')")
+									.after(
+											"<tr><td align='center'>"
+													+ 1
+													+ "</td><td align='center'>"
+													+ benxi
+													+ "</td><td align='center'>"
+													+ investMoney
+													+ "</td><td align='center'>"
+													+ interest
+													+ "</td><td align='center'>0.00</td></tr>");
 						}
 					});
 </script> </block>
