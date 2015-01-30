@@ -213,9 +213,11 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*---------denglu  登录------------------------*/
-.dl_cont_out{width:100%;height:auto;}
+/*.dl_cont_out{width:100%;height:auto;}
 .dl_cont{width:790px;height:auto;border:1px solid #d3cbc7;margin:40px auto;padding:0 0 30px 10px;background: #fff;}
-.dl_cont h2{width:770px;height:80px;line-height:80px;font-size:24px;font-weight:normal;}
+.dl_cont h2{width:770px;height:80px;line-height:80px;font-size:24px;font-weight:normal;}*/
+.dl_cont_out{width:100%;height:auto;background: #fff;padding-top: 40px;}
+.dl_cont{width:960px;height:auto;margin:auto;padding:0px 0 30px 0px;background: #fff;}
 .dl_cont dl{width:790px;height:52px;overflow:hidden;margin-bottom:30px; }
 .dl_cont dl div{width: 290px;height: 42px;border: 1px solid #D7D7D7;margin-bottom: 25px;float:left;}
 .dl_cont dl div img{width: 43px;height: 42px;border-right: 1px solid #D7D7D7;float: left;}
@@ -229,10 +231,20 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .dl_cont dd p{width:140px;height:42px;line-height:42px;float:left;}
 .dl_cont dd p a{color:#70d3fd;}
 .dl_cont .btn{width:250px;height:50px;background:#66ccfc url(../images/250x50pxblue.png) no-repeat;border-radius:4px;color:#fff;margin-left:240px;font-size:16px;cursor:pointer;}
-.dl_cont .dl_cont_bot{width:250px;height:50px;margin-left:227px;overflow:hidden;}
-.dl_cont .dl_cont_bot .left{display:block;float:left;width:60px;height:50px;line-height:50px;}
-.dl_cont .dl_cont_bot .right{display:block;float:right;width:140px;height:50px;line-height:50px;}
+.dl_cont .dl_cont_bot{width:247px;height:25px;margin-left:227px;overflow:hidden;}
+.dl_cont .dl_cont_bot .left{display:block;float:left;width:60px;height:25px;line-height:25px;}
+.dl_cont .dl_cont_bot .right{display:block;float:right;width:140px;height:25px;line-height:25px;}
 .dl_cont .dl_cont_bot .right a{color:#66ccfc;}
+
+.dl_cont .dl_cont_bg{width: 100%;height: auto;}
+.dl_cont .dl_cont_bg ul{position: relative;}
+.dl_cont .dl_cont_bg ul li{width: 100%;height: 600px;position: absolute;}
+/*二维码*/
+.dl_cont .dl_cont_l .ewm{width: 55px;height: 50px;background: url(../images/dl_cont_ewm.png) no-repeat center center;margin-left: 295px;cursor: pointer;}
+.dl_cont .dl_cont_in .ewm_big{width: 120px;height: 120px;background: url(../images/dl_cont_ewm_big.png) no-repeat;position: absolute;right: 5px;bottom: 106px;box-shadow: 1px 2px 1px #ccc;display: none;}
+
+
+
 
 
 
