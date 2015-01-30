@@ -2,17 +2,19 @@
 	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
-		
+
 		<include file="Public/left" />
 		<div class="zh_cont_r">
-			<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">充值提现</span></h3>
+			<h3 style="border-bottom: 1px solid #ddd;">
+				当前位置 > <span style="color: #D41010;">充值提现</span>
+			</h3>
 			<div class="r_main">
 				<div class="tabtil">
 					<ul>
-						<li><a href="{:U('Userinfo/userchagerwithdraw')}">资金记录</a></li>
-						<li><a href="{:U('System/recharge')}">充值</a></li>
-						<li class="on"><a href="{:U('System/withdrawdeposit')}">提现</a>
-						</li>
+						<!-- 	<li><a href="{:U('Userinfo/userchagerwithdraw')}">资金记录</a></li> -->
+						<li><a href="{:U('Member/System/recharge')}">充值</a></li>
+						<li class="on"><a
+							href="{:U('Member/System/withdrawdeposit')}">提现</a></li>
 					</ul>
 				</div>
 
@@ -24,13 +26,14 @@
 							注：1、请输入您要取出金额,我们将在1至2个工作日(国家节假日除外)之内将钱转入您网站上填写的银行账号。 <br />
 							2、如你急需要把钱转到你的账号或者24小时之内网站未将钱转入到你的银行账号,请联系客服中心。 <br />
 							3、确保您的银行账号的姓名和您的网站上的真实姓名一致。 <br /> 4、在钱打到您账号时会发一封站内信通知你。 <br />
-							5、每笔提现金额至少为100元以上（备注：如101、632等） <br />
-							6、每笔提现金额最高不能超过50000元。 <br /> 7、您目前能提取的最高额度是
+							5、每笔提现金额至少为100元以上（备注：如101、632等） <br /> 6、每笔提现金额最高不能超过50000元。 <br />
+							7、您目前能提取的最高额度是
 							<s:property value="#request.usableSum" default="---"></s:property>
 							元。
 						</p>
 						<div class="biaoge2">
-							<form id="form" action="{:U('withdrawdeposit_add')}" method="post">
+							<form id="form" action="{:U('withdrawdeposit_add')}"
+								method="post">
 								<volist name="list" id="vo">
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
@@ -56,8 +59,8 @@
 									</tr>
 									<tr>
 										<td>提现的银行：</td>
-										<td><span style="float: none;"
-											class="formtips"> * 以下是绑定的银行卡信息，如果没有银行卡请先进行提现银行卡设置</span></td>
+										<td><span style="float: none;" class="formtips"> *
+												以下是绑定的银行卡信息，如果没有银行卡请先进行提现银行卡设置</span></td>
 									</tr>
 									<s:if test="#request.banks!=null && #request.banks.size>0">
 										<s:iterator value="#request.banks" var="bean" status="sta">
@@ -78,9 +81,9 @@
 									<tr>
 										<td>交易密码： <strong>*</strong>
 										</td>
-										<td><input type="password" class="inp140" id="dealpwd" name="dealpwd" />
-											<span style="color: red;float: none;" id="pwd_tip"
-											class="formtips"></span></td>
+										<td><input type="password" class="inp140" id="dealpwd"
+											name="dealpwd" /> <span style="color: red; float: none;"
+											id="pwd_tip" class="formtips"></span></td>
 									</tr>
 									<tr>
 										<td>提现金额： <strong>*</strong>
@@ -114,7 +117,7 @@
 											type="button" class="btn" value="确认提交" /> <!-- <a  href="javascript:void(0);" id="btn_submit" class="bcbtn" onclick="addWithdraw();" >确认提交</a> -->
 										</td>
 									</tr>
-									
+
 								</table>
 							</form>
 							</volist>

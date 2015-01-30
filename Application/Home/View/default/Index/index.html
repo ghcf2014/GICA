@@ -3,9 +3,12 @@
 	<div class="banner">
 		<!--banner图-->
 		<ul style="z-index: 0">
-			<li style="z-index: 1;background: url(__PUBLIC__/Home/images/banner_newYear1.png) no-repeat center top;"></li>
-			<li style="background: url(__PUBLIC__/Home/images/banner_newYear2.png) no-repeat center top;"></li>
-			<li style="background: url(__PUBLIC__/Home/images/banner_newYear3.png) no-repeat center top;"></li>
+			<li
+				style="z-index: 1; background: url(__PUBLIC__/Home/images/banner_newYear1.png) no-repeat center top;"></li>
+			<li
+				style="background: url(__PUBLIC__/Home/images/banner_newYear2.png) no-repeat center top;"></li>
+			<li
+				style="background: url(__PUBLIC__/Home/images/banner_newYear3.png) no-repeat center top;"></li>
 		</ul>
 		<!--序号点-->
 		<ol style="z-index: 2">
@@ -132,9 +135,9 @@
 			<!--投资列表 start-->
 			<div class="cont_bot2">
 				<a href="{:U('Finance/index')}"><h2 class="title"
-					style="background: url(__PUBLIC__/Home/images/mo.png) no-repeat 1010px center;">
-					<p>投资列表</p>
-				</h2></a>
+						style="background: url(__PUBLIC__/Home/images/mo.png) no-repeat 1010px center;">
+						<p>投资列表</p>
+					</h2></a>
 				<!--<ul>
 		        		<li style="width: 165px;">借款项目</li>
 		        		<li>借款金额</li>
@@ -159,32 +162,39 @@
 					</tr>
 					<volist name="list2" id="vo">
 					<tr>
-						<td  style="width: 165px;"><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></td>
+						<td style="width: 165px;"><a
+							href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></td>
 						<td>￥{$vo.borrow_money}</td>
 						<td style="width: 60px;">{$vo.borrow_interest_rate}%</td>
 						<td style="width: 80px;">{$vo.borrow_duration}个月</td>
 						<td style="width: 100px;"><img
 							src="__PUBLIC__/Home/images/bao.png" /><img
 							src="__PUBLIC__/Home/images/jian.png" /></td>
-						<td><span class="out"><span class="in"  style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;line-height:18px;color:white;">{$vo['has_borrow']/$vo['borrow_money']*100}%</span></span></td>
+						<td><span class="out"><span class="in"
+								style="width: {$vo['has_borrow']/$vo['borrow_money']*100">{$vo['has_borrow']/$vo['borrow_money']*100}%</span></span></td>
 						<td>2015-01-20</td>
-						<td style="width: 80px;">
-						 <if condition="$vo.borrow_status eq 2">
-                              <if condition="$login eq 1">
-                                    <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
-                                  <elseif condition="$login eq 0"/>
-                                    <a class="ajax-get"  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" />
-                              </if>
-                          <elseif condition="$vo.borrow_status eq 0"/>
-                          <img alt="" src="__PUBLIC__/Home/images/shenhe.png" style="width:80px;height:30px;" />
-                           <elseif condition="$vo.borrow_status eq 4"/>
-                          <img alt="" src="__PUBLIC__/Home/images/fushen.png" style="width:80px;height:30px;" />
-                          <elseif condition="$vo.borrow_status eq 6"/>
-                          <img alt="" src="__PUBLIC__/Home/images/huankuan.png" style="width:80px;height:30px;" />
-                           <elseif condition="$vo.borrow_status eq 7"/>
-                           <img alt="" src="__PUBLIC__/Home/images/manbiao.png" style="width:80px;height:30px;" />
-                          </if>
-						</td>
+						<td style="width: 80px;"><if
+								condition="$vo.borrow_status eq 2"> <if
+								condition="$login eq 1"> <a
+								href="{:U('Finance/invest?id='.$vo['id'])}"><img
+								src="__PUBLIC__/Home/images/toubiao.png"
+								style="width: 80px; height: 30px;" /></a> <elseif
+								condition="$login eq 0" /> <a class="ajax-get"
+								href="{:U('Finance/invest?id='.$vo['id'])}"><img
+								src="__PUBLIC__/Home/images/toubiao.png"
+								style="width: 80px; height: 30px;" /></if> <elseif
+								condition="$vo.borrow_status eq 0" /> <img alt=""
+								src="__PUBLIC__/Home/images/shenhe.png"
+								style="width: 80px; height: 30px;" /> <elseif
+								condition="$vo.borrow_status eq 4" /> <img alt=""
+								src="__PUBLIC__/Home/images/fushen.png"
+								style="width: 80px; height: 30px;" /> <elseif
+								condition="$vo.borrow_status eq 6" /> <img alt=""
+								src="__PUBLIC__/Home/images/huankuan.png"
+								style="width: 80px; height: 30px;" /> <elseif
+								condition="$vo.borrow_status eq 7" /> <img alt=""
+								src="__PUBLIC__/Home/images/manbiao.png"
+								style="width: 80px; height: 30px;" /> </if></td>
 					</tr>
 					</volist>
 				</table>
@@ -233,11 +243,11 @@
 				<ul>
 					<li><a href="http://www.ccb.com" target="_blank"><img
 							src="__PUBLIC__/Home/images/jsyh.jpg" width="122px" height="45" /></a></li>
-					<li><a href="http://www.jsbchina.cn/" target="_blank"><img
+					<!-- <li><a href="http://www.jsbchina.cn/" target="_blank"><img
 							src="__PUBLIC__/Home/images/js.jpg" width="122px" height="45" /></a></li>
 					<li><a href="http://www.cib.com.cn" target="_blank"><img
 							src="__PUBLIC__/Home/images/xingyeyinhang.jpg" width="122px"
-							height="45" /></a></li>
+							height="45" /></a></li> -->
 					<li><a href="http://www.gzcb.com.cn" target="_blank"><img
 							src="__PUBLIC__/Home/images/gfyh.jpg" width="122px" height="45" /></a></li>
 					<li><a href="http://www.rongerong.com/" target="_blank"><img
