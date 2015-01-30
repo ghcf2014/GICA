@@ -13,13 +13,13 @@
 
 <div class="dl_cont_out">
 	<form class="login-form" action="__SELF__" method="post" id="form">
-		<div class="dl_cont" style="padding: 0;width: 800px;">
-			<p class="dl_top01" style="width: 800px;height: 40px;background: url(__PUBLIC__/Home/images/denglu_bg01.png) repeat-x left top;text-align: center;line-height: 40px;font-size: 20px;color: #fff;font-family: '黑体';">登 录</p>
-            <h2 class="dl_top02" style="width: 800px;height: 87px;background: url(__PUBLIC__/Home/images/denglu_bg.png) no-repeat center top;"></h2>
-			<div class="dl_cont_in" style="overflow: hidden;">
+		<div class="dl_cont" >
+			<!--<p class="dl_top01" style="width: 800px;height: 40px;background: url(__PUBLIC__/Home/images/denglu_bg01.png) repeat-x left top;text-align: center;line-height: 40px;font-size: 20px;color: #fff;font-family: '黑体';">登 录</p>
+            <h2 class="dl_top02" style="width: 800px;height: 87px;background: url(__PUBLIC__/Home/images/denglu_bg.png) no-repeat center top;"></h2>-->
+			<div class="dl_cont_in" style="overflow: hidden;position: relative;min-height: 600px;">
 				<!--左边-->
-				<div class="dl_cont_l" style="width: auto; height: auto;float: left;">
-					<dl style="width: 300px;padding-left: 50px;">
+				<div class="dl_cont_l" style="width: auto; height: auto;float: right;border: 1px solid #ddd;background: rgba(255,255,255,0.3);padding: 40px 0 0;position: absolute;right: 130px;top: 40px;z-index: 10;box-shadow: 3px 3px 5px #ddd;">
+					<dl style="width: 300px;padding-left: 31px;">
 						<div>
 							<img src="__PUBLIC__/Home/images/loginname.png"> <input
 								type="text" value="" name="username" class="txt txt1"
@@ -30,7 +30,7 @@
 						<span style="color: red; line-height: 40px;" id="checkname"
 							class="formtips"></span>
 					</dl>
-					<dl style="width: 300px;padding-left: 50px;">
+					<dl style="width: 300px;padding-left: 31px;">
 						<div>
 							<img src="__PUBLIC__/Home/images/password.png"> <input
 								type="password" value="" name="password" class="txt txt1"
@@ -40,7 +40,7 @@
 						<span style="color: red; line-height: 40px;" id="checkpwd"
 							class="formtips"></span>
 					</dl>
-					<dl style="width: 300px;padding-left: 50px; margin-bottom: 0px;">
+					<dl style="width: 300px;padding-left: 31px; margin-bottom: 0px;">
 						<div>
 							<img src="__PUBLIC__/Home/images/yanzheng.png"> <input
 								type="text" value="" name="verify" class="txt txt1"
@@ -55,28 +55,71 @@
 					<dl style="width: 300px;padding-left: 50px; height: 40px; margin-bottom: 0px;">
 						<span style="color: red; line-height: 40px;" id="checkcode" class="formtips Validform_checktip "></span>
 					</dl>
-					<input type="button" value="登录" name="denglu" id="loginIn"
-						onclick="javascript:;" class="btn"  style="margin-left: 72px;"/>
-					<div class="dl_cont_bot" style="margin-left: 15px;">
+					<input type="button" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" name="denglu" id="loginIn"
+						onclick="javascript:;" class="btn"  style="margin-left: 53px;font-size: 18px;"/>
+					<div class="dl_cont_bot" style="margin-left: 0px;">
 						<span class="right"><a href="{:U('System/findpassword')}">忘记密码？</a><a
 							href="{:U('User/register')}">|&nbsp;立即注册</a></span>
 					</div>
 					<div id="show"></div>
+					
+					<!--二维码-->
+					<div class="ewm"></div>							
 				</div>
 				
+				<div class="ewm_big"></div>
+				
+				<!--背景图部分-->
+				<div class="dl_cont_bg">
+					<ul>
+						<li style="background: url(__PUBLIC__/Home/images/dl_cont_bg01.jpg) no-repeat 10px top;z-index: 1;"></li>
+						<li style="background: url(__PUBLIC__/Home/images/dl_cont_bg02.jpg) no-repeat 80px top;display: none;"></li>
+						<li style="background: url(__PUBLIC__/Home/images/dl_cont_bg03.jpg) no-repeat 100px top;display: none;"></li>
+					</ul>
+				</div>
+				
+				
 				<!--中间-->
-				<div class="dl_cont_c" style="float: left;width:2px; min-height:325px;background: url(__PUBLIC__/Home/images/denglu_bg02.png) repeat-y;margin-left: 49px;"></div>
+				<!--<div class="dl_cont_c" style="float: left;width:2px; min-height:325px;background: url(__PUBLIC__/Home/images/denglu_bg02.png) repeat-y;margin-left: 49px;"></div>-->
 				
 				<!--右边-->
-				<div class="dl_cont_r" style="width: 250px;height:auto;float: right;padding-right: 80px;">
+				<!--<div class="dl_cont_r" style="width: 250px;height:auto;float: right;padding-right: 80px;">
             		<div style="height: 250px;"><img src="__PUBLIC__/Home/images/weixin_eweima.jpg" width="250" height="250"/></div>
             		<p style="text-align: center;line-height: 20px;">扫描上方二维码<br />关注工合财富官方微信<br />随时随地掌握最新财富资讯</p>
-            	</div>
+            	</div>-->
             </div>
 				
 		</div>
 	</form>
 </div>
+
+<script type="text/javascript">
+	//登录的背景图轮播及二维码的显示与隐藏
+	$(function(){
+		$('.dl_cont .dl_cont_l .ewm').click(function(){
+			//alert(1);
+			$('.dl_cont .dl_cont_in .ewm_big').toggle();
+		})
+		
+		var num = 0;
+		var timer =null;
+		var myFn = function()
+		{
+			num++;
+			if(num > $('.dl_cont_bg ul li').length -1){  num = 0;}
+			$('.dl_cont_bg ul li').eq(num).stop().fadeIn().siblings().fadeOut();
+		}
+		timer =setInterval(myFn,3000);		
+		$('.dl_cont_bg ul li').mouseover(function(e) {
+            clearInterval(timer);
+			timer =null;
+        }).mouseout(function(e) {
+			clearInterval(timer);
+            timer = setInterval(myFn,3000);
+        });
+		
+	})
+</script>
 
 <script type="text/javascript">
 	//验证码刷新

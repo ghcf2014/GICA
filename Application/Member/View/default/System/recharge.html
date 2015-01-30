@@ -2,16 +2,18 @@
 	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
-		
+
 		<include file="Public/left" />
 		<div class="zh_cont_r">
-			<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">充值提现</span></h3>
+			<h3 style="border-bottom: 1px solid #ddd;">
+				当前位置 > <span style="color: #D41010;">充值提现</span>
+			</h3>
 			<div class="r_main">
 				<form id="form" action="{:U('recharge_save')}" method="post">
 					<!--tabtil start-->
 					<div class="tabtil">
 						<ul>
-							<li><a href="{:U('Userinfo/userchagerwithdraw')}">资金记录</a</li>
+							<!-- <li><a href="{:U('Userinfo/userchagerwithdraw')}">资金记录</a></li> -->
 							<li class="on"><a href="{:U('System/recharge')}">充值</a></li>
 							<li><a href="{:U('System/withdrawdeposit')}">提现</a></li>
 						</ul>
@@ -231,7 +233,8 @@
 													<s:iterator value="#request.banksList" var="bank"
 														status="count">
 														<tr align="center">
-															<td><input type="radio" value="${bank.bankname }" name="paramMap.banks" style="float: none;"
+															<td><input type="radio" value="${bank.bankname }"
+																name="paramMap.banks" style="float: none;"
 															<s:if test="#count.count == 1"> checked="checked" </s:if>/></td>
 															<td><image src="${bank.bankimage }"
 																	style="width:130px;height:60px;" /></td>
@@ -266,7 +269,8 @@
 
 							</div>
 							<div id="btn_submit">
-								<input type="button" class="btn" value="提交充值" id="addrecharge" style="text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 120px;"/>
+								<input type="button" class="btn" value="提交充值" id="addrecharge"
+									style="text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 120px;" />
 								<!-- <input type="button" class="bcbtn" value="保存并继续"id="addrecharge" /> -->
 								<!-- <a href="javascript:void(0);" class="bcbtn" onclick="addRechargeInfo();">保存并继续</a> -->
 							</div>

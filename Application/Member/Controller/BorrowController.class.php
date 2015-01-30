@@ -171,4 +171,32 @@ class BorrowController extends MemberController {
 	 */
 	public function payborrowok() {
 	}
+	public function myborrowapply(){
+		$uid=is_login();
+		$applydata =M('z_borrow_apply');
+		$result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
+		$this->assign('list',$result);
+		$this->display();
+	}
+	public function checkingapply(){
+		$uid=is_login();
+		$applydata =M('z_borrow_apply');
+		$result=$applydata->where('status=0 and apply_uid=%s',$uid)->select();
+		$this->assign('list',$result);
+		$this->display();
+	}
+	public function passapply(){
+		$uid=is_login();
+		$applydata =M('z_borrow_apply');
+		$result=$applydata->where('status=1 and apply_uid=%s',$uid)->select();
+		$this->assign('list',$result);
+		$this->display();
+	}
+	public function overapply(){
+		$uid=is_login();
+		$applydata =M('z_borrow_apply');
+		$result=$applydata->where('status=3 and apply_uid=%s',$uid)->select();
+		$this->assign('list',$result);
+		$this->display();
+	}
 }

@@ -14,12 +14,45 @@
 						<li id="lab_1" class="on"><a
 							href="{:U('Member/Borrow/myborrowmanager')}">全部的借款</a></li>
 						<li id="lab_2"><a href="{:U('Member/Borrow/checkingborrow')}">审核中的借款</a></li>
+<<<<<<< HEAD
 						<li id="lab_3" ><a href="{:U('Member/Borrow/issueborrow')}">招标中的借款</a></li>
 						<!--<li id="lab_4" onclick="jumpUrl('homeBorrowRecycledList.htm');">已回收的借款</li>
 						<li id="lab_5" onclick="jumpUrl('homeBorrowBackAcountList.htm');">回账查询</li> -->
+=======
+						<li id="lab_3"><a href="{:U('Member/Borrow/issueborrow')}">招标中的借款</a></li>
+						<!-- <li id="lab_4" onclick="jumpUrl('homeBorrowRecycledList.htm');">
+							已回收的借款</li>
+						<li id="lab_5" onclick="jumpUrl('homeBorrowBackAcountList.htm');">
+							回账查询</li> -->
+>>>>>>> origin/master
 					</ul>
 				</div>
 				<div class="box">
+					<div class="jkjl_search">
+						<select class="search">
+							<option value="0">按类型</option>
+							<option value="1">按日期</option>
+						</select>
+						<div class="search_cont">
+							<select class="search_type" >
+								<option value="1">信用标</option>
+								<option value="2">担保标</option>
+								<option value="3">秒还标</option>
+								<option value="4">新手体验标</option>
+								<option value="5">信用标</option>
+								<option value="6">信用标</option>
+								<option value="7">信用标</option>
+								<option value="8">信用标</option>
+								<option value="9">信用标</option>
+							</select>
+							<div class="search_date" style="display: none;">
+								<input type="text" class="search_date_txt" readonly="readonly" id="datechoose1"/>
+								<span>—</span>
+								<input type="text" class="search_date_txt" readonly="readonly"  id="datechoose2"/>
+							</div>
+						</div>
+						<input type="button" class="search_btn" value="搜  索" />			
+					</div>
 					<div class="boxmain2">
 						<!-- <div class="srh">
 								<form action="homeBorrowInvestList.htm" id="searchForm">
@@ -96,4 +129,51 @@
 </div>
 </div>
 <!--content end-->
+<<<<<<< HEAD
+=======
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script type="text/javascript">
+	$(function(){
+		$('.box .jkjl_search .search').change(function(e){
+			
+			var txt=$(this).val();
+			if(txt == 0)
+			{
+				//alert(1);width: 450px;height: 50px;padding-left: 475px;
+				$('.box .jkjl_search').css({'width':'325px','padding-left':'600px'});
+				$('.box .jkjl_search .search_cont .search_type').show().siblings().hide();
+			}
+			else
+			{
+				$('.box .jkjl_search').css({'width':'450px','padding-left':'475px'});
+				$('.box .jkjl_search .search_cont .search_date').show().siblings().hide();
+			}
+		})
+		
+		$( "#datechoose1,#datechoose2" ).datepicker();
+	})
+	
+    	
+ 
+</script>
+		
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> origin/master
 </block>

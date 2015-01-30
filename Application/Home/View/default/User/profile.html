@@ -1,86 +1,85 @@
-<block name="body">
-<extend name="Base/common"/>
-  <!--content start-->
-  <div class="zh_cont_out">
-      <div class="zh_cont">
-             
-            
-            <!--zh_cont_l-->
-              <include file="Member@default/Public/left"/>
-            <!--zh_cont_r-->
-            <div class="zh_cont_r">
-            
-              <!--安全设置-->
-                <div class="tab">
-                    <h3>当前位置 > <span style="color: #D41010;">安全设置</span></h3>
-                    <p style="background:#ddd;width:947px;height:1px;"></p>
-                    <ul class="aqset_tabH">
-                      <li><a href="{:U('Home/User/profile')}" class="cur">登录密码</a></li>
-                        <li><a href="{:U('Member/Userinfo/paypassword')}">交易密码</a></li>
-                        <li><a href="{:U('Member/Userinfo/usermailbanding')}">邮箱设置</a></li>
-                        <li><a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机设置</a></li>
-                      <!--   <li><a href="{:U('Member/Userinfo/userbankset')}">银行卡</a></li> -->
-                        <li><a href="{:U('Member/Userinfo/userselfset')}">身份证</a></li>
-                    </ul>
-                    <div class="aqset_tabC_out">
-                    	<form class="login-form" action="__SELF__" method="post">
-	                      	<!--登录密码-->
-	                        <div class="aqset_tabC">
-	                           <!--  <p class="aqset_tabC_head2">上次登录时间：<span>2014-11-22</span></p> -->
-	                            <dl class="dlmm" style="padding-top: 40px;">
-	                                <dt>原始密码：</dt>
-	                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old"></dd>                             
-	                            </dl>
-	                            <dl class="dlmm">
-	                                <dt>新密码：</dt>
-	                                <dd><input type="password" class="dlmm_txt" placeholder="请输入密码"  errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password"></dd>
-	                            </dl>
-	                            <dl class="dlmm">
-	                                <dt>确认密码：</dt>
-	                                <dd><input type="password" class="dlmm_txt" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword"></dd>
-	                            </dl>
-	                            <input type="submit" class="yhk_btn" value="提交">                            
-	                        </div>           
-                      </form>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-  <!--content end-->
+<block name="body"> <extend name="Base/common" /> <!--content start-->
+<div class="zh_cont_out">
+	<div class="zh_cont">
 
 
+		<!--zh_cont_l-->
+		<include file="Member@default/Public/left" />
+		<!--zh_cont_r-->
+		<div class="zh_cont_r">
 
+			<!--安全设置-->
+			<div class="tab">
+				<h3>
+					当前位置 > <span style="color: #D41010;">安全设置</span>
+				</h3>
+				<p style="background: #ddd; width: 947px; height: 1px;"></p>
+				<ul class="aqset_tabH">
+					<li><a href="{:U('Home/User/profile')}" class="cur">登录密码</a></li>
+					<li><a href="{:U('Member/Userinfo/paypassword')}">交易密码</a></li>
+					<li><a href="{:U('Member/Userinfo/usermailbanding')}">邮箱设置</a></li>
+					<li><a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机设置</a></li>
+					<!--   <li><a href="{:U('Member/Userinfo/userbankset')}">银行卡</a></li> -->
+					<li><a href="{:U('Member/Userinfo/userselfidcard')}">身份证</a></li>
+				</ul>
+				<div class="aqset_tabC_out">
+					<form class="login-form" action="__SELF__" method="post">
+						<!--登录密码-->
+						<div class="aqset_tabC">
+							<!--  <p class="aqset_tabC_head2">上次登录时间：<span>2014-11-22</span></p> -->
+							<dl class="dlmm" style="padding-top: 40px;">
+								<dt>原始密码：</dt>
+								<dd>
+									<input type="password" class="dlmm_txt" placeholder="请输入密码"
+										errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
+										name="old">
+								</dd>
+							</dl>
+							<dl class="dlmm">
+								<dt>新密码：</dt>
+								<dd>
+									<input type="password" class="dlmm_txt" placeholder="请输入密码"
+										errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
+										name="password">
+								</dd>
+							</dl>
+							<dl class="dlmm">
+								<dt>确认密码：</dt>
+								<dd>
+									<input type="password" class="dlmm_txt" placeholder="请再次输入密码"
+										recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码"
+										datatype="*" name="repassword">
+								</dd>
+							</dl>
+							<input type="submit" class="yhk_btn" value="提交">
+						</div>
+					</form>
+				</div>
 
+			</div>
+		</div>
+	</div>
+</div>
 
-<block name="side"></block>
-	<script type="text/javascript">
+<!--content end--> <block name="side"></block> <script
+	type="text/javascript">
+	$(document).ajaxStart(function() {
+		$("button:submit").addClass("log-in").attr("disabled", true);
+	}).ajaxStop(function() {
+		$("button:submit").removeClass("log-in").attr("disabled", false);
+	});
 
-    	$(document)
-	    	.ajaxStart(function(){
-	    		$("button:submit").addClass("log-in").attr("disabled", true);
-	    	})
-	    	.ajaxStop(function(){
-	    		$("button:submit").removeClass("log-in").attr("disabled", false);
-	    	});
+	$("form").submit(function() {
+		var self = $(this);
+		$.post(self.attr("action"), self.serialize(), success, "json");
+		return false;
 
-    	$("form").submit(function(){
-    		var self = $(this);
-    		$.post(self.attr("action"), self.serialize(), success, "json");
-    		return false;
-
-    		function success(data){
-    			if(data.status){
-    				window.location.href = data.url;
-    			} else {
-    				self.find(".Validform_checktip").text(data.info);
-    			}
-    		}
-    	});
-	</script>
-	
-	
-	
-</block>
+		function success(data) {
+			if (data.status) {
+				window.location.href = data.url;
+			} else {
+				self.find(".Validform_checktip").text(data.info);
+			}
+		}
+	});
+</script> </block>

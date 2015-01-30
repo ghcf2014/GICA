@@ -1,226 +1,209 @@
-<block name="body">
-<extend name="Base/common"/>
-<block name="body">
-		<!--content start-->
-	<div class="zh_cont_out">
-    	<div class="zh_cont">
-            	
-            	<include file="Public/left"/>
-	            	<div class="zh_cont_r">
-	            		<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">充值提现</span></h3>
-	            		<div class="r_main">
-							<div class="tabtil">
-								<ul>
-							<li class="on">
-								<a href="{:U('Userinfo/userchagerwithdraw')}">资金记录</a>
-							</li>
-							<li>
-								<!-- <a href="{:U('Userinfo/userwithdrawrice')}">充值</a> -->
+<block name="body"> <extend name="Base/common" /> <block
+	name="body"> <!--content start-->
+<div class="zh_cont_out">
+	<div class="zh_cont">
+
+		<include file="Public/left" />
+		<div class="zh_cont_r">
+			<h3 style="border-bottom: 1px solid #ddd;">
+				当前位置 > <span style="color: #D41010;">资金明细</span>
+			</h3>
+			<div class="r_main">
+				<div class="tabtil">
+					<ul>
+						<li class="on"><a href="{:U('Userinfo/userchagerwithdraw')}">资金记录</a>
+						</li>
+						<!-- <li>
+								<a href="{:U('Userinfo/userwithdrawrice')}">充值</a>
 								<a href="{:U('System/recharge')}">充值</a>
 							</li>
 							<li>
-								<!-- <a href="{:U('Userinfo/userwithdrawrice')}">提现</a> -->
+								<a href="{:U('Userinfo/userwithdrawrice')}">提现</a>
 								<a href="{:U('System/withdrawdeposit')}">提现</a>
-							</li>
-						</ul>
-							</div>
-							<div class="box" id="zjjl">
-								<div class="boxmain2"><volist name="list" id="vo">
-									<div class="tabmain">
-										<div class="biaoge">
-									<table width="100%" border="0" cellspacing="0" cellpadding="0">
-										<tbody><tr>
-											<th>
-												账户总额
-											</th>
-											<th>
-												可用余额
-											</th>
-											<th>
-												冻结金额
-											</th>
+							</li> -->
+					</ul>
+				</div>
+				<div class="box" id="zjjl">
+					<div class="boxmain2">
+						<volist name="list" id="vo">
+						<div class="tabmain">
+							<div class="biaoge">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tbody>
+										<tr>
+											<th>账户总额</th>
+											<th>可用余额</th>
+											<th>冻结金额</th>
 										</tr>
 										<tr>
-											<td align="center">
-												￥{$vo.account_money}</td>
-											<td align="center">
-												￥{$vo.account_money}</td>
-											<td align="center">
-												￥{$vo.money_freeze}</td>
+											<td align="center">￥{$vo.account_money}</td>
+											<td align="center">￥{$vo.account_money}</td>
+											<td align="center">￥{$vo.money_freeze}</td>
 										</tr>
-									</tbody></table>
+									</tbody>
+								</table>
 
-								</div>
-									</div>
-                                    </volist>
 							</div>
-							<h2 class="otherh2x">
-								资金记录
-							</h2>
-							<div class="boxmain2">
-								<div class="srh"><form action="{:U('userchagerwithdraw')}" method="post">
-									交易时间：
-									<input id="startTime" type="text" name="startTime" />
-									到
-									<input id="endTime" type="text" name="endTime">
-									类型:
-									<select name="momeyType" id="momeyType" class="inp80">
-							    		<option value="">--请选择--</option>
-							    		<option value="-1">国付宝</option>
-							    		<option value="804">扣除VIP会费</option>
-							    		<option value="251">好友邀请奖励</option>
-							    		<option value="-1">手工充值</option>
-							    		<option value="653">冻结投标金额</option>
-							    		<option value="101">借款成功</option>
-							    		<option value="601">扣除借款管理费</option>
-							    		<option value="654">扣除投标冻结金额</option>
-							    		<option value="804">申请VIP会员</option>
-							    		<option value="-1">好友邀请奖励</option>
-							    		<option value="-1">冻结提现金额</option>
-							    		<option value="-1">提现成功</option>
-							    		<option value="-1">奖励充值</option>
-							    		<option value="801">扣除短信服务费</option>
-							    		<option value="502">手动扣费</option>
-							    		<option value="151">投资收到还款</option>
-							    		<option value="156">收到逾期罚息</option>
-							    		<option value="604">扣除还款金额</option>
-							    		<option value="603">扣除逾期罚息</option>
-							    		<option value="-1">取消提现</option>
-							    		<option value="-1">提现失败</option>
-							    		<option value="602">冻结秒还借款费</option>
-							    		<option value="105">解冻秒还借款费</option>
-								</select>
-
-								<input  type="submit" class="cxbtn" value="保存发布" style="width:88px;"></form>
-							</div>
-							<div class="biaoge" id="fundRecord">
-							    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-									  <tbody>
-									  <tr>
-									    <th>序号</th>
-									    <th>时间</th>
-									    <th>操作类型</th>
-									    <th>收入</th>
-									    <th>支出</th>
-									    <th>备注</th>
-									    <th>状态</th>
-									  </tr>
-									  <volist name="ml" id="vo" key="k">
-									  <tr>
-									  <td>{$k} </td>
-									  <td>{$vo.add_time|date='Y年m月d日 H时:i分',###}</td>
+						</div>
+						</volist>
+					</div>
+					<h2 class="otherh2x">资金记录</h2>
+					<div class="boxmain2">
+						<div class="srh">
+							<form action="{:U('userchagerwithdraw')}" method="post">
+								交易时间： <input id="startTime" type="text" name="startTime" /> 到 <input
+									id="endTime" type="text" name="endTime" /> 类型: <select
+									name="momeyType" id="momeyType" class="inp80">
+									<option value="">--请选择--</option>
+									<option value="-1">国付宝</option>
+									<option value="804">扣除VIP会费</option>
+									<option value="251">好友邀请奖励</option>
+									<option value="-1">手工充值</option>
+									<option value="653">冻结投标金额</option>
+									<option value="101">借款成功</option>
+									<option value="601">扣除借款管理费</option>
+									<option value="654">扣除投标冻结金额</option>
+									<option value="804">申请VIP会员</option>
+									<option value="-1">好友邀请奖励</option>
+									<option value="-1">冻结提现金额</option>
+									<option value="-1">提现成功</option>
+									<option value="-1">奖励充值</option>
+									<option value="801">扣除短信服务费</option>
+									<option value="502">手动扣费</option>
+									<option value="151">投资收到还款</option>
+									<option value="156">收到逾期罚息</option>
+									<option value="604">扣除还款金额</option>
+									<option value="603">扣除逾期罚息</option>
+									<option value="-1">取消提现</option>
+									<option value="-1">提现失败</option>
+									<option value="602">冻结秒还借款费</option>
+									<option value="105">解冻秒还借款费</option>
+								</select> <input type="submit" class="cxbtn" value="查询"
+									style="width: 88px;">
+							</form>
+						</div>
+						<div class="biaoge" id="fundRecord">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr>
+										<th>序号</th>
+										<th>时间</th>
+										<th>操作类型</th>
+										<th>收入</th>
+										<th>支出</th>
+										<th>备注</th>
+										<th>状态</th>
+									</tr>
+									<volist name="ml" id="vo" key="k">
+									<tr>
+										<td>{$k}</td>
+										<td>{$vo.add_time|date='Y年m月d日 H时:i分',###}</td>
 										<td>{$vo.type|get_jilu_type}</td>
 										<td><span>
 										<if condition="$vo.type elt 199">{$vo.affect_money}<else/>0.00</if></span></td>
 										<td><span><if condition="$vo.type egt 200">{$vo.affect_money}<else/>0.00</if></span></td>
 										<td>{$vo.info}</td>
 										<td><span>成功</span></td>
-									    <!-- <td colspan="11" align="center">暂无信息</td> -->
-									    </tr>
-									   </volist>
-									   <tr>
-									   <if condition="$k eq null">
-									  	<td colspan="10" align="center">亲！你还没成功借过款哦。</td>
-									    </if>
-										
-									    </tr>
-									  </tbody></table>
-								
-									<div class="page">
-								<p>
-								</p>
-							</div> </div>
+										<!-- <td colspan="11" align="center">暂无信息</td> -->
+									</tr>
+									</volist>
+									<tr>
+										<if condition="$k eq null">
+										<td colspan="10" align="center">亲！你还没成功借过款哦。</td>
+										</if>
+
+									</tr>
+								</tbody>
+							</table>
+
+							<div class="page">
+								<p></p>
+							</div>
 						</div>
 					</div>
 				</div>
-            </div>
-        </div>
-    </div>
-	<!--content end-->
-		<!-- 引用底部公共部分 -->
- <script type="text/javascript" src="__STATIC__/datepicker/js/jquery.min.js"></script> 
- <script type="text/javascript" src="__STATIC__/datepicker/js/jquery-ui-datepicker.js"></script>  
-
-		<script>
-	$(function() {
-		//样式选中
-		$("#zh_hover").attr('class', 'nav_first');
-		$('#li_2').addClass('on');
-		$('.tabmain').find('li').click(function() {
-			$('.tabmain').find('li').removeClass('on');
-			window.location.href = 'queryFundrecordInit.htm';
+			</div>
+		</div>
+	</div>
+</div>
+<!--content end--> <!-- 引用底部公共部分 --> <script type="text/javascript"
+	src="__STATIC__/datepicker/js/jquery.min.js"></script> <script
+	type="text/javascript"
+	src="__STATIC__/datepicker/js/jquery-ui-datepicker.js"></script> <script>
+		$(function() {
+			//样式选中
+			$("#zh_hover").attr('class', 'nav_first');
+			$('#li_2').addClass('on');
+			$('.tabmain').find('li').click(function() {
+				$('.tabmain').find('li').removeClass('on');
+				window.location.href = 'queryFundrecordInit.htm';
+			});
 		});
-	});
 
-	function jumpUrl(obj) {
-		window.location.href = obj;
-	}
-</script>
- 
-
-<script type="text/javascript">
-$(function(){
- 
-  $("#startTime").datepicker({
-    showOn: "button",
-    buttonImage: "__STATIC__/datepicker/images/calendar.gif",
-    buttonImageOnly: true
-  });
-  $("#endTime").datepicker({
-    showOn: "button",
-    buttonImage: "__STATIC__/datepicker/images/calendar.gif",
-    buttonImageOnly: true
-  });
-});
-</script>
-		<script>
-	function fundRecordList() {
-		if ($("#startTime").val() == "" || $("#endTime").val() == "") {
-			alert("请选择查询日期");
-			return;
-		} else if ($("#startTime").val() > $("#endTime").val()) {
-			alert("结束日期要大于开始日期");
-			return;
+		function jumpUrl(obj) {
+			window.location.href = obj;
 		}
-		param["pageBean.pageNum"] = 1;
-		param["paramMap.startTime"] = $("#startTime").val();
-		param["paramMap.endTime"] = $("#endTime").val();
-		$.shovePost("queryFundrecordList.htm", param, function(data) {
-			$("#fundRecord").html(data);
+	</script> <script type="text/javascript">
+		$(function() {
+
+			$("#startTime").datepicker({
+				showOn : "button",
+				buttonImage : "__STATIC__/datepicker/images/calendar.gif",
+				buttonImageOnly : true
+			});
+			$("#endTime").datepicker({
+				showOn : "button",
+				buttonImage : "__STATIC__/datepicker/images/calendar.gif",
+				buttonImageOnly : true
+			});
 		});
-	}
-
-	function addRechargeInfo() {
-		if ($("#money").val() == "") {
-			$("#money_tip").html("请输入充值金额");
-			return;
-		} else if (!/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/
-				.test($("#money").val())) {
-			$("#money_tip").html("请输入正确的提现金额，必须为大于0的数字");
-			return;
-		} else if ($("#money").val() < 0.01) {
-			$("#money_tip").html("最小金额不能低于0.01");
-			return;
-		} else {
-			$("#money_tip").html("");
+	</script> <script>
+		function fundRecordList() {
+			if ($("#startTime").val() == "" || $("#endTime").val() == "") {
+				alert("请选择查询日期");
+				return;
+			} else if ($("#startTime").val() > $("#endTime").val()) {
+				alert("结束日期要大于开始日期");
+				return;
+			}
+			param["pageBean.pageNum"] = 1;
+			param["paramMap.startTime"] = $("#startTime").val();
+			param["paramMap.endTime"] = $("#endTime").val();
+			$.shovePost("queryFundrecordList.htm", param, function(data) {
+				$("#fundRecord").html(data);
+			});
 		}
 
-		if (!window.confirm("确定进行帐户充值")) {
-			return;
-		}
-		var money = $("#money").val();
-		window.open("alipayPayment.htm?divType=li_2&money=" + money);
+		function addRechargeInfo() {
+			if ($("#money").val() == "") {
+				$("#money_tip").html("请输入充值金额");
+				return;
+			} else if (!/^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$/
+					.test($("#money").val())) {
+				$("#money_tip").html("请输入正确的提现金额，必须为大于0的数字");
+				return;
+			} else if ($("#money").val() < 0.01) {
+				$("#money_tip").html("最小金额不能低于0.01");
+				return;
+			} else {
+				$("#money_tip").html("");
+			}
 
-		/*param["paramMap.money"] = $("#money").val();
-		$.shovePost("addRechargeInfo.htm",param,function(data){
-		   if(data == 0){
-		      alert("充值失败");
-		      return ;
-		   }
-		   alert("充值成功");
-		   $("#money").attr("value","");
-		   $("#rechargeInfo").html(data);
-		});*/
-	}
-</script>
-</block>
+			if (!window.confirm("确定进行帐户充值")) {
+				return;
+			}
+			var money = $("#money").val();
+			window.open("alipayPayment.htm?divType=li_2&money=" + money);
+
+			/*param["paramMap.money"] = $("#money").val();
+			$.shovePost("addRechargeInfo.htm",param,function(data){
+			   if(data == 0){
+			      alert("充值失败");
+			      return ;
+			   }
+			   alert("充值成功");
+			   $("#money").attr("value","");
+			   $("#rechargeInfo").html(data);
+			});*/
+		}
+	</script> </block>
