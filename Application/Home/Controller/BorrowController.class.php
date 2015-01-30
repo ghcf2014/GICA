@@ -15,32 +15,9 @@ class BorrowController extends HomeController {
 		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
-		$applymsg =M('z_borrow_apply');
-		//查询是否存在申请记录
-		$result=$applymsg->where('apply_uid=%s',$uid)->select();
-		if (is_array($result)==false){
-			//没有申请记录跳转至申请页面
-			$this->redirect('Borrow/borrowapply');
-		}else {
-			//查询没有通过的申请
-			$data=$applymsg->where('status=1 and apply_uid=%s',$uid)->select();
-			if (is_array($data)==false){
-				$waited=$applymsg->where('status=0 and apply_uid=%s',$uid)->select();
-				if (is_array($waited)==true){
-					$this->error('您的申请正在审核中，请耐心等待',U('Member/Borrow/checkingapply'));
-				}else {
-					$failed=$applymsg->where('status=2 and apply_uid=%s',$uid)->select();
-					if (is_array($failed)==true){
-					$this->error('您的申请没有通过，请重新申请',U('Borrow/borrowapply'));
-					}else{
-						$this->redirect('Borrow/borrowapply');
-					}
-				}
-				
-			}
-		}
+
 		$this->assign ( 'session', $session );
-		$this->display ();
+		$this->redirect('Home/Borrow/borrowapply');
 	}
 	//
 	public function papersinfo() {
@@ -109,7 +86,7 @@ class BorrowController extends HomeController {
 		$model=M('z_borrow_apply');
 		$result=$model->add($data);
 		if ($result>0){
-			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Index/index'));
+			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Borrow/checkingapply'));
 		}else {
 			$this->error("信息提交失败，请重新核对信息！");
 		}
@@ -242,7 +219,18 @@ class BorrowController extends HomeController {
 		// 保存当前数据对象
 		if ($this->borrow_upload ( $depict )) { // 保存成功
 		                                        // 成功提示add_time
-			$this->success ( L ( '发布审核已提交' ), U ( 'Home/Borrow/index' ) );
+			$uid=is_login();
+			$arrs=array(
+				'status'=>3
+				);
+			$applydata =M('z_borrow_apply');
+			$result=$applydata->where('apply_uid=%s',$uid)->save($arrs);
+			if ($result>0){
+				$this->success ( L ( '发布审核已提交' ), U ( 'Home/Borrow/index' ) );
+			} else {
+				$this->error('申请数据提交失败');
+			}
+			
 		} else {
 			// 失败提示
 			$this->error ( L ( '发布失败' ) );
