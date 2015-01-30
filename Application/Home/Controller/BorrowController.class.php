@@ -17,7 +17,7 @@ class BorrowController extends HomeController {
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
 
 		$this->assign ( 'session', $session );
-		$this->redirect('Home/Borrow/borrowapply');
+		$this->display();
 	}
 	//
 	public function papersinfo() {
