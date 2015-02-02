@@ -25,15 +25,16 @@ function is_login() {
 /**敏感操作提醒
 *提示用户为敏感信息操作
 */
-function is_danger(){
-	//系统敏感操作提示消息
-	$uid=$_SESSION[gica_home]['user_auth']['uid'];
-    $danger =M('z_system_msg')->where("status=0 and uid=%s",$uid)->select();
-	if (!empty($danger)){
-		return true;
-	}else{
-		return false;
-	}
+function is_sysmsg(){
+    $uid=$_SESSION[gica_home]['user_auth']['uid'];
+    $sys_count =M('z_system_msg')->where("status=0 and uid=%s",$uid)->count();
+    $email_count =M('z_inner_msg')->where("status=0 and tid=%s",$uid)->count();
+    $allcount =($sys_count+$email_count);
+    if ($allcount>0){
+    	return $allcount;
+    }else {
+    	return 0;
+    }
 }
 /**
  * 检测当前用户是否为管理员

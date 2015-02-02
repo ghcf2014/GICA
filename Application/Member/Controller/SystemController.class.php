@@ -97,6 +97,9 @@ class SystemController extends MemberController {
     public function usermailindex(){
         $sendname=$_SESSION["gica_home"]["user_auth"]['username'];
         $uid=is_login();
+        $uid=$_SESSION[gica_home]['user_auth']['uid'];
+        $counts =M('z_inner_msg')->where("status=0 and tid=%s",$uid)->count();
+        $syscount =M('z_system_msg')->where("status=0 and uid=%s",$uid)->count();
 		//系统敏感操作提示消息
 		$uid=$_SESSION[gica_home]['user_auth']['uid'];
    		$danger =M('z_system_msg')->where("uid=%s",$uid)->order(array("status=0 desc","add_time desc"))->select();
@@ -106,12 +109,10 @@ class SystemController extends MemberController {
         $receive=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.uid = profile.uid and stats.tid=%s',$uid)->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time,stats.msg as msg, profile.nickname as postname')->order('stats.tid desc' )->select();
         //发件箱
         $post=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.uid=%s',$uid)->field('stats.id as id, stats.title as title,stats.send_time as send_time, profile.nickname as recvname')->order('stats.tid desc' )->select();
-        //系统消息
-        $sysdata=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.tid=1')->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time, profile.nickname as sysname')->order('stats.tid desc' )->select();
-		
+        $this->assign('counts',$counts);
+        $this->assign('syscount',$syscount);
         $this->assign('receive',$receive);
         $this->assign('post',$post);
-        $this->assign('sysdata',$sysdata);
         $this->assign('sendname',$sendname);
         $this->assign('uid',$uid);
         $this->display();
@@ -161,7 +162,20 @@ class SystemController extends MemberController {
        		$this->error('删除失败！');
        }
     }
-	
+       /*
+		*********删除邮件消息
+    */
+    public function usermailindex_email_del($id=0){
+       $email=M('z_inner_msg');
+       $result=$email->where('id=%s',$id)->delete();
+       if ($result!==null){
+       		$this->redirect('Member/System/usermailindex');
+       } else {
+       		$this->error('删除失败！',U('Member/System/usermailindex'));
+       }
+    }
+
+    	
 	/**
 	 *
 	 * @author liuy
