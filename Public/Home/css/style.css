@@ -466,13 +466,13 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 .zh_cont .zh_cont_r .zh_cont_r_bot{width:892px;padding-left:55px;height:auto;border-bottom:1px dashed #ddd;font-size:16px;}
 .zh_cont .zh_cont_r .zh_cont_r_bot p{width:948px;height:40px;line-height:40px;}
-/*<<<<<<< HEAD*/
+
 .zh_cont .zh_cont_r .zh_cont_r_bot ul{width:948px;height:auto;overflow:hidden;}
 .zh_cont .zh_cont_r .zh_cont_r_bot ul li{width:40%;height:48px;line-height:48px;float:left;margin-right:70px;}
 
 .zh_cont .zh_cont_r .zh_cont_r_bot ul{width:890px;height:auto;overflow:hidden;}
 .zh_cont .zh_cont_r .zh_cont_r_bot ul li{width:245px;height:48px;line-height:48px;float:left;margin-right:70px;}
-/*>>>>>>> origin/master*/
+
 .zh_cont .zh_cont_r .zh_cont_r_bot ul li p{display:inline-block;text-align:right;width:auto;height:48px;}
 .zh_cont .zh_cont_r .last{border-bottom:0;}
 
@@ -725,7 +725,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .tabtil ul li:hover{ text-decoration:underline}
 .tabtil ul .on { line-height: 38px; color: #6ecefb; background-image: url(../images/neiye_menu_on.jpg); background-repeat: repeat-x; }
 .tabbox .tabmain { padding-top: 15px; padding-right: 15px; padding-bottom: 25px; padding-left: 15px; border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; border-right-color: #d1d9de; border-left-color: #d1d9de; }
-.box{width:927px;}
+.box{width:927px;margin: auto;}
 .box  .biaoge { margin-top: 20px; }
 .box  .biaoge table a { color: #136dad; }
 .box  .biaoge table a:hover { color: #00315d; }
@@ -841,7 +841,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .sfz dl dt{float:left;width: 150px;height: 40px;text-align: right;font-size: 16px;font-weight: normal;line-height: 40px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .sfz dl dd{float: left;width: 280px;padding: 5px 0 0 20px;height: 35px;overflow: hidden;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .sfz dl dd .text{width: 195px;height: 33px;line-height:33px;border: 1px solid #ddd;padding: 0 0 0 5px;margin: 0;color: #555;float: left;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .sfz p{color: red;width: 290px;margin: auto;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .sfz p{color: red;width: 330px;margin: auto;font-size: 14px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .sfz .btn{width: 100px;height: 45px;background: url(../images/100x44pxblue.png) no-repeat;margin: 25px 0 0 385px;font-size: 16px;text-shadow: none;font-weight: normal;color:#fff;box-shadow: none;border: none;padding: 0;line-height: 45px;}
 /*-------银行卡---------*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .yhk{width:927px;height:42px;padding-bottom:30px;overflow:hidden;}
