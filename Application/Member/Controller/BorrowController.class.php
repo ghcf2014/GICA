@@ -82,6 +82,7 @@ class BorrowController extends MemberController {
 		// $this->success ('还款成功');
 		$data['msg']='还款成功';
 		$data['money']=$b[0]['repayment_ed_money'];
+		$data['m']=$m;
 		if($result=$borrow_info->where($condition)->save($data)){
 			if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
 		}

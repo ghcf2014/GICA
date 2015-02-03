@@ -58,7 +58,7 @@
 									<td align="center"><input  id="h_{$i}" value="{$bid}" style="display: none;" />{$i}</td>
 									<td align="center">{$ho.time|date='Y-m-d',###}</td>
 									<td align="center"><input  id="h2_{$i}" value="{$ho.lixi}" style="display: none;" />{$ho.lixi}</td>
-									<td align="center"></td>
+									<td align="center"><span id="checktip_{$i}"></span></td>
 									<td align="center">待还</td>
 									<td align="center">
 									<!-- <a href="{:U('Member/Borrow/reimbursement_del?id='.$bid.'&m='.$ho['lixi'])}">立即还款</a> -->
@@ -89,12 +89,115 @@
 <!--content end-->
 
 <script type="text/javascript">
+
 $('.hbtn_1').click(function(){
                var bid = document.getElementById("h_1").value;
                var bid2 = document.getElementById("h2_1").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
-             	alert(data.money);
+
+              document.getElementById('checktip_1').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_2').click(function(){
+               var bid = document.getElementById("h_2").value;
+               var bid2 = document.getElementById("h2_2").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_2').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_3').click(function(){
+               var bid = document.getElementById("h_3").value;
+               var bid2 = document.getElementById("h2_3").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_3').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_4').click(function(){
+               var bid = document.getElementById("h_4").value;
+               var bid2 = document.getElementById("h2_4").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_4').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_5').click(function(){
+               var bid = document.getElementById("h_5").value;
+               var bid2 = document.getElementById("h2_5").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_5').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_6').click(function(){
+               var bid = document.getElementById("h_6").value;
+               var bid2 = document.getElementById("h2_6").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_6').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_7').click(function(){
+               var bid = document.getElementById("h_7").value;
+               var bid2 = document.getElementById("h2_7").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_7').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_8').click(function(){
+               var bid = document.getElementById("h_8").value;
+               var bid2 = document.getElementById("h2_8").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_8').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_9').click(function(){
+               var bid = document.getElementById("h_9").value;
+               var bid2 = document.getElementById("h2_9").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_9').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_10').click(function(){
+               var bid = document.getElementById("h_10").value;
+               var bid2 = document.getElementById("h2_10").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_10').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_11').click(function(){
+               var bid = document.getElementById("h_11").value;
+               var bid2 = document.getElementById("h2_11").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_11').innerHTML =data.m;
+             	// alert(data.money);
+             });
+         });
+$('.hbtn_12').click(function(){
+               var bid = document.getElementById("h_12").value;
+               var bid2 = document.getElementById("h2_12").value;
+               $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
+
+              document.getElementById('checktip_12').innerHTML =data.m;
+             	// alert(data.money);
              });
          });
 </script>
+
 </block>

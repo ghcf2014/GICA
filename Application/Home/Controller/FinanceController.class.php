@@ -172,12 +172,11 @@ class FinanceController extends HomeController {
                         $money=intval ($money[0]['account_money'])-intval ($capital);//余额减掉金额
                         $data1['account_money']=$money;
 
-                        
-
                             if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
 
 
                                         $m2=M("z_borrow_info");
+
                                         $condition2['id'] =$bid;
                                         $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
 
@@ -192,6 +191,50 @@ class FinanceController extends HomeController {
                                             $data3['borrow_status']=4;//标状态改变
                                             $m2=$m2->where($condition2)->save($data3);          
                                         }
+
+
+                                        //投资还款管理表
+                                        $binfo=M("z_borrow_info");
+                                        $bid['id'] =$bid;
+                                        $binfo=$binfo->where($bid)->select();
+
+                                        $iinfo=M("z_borrow_investor");
+                                        $iinfo=$iinfo->where($bid)->order ( 'id desc' )->select();
+
+                                        for($i=1;$i<=$binfo[0]['total'];$i++){
+
+                                            $detail=M("z_investor_detail");
+                                            $detail->repayment_time=$binfo[0]['deadline'];
+                                            $detail->borrow_id=$bid;
+                                            $detail->invest_id=$iinfo[0]['id'];
+                                            $detail->investor_uid=$uid;
+                                            $detail->borrow_uid=$binfo[0]['borrow_uid'];
+                                            $detail->capital=$binfo[0]['borrow_money'];
+                                            $detail->interest=$binfo[0]['repayment_interest'];
+                                            $detail->interest_fee=$b;
+
+                                            $detail->status=$binfo[0]['borrow_status'];
+                                            $detail->receive_interest=$b;
+                                            $detail->receive_capital=$b;
+                                            $detail->sort_order=$i;
+                                            $detail->total=$binfo[0]['total'];
+                                            $detail->deadline=$b;
+                                            $detail->expired_money=$b;
+                                            $detail->expired_days=$b;
+                                            $detail->call_fee=$b;
+                                            $detail->substitute_money=$b;
+                                            $detail->substitute_time=$b;
+                                            $detail=$detail->add();
+
+                                        }
+                                        //投资详情表
+                                        
+
+
+
+
+
+
 
 
                                         //日志
