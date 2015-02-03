@@ -58,16 +58,34 @@ class BorrowController extends MemberController {
 		}
 		// dump($huan);
 
+
+
+		$this->bid =$borrow_info[0]['id'];
 		$this->assign ( 'huan', $huan);
 
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
-	public function reimbursement_del($id=0) {
+	public function reimbursement_del() {
+		$condition ['id'] = $_POST['bid'];
+		$m= $_POST['bid2'];
+		$re = M ( 'z_borrow_info' );
+		$b=$re->where($condition)->select();
 
+		// // $h=$b[0]['repayment_ed_money']+$m;
 
-		$this->success ( L ( '还款成功！' ));
+		$data ['repayment_ed_money'] =(floatval($b[0]['repayment_ed_money'])+floatval($m));
+		$borrow_info =M('z_borrow_info');
 
+		// var_dump($b[0]['repayment_ed_money']);
+
+		// $this->success ('还款成功');
+		$data['msg']='还款成功';
+		$data['money']=$b[0]['repayment_ed_money'];
+		if($result=$borrow_info->where($condition)->save($data)){
+			if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
+		}
+		
 	}
 	public function reimbursement_huan($id=0) {
 		$uid = is_login (); // 获取当前用户UID
@@ -76,7 +94,7 @@ class BorrowController extends MemberController {
 		$condition ['id'] = $id;
 		$borrow_info = $borrow_info->where ( $condition )->select ();
 
-  //       if ($borrow_info[0]["repayment_type"] == 5) {
+        //  if ($borrow_info[0]["repayment_type"] == 5) {
 		// 	$depict ['repayment_interest'] = (intval ( $borrow_info[0]["borrow_money"] ) * (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), intval ( $borrow_info[0]["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] ) - intval ( $_POST ["borrow_money"] );
 		// 	$depict ['repayment_money'] = (intval ( $_POST ["borrow_money"] ) * (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] );
 		// 	$depict ['total'] = $_POST ["borrow_duration"];
