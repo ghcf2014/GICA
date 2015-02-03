@@ -12,10 +12,10 @@
 					<div class="tabtil">
 						<ul>
 							<li class="on" onclick=showSysMails();;>
-								系统消息
+								系统消息<if condition="$syscount eq 0">[0]<else/><span style="color:red;">[{$syscount}]</span></if>
 							</li>
 							<li onclick=showReceiveMails();;>
-								收件箱
+								收件箱<if condition="$counts eq 0">[0]<else/>[<span style="color:red;">{$counts}</span>]</if>
 							</li>
 							<li onclick=showSendMails();;>
 								发件箱
@@ -53,10 +53,10 @@
 								<tr>
 									<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
 									<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
-									<th>系统管理员</th>
-									<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您刚刚<b style="color:red;">{$danger['action']}</b></th>
+									<th>系统消息</th>
+									<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<u>{$danger['add_time']}</u><b style="color:red;">{$danger['action']}</b></th>
 									<th>{$danger['add_time']}</th>
-									<th><a href="#" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
+									<th><a href="{:U('Home/Borrow/detail?add_time='.$danger['add_time'])}" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
 								</tr>
 							  </foreach>
 							  	<else/>
@@ -96,12 +96,11 @@
 									  <foreach name="receive" item="val" > 
 										<tr>
 										  	<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
-										  	<th>{$val['status']}</th>
+										  	<th><if condition="$val['status'] eq 0">未查看<else/>已查看</if></th>
 										  	<th>{$val['postname']}</th>
 										  	<th>{$val['title']}</th>
 										  	<th>{$val['send_time']}</th>
-										  	<th><input name="button" type="button" id="button" value="查看" />|<input type="button" onclick="{if(confirm('确定删除吗?')){window.location='__URL__/usermailindex_del?action=del&tablename=item&id=<%=id%>';return true;}return false;}" value="删除消息" />
-
+										  	<th><input name="button" type="button" id="button" value="查看" />|<a href="{:U('Member/System/usermailindex_email_del?id='.$val['id'])}">删除</a>
 										 
 									  	</tr>
 										<tr id="table" style="display:none;">
