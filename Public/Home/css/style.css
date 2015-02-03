@@ -99,22 +99,22 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .cont .cont_top .cont_top_con dt{width:205px;height:80px;position:relative;}
 
 .cont .cont_top .cont_top_con dt h2{width:205px;height:80px;font-size:20px;font-weight:normal;}
-.cont .cont_top .cont_top_con dt h2 a{display:block;width:130px;height:80px;line-height:70px;background:url(../images/touzil.png) no-repeat;padding:0 0 0 75px;color: #cf000e;}
-.cont .cont_top .cont_top_con dt h2 a:hover{display:block;width:130px;height:80px;padding:0 0 0 75px;-ms-transform: scale(1.05,1.05);-moz-transform: scale(1.05,1.05);-webkit-transform: scale(1.05,1.05);}
+.cont .cont_top .cont_top_con dt h2 a{display:block;width:130px;height:80px;line-height:70px;background:url(../images/touzil.png) no-repeat 0 2px;padding:0 0 0 75px;color: #cf000e;}
+.cont .cont_top .cont_top_con dt h2 a:hover{display:block;width:130px;height:80px;padding:0 0 0 75px;-ms-transform: scale(1.03,1.03);-moz-transform: scale(1.03,1.03);-webkit-transform: scale(1.03,1.03);}
 .cont .cont_top .cont_top_con dt p{font-size:14px;font-weight:normal;line-height:22px;position:absolute;left:75px;top:45px;}
 .cont .cont_top .cont_top_con dd{width:210px;height:145px;line-height:24px;padding-top:15px;}
 
 .cont .cont_top .cont_top_con .rongzi dt{width:205px;}
-.cont .cont_top .cont_top_con .rongzi dt a{width:130px;background:url(../images/icons.png) no-repeat 0 0;color: #faa142;}
+.cont .cont_top .cont_top_con .rongzi dt a{width:130px;background:url(../images/icons.png) no-repeat 0 2px;color: #faa142;}
 .cont .cont_top .cont_top_con .rongzi dt a:hover{width:130px;}
 
 
 .cont .cont_top .cont_top_con .safety dt{width:205px;}
-.cont .cont_top .cont_top_con .safety dt a{width:130px;background:url(../images/icons.png) no-repeat 0 -83px;color: #66ccfb;}
+.cont .cont_top .cont_top_con .safety dt a{width:130px;background:url(../images/icons.png) no-repeat 0 -81px;color: #66ccfb;}
 .cont .cont_top .cont_top_con .safety dt a:hover{width:130px;}
 
 .cont .cont_top .cont_top_con .helpCenter{margin-right:0;width:210px;}
-.cont .cont_top .cont_top_con .helpCenter dt a{width:130px;background:url(../images/bangzhub.png) no-repeat;color: #95ff95;}
+.cont .cont_top .cont_top_con .helpCenter dt a{width:130px;background:url(../images/bangzhub.png) no-repeat 0 2px;color: #95ff95;}
 .cont .cont_top .cont_top_con .helpCenter dt a:hover{width:130px;}
 
 
@@ -1076,16 +1076,16 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl{overflow: hidden;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dt{float: left;width: 30%;text-align: right;font-size: 16px;font-weight:normal;height: auto;line-height: 40px;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dd{float: right;width: 67%;height: auto;}
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt{border: 1px solid #ddd;height: 28px;margin: 5px 0;width: 67%;padding-left: 5px;line-height: 28px;}
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd select{float: left;width:28%;margin:5px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt{border: 1px solid #ddd;height: 28px;margin: 5px 0;width: 75%;padding-left: 5px;line-height: 28px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd select{float: left;width:25%;margin:5px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
 
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd textarea{resize: none;width:67%;height:auto;min-height:100px;border: 1px solid #ddd;padding-left: 5px;line-height: 22px;font-size: 14px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd textarea{resize: none;width:75%;height:auto;min-height:100px;border: 1px solid #ddd;padding-left: 5px;line-height: 22px;font-size: 14px;}
 
-.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt2{border: 1px solid #ddd;height: 28px;margin: 5px 2% 0 0;width: 67%;padding-left: 5px;line-height: 28px;float: left;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .txt2{border: 1px solid #ddd;height: 28px;margin: 5px 2% 0 0;width: 58%;padding-left: 5px;line-height: 28px;float: left;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .borrow{float: left;width:35%;margin:9px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dd .date{float: left;width:15%;margin:9px 2% 5px 0;border: 1px solid #ddd;height: 28px;}
 
-.sqjk_cont .sqjk_cont_bot .tjsqjk .btn{width: 25%;height: 35px;background:#0597D9;border-radius: 3px;color: #fff;font-size: 16px;margin: 5% 38% 0;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk .btn{width: 25%;height: 35px;background:#0597D9;border-radius: 3px;color: #fff;font-size: 16px;margin: 5% 0 0 47%;}
 
 
 
