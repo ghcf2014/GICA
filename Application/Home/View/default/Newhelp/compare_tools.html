@@ -10,13 +10,14 @@
 		</div>
 		<div class="content_post">
 			<div class="bid-opt">
-				<ul class="items">
-					<li class="txt">投入金额：</li>
-					<li><input type="text" class="input" id="borrowSum" /> <label>
-							元 </label> <span id="" class="tip error" style="display: none;"><i
-							class="icons reg-error"></i><font color="red">该数值须为不小于200元的整数</font></span></li>
-				</ul>
-				<div class="clearfix" style="display: block">
+				
+				<div class="clearfix" style="display: block;overflow: hidden;">
+					
+					<ul class="items">
+						<li class="txt">投入金额：</li>
+						<li><input type="text" class="input" id="borrowSum" /> <label>元 </label> <span id="" class="tip error" style="display: none;"><i class="icons reg-error"></i><font color="red">该数值须为不小于200元的整数</font></span></li>
+					</ul>
+					
 					<ul class="items">
 						<li class="txt">年化利率：</li>
 						<li><input id="yearRate" type="text" class="input" /> <label>
@@ -89,16 +90,17 @@
 					</div>
 					<br /> <span id="showPayTable"></span>
 				</div>
-				<div class="jsqyb_con1" style="margin-top: 60px; display: none;">
-					<h2>收益计算器简介</h2>
-					<p
-						style="width: 327px; height: 140px; margin: auto; line-height: 25px; font-size: 16px; padding: 0 100px;">
-						收益计算器用于计算您在工合财富投资将会获得的收益，理财更加透明高效，固定日还款项目由于计息方式略有不同，具体收益请参见投资后的统计。
-					</p>
-				</div>
+				
 			</div>
 			<div class="clear"></div>
 		</div>
+		<!--收益计算器简介-->
+		<div class="jsqyb_con2" style="margin-top: 60px; ">
+			<div class="jsqyb_con2_img"></div>
+			<h2>收益计算器简介</h2>	
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收益计算器用于计算您在工合财富投资将会获得的收益，理财更加透明高效，固定日还款项目由于计息方式略有不同，具体收益请参见投资后的统计。</p>
+		</div>
+				
 	</div>
 </div>
 <script>
