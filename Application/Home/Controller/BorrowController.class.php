@@ -15,11 +15,35 @@ class BorrowController extends HomeController {
 		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
-
-		$this->assign ( 'session', $session );
-		$this->display();
+		$data=M('z_borrow_apply');
+		//是否有申请
+		$applydata=$data->where('apply_uid=%s',$uid)->select();
+		if (is_array($applydata)==true){
+			//申请已完成
+			$applydata1=$data->where('status=3 and apply_uid=%s',$uid)->select();
+			if (is_array($applydata1)==false){
+				//申请不通过
+				$applydata2=$data->where('status=2 and apply_uid=%s',$uid)->select();
+				if (is_array($applydata2)==false){
+					//申请正在审核中
+					$applydata3=$data->where('status=0 and apply_uid=%s',$uid)->select();
+					if (is_array($applydata3)==false){
+						$this->assign('session',$session);
+						$this->display();
+					}else {
+						$this->error('您的申请正在审核中...',U('Member/Borrow/checkingapply'));
+					}
+				}else{
+					$this->error('您的申请没有通过，请重新申请',U('Home/Borrow/borrowapply'));
+				}
+			}else{
+				$this->error('你的申请已完成，请重新申请',U('Home/Borrow/borrowapply'));
+			}
+		} else {
+			$this->error('对不起，您还没有进行借款申请',U('Home/Borrow/borrowapply'));
+		}	
 	}
-	//
+
 	public function papersinfo() {
 		$uid = is_login ();
 		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );

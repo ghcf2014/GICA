@@ -26,7 +26,7 @@
 				<p style="background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; color: #fff; padding-left: 40px; width: 88%;line-height: 32px;">您必须成为VIP会员后，才能提交正式借款申请。</p>
 			</div>
 			
-			<div class="tjsqjk" onload="setup();preselect('陕西省');promptinfo();">
+			<div class="tjsqjk">
 			<form action="{:U('borrowapply_save')}" method="post">
 				<h2>借款意向</h2>
 				<dl>
@@ -106,6 +106,4 @@
 
 	</div>
 </div>
-<body onload="setup();preselect('广东省');promptinfo();">     
-</body>
 </block>
