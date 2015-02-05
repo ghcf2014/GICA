@@ -9,66 +9,68 @@
             <div class="zh_cont_r">
             	<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">消息中心</span></h3>	
             	<div class="r_main">
-					<div class="tabtil">
-						<ul>
-							<li class="on" onclick=showSysMails();;>
-								系统消息<if condition="$syscount eq 0">[0]<else/><span style="color:red;">[{$syscount}]</span></if>
-							</li>
-							<li onclick=showReceiveMails();;>
-								收件箱<if condition="$counts eq 0">[0]<else/>[<span style="color:red;">{$counts}</span>]</if>
-							</li>
-							<li onclick=showSendMails();;>
-								发件箱
-							</li>
-							<li>
-								发信息
-							</li>
-						</ul>
-					</div>
-					<div class="box">
-						<span id="sysInfo">
-							<div class="boxmain2">
-							          <div class="srh" id="srh">
-							        <input class="scbtn" onclick="delSys();" value="删除" type="button" id="delSys">
-							        <input class="scbtn" onclick="readedSys();" value="标记为已读" type="button" id="readedSys">
-							        <input class="scbtn" onclick="unReadSys();" value="标记为未读" type="button" id="unReadSys">
-							        <a href="javascript:void(0);" class="scbtn" onclick="showUnReadSys();">未读邮件</a>
+            		<div class="mes_con">
+            			<div class="tabtil">
+							<ul>
+								<li class="on" onclick=showSysMails();;>
+									系统消息<if condition="$syscount eq 0">[0]<else/><span style="color:red;">[{$syscount}]</span></if>
+								</li>
+								<li onclick=showReceiveMails();;>
+									收件箱<if condition="$counts eq 0">[0]<else/>[<span style="color:red;">{$counts}</span>]</if>
+								</li>
+								<li onclick=showSendMails();;>
+									发件箱
+								</li>
+								<li>
+									发信息
+								</li>
+							</ul>
+						</div>
+						<div class="box">
+							<span id="sysInfo">
+								<div class="boxmain2">
+					            	<div class="srh" id="srh">
+							        	<input class="scbtn" onclick="delSys();" value="删除" type="button" id="delSys">
+							        	<input class="scbtn" onclick="readedSys();" value="标记为已读" type="button" id="readedSys">
+							        	<input class="scbtn" onclick="unReadSys();" value="标记为未读" type="button" id="unReadSys">
+							        	<a href="javascript:void(0);" class="scbtn" onclick="showUnReadSys();">未读邮件</a>
 							        </div>
-							        <span id="sys_mail_list"><div class="biaoge" id="biaoge">
-							        <input type="hidden" id="curPage" value="1">
-							          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-							  <tbody>
-
-							  <tr>
-							    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
-							    <th>标记</th>
-							    <th>发件人</th>
-							    <th>标题</th>
-							    <th>发送时间</th>
-							    <th>操作</th>
-							  </tr>
-							  <!--系统消息-->
-							  <if condition="$danger neq null">
-							  <foreach name="danger" item="danger" > 
-								<tr>
-									<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
-									<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
-									<th>系统消息</th>
-									<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<u>{$danger['add_time']}</u><b style="color:red;">{$danger['action']}</b></th>
-									<th>{$danger['add_time']}</th>
-									<th><a href="{:U('Home/Borrow/detail?add_time='.$danger['add_time'])}" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
-								</tr>
-							  </foreach>
-							  	<else/>
-							  	<tr><td colspan="10" align="center">暂无信息</td></tr>
-							  	</if>
-									</tbody></table>
-							<div class="page">
-									<p>
-									</p>
-								</div> 
-							          </div></span>
-							           <span id="show_mail"></span> 
+							        <span id="sys_mail_list">
+							        	<div class="biaoge" id="biaoge">
+							        		<input type="hidden" id="curPage" value="1">
+							          		<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							  					<tbody>
+													  <tr>
+													    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
+													    <th>标记</th>
+													    <th>发件人</th>
+													    <th>标题</th>
+													    <th>发送时间</th>
+													    <th>操作</th>
+													  </tr>
+							  						<!--系统消息-->
+							  						<if condition="$danger neq null">
+							  							<foreach name="danger" item="danger" > 
+														<tr>
+															<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
+															<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
+															<th>系统消息</th>
+															<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<u>{$danger['add_time']}</u><b style="color:red;">{$danger['action']}</b></th>
+															<th>{$danger['add_time']}</th>
+															<th><a href="{:U('Home/Borrow/detail?add_time='.$danger['add_time'])}" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
+														</tr>
+							  							</foreach>
+							  						<else/>
+							  							<tr><td colspan="10" align="center">暂无信息</td></tr>
+							  						</if>
+												</tbody>
+							          		</table>
+											<div class="page">
+												<p></p>
+											</div> 
+							          </div>
+							        </span>
+							        <span id="show_mail"></span> 
 							    </div>
 						</span>
 					</div>
@@ -83,15 +85,16 @@
 							    <a href="javascript:void(0);" class="scbtn" onclick="showUnReadReceives();">未读邮件</a>
 							    </div>
 							    <span id="receive_mail_list"><div class="biaoge" id="re_biaoge">
-							      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-									  <tbody><tr> 
-									    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
-									    <th>标记</th>
-									    <th>发件人</th>
-									    <th>标题</th>
-									    <th>发送时间</th>
-									    <th>操 作</th>
-									  </tr>
+							      <table width="98%" border="0" cellspacing="0" cellpadding="0">
+									  <tbody>
+									  	<tr> 
+										    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
+										    <th>标记</th>
+										    <th>发件人</th>
+										    <th>标题</th>
+										    <th>发送时间</th>
+										    <th>操 作</th>
+									  	</tr>
 									  <!--收件箱信息-->
 									  <foreach name="receive" item="val" > 
 										<tr>
@@ -130,7 +133,7 @@
 							        
 							        </div>
 							        <span id="send_mail_list"><div class="biaoge" id="send_biaoge">
-							          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							          <table width="98%" border="0" cellspacing="0" cellpadding="0">
 							     	<tbody><tr> 
 									    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
 									    <th>收件人</th>
@@ -169,7 +172,7 @@
 								        <div class="boxmain2">
 								        <div class="biaoge2">
 								    <form method="post" action="{:U('Member/System/usermailindex_add')}">
-									  	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									  	<table width="98%" border="0" cellspacing="0" cellpadding="0">
 											  <tbody>
 												  <tr> 
 												    <td width="11%">发件人：</td>
@@ -212,8 +215,10 @@
 								    </div>
 								</div>
 					<jsp:include page="usersendmail.jsp"></jsp:include>
+            		</div>
+					
             	
-            </div>
+            	</div>
             </div>
         </div>
     </div>

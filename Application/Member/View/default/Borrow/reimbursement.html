@@ -5,11 +5,12 @@
 
 		<include file="Public/left" />
 		<div class="zh_cont_r">
-			<h3 style="border-bottom: 1px solid #ddd;">
+			<h3>
 				当前位置 > <span style="color: #D41010;">我的还款</span>
 			</h3>
 			<div class="r_main">
-				<div class="tabtil">
+				<div class="mes_con">
+									<div class="tabtil">
 					<ul>
 						<li id="lab_1" class="on"><a href="javascript:void(0);">我要还款</a></li>
 						<li id="lab_1" ><a href="{:U('Member/Borrow/myborrowmanager')}">返回</a></li>
@@ -40,10 +41,15 @@
 									<a href="javascript:void(0);" id="search" class="scbtn"> 搜索</a>
 								</form>
 							</div> -->
+<<<<<<< HEAD
 						<div class="biaoge"><volist name="list1" id="vo" key="i">
 						<h2 style="text-align: center;">【{$vo.borrow_name}】</h2>
+=======
+						<div class="biaoge"><volist name="list" id="vo" key="i">
+						<h2 style="text-align: center;font-weight: normal;font-size: 18px;">【{$vo.borrow_name}】</h2>
+>>>>>>> origin/master
 						</volist>
-							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<table width="98%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
 									<th>期号</th>
 									<th>还款时间</th>
@@ -82,6 +88,8 @@
 						</div>
 					</div>
 				</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
