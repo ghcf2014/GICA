@@ -5,9 +5,10 @@
 		
 		<include file="Public/left" />
 		<div class="zh_cont_r">
-			<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">我的投资</span></h3>
+			<h3>当前位置 > <span style="color:#D41010;">投资记录</span></h3>
 			<div class="r_main">
-				<div class="tabtil">
+				<div class="mes_con">
+					<div class="tabtil">
 					<ul>
 						<li id="lab_1" class="on"><a href="{:U('Member/Invest/investindex')}">我的投资</a></li>
 						<li id="lab_2">
@@ -46,7 +47,7 @@
 								</form>
 							</div> -->
 						<div class="biaoge">
-							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<table width="98%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
 									<th>借款人</th>
 									<th>标题</th>
@@ -92,6 +93,8 @@
 						</div>
 					</div>
 				</div>
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -355,6 +358,25 @@ $('.xiangqing_10').click(function(){
 // 	});
 
 //  }); 
+
+
+
+
+//显示当前位置   class="on"
+var urlstr = location.href;
+  		//alert((urlstr + '/').indexOf($(this).attr('href')));
+  		var urlstatus=false;
+ 		$(".tabtil ul li a").each(function (index,element) {
+    		if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href')!='') {
+      			$(element).parent().addClass('on'); 
+      			urlstatus = true;
+
+    		} 
+    		else {
+      			$(element).parent().removeClass('on');
+    		}
+  		});
+  		if (!urlstatus) {$(".tabtil ul li").eq(0).addClass('on'); }
 
 
 </script>
