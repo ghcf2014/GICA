@@ -792,23 +792,24 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*我的账户内页*/
-.tabtil {width:927px; height: 38px; background: url(../rzg_images/neiye1_133.jpg) repeat-x;}
+.mes_con{width: 893px;height: auto;min-height: 1091px;background: #fff;border: 1px solid #ddd;margin-top: 5px;}
+.tabtil {width:893px; height: 38px; background: url(../rzg_images/neiye1_133.jpg) repeat-x;}
 .tabtil ul{overflow:hidden;}
 .tabtil ul li { font-family: "微软雅黑"; font-size: 18px; line-height: 38px; color: #333; float: left;padding:0 20px; cursor: pointer; }
 .tabtil ul li:hover{ text-decoration:underline}
 .tabtil ul .on { line-height: 38px; color: #6ecefb; background-image: url(../images/neiye_menu_on.jpg); background-repeat: repeat-x; }
 .tabbox .tabmain { padding-top: 15px; padding-right: 15px; padding-bottom: 25px; padding-left: 15px; border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; border-right-color: #d1d9de; border-left-color: #d1d9de; }
-.box{width:927px;margin: auto;}
+.box{width:893px;margin: auto;}
 .box  .biaoge { margin-top: 20px; }
 .box  .biaoge table a { color: #136dad; }
 .box  .biaoge table a:hover { color: #00315d; }
 
-.box  .biaoge table { line-height: 28px; }
+.box  .biaoge table { line-height: 28px; margin: auto;}
 .box  .biaoge table tr td { border: 1px solid #ddd; }
 .box  .biaoge table tr th { background-color: #f9f9f9; border: 1px solid #ddd; font-weight: normal; }
 .box .otherh2x {width:932px;  font-family: "微软雅黑"; font-size: 16px; color: #333; padding-left: 15px; text-align: left; }
 /*搜索*/
-.box .jkjl_search{width: 325px;height: 50px;padding-left: 600px;}
+.box .jkjl_search{width: 325px;height: 50px;padding-left: 565px;}
 .box .jkjl_search .search{float: left;width: 90px;height: 30px;margin: 10px 10px;}
 .box .jkjl_search .search_cont{float: left;width: auto;height: 30px;margin: 10px 0;}
 .box .jkjl_search .search_cont .search_type{width: 120px;}
@@ -819,8 +820,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 .box .boxmain2 { /*padding-top: 20px;*/ padding-bottom: 25px; }
 .box .boxmain2 .srh { line-height: 32px; margin-bottom: 12px; }
-.box .boxmain2 .srh input{width:140px; vertical-align: middle}
-.box .boxmain2 .srh a{ vertical-align: middle}
+.box .boxmain2 .srh input{width:140px; vertical-align: middle;height: 30px;border-radius: 3px;background: #ddd;margin: 0 5px;}
+.box .boxmain2 .srh a{ vertical-align: middle;margin: 0 5px;text-decoration: underline;}
 .cxbtn { line-height: 18px; color: #333; background-image: url(../rzg_images/030213_3.jpg); background-repeat: repeat-x; text-align: center; display: inline-block; height: 18px; width: 58px; border: 1px solid #ccc; }
 .cxbtn:hover { color: #000; }
 .box .boxmain2 .tips { line-height: 24px; background: #fffcf7; padding-top: 5px; padding-right: 20px; padding-bottom: 5px; padding-left: 20px; margin-bottom: 15px; }
