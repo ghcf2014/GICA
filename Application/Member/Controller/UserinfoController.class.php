@@ -66,7 +66,7 @@ class UserinfoController extends MemberController {
 		$data ['add_time'] = time;
 		$data ['add_ip'] = '';
 		$condition ['uid'] = $uid;
-		var_dump ( $_POST ['bankCard'] );
+		// var_dump ( $_POST ['bankCard'] );
 		$banksinfo = $m->where ( "uid=" . $uid )->select ();
 		// 如果没有银行卡，添加银行卡信息
 		if ($banksinfo == null) {

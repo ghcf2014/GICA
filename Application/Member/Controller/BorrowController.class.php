@@ -27,62 +27,131 @@ class BorrowController extends MemberController {
 		$this->display ();
 	}
 	public function reimbursement($id=0) {
-		$uid = is_login (); // 获取当前用户UID
-		$borrow_info = M ( 'z_borrow_info' );
-		$condition ['borrow_uid'] = $uid;
-		$condition ['id'] = $id;
+		// $uid = is_login (); // 获取当前用户UID
+		// $borrow_info = M ( 'z_borrow_info' );
+		// $condition ['borrow_uid'] = $uid;
+		// $condition ['id'] = $id;
 
-		$borrow_info = $borrow_info->where ( $condition )->select ();
+		// $borrow_info = $borrow_info->where ( $condition )->select ();
 
 
-		if ($borrow_info[0]["repayment_type"] == 5) {
-	        for($i=1;$i<=intval ($borrow_info[0]['total']);$i++){
+		// if ($borrow_info[0]["repayment_type"] == 5) {
+	 //        for($i=1;$i<=intval ($borrow_info[0]['total']);$i++){
 
-	        	$huan[$i]['lixi'] =round(doubleval($borrow_info[0]["repayment_money"])/intval ($borrow_info[0]['total']),2);
-	        	// $huan[$i]['yingxi'] =((intval ( $borrow_info[0]["borrow_money"] ) * (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), $i ) / (pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), $i ) - 1)) * $i - intval ( $borrow_info[0]["borrow_money"] ));
-	        	$huan[$i]['yubenxi'] = round(doubleval($borrow_info[0]["repayment_money"])-((doubleval($borrow_info[0]["borrow_money"]) * (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), doubleval( $borrow_info[0]['total']) ) / (pow ( (1 + (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), doubleval($borrow_info[0]['total']) ) - 1)) * $i),2);
+	 //        	$huan[$i]['lixi'] =round(doubleval($borrow_info[0]["repayment_money"])/intval ($borrow_info[0]['total']),2);
+	 //        	// $huan[$i]['yingxi'] =((intval ( $borrow_info[0]["borrow_money"] ) * (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), $i ) / (pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), $i ) - 1)) * $i - intval ( $borrow_info[0]["borrow_money"] ));
+	 //        	$huan[$i]['yubenxi'] = round(doubleval($borrow_info[0]["repayment_money"])-((doubleval($borrow_info[0]["borrow_money"]) * (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), doubleval( $borrow_info[0]['total']) ) / (pow ( (1 + (doubleval( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), doubleval($borrow_info[0]['total']) ) - 1)) * $i),2);
 
-	        	$t=$i;
-	        	$huan[$i]['time'] =strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$borrow_info[0]["add_time"].'').''));
-	        }
+	 //        	$t=$i;
+	 //        	$huan[$i]['time'] =strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$borrow_info[0]["add_time"].'').''));
+	 //        }
+		// }
+  	 //       if ($borrow_info[0]["repayment_type"] == 6) {
+	 //        for($i=1;$i<=intval ($borrow_info[0]['total']);$i++){
+		// 		// $huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
+		// 		$huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )/intval ($borrow_info[0]['total']);
+		// 		$t=$i+1;
+		// 		$huan[$i]['time'] =strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$borrow_info[0]["add_time"].'').''));
+
+
+		// 		$huan[$i]['has_pay'] =2;
+		// 		 // date('Y-m-d',strtotime('+1 d',strtotime('2009-07-08')));
+		// 	}
+		// 	$huan[1]['lixi'] =intval ($huan[0]['lixi'])+intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
+		// }
+		// // dump($huan);
+
+
+
+		// $this->bid =$borrow_info[0]['id'];
+		// $this->assign ( 'huan', $huan);
+		// $this->assign ( 'list', $borrow_info );
+
+		$uid = is_login (); 
+		$detail = M ( 'z_investor_detail');
+		$condition ['borrow_id'] = $id;
+		$detail= $detail->where ( $condition )->select ();
+		// $condition ['sort_order'] = 1;
+		// $detail = $detail->where ( $condition )->select ();
+
+		for($i=1;$i<=intval($detail[0]['total']);$i++){
+			
+			$detail1 = M ('z_investor_detail');
+			$condition1 ['sort_order'] = $i;
+		    $condition1 ['borrow_id'] = $id;
+		    $dd[$i]= $detail1->field ( 'id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital')->where ( $condition1 )->group ( 'sort_order' )->select ();
 		}
-        if ($borrow_info[0]["repayment_type"] == 6) {
-	        for($i=1;$i<=intval ($borrow_info[0]['total']);$i++){
-				// $huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
-				$huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )/intval ($borrow_info[0]['total']);
-				$t=$i+1;
-				$huan[$i]['time'] =strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$borrow_info[0]["add_time"].'').''));
-				 // date('Y-m-d',strtotime('+1 d',strtotime('2009-07-08')));
-			}
-			$huan[1]['lixi'] =intval ($huan[0]['lixi'])+intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
-		}
-		// dump($huan);
 
 
 
-		$this->bid =$borrow_info[0]['id'];
-		$this->assign ( 'huan', $huan);
-
-		$this->assign ( 'list', $borrow_info );
-		$this->display ();
+		// dump($dd);
+		$this->assign('list',$dd);
+		$this->display();
 	}
 	public function reimbursement_del() {
 		$condition ['id'] = $_POST['bid'];
 		$m= $_POST['bid2'];
+		$hi= $_POST['hi'];
 		$re = M ( 'z_borrow_info' );
 		$b=$re->where($condition)->select();
 
-		// // $h=$b[0]['repayment_ed_money']+$m;
-
-		$data ['repayment_ed_money'] =(floatval($b[0]['repayment_ed_money'])+floatval($m));
 		$borrow_info =M('z_borrow_info');
+		for($i=1;$i<=intval ($b[0]['total']);$i++){
+
+		 	if($i==$hi){
+		 		$depict[$i]['has_pay']=$hi;
+
+		 	}
+
+		 }
+
+		$where['id'] =$condition ['id'];
+		// $where['id'] = array('in','1,2,3');
+		$data['receive_capital'] =$m;
+		$data['deadline'] = time();
+		$result=M('z_investor_detail')->where($where)->data($data)->save();
+		$resultinfo=M('z_investor_detail')->where($where)->select();
+
+		//关联borrow_info数据
+		$bwhere['id'] =$resultinfo[0]['borrow_id'];
+		$binfo =M('z_borrow_info')->where($bwhere)->select();
+		$bdata['has_pay'] =intval($binfo[0]['has_pay'])+1;
+		$bresult=M('z_borrow_info')->where($bwhere)->data($bdata)->save();
+
+
+		$data ['has_pay'] = serialize ($depict);
+		$data ['repayment_ed_money'] =(floatval($b[0]['repayment_ed_money'])+floatval($m));
 
 		// var_dump($b[0]['repayment_ed_money']);
 
 		// $this->success ('还款成功');
+
+		//2015-2-3
+		// foreach ( $fileinfo as $vo ) {
+		// 	$data [$i] ['updata'] = $vo ['savepath'] . $vo ['savename'];
+		// 	$i ++;
+		// }
+
+
+		// for($i=0;$i<=$stcount;$i++)
+  //       {
+  //          $p1=$st[$i]['id'];
+  //          $pp.=$p1.',';
+  //       }
+  //       $pp=rtrim($pp, ",");
+
+		// $b[0]['repayment_ed_money']+$_POST['bid']
+
+		// $data ['has_pay'] =;
+		// $depict ['updata'] = serialize ( $data );
+
+
+		$data['deadline']=$result[0]['deadline'];
+        $data['m']=$result[0]['receive_capital'];
 		$data['msg']='还款成功';
 		$data['money']=$b[0]['repayment_ed_money'];
-		$data['m']=$m;
+		
+		$data['bid']=$_POST['bid'];
 		if($result=$borrow_info->where($condition)->save($data)){
 			if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
 		}

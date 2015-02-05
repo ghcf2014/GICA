@@ -40,7 +40,7 @@
 									<a href="javascript:void(0);" id="search" class="scbtn"> 搜索</a>
 								</form>
 							</div> -->
-						<div class="biaoge"><volist name="list" id="vo" key="i">
+						<div class="biaoge"><volist name="list1" id="vo" key="i">
 						<h2 style="text-align: center;">【{$vo.borrow_name}】</h2>
 						</volist>
 							<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -53,18 +53,19 @@
 									<th>操作</th>
 
 								</tr>
-								<volist name="huan" id="ho" key="i">
+                <form>
+								<volist name="list" id="ho" key="i">
 								<tr>
-									<td align="center"><input  id="h_{$i}" value="{$bid}" style="display: none;" />{$i}</td>
-									<td align="center">{$ho.time|date='Y-m-d',###}</td>
-									<td align="center"><input  id="h2_{$i}" value="{$ho.lixi}" style="display: none;" />{$ho.lixi}</td>
-									<td align="center"><span id="checktip_{$i}"></span></td>
-									<td align="center">待还</td>
+									<td align="center"><input  id="h_{$i}" value="{$ho[0]['id']}" style="display: none;" />{$i}</td>
+									<td align="center">{$ho[0]['repayment_time']|date='Y-m-d',###}</td>
+									<td align="center"><input  id="h2_{$i}" value="{$ho[0]['capital']}" style="display: none;" />{$ho[0]['capital']}</td>
+									<td align="center"><span id="checktip_{$i}">{$ho[0]['receive_capital']}</span></td>
+									<td align="center"><if condition="$ho[0]['deadline'] eq '0' "><a id="deadline_{$i}">待还</a><else/>已还</if></td>
 									<td align="center">
 									<!-- <a href="{:U('Member/Borrow/reimbursement_del?id='.$bid.'&m='.$ho['lixi'])}">立即还款</a> -->
-									 <a href="javascript:void(0);" class="hbtn_{$i}">立即还款</a></td>
-								</volist>
-								</tr>
+									 <a href="javascript:void(0);" id="hbtn_{$i}" class="hbtn_{$i}"><if condition="$ho[0]['deadline'] eq '0' ">立即还款</if></a></td>
+								
+								</tr></volist></form>
 								<tr>
 								<if condition="$i eq null">
 									<td align="center" colspan="10">亲！你还没成功借过款哦。</td>
@@ -95,8 +96,14 @@ $('.hbtn_1').click(function(){
                var bid2 = document.getElementById("h2_1").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_1').innerHTML =data.m;
-             	// alert(data.money);
+              document.getElementById('checktip_1').innerHTML ='<a href="">手动刷新</a>';
+
+               if(data.deadline != 0){
+                document.getElementById('deadline_1').innerHTML ='已还';
+                document.getElementById('hbtn_1').innerHTML ='';
+              }
+              
+             	alert(data.cs);
              });
          });
 $('.hbtn_2').click(function(){
@@ -104,7 +111,11 @@ $('.hbtn_2').click(function(){
                var bid2 = document.getElementById("h2_2").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_2').innerHTML =data.m;
+               document.getElementById('checktip_2').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_2').innerHTML ='已还';
+                document.getElementById('hbtn_2').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -113,7 +124,11 @@ $('.hbtn_3').click(function(){
                var bid2 = document.getElementById("h2_3").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_3').innerHTML =data.m;
+               document.getElementById('checktip_3').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_3').innerHTML ='已还';
+                document.getElementById('hbtn_3').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -122,7 +137,11 @@ $('.hbtn_4').click(function(){
                var bid2 = document.getElementById("h2_4").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_4').innerHTML =data.m;
+               document.getElementById('checktip_4').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_4').innerHTML ='已还';
+                document.getElementById('hbtn_4').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -131,7 +150,11 @@ $('.hbtn_5').click(function(){
                var bid2 = document.getElementById("h2_5").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_5').innerHTML =data.m;
+               document.getElementById('checktip_5').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_5').innerHTML ='已还';
+                document.getElementById('hbtn_5').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -140,7 +163,11 @@ $('.hbtn_6').click(function(){
                var bid2 = document.getElementById("h2_6").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_6').innerHTML =data.m;
+               document.getElementById('checktip_6').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_6').innerHTML ='已还';
+                document.getElementById('hbtn_6').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -149,7 +176,11 @@ $('.hbtn_7').click(function(){
                var bid2 = document.getElementById("h2_7").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_7').innerHTML =data.m;
+               document.getElementById('checktip_7').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_7').innerHTML ='已还';
+                document.getElementById('hbtn_7').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -158,7 +189,11 @@ $('.hbtn_8').click(function(){
                var bid2 = document.getElementById("h2_8").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_8').innerHTML =data.m;
+               document.getElementById('checktip_8').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_8').innerHTML ='已还';
+                document.getElementById('hbtn_8').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -167,7 +202,11 @@ $('.hbtn_9').click(function(){
                var bid2 = document.getElementById("h2_9").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_9').innerHTML =data.m;
+               document.getElementById('checktip_9').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_9').innerHTML ='已还';
+                document.getElementById('hbtn_9').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -176,7 +215,11 @@ $('.hbtn_10').click(function(){
                var bid2 = document.getElementById("h2_10").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_10').innerHTML =data.m;
+               document.getElementById('checktip_10').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_10').innerHTML ='已还';
+                document.getElementById('hbtn_10').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -185,7 +228,11 @@ $('.hbtn_11').click(function(){
                var bid2 = document.getElementById("h2_11").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_11').innerHTML =data.m;
+               document.getElementById('checktip_11').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_11').innerHTML ='已还';
+                document.getElementById('hbtn_11').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
@@ -194,7 +241,11 @@ $('.hbtn_12').click(function(){
                var bid2 = document.getElementById("h2_12").value;
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
-              document.getElementById('checktip_12').innerHTML =data.m;
+               document.getElementById('checktip_12').innerHTML ='<a href="">手动刷新</a>';
+               if(data.deadline != 0){
+                document.getElementById('deadline_12').innerHTML ='已还';
+                document.getElementById('hbtn_12').innerHTML ='';
+              }
              	// alert(data.money);
              });
          });
