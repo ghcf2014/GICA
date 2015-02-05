@@ -5,7 +5,7 @@
 		<include file="Public/left" />
 		<div class="zh_cont_r">
 			<h3>当前位置 > <span style="color: #D41010;">账户详情</span></h3>
-			<dl style="border-bottom: 1px solid #ddd;padding-bottom: 10px;">
+			<dl style="padding-bottom: 10px;">
 				<dt>
 					<div class="img">
 						<volist name="list3" id="vo"> <if
@@ -36,13 +36,18 @@
 						登录时间：<span>{$vo.last_login_time|date='Y-m-d H:i:s',###}</span>
 					</p>
 					<p>
-						站内信：<span>（<a href="{:U('System/usermailindex')}"><font
+						站内信：<span>（<a href="{:U('System/usermailindex')}" style="text-decoration: none;"><font
 								color="#66ccfb;">{:is_sysmsg()}</font></a>）
 						</span>条
 					</p>
 					<p>登录IP:<span>{:get_client_ip()}</span></p>
+					<p><a href="javascript:;">充值</a><a href="javascript:;">提现</a><a href="javascript:;">增值服务</a></p>
 					
-					<ul class="ul01">
+					
+				</dd>
+			</dl>
+			
+			<ul class="ul01">
 				<volist name="mstatus" id="ms">
 				<li>认证管理：</li>
 				<li><if condition="$ms.email_status eq 0"> <a
@@ -79,11 +84,6 @@
 						src="__PUBLIC__/Home/images/img/l_vip_pic.jpg" title="VIP已认证" />
 					</a> </if></li></volist>
 			</ul>
-					
-				</dd>
-			</dl>
-			
-
 			<!--<ul class="ul02">
 				<li class="ul02_li01"><a href="javascript:;">会员续费</a></li>
 				<li><a href="{:U('Home/Borrow/index')}">我要借款</a></li>
@@ -94,63 +94,67 @@
 			</ul>-->
 
 			<!-- 账户详情 -->
-			<h4>账户详情：</h4>
-			<if condition="$list neq ''">
-			<div class="zh_cont_r_bot">
-				<volist name="list" id="vo">
-				<ul>
-					<li>账户总额：￥ {$vo.account_money}</li>
-					<li>可用余额：￥ {$vo.account_money}</li>
-				</ul>
-				</volist>
-			</div>
-			<else />
-			<div class="zh_cont_r_bot">
-				<ul>
-					<li>账户总额：￥ 0.00</li>
-					<li>可用余额：￥0.00</li>
-				</ul>
-			</div>
-			</if>
+			<div class="zh_cont_r_con_bot">
+				<h4>账户详情：</h4>
+				<if condition="$list neq ''">
+				<div class="zh_cont_r_bot">
+					<volist name="list" id="vo">
+					<ul>
+						<li>账户总额：￥ {$vo.account_money}</li>
+						<li>可用余额：￥ {$vo.account_money}</li>
+					</ul>
+					</volist>
+				</div>
+				<else />
+				<div class="zh_cont_r_bot">
+					<ul>
+						<li>账户总额：￥ 0.00</li>
+						<li>可用余额：￥0.00</li>
+					</ul>
+				</div>
+				</if>
 
-			<!-- 投资总汇 -->
-			<if condition="$list2 neq ''">
-			<div class="zh_cont_r_bot">
-				<volist name="list2" id="list2">
-				<ul>
-					<li><p>待收总额：￥ {$list2['investor_capital']}</p></li>
-					<li><p>待收本金：￥ {$list2['investor_capital']}</p></li>
-				</ul>
-				</volist>
-			</div>
-			<else />
-			<div class="zh_cont_r_bot">
-				<ul>
-					<li><p>待收总额：￥ 0.00</p></li>
-					<li><p>待收本金：￥ 0.00</p></li>
-				</ul>
+				<!-- 投资总汇 -->
+				<if condition="$list2 neq ''">
+				<div class="zh_cont_r_bot">
+					<volist name="list2" id="list2">
+					<ul>
+						<li><p>待收总额：￥ {$list2['investor_capital']}</p></li>
+						<li><p>待收本金：￥ {$list2['investor_capital']}</p></li>
+					</ul>
+					</volist>
+				</div>
+				<else />
+				<div class="zh_cont_r_bot">
+					<ul>
+						<li><p>待收总额：￥ 0.00</p></li>
+						<li><p>待收本金：￥ 0.00</p></li>
+					</ul>
+	
+				</div>
+				</if>
 
+				<!-- 借款总汇 -->
+				<if condition="$borrow_money neq ''">
+				<div class="zh_cont_r_bot last">
+					<volist name="borrow_money" id="bm">
+					<ul>
+						<li>待还总额：￥ {$bm.borrow_money}</li>
+						<li>待还本金：￥ {$bm.borrow_money}</li>
+					</ul>
+					</volist>
+				</div>
+				<else />
+				<div class="zh_cont_r_bot last">
+					<ul>
+						<li>待还总额：￥0.00</li>
+						<li>待还本金：￥0.00</li>
+					</ul>
+				</div>
+				</if>
 			</div>
-			</if>
-
-			<!-- 借款总汇 -->
-			<if condition="$borrow_money neq ''">
-			<div class="zh_cont_r_bot zh_cont_r_bot last">
-				<volist name="borrow_money" id="bm">
-				<ul>
-					<li>待还总额：￥ {$bm.borrow_money}</li>
-					<li>待还本金：￥ {$bm.borrow_money}</li>
-				</ul>
-				</volist>
-			</div>
-			<else />
-			<div class="zh_cont_r_bot zh_cont_r_bot last">
-				<ul>
-					<li>待还总额：￥0.00</li>
-					<li>待还本金：￥0.00</li>
-				</ul>
-			</div>
-			</if>
+			
+			
 		</div>
 	</div>
 </div>

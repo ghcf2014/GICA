@@ -12,8 +12,8 @@
                 <div class="tab">
                     <form action="{:U('add?id='.$vb['id'])}" method="post">
                         <h3>当前位置 > <span style="color:#D41010;">基本认证</span></h3>
-                        <p style="background:#ddd;width:948px;height:1px;margin-bottom: 20px;"></p>
-                        <dl class="jbrz">
+                        <div class="jbrz_con">
+                        	<dl class="jbrz">
                         	<dt>真实姓名</dt>
                             <dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
                         </dl>
@@ -107,6 +107,8 @@
                         <div class="jbrz_sub_btn">
                         	<input type="submit" class="btn" value="保存"/>
                         </div>
+                        </div>
+                        
                     </form>
                 </div>
                 
