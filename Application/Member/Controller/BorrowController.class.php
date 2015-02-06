@@ -83,9 +83,11 @@ class BorrowController extends MemberController {
 		}
 
 
-
-		// dump($dd);
+        $condition1 ['id'] = $id;
+        $binfo =M('z_borrow_info')->where($condition1)->select();
+		
 		$this->assign('list',$dd);
+		$this->assign('list1',$binfo);
 		$this->display();
 	}
 	public function reimbursement_del() {

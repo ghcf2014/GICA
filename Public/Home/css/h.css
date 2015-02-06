@@ -444,3 +444,34 @@ width:16.6%;
 .page .rows {
     border-right: 1px solid #CCCCCC;
 }
+/*----------------------*/
+
+.panel-body {
+border: 1px solid #f6f6f6;
+border-top: none;
+}
+.panel-body {
+padding-bottom: 18px;
+}
+.panel-body {
+padding: 15px;
+}
+
+.text-item ul li {
+float: left;
+text-align: center;
+overflow: hidden;
+}
+.six-width li {
+width: 16.6%;
+border-bottom: 1px solid #999;
+height: 42px;
+}
+.list-con-count li {
+width: 16.6%;
+height: 50px;
+line-height: 50px;
+float: left;
+text-align: center;
+overflow: hidden;
+}

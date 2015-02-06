@@ -18,36 +18,48 @@
 				</div>
 				<div class="box">
 					<div class="boxmain2">
-						<!-- <div class="srh">
-								<form action="homeBorrowInvestList.htm" id="searchForm">
-									<input type="hidden" name="type" value="${paramMap.type}" />
-									<input type="hidden" name="curPage" id="pageNum" />
-									发布时间：
-									<input type="text" id="publishTimeStart"
-										name="publishTimeStart" value="${paramMap.publishTimeStart }"
-										class="inp90 Wdate"
-										onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})" />
-									到
-									<input type="text" id="publishTimeEnd" name="publishTimeEnd"
-										value="${paramMap.publishTimeEnd }" class="inp90 Wdate"
-										onclick=WdatePicker( {
-		dateFmt : 'yyyy-MM-dd',
-		readOnly : 'readOnly'
-	});
-/>
-									<span style="margin-left: 20px;">关键字：</span>
-									<input id="titles" name="title" value="${paramMap.title }"
-										type="text" maxlength="200" class="inp90" />
-									<a href="javascript:void(0);" id="search" class="scbtn"> 搜索</a>
-								</form>
-							</div> -->
-<<<<<<< HEAD
-						<div class="biaoge"><volist name="list1" id="vo" key="i">
-						<h2 style="text-align: center;">【{$vo.borrow_name}】</h2>
-=======
-						<div class="biaoge"><volist name="list" id="vo" key="i">
+						<div class="biaoge"><volist name="list1" id="vo">
 						<h2 style="text-align: center;font-weight: normal;font-size: 18px;">【{$vo.borrow_name}】</h2>
->>>>>>> origin/master
+
+          <div class="panel-body">
+                <div class="text-item six-width clearfix">
+               <ul>
+                <li>借款金额</li>
+                <li>借款利息</li>
+                <li>借款年化率</li>
+                <li>借款期数</li>
+                <li>已还借款期数</li>
+                <li>借款期限</li>
+               </ul>
+            </div>
+          <div class="list-con-count clearfix">
+               <ul>
+                <li>￥<span class="cn_borrow_count countfont-2">{$vo.borrow_money}</span></li>
+                <li><span class="countfont-2">{$vo.borrow_interest}</span></li>
+                <li>￥<span class="cn_recycle_count countfont-2">{$vo.borrow_interest_rate}</span></li>
+                <li><span class="countfont-2">{$vo.total}</span></li>
+                <li>￥<span class="cn_wait_count countfont-2">{$vo.has_pay}</span></li>
+                <li><span class="countfont-2">{$vo.borrow_duration}</span></li>
+               </ul>
+            </div>
+             <div class="text-item six-width clearfix">
+               <ul>
+                <li>借款类型</li>
+                <li>还款方式</li>
+                <li>还款方式</li>
+               </ul>
+            </div>
+          <div class="list-con-count clearfix">
+               <ul>
+                <li>￥<span class="cn_borrow_count countfont-2">{$vo.borrow_type}</span></li>
+                <li><span class="countfont-2">{$vo.repayment_type}</span></li>
+                <li>￥<span class="cn_recycle_count countfont-2">{$vo.repayment_type}</span></li>
+               </ul>
+            </div>
+            <p style="padding-top: 20px;color: red;">* 被叫停的项目不在统计范围内</p>
+          </div>
+           
+
 						</volist>
 							<table width="98%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
