@@ -22,6 +22,7 @@
 			</div>
 			<!--自动投标内容-->
 			<div class="zdtb_con">
+				<form action="{:U('Invest/autoinvest_save')}" method="post">
 				<dl>
 					<dt>
 						<span>自动投标状态</span><span style="color: red;">*</span>
@@ -35,15 +36,15 @@
 					<dt>
 						<span>账户总额</span><span style="color: red;">*</span>
 					</dt>
-					<dd>￥500,0000</dd>
+					<dd>￥{$money}</dd>
 				</dl>
 				<dl>
 					<dt>
 						<span>账户保留金额</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<!--<span style="color: #333;">￥</span>--><input type="text"
-							class="zdtb_con_txt" value="" />
+						<span style="color: #333;">￥</span><input type="text"
+						class="zdtb_con_txt" value="" name="keep_money"/>
 					</dd>
 				</dl>
 				<dl>
@@ -51,8 +52,23 @@
 						<span>投标金额</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<!--<span style="color: #333;">￥</span>--><input type="text"
-							class="zdtb_con_txt" value="" />
+						<span style="color: #333;">￥</span><input type="text"
+							class="zdtb_con_txt" value="" name="borrow_money" /><span>&nbsp&nbsp&nbsp&nbsp投标金额只能为整数</span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>投标类型</span><span style="color: red;">*</span>
+					</dt>
+					<dd>
+						<select name="tender_type" id="">
+							<option value="0">全部</option>
+							<option value="1">信用标</option>
+							<option value="2">净值标</option>
+							<option value="3">担保标</option>
+							<option value="4">抵押标</option>
+							<option value="5">实地考察标</option>
+						</select>
 					</dd>
 				</dl>
 				<dl>
@@ -60,11 +76,11 @@
 						<span>借款利率</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<input type="text" name="" class="zdtb_con_txt2" value="" /> <span
+						<input type="text" name="apr_first" class="zdtb_con_txt2" value="" /> <span
 							style="color: #333;">%</span> <span
 							style="margin: 0 6px; color: #333;">—</span> <input type="text"
-							name="" class="zdtb_con_txt2" value="" /> <span
-							style="color: #333;">%</span>
+							name="apr_last" class="zdtb_con_txt2" value="" /> <span
+							style="color: #333;">%</span><span>&nbsp&nbsp&nbsp&nbsp投资年利率 6.00% 至 20.00%</span>
 					</dd>
 				</dl>
 				<dl>
@@ -72,17 +88,41 @@
 						<span>借款期限</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<input type="text" name="" class="zdtb_con_txt2" value="" /> <span
-							style="color: #333;">%</span> <span
-							style="margin: 0 6px; color: #333;">—</span> <input type="text"
-							name="" class="zdtb_con_txt2" value="" /> <span
-							style="color: #333;">%</span>
+						<select name="borrow_low_timelimt" id="">
+							<option value="1">1个月</option>
+							<option value="2">2个月</option>
+							<option value="3">3个月</option>
+							<option value="4">4个月</option>
+							<option value="5">5个月</option>
+							<option value="6">6个月</option>
+							<option value="7">7个月</option>
+							<option value="8">8个月</option>
+							<option value="9">9个月</option>
+							<option value="10">10个月</option>
+							<option value="11">11个月</option>
+							<option value="12">12个月</option>
+							<option value="18">18个月</option>
+						</select>-----
+						<select name="borrow_height_timelimt" id="">
+							<option value="1">1个月</option>
+							<option value="2">2个月</option>
+							<option value="3">3个月</option>
+							<option value="4">4个月</option>
+							<option value="5">5个月</option>
+							<option value="6">6个月</option>
+							<option value="7">7个月</option>
+							<option value="8">8个月</option>
+							<option value="9">9个月</option>
+							<option value="10">10个月</option>
+							<option value="11">11个月</option>
+							<option value="12">12个月</option>
+							<option value="18">18个月</option>
+						</select>
 					</dd>
 				</dl>
-				<input type="button" id="" value="保存设置" class="zdtb_con_btn2" />
+				<input type="submit" id="" value="保存设置" class="zdtb_con_btn2" />
+				</form>
 			</div>
-			</div>
-			
 
 
 		</div>

@@ -133,8 +133,8 @@ class FinanceController extends HomeController {
             $m->investor_uid=$uid;
             $m->investor_interest=$b;
             
-        // 判断余额不足
-        if($list[0]['account_money'] >= $capital ){
+    // 判断余额不足
+    if($list[0]['account_money'] >= $capital ){
             if($capital <= 0){// 上传错误提示错误信息
 
                 $this->error('投资金额不能小于1元');

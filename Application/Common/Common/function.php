@@ -541,19 +541,17 @@ function get_borrow_type_name($id = 0) {
 		$name='信用标';
 	}
 	if($id == 2){
-		$name='担保标';
+		$name='净值标';
 	}if($id == 3){
 		$name='秒还标';
 	}if($id == 4){
-		$name='净值标';
+		$name='担保标';
 	}if($id == 5){
 		$name='抵押标';
 	}
 	if($id == 6){
 		$name='实地考察标';
 	}
-
-
 	// var_dump($name['nickname']);
 	return $name;
 }

@@ -1,0 +1,91 @@
+<block name="body"> <extend name="Base/common" /> <block
+	name="body"> <!--content start-->
+<div class="zh_cont_out">
+	<div class="zh_cont">
+		<h2>我的账户</h2>
+		<!--zh_cont_l-->
+		<include file="Public/left" />
+
+		<!--zh_cont_r-->
+		<div class="zh_cont_r">
+			<!--自动投标-->
+			<h3>当前位置 > <span style="color: #D41010;">自动投标</span></h3>
+			<div class="zdtb">
+				<!--自动投标介绍-->
+			<div class="zdtb_js">
+				<span
+					style="font-size: 18px; font-weight: bold; color: #33b8ef; line-height: 45px; background: url(images/wenhao.png) no-repeat left center; padding-left: 30px; display: block;">什么是自动投标？</span>
+				<p>
+					自动投标是为了方便那些没有时间逐个查看筛选借款列表并进行投标的投资人。投资人可根据自己的风险偏好、投资习
+					惯在自动投标中设置各种条件，若有符合相应条件的借款出现，将由程序自动完成投标。<br /> <br />1.会员设置并启用自动投标功能后1小时后生效。<br />2.会员在合拍在线获得借款时即所申请的借款放款时，自动关闭自动投标，以避免借款被用于自动投标。<br />3.每个会员每个标只能自动投标1次。同一借款标，当自动投标完成后，会员可手动投标。
+				</p>
+			</div>
+			<!--自动投标内容-->
+			<div class="zdtb_con">
+				<dl>
+					<dt>
+						<span>自动投标状态</span><span style="color: red;">*</span>
+					</dt>
+					<dd>
+						<span>关闭状态</span> <input type="button" class="zdtb_con_btn"
+							value="开启自动投标" />
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>账户总额</span><span style="color: red;">*</span>
+					</dt>
+					<dd>￥500,0000</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>账户保留金额</span><span style="color: red;">*</span>
+					</dt>
+					<dd>
+						<!--<span style="color: #333;">￥</span>--><input type="text"
+							class="zdtb_con_txt" value="" />
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>投标金额</span><span style="color: red;">*</span>
+					</dt>
+					<dd>
+						<!--<span style="color: #333;">￥</span>--><input type="text"
+							class="zdtb_con_txt" value="" />
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>借款利率</span><span style="color: red;">*</span>
+					</dt>
+					<dd>
+						<input type="text" name="" class="zdtb_con_txt2" value="" /> <span
+							style="color: #333;">%</span> <span
+							style="margin: 0 6px; color: #333;">—</span> <input type="text"
+							name="" class="zdtb_con_txt2" value="" /> <span
+							style="color: #333;">%</span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>
+						<span>借款期限</span><span style="color: red;">*</span>
+					</dt>
+					<dd>
+						<input type="text" name="" class="zdtb_con_txt2" value="" /> <span
+							style="color: #333;">%</span> <span
+							style="margin: 0 6px; color: #333;">—</span> <input type="text"
+							name="" class="zdtb_con_txt2" value="" /> <span
+							style="color: #333;">%</span>
+					</dd>
+				</dl>
+				<input type="button" id="" value="保存设置" class="zdtb_con_btn2" />
+			</div>
+			</div>
+			
+
+
+		</div>
+	</div>
+</div>
+<!--content end--> </block>
