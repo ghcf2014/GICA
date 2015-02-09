@@ -15,20 +15,26 @@ class SystemController extends MemberController {
 		$condition ['uid'] = $uid;
 		$money = M ( "z_member_money" );
 		$money = $money->where ( $condition )->select (); // 余额查询
-		
-		$model = new Model ();
-		$sql = "select * from gica_z_member_info as m , gica_z_member_banks as b where m.uid=b.uid and m.uid={$uid}";
-		$voList = $model->query ( $sql );
-		if ($voList [0] ['bank_num'] == "") {
-			$this->error ( '您还未绑定银行卡，请您绑定银行卡！', U ( 'Userinfo/userbankset' ) );
-		} else {
-			/*
-			 * echo "<pre>";echo "</pre>";
-			 */
-			$this->assign ( 'userinfo', $voList );
-			$this->assign ( 'list', $money );
-			$this->display ();
+		$member_checked=M('z_member_info');
+		$memberdata=$member_checked->where('uid=%s',$uid)->select();
+		$username=$memberdata[0]['real_name'];
+		if (($username)==null){
+			$this->error('您还未进行基本认证',U('Member/Userinfo/userselfset'));
 		}
+		$banks_checked =M('z_member_banks');
+		$banks_data=$banks_checked->where('uid=%s',$uid)->select();
+		$bank_num=$banks_data['0']['bank_num'];
+		if ($bank_num==null){
+			$this->error('请先绑定银行卡',U('Userinfo/userbankset'));
+		}
+		$member_info=M('ucenter_member');
+		$cell_phone=$member_info->where('id=%s',$uid)->select();
+		$this->assign('cell_phone',$cell_phone[0]);
+		$this->assign ( 'userinfo',$memberdata);
+		$this->assign ( 'bank',$banks_data[0]);
+		$this->assign ( 'list', $money );
+		$this->display ();
+
 	}
 	public function withdrawdeposit_add() {
 		// 从表单中获取来的数据
@@ -184,15 +190,21 @@ class SystemController extends MemberController {
 	 */
 	public function recharge() {
 		$uid = is_login (); // 获取当前登录用户ID
-		$model = new Model (); // 实例化当前模型驱动
-		$sql = "select * from gica_z_member_info as m , gica_z_member_banks as b where m.uid=b.uid and m.uid={$uid}";
-		$voList = $model->query ( $sql );
-		if ($voList [0] ['bank_num'] == "") {
-			$this->error ( '您还未绑定银行卡，请您绑定银行卡！', U ( 'Userinfo/userbankset' ) );
-		} else {
-			$this->assign ( 'userinfo', $voList );
-			$this->display ();
+		$member_checked=M('z_member_info');
+		$memberdata=$member_checked->where('uid=%s',$uid)->select();
+		$username=$memberdata[0]['real_name'];
+		if (($username)==null){
+			$this->error('您还未进行基本认证',U('Member/Userinfo/userselfset'));
 		}
+		$banks_checked =M('z_member_banks');
+		$banks_data=$banks_checked->where('uid=%s',$uid)->select();
+		$bank_num=$banks_data['0']['bank_num'];
+		if ($bank_num==null){
+			$this->error('请先绑定银行卡',U('Userinfo/userbankset'));
+		}
+		$this->assign('memberdata',$memberdata[0]);
+		$this->assign('banksdata',$banks_data[0]);
+		$this->display ();
 	}
 	public function recharge_save() {
 		$uid = is_login ();

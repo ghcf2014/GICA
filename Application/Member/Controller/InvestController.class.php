@@ -368,40 +368,46 @@ class InvestController extends MemberController {
 		}
 	}
 	public function auto_borrow(){
-		$uid=is_login();
-		$autodata=M('z_auto_borrow');
-		$autoresult=$autodata->where("status=1 and uid=%s",$uid)->select();
-		$autoval=$autoresult[0];
-		$borrowinfo = M('z_borrow_info');
-		//过滤全部
-		$borrow_type=$autoval['tender_type'];		
-		if ($borrow_type>0){
-			$map['borrow_type']=array('eq',$borrow_type);
-		}		
-		$map['borrow_money']=array('egt',$autoval['borrow_money']);
-		$map['borrow_interest_rate']=array('between',array($autoval['apr_first'],$autoval['apr_last']));
-		$map['borrow_duration']=array('between',array($autoval['borrow_low_timelimt'],$autoval['borrow_height_timelimt']));
-		$map['borrow_status']='2';
-		//查询设置范围内所有的借款标
-		$borrowdata=$borrowinfo->where($map)->select();
-		//过滤最大利率的借款标
-		foreach ($borrowdata as $value) {
-			$rate=$value['borrow_interest_rate'];
-			if (empty($max_rate)||$max_rate<$rate){
-				$max_rate=$rate;
-			}	
+
+		$auto_model=M('z_auto_borrow');
+		$member_auto=$auto_model->where('status=1')->field('uid')->select();
+		foreach ($member_auto as $key => $value) {
+			$uid=$value[uid];
+			$autodata=M('z_auto_borrow');
+			$autoresult=$autodata->where("status=1 and uid=%s",$uid)->select();
+			$autoval=$autoresult[0];
+			$borrowinfo = M('z_borrow_info');
+			//过滤全部
+			$borrow_type=$autoval['tender_type'];		
+			if ($borrow_type>0){
+				$map['borrow_type']=array('eq',$borrow_type);
+			}		
+			$map['borrow_money']=array('egt',$autoval['borrow_money']);
+			$map['borrow_interest_rate']=array('between',array($autoval['apr_first'],$autoval['apr_last']));
+			$map['borrow_duration']=array('between',array($autoval['borrow_low_timelimt'],$autoval['borrow_height_timelimt']));
+			$map['borrow_status']='2';
+			//查询设置范围内所有的借款标
+			$borrowdata=$borrowinfo->where($map)->select();
+			//过滤最大利率的借款标
+			foreach ($borrowdata as $value) {
+				$rate=$value['borrow_interest_rate'];
+				if (empty($max_rate)||$max_rate<$rate){
+					$max_rate=$rate;
+				}	
+			}
+			$map['borrow_interest_rate']=$max_rate;
+			//查找合适的借款标
+			$borrowinfo_id=$borrowinfo->where($map)->field('id')->select();
+			//最佳投标方案id
+			$borrowinfo_id=$borrowinfo_id[0]['id'];
+			//设定自动投标金额
+			$borrow_money=$autoval['borrow_money'];
+
+			$this->auto_borrow_add($borrow_money,$borrowinfo_id,$uid);
 		}
-		$map['borrow_interest_rate']=$max_rate;
-		//查找合适的借款标
-		$borrowinfo_id=$borrowinfo->where($map)->field('id')->select();
-		//最佳投标方案id
-		$borrowinfo_id=$borrowinfo_id[0]['id'];
-		//设定自动投标金额
-		$borrow_money=$autoval['borrow_money'];
-		$this->auto_borrow_add($borrow_money,$borrowinfo_id);
+		
 	}
-	public function auto_borrow_add($borrow_money=0,$borrowinfo_id=0){
-			$uid=is_login();//获取当前用户UID 
+	public function auto_borrow_add($borrow_money=0,$borrowinfo_id=0,$uid=0){
   	        $bid = $borrowinfo_id;//投标id赋值
             $listMember = M('member');
             $condition['gica_member.uid'] =$uid;
@@ -557,7 +563,7 @@ class InvestController extends MemberController {
 										$log = $log->add ( $logdata );
 
                                 //成功提示
-                                $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
+                                $this->success('投资成功。','Member/Invest/auto_borrow',30);
                             } 
                             else {
                                 //失败提示
