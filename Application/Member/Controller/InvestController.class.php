@@ -481,7 +481,7 @@ class InvestController extends MemberController {
                         // $this->success('投资成功！',U('Borrow/detail?id='.$bid));
 
                         $uid=is_login(); 
-                        $condition1['uid'] =$uid;
+                        $condition1['uid'] =$condition['gica_member.uid'];
                         $money=M("z_member_money");
                         $money=$money->field('account_money')->where($condition1)->select();//余额查询
                         $m1=M("z_member_money");
@@ -544,15 +544,6 @@ class InvestController extends MemberController {
 
                                         }
                                         //投资详情表
-                                        
-
-
-
-
-
-
-
-
                                         //日志
                                         $log = M ( 'z_member_moneylog' );
 										$logdata ['uid'] = $uid;
@@ -561,25 +552,20 @@ class InvestController extends MemberController {
 										$logdata ['info'] = '您投资了'.$list3[0]['id'].'号标'.$capital.'元';
 										$logdata ['add_time'] = time ();
 										$log = $log->add ( $logdata );
-
-                                //成功提示
-                                $this->success('投资成功。','Member/Invest/auto_borrow',30);
+										die();
                             } 
                             else {
-                                //失败提示
-                                $this->error(L('投资失败，如发现金额已经投出，请及时联系我们处理。'));
+                            	return false;
                             }
 
                         }
                         else{
-                            $this->error(L('投资金额已超过借款金额！'));
-                            // $this->assign('waitSecond',U('Finance/invest'),5);
-
+	                        return false;
                         }      
                 }
         }
         else{
-            $this->error('抱歉，您余额不足。请充值。');
+           return false;
         }
 	}
 } 
