@@ -341,6 +341,11 @@ class InvestController extends MemberController {
 		$money = M ( "z_member_money" );
 		$money = $money->where ( $condition )->select (); // 余额查询
 		$money=$money[0]['account_money'];
+		//自动投标数据查询
+		$auto_checked =M('z_auto_borrow');
+		$auto_data=$auto_checked->where('uid=%s',$uid)->select();
+		$auto_data=$auto_data[0];
+		$this->assign('auto_data',$auto_data);
 		$this->assign('money',$money);
 		$this->display ();
 	}
@@ -567,5 +572,15 @@ class InvestController extends MemberController {
         else{
            return false;
         }
+	}
+	public function autoinvest_open($status=0){
+		$auto_status =M('z_auto_borrow');
+		$uid=is_login();
+		$data['status']=$_GET['status'];
+		$result=$auto_status->where('uid=%s',$uid)->save($data);
+		// dump($result);
+		if ($result){
+			$this->success('设置成功',U('Member/Invest/autoinvest'));
+		}
 	}
 } 

@@ -21,16 +21,30 @@
 			</div>
 			<!--自动投标内容-->
 			<div class="zdtb_con">
-				<form action="{:U('Invest/autoinvest_save')}" method="post">
 				<dl>
 					<dt>
 						<span>自动投标状态</span><span style="color: red;">*</span>
+						<input type="hidden" value='0' name="status">
 					</dt>
 					<dd>
-						<span>关闭状态</span> <input type="button" class="zdtb_con_btn"
-							value="开启自动投标" />
+						<a href="{:U('Invest/autoinvest_open?status=0')}"><input type="submit" class="zdtb_con_btn" value="关闭自动投标" /></a><a href="{:U('Invest/autoinvest_open?status=1')}"><input type="submit" class="zdtb_con_btn" value="开启自动投标" /></a>
 					</dd>
 				</dl>
+				<dl>
+					<dt>
+						<span>当前状态:</span><span style="color: red;">*</span>
+					</dt>
+					<dd>
+						<span>
+						<if condition="$auto_data['status'] eq 0">
+						已关闭
+						<else/>
+						已开启
+						</if >
+						</span>
+					</dd>
+				</dl>
+				<form action="{:U('Invest/autoinvest_save')}" method="post">
 				<dl>
 					<dt>
 						<span>账户总额</span><span style="color: red;">*</span>
@@ -43,7 +57,7 @@
 					</dt>
 					<dd>
 						<span style="color: #333;">￥</span><input type="text"
-						class="zdtb_con_txt" value="" name="keep_money"/>
+						class="zdtb_con_txt" value="" placeholder="{$auto_data['keep_money']}" name="keep_money"/>
 					</dd>
 				</dl>
 				<dl>
@@ -52,7 +66,7 @@
 					</dt>
 					<dd>
 						<span style="color: #333;">￥</span><input type="text"
-							class="zdtb_con_txt" value="" name="borrow_money" /><span>&nbsp&nbsp&nbsp&nbsp投标金额只能为100的整数</span>
+							class="zdtb_con_txt" placeholder="{$auto_data['borrow_money']}" value="" name="borrow_money" /><span>&nbsp&nbsp&nbsp&nbsp投标金额只能为100的整数</span>
 					</dd>
 				</dl>
 				<dl>
@@ -75,10 +89,10 @@
 						<span>借款利率</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<input type="text" name="apr_first" class="zdtb_con_txt2" value="" /> <span
+						<input type="text" name="apr_first" placeholder="{$auto_data['apr_first']}" class="zdtb_con_txt2" value="" /> <span
 							style="color: #333;">%</span> <span
 							style="margin: 0 6px; color: #333;">—</span> <input type="text"
-							name="apr_last" class="zdtb_con_txt2" value="" /> <span
+							name="apr_last" placeholder="{$auto_data['apr_last']}" class="zdtb_con_txt2" value="" /> <span
 							style="color: #333;">%</span><span>&nbsp&nbsp&nbsp&nbsp投资年利率 6.00% 至 20.00%</span>
 					</dd>
 				</dl>
