@@ -27,7 +27,11 @@
 						<input type="hidden" value='0' name="status">
 					</dt>
 					<dd>
-						<a href="{:U('Invest/autoinvest_open?status=0')}"><input type="submit" class="zdtb_con_btn" value="关闭自动投标" /></a><a href="{:U('Invest/autoinvest_open?status=1')}"><input type="submit" class="zdtb_con_btn" value="开启自动投标" /></a>
+						<if condition="$auto_data['status'] eq 1">
+							<a href="#"><input type="submit" class="zdtb_con_btn01"  value="开启自动投标" /></a><a href="{:U('Invest/autoinvest_open?status=0')}"><input type="submit" class="zdtb_con_btn" value="关闭自动投标" /></a>
+						<else/>
+							<a href="{:U('Invest/autoinvest_open?status=1')}"><input type="submit" class="zdtb_con_btn"  value="开启自动投标" /></a><a href="#"><input type="submit" class="zdtb_con_btn01" value="关闭自动投标" /></a>
+						</if >
 					</dd>
 				</dl>
 				<dl>

@@ -580,7 +580,7 @@ class InvestController extends MemberController {
 		$result=$auto_status->where('uid=%s',$uid)->save($data);
 		// dump($result);
 		if ($result){
-			$this->success('设置成功',U('Member/Invest/autoinvest'));
+			$this->redirect('Member/Invest/autoinvest');
 		}
 	}
 } 
