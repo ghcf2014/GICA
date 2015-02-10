@@ -187,6 +187,21 @@
   		})
   		
   		
+  		//导航栏固定在顶部
+  		$(document).scroll(function(){
+			if($(document).scrollTop() > $('.header_out').height()+$('.nav_out').height()+$('.banner').height())
+			{
+				$('.nav_out').css({'position':'fixed','top':'0','z-index':'1000'})		
+			}
+			else
+			{
+				$('.nav_out').css({'position':'static'})
+			}
+			
+		});	
+  		
+  		
+  		
 		
 })
 </script>

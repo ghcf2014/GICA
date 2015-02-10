@@ -26,11 +26,11 @@
                         <li>借款期限：<span>{$vb.borrow_duration}个月</span></li>
                         <li>还差：<span>￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
                         <li><strong>投标进度：</strong><span class="out"><span style="width:{$vb['has_borrow']/$vb['borrow_money']*100}%;" class="in"></span></span><span class="data">{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
-                        <li style="color:#ef681f;">还款方式：<span>{$vb.repayment_type|get_repayment_type}</span></li>
+                        <li>还款方式：<span style="color:#ef681f;">{$vb.repayment_type|get_repayment_type}</span></li>
                         <li>交易类型：<span>线下交易</span></li>
                         <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
                         <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
-                        <li>总投标数：<span style="margin-right:20px;">0</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="../../../../../Public/Home/images/page_view.jpg" style="height:20px;"></span></li>
+                        <li>总投标数：<span style="margin-right:20px;">0</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="__PUBLIC__/Home/images/page_view.jpg" style="height:20px;"></span></li>
                         <li>  <if condition="$vb.borrow_status eq 2">
                                     <a  href="{:U('Finance/invest?id='.$vb['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
                           <elseif condition="$vb.borrow_status eq 0"/>
