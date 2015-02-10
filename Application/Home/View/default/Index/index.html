@@ -27,47 +27,38 @@
 	<div class="cont">
 		<!--content_top start-->
 		<div class="cont_top">
-			<h2 class="title">
-				<p>服务指南</p>
-			</h2>
+			<!--网站公告-->
+			<!--<div class="wzgg">
+				<dl>
+					<dt>网站公告：</dt>
+					<volist name="lists3" id="list3">
+					<dd><a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a></dd>
+					</volist>
+				</dl>
+				<a href="{:U('Article/lists?category='.get_category_name(43))}" class="more">更多...</a>
+			</div>					-->
+			<!--网站公告  结束-->
+			
+			<!--top start-->
 			<div class="cont_top_con">
 				<dl>
-					<dt>
-						<h2>
-							<a href="{:U('Home/Finance/index')}" style="">理财投资</a>
-						</h2>
-						<!-- <p>了解我们</p> -->
-					</dt>
+					<dt><h2></a><a href="{:U('Home/Finance/index')}">理财投资</a></h2></dt>
 					<dd>投资理财 成为理财人，通过主动投标或加入U计划将资金进行投资，最高获得12%-18%的预期年化收益。</dd>
 				</dl>
 				<dl class="rongzi">
-					<dt>
-						<h2>
-							<a href="{:U('Home/Borrow/index')}">融资借款</a>
-						</h2>
-						<!-- 	<p>帮助您解决所有问题</p> -->
-					</dt>
+					<dt><h2><a href="{:U('Home/Borrow/index')}">融资借款</a></h2></dt>
 					<dd>如果你现在需要资金周转，可以向我们提交借款申请，通过考察、资料审核、办理借款手续后手续后，可以及时解决资金问题。</dd>
 				</dl>
 				<dl class="safety">
-					<dt>
-						<h2>
-							<a href="{:U('Home/Newhelp/safetypromise')}">安全保障</a>
-						</h2>
-						<!-- <p>100%本息担保</p> -->
-					</dt>
+					<dt><h2><a href="{:U('Home/Newhelp/safetypromise')}">安全保障</a></h2></dt>
 					<dd>我们的客户来自于公司业务一手客户及银行合作推荐客户，借助于银行大数据风控团队及自身专业的风控体系，更有第三方担保公司兜底，让您放心投资。</dd>
 				</dl>
 				<dl class="helpCenter">
-					<dt>
-						<h2>
-							<a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a>
-						</h2>
-						<!--  	<p>了解我们</p> -->
-					</dt>
+					<dt><h2><a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></h2></dt>
 					<dd>注册成为会员，充值后选择优质借款项目进行投资，将闲散资金借给有需要的人，获得年化12%-18%的投资收益。</dd>
 				</dl>
 			</div>
+			<!--top end-->
 		</div>
 		<!--content_top end-->
 
@@ -75,20 +66,16 @@
 		<div class="cont_bot">
 			<!-- 网站行业动态 start -->
 			<div class="cont_bot1">
-				<h2 class="title">
-					<p>行业指南</p>
-				</h2>
+				<h2><span>行业动态  | 媒体新闻</span></h2>
 				<div class="cont_bot1_con">
 					<div class="cont_bot1_con01">
 						<div class="cont_bot1_con01_in">
 							<h3>累计成交额</h3>
-							<p
-								style="background: url(__PUBLIC__/Home/images/money.png) no-repeat left top;">100,0000</p>
+							<p style="background: url(__PUBLIC__/Home/images/money.png) no-repeat left top;">100,0000</p>
 						</div>
 						<div class="cont_bot1_con01_in">
 							<h3>累计为客户挣取收益</h3>
-							<p
-								style="background: url(__PUBLIC__/Home/images/human.png) no-repeat left top;">60,0000</p>
+							<p style="background: url(__PUBLIC__/Home/images/human.png) no-repeat left top;">60,0000</p>
 						</div>
 					</div>
 					<!--<dl>
@@ -102,7 +89,7 @@
 						<dt>
 							<span>网站公告</span> <a
 								href="{:U('Article/lists?category='.get_category_name(43))}"
-								class="more"></a>
+								class="more">更多</a>
 						</dt>
 						<volist name="lists3" id="list3">
 						<dd>
@@ -116,7 +103,7 @@
 						<dt>
 							<span>行业资讯</span> <a
 								href="{:U('Article/lists?category='.get_category_name(40))}"
-								class="more"></a>
+								class="more">更多</a>
 						</dt>
 						<volist name="lists1" id="list1">
 						<dd>
@@ -131,113 +118,59 @@
 
 			<!--投资列表 start-->
 			<div class="cont_bot2">
-				<a href="{:U('Finance/index')}"><h2 class="title"
-					style="background: url(__PUBLIC__/Home/images/mo.png) no-repeat 1010px center;">
-					<p>投资列表</p>
-				</h2></a>
-				<!--<ul>
-		        		<li style="width: 165px;">借款项目</li>
-		        		<li>借款金额</li>
-		        		<li style="width: 60px;">年利率</li>
-		        		<li style="width: 80px;">期限</li>
-		        		<li style="width: 100px;">类型</li>
-		        		<li>进度</li>
-		        		<li>发布时间</li>
-		        		<li style="width: 80px;">借款项目</li>
-		        	</ul>-->
-				<table border="0" cellspacing="0" cellpadding="0"
-					style="margin-bottom: 20px;">
-					<tr>
-						<td style="width: 165px;">借款项目</td>
-						<td>借款金额</td>
-						<td style="width: 60px;">年利率</td>
-						<td style="width: 80px;">期限</td>
-						<td style="width: 100px;">类型</td>
-						<td>进度</td>
-						<td>发布时间</td>
-						<td style="width: 80px;"></td>
-					</tr>
+				<h2><a href="{:U('Finance/index')}">投资列表</a></h2>
+				<div class="cont_bot2_con">
 					<volist name="list2" id="vo">
-					<tr>
-						<td  style="width: 165px;"><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></td>
-						<td>￥{$vo.borrow_money}</td>
-						<td style="width: 60px;">{$vo.borrow_interest_rate}%</td>
-						<td style="width: 80px;">{$vo.borrow_duration}个月</td>
-						<td style="width: 100px;"><img
+					<div class="cont_bot2_con_in">
+						<h3><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h3>
+						<p style="height: 30px;font-size: 14px;line-height: 30px;">借款金额</p>
+						<p style="color: #f56627;font-weight: bold;font-size: 24px;line-height: 30px;">￥{$vo.borrow_money}</p>
+						
+						<ul>
+							<li><p style="font-size: 16px;">{$vo.borrow_interest_rate}%</p><p>年化收益率</p></li>
+							<li><p style="font-size: 16px;">{$vo.borrow_duration}个月</p><p>期限</p></li>
+							<li style="text-align: center;padding: 5px 0 0;height: 45px;"><img
 							src="__PUBLIC__/Home/images/bao.png" /><img
-							src="__PUBLIC__/Home/images/jian.png" /></td>
-						<td><span class="out"><span class="in"  style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;line-height:18px;color:white;">{$vo['has_borrow']/$vo['borrow_money']*100}%</span></span></td>
-						<td>2015-01-20</td>
-						<td style="width: 80px;">
-						 <if condition="$vo.borrow_status eq 2">
+							src="__PUBLIC__/Home/images/jian.png" /></li>
+						</ul>
+						
+						<div class="jdt">
+							<p>进度</p>
+							<span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;line-height:18px;color:white;text-align: center;">{$vo['has_borrow']/$vo['borrow_money']*100}%</span></span>
+						</div>
+						
+						<div class="fb_date">2015-01-20</div>
+						
+						<div class="button">
+							<if condition="$vo.borrow_status eq 2">
                               <if condition="$login eq 1">
-                                    <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
+                                    <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png"/></a>
                                   <elseif condition="$login eq 0"/>
-                                    <a class="ajax-get"  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" />
+                                    <a class="ajax-get"  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png"/>
                               </if>
-                          <elseif condition="$vo.borrow_status eq 0"/>
-                          <img alt="" src="__PUBLIC__/Home/images/shenhe.png" style="width:80px;height:30px;" />
-                           <elseif condition="$vo.borrow_status eq 4"/>
-                          <img alt="" src="__PUBLIC__/Home/images/fushen.png" style="width:80px;height:30px;" />
-                          <elseif condition="$vo.borrow_status eq 6"/>
-                          <img alt="" src="__PUBLIC__/Home/images/huankuan.png" style="width:80px;height:30px;" />
-                           <elseif condition="$vo.borrow_status eq 7"/>
-                           <img alt="" src="__PUBLIC__/Home/images/manbiao.png" style="width:80px;height:30px;" />
-                          </if>
-						</td>
-					</tr>
+	                          <elseif condition="$vo.borrow_status eq 0"/>
+	                          <img alt="" src="__PUBLIC__/Home/images/shenhe.png" />
+	                           <elseif condition="$vo.borrow_status eq 4"/>
+	                          <img alt="" src="__PUBLIC__/Home/images/fushen.png" />
+	                          <elseif condition="$vo.borrow_status eq 6"/>
+	                          <img alt="" src="__PUBLIC__/Home/images/huankuan.png" />
+	                           <elseif condition="$vo.borrow_status eq 7"/>
+	                           <img alt="" src="__PUBLIC__/Home/images/manbiao.png"  />
+	                          </if>
+						</div>					
+					</div>
 					</volist>
-				</table>
-
-				<!--<div id="top-alert" class="alert alert-error" style="display: none;">
-				    	<button class="close fixed" style="margin-top: 4px;">&times;</button>
-			            <div class="alert-content">这是内容</div>
-			        </div>
-	           	     <volist name="list2" id="vo">-->
-				<!-- <h4><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h4>-->
-				<!--<ul>
-	                	<li>借款金额:<span>￥{$vo.borrow_money}</span></li>
-	                    <li>年利率:<span>{$vo.borrow_interest_rate}%</span></li>
-	                	<li>借款期限:<span>{$vo.borrow_duration}</span> <s:if test="%{#finance.isDayThe ==1}">个月</s:if><span><!-- <s:else>天</s:else> </span></li>
-	                	<li>发标时间:<span>{$vo.add_time|date='Y-m-d',###}</span></li>
-	                	<li><p>借款类型:</p><p><img src="__PUBLIC__/Home/images/bao.png" width="21" height="24" /></p><p><img src="__PUBLIC__/Home/images/jian.png" width="21" height="24" /></p>
-		                	</li>
-	                	<li><p>借款进度:</p><span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;"> {$vo['has_borrow']/$vo['borrow_money']*100}% </span></span></li>
-	                	<li>完成投标:<span>{$vo.has_borrow}</span></li>
-	                	<li>&nbsp;&nbsp; 	                	
-	                	   <if condition="$vo.borrow_status eq 2">
-		                	   <if condition="$login eq 1">
-                                    <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/invest.png"></a>
-                                  <elseif condition="$login eq 0"/>
-                                    <a class="ajax-get"  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/invest.png"></a>
-                               </if>
-	                	    <elseif condition="$vo.borrow_status eq 0"/>
-		                	    <img alt="" src="__PUBLIC__/Home/images/checking.png">
-		                	     <elseif condition="$vo.borrow_status eq 4"/>
-		                	    <img alt="" src="__PUBLIC__/Home/images/checkref.png">
-		                	    <elseif condition="$vo.borrow_status eq 6"/>
-		                	    <img alt="" src="__PUBLIC__/Home/images/returning.png">
-		                	     <elseif condition="$vo.borrow_status eq 7"/>
-		                	     <img alt="" src="__PUBLIC__/Home/images/full.png">
-		                	    </if>
-	                	</li>
-	                </ul>
-	               </volist>
-	                <a href="{:U('Finance/index')}" class="more">点击查看更多</a>-->
+				</div>
+				<a href="{:U('Finance/index')}" class="more">查看更多</a>
 			</div>
 			<!--投资列表 end-->
 
 			<!--合作伙伴 start-->
 			<div class="partner">
-				<h2>合作伙伴</h2>
+				<h2><a href="javascript:;">合作伙伴</a></h2>
 				<ul>
 					<li><a href="http://www.ccb.com" target="_blank"><img
 							src="__PUBLIC__/Home/images/jsyh.jpg" width="122px" height="45" /></a></li>
-					<!--<li><a href="http://www.jsbchina.cn/" target="_blank"><img
-							src="__PUBLIC__/Home/images/js.jpg" width="122px" height="45" /></a></li>
-					<li><a href="http://www.cib.com.cn" target="_blank"><img
-							src="__PUBLIC__/Home/images/xingyeyinhang.jpg" width="122px"
-							height="45" /></a></li>-->
 					<li><a href="http://www.gzcb.com.cn" target="_blank"><img
 							src="__PUBLIC__/Home/images/gfyh.jpg" width="122px" height="45" /></a></li>
 					<li><a href="http://www.rongerong.com/" target="_blank"><img
