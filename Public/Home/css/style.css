@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
 /*----------清空默认样式---------------*/
 *{margin:0;padding:0;list-style:none;border:none;}
@@ -581,7 +581,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont ul li{font-size:14px;line-height:30px;color: #888;}
 
 .xszy_cont .xszy_cont_r .xszy_cont_r_picR{float: right;width: 300px;height: 177px;background: url(../images/computer.png) no-repeat left center;margin: 140px 50px 0 0;overflow: hidden;}
-.xszy_cont .xs zy_cont_r .xszy_cont_r_picR ul{overflow: hidden;width:1040px;height: 128px;margin: 12px 0 0 42px;position: relative;}
+.xszy_cont .xszy_cont_r .xszy_cont_r_picR ul{overflow: hidden;width:1040px;height: 128px;margin: 12px 0 0 42px;position: relative;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_picR ul li{width: 218px;height: 128px;position: absolute;float: left;}
 
 

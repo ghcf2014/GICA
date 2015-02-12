@@ -3,22 +3,21 @@
 <block name="body">
     <!--content start-->
     <div class="zh_cont_out">
-      <div class="zh_cont" style="background: #fff;border: 1px solid #ddd;">
-            <!--<h2><a href="{:U('Index')}">我的账户</a></h2>--> 
+      <div class="zh_cont">
             <include file="Public/borrowleft"/>
-            <div class="zh_cont_r" style="border-top: none;">
+            <div class="zh_cont_r" style="width: 920px;">
               <form action="{:U('circulation_save?id='.$type)}" method="post" enctype="multipart/form-data">
                   <div class="r-main" style="border: none;">
               <!-- <div class="til01"> -->
               <div class="til01">
                 <ul id="ul">
-                  <li style="font-size:18px;"><h3 style="height: 38px;line-height: 20px;color: red;">当前位置 > 发布贷款</h3></li><span style="color: red;font-size: 24px; padding-left: 80px;display:block; float: right;">{$type|get_borrow_type_name}</span>
+                  <li style="font-size:18px;width:918px;height: 50px;padding: 0;overflow: hidden;border: 1px solid #ddd;background: #fff;"><h3 style="height: 50px;line-height: 50px;width: 690px;float: left;border: 0;">当前位置 > <b style="color: red;font-weight: normal;">发布贷款</b></h3><span style="color: red;font-size: 20px; padding:0 40px;float: right;line-height: 50px;">{$type|get_borrow_type_name}</span></li>
                 </ul>
               </div>
                 <!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
               </div> -->
-              <p style="background:#ddd;width:948px;height:1px;"></p>
-              <div class="rmainbox">
+              
+              <div class="rmainbox" style="background: #fff;border: 1px solid #ddd;margin-top: 10px;height: 1062px;">
                 <p class="tips"><span class="fred">*</span> 为必填项，所有资料均会严格保密。 </p>
                 <div class="tab">
 <!-- 分割线 -->
@@ -78,7 +77,7 @@
             </td>
         </tr>
         <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
                 还款方式
             </td>
             <td valign="top" colspan="1" rowspan="1"></td>
@@ -89,7 +88,7 @@
             </td>
         </tr>
         <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
                 投资金额范围
             </td>
             <td valign="top" colspan="1" rowspan="1"></td>
@@ -124,7 +123,7 @@
         </tr>
         
         <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
                 项目介绍<br/>
             </td>
             <td valign="top" colspan="1" rowspan="1"></td>
@@ -135,7 +134,7 @@
             </td>
         </tr>
         <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
                 上传必要审核的文件（目前仅支持jpg，png两种格式）<br/>
             </td>
             <td valign="top" colspan="1" rowspan="1"></td>
