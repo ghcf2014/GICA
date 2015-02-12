@@ -13,15 +13,10 @@
 </head>
 
 <body>
-	<!--
-        	作者：1339070342@qq.com
-        	时间：2015-01-05
-        	描述：登录框
-        -->
 	<div class="frame">
 		<div class="logo"></div>
 		<form action="{:U('login')}" method="post" class="login-form">
-			<ul class="frame_r">
+			<ul class="frame_r"><span style="color: red; line-height: 40px;" id="checkcode" class="formtips Validform_checktip "></span>
 				<li>
 					<div class="head01"></div> <input type="text" name="username"
 					class="txt" placeholder="请填写用户名" autocomplete="off" />
