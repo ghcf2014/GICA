@@ -13,6 +13,10 @@
 					<!--<ul class="aqset_tabH">
 						<li><a href="#" class="cur">银行卡</a></li>
 					</ul>-->
+					<ul class="yhk_head">
+						<li class="cur">绑定银行卡</li>
+						<li>已绑定银行卡</li>
+					</ul>
 				<div class="aqset_tabC_out">
 					<empty name="list">
 					<form action="{:U('userbankset_save')}" method="post" id="form">
@@ -50,7 +54,7 @@
 						</div>
 					</form>
 					<!--身份证验证-->
-					<div class="aqset_tabC" style="display: none">
+					<!--<div class="aqset_tabC" style="display: none">
 						<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
 						<dl class="sfz">
 							<dt>身份证正面：</dt>
@@ -67,8 +71,9 @@
 							</dd>
 						</dl>
 						<input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
-					</div>
-					<else /> <volist name="list" id="vo"> <!--银行卡验证-->
+					</div>-->
+					<else /> <volist name="list" id="vo"> 
+					<!--银行卡验证-->
 					<div class="aqset_tabC">
 						<!-- <dl class="yhk">
 								<dt>平台昵称：{:get_username()}</dt>
@@ -96,8 +101,9 @@
 							</dd>
 						</dl>
 					</div>
-					</volist> <!--身份证验证-->
-					<div class="aqset_tabC" style="display: none">
+					</volist> 
+					<!--身份证验证-->
+					<!--<div class="aqset_tabC" style="display: none">
 						<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
 						<dl class="sfz">
 							<dt>身份证正面：</dt>
@@ -114,7 +120,30 @@
 							</dd>
 						</dl>
 						<input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
+					</div>-->
+					
+					<!--已绑定银行卡-->
+					<div class="aqset_tabC" style="display: none;">
+						<table border="0" cellspacing="0" cellpadding="0" class="ybd">
+							<tr>
+								<th style="width: 200px;">开户行</th>
+								<th style="width: 200px;">支行</th>
+								<th style="width: 200px;">卡号</th>
+								<th style="width: 100px;">绑定时间</th>
+								<th style="width: 80px;">状态</th>
+								<th style="width: 90px;">操作</th>
+							</tr>
+							<tr>
+								<td>中国工商银行</td>
+								<td>深圳福田区分行</td>
+								<td>1234567896542325</td>
+								<td>2015-02-12</td>
+								<td>已绑定</td>
+								<td>删除</td>
+							</tr>
+						</table>
 					</div>
+					
 					</empty>
 				</div>
 				</div>
@@ -148,4 +177,24 @@
 			$("#form").submit();
 		});
 	</script>
+	
+	<script type="text/javascript">
+	//银行卡切换
+		$(function(){
+			$('.zh_cont .zh_cont_r .tab .aqset_tab .yhk_head li').each(function(index,element){
+				$(element).click(function(){
+					$(element).addClass('cur').siblings().removeClass('cur');
+					$('.zh_cont .zh_cont_r .tab .aqset_tabC').eq($(element).index()).show().siblings().hide();
+				})
+			})
+		})
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
 </block>
