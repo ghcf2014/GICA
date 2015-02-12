@@ -4,160 +4,247 @@
     <div class="jk_cont_out">
         <div class="jk_cont">
             <div class="jk_cont_in">
-                <!--<h2><span>我要借款</span></h2>-->
+                
                 <!--模块1-->
                 <div class="jk_cont_in_cont">
-                    <div class="jk_cont_in_cont_in">
-                        <h3 class="h3_01">信用标</h3>
+                	<h3 class="h3_01">信用标</h3>
+                    <div class="jk_cont_in_cont_in">                      
                         <h4>申请条件</h4>
                         <ul>
-                            <li>21-25岁的大陆公民</li>
-                            <li>手机绑定</li>
-                            <li>借出信用大于20分</li>
-                            <li>申请额度大于2000元</li>
+                            <li>1、21-25岁的大陆公民</li>
+                            <li>2、手机绑定</li>
+                            <li>3、借出信用大于20分</li>
+                            <li>4、申请额度大于2000元</li>
                         </ul>
                         <h4>申请资料</h4>
                         <ul>
-                            <li>身份证</li>
+                            <li>1、身份证</li>
                           
-                        </ul>
-
-                        <if condition="($session eq true)">
+                        </ul>                                             
+                    </div>
+                    <if condition="($session eq true)">
 
                             <div class="jk_btn"><a href="{:U('Borrow/circulation?type=1')}">立即申请</a></div>
                         
                         <else />
                             <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=1')}">立即申请</a></div>
-                        </if>  
-                        
-                    </div>
+                        </if>
                 </div>
                 
                 <!--模块2-->
                 <div class="jk_cont_in_cont">
-                    <div class="jk_cont_in_cont_in">                    
-                        <h3 class="h3_02">净值标</h3>
+                	<h3 class="h3_02">净值标</h3>
+                    <div class="jk_cont_in_cont_in">                                          
                         <h4>申请条件</h4>
                         <ul class="no2">
-                            <li>21-25岁的大陆公民</li>
-                            <li>手机绑定</li>
-                            <li>有固定工作</li>
+                            <li>1、21-25岁的大陆公民</li>
+                            <li>2、手机绑定</li>
+                            <li>3、有固定工作</li>
                         </ul>
                         <h4>申请资料</h4>
                         <ul class="no2">
-                            <li>身份证</li>
-                            <li>房产证</li>
+                            <li>1、身份证</li>
+                            <li>2、房产证</li>
                        
-                        </ul>
-                        <if condition="($session eq true)">
+                        </ul>                        
+                    </div>
+                    <if condition="($session eq true)">
 
                             <div class="jk_btn no2Btn"><a href="{:U('Borrow/circulation?type=2')}">立即申请</a></div>
                         
                         <else />
                             <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=2')}">立即申请</a></div>
                         </if>
-                    </div>
                 </div>
                 
                 <!--模块3-->
                 <div class="jk_cont_in_cont">
-                    <h3 class="h3_03">秒还标</h3>
-                    <h4>申请条件</h4>
-                    <ul class="no3">
-                        <li>21-50岁的大陆公民</li>
-                        <li>借出信用大于20分</li>
-                        <li>有固定工作</li>
-                    </ul>
-                    <h4>申请资料</h4>
-                    <ul class="no3">
-                        <li>身份证</li>
-                   
-                  
-                    </ul>
-                    <if condition="($session eq true)">
-
-                        <div class="jk_btn no3Btn"><a href="{:U('Borrow/circulation?type=3')}">立即申请</a></div>
-                        
-                    <else />
-                        <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=3')}">立即申请</a></div>
-                    </if>
+                    <h3 class="h3_03">车易贷</h3>
+                    <div class="jk_cont_in_cont_in">
+	                    <h4>申请条件</h4>
+	                    <ul class="no6">
+	                        <li>1、年龄21-55周岁</li>
+	                        <li>2、对于二手车，过户时间必须满3个月</li>
+	                        <li>3、申请人名下没有未结清车贷</li>
+	                    </ul>
+	                    <h4>申请资料</h4>
+	                    <ul class="no6">
+	                        <li>1、身份证</li>
+	                        <li>2、各项台帐资料</li>
+	                        
+	                    </ul>                    
+                     </div>
+                     <if condition="($session eq true)">
+	
+	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
+	                        
+	                        <else />
+	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
+	                        </if>
                 </div>
                 
+                
+                
+                
                 <!--模块4-->
-                <div class="jk_cont_in_cont" style="border-bottom:0">
+                <div class="jk_cont_in_cont">
+                	<h3 class="h3_04">担保标</h3>
                     <div class="jk_cont_in_cont_in">               
-                        <h3 class="h3_04">担保标</h3>
+                        
                         <h4>申请条件</h4>
                         <ul class="no4">
-                            <li>21-50岁的大陆公民</li>
-                            <li>手机绑定</li>
-                            <Li>借出信用大于20分</Li>
+                            <li>1、21-50岁的大陆公民</li>
+                            <li>2、手机绑定</li>
+                            <Li>3、借出信用大于20分</Li>
                         </ul>
                         <h4>申请资料</h4>
                         <ul class="no4">
-                            <li>身份证</li>
-                            <li>房产证</li>
+                            <li>1、身份证</li>
+                            <li>2、房产证</li>
                       
-                        </ul>
-                        <if condition="($session eq true)">
+                        </ul>                       
+                    </div>
+                    <if condition="($session eq true)">
 
                             <div class="jk_btn no4Btn"><a href="{:U('Borrow/circulation?type=4')}">立即申请</a></div>
                         
                         <else />
                             <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=4')}">立即申请</a></div>
                         </if>
-                    </div>
                 </div>
                 
                 <!--模块5-->
-                <div class="jk_cont_in_cont" style="border-bottom:0">
-                    <div class="jk_cont_in_cont_in">
-                        <h3 class="h3_05">抵押标</h3>
+                <div class="jk_cont_in_cont">
+                	<h3 class="h3_05">抵押标</h3>
+                    <div class="jk_cont_in_cont_in">                        
                         <h4>申请条件</h4>
                         <ul class="no5">
-                            <li>21-25岁的大陆公民</li>
-                            <li>借出信用大于20分</li>
-                            <li>有固定工作</li>
+                            <li>1、21-25岁的大陆公民</li>
+                            <li>2、借出信用大于20分</li>
+                            <li>3、有固定工作</li>
                         </ul>
                         <h4>申请资料</h4>
                         <ul class="no5">
-                            <li>身份证</li>
-                            <li>抵押产物复印件</li>
+                            <li>1、身份证</li>
+                            <li>2、抵押产物复印件</li>
                            
-                        </ul>
-                        <if condition="($session eq true)">
+                        </ul>                      
+                    </div>
+                    <if condition="($session eq true)">
 
                             <div class="jk_btn no5Btn"><a href="{:U('Borrow/circulation?type=5')}">立即申请</a></div>
                         
                         <else />
                             <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=5')}">立即申请</a></div>
                         </if>
-                    </div>
                 </div>
 
                 <!--模块6-->
-                <div class="jk_cont_in_cont" style="border-bottom:0">
-                    <h3 class="h3_06">实地考察标</h3>
-                    <h4>申请条件</h4>
-                    <ul class="no6">
-                        <li>21-25岁的大陆公民</li>
-                        <li>手机绑定</li>
-                        <li>有固定工作</li>
-                    </ul>
-                    <h4>申请资料</h4>
-                    <ul class="no6">
-                        <li>身份证</li>
-                        <li>各项台帐资料</li>
-                        
-                    </ul>
-                    <if condition="($session eq true)">
-
-                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
-                        
-                        <else />
-                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
-                        </if>
+                <div class="jk_cont_in_cont">
+                    <h3 class="h3_06">秒还标</h3>
+                    <div class="jk_cont_in_cont_in"> 
+	                    <h4>申请条件</h4>
+	                    <ul class="no3">
+	                        <li>1、21-50岁的大陆公民</li>
+	                        <li>2、借出信用大于20分</li>
+	                        <li>3、有固定工作</li>
+	                    </ul>
+	                    <h4>申请资料</h4>
+	                    <ul class="no3">
+	                        <li>1、身份证</li>
+	                   
+	                  
+	                    </ul>	                    
+	               </div>
+	               <if condition="($session eq true)">
+	
+	                        <div class="jk_btn no3Btn"><a href="{:U('Borrow/circulation?type=3')}">立即申请</a></div>
+	                        
+	                    <else />
+	                        <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=3')}">立即申请</a></div>
+	                    </if>
                 </div>
+                
+                
+                
+                <!--模块7-->
+                <div class="jk_cont_in_cont">
+                    <h3 class="h3_07">实地考察标</h3>
+                    <div class="jk_cont_in_cont_in">
+	                    <h4>申请条件</h4>
+	                    <ul class="no6">
+	                        <li>1、21-25岁的大陆公民</li>
+	                        <li>2、手机绑定</li>
+	                        <li>3、有固定工作</li>
+	                    </ul>
+	                    <h4>申请资料</h4>
+	                    <ul class="no6">
+	                        <li>1、身份证</li>
+	                        <li>2、各项台帐资料</li>
+	                        
+	                    </ul>	                    
+                   </div>
+                   <if condition="($session eq true)">
+	
+	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
+	                        
+	                        <else />
+	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
+	                        </if>
+                </div>
+                
+                <!--模块8-->
+                <div class="jk_cont_in_cont">
+                    <h3 class="h3_08">债券转移贷</h3>
+                    <div class="jk_cont_in_cont_in">
+	                    <h4>申请条件</h4>
+	                    <ul class="no6">
+	                        <li>1、21-25岁的大陆公民</li>
+	                        <li>2、手机绑定</li>
+	                        <li>3、有固定工作</li>
+	                    </ul>
+	                    <h4>申请资料</h4>
+	                    <ul class="no6">
+	                        <li>1、身份证</li>
+	                        <li>2、各项台帐资料</li>
+	                        
+	                    </ul>	                    
+                   </div>
+                   <if condition="($session eq true)">
+	
+	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
+	                        
+	                        <else />
+	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
+	                        </if>
+                </div>
+                
+                <!--模块9-->
+                <div class="jk_cont_in_cont">
+                    <h3 class="h3_09">新手体验标</h3>
+                    <div class="jk_cont_in_cont_in">
+	                    <h4>申请条件</h4>
+	                    <ul class="no6">
+	                        <li>1、21-25岁的大陆公民</li>
+	                        <li>2、手机绑定</li>
+	                        <li>3、有固定工作</li>
+	                    </ul>
+	                    <h4>申请资料</h4>
+	                    <ul class="no6">
+	                        <li>1、身份证</li>
+	                        <li>2、各项台帐资料</li>
+	                        
+	                    </ul>	                    
+                   </div>
+                   <if condition="($session eq true)">
+	
+	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
+	                        
+	                        <else />
+	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
+	                        </if>
+                </div>
+                
                 
             </div>
         </div>
