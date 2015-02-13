@@ -969,20 +969,23 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*-----------找回密码------------------------*/
-.zhmm{width: 750px;height: auto;min-height:500px;border: 1px solid #ddd;background: #fff;margin: 20px auto;padding: 0px 0px 60px;}
+.zhmm{width: 750px;height: auto;min-height:370px;border: 1px solid #ddd;background: #fff;margin: 20px auto;padding:0;}
+.zhmm h2{width: 730px;height: 45px;line-height: 45px;color: #666;border-bottom: 1px solid #ddd;font-size: 20px;font-weight: normal;padding-left: 20px;}
 /*标题*/
-.zhmm .zhmm_way{overflow: hidden;height: 45px;width: 750px;}
-.zhmm .zhmm_way li{float: left;width: 375px;padding-left: 0px;height: 38px;border-bottom: 1px solid #ddd;font-size: 16px;line-height: 38px;text-align: center;cursor: pointer;}
-.zhmm .zhmm_way .cur{background: #444;color: #fff;}
+.zhmm .zhmm_way{height: auto;width: 220px;margin:70px auto;}
+.zhmm .zhmm_way li{width: 160px;padding-left: 60px;height: 60px;font-size: 16px;line-height: 55px;cursor: pointer;margin-bottom: 30px;border-radius: 6px;border: 1px solid #ddd;}
+.zhmm .zhmm_way li a{color: #fff;}
+
 /*tab*/
 .zhmm .zhmm_tab{width: 640px;margin: auto;height: auto;padding-top: 30px;}
+.zhmm .zhmm_tab h2{width: 730px;height: 45px;line-height: 45px;color: #666;border-bottom: 1px solid #ddd;font-size: 20px;font-weight: normal;padding-left: 20px;}
 .zhmm .zhmm_tab .tab{width: 80%;margin: auto;height: auto;}
 .zhmm .zhmm_tab .tab dl{width: 100%;height: 40px;overflow: hidden;margin-bottom: 15px;}
 .zhmm .zhmm_tab .tab dl dt{float:left;width: 145px;height: 40px;text-align: right;font-size: 16px;font-weight: normal;line-height: 40px;}
 .zhmm .zhmm_tab .tab dl dd{float: left;width: 280px;padding: 5px 0 0 20px;height: 35px;overflow: hidden;}
 .zhmm .zhmm_tab .tab dl dd .text{width: 195px;height: 33px;line-height:33px;border: 1px solid #ddd;padding: 0 0 0 5px;margin: 0;color: #555;float: left;}
-.zhmm .zhmm_tab .tab dl dd .btn{width: 80px;height: 35px;background: url(../images/80x35pxblue.png) no-repeat center center;float: left;margin: 0 0 0 10px;font-size: 12px;text-shadow: none;font-weight: normal;color:#fff;box-shadow: none;border: none;padding: 0;line-height: 35px;}
-.zhmm .zhmm_tab .tab .btn{width: 100px;height: 45px;background: url(../images/100x44pxblue.png) no-repeat;margin: 25px 0 0 200px;font-size: 16px;text-shadow: none;font-weight: normal;color:#fff;box-shadow: none;border: none;padding: 0;line-height: 45px;}
+.zhmm .zhmm_tab .tab dl dd .btn{width: 80px;height: 35px;/*background: url(../images/80x35pxblue.png) no-repeat center center;*/background:#b30000;float: left;margin: 0 0 0 10px;font-size: 12px;text-shadow: none;font-weight: normal;color:#fff;box-shadow: none;border: none;padding: 0;line-height: 35px;}
+.zhmm .zhmm_tab .tab .btn{width: 100px;height: 45px;/*background: url(../images/100x44pxblue.png) no-repeat;*/background:#b30000;margin: 25px 0 0 200px;font-size: 16px;text-shadow: none;font-weight: normal;color:#fff;box-shadow: none;border: none;padding: 0;line-height: 45px;}
 
 
 /*------------设置新登录密码----------------------------*/
