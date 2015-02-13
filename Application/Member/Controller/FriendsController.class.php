@@ -54,4 +54,14 @@ class FriendsController extends MemberController {
 		$this->assign ( "friendList", $friendList );
 		$this->display ();
 	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *        
+	 *         2015-2-13好友的推广管理
+	 */
+	public function friendsgeneralize() {
+		$this->display ();
+	}
 }

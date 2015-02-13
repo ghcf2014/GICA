@@ -13,9 +13,31 @@ class SystemController extends HomeController {
 	
 	/**
 	 *
-	 * @author 2015-1-29找回密码
+	 * @author liuy
+	 *        
+	 *         2015-1-29找回密码
 	 */
 	public function findpassword() {
+		$this->display ();
+	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *        
+	 *         2015-2-13通过手机号码找回密码
+	 */
+	public function findpassbyphone() {
+		$this->display ();
+	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *        
+	 *         2015-2-13通过邮箱地址找回密码
+	 */
+	public function findpassbyemail() {
 		$this->display ();
 	}
 	
