@@ -1114,7 +1114,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 /*---------------------推广管理-------------------------------------------------------*/
 .zh_cont_r .tggl{background: #fff;border: 1px solid #ddd;margin-top: 5px;height: auto;min-height: 1091px;width: 893px;}
-.zh_cont_r .tggl dl{border: 0;margin: 0;width: 893px;height: auto;padding: 0;margin-bottom: 20px;}
+.zh_cont_r .tggl dl{border: 0;margin: 0;width: 893px;height: auto;padding: 0;margin-bottom: 20px;background: #eee;}
 .zh_cont_r .tggl dl dt{float: none;width: 800px;height: 30px;line-height: 30px;font-size: 16px;font-weight: normal;padding: 15px 45px 5px;}
 .zh_cont_r .tggl dl dd{float: none;width: 720px;padding: 0 85px;height: auto;line-height: 30px;}
 
@@ -1126,6 +1126,16 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 
+
+
+
+/*-------------------------网站地图------------------------------------------------*/
+.wzdt{width: 800px;margin: 20px auto;height: auto;border: 1px solid #ddd;background: #fff;padding: 30px 25px;}
+.wzdt dl{overflow: hidden;width: 800px;height: auto;margin: 20px 0;}
+.wzdt dl dt{float: left;width: 30px;height: auto;padding:15px 5px;border: 1px solid#ddd;font-size: 16px;vertical-align: middle;text-align: center;}
+.wzdt dl dd{float: left;width: 640px;padding: 10px 55px;height: auto;}
+.wzdt dl dd ul{overflow: hidden;}
+.wzdt dl dd ul li{width: auto;padding: 0 18px;float: left;height: 40px;line-height: 40px;text-align: center;}
 
 
 
