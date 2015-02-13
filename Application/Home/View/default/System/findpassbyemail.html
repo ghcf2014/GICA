@@ -1,13 +1,13 @@
 <block name="body"> <extend name="Base/common" /> <block
-	name="body"> <!--header--> <!--找回密码  开始-->
-<!--邮箱找回密码页面-->
-<!--background: url(__PUBLIC__/Home/images/120x30pxblue.png) no-repeat center center;-->
+	name="body"> <!--header--> <!--找回密码  开始--> <!--邮箱找回密码页面--> <!--background: url(__PUBLIC__/Home/images/120x30pxblue.png) no-repeat center center;-->
 <div class="zhmm">
 	<h2>找回密码</h2>
-	<div class="zhmm_tab">	
+	<div class="zhmm_tab">
 		<div class="tab">
 			<dl>
-				<dt><span style="color: red;">*</span>邮箱账号</dt>
+				<dt>
+					<span style="color: red;">*</span>邮箱账号
+				</dt>
 				<dd>
 					<input type="text" class="text" placeholder="请输入您绑定的邮箱账号" />
 				</dd>
@@ -16,11 +16,14 @@
 				<dt></dt>
 				<dd>
 					<input type="button" class="btn" value="点击发送验证邮件"
-						style="width: 120px; background: #b30000;" />
+						style="width: 120px; background: #b30000;" id="sendemail" />
 				</dd>
 			</dl>
 		</div>
 	</div>
 </div>
-
-</block>
+<script>
+	$("#sendemail").click(function() {
+		window.location.href = "{:U('Home/System/setpassword')}";
+	});
+</script> </block>

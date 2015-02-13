@@ -92,11 +92,22 @@ class NewhelpController extends HomeController {
 	public function shiyongtiaokuan() {
 		$this->display ();
 	}
+	
 	/**
 	 *
 	 * @author 2015-1-20安全保障
 	 */
 	public function safetypromise() {
+		$this->display ();
+	}
+	
+	/**
+	 *
+	 * @author liuy
+	 *        
+	 *         2015-2-13网站地图
+	 */
+	public function websitemap() {
 		$this->display ();
 	}
 }
