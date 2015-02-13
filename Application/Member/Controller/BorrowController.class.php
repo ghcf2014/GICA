@@ -85,7 +85,8 @@ class BorrowController extends MemberController {
 
         $condition1 ['id'] = $id;
         $binfo =M('z_borrow_info')->where($condition1)->select();
-		
+        
+		$this->borrow_status=$binfo[0]['borrow_status'];
 		$this->assign('list',$dd);
 		$this->assign('list1',$binfo);
 		$this->display();
@@ -146,7 +147,7 @@ class BorrowController extends MemberController {
 
 		// $data ['has_pay'] =;
 		// $depict ['updata'] = serialize ( $data );
-
+        // $data['borrow_status']=$binfo[0]['borrow_status'];
 
 		$data['deadline']=$result[0]['deadline'];
         $data['m']=$result[0]['receive_capital'];

@@ -27,8 +27,8 @@
                 <li>借款金额</li>
                 <li>借款利息</li>
                 <li>借款年化率</li>
-                <li>借款期数</li>
-                <li>已还借款期数</li>
+                <li>募集时间</li>
+                <li>已还期数</li>
                 <li>借款期限</li>
                </ul>
             </div>
@@ -36,24 +36,24 @@
                <ul>
                 <li>￥<span class="cn_borrow_count countfont-2">{$vo.borrow_money}</span></li>
                 <li><span class="countfont-2">{$vo.borrow_interest}</span></li>
-                <li>￥<span class="cn_recycle_count countfont-2">{$vo.borrow_interest_rate}</span></li>
-                <li><span class="countfont-2">{$vo.total}</span></li>
-                <li>￥<span class="cn_wait_count countfont-2">{$vo.has_pay}</span></li>
-                <li><span class="countfont-2">{$vo.borrow_duration}</span></li>
+                <li><span class="cn_recycle_count countfont-2">{$vo.borrow_interest_rate}%</span></li>
+                <li><span class="countfont-2">{$vo.total}天</span></li>
+                <li><span class="cn_wait_count countfont-2">{$vo.has_pay}/{$vo.total}</span></li>
+                <li><span class="countfont-2">{$vo.borrow_duration}个月</span></li>
                </ul>
             </div>
              <div class="text-item six-width clearfix">
                <ul>
                 <li>借款类型</li>
                 <li>还款方式</li>
-                <li>还款方式</li>
+                <li>投资人数</li>
                </ul>
             </div>
           <div class="list-con-count clearfix">
                <ul>
-                <li>￥<span class="cn_borrow_count countfont-2">{$vo.borrow_type}</span></li>
-                <li><span class="countfont-2">{$vo.repayment_type}</span></li>
-                <li>￥<span class="cn_recycle_count countfont-2">{$vo.repayment_type}</span></li>
+                <li><span class="cn_borrow_count countfont-2">{$vo.borrow_type|get_borrow_type_name}</span></li>
+                <li><span class="countfont-2">{$vo.repayment_type|get_repayment_type}</span></li>
+                <li><span class="cn_recycle_count countfont-2">{$vo.repayment_type}人</span></li>
                </ul>
             </div>
             <p style="padding-top: 20px;color: red;">* 被叫停的项目不在统计范围内</p>
@@ -81,7 +81,7 @@
 									<td align="center"><if condition="$ho[0]['deadline'] eq '0' "><a id="deadline_{$i}">待还</a><else/>已还</if></td>
 									<td align="center">
 									<!-- <a href="{:U('Member/Borrow/reimbursement_del?id='.$bid.'&m='.$ho['lixi'])}">立即还款</a> -->
-									 <a href="javascript:void(0);" id="hbtn_{$i}" class="hbtn_{$i}"><if condition="$ho[0]['deadline'] eq '0' ">立即还款</if></a></td>
+									 <if condition="$borrow_status eq '6' "><if condition="$ho[0]['deadline'] eq '0' "><a href="javascript:void(0);" id="hbtn_{$i}" class="hbtn_{$i}">立即还款</a></if><else/>标未满</if></td>
 								
 								</tr></volist></form>
 								<tr>
@@ -117,11 +117,23 @@ $('.hbtn_1').click(function(){
                $.post('__URL__/reimbursement_del',{bid:bid,bid2:bid2},function success(data){
 
               document.getElementById('checktip_1').innerHTML ='<a href="">手动刷新</a>';
+              if(data.borrow_status==6){
 
-               if(data.deadline != 0){
+              	if(data.deadline != 0){
                 document.getElementById('deadline_1').innerHTML ='已还';
                 document.getElementById('hbtn_1').innerHTML ='';
+                }
+
+              }else{
+
+              	document.getElementById('hbtn_1').innerHTML ='';
+
               }
+
+
+
+
+               
               
              	alert(data.cs);
              });
