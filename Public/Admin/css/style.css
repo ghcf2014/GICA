@@ -789,3 +789,28 @@ color: #333;text-decoration: none;}
 .frame .frame_r li .yzm_img{width: 90px;height: 40px;float: left;background: #cfc;margin:4px 0 0 10px;;}
 .frame .frame_r li .btn{width: 138px;height: 39px;margin: 20px 60px;background: url(../images/login_btn_bg.png) no-repeat;font-size: 16px;font-weight: bold;text-shadow: 0 90 10px #fff;color:#333;line-height: 38px;text-align: center;cursor: pointer;}
 .frame_shadow{width: 792px;height: 212px;margin:2px auto;background: url(../images/frame_shadow_bg.png) no-repeat;}
+
+
+/*---admin首页图表-----*/
+.canvasmain{ display:block;margin: 0 20px; margin-top:30px; }
+.canvascode{width:100px; float: right;}
+.canvas_r{width: 500px;float: right; margin-top: 50px;}
+.canvascode li span {
+    margin-right: 10px;
+    padding-right: 15px;
+    font-family: "微软雅黑","Microsoft JhengHei";
+    font-size: 12px;
+    line-height: 30px;
+}
+.canvas1 {
+    background: none repeat scroll 0% 0% #8BD7AC;
+}
+.canvas4 {
+    background: none repeat scroll 0% 0% #F78D98;
+}
+.canvas3 {
+    background: none repeat scroll 0% 0% #FFC467;
+}
+.canvas2 {
+    background: none repeat scroll 0% 0% #46BFBD;
+}

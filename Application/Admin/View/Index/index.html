@@ -2,18 +2,77 @@
 
 <block name="sidebar"></block>
 
-<block name="style">
+<!-- <block name="style">
     <style>
         body{padding: 0}
     </style>
-</block>
+</block> -->
 
 <block name="body">
     <!-- 主体 -->
     <div id="indexMain" class="index-main">
        <!-- 插件块 -->
+       <div class="canvasmain"><canvas id="myChart" width="888" height="400"></canvas><div class="canvas_r">
+       <canvas id="canvas" height="250" width="250"></canvas><div class="canvascode">
+       <ul>
+          <li><span class="canvas1"></span>2项独立页</li>
+          <li><span class="canvas4"></span>7篇文章</li>
+          <li><span class="canvas3"></span>4个分类</li>
+          <li><span class="canvas2"></span>0条评论</li>
+        </ul></div></div></div>
        <div class="container-span">{:hook('AdminIndex')}</div>
     </div>
+
+<script type="text/javascript">
+//线形图
+var data = {
+	labels : ["3月7日","3月7日","3月7日","3月7日","3月7日","3月7日","今天"],
+	datasets : [
+		{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#000",
+			data : [65,59,90,81,56,55,40]
+		},
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			pointColor : "rgba(151,187,205,1)",
+			pointStrokeColor : "#000",
+			data : [28,48,40,19,96,27,100]
+		}
+	]
+}
+
+	var myDoughnut = new Chart(document.getElementById("myChart").getContext("2d")).Line(data);
+</script>
+<script>
+
+//饼形图
+var doughnutData = [
+				{
+					value: 1,
+					color:"#8bd7ac"
+				},
+				{
+					value : 2,
+					color : "#f78d98"
+				},
+				{
+					value : 3,
+					color : "#ffc467"
+				},
+				{
+					value : 4,
+					color : "#46BFBD"
+				},
+
+			
+			];
+
+	var myDoughnut = new Chart(document.getElementById("canvas").getContext("2d")).Doughnut(doughnutData);
+    </script>
 </block>
 
 <block name="script">
@@ -31,4 +90,5 @@
         $('.sidebar').remove();
     })
 </script>
+
 </block>

@@ -18,7 +18,7 @@ class UserController extends HomeController {
         if(!C('USER_ALLOW_REGISTER')){
             $this->error('注册已关闭');
         }
-
+        
 		if(IS_POST){ //注册用户
 			//手机发送验证码
 			// session_start();
