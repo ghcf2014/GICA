@@ -26,7 +26,7 @@ function is_login() {
 *提示用户为敏感信息操作
 */
 function is_sysmsg(){
-    $uid=$_SESSION[gica_home]['user_auth']['uid'];
+    $uid=$_SESSION['gica_home']['user_auth']['uid'];
     $sys_count =M('z_system_msg')->where("status=0 and uid=%s",$uid)->count();
     $email_count =M('z_inner_msg')->where("status=0 and tid=%s",$uid)->count();
     $allcount =($sys_count+$email_count);

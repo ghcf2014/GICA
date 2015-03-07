@@ -296,51 +296,40 @@ class BorrowController extends HomeController {
 		$live = array_keys ( $arr, 'live_status' );
 		$others = array_keys ( $arr, 'others_status' );
 		$arr1 = array ();
-		if (empty ( $phone ) == false) {
-			$arr1 ['phone_status'] = '手机';
-		}
-		if (empty ( $idcard ) == false) {
-			$arr1 ['id_status'] = '身份';
-		}
-		if (empty ( $email ) == false) {
-			$arr1 ['email_status'] = '邮箱';
-		}
-		if (empty ( $account ) == false) {
-			$arr1 ['account_status'] = '账户';
-		}
-		if (empty ( $credit ) == false) {
-			$arr1 ['credit_status'] = '信用';
-		}
-		if (empty ( $video ) == false) {
-			$arr1 ['video_status'] = '视频';
-		}
-		if (empty ( $face ) == false) {
-			$arr1 ['face_status'] = '现场';
-		}
-		if (empty ( $work ) == false) {
-			$arr1 ['work_status'] = '工作';
-		}
-		if (empty ( $building ) == false) {
-			$arr1 ['building_status'] = '房产';
-		}
-		if (empty ( $license ) == false) {
-			$arr1 ['license_status'] = '驾照';
-		}
-		if (empty ( $cars ) == false) {
-			$arr1 ['cars_status'] = '购车';
-		}
-		if (empty ( $live ) == false) {
-			$arr1 ['live_status'] = '居住地';
-		}
-		if (empty ( $others ) == false) {
-			$arr1 ['others_status'] = '其他';
-		}
+		if (empty ( $phone ) == false) {$arr1 ['phone_status'] = '手机';}
+		if (empty ( $idcard ) == false) {$arr1 ['id_status'] = '身份';}
+		if (empty ( $email ) == false) {$arr1 ['email_status'] = '邮箱';}
+		if (empty ( $account ) == false) {$arr1 ['account_status'] = '账户';}
+		if (empty ( $credit ) == false) {$arr1 ['credit_status'] = '信用';}
+		if (empty ( $video ) == false) {$arr1 ['video_status'] = '视频';}
+		if (empty ( $face ) == false) {$arr1 ['face_status'] = '现场';}
+		if (empty ( $work ) == false) {$arr1 ['work_status'] = '工作';}
+		if (empty ( $building ) == false) {$arr1 ['building_status'] = '房产';}
+		if (empty ( $license ) == false) {$arr1 ['license_status'] = '驾照';}
+		if (empty ( $cars ) == false) {$arr1 ['cars_status'] = '购车';}
+		if (empty ( $live ) == false) {$arr1 ['live_status'] = '居住地';}
+		if (empty ( $others ) == false) {$arr1 ['others_status'] = '其他';}
 		$this->assign ( 'status', $arr1 );
 		// 查询投标详情
 		$borrow_info = M ( 'z_borrow_investor' );
 		$condition ['borrow_id'] = $id;
 		$borrow_info = $borrow_info->field ( 'investor_uid,borrow_uid,borrow_id,sum(investor_capital)investor_capital,deadline,add_time,invest_fee' )->where ( $condition )->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'investor_uid' )->select ();
-		
+		$uid = is_login (); 
+		$detail = M ( 'z_investor_detail');
+		$condition ['borrow_id'] = $id;
+		$detail= $detail->where ( $condition )->select ();
+		// $condition ['sort_order'] = 1;
+		// $detail = $detail->where ( $condition )->select ();
+
+		for($i=1;$i<=intval($detail[0]['total']);$i++){
+			
+			$detail1 = M ('z_investor_detail');
+			$condition1 ['sort_order'] = $i;
+		    $condition1 ['borrow_id'] = $id;
+		    $dd[$i]= $detail1->field ( 'id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital')->where ( $condition1 )->group ( 'sort_order' )->select ();
+		}
+
+		$this->assign('list1',$dd);
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}

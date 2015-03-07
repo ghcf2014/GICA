@@ -123,13 +123,16 @@
 	                    <li>应还本金</li>
 	                    <li>应还利息</li>
 	                </ul>
-	                <ul class="con2" style="height:53px;">
-	                    <li>{$list3[0]['borrow_duration']}个月</li>
-	                    <li>{$list3[0]['deadline|date='Y-m-d H:i:s',###']}</li>
-	                    <li>￥:{$list3[0]['repayment_money']}</li>
-	                    <li>￥:{$list3[0]['borrow_money']}</li>
+	                <volist name="list1" id="ho" key="i" empty="暂时没有数据...">
+	                	<ul class="con2" style="height:53px;">
+	                    <li>{$i}</li>
+	                    <li>{$ho[0]['repayment_time']|date='Y-m-d',###}</li>
+	                    <li>￥:{$ho[0]['capital']}</li>
+	                    <li>￥:{$ho[0]['receive_capital']}</li>
 	                    <li>￥:{$list3[0]['repayment_interest']}</li>
 	                </ul>
+					</volist>
+	                
             	</div>
             	<div class="tab" style="display:none">			
 	                <ul class="con2" style="padding: 5px;width: 1018px;"><volist name="updata" id="val">

@@ -74,8 +74,13 @@ class FinanceController extends HomeController {
             $listBorrow  = M('z_borrow_info');
             $list = $listBorrow->where($map)->select();
             $this->assign('list3',$list);
+            if ($list[0]['borrow_uid']!==$uid){
+                $this->display();
+            }else {
+                $this->error('对不起，您不能投自己的标！');
+            }
             
-            $this->display();
+            
     }
     public function add($id= 0){
             $uid  = is_login();//获取当前用户UID
@@ -85,9 +90,9 @@ class FinanceController extends HomeController {
 			$paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
 
 			
-			if (md5($dealpwd) != $paypass) {
-				$this->error ( L ( '您输入的交易密码有误！' ) );
-			}
+			// if (md5($dealpwd) != $paypass) {
+			// 	$this->error ( L ( '您输入的交易密码有误！' ) );
+			// }
             
             $bid = $id;//投标id赋值
             $listMember = M('member');
