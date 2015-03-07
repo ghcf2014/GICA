@@ -230,15 +230,19 @@ class BorrowController extends HomeController {
 		
 		// 保存当前数据对象
 		if ($this->borrow_upload ( $depict )) { // 保存成功
-		                                        // 成功提示add_time
-			$uid=is_login();
-			$arrs=array(
-				'status'=>3
-				);
+		    $uid=is_login();                                   
 			$applydata =M('z_borrow_apply');
-			$result=$applydata->where('apply_uid=%s',$uid)->save($arrs);
+			$arrs['status']=3;
+			$apply_uid['apply_uid'] =$uid;
+			$result=$applydata->where($apply_uid)->save($arrs);
 			if ($result>0){
-				$this->success ( L ( '发布审核已提交' ), U ( 'Home/Borrow/index' ) );
+
+
+				$bdata=M('z_borrow_info');
+				$map['borrow_uid']=$uid;
+				$bid=$bdata->where($map)->order('add_time desc')->select();
+				$b_id=$bid[0]['id'];
+				$this->success ('发布审核已提交',U( 'Home/Borrow/detail?id='.$b_id));
 			} else {
 				$this->error('申请数据提交失败');
 			}
