@@ -12,7 +12,10 @@
             		<div class="mes_con">
             			<div class="tabtil">
 							<ul>
-								<li class="on" onclick=showSysMails();;>
+								<li class="on" >
+									通知方式
+								</li>
+								<li onclick=showSysMails();;>
 									系统消息<if condition="$syscount eq 0">[0]<else/><span style="color:red;">[{$syscount}]</span></if>
 								</li>
 								<li onclick=showReceiveMails();;>
@@ -26,7 +29,47 @@
 								</li>
 							</ul>
 						</div>
+						
 						<div class="box">
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">短信通知：</dt>
+								<dd>
+									<ul>
+										<li><label><input type="checkbox" name="" id="" value="" />投资</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />充值</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />提现</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />投资</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />充值</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />提现</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />投资</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />充值</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />提现</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />投资</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />充值提现投资</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />提现</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />投资</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />充值</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />提现</label></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">邮件通知：</dt>
+								<dd>
+									<ul>
+										<li><label><input type="checkbox" name="" id="" value="" />投资</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />充值</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />提现</label></li>
+										<li><label><input type="checkbox" name="" id="" value="" />借款</label></li>
+									</ul>
+								</dd>
+							</dl>
+							
+							<input type="button" name="" value="保&nbsp;&nbsp;&nbsp;&nbsp;存" class="tongzhiWay_btn"/>
+							
+						</div>
+						
+						<div class="box" style="display: none;">
 							<span id="sysInfo">
 								<div class="boxmain2">
 					            	<div class="srh" id="srh">
