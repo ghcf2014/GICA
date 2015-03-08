@@ -1,6 +1,7 @@
 <?php
 
 namespace Home\Controller;
+use User\Api\UserApi;
 
 use OT\DataDictionary;
 use Think\Controller;
@@ -38,7 +39,7 @@ class SystemController extends HomeController {
 			   else{
 			   	$this->error('发送失败！');
 			   }
-			$this->success('验证邮件已发送，注意查收!');
+			$this->success('验证邮件已发送，注意查收!', U('User/login'));
 	    }
 	    else{
 	    	$this->error('发送失败！');
@@ -70,12 +71,48 @@ class SystemController extends HomeController {
 	 * @author 2015-1-29
 	 */
 	public function setpassword($basename='') {
-
-
 		$this->basename =$basename;
-
-		dump($basename);
-
 		$this->display();
 	}
+
+    public function profile(){
+        if ( IS_POST ) {
+            //获取参数
+            $basename=$_POST['basename'];
+            if(empty($basename)){
+			$this->error = '非法操作!';
+			return false;
+			}
+
+			//更新前检查用户修改权限码
+
+			
+				$map['username'] = base64_decode ( $basename );
+
+	            $Mid = M ( 'ucenter_member' )->field ( 'id' )->where($map)->select();
+				
+				$uid =$Mid[0]['id'];
+
+            $data['password'] = $_POST['password'];
+            $repassword = $_POST['repassword'];
+            
+            empty($data['password']) && $this->error('请输入新密码');
+            empty($repassword) && $this->error('请输入确认密码');
+
+            if($data['password'] !== $repassword){
+                $this->error('您输入的新密码与确认密码不一致');
+            }
+
+
+            $Api = new UserApi();
+            $res = $Api->updatepw($uid, $data);
+            if($res['status']){
+                $this->success('修改密码成功！', U('User/login'));
+            }else{
+                $this->error($res['info']);
+            }
+        }else{
+            $this->display();
+        }
+    }
 }

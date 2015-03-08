@@ -121,4 +121,14 @@ class UserApi extends Api {
 		}
 		return $return;
 	}
+
+	public function updatepw($uid, $data) {
+		if ($this->model->updateUserpw ( $uid, $data ) !== false) {
+			$return ['status'] = true;
+		} else {
+			$return ['status'] = false;
+			$return ['info'] = $this->model->getError ();
+		}
+		return $return;
+	}
 }

@@ -70,7 +70,7 @@ class UserController extends HomeController {
 				$this->error($this->showRegError($uid));
 			}
 		} else { //显示注册表单
-			$reffer = $_REQUEST ['reffer'];
+			// $reffer = $_REQUEST ['reffer'];
 			if ($reffer != null) {
 				$reffer = base64_decode ( $reffer );
 				// var_dump($reffer);
