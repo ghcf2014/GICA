@@ -80,8 +80,8 @@ class BorrowController extends MemberController {
 			$condition1 ['sort_order'] = $i;
 		    $condition1 ['borrow_id'] = $id;
 		    $dd[$i]= $detail1->field ( 'id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital')->where ( $condition1 )->group ( 'sort_order' )->select ();
+		    // $depict ['repayment_money'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] );
 		}
-
 
         $condition1 ['id'] = $id;
         $binfo =M('z_borrow_info')->where($condition1)->select();
@@ -103,7 +103,6 @@ class BorrowController extends MemberController {
 
 		 	if($i==$hi){
 		 		$depict[$i]['has_pay']=$hi;
-
 		 	}
 
 		 }

@@ -205,24 +205,25 @@ class BorrowController extends HomeController {
 				);
 			$msgs =M('z_system_msg')->add($danger);
 		}
-		//等额本息公式带进		
+
+		//等额本息公式带进
 		// $depict['repayment_interest']=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
 		if ($_POST ["repayment_type"] == 5) {
-			$depict ['repayment_interest'] = (intval ( $_POST ["borrow_money"] ) * (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] ) - intval ( $_POST ["borrow_money"] );
-			$depict ['repayment_money'] = (intval ( $_POST ["borrow_money"] ) * (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] );
+			$depict ['repayment_interest'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] ) - floatval ( $_POST ["borrow_money"] );
+			$depict ['repayment_money'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] );
 			$depict ['total'] = $_POST ["borrow_duration"];
 		}
 		//先息后本公式带进
 		if ($_POST ["repayment_type"] == 6) {
-			$depict ['repayment_interest'] =intval ( $_POST ["borrow_money"] )*(intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12);
-			$depict ['repayment_money'] = intval ( $_POST ["borrow_money"] )+(intval ( $_POST ["borrow_money"] )*(intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12));
+			$depict ['repayment_interest'] =floatval ( $_POST ["borrow_money"] )*(floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12);
+			$depict ['repayment_money'] = floatval ( $_POST ["borrow_money"] )+(floatval ( $_POST ["borrow_money"] )*(floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12));
 			$depict ['total'] = $_POST ["borrow_duration"];
 		}
 		//一次性还款公式带进
 		if ($_POST ["repayment_type"] == 7) {
 			
-			$depict ['repayment_interest'] =intval ( $_POST ["borrow_money"] )*((intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)*intval($_POST ["borrow_duration"]));
-			$depict ['repayment_money']=intval ( $_POST ["borrow_money"] )*(1+((intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12))*intval ( $_POST ["borrow_duration"] ));
+			$depict ['repayment_interest'] =floatval ( $_POST ["borrow_money"] )*((floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)*floatval($_POST ["borrow_duration"]));
+			$depict ['repayment_money']=floatval ( $_POST ["borrow_money"] )*(1+((floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12))*floatval ( $_POST ["borrow_duration"] ));
 			$depict ['total'] =1;
 		}
 
