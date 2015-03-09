@@ -66,6 +66,15 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .nav .nav_wrap li .current{color:#59cdfe;text-decoration:none;}
 
 
+/*----------------------nav2-----------------------*/
+/*.nav2_out{width: 100%;height: 35px;background: #59cdfe;display: none;}
+.nav2{width: 800px;height: 35px;margin: auto;overflow: hidden;}
+.nav2 li{float: left;width: 100px;height: 35px;margin: 0 34px;line-height: 35px;font-size: 16px;text-align: center;}
+.nav2 li a{color: #fff;display:block;width: 100%;height: 35px;}
+.nav2 li a:hover{background: #4ac0ff;}
+.nav2 li .current{background: #4ac0ff;}*/
+/*#0aaae6*/
+
 
 /*-------banner-----------------------*/
 .banner_out{width: 100%;height: 30%;background: #fff;}

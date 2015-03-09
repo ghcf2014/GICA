@@ -63,6 +63,22 @@
 </div>
 <!--nav end-->
 
+<!--浮动导航-->
+<!--<div class="nav2_out">		
+	<ul class="nav2">
+    	<li style="width: 60px;"><a href="{:U('Home/Index/index')}" class="current">首页</a></li>
+		<li><a href="{:U('Home/Borrow/index')}">我要融资</a></li>
+		<li><a href="{:U('Home/Finance/index')}">我要投资</a></li>
+		<li><a href="{:U('Member/Index/index')}">我的账户</a></li>
+		<li><a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></li>		
+	</ul>
+</div>-->
+
+
+
+
+
+
 
 <!--浮动侧边栏  计算器  客服QQ-->
 <!--联系我们-->
@@ -158,6 +174,10 @@
   		if (!urlstatus) {$(".nav_out .nav .nav_wrap li").eq(0).children().addClass('current'); }
   		
   		
+  		
+  		
+  		
+  		
   		//顶部 微博 微信 QQ 热线
   		//微博
   		$('.header_out .header ul .weibo').hover(function(){
@@ -190,11 +210,13 @@
 //			if($(document).scrollTop() > $('.header_out').height()+$('.nav_out').height()+$('.banner').height())
 			if($(document).scrollTop() > $(window).height())
 			{
-				$('.nav_out').css({'position':'fixed','top':'0','z-index':'1000'})		
+				$('.nav_out').css({'position':'fixed','top':'0','z-index':'1000','box-shadow':'2px 0 5px #ccc'})
+				//$('.nav2_out').css({'position':'fixed','top':'0','z-index':'1000','display':'block'})
 			}
 			else
 			{
-				$('.nav_out').css({'position':'static'})
+				$('.nav_out').css({'position':'static','box-shadow':'none'})
+				//$('.nav2_out').css({'position':'static','display':'none'})
 			}
 			
 		});	
