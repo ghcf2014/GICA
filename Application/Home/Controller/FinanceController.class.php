@@ -267,6 +267,11 @@ class FinanceController extends HomeController {
 										$logdata ['add_time'] = time ();
 										$log = $log->add ( $logdata );
 
+
+                                        //发送站内信
+                                        $action=$logdata ['info'];
+                                        systemmsg($action);
+
                                 //成功提示
                                 $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
                             } 

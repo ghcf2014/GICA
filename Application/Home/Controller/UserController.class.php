@@ -256,6 +256,11 @@ class UserController extends HomeController {
             $Api = new UserApi();
             $res = $Api->updateInfo($uid, $password, $data);
             if($res['status']){
+
+            	//发送站内信
+                $action='修改了登陆密码，请注意资金安全！';
+                systemmsg($action);
+                
                 $this->success('修改密码成功！');
             }else{
                 $this->error($res['info']);

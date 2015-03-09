@@ -1570,3 +1570,15 @@ function sendsms($mob, $content) {
         }
         return preg_match('/^[a-z\d_]{5,20}$/i', $username) ? true : false;
     }
+    //发送站内信
+    function systemmsg($action){
+        if ($uid=1){
+            $danger =array(
+                    "username"=>$_SESSION[gica_home]['user_auth']['username'],
+                    "uid" =>$_SESSION[gica_home]['user_auth']['uid'],
+                    "action" =>$action,
+                    "status" =>'0'
+                );
+            $msgs =M('z_system_msg')->add($danger);
+        }
+    }

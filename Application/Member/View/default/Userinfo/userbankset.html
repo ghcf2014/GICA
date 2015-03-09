@@ -17,8 +17,7 @@
 						<li class="cur">绑定银行卡</li>
 						<li>已绑定银行卡</li>
 					</ul>
-				<div class="aqset_tabC_out">
-					<empty name="list">
+				<div class="aqset_tabC_out">	
 					<form action="{:U('userbankset_save')}" method="post" id="form">
 						<!--银行卡验证-->
 						<div class="aqset_tabC">
@@ -53,98 +52,36 @@
 							<input type="button" class="yhk_btn" id="submitBank" value="提交">
 						</div>
 					</form>
-					<!--身份证验证-->
-					<!--<div class="aqset_tabC" style="display: none">
-						<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
-						<dl class="sfz">
-							<dt>身份证正面：</dt>
-							<dd>
-								<img src="" /><input type="file" name="" id="" class="sfz_btn"
-									value="修改" />
-							</dd>
-						</dl>
-						<dl class="sfz">
-							<dt>身份证反面：</dt>
-							<dd>
-								<img src="" /><input type="file" name="" id="" class="sfz_btn"
-									value="修改" />
-							</dd>
-						</dl>
-						<input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
-					</div>-->
-					<else /> <volist name="list" id="vo"> 
-					<!--银行卡验证-->
-					<div class="aqset_tabC">
-						<!-- <dl class="yhk">
-								<dt>平台昵称：{:get_username()}</dt>
-								<dd></dd>
-							</dl> -->
-						<dl class="yhk">
-							<dt>开户行：</dt>
-							<dd>
-								<input type="text" class="yhk_txt" name="bankName"
-									value="{$vo.bank_name}" disabled="disabled">
-							</dd>
-						</dl>
-						<dl class="yhk">
-							<dt>支行：</dt>
-							<dd>
-								<input type="text" class="yhk_txt" name="subBankName"
-									value="{$vo.bank_address}" disabled="disabled">
-							</dd>
-						</dl>
-						<dl class="yhk">
-							<dt>卡号：</dt>
-							<dd>
-								<input type="text" class="yhk_txt" name="bankCard"
-									value="{$vo.bank_num}" disabled="disabled">
-							</dd>
-						</dl>
-					</div>
-					</volist> 
-					<!--身份证验证-->
-					<!--<div class="aqset_tabC" style="display: none">
-						<p class="sfz_t">保障您的账户资金安全，通过认证后可参与投资，不可修改</p>
-						<dl class="sfz">
-							<dt>身份证正面：</dt>
-							<dd>
-								<img src="" /><input type="file" name="" id="" class="sfz_btn"
-									value="修改" />
-							</dd>
-						</dl>
-						<dl class="sfz">
-							<dt>身份证反面：</dt>
-							<dd>
-								<img src="" /><input type="file" name="" id="" class="sfz_btn"
-									value="修改" />
-							</dd>
-						</dl>
-						<input type="submit" name="" id="" class="sfz_btn2" value="确认修改" />
-					</div>-->
-					
-					<!--已绑定银行卡-->
-					<div class="aqset_tabC" style="display: none;">
-						<table border="0" cellspacing="0" cellpadding="0" class="ybd">
-							<tr>
-								<th style="width: 200px;">开户行</th>
-								<th style="width: 200px;">支行</th>
-								<th style="width: 200px;">卡号</th>
-								<th style="width: 100px;">绑定时间</th>
-								<th style="width: 80px;">状态</th>
-								<th style="width: 90px;">操作</th>
-							</tr>
-							<tr>
-								<td>中国工商银行</td>
-								<td>深圳福田区分行</td>
-								<td>1234567896542325</td>
-								<td>2015-02-12</td>
-								<td>已绑定</td>
-								<td>删除</td>
-							</tr>
-						</table>
-					</div>
-					
-					</empty>
+				
+					<!--已绑定银行卡-->					
+						<div class="aqset_tabC" style="display: none;">
+							<table border="0" cellspacing="0" cellpadding="0" class="ybd">
+								<tr>
+									<th style="width: 200px;">开户行</th>
+									<th style="width: 200px;">支行</th>
+									<th style="width: 200px;">卡号</th>
+									<th style="width: 100px;">绑定时间</th>
+									<th style="width: 80px;">状态</th>
+								</tr>
+								<volist name="list" id="vo">
+								<tr>
+									<td>{$vo.bank_name}</td>
+									<td>{$vo.bank_address}</td>
+									<td>{$vo.bank_num}</td>
+									<td>{$vo.add_time|date='Y-m-d',###}</td>
+									<td>
+										<if condition="$vo['bank_status'] eq 0">
+											审核中
+										<else/>
+											已绑定
+										</if>
+										
+									</td>
+								</tr>
+								</volist>
+							</table>
+						</div>
+				
 				</div>
 				</div>
 				

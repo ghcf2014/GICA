@@ -63,33 +63,24 @@ class UserinfoController extends MemberController {
 		$data ['bank_city'] = '';
 		$data ['bank_address'] = $_POST ["subBankName"];
 		$data ['bank_name'] = $_POST ["bankName"];
-		$data ['add_time'] = time;
+		$data ['add_time'] = time();
 		$data ['add_ip'] = '';
 		$condition ['uid'] = $uid;
 		// var_dump ( $_POST ['bankCard'] );
 		$banksinfo = $m->where ( "uid=" . $uid )->select ();
-		// 如果没有银行卡，添加银行卡信息
-		if ($banksinfo == null) {
-			// $Model = new Model ();
-			// $time = time ();
-			// $sql = "insert into gica_z_member_banks(uid,bank_num,bank_name,bank_address,add_time)values('{$uid}','{$data ['bank_num']}','{$data ['bank_name'] }','{$data ['bank_address']}','{$time}')";
-			// $count = $$Model->query ( $sql );
-			$count = $m->add ( $data );
-			if ($count) { // 保存成功
-				$this->success ( "保存成功！", U ( "Userinfo/userbankset" ) );
-			} else {
-				// 失败提示
-				$this->error ( L ( '保存失败!' ) );
-			}
+		$count = $m->add( $data );		
+		if ($count) { // 保存成功			
+			//发送站内信
+			$bankdata=$data ['bank_num'];
+			$bank_msg=str_replace(substr($bankdata,4,-4),'******',$bankdata);
+            $action='绑定银行卡:'.$bank_msg;
+            systemmsg($action);
+			$this->success ( "添加成功！", U ( "Userinfo/userbankset" ) );
 		} else {
-			// 保存当前数据对象
-			if ($m = $m->where ( "uid=" . $condition )->save ( $data )) { // 保存成功
-				$this->success ( L ( '更新成功' ) );
-			} else {
-				// 失败提示
-				$this->error ( L ( '更新失败' ) );
-			}
+			// 失败提示
+			$this->error ( L ( '添加失败!' ) );
 		}
+
 	}
 	public function userbasicdata() {
 		$this->display ();
@@ -224,6 +215,10 @@ class UserinfoController extends MemberController {
 		
 		$count = $m->where ( "id=" . $uid )->save ( $data );
 		if ($count) { // 保存成功
+
+			//发送站内信
+			$action='修改了新邮箱：'.$data['email'];
+			systemmsg($action);
 			$this->success ( '修改成功！！' );
 		} else {
 			// 失败提示
@@ -517,6 +512,10 @@ class UserinfoController extends MemberController {
 			$data ['pin_pass'] = md5 ( $_POST ['pin_pass'] );
 			$condition ['id'] = $uid;
 			if ($m = $m->where ( $condition )->save ( $data )) {
+
+				//发送站内信
+                $action='创建交易密码成功！';
+               	systemmsg($action);
 				$this->success ( '新建交易密码成功！' );
 			}
 		}
@@ -526,6 +525,10 @@ class UserinfoController extends MemberController {
 			$data ['pin_pass'] = md5 ( $_POST ['pin_pass'] );
 			$condition ['id'] = $uid;
 			if ($m = $m->where ( $condition )->save ( $data )) {
+
+				//发送站内信
+                $action='修改交易密码成功，请注意资金安全！';
+				systemmsg($action);
 				$this->success ( '修改密码成功！' );
 			} else {
 				$this->error ( '修改失败！' );
