@@ -76,13 +76,12 @@
 								<tr>
 									<td align="center"><input  id="h_{$i}" value="{$ho[0]['id']}" style="display: none;" />{$i}</td>
 									<td align="center">{$ho['repayment_time']|date='Y-m-d',###}</td>
-									<td align="center"><input  id="h2_{$i}" value="{$ho[0]['capital']}" style="display: none;" />{$ho['yuehaibx']}</td>
-									<td align="center"><span id="checktip_{$i}">{$ho['daihaibx']}</span></td>
-									<td align="center"><if condition="$ho['full_time'] eq '' "><a id="deadline_{$i}">待还</a><else/>已还</if></td>
+									<td align="center"><input  id="h2_{$i}" value="{$ho[0]['capital']}" style="display: none;" />{$ho['capital']}</td>
+									<td align="center"><span id="checktip_{$i}">{$ho['interest']}</span></td>
+									<td align="center"></td>
 									<td align="center">
-									<a href="{:U('Member/Borrow/reimbursement_del?id='.$i.'&m='.$ho['yuehaibx'])}">立即还款</a>
-									 <!-- <if condition="$borrow_status eq '6' "><if condition="$ho['full_time'] eq '' "><a href="javascript:void(0);" id="hbtn_{$i}" class="hbtn_{$i}">立即还款</a></if><else/>标未满</if> --></td>
-								
+									<if condition="$ho['status'] eq '7' ">已还<else/><a href="{:U('Member/Borrow/reimbursement_del?id='.$i.'&bid='.$ho['borrow_id'].'&m='.$ho['yuehaibx'])}">还款</a></if>
+									</td>
 								</tr></volist></form>
 								<tr>
 								<if condition="$i eq null">

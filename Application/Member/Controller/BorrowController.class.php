@@ -46,7 +46,7 @@ class BorrowController extends MemberController {
 	 //        	$huan[$i]['time'] =strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$borrow_info[0]["add_time"].'').''));
 	 //        }
 		// }
-  	 //       if ($borrow_info[0]["repayment_type"] == 6) {
+  // 	       if ($borrow_info[0]["repayment_type"] == 6) {
 	 //        for($i=1;$i<=intval ($borrow_info[0]['total']);$i++){
 		// 		// $huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
 		// 		$huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )/intval ($borrow_info[0]['total']);
@@ -83,61 +83,87 @@ class BorrowController extends MemberController {
 		//     // $depict ['repayment_money'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] );
 		// }
 
-		$uid = is_login (); 
-		$detail = M ( 'z_borrow_info');
-		$condition ['id'] = $id;
-		$detail= $detail->where ( $condition )->select ();
-		// $condition ['sort_order'] = 1;
-		// $detail = $detail->where ( $condition )->select ();
+		// $uid = is_login (); 
+		// $detail = M ( 'z_borrow_info');
+		// $condition ['id'] = $id;
+		// $detail= $detail->where ( $condition )->select ();
+		// // $condition ['sort_order'] = 1;
+		// // $detail = $detail->where ( $condition )->select ();
 
-		for($i=1;$i<=intval($detail[0]['total']);$i++){
+		// for($i=1;$i<=intval($detail[0]['total']);$i++){
 			
-			$detail1 = M ('z_borrow_info');
-		    $condition1 ['id'] = $id;
-		    $dd= $detail1->where ( $condition1 )->select();
+		// 	$detail1 = M ('z_borrow_info');
+		//     $condition1 ['id'] = $id;
+		//     $dd= $detail1->where ( $condition1 )->select();
 
-			$detail2 = M ('z_investor_detail');
-			$condition2 ['sort_order'] = $i;
-		    $condition2 ['borrow_id'] = $id;
-		    $de[$i]= $detail2->field ( 'id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital')->where ( $condition2 )->group ('sort_order')->select();
+		// 	$detail2 = M ('z_investor_detail');
+		// 	$condition2 ['sort_order'] = $i;
+		//     $condition2 ['borrow_id'] = $id;
+		//     $de[$i]= $detail2->field ( 'id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital')->where ( $condition2 )->group ('sort_order')->select();
                       
 
-		    $depict [$i]['repayment_money'] = (floatval ( $dd[0]["borrow_money"]) * (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ( $dd[0]["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ( $dd[0]["borrow_duration"] ) ) - 1)) * floatval ($i);
+		//     $depict [$i]['repayment_money'] = (floatval ( $dd[0]["borrow_money"]) * (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ( $dd[0]["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ( $dd[0]["borrow_duration"] ) ) - 1)) * floatval ($i);
 		   
 
-		    // $depict [$i]['yuehailx'] =round(((floatval ( $dd[0]["borrow_money"] ) * (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ($dd[0]["borrow_duration"]) ) / (pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ($i) ) - 1)) * floatval ($dd[0]["borrow_duration"])-floatval ( $dd[0]["borrow_money"] )),2);
+		//     // $depict [$i]['yuehailx'] =round(((floatval ( $dd[0]["borrow_money"] ) * (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ($dd[0]["borrow_duration"]) ) / (pow ( (1 + (floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12)), floatval ($i) ) - 1)) * floatval ($dd[0]["borrow_duration"])-floatval ( $dd[0]["borrow_money"] )),2);
 		   
 
-            // $depict [$i]['yuehailx'] = floatval( $dd[0]["borrow_money"] )*(floatval ( $dd[0]["borrow_interest_rate"])/100/12)*(pow(1 + (floatval($dd[0]["borrow_interest_rate"])/100/12),floatval($dd[0]["borrow_duration"]))-(pow(1+(floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12), (floatval ($i) - 1))) / (pow(1 + (floatval ( $dd[0]["borrow_interest_rate"])/100/12),floatval($dd[0]["borrow_duration"]))-1);
+  //           // $depict [$i]['yuehailx'] = floatval( $dd[0]["borrow_money"] )*(floatval ( $dd[0]["borrow_interest_rate"])/100/12)*(pow(1 + (floatval($dd[0]["borrow_interest_rate"])/100/12),floatval($dd[0]["borrow_duration"]))-(pow(1+(floatval ( $dd[0]["borrow_interest_rate"] ) / 100 / 12), (floatval ($i) - 1))) / (pow(1 + (floatval ( $dd[0]["borrow_interest_rate"])/100/12),floatval($dd[0]["borrow_duration"]))-1);
 
    
-            // 利息
-            $depict [$i]['yuehailx'] =100000*(0.05/12)*(pow(1+(0.05/12),5)-(pow(1+(0.05/12),$i-1)))/(pow(1+(0.05/12),5)-1);
+  //           // 利息
+  //           $depict [$i]['yuehailx'] =100000*(0.05/12)*(pow(1+(0.05/12),5)-(pow(1+(0.05/12),$i-1)))/(pow(1+(0.05/12),5)-1);
 
-		    $depict [$i]['yuehaibx']=round((floatval ($depict [$i]['repayment_money'])-floatval ($depict [$i-1]['repayment_money'])),2);
-		    $depict [$i]['daihaibx']=round((floatval ( $dd[0]["repayment_money"] )-floatval ($depict [$i]['repayment_money'])),2);
-		    // $depict [$i]['repayment_time']=$de[$i][0]["repayment_time"];
+		//     $depict [$i]['yuehaibx']=round((floatval ($depict [$i]['repayment_money'])-floatval ($depict [$i-1]['repayment_money'])),2);
+		//     $depict [$i]['daihaibx']=round((floatval ( $dd[0]["repayment_money"] )-floatval ($depict [$i]['repayment_money'])),2);
+		//     // $depict [$i]['repayment_time']=$de[$i][0]["repayment_time"];
 		    
-		    $depict [$i]['repayment_time']=strtotime('+ '.$i.' months',strtotime(''.date("Y-m-d",''.$dd[0]["full_time"].'').''));
-		}
+		//     $depict [$i]['repayment_time']=strtotime('+ '.$i.' months',strtotime(''.date("Y-m-d",''.$dd[0]["full_time"].'').''));
+		// }
 
-		dump($depict);
+		// dump($de);
 
-        $condition1 ['id'] = $id;
-        $binfo =M('z_borrow_info')->where($condition1)->select();
+  //       $condition1 ['id'] = $id;
+  //       $binfo =M('z_borrow_info')->where($condition1)->select();
         
-		$this->borrow_status=$binfo[0]['borrow_status'];
-		$this->assign('list',$depict);
-		$this->assign('list1',$binfo);
+		// $this->borrow_status=$binfo[0]['borrow_status'];
+		// $this->assign('list',$depict);
+		// $this->assign('list1',$binfo);
+
+		$detail = M ('z_investor_detail');
+		$condition1 ['sort_order'] = $i;
+	    $condition ['borrow_id'] =60;
+
+	    $de= $detail->field ( 'id,borrow_id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital,status')->where ( $condition )->group ('sort_order')->select();
+
+
+
+
+
+		$this->assign('list',$de);
 		$this->display();
 	}
-	public function reimbursement_del($id='',$m='') {
+	public function reimbursement_del($bid='',$id='',$m='') {
 
 
+        $detail = M ('z_investor_detail');
+		$condition['sort_order'] =$id;
+	    $condition['borrow_id'] =$bid;
+
+	    $de= $detail->field ( 'id,capital,interest,repayment_time,deadline,receive_capital')->where ( $condition )->select();
+
+        $cc=count($de);
+
+        for($i=0;$i<=(intval ($cc)-1);$i++){
+	    $data[$i]['id'] =$de[$i]['id'];
+        M('z_investor_detail')->where(array('id'=>$data[$i]['id']))->setField(array('status'=>7,'deadline'=>time()));
+        }
 
 
+        dump($data);
+	    
 
-
+	    exit();
 
 		// $condition ['id'] = $_POST['bid'];
 		// $m= $_POST['bid2'];
@@ -147,7 +173,6 @@ class BorrowController extends MemberController {
 
 		// $borrow_info =M('z_borrow_info');
 		// for($i=1;$i<=intval ($b[0]['total']);$i++){
-
 		//  	if($i==$hi){
 		//  		$depict[$i]['has_pay']=$hi;
 		//  	}
@@ -166,7 +191,6 @@ class BorrowController extends MemberController {
 		// $binfo =M('z_borrow_info')->where($bwhere)->select();
 		// $bdata['has_pay'] =intval($binfo[0]['has_pay'])+1;
 		// $bresult=M('z_borrow_info')->where($bwhere)->data($bdata)->save();
-
 
 		// $data ['has_pay'] = serialize ($depict);
 		// $data ['repayment_ed_money'] =(floatval($b[0]['repayment_ed_money'])+floatval($m));

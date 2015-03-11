@@ -2,7 +2,6 @@
 
 namespace Home\Controller;
 use User\Api\UserApi;
-
 use OT\DataDictionary;
 use Think\Controller;
 use Think\Model;
@@ -11,7 +10,6 @@ class SystemController extends HomeController {
 	public function index() {
 		$this->display ();
 	}
-	
 	/**
 	 *
 	 * @author liuy
@@ -30,7 +28,6 @@ class SystemController extends HomeController {
 		$uid = $Member->where($map)->field('id,username')->select();
 
 		$basename = base64_encode ($uid[0]['username']);
-
 		// dump($uid);
 		if(0 < $uid[0]['id']){
 			if($email != ''){ //TODO: 发送验证邮件
