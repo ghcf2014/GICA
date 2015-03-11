@@ -29,26 +29,23 @@
 								</li>
 							</ul>
 						</div>
-						
+						<form action="{:U('systemsetup')}" method="post">
 						<div class="box">
 							<dl class="tongzhiWay">
-								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">短信通知：</dt>		
-								
+								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">站内信通知：</dt>
 								<dd>
 									<ul>
 										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();" />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();" />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
+										<li><label><input type="checkbox" name="11" id="" value="1" />收到还款</label></li>
+										<li><label><input type="checkbox" name="12" id="" value="1" />充值成功</label></li>
+										<li><label><input type="checkbox" name="13" id="" value="1" />提现成功</label></li>
+										<li><label><input type="checkbox" name="14" id="" value="1" />借款成功</label></li>
+										<li><label><input type="checkbox" name="15" id="" value="1" />还款逾期</label></li>
+										<li><label><input type="checkbox" name="16" id="" value="1" />登录密码变更</label></li>
+										<li><label><input type="checkbox" name="17" id="" value="1" />手机号码变更</label></li>
+										<li><label><input type="checkbox" name="18" id="" value="1" />邮箱变更</label></li>
+										<li><label><input type="checkbox" name="19" id="" value="1" />交易密码变更</label></li>
+
 									</ul>
 								</dd>
 							</dl>
@@ -56,19 +53,41 @@
 								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">邮件通知：</dt>
 								<dd>
 									<ul>
-										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll2" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />充值</label></li>
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
+										<li><label><input type="checkbox" name="21"  id="" value="1" />收到还款</label></li>
+										<li><label><input type="checkbox" name="22"  id="" value="1" />充值成功</label></li>
+										<li><label><input type="checkbox" name="23"  id="" value="1" />提现成功</label></li>
+										<li><label><input type="checkbox" name="24"  id="" value="1" />借款成功</label></li>
+										<li><label><input type="checkbox" name="25"  id="" value="1" />还款逾期</label></li>
+										<li><label><input type="checkbox" name="26"  id="" value="1" />登录密码变更</label></li>
+										<li><label><input type="checkbox" name="27"  id="" value="1" />手机号码变更</label></li>
+										<li><label><input type="checkbox" name="28"  id="" value="1" />邮箱变更</label></li>
+										<li><label><input type="checkbox" name="29"  id="" value="1" />交易密码变更</label></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">短信通知：</dt>
+								<dd>
+									<ul>
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
+										<li><label><input type="checkbox" name="31"  id="" value="1" />收到还款</label></li>
+										<li><label><input type="checkbox" name="32"  id="" value="1" />充值成功</label></li>
+										<li><label><input type="checkbox" name="33"  id="" value="1" />提现成功</label></li>
+										<li><label><input type="checkbox" name="34"  id="" value="1" />借款成功</label></li>
+										<li><label><input type="checkbox" name="35"  id="" value="1" />还款逾期</label></li>
+										<li><label><input type="checkbox" name="36"  id="" value="1" />登录密码变更</label></li>
+										<li><label><input type="checkbox" name="37"  id="" value="1" />手机号码变更</label></li>
+										<li><label><input type="checkbox" name="38"  id="" value="1" />邮箱变更</label></li>
+										<li><label><input type="checkbox" name="39"  id="" value="1" />交易密码变更</label></li>
 									</ul>
 								</dd>
 							</dl>
 							
-							<input type="button" name="" value="保&nbsp;&nbsp;&nbsp;&nbsp;存" class="tongzhiWay_btn"/>
+							<input type="submit" name="" value="保&nbsp;&nbsp;&nbsp;&nbsp;存" class="tongzhiWay_btn"/>
 							
 						</div>
-						
+						</form>
 						<div class="box" style="display: none;">
 							<span id="sysInfo">
 								<div class="boxmain2">
