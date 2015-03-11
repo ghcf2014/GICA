@@ -128,6 +128,59 @@ class SystemController extends MemberController {
         $this->assign('uid',$uid);
         $this->display();
     }
+
+    
+	//系统消息通知设置
+    public function systemsetup(){
+    	$uid=is_login();
+		$data=$_POST;		
+		for ($m='11';$m<=19;$m++){
+			if ($data[$m]==null){
+				$data[$m]='0';
+			}
+			if ($data[$m+10]==null){
+				$data[$m+10]='0';
+			}
+			if ($data[$m+20]==null){
+				$data[$m+20]='0';
+			}
+			$datas[]=$data[$m].$data[$m+10].$data[$m+20];
+		}
+		$map['receive_money']=$datas['0'];
+		$map['rechar']=$datas['1'];
+		$map['mention']=$datas['2'];
+		$map['borrow']=$datas['3'];
+		$map['overtime']=$datas['4'];
+		$map['loginchange']=$datas['5'];
+		$map['phonechange']=$datas['6'];
+		$map['emailchange']=$datas['7'];
+		$map['tradechange']=$datas['8'];
+		$map['uid']=$uid;
+		$map['set_time']=time();
+
+		$arr['uid']=$uid;
+		$setdata=M('z_systemset');
+		$setmsg=$setdata->where($arr)->select();
+		if (is_array($setmsg)==true){
+			$setresult=$setdata->where($arr)->save($map);
+			if ($setresult){
+				$this->success('设置成功！');
+			}else{
+				$this-error('设置失败！');
+			}
+		}else{
+			$setresult=$setdata->add($map);
+			if ($setresult){
+				$this->success('设置成功！');
+			}else{
+				$this-error('设置失败！');
+			}
+
+		}
+		
+    }
+
+    //发送私密邮件
     public function usermailindex_add(){
         $username=$_POST['username'];
         // $user = M('gica_member');

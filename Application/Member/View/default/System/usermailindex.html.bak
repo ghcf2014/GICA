@@ -4,56 +4,120 @@
 		<!--content start-->
 	<div class="zh_cont_out">
     	<div class="zh_cont">
-            <h2><a href="{:U('Index')}">我的账户</a></h2>	
+            
             	<include file="Public/left"/>
             <div class="zh_cont_r">
+            	<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">消息中心</span></h3>	
             	<div class="r_main">
-					<div class="tabtil">
-						<ul>
-							<li class="on" onclick=showSysMails();;>
-								系统消息
-							</li>
-							<li onclick=showReceiveMails();;>
-								收件箱
-							</li>
-							<li onclick=showSendMails();;>
-								发件箱
-							</li>
-							<li>
-								发信息
-							</li>
-						</ul>
-					</div>
-					<div class="box">
-						<span id="sysInfo">
-							<div class="boxmain2">
-							          <div class="srh" id="srh">
-							        <input class="scbtn" onclick="delSys();" value="删除" type="button" id="delSys">
-							        <input class="scbtn" onclick="readedSys();" value="标记为已读" type="button" id="readedSys">
-							        <input class="scbtn" onclick="unReadSys();" value="标记为未读" type="button" id="unReadSys">
-							        <a href="javascript:void(0);" class="scbtn" onclick="showUnReadSys();">未读邮件</a>
+            		<div class="mes_con">
+            			<div class="tabtil">
+							<ul>
+								<li class="on" >
+									通知方式
+								</li>
+								<li onclick=showSysMails();;>
+									系统消息<if condition="$syscount eq 0">[0]<else/><span style="color:red;">[{$syscount}]</span></if>
+								</li>
+								<li onclick=showReceiveMails();;>
+									收件箱<if condition="$counts eq 0">[0]<else/>[<span style="color:red;">{$counts}</span>]</if>
+								</li>
+								<li onclick=showSendMails();;>
+									发件箱
+								</li>
+								<li>
+									发信息
+								</li>
+							</ul>
+						</div>
+						
+						<div class="box">
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">短信通知：</dt>		
+								
+								<dd>
+									<ul>
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();" />投资</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />投资</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();" />投资</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />投资</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
+										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">邮件通知：</dt>
+								<dd>
+									<ul>
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll2" onclick="selectAll();" />全选</label></li>
+										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />充值</label></li>
+										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />提现</label></li>
+										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />投资</label></li>
+										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />充值</label></li>
+									</ul>
+								</dd>
+							</dl>
+							
+							<input type="button" name="" value="保&nbsp;&nbsp;&nbsp;&nbsp;存" class="tongzhiWay_btn"/>
+							
+						</div>
+						
+						<div class="box" style="display: none;">
+							<span id="sysInfo">
+								<div class="boxmain2">
+					            	<div class="srh" id="srh">
+							        	<input class="scbtn" onclick="delSys();" value="删除" type="button" id="delSys">
+							        	<input class="scbtn" onclick="readedSys();" value="标记为已读" type="button" id="readedSys">
+							        	<input class="scbtn" onclick="unReadSys();" value="标记为未读" type="button" id="unReadSys">
+							        	<a href="javascript:void(0);" class="scbtn" onclick="showUnReadSys();">未读邮件</a>
 							        </div>
-							        <span id="sys_mail_list"><div class="biaoge" id="biaoge">
-							        <input type="hidden" id="curPage" value="1">
-							          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-							  <tbody><tr>
-							    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
-							    <th>标记</th>
-							    <th>发件人</th>
-							    <th colspan="6">标题</th>
-							    <th>发送时间</th>
-							  </tr>
-							  	<tr><td colspan="10" align="center">暂无信息</td></tr>
-									</tbody></table>
-							<div class="page">
-									<p>
-									</p>
-								</div> 
-							          </div></span>
-							           <span id="show_mail"></span> 
+							        <span id="sys_mail_list">
+							        	<div class="biaoge" id="biaoge">
+							        		<input type="hidden" id="curPage" value="1">
+							          		<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							  					<tbody>
+													  <tr>
+													    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
+													    <th>标记</th>
+													    <th>发件人</th>
+													    <th>标题</th>
+													    <th>发送时间</th>
+													    <th>操作</th>
+													  </tr>
+							  						<!--系统消息-->
+							  						<if condition="$danger neq null">
+							  							<foreach name="danger" item="danger" > 
+														<tr>
+															<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
+															<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
+															<th>系统消息</th>
+															<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<u>{$danger['add_time']}</u><b style="color:red;">{$danger['action']}</b></th>
+															<th>{$danger['add_time']}</th>
+															<th><a href="{:U('Home/Borrow/detail?add_time='.$danger['add_time'])}" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
+														</tr>
+							  							</foreach>
+							  						<else/>
+							  							<tr><td colspan="10" align="center">暂无信息</td></tr>
+							  						</if>
+												</tbody>
+							          		</table>
+											<div class="page">
+												<p></p>
+											</div> 
+							          </div>
+							        </span>
+							        <span id="show_mail"></span> 
 							    </div>
 						</span>
 					</div>
+								
 					<div class="box" style="display: none;">
 						<span id="receiveInfo">
 							<div class="boxmain2">
@@ -64,22 +128,38 @@
 							    <a href="javascript:void(0);" class="scbtn" onclick="showUnReadReceives();">未读邮件</a>
 							    </div>
 							    <span id="receive_mail_list"><div class="biaoge" id="re_biaoge">
-							      <table width="100%" border="0" cellspacing="0" cellpadding="0">
-									  <tbody><tr> 
-									    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
-									    <th>标记</th>
-									    <th>发件人</th>
-									    <th colspan="6">标题</th>
-									    <th>发送时间</th>
-									    <th>操 作</th>
-									  </tr>
+							      <table width="98%" border="0" cellspacing="0" cellpadding="0">
+									  <tbody>
+									  	<tr> 
+										    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
+										    <th>标记</th>
+										    <th>发件人</th>
+										    <th>标题</th>
+										    <th>发送时间</th>
+										    <th>操 作</th>
+									  	</tr>
+									  <!--收件箱信息-->
+									  <foreach name="receive" item="val" > 
+										<tr>
+										  	<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
+										  	<th><if condition="$val['status'] eq 0">未查看<else/>已查看</if></th>
+										  	<th>{$val['postname']}</th>
+										  	<th>{$val['title']}</th>
+										  	<th>{$val['send_time']}</th>
+										  	<th><input name="button" type="button" id="button" value="查看" />|<a href="{:U('Member/System/usermailindex_email_del?id='.$val['id'])}">删除</a>
+										 
+									  	</tr>
+										<tr id="table" style="display:none;">
+										    <th colspan="6" >这是站内信详情</td>
+									    </tr>
+									  </foreach>
+									 
 									  
 									  <tr><td colspan="11" align="center">暂无信息</td></tr>
 									</tbody></table>
 							  
 							  <div class="page">
-									<p>
-									</p>
+									<p align="center">分页</p>
 								</div> 
 							</div>
 
@@ -96,13 +176,24 @@
 							        
 							        </div>
 							        <span id="send_mail_list"><div class="biaoge" id="send_biaoge">
-							          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							          <table width="98%" border="0" cellspacing="0" cellpadding="0">
 							     	<tbody><tr> 
 									    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
 									    <th>收件人</th>
-									    <th colspan="6">标题</th>
+									    <th>标题</th>
 									    <th>发送时间</th>
 							  		</tr>
+									
+									<!--发件箱信息-->
+									<foreach name="post" item="values">
+								  		<tr>
+								  			<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
+								  			<th>{$values['recvname']}</th>
+								  			<th><a href="#">{$values['title']}</a></th>
+								  			<th>{$values['send_time']}</th>
+								  		</tr>
+							  		</foreach>
+							  		
 							  		<tr><td colspan="9" align="center">暂无信息</td></tr>
 									</tbody></table>
 
@@ -123,50 +214,75 @@
 					<div class="box" style="display: none;">
 								        <div class="boxmain2">
 								        <div class="biaoge2">
-								        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-								  <tbody><tr> 
-								    <td width="11%">发件人：</td>
-								    <td width="89%"><strong>好友QQ</strong></td>
-								  </tr>
-								  <tr>
-								    <td>收件人：</td>
-								    <td><input type="text" class="inp140" id="receiver">
-								    <span style="color: red; float: none;" id="s_receiver" class="formtips"></span>
-								    </td>
-								  </tr>
-								  <tr>
-								    <td>标题：</td>
-								    <td><input type="text" class="inp280" id="title_s" maxlength="200">
-								    <span style="color: red; float: none;" id="s_title" class="formtips"></span>
-								    </td>
-								  </tr>
-								  <tr>
-								    <td valign="top">内容：</td>
-								    <td><textarea class="txt420" id="content"></textarea>
-								    <span style="color: red; float: none;" id="s_content" class="formtips"></span>
-								    </td>
-								  </tr>
-								  <tr>
-								    <td>&nbsp;</td>
-								    <td style="padding-top:20px;">
-								    <input type="button" class="bcbtn tipshang" onclick="addMail()" id="btnSave" value="提交发送" style="width:88px;"></td>
-								  </tr>
-								  <tr>
-								    <td>&nbsp;</td>
-								    <td class="txt">* 温馨提示：如果要给管理员发送信息，请输入收件人admin</td>
-								  </tr>
-								        </tbody></table>
+								    <form method="post" action="{:U('Member/System/usermailindex_add')}">
+									  	<table width="98%" border="0" cellspacing="0" cellpadding="0">
+											  <tbody>
+												  <tr> 
+												    <td width="11%">发件人：</td>
+												    <td width="89%"><input type="text"value="{$sendname}" style="color:red" readonly/>
+																	<input type="hidden" name="uid" value="{$uid}">
+												   	</td>
+												  </tr>
+												  <tr>
+												    <td>收件人：</td>
+												    <td><input type="text" name="username" class="inp140" id="receiver" value="">
+												    <span style="color: red; float: none;" id="s_receiver" class="formtips"></span>
+												    </td>
+												  </tr>
+												  <tr>
+												    <td>标题：</td>
+												    <td><input type="text" name="title" class="inp280" id="title_s" maxlength="200">
+												    <span style="color: red; float: none;" id="s_title" class="formtips"></span>
+												    </td>
+												  </tr>
+												  <tr>
+												    <td valign="top">内容：</td>
+												    <td><textarea class="txt420" name="msg" id="content"></textarea>
+												    <span style="color: red; float: none;" id="s_content" class="formtips"></span>
+												    </td>
+												  </tr>
+												  <tr>
+												    <td>&nbsp;</td>
+												    <td style="padding-top:20px;">
+												    <input type="submit" class="bcbtn " style='border-radius:1px;background:#66CCFB;width:35%;height:100%';onclick="addMail()" id="btnSave" value="提交发送" style="width:88px;"></td>
+												  </tr>
+												  <tr>
+												    <td>&nbsp;</td>
+												    <td class="txt">* 温馨提示：如果要给管理员发送信息，请输入收件人admin</td>
+												  </tr>
+											  </tbody>
+									    </table>
+								    </form>
 
-								        </div>
+								    </div>
 								    </div>
 								</div>
 					<jsp:include page="usersendmail.jsp"></jsp:include>
+            		</div>
+					
             	
-            </div>
+            	</div>
             </div>
         </div>
     </div>
 	<!--content end-->		
+		<script type="text/javascript">
+		   $(document).ready(function(){
+		         $("#table").hide();
+		         $("#button").click(function(){
+				   if($("#button").val()=="查看") {
+				     $("#button").val("关闭");
+				     $("#table").show();
+				   }else {
+				   	$("#button").val("查看");
+				   	$("#table").hide();
+				   }
+
+				});
+		   });
+
+		</script>
+
 
 		<script type="text/javascript"
 			src="${path}/script/jquery-1.7.1.min.js"></script>
@@ -187,6 +303,7 @@
 		})
 	})
 </script>
+
 		<script>
 	$(function() {
 
@@ -415,4 +532,91 @@
 	    });
 	}*/
 </script>
+
+<script type="text/javascript">
+	//全选事件
+	//选中全选按钮，下面的checkbox全部选中
+	var selAll = document.getElementById("selAll"); 
+	function selectAll() 
+	{ 
+		  var obj = document.getElementsByName("checkAll");
+		  var obj2 =  document.getElementsByName("checkAll2");
+		  
+		  if(document.getElementById("selAll").checked == false) 
+		  { 
+  				for(var i=0; i<obj.length; i++) 
+  				{ 
+    				obj[i].checked=false; 
+  				} 
+  			}else { 
+  				for(var i=0; i<obj.length; i++) 
+  				{	  
+    				obj[i].checked=true; 
+  				}	
+ 			 }
+  			
+  			if(document.getElementById("selAll2").checked == false) 
+		  { 
+  				for(var i=0; i<obj2.length; i++) 
+  				{ 
+    				obj2[i].checked=false; 
+  				} 
+  			}else { 
+  				for(var i=0; i<obj2.length; i++) 
+  				{	  
+    				obj2[i].checked=true; 
+  				}	
+ 			 }
+  
+	} 
+	//当选中所有的时候，全选按钮会勾上 
+	function setSelectAll() 
+	{ 
+		var obj=document.getElementsByName("checkAll"); 	
+		var count = obj.length; 
+		var selectCount = 0; 
+	
+		for(var i = 0; i < count; i++) 
+		{ 
+			if(obj[i].checked == true) 
+			{ 
+				selectCount++;	
+			} 
+		} 
+		if(count == selectCount) 
+		{	
+			document.all.selAll.checked = true; 
+		} 
+		else 
+		{ 
+			document.all.selAll.checked = false; 
+		} 
+		
+		
+		
+		var obj2=document.getElementsByName("checkAll2"); 	
+		var count2 = obj2.length; 
+		var selectCount2 = 0; 
+	
+		for(var i = 0; i < count2; i++) 
+		{ 
+			if(obj2[i].checked == true) 
+			{ 
+				selectCount2++;	
+			} 
+		} 
+		if(count2 == selectCount2) 
+		{	
+			document.all.selAll2.checked = true; 
+		} 
+		else 
+		{ 
+			document.all.selAll2.checked = false; 
+		} 
+		
+		
+	} 
+</script>
+
+
 </block>
