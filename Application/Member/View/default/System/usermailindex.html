@@ -31,20 +31,21 @@
 						</div>
 						<form action="{:U('systemsetup')}" method="post">
 						<div class="box">
+							
 							<dl class="tongzhiWay">
 								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">站内信通知：</dt>
 								<dd>
 									<ul>
 										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox" name="11" id="" value="1" />收到还款</label></li>
-										<li><label><input type="checkbox" name="12" id="" value="1" />充值成功</label></li>
-										<li><label><input type="checkbox" name="13" id="" value="1" />提现成功</label></li>
-										<li><label><input type="checkbox" name="14" id="" value="1" />借款成功</label></li>
-										<li><label><input type="checkbox" name="15" id="" value="1" />还款逾期</label></li>
-										<li><label><input type="checkbox" name="16" id="" value="1" />登录密码变更</label></li>
-										<li><label><input type="checkbox" name="17" id="" value="1" />手机号码变更</label></li>
-										<li><label><input type="checkbox" name="18" id="" value="1" />邮箱变更</label></li>
-										<li><label><input type="checkbox" name="19" id="" value="1" />交易密码变更</label></li>
+										<li><label><input type="checkbox" name="11" id="" value="1" {$check.receive_money.one}/>收到还款</label></li>
+										<li><label><input type="checkbox" name="12" id="" value="1" {$check.rechar.one}/>充值成功</label></li>
+										<li><label><input type="checkbox" name="13" id="" value="1" {$check.mention.one}/>提现成功</label></li>
+										<li><label><input type="checkbox" name="14" id="" value="1" {$check.borrow.one}/>借款成功</label></li>
+										<li><label><input type="checkbox" name="15" id="" value="1" {$check.overtime.one}/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="16" id="" value="1" {$check.loginchange.one}/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="17" id="" value="1" {$check.phonechange.one}/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="18" id="" value="1" {$check.emailchange.one}/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="19" id="" value="1" {$check.tradechange.one}/>交易密码变更</label></li>
 
 									</ul>
 								</dd>
@@ -54,15 +55,15 @@
 								<dd>
 									<ul>
 										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox" name="21"  id="" value="1" />收到还款</label></li>
-										<li><label><input type="checkbox" name="22"  id="" value="1" />充值成功</label></li>
-										<li><label><input type="checkbox" name="23"  id="" value="1" />提现成功</label></li>
-										<li><label><input type="checkbox" name="24"  id="" value="1" />借款成功</label></li>
-										<li><label><input type="checkbox" name="25"  id="" value="1" />还款逾期</label></li>
-										<li><label><input type="checkbox" name="26"  id="" value="1" />登录密码变更</label></li>
-										<li><label><input type="checkbox" name="27"  id="" value="1" />手机号码变更</label></li>
-										<li><label><input type="checkbox" name="28"  id="" value="1" />邮箱变更</label></li>
-										<li><label><input type="checkbox" name="29"  id="" value="1" />交易密码变更</label></li>
+										<li><label><input type="checkbox" name="21"  id="" value="1" {$check.receive_money.two}/>收到还款</label></li>
+										<li><label><input type="checkbox" name="22"  id="" value="1" {$check.rechar.two}/>充值成功</label></li>
+										<li><label><input type="checkbox" name="23"  id="" value="1" {$check.mention.two}/>提现成功</label></li>
+										<li><label><input type="checkbox" name="24"  id="" value="1" {$check.borrow.two}/>借款成功</label></li>
+										<li><label><input type="checkbox" name="25"  id="" value="1" {$check.overtime.two}/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="26"  id="" value="1" {$check.loginchange.two}/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="27"  id="" value="1" {$check.phonechange.two}/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="28"  id="" value="1" {$check.emailchange.two}/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="29"  id="" value="1" {$check.tradechange.two}/>交易密码变更</label></li>
 									</ul>
 								</dd>
 							</dl>
@@ -71,15 +72,15 @@
 								<dd>
 									<ul>
 										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox" name="31"  id="" value="1" />收到还款</label></li>
-										<li><label><input type="checkbox" name="32"  id="" value="1" />充值成功</label></li>
-										<li><label><input type="checkbox" name="33"  id="" value="1" />提现成功</label></li>
-										<li><label><input type="checkbox" name="34"  id="" value="1" />借款成功</label></li>
-										<li><label><input type="checkbox" name="35"  id="" value="1" />还款逾期</label></li>
-										<li><label><input type="checkbox" name="36"  id="" value="1" />登录密码变更</label></li>
-										<li><label><input type="checkbox" name="37"  id="" value="1" />手机号码变更</label></li>
-										<li><label><input type="checkbox" name="38"  id="" value="1" />邮箱变更</label></li>
-										<li><label><input type="checkbox" name="39"  id="" value="1" />交易密码变更</label></li>
+										<li><label><input type="checkbox" name="31"  id="" value="1" {$check.receive_money.three}/>收到还款</label></li>
+										<li><label><input type="checkbox" name="32"  id="" value="1" {$check.rechar.three}/>充值成功</label></li>
+										<li><label><input type="checkbox" name="33"  id="" value="1" {$check.mention.three}/>提现成功</label></li>
+										<li><label><input type="checkbox" name="34"  id="" value="1" {$check.borrow.three}/>借款成功</label></li>
+										<li><label><input type="checkbox" name="35"  id="" value="1" {$check.overtime.three}/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="36"  id="" value="1" {$check.loginchange.three}/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="37"  id="" value="1" {$check.phonechange.three}/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="38"  id="" value="1" {$check.emailchange.three}/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="39"  id="" value="1" {$check.tradechange.three}/>交易密码变更</label></li>
 									</ul>
 								</dd>
 							</dl>

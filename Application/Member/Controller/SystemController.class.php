@@ -120,6 +120,31 @@ class SystemController extends MemberController {
         $receive=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.uid = profile.uid and stats.tid=%s',$uid)->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time,stats.msg as msg, profile.nickname as postname')->order('stats.tid desc' )->select();
         //发件箱
         $post=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.uid=%s',$uid)->field('stats.id as id, stats.title as title,stats.send_time as send_time, profile.nickname as recvname')->order('stats.tid desc' )->select();
+        
+
+        //系统通知状态查询
+        $syssetdata= M('z_systemset');
+        $arr['uid']=$uid;
+        $sysresult=$syssetdata->where($arr)->select();
+        $sum=$sysresult[0];
+
+        //去除多余信息
+        for($i=1;$i<=2;$i++){
+        	array_shift($sum);
+        }
+        array_pop($sum);
+
+        //组装结果集
+        foreach ($sum  as  $key =>$value) {
+        	$num=$sum[$key];
+        	// dump($num);
+        	$k="checked";
+	    	$nums[$key][one]=(substr($num,0,1)=='1')?$k:null;
+	    	$nums[$key][two]=(substr($num,1,1)=='1')?$k:null;
+	    	$nums[$key][three]=(substr($num,2,1)=='1')?$k:null;	    	
+       	}
+        $check=$nums;
+        $this->assign("check",$check);
         $this->assign('counts',$counts);
         $this->assign('syscount',$syscount);
         $this->assign('receive',$receive);

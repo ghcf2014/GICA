@@ -1571,14 +1571,27 @@ function sendsms($mob, $content) {
         return preg_match('/^[a-z\d_]{5,20}$/i', $username) ? true : false;
     }
     //发送站内信
-    function systemmsg($action){
-        if ($uid=1){
-            $danger =array(
-                    "username"=>$_SESSION[gica_home]['user_auth']['username'],
-                    "uid" =>$_SESSION[gica_home]['user_auth']['uid'],
-                    "action" =>$action,
-                    "status" =>'0'
-                );
-            $msgs =M('z_system_msg')->add($danger);
-        }
+    function systemmsg($type,$action){
+    	$uid=is_login();
+    	$sysdata= M('z_systemset');
+	    $arr['uid']=$uid;
+	    $sysresult=$sysdata->where($arr)->select();
+	    $result=$sysresult[0][$type];
+	    // dump($result);
+	    if (substr($result,0,1)=='1'){
+	    	 $danger =array(
+                "username"=>$_SESSION[gica_home]['user_auth']['username'],
+                "uid" =>$_SESSION[gica_home]['user_auth']['uid'],
+                "action" =>$action,
+                "status" =>'0'
+	            );
+	     	$msgs =M('z_system_msg')->add($danger);
+	    }
+	    if (substr($result,1,1)=='1'){
+	    	echo '已经发邮件了！';
+	    }
+	    if (substr($result,2,1)=='1'){
+	    	echo '已经发短信啦！';
+	    }
+       
     }
