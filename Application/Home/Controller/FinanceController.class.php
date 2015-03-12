@@ -274,8 +274,9 @@ class FinanceController extends HomeController {
 
 
                                         //发送站内信
+                                        $type="borrow";
                                         $action=$logdata ['info'];
-                                        systemmsg($action);
+                                        systemmsg($type,$action);
 
                                 //成功提示
                                 $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));

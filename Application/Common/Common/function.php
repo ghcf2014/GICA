@@ -1588,7 +1588,14 @@ function sendsms($mob, $content) {
 	     	$msgs =M('z_system_msg')->add($danger);
 	    }
 	    if (substr($result,1,1)=='1'){
-	    	echo '已经发邮件了！';
+	    		
+	    		//TODO: 发送邮件
+	    		$userdata=M('ucenter_member');
+	    		$userresult=$userdata->where($arr)->select();
+	    		$email=$userresult[0]['email'];
+	    		$username=$userresult[0]['username'];
+	    		$time=time();
+				$a = SendMail($email,'工合财富通知:','尊敬的会员： <b style="color:red;text-decoration:underline">'.$username.'</b>，您的工合基金账户'.$action.'如有任何疑问，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>'.date( "l dS of F Y h：i：s A" ));
 	    }
 	    if (substr($result,2,1)=='1'){
 	    	echo '已经发短信啦！';

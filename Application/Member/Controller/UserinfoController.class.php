@@ -166,7 +166,12 @@ class UserinfoController extends MemberController {
 		}
 		// 保存当前数据对象
 		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
-		                                                     // 成功提示
+		    
+
+		    //发送站内信
+		    $type="phonechange";
+		    $action="您绑定了新手机：". str_replace(substr($data['mobile'],3,-3),'*****',$data['mobile'])." !";
+		    systemmsg($type,$action);
 			$this->success ( '保存成功！' );
 		} else {
 			// 失败提示
@@ -217,8 +222,9 @@ class UserinfoController extends MemberController {
 		if ($count) { // 保存成功
 
 			//发送站内信
-			$action='修改了新邮箱：'.$data['email'];
-			systemmsg($action);
+			$type="emailchange";
+			$action='修改了新邮箱：'.str_replace(substr($data['email'],3,(strpos($data['email'],'@')-3)),'*****',$data['email']);
+			systemmsg($type,$action);
 			$this->success ( '修改成功！！' );
 		} else {
 			// 失败提示
@@ -514,8 +520,9 @@ class UserinfoController extends MemberController {
 			if ($m = $m->where ( $condition )->save ( $data )) {
 
 				//发送站内信
+				$type="tradechange";
                 $action='创建交易密码成功！';
-               	systemmsg($action);
+               	systemmsg($type,$action);
 				$this->success ( '新建交易密码成功！' );
 			}
 		}
@@ -527,8 +534,9 @@ class UserinfoController extends MemberController {
 			if ($m = $m->where ( $condition )->save ( $data )) {
 
 				//发送站内信
+				$type="tradechange";
                 $action='修改交易密码成功，请注意资金安全！';
-				systemmsg($action);
+				systemmsg($type,$action);
 				$this->success ( '修改密码成功！' );
 			} else {
 				$this->error ( '修改失败！' );
