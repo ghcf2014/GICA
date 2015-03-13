@@ -654,4 +654,28 @@ class InvestController extends MemberController {
 			$this->redirect('Member/Invest/autoinvest');
 		}
 	}
+	public function investdetail($id=0){
+		$uid=is_login();
+		 $condition1 ['id'] = $id;
+        $binfo =M('z_borrow_info')->where($condition1)->select();
+        
+		$this->borrow_status=$binfo[0]['borrow_status'];
+		// $this->assign('list',$depict);s
+		$this->assign('list1',$binfo);
+
+		$detail = M ('z_investor_detail');
+		$condition1 ['sort_order'] = $i;
+	    $condition ['borrow_id'] =$id;
+	    $condition ['investor_uid'] =$uid;
+
+
+	    $de= $detail->field ( 'id,borrow_id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital,status,receive_interest')->where ( $condition )->group ('sort_order')->select();
+
+
+
+
+
+		$this->assign('list',$de);
+		$this->display();
+	}
 } 

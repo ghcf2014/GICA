@@ -40,19 +40,13 @@
 									</tr>
 									<tr>
 										<td align="center">
-											￥
-											<s:if test="#request.financeStatisMap.earnInterest !=''"></s:if>
-											<s:else>0</s:else>
+											{$info.model|default="0.00"}
 										</td>
 										<td align="center">
-											￥
-											<s:if test="#request.financeStatisMap.rewardIncome !=''"></s:if>
-											<s:else>0</s:else>
+											{$info.model|default="0.00"}
 										</td>
 										<td align="center">
-											￥
-											<s:if test="#request.financeStatisMap.hasFI !=''"></s:if>
-											<s:else>0</s:else>
+											{$info.model|default="0.00"}
 										</td>
 									</tr>
 								</table>
@@ -87,25 +81,21 @@
 									</tr>
 									<tr>
 										<td align="center">
-											￥
-											{$suminvestor}
+											{$suminvestor|default="0.00"}
 										</td>
 										<td align="center">
-											{$countinvestor}
+											{$countinvestor|default="0.00"}
 										</td>
 										<td align="center">
-											￥
-											<s:if test="#request.financeStatisMap.hasPI !=''"></s:if>
-											<s:else>0</s:else>
+											{$info.model|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.financeStatisMap.hasCount !=''"></s:if>
-											<s:else>0</s:else>
+											{$info.model|default="0.00"}
 										</td>
 										<td align="center">
-											￥{$suminvestor}
+											{$suminvestor|default="0.00"}
 										<td align="center">
-											{$countinvestor}
+											{$countinvestor|default="0"}
 										</td>
 									</tr>
 								</table>

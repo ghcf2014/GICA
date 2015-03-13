@@ -58,40 +58,31 @@
 									</tr>
 									<tr>
 										<td align="center">
-											￥{$sumborrow}
+											{$sumborrow|default="0.00"}
 										</td>
 										<td align="center">
-											{$countborrow}
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											￥
-											<s:if test="#request.loanStatisMap.hasPI !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.successBorrow !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.borrowAmount !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											￥
-											<s:if test="#request.loanStatisMap.forRepayPI !=''"></s:if>
-											<s:else>{$sumborrow}</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.repayBorrow !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.beforeRepayBorrow !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.forRepayBorrow !=''"></s:if>
-											<s:else>{$countborrow}</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 									</tr>
 								</table>
@@ -120,22 +111,16 @@
 									</tr>
 									<tr>
 										<td align="center">
-											￥
-											<s:if test="#request.loanStatisMap.hasFI !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.hasFICount !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											￥
-											<s:if test="#request.loanStatisMap.hasI !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 										<td align="center">
-											<s:if test="#request.loanStatisMap.badFICount !=''"></s:if>
-											<s:else>0</s:else>
+											{$countborrow|default="0.00"}
 										</td>
 									</tr>
 								</table>

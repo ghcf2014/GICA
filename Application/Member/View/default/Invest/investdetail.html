@@ -11,84 +11,88 @@
 					<div class="tabtil">
 					<ul>
 						<li id="lab_1" class="on"><a href="{:U('Member/Invest/investindex')}">我的投资</a></li>
-						<li id="lab_2">
-							<a href="{:U('Member/Invest/investindex?st=2')}">招标中的借款</a></li>
-						<li id="lab_3">
-							<a href="{:U('Member/Invest/investindex?st=6')}">回收中的借款</a></li>
-						<li id="lab_4">
-							<a href="{:U('Member/Invest/investindex?st=7')}">已回收的借款</a></li>
-						<li id="lab_5">
-							<a href="{:U('Member/Invest/investindex?st=8')}">回账查询</a></li>
+						<li id="lab_2"><a href="{:U('Member/Invest/investindex')}">返回</a></li>
 					</ul>
 				</div>
 				<div class="box">
 					<div class="boxmain2">
-						<!-- <div class="srh">
-								<form action="homeBorrowInvestList.htm" id="searchForm">
-									<input type="hidden" name="type" value="${paramMap.type}" />
-									<input type="hidden" name="curPage" id="pageNum" />
-									发布时间：
-									<input type="text" id="publishTimeStart"
-										name="publishTimeStart" value="${paramMap.publishTimeStart }"
-										class="inp90 Wdate"
-										onclick="WdatePicker({dateFmt:'yyyy-MM-dd',readOnly:'readOnly'})" />
-									到
-									<input type="text" id="publishTimeEnd" name="publishTimeEnd"
-										value="${paramMap.publishTimeEnd }" class="inp90 Wdate"
-										onclick=WdatePicker( {
-		dateFmt : 'yyyy-MM-dd',
-		readOnly : 'readOnly'
-	});
-/>
-									<span style="margin-left: 20px;">关键字：</span>
-									<input id="titles" name="title" value="${paramMap.title }"
-										type="text" maxlength="200" class="inp90" />
-									<a href="javascript:void(0);" id="search" class="scbtn"> 搜索</a>
-								</form>
-							</div> -->
-						<div class="biaoge">
+						<div class="biaoge"><volist name="list1" id="vo">
+						<h2 style="text-align: center;font-weight: normal;font-size: 18px;">【{$vo.borrow_name}】</h2>
+
+          <div class="panel-body">
+                <div class="text-item six-width clearfix">
+               <ul>
+                <li>借款金额</li>
+                <li>借款利息</li>
+                <li>借款年化率</li>
+                <li>募集时间</li>
+                <li>已还期数</li>
+                <li>借款期限</li>
+               </ul>
+            </div>
+          <div class="list-con-count clearfix">
+               <ul>
+                <li>￥<span class="cn_borrow_count countfont-2">{$vo.borrow_money}</span></li>
+                <li><span class="countfont-2">{$vo.borrow_interest}</span></li>
+                <li><span class="cn_recycle_count countfont-2">{$vo.borrow_interest_rate}%</span></li>
+                <li><span class="countfont-2">{$vo.total}天</span></li>
+                <li><span class="cn_wait_count countfont-2">{$vo.has_pay}/{$vo.total}</span></li>
+                <li><span class="countfont-2">{$vo.borrow_duration}个月</span></li>
+               </ul>
+            </div>
+             <div class="text-item six-width clearfix">
+               <ul>
+                <li>借款类型</li>
+                <li>还款方式</li>
+                <li>投资人数</li>
+               </ul>
+            </div>
+          <div class="list-con-count clearfix">
+               <ul>
+                <li><span class="cn_borrow_count countfont-2">{$vo.borrow_type|get_borrow_type_name}</span></li>
+                <li><span class="countfont-2">{$vo.repayment_type|get_repayment_type}</span></li>
+                <li><span class="cn_recycle_count countfont-2">{$vo.repayment_type}人</span></li>
+               </ul>
+            </div>
+            <p style="padding-top: 20px;color: red;">* 被叫停的项目不在统计范围内</p>
+          </div>
+           
+
+						</volist>
 							<table width="98%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
-									<th>借款人</th>
-									<th>标题</th>
-									<th>起始时间</th>
-									<th>回款时间</th>
-									<th>投资本金</th>
-									<th>年利率</th>
-									<th>回款利息</th>
-									<th>协议书</th>
+									<th>期号</th>
+									<th>借出金额</th>
+									<th>回款本金</th>
+									<th>回款收益</th>
+									<th>还款时间</th>
+									<th>操作</th>
+
 								</tr>
-							
-										<volist name="list" id="vo" key="k">
-										<tr>
-											<td align="center">{$vo.borrow_uid|get_borrow_username}
-											</td>
-											<td align="center"><a
-												href="{:U('Home/Borrow/detail?id='.$vo['borrow_id'])}"
-												target="_blank">{$vo.borrow_id|get_borrow_name}</a></td>
-											<td align="center">{$vo.add_time|date='Y-m-d',###}</td>
-											<td align="center">{$vo.deadline|date='Y-m-d',###}</td>
-											<td align="center">{$vo.investor_capital}</td>
-											<td align="center">{$vo['invest_fee']*1}% <!-- <s:if test="%{#bean.borrowWay ==1}">净值借款</s:if>
-													<s:if test="%{#bean.borrowWay ==2}">秒还借款</s:if>
-													<s:if test="%{#bean.borrowWay ==3}"> 普通借款</s:if>
-													<s:if test="%{#bean.borrowWay ==4}"> 实地考察借款</s:if>
-													<s:if test="%{#bean.borrowWay ==5}">  机构担保借款</s:if> -->
-											</td>
-											<td align="center">{$vo.investor_interest}
-											</td>
-											<td align="center"><a href="{:U('Member/Invest/investdetail?id='.$vo['borrow_id'])}">详情</a><!-- <a href="javascript:void(0);" class="xiangqing_{$k}">详情</a> --><a href="{:U('Invest/borrowprotocol?id='.$vo['borrow_id'])}" target="_blank">|查看协议</a><input  id="borrow_id_{$k}" value="{$vo.borrow_id}" style="display: none;" /></td>
-										</tr>
-										
-										</volist>
-										<tr>
-										<if condition="$k eq null">
-											<td align="center" colspan="10">亲！还没有内容哦。</td>
-										</if>
-										</tr>
+                <form>
+								<volist name="list" id="ho" key="i">
+								<tr>
+									<td align="center"><input  id="h_{$i}" value="{$ho[0]['id']}" style="display: none;" />{$i}</td>
+									<td align="center">{$ho['capital']}</td>
+									<td align="center"><input  id="h2_{$i}" value="{$ho[0]['capital']}" style="display: none;" />{$ho['receive_capital']}</td>
+									<td align="center"><span id="checktip_{$i}">{$ho['receive_interest']}</span></td>
+									<td align="center">{$ho['deadline']|date='Y-m-d',###}</td>
+									<td align="center">
+									<if condition="$ho['status'] eq '7' ">已还<else/>待还</if>
+									</td>
+								</tr></volist></form>
+								<tr>
+								<if condition="$i eq null">
+									<td align="center" colspan="10">亲！你还没成功借过款哦。</td>
+								</if>
+								</tr>
 							</table>
 							<div class="page">
-								{$page}
+								<shove:page url="homeBorrowInvestList.htm"
+									curPage="${pageBean.pageNum}" showPageCount="10"
+									pageSize="${pageBean.pageSize }" theme="number"
+									totalCount="${pageBean.totalNum}">
+								</shove:page>
 							</div>
 						</div>
 					</div>

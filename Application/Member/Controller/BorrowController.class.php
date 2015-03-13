@@ -123,16 +123,16 @@ class BorrowController extends MemberController {
 
 		// dump($de);
 
-  //       $condition1 ['id'] = $id;
-  //       $binfo =M('z_borrow_info')->where($condition1)->select();
+        $condition1 ['id'] = $id;
+        $binfo =M('z_borrow_info')->where($condition1)->select();
         
-		// $this->borrow_status=$binfo[0]['borrow_status'];
+		$this->borrow_status=$binfo[0]['borrow_status'];
 		// $this->assign('list',$depict);
-		// $this->assign('list1',$binfo);
+		$this->assign('list1',$binfo);
 
 		$detail = M ('z_investor_detail');
 		$condition1 ['sort_order'] = $i;
-	    $condition ['borrow_id'] =60;
+	    $condition ['borrow_id'] =$id;
 
 	    $de= $detail->field ( 'id,borrow_id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital,status')->where ( $condition )->group ('sort_order')->select();
 
@@ -145,7 +145,6 @@ class BorrowController extends MemberController {
 	}
 	public function reimbursement_del($bid='',$id='',$m='') {
 
-
         $detail = M ('z_investor_detail');
 		$condition['sort_order'] =$id;
 	    $condition['borrow_id'] =$bid;
@@ -156,14 +155,9 @@ class BorrowController extends MemberController {
 
         for($i=0;$i<=(intval ($cc)-1);$i++){
 	    $data[$i]['id'] =$de[$i]['id'];
-        M('z_investor_detail')->where(array('id'=>$data[$i]['id']))->setField(array('status'=>7,'deadline'=>time()));
+	    //还款详情资金状态变化
+        M('z_investor_detail')->where(array('id'=>$data[$i]['id']))->setField(array('status'=>7,'deadline'=>time(),'receive_capital'=>$de[$i]['capital'],'receive_interest'=>$de[$i]['interest']));
         }
-
-
-        dump($data);
-	    
-
-	    exit();
 
 		// $condition ['id'] = $_POST['bid'];
 		// $m= $_POST['bid2'];

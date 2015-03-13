@@ -100,8 +100,8 @@
 				<div class="zh_cont_r_bot">
 					<volist name="list" id="vo">
 					<ul>
-						<li>账户总额：￥ {$vo.account_money}</li>
-						<li>可用余额：￥ {$vo.account_money}</li>
+						<li>账户总额：￥ {$vo.account_money|default="0.00"}</li>
+						<li>可用余额：￥ {$vo.account_money|default="0.00"}</li>
 					</ul>
 					</volist>
 				</div>
@@ -119,8 +119,8 @@
 				<div class="zh_cont_r_bot">
 					<volist name="list2" id="list2">
 					<ul>
-						<li><p>待收总额：￥ {$list2['investor_capital']}</p></li>
-						<li><p>待收本金：￥ {$list2['investor_capital']}</p></li>
+						<li><p>待收总额：￥ {$list2['investor_capital']|default="0.00"}</p></li>
+						<li><p>待收本金：￥ {$list2['investor_capital']|default="0.00"}</p></li>
 					</ul>
 					</volist>
 				</div>
@@ -139,8 +139,8 @@
 				<div class="zh_cont_r_bot last">
 					<volist name="borrow_money" id="bm">
 					<ul>
-						<li>待还总额：￥ {$bm.borrow_money}</li>
-						<li>待还本金：￥ {$bm.borrow_money}</li>
+						<li>待还总额：￥ {$bm.borrow_money|default="0.00"}</li>
+						<li>待还本金：￥ {$bm.borrow_money|default="0.00"}</li>
 					</ul>
 					</volist>
 				</div>
