@@ -149,7 +149,27 @@ class BorrowController extends MemberController {
 		$condition['sort_order'] =$id;
 	    $condition['borrow_id'] =$bid;
 
-	    $de= $detail->field ( 'id,capital,interest,repayment_time,deadline,receive_capital')->where ( $condition )->select();
+	    $de= $detail->field ( 'id,investor_uid,capital,interest,repayment_time,deadline,receive_capital')->where ( $condition )->select();
+	    $dee= $detail->field ( 'id,investor_uid,sum(capital)capital,repayment_time,deadline,receive_capital')->where ( $condition )->group ('investor_uid')->select();
+
+	    
+	    $ccc=count($dee);
+        for($i=0;$i<=(intval ($ccc)-1);$i++){
+	    $data[$i]['investor_uid'] =$dee[$i]['investor_uid'];
+	    
+
+	    
+	    $member_money = M ('z_member_money');
+	    $money=$member_money->where(array('uid'=>$data[$i]['investor_uid']))->select();
+        $data[$i]['money']=floatval($dee[$i]['interest'])+floatval($dee[$i]['capital'])+floatval($money[0]['account_money']);
+
+	    M('z_member_money')->where(array('uid'=>$money[0]['uid']))->setField(array('account_money'=>floatval($data[$i]['money'])));
+	    // dump($money);
+
+
+	    }
+	    
+        // exit();
 
         $cc=count($de);
 

@@ -138,8 +138,9 @@
 							<p>进度</p>
 							<span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;line-height:18px;color:white;text-align: center;">{$vo['has_borrow']/$vo['borrow_money']*100}%</span></span>
 						</div>
-						
-						<div class="fb_date">2015-01-20</div>
+
+						<div class="fb_date endTime"  value="1742116187">2015-01-20</div>
+						<div class="fb_date">发标时间：2015-01-20</div>
 						
 						<div class="button">
 							<if condition="$vo.borrow_status eq 2">
@@ -200,4 +201,38 @@
 	</div>
 </div>
 <!--content end--> <!-- {:hook('indexAliPlay')} --> <script
-	type="text/javascript" src="__PUBLIC__/Admin/js/common.js"></script> </block>
+	type="text/javascript" src="__PUBLIC__/Admin/js/common.js"></script> 
+	  <script language="JavaScript">
+    function GetRTime(){
+      $('.endTime').each(function(){
+          var endtime=$(this).attr('value');
+          var nowtime = new Date().getTime(); 
+          var leftTime=endtime-nowtime/1000; 
+          var seconds =leftTime;
+          var minutes = Math.floor(seconds/60);
+          var hours = Math.floor(minutes/60);
+          var days = Math.floor(hours/24);
+          var CDay= days;
+          var CHour= hours % 24;
+          var CMinute= minutes % 60;
+          var CSecond= Math.floor(seconds%60);
+		  var aa=$(this).attr('align')
+
+          if (aa==6 ||aa==7) {
+
+               $(this).html("<h4><strong>00:00:00</strong></h4>");
+
+          }else{
+                if (leftTime>0) {
+                   $(this).html("<strong>"+CDay+"</strong>天<strong>"+CHour+"</strong>时<strong>"+CMinute+"</strong>分<strong>"+CSecond+"</strong>秒");
+                }else{
+                   $(this).html("<h4><strong>00:00:00</strong></h4>");
+                }
+
+          }
+          
+      });  
+       setTimeout("GetRTime()",1000); 
+    }
+  window.onload=GetRTime;
+  </script></block>

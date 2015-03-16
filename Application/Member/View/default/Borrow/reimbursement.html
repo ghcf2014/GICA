@@ -82,7 +82,15 @@
 									<td align="center">
 									<if condition="$ho['status'] eq '7' ">已还<else/><a href="{:U('Member/Borrow/reimbursement_del?id='.$i.'&bid='.$ho['borrow_id'].'&m='.$ho['yuehaibx'])}">还款</a></if>
 									</td>
-								</tr></volist></form>
+								</tr></volist>
+                <tr>
+                  <td align="center">合计</td>
+                  <td align="center"></td>
+                  <td align="center"><volist name="list1" id="vo">总：{$vo['repayment_money']}</volist></td>
+                  <td align="center"><volist name="list1" id="vo">总：{$vo['repayment_interest']}</volist></td>
+                  <td align="center"></td>
+                  <td align="center"></td>
+                </tr></form>
 								<tr>
 								<if condition="$i eq null">
 									<td align="center" colspan="10">亲！你还没成功借过款哦。</td>
