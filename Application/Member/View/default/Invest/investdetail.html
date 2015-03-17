@@ -66,7 +66,7 @@
 									<th>回款本金</th>
 									<th>回款收益</th>
 									<th>还款时间</th>
-									<th>操作</th>
+									<th>状态</th>
 
 								</tr>
                 <form>
@@ -76,14 +76,14 @@
 									<td align="center">{$ho['capital']}</td>
 									<td align="center"><input  id="h2_{$i}" value="{$ho[0]['capital']}" style="display: none;" />{$ho['receive_capital']}</td>
 									<td align="center"><span id="checktip_{$i}">{$ho['receive_interest']}</span></td>
-									<td align="center">{$ho['deadline']|date='Y-m-d',###}</td>
+									<td align="center"><if condition="$ho.deadline neq '0'">{$ho['deadline']|date='Y-m-d',###}<else/>无数据</if></td>
 									<td align="center">
 									<if condition="$ho['status'] eq '7' ">已还<else/>待还</if>
 									</td>
 								</tr></volist></form>
 								<tr>
 								<if condition="$i eq null">
-									<td align="center" colspan="10">亲！你还没成功借过款哦。</td>
+									<td align="center" colspan="10">亲！你还没成功投过标哦。</td>
 								</if>
 								</tr>
 							</table>

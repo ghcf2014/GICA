@@ -437,5 +437,48 @@ class BorrowController extends AdminController {
         $this->meta_title = '借款信息';
         $this->display();
     }
+    public function application($id = 0){
+        $map['status']  = 0;
+        $list   = $this->lists('z_borrow_apply', $map);
+        int_to_string($list);
+        $this->id = $id;
+        $this->assign('_list', $list);
+        $this->meta_title = '借款申请信息';
+
+        // dump($list);
+        $this->display();
+    }
+    public function application_audit($id = 0){
+        $map['id']  =$id;
+        $list   = $this->lists('z_borrow_apply', $map);
+        int_to_string($list);
+        $this->id = $id;
+        $this->assign('_list', $list);
+        $this->meta_title = '借款申请信息';
+
+        // dump($list);
+        $this->display();
+    }
+    public function application_audit_save($id = 0){
+        $map['id']  =$id;
+        $sta = $_POST ["group_id"];
+        //审核状态改变
+        if (M('z_borrow_apply')->where(array('id'=>$id))->setField(array('status'=>floatval($sta)))) {
+            $this->success('操作成功');
+        } else {
+            // 失败提示
+            $this->error ( L ( '操作失败' ) );
+        }
+    }
+    public function applicationed($id = 0){
+        // $map['status']  = 1;
+        // $map['id']  = $id;
+        $list   = $this->lists('z_borrow_apply', 'status >= 1');
+        int_to_string($list);
+        $this->id = $id;
+        $this->assign('_list', $list);
+        $this->meta_title = '已借款申请信息';
+        $this->display();
+    }
 
 }

@@ -171,6 +171,7 @@ class BorrowController extends HomeController {
 		$depict ['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
 		$depict ['borrow_use'] = $_POST ["borrow_use"];
 		$depict ['borrow_duration'] = $_POST ["borrow_duration"];
+		$depict ['collect_day'] = 10;
 		$depict ['borrow_min'] = $_POST ["borrow_min"];
 		$depict ['borrow_max'] = $_POST ["borrow_max"];
 		$depict ['collect_time'] = $_POST ["collect_time"];
