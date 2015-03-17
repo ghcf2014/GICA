@@ -15,8 +15,14 @@ class BorrowController extends HomeController {
 		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
-		$data=M('z_borrow_apply');
+		//是否进行基本认证
+		$status = M ( 'z_members_status' );
+		$result = $status->where ( "uid=%s", $uid )->select ();
+		if ($result == null) {
+			$this->error ( '对不起，您还没进行基本认证！', U ( 'Member/Userinfo/userselfset' ) );			
+		} 
 		//是否有申请
+		$data=M('z_borrow_apply');		
 		$applydata=$data->where('status=1 and apply_uid=%s',$uid)->select();
 		if (is_array($applydata)==true){
 			$this->assign('session',$session);
@@ -94,14 +100,15 @@ class BorrowController extends HomeController {
 			'apply_uid'=>$uid
 			);
 		$receive=$_POST;
-		$data = array_merge($receive,$arr);
+		dump($receive);
+		/*$data = array_merge($receive,$arr);
 		$model=M('z_borrow_apply');
 		$result=$model->add($data);
 		if ($result>0){
 			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Borrow/checkingapply'));
 		}else {
 			$this->error("信息提交失败，请重新核对信息！");
-		}
+		}*/
 	}
 	// 基本信息
 	public function userinfo() {

@@ -302,8 +302,8 @@ class BorrowController extends MemberController {
 	public function checkingborrow() {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
-		$sql = "select * from gica_z_borrow_info where borrow_uid=" . $uid . " and borrow_status=0 or borrow_status=4";
-		$borrow_info = $borrow_info->query ( $sql );
+		$arr['borrow_uid']=$uid;
+		$borrow_info = $borrow_info->where($arr)->select();
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}

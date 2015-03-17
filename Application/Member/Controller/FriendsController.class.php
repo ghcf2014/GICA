@@ -27,7 +27,8 @@ class FriendsController extends MemberController {
 		$this->assign ( "username", $username );
 		
 		// 查询当前登录用户的真实姓名
-		$realName = M ( 'z_member_info' )->field ( 'real_name' )->where ( $uid )->select ();
+		$arr['uid']=$uid;
+		$realName = M ( 'z_member_info' )->where ($arr)->select ();
 		$this->assign ( 'realName', $realName [0] ['real_name'] );
 		
 		if ($email != '') { // TODO: 发送验证邮件

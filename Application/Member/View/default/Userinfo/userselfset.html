@@ -15,13 +15,26 @@
                         <div class="jbrz_con">
                         	<p class="warning"><b style="font-weight: normal;color: #b30000;">注意：</b>请填写真实有效的信息，一旦通过实名认证以下信息将不能修改</p>
                         	<dl class="jbrz">
+                                <dt>手机号码</dt>
+                                <dd><div class="txt" readonly id="idNo">{$vo.cell_phone}</div></dd>
+                            </dl>
+
+                            <dl class="jbrz">
                         		<dt>真实姓名</dt>
-                            	<dd><input type="text" class="txt" name="real_name" id="realName" value="{$vo.real_name}" /></dd>
+                                <if condition="$vo.real_name eq null">
+                                    <dd><input type="text" class="txt" name="real_name" id="realName" /></dd>
+                                <else/>
+                                    <dd><div class="txt" name="real_name" id="realName">{$vo.real_name}</div></dd>
+                                </if>
                         	</dl>
                         
 	                        <dl class="jbrz">
 	                        	<dt>身份证</dt>
-	                            <dd><input type="text" class="txt" name="idcard" id="idNo" value="{$vo.idcard}" /></dd>
+                                <if condition="$vo.real_name eq null">
+                                    <dd><input type="text" class="txt" name="idcard" id="idNo"/></dd>
+                                <else/>
+                                    <dd><div class="txt" name="idcard" id="idNo">{$vo.idcard}</div></dd>
+                                </if>
 	                        </dl>                      
                         
 	                        <dl class="jbrz sex">
@@ -32,50 +45,76 @@
 	                                <elseif condition="$vo.sex eq '0'"/>
 	    	                            男<input type="radio" class="radio" name="sex" value="1" />
 	    	                            女<input type="radio" class="radio" name="sex" value="0" checked="checked"/>
-	                                <elseif condition="$vo.sex eq '2'"/>
+	                                <else/>
 	                                    男<input type="radio" class="radio" name="sex" value="1" />
-	                                    女<input type="radio" class="radio" name="sex" value="0"/>
-	                                    <a href="#">请选择</a>
+	                                    女<input type="radio" class="radio" name="sex" value="0"/>	                                   
 	                                </if>
 	                            </dd>
 	                        </dl>
                         
                         <dl class="jbrz">
                         	<dt>职业</dt>
-                            <dd><input type="text" class="txt" name="zy" id="idNo" value="{$vo.zy}" /></dd>
+                            <dd>
+                            <if condition="$vo.zy eq null">
+                                    <select name="zy"  class="inp50" style="font-size: 16px;height: 40px;">                                
+                                       <option>----请选择----</option>    
+                                       <option value="学生">学生</option>    
+                                       <option value="工人">工人</option>   
+                                       <option value="工程师">工程师</option>   
+                                       <option value="公司职员">公司职员</option>   
+                                       <option value="公司老板">公司老板</option>
+                                       <option value="银行职员">银行职员</option>
+                                       <option value="企业员工">企业员工</option>
+                                       <option value="公司董事">公司董事</option>
+                                       <option value="集团老总">集团老总</option>      
+                                    </select>                                    
+                                <else/>
+                                    <div class="txt" name="idcard" id="idNo">{$vo.zy}</div>
+                                </if>                            
+                            </dd>
                         </dl>
                        
                         
                         <dl class="jbrz">
                         	<dt>教育</dt>
                             <dd>
-                                <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">                                
-                                   <option value="博士以上">博士以上</option>    
-    				               <option value="博士">博士</option>   
-    				               <option value="硕士">硕士</option>   
-    				               <option value="研究生">研究生</option>   
-    				               <option value="本科">本科</option>
-    				               <option value="专科">专科</option>
-    				               <option value="高中">高中</option>
-    				               <option value="初中">初中</option>
-    				               <option value="小学">小学</option>      
-    				            </select>   
+                            <if condition="$vo.zy eq null">
+                                    <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">                                
+                                       <option >----请选择----</option>    
+                                       <option value="博士以上">博士以上</option>    
+                                       <option value="博士">博士</option>   
+                                       <option value="硕士">硕士</option>   
+                                       <option value="研究生">研究生</option>   
+                                       <option value="本科">本科</option>
+                                       <option value="专科">专科</option>
+                                       <option value="高中">高中</option>
+                                       <option value="初中">初中</option>
+                                       <option value="小学">小学</option>      
+                                    </select>                                    
+                                <else/>
+                                    <div class="txt" name="idcard" id="idNo">{$vo.education}</div>
+                                </if>                            
                             </dd>
+                            
                         </dl>
                         
                         <dl class="jbrz adress">
                         	<dt>现居地址</dt>
                             <dd>
-                                <select class="select" name="province_now" id="s1">
-                                    <option></option>
-                                </select>
-                                <select class="select" name="city_now" id="s2">
-                                    <option></option>
-                                </select>
-                                <select class="select" name="area_now" id="s3">
-                                    <option></option>
-                                </select>
-                                
+                                <if condition="$vo.province_now eq null">
+                                    <select class="select" name="province_now" id="s1">
+                                        <option></option>
+                                    </select>
+                                    <select class="select" name="city_now" id="s2">
+                                        <option></option>
+                                    </select>
+                                    <select class="select" name="area_now" id="s3">
+                                        <option></option>
+                                    </select>
+                                    
+                                <else/>
+                                    <div class="txt" name="idcard" id="idNo">{$vo.province_now}--{$vo.city_now}--{$vo.area_now}</div>
+                                </if>                              
                             </dd>
                         </dl>
                         <p class="wxts"><b style="font-weight: normal;color: red;">温馨提示：</b>我们将严格对用户的所有资料进行保密。</p>

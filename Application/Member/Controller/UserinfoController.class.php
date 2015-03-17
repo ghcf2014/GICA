@@ -75,7 +75,18 @@ class UserinfoController extends MemberController {
 			$bank_msg=str_replace(substr($bankdata,4,-4),'******',$bankdata);
             $action='绑定银行卡:'.$bank_msg;
             systemmsg($action);
-			$this->success ( "添加成功！", U ( "Userinfo/userbankset" ) );
+
+			//查询是否创建交易密码
+            $paypass=M('ucenter_member');
+            $arr['id']=$uid;
+            $paypassword=$paypass->where($arr)->select();
+            $pin_pass=$paypassword[0]['pin_pass'];
+            if ($pin_pass==null){
+            	$this->redirect('/Member/Userinfo/paypassword');
+            }else{
+            	$this->success ( "添加成功！", U ( "Userinfo/userbankset" ) );
+            }
+            
 		} else {
 			// 失败提示
 			$this->error ( L ( '添加失败!' ) );
@@ -270,16 +281,23 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userselfset() {
-		$uid = is_login ();
+		$uid = is_login();
 		$chk = M ( "z_member_info" );
 		$condition ['uid'] = $uid;
-		$m = $chk->where ( $condition )->select ();
+		$arr['id']=$uid;
+		$memberphpone=M('ucenter_member');
+		$phone=$memberphpone->where($arr)->select();
+		$cellphone=$phone[0]['mobile'];
+		$condition ['cell_phone']=$cellphone;
+		$arrs['uid']=$uid;
+		$m = $chk->where ( $arrs )->select ();
 		if ($m !== null) {
 			$this->assign ( 'mlist', $m );
 		} else {
-			$n = $chk->add ( $condition );
-			$m = $chk->where ( $condition )->select ();
-			$this->assign ( 'mlist', $m );
+			$n = $chk->add ( $condition );			
+			$k= $chk->where ( $arrs )->select ();
+			$this->assign ( 'mlist', $k );
+
 		}
 		
 		$this->display ();
@@ -393,10 +411,10 @@ class UserinfoController extends MemberController {
 		// $data ['card_back_img'] = $_POST ["card_back_img"];
 		$data ['sex'] = $_POST ["sex"];
 		$data ['zy'] = $_POST ["zy"];
-		$data ['cell_phone'] = $_POST ["cell_phone"];
 		$data ['education'] = $_POST ["education"];
-		$data ['income'] = $_POST ["income"];
-		$data ['address'] = $_POST ["address"];
+		$data ['province_now'] = $_POST ["province_now"];
+		$data ['city_now'] = $_POST ['city_now'];
+		$data ['area_now'] = $_POST ['area_now'];
 		// dump($data);
 		$condition ['uid'] = $uid;
 		
@@ -420,7 +438,7 @@ class UserinfoController extends MemberController {
 			
 			// 查询是否已提交过资料
 			if ($re = $status->where ( "uid=%s", $uid )->select ()) {
-				
+				$result = $status->save( $arr );
 				$this->success ( L ( '资料修改成功，等待审核！' ) );
 			} else {
 				// 若没有提交过资料则更新认证状态
