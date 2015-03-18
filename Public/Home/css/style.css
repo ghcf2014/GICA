@@ -321,7 +321,12 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zc_cont .zc_cont_bot .zc_cont_bot_ok ul .zc_cont_bot_ok_ul_li01 a{text-decoration: underline;color: #d80000;line-height: 20px;}
 .zc_cont .zc_cont_bot .zc_cont_bot_ok ul .zc_cont_bot_ok_ul_li02{float: right;;width: 150px;height: 20px;text-align: center;padding-top: 60px;background: url(../images/jinrugerenzhanghu.png) no-repeat center top;}
 .zc_cont .zc_cont_bot .zc_cont_bot_ok ul .zc_cont_bot_ok_ul_li02 a{text-decoration: underline;color: #cf9c16;line-height: 20px;}
-
+/*注册激活邮箱*/
+.zc_cont .zc_cont_bot .zc_cont_bot_jh{width: 1025px;height: auto;}
+.zc_cont .zc_cont_bot .zc_cont_bot_jh dl{width: 600px;margin:100px auto 10px;overflow: hidden;}
+.zc_cont .zc_cont_bot .zc_cont_bot_jh dl dt{width: 100px;height: 100px;background:url(../images/button_ok.png) no-repeat;float: left;margin:10px 30px 0 0;}
+.zc_cont .zc_cont_bot .zc_cont_bot_jh dl dd{width: 400px;height: auto;line-height: 30px;float: left;}
+.zc_cont .zc_cont_bot .zc_cont_bot_jh dl dd a{color: #2893c1;margin: 0 5px;font-weight: bold;text-decoration: underline;}
 
 
 
