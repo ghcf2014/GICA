@@ -60,8 +60,23 @@ class IndexController extends HomeController {
 			$jindu = 0;
 		} else {
 		}
+
+		
+
+		//计算倒计时间赋值
+		$cc=count($list);
+		for($i=0;$i<=(intval ($cc)-1);$i++){
+			$list[$i]['djtime'] = strtotime ( '+ ' . intval ( $list[$i]["collect_day"] ) . ' days',$list[$i]["add_time"]);
+
+			if(strtotime ( '+ ' . intval ( $list[$i]["collect_day"] ) . ' days',$list[$i]["add_time"]) <= time())
+			{
+				//招募时间流标
+				M('z_borrow_info')->where(array('id'=>$list[$i]["id"]))->setField(array('borrow_status'=>3));
+			}
+		}
+
 		$this->assign('login',$login);
-		$this->assign ( 'jindu', $jindu ); // 栏目
+		$this->assign ( 'jindu', $jindu ); // 进度
 		$this->assign ( 'category', $category ); // 栏目
 		$this->assign ( 'lists', $lists ); // 列表
 		$this->assign ( 'lists1', $lists1 );

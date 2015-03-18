@@ -96,62 +96,44 @@
 			<!-- 账户详情 -->
 			<div class="zh_cont_r_con_bot">
 				<h4>账户详情：</h4>
-				<if condition="$list neq ''">
 				<div class="zh_cont_r_bot">
 					<volist name="list" id="vo">
 					<ul>
-						<li>账户总额：￥ {$vo.account_money|default="0.00"}</li>
-						<li>可用余额：￥ {$vo.account_money|default="0.00"}</li>
+						<li>账户总额：{$vo.account_money|default="0.00"}</li>
+						<li>可用余额：{$vo.account_money|default="0.00"}</li>
+						<li>冻结金额：{$vo.account_money|default="0.00"}</li>
 					</ul>
 					</volist>
 				</div>
-				<else />
-				<div class="zh_cont_r_bot">
-					<ul>
-						<li>账户总额：￥ 0.00</li>
-						<li>可用余额：￥0.00</li>
-					</ul>
-				</div>
-				</if>
-
 				<!-- 投资总汇 -->
-				<if condition="$list2 neq ''">
-				<div class="zh_cont_r_bot">
-					<volist name="list2" id="list2">
-					<ul>
-						<li><p>待收总额：￥ {$list2['investor_capital']|default="0.00"}</p></li>
-						<li><p>待收本金：￥ {$list2['investor_capital']|default="0.00"}</p></li>
-					</ul>
-					</volist>
-				</div>
-				<else />
-				<div class="zh_cont_r_bot">
-					<ul>
-						<li><p>待收总额：￥ 0.00</p></li>
-						<li><p>待收本金：￥ 0.00</p></li>
-					</ul>
-	
-				</div>
-				</if>
-
 				<!-- 借款总汇 -->
-				<if condition="$borrow_money neq ''">
-				<div class="zh_cont_r_bot last">
-					<volist name="borrow_money" id="bm">
+				<h4>收益统计：</h4>
+				<div class="zh_cont_r_bot">
 					<ul>
-						<li>待还总额：￥ {$bm.borrow_money|default="0.00"}</li>
-						<li>待还本金：￥ {$bm.borrow_money|default="0.00"}</li>
+						<li>已收总收益（元）：{$bm.borrow_money|default="0.00"}</li>
+						<li>已收收益（元）：{$bm.borrow_money|default="0.00"}</li>
+						<li>已收奖励（元）：{$bm.borrow_money|default="0.00"}</li>
+						<li>其他收益（元）：{$bm.borrow_money|default="0.00"}</li>
+						<li>推广提成收益（元）：{$bm.borrow_money|default="0.00"}</li>
 					</ul>
+				</div>
+				<h4>待收统计：</h4>
+				<div class="zh_cont_r_bot">
+				    <volist name="list" id="vo">
+						<ul>
+							<li>待收本息（元）：{$vo['money_collect']|default="0.00"}</li>
+							<li>待收本金（元）：{$vo['money_collect']|default="0.00"}</li>
+							<li>待收利息（元）：{$vo['money_collect']|default="0.00"}</li>
+						</ul>
 					</volist>
 				</div>
-				<else />
-				<div class="zh_cont_r_bot last">
+				<h4>充值提现：</h4>
+				<div class="zh_cont_r_bot">
 					<ul>
-						<li>待还总额：￥0.00</li>
-						<li>待还本金：￥0.00</li>
+						<li>充值总金额（元）：{$bm.borrow_money|default="0.00"}</li>
+						<li>提现总金额（元）：{$bm.borrow_money|default="0.00"}</li>
 					</ul>
 				</div>
-				</if>
 			</div>
 			
 			

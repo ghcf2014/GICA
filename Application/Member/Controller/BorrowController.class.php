@@ -150,7 +150,6 @@ class BorrowController extends MemberController {
 	    $condition['borrow_id'] =$bid;
 
 	    $de= $detail->field ( 'id,investor_uid,capital,interest,repayment_time,deadline,receive_capital')->where ( $condition )->select();
-<<<<<<< HEAD
 	    $dee= $detail->field ( 'id,borrow_id,investor_uid,sum(capital)capital,repayment_time,deadline,receive_capital')->where ( $condition )->group ('investor_uid')->select();
 
         $ccc=count($dee);
@@ -173,12 +172,6 @@ class BorrowController extends MemberController {
      //    dump($data['money']);
 	    // exit();
 
-=======
-	    $dee= $detail->field ( 'id,investor_uid,sum(capital)capital,repayment_time,deadline,receive_capital')->where ( $condition )->group ('investor_uid')->select();
-
-	    
-	    $ccc=count($dee);
->>>>>>> origin/master
         for($i=0;$i<=(intval ($ccc)-1);$i++){
 	    $data[$i]['investor_uid'] =$dee[$i]['investor_uid'];
 	    

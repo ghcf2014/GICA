@@ -101,9 +101,7 @@
 
 					<dl>
 						<dt>
-							<span>行业资讯</span> <a
-								href="{:U('Article/lists?category='.get_category_name(40))}"
-								class="more">更多</a>
+							<span>行业资讯</span> <a href="{:U('Article/lists?category='.get_category_name(40))}"class="more">更多</a>
 						</dt>
 						<volist name="lists1" id="list1">
 						<dd>
@@ -138,9 +136,8 @@
 							<p>进度</p>
 							<span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;line-height:18px;color:white;text-align: center;">{$vo['has_borrow']/$vo['borrow_money']*100}%</span></span>
 						</div>
-
-						<div class="fb_date endTime"  value="1742116187">2015-01-20</div>
-						<div class="fb_date">发标时间：2015-01-20</div>
+						<div class="fb_date endTime"  value="{$vo['djtime']}"></div>
+						<div class="fb_date">发标时间：{$vo['add_time']|date='Y-m-d',###}</div>
 						
 						<div class="button">
 							<if condition="$vo.borrow_status eq 2">

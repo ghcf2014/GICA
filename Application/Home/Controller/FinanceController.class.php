@@ -110,19 +110,19 @@ class FinanceController extends HomeController {
 
 
             if ($list3[0]['repayment_type']== 5) {
-					 		$b= (intval ($capital)* (intval ($list3[0]['borrow_interest_rate']) / 100 / 12) * pow ( (1 + (intval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) / (pow ( (1 + (intval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) - 1)) * intval ($list3[0]['borrow_duration']) - intval ($capital);
+					 		$b= (floatval ($capital)* (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12) * pow ( (1 + (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) / (pow ( (1 + (floatval($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) - 1)) * intval ($list3[0]['borrow_duration']) - floatval ($capital);
 			// $b=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
 
 			}
             if ($list3[0]["repayment_type"] == 6) {
-                            $b=intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
+                            $b=floatval ($capital)*(floatval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
             // $depict ['repayment_money'] = intval ($capital)+(intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12));
 
             }
             //一次性还款公式带进
             if ($list3[0]["repayment_type"] == 7) {
                 
-                            $b=intval ($capital)*((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12)*intval($list3[0]["borrow_duration"]));
+                            $b=floatval ($capital)*((floatval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12)*floatval($list3[0]["borrow_duration"]));
                 // $depict ['repayment_money']=intval ($capital)*(1+((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12))*intval ($list3[0]["borrow_duration"] ));
             }
 			
@@ -150,13 +150,13 @@ class FinanceController extends HomeController {
                 $condition2['id'] =$bid;
                 $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
 
-                $m2h=intval ($m22[0]['has_borrow'])+intval ($capital);
+                $m2h=floatval ($m22[0]['has_borrow'])+floatval ($capital);
 
-                $m222=intval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
+                $m222=floatval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
 
                 $data2['has_borrow']=$m2h;
 
-                    if(intval ($m22[0]['has_borrow']) == intval ($m22[0]['borrow_money']))
+                    if(floatval ($m22[0]['has_borrow']) == floatval ($m22[0]['borrow_money']))
                     {
                         $data3['borrow_status']=4;//满标状态改变
                         $data3['full_time']=time();//满标时间
@@ -173,10 +173,16 @@ class FinanceController extends HomeController {
                         $uid=is_login(); 
                         $condition1['uid'] =$uid;
                         $money=M("z_member_money");
-                        $money=$money->field('account_money')->where($condition1)->select();//余额查询
+                        $money=$money->field('account_money,money_collect')->where($condition1)->select();//余额查询
                         $m1=M("z_member_money");
-                        $money=intval ($money[0]['account_money'])-intval ($capital);//余额减掉金额
-                        $data1['account_money']=$money;
+                        $mmoney=floatval ($money[0]['account_money'])-floatval ($capital);//余额减掉金额
+                        $mcollect=floatval ($money[0]['money_collect'])+floatval ($capital);
+                        $data1['account_money']=$mmoney;
+                        $data1['money_collect']=$mcollect;
+                        // dump($money);
+
+                        // exit();
+
 
                             if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
 
@@ -186,13 +192,13 @@ class FinanceController extends HomeController {
                                         $condition2['id'] =$bid;
                                         $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
 
-                                        $m2h=intval ($m22[0]['has_borrow'])+intval ($capital);
+                                        $m2h=floatval ($m22[0]['has_borrow'])+floatval ($capital);
 
-                                        $m222=intval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
+                                        $m222=floatval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
 
                                         $data2['has_borrow']=$m2h;
 
-                                        if(intval ($m22[0]['has_borrow']) == intval ($m22[0]['borrow_money']))
+                                        if(floatval ($m22[0]['has_borrow']) == floatval ($m22[0]['borrow_money']))
                                         {
                                             $data3['borrow_status']=4;//标状态改变
                                             $m2=$m2->where($condition2)->save($data3);          
@@ -222,7 +228,7 @@ class FinanceController extends HomeController {
                                                 }
                                              if ($binfo[0]["repayment_type"] == 6) {
                                                      // $huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
-                                                     $dcapital =intval ($capital )/intval ($binfo[0]['total']);
+                                                     $dcapital =floatval ($capital )/floatval ($binfo[0]['total']);
                                                      // $huan[1]['lixi'] =intval ($huan[0]['lixi'])+intval ( $binfo[0]["borrow_interest_rate"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
                                             }
 
