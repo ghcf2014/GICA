@@ -21,14 +21,16 @@ class UserController extends HomeController {
         
 		if(IS_POST){ //注册用户
 			//手机发送验证码
-			// session_start();
-			// if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
-			// $this->error('手机验证码输入错误。');
-			// }elseif($_POST['mobile']==$_SESSION['mobile'] or $_POST['mobile_code']==$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
-			// 	$_SESSION['mobile'] = '';
-			// 	$_SESSION['mobile_code'] = '';	
-			// }
-			// $_SESSION['send_code'] = random(6,1);
+			session_start();
+			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+			$this->error('手机验证码输入错误。');
+			}elseif($_POST['mobile']==$_SESSION['mobile'] or $_POST['mobile_code']==$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+				$_SESSION['mobile'] = '';
+				$_SESSION['mobile_code'] = '';	
+			}
+			$_SESSION['send_code'] = random(6,1);
+
+			
 			/* 检测验证码 */
 			if(!check_verify($verify)){
 				$this->error('验证码输入错误！');

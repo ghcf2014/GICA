@@ -1,6 +1,5 @@
 <extend name="Base/common" />
-<block name="header"> <header class="jumbotron subhead"
-	id="overview">
+<block name="header"> <header class="jumbotron subhead" id="overview">
 	<div class="container">
 		<h2>用户注册</h2>
 		<p>
@@ -31,29 +30,19 @@
 							<span>* </span>手机号码:
 						</dt>
 						<dd>
-							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" />
+							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" /><input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:right;" >
 						</dd>
 						<span id="checkphone" style="line-height:48px;"></span>
 					</dl>
-			<!-- <dl>
+			<dl>
 				<dt>
-					
+					<span>&nbsp;</span>
 				</dt>
 				<dd>
-					
-					<input id="zphone" type="button" value=" 获取手机验证码 " onClick="get_mobile_code();" /><span style="color: red;">（手机验证码内部测试，无需填写）</span>
-				</dd>
-				<span id="checkphone" style="line-height:48px;color: red;"></span>
-			</dl> -->
-			<!-- <dl>
-				<dt>
-					<span>* </span>验证码:
-				</dt>
-				<dd>
-					<input type="text" size="8" name="mobile_code" class="inputBg" />
+					<input type="text" size="8" name="mobile_code" placeholder="填写获取到的验证码" class="inputBg" style="width:130px;"/>
 				</dd>
 				<span id="checkphone" style="line-height:48px;"></span>
-			</dl> -->
+			</dl>
 					<dl>
 						<dt>
 							<span>* </span>电子邮箱:
@@ -150,10 +139,9 @@
 </div>
 <script language="javascript">
 	function get_mobile_code(){
-
-        // $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+        $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
             alert(jQuery.trim(unescape(msg)));
-			if(msg=='提交成功'){
+			if(msg=='已发送'){
 				RemainTime();
 			}
         });
@@ -186,7 +174,7 @@
 		}else{
 			sTime='没有倒计时';
 		}
-		document.getElementById('zphone').innerHTML = sTime;
+		document.getElementById('zphone').value = sTime;
 	}	
 </script>
 <script type="text/javascript">
@@ -369,31 +357,5 @@
 		
 	})
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </block>
 

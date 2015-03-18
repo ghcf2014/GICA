@@ -67,6 +67,5 @@ if($gets['SubmitResult']['code']==2){
 	$_SESSION['mobile'] = $mobile;
 	$_SESSION['mobile_code'] = $mobile_code;
 }
-$gets['SubmitResult']['msg']='已发送';
 echo $gets['SubmitResult']['msg'];
 ?>
