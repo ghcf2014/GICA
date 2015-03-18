@@ -424,14 +424,7 @@ class UserinfoController extends MemberController {
 		                                                     // 认证状态表更新字段
 			$arr = array (
 					"uid" => $uid,
-					"phone_status" => 1,
-					"id_status" => 2,
-					"email_status" => 1,
-					"account_status" => 1,
-					"credit_status" => 1,
-					"safequestion_status" => 1,
-					"video_status" => 1,
-					"face_status" => 1 
+					"id_status" =>2,
 			);
 			// 更新认证状态
 			$status = M ( 'z_members_status' );

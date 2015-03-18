@@ -10,7 +10,7 @@
 	</div>
 </header> </block>
 
-<block name="body">
+<block name="body"> 
 <div class="zc_cont_out">
 	<div class="zc_cont">
 		<div class="top2">
@@ -23,17 +23,17 @@
 		<div class="zc_cont_bot">		
 			<div class="zc_cont_bot_ok">
 				<dl>
-					<dt>注册成功!</dt>
-					<dd>请先进行邮件验证!验证信息已发至您的邮箱:<a href="javascript:;" style="text-decoration:underline;color:green;">{$_SESSION['email']}</a></dd>
-					<dd>请登录该电子邮箱查收。</dd>
-					<dd>如果邮箱验证发生错误，请点击<a href="javascript:;" style="text-decoration:underline;color:red;">重新发送</a>邮件</dd>
+					<dt>邮箱验证成功!</dt>
+					<dd>恭喜<span>{$_SESSION['username']}</span>注册成为工合财富会员！</dd>
+					<dd>设置自动投标，省时！省心！又省力！</dd>
 				</dl>
-			</div>
-			
-			
-			
+				<ul>
+					<li class="zc_cont_bot_ok_ul_li01"><a href="javascript:;">自动投标</a></li>
+					<li class="zc_cont_bot_ok_ul_li02"><a href="{:U('Home/User/login')}">进入我的账户</a></li>
+				</ul>
+				
+			</div>		
 		</div>
 	</div>
-</div> 	
+</div>	
 </block>
-

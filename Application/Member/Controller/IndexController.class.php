@@ -34,13 +34,16 @@ class IndexController extends MemberController {
 
         $mstatus = M('z_members_status');//用户验证状态
         $condition2['uid'] =$uid;
-        $mstatus=$mstatus->where($condition2)->select();
-
+        $member_status=$mstatus->where($condition2)->select();
+        if ($member_status==null){
+            $arr['uid']=$uid;
+            $result=$mstatus->add($arr);
+        }
         $this->assign('list', $list);
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
-        $this->assign('mstatus', $mstatus);
+        $this->assign('mstatus', $member_status);
 
         $this->display();
     }

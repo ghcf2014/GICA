@@ -48,41 +48,46 @@
 			</dl>
 			
 			<ul class="ul01">
+
 				<volist name="mstatus" id="ms">
 				<li>认证管理：</li>
-				<li><if condition="$ms.email_status eq 0"> <a
-						href="{:U('Userinfo/usermailbanding')}"><img
-						src="__PUBLIC__/Home/images/img/h_yx_pic.jpg" title="邮箱未认证" /> </a> <elseif
-						condition="$ms.email_status eq 1" /> <a
-						href="{:U('Userinfo/usermailbanding')}"><img
-						src="__PUBLIC__/Home/images/img/l_yx_pic.jpg" title="邮箱已认证" /> </a> </if></li>
-				<li><if condition="$ms.phone_status eq 0"> <a
-						href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img
-						src="__PUBLIC__/Home/images/img/h_sj_pic.jpg" title="手机未认证" /> </a> <elseif
-						condition="$ms.phone_status eq 1" /> <a
-						href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img
-						src="__PUBLIC__/Home/images/img/l_sj_pic.jpg" title="手机已认证" /> </a> </if></li>
-				<li><if condition="$ms.id_status eq 0"> <a
-						href="{:U('Userinfo/userselfset')}"> <img
-						src="__PUBLIC__/Home/images/img/h_sfz_pic.jpg" title="身份证未认证" />
-					</a> <elseif condition="$vs.id_status eq 1" /> <a
-						href="{:U('Userinfo/userselfset')}"> <img
-						src="__PUBLIC__/Home/images/img/l_sfz_pic.jpg" title="身份证已认证" />
-					</a> </if></li>
-				<li><if condition="$ms.credit_status eq 0"> <a
-						href="{:U('Userinfo/userbankset')}"> <img
-						src="__PUBLIC__/Home/images/img/h_yhk_pic.jpg" title="银行卡未认证" />
-					</a> <elseif condition="$vs.credit_status eq 1" /> <a
-						href="{:U('Userinfo/userbankset')}"> <img
-						src="__PUBLIC__/Home/images/img/l_yhk_pic.jpg" title="银行卡已认证" />
-					</a> </if></li>
-				<li><if condition="$ms.video_status eq 0"> <a
-						href="{:U('Userinfo/userrenewalvip')}"> <img
-						src="__PUBLIC__/Home/images/img/h_vip_pic.jpg" title="VIP未认证" />
-					</a> <elseif condition="$vs.video_status eq 1" /> <a
-						href="{:U('Userinfo/userrenewalvip')}"> <img
-						src="__PUBLIC__/Home/images/img/l_vip_pic.jpg" title="VIP已认证" />
-					</a> </if></li></volist>
+				<li>
+					<if condition="$ms.email_status eq 1"> 
+						<a href="{:U('Userinfo/usermailbanding')}"><img src="__PUBLIC__/Home/images/img/l_yx_pic.jpg" title="邮箱已认证" /> </a> 
+					<else/> 
+						<a href="{:U('Userinfo/usermailbanding')}"><img src="__PUBLIC__/Home/images/img/h_yx_pic.jpg" title="邮箱未认证" /> </a> 
+					</if>
+				</li>
+				<li>
+					<if condition="$ms.phone_status eq 1"> 
+						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img src="__PUBLIC__/Home/images/img/l_sj_pic.jpg" title="手机已认证" /></a>
+
+					<else/>
+						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img src="__PUBLIC__/Home/images/img/h_sj_pic.jpg" title="手机未认证" /></a>
+					</if>
+
+				</li>
+				<li>
+					<if condition="$ms.id_status eq 1">
+						<a href="{:U('Userinfo/userselfset')}"><img src="__PUBLIC__/Home/images/img/l_sfz_pic.jpg" title="身份证已认证" /> </a> 
+					<else/>
+						 <a href="{:U('Userinfo/userselfset')}"><img src="__PUBLIC__/Home/images/img/h_sfz_pic.jpg" title="身份证未认证" /> </a>
+					</if>
+				</li>
+				<li>
+					<if condition="$ms.credit_status eq 1">
+						<a href="{:U('Userinfo/userbankset')}"> <img src="__PUBLIC__/Home/images/img/l_yhk_pic.jpg" title="银行卡已认证" /> </a> 
+					<else/> 
+						<a href="{:U('Userinfo/userbankset')}"> <img src="__PUBLIC__/Home/images/img/h_yhk_pic.jpg" title="银行卡未认证" /> </a>
+					</if>
+				</li>
+				<li><if condition="$ms.video_status eq 1">
+						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/l_vip_pic.jpg" title="VIP已认证" /> </a>
+					<else/>
+						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/h_vip_pic.jpg" title="VIP未认证" /> </a>
+					</if>
+				</li>
+			</volist>
 			</ul>
 			<!--<ul class="ul02">
 				<li class="ul02_li01"><a href="javascript:;">会员续费</a></li>

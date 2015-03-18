@@ -14,7 +14,7 @@ class UserController extends HomeController {
 	}
 
 	/* 注册页面 */
-	public function register($username = '', $password = '', $repassword = '', $email = '', $verify = '',$mobile='',$reffer = ''){
+	public function register($username = '', $password = '', $repassword = '', $email = '', $verify = '',$mobile='',$friends= '',$reffer = ''){
         if(!C('USER_ALLOW_REGISTER')){
             $this->error('注册已关闭');
         }
@@ -41,6 +41,7 @@ class UserController extends HomeController {
 				$this->error('密码和重复密码不一致！');
 			}
 
+
 			/* 调用注册接口注册用户 */
             $User = new UserApi();
 			$uid = $User->register($username, $password, $email,$mobile);
@@ -62,10 +63,12 @@ class UserController extends HomeController {
 				} 
 				
 				if($email != ''){ //TODO: 发送验证邮件
-				$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.ghcf.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
+				$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.tp.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
 				}
-           		
-		       $this->success('邮件已发送，注意查收!',U('registerok'));
+           		session_start();
+           		$_SESSION['email']=$email;
+           		$_SESSION['username']=$username;
+		       $this->success('邮件已发送，注意查收!',U('Home/User/registerok'));
 			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));
 			}
@@ -80,9 +83,13 @@ class UserController extends HomeController {
 		}
 
 	}
-	public function rigesterok(){
+	public function registerok(){
 		$this->display();
 	}
+	public function registeremailok(){
+		$this->display();
+	}
+
 	//手机验证码随机生成方法
 	public function random($length = 6 , $numeric = 0) {
 		PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
@@ -100,7 +107,10 @@ class UserController extends HomeController {
 	}
 	/* 登录页面 */
 	public function login($username = '', $password = '', $verify = '',$email = ''){
-		
+		//已经登录过隐藏登陆界面
+		if (is_login()>0){
+			$this->redirect('Member/Index/index');
+		}
 
 
 		if(IS_POST){ //登录验证
@@ -126,14 +136,13 @@ class UserController extends HomeController {
 				/* 登录用户 */
 				$Member = D('Member');
 				if($Member->login($uid)){ //登录用户
-					//判断跳转来源页
-					// $msg=(strtolower(str_replace('/','',$_SERVER['HTTP_REFERER'])));
-					// if(strpos('borrow',$msg)!==false){
-					// 	$this->success('登录成功！',U('Borrow/circulation'));
-					// }else{
-					// 	$this->success('登录成功！',U('Member/Index/index'));
-					// }
-
+					$mstatus = M('z_members_status');//用户验证状态
+			        $condition2['uid'] =$uid;
+			        $member_status=$mstatus->where($condition2)->select();
+			        if ($member_status==null){
+			            $arr['uid']=$uid;
+			            $result=$mstatus->add($arr);
+			        }
 					$this->success('登录成功！',U('Member/Index/index'));
 											               
 				} else {
@@ -155,14 +164,33 @@ class UserController extends HomeController {
 	}
 	/* 退出登录 */
 	public function emailyz($emailyz = 0){
+		session_start();
 		if(0 < $emailyz){
-
+			
 			$m=M("z_members_status");//关联会员资金表
            	$condition['uid'] =$emailyz;
-           	$data ['email_status'] =1;
-           	$count=$m->where($condition)->save();
+           	$data ['email_status'] = 1;
+           	$count=$m->where($condition)->select();
+           	if ($count!==null){
+           		$m->where($condition)->save($data);
+           		
+           	}else{
+           		$data['uid']=$emailyz;
+           		$result=$m->add($data);
+           		if ($result<0){
+           			$this->error('邮件验证失败，请重新发送邮件');
+           		}
+           	}
+           	
+           	//查询验证用户信息
+           	$membername = M('ucenter_member');
+           	$arr['id']=$emailyz;
+           	$memberdata=$membername->where($arr)->select();        
+           	$username=$memberdata[0]['username'];
+           	$_SESSION['username']=$username;
 
-			$this->success('邮箱验证成功！', U('Member/Index/index'));
+           	//登录账户
+			$this->redirect('Home/User/registeremailok');
 		} else {
 			$this->error( '非法邮箱认证链接！',U('User/register') );
 		}
