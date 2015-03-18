@@ -100,15 +100,14 @@ class BorrowController extends HomeController {
 			'apply_uid'=>$uid
 			);
 		$receive=$_POST;
-		dump($receive);
-		/*$data = array_merge($receive,$arr);
+		$data = array_merge($receive,$arr);
 		$model=M('z_borrow_apply');
 		$result=$model->add($data);
 		if ($result>0){
 			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Borrow/checkingapply'));
 		}else {
 			$this->error("信息提交失败，请重新核对信息！");
-		}*/
+		}
 	}
 	// 基本信息
 	public function userinfo() {
