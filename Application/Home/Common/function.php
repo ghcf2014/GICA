@@ -57,3 +57,9 @@ function get_nav_url($url){
     }
     return $url;
 }
+function pd($arr){
+    echo "<pre>";
+    print_r($arr);
+    echo "</pre>";
+    die;
+}

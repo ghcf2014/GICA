@@ -1,0 +1,801 @@
+[ 2015-03-19T10:37:25+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+NOTIC: [2] opendir(./Runtime/iswaf_database//conf/,./Runtime/iswaf_database//conf/): ÏµÍ³ÕÒ²»µ½Ö¸¶¨µÄÂ·¾¶¡£ (code: 3) E:\HZSJ\upupw\htdocs\Addons\Iswaf\iswaf\iswaf.php ç¬¬ 159 è¡Œ.
+NOTIC: [2] opendir(./Runtime/iswaf_database//conf/): failed to open dir: No such file or directory E:\HZSJ\upupw\htdocs\Addons\Iswaf\iswaf\iswaf.php ç¬¬ 159 è¡Œ.
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.046003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.049003s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0220s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T10:37:36+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/59.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.043002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.046002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T10:37:38+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/59.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T10:37:40+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/60.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T10:37:44+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T10:37:44+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T10:37:55+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036003s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lite E:\HZSJ\upupw\htdocs\ThinkPHP\Library\Think\Db.class.php ç¬¬ 37 è¡Œ.
+SQL: SHOW COLUMNS FROM `gica_member` [ RunTime:0.0210s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `gica_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `gica_member` SET `login`=`login`+1,`last_login_time`='1426732675',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gica_action` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `gica_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gica_z_members_status` [ RunTime:0.0250s ]
+SQL: SELECT * FROM `gica_z_members_status` WHERE `uid` = 1  [ RunTime:0.0090s ]
+
+[ 2015-03-19T10:37:59+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T10:38:01+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/59.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T10:38:06+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/60.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T10:39:12+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T11:20:12+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T11:20:28+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T11:20:52+08:00 ] 127.0.0.1 /index.php?s=/Home/Newhelp/borrowhelp.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0040s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T15:36:02+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:36:04+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:36:04+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.038002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:39:25+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:39:27+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:39:27+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037003s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0040s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:46:05+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T15:46:05+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:48:26+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:48:26+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:48:27+08:00 ] 127.0.0.1 /index.php?s=/Home/Borrow/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:48:29+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:48:30+08:00 ] 127.0.0.1 /index.php?s=/Home/Newhelp/borrowhelp.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:48:32+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:48:32+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T15:49:14+08:00 ] 127.0.0.1 /Home/Index/fankui
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T17:33:49+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.082005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.093005s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0160s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T17:33:51+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T17:33:51+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T17:33:52+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T17:33:52+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T17:48:51+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.036002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.038002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T17:48:51+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T17:49:33+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T17:49:34+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:02:55+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.123007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.134008s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.1220s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0210s ]
+
+[ 2015-03-19T18:03:02+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:03:02+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:11:51+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:12:04+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/60.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:12:06+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/60.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:14+08:00 ] 127.0.0.1 /index.php?s=/Home/Borrow/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.035002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.037002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:16+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:18+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/index/order/add_time.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:17:24+08:00 ] 127.0.0.1 /index.php?s=/Home/Newhelp/borrowhelp.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:27+08:00 ] 127.0.0.1 /index.php?s=/Home/Newhelp/safetypromise.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:17:32+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:32+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:17:34+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.032002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:45+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036003s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:45+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:17:57+08:00 ] 127.0.0.1 /index.php?s=/Home/User/register.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+NOTIC: [8] A session had already been started - ignoring session_start() E:\HZSJ\upupw\htdocs\Application\Home\Controller\UserController.class.php ç¬¬ 24 è¡Œ.
+NOTIC: [8] Undefined index: mobile E:\HZSJ\upupw\htdocs\Application\Home\Controller\UserController.class.php ç¬¬ 25 è¡Œ.
+NOTIC: [8] Undefined index: mobile_code E:\HZSJ\upupw\htdocs\Application\Home\Controller\UserController.class.php ç¬¬ 25 è¡Œ.
+
+[ 2015-03-19T18:17:58+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html&random=0.6232218788936734
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.036002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.038003s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:18:14+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:18:15+08:00 ] 127.0.0.1 /index.php?s=/Home/User/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:18:27+08:00 ] 127.0.0.1 /index.php?s=/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: lite E:\HZSJ\upupw\htdocs\ThinkPHP\Library\Think\Db.class.php ç¬¬ 37 è¡Œ.
+SQL: SHOW COLUMNS FROM `gica_member` [ RunTime:0.0220s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `gica_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `gica_member` SET `login`=`login`+1,`last_login_time`='1426760306',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `gica_action` [ RunTime:0.0220s ]
+SQL: SELECT * FROM `gica_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gica_z_members_status` [ RunTime:0.0320s ]
+SQL: SELECT * FROM `gica_z_members_status` WHERE `uid` = 1  [ RunTime:0.0130s ]
+
+[ 2015-03-19T18:18:31+08:00 ] 127.0.0.1 /index.php?s=/Home/Borrow/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.032002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.034002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:18:31+08:00 ] 127.0.0.1 /index.php?s=/Home/Borrow/borrowapply.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0020s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0010s ]
+
+[ 2015-03-19T18:18:34+08:00 ] 127.0.0.1 /index.php?s=/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.007000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.033001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.035002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:18:37+08:00 ] 127.0.0.1 /index.php?s=/Home/Finance/invest/id/60.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
+[ 2015-03-19T18:18:56+08:00 ] 127.0.0.1 /index.php?s=/Home/borrow/detail/id/60.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Addons\Iswaf\IswafAddon [ RunTime:0.034002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036002s ]
+SQL: SHOW COLUMNS FROM `gica_config` [ RunTime:0.0030s ]
+SQL: SELECT `type`,`name`,`value` FROM `gica_config` WHERE `status` = 1  [ RunTime:0.0000s ]
+
