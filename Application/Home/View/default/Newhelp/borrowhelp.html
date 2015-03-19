@@ -41,7 +41,14 @@
 									<dt>如何投资?</dt>
 									<dd><img src="__PUBLIC__/Home/images/rhtz.png"/></dd>
 									<dd><p>工合财富！您的私人理财专家！</p></dd>
-									<dd><a href="{:U('User/register')}">立即注册</a></dd>
+
+									<if condition="is_login()">
+										<dd><a href="{:U('Member/Friends/friends')}">立即邀请好友</a></dd>
+									<else/>
+										<dd><a href="{:U('User/register')}">立即注册</a></dd>
+									</if>
+									
+
 								</dl>
 								
 							</div>			

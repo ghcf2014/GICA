@@ -22,7 +22,7 @@
                         <li><h3>（机构担保借款）</h3></li>
                         <li>借款金额：<span style="color:#ef681f;">￥{$vb.borrow_money}元</span></li>
                         <li>借款目的：<span>{$vb.borrow_use}</span></li>
-                        <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>（月利率：<span>{$vb[borrow_interest_rate]/12}%</span>）</li>
+                        <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>
                         <li>借款期限：<span>{$vb.borrow_duration}个月</span></li>
                         <li>还差：<span>￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
                         <li><strong>投标进度：</strong><span class="out"><span style="width:{$vb['has_borrow']/$vb['borrow_money']*100}%;" class="in"></span></span><span class="data">{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
