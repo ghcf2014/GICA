@@ -70,6 +70,7 @@ class UserController extends HomeController {
            		session_start();
            		$_SESSION['email']=$email;
            		$_SESSION['username']=$username;
+           		$_SESSION['id']=$uid;
 		       $this->success('邮件已发送，注意查收!',U('Home/User/registerok'));
 			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));
@@ -86,8 +87,32 @@ class UserController extends HomeController {
 
 	}
 	public function registerok(){
+		if ($_SESSION['email']==null){
+			$this->redirect('Home/User/login');
+		}
+		$email=$_SESSION['email'];
+   		$domain = substr(strstr($email, '@'),1);
+   		$url='http://mail.'.$domain;
+   		$this->assign('url',$url);
 		$this->display();
 	}
+	//重新发邮件
+   	public function emailsend(){
+   		// dump('重新发邮件');
+   		$email=$_SESSION['email'];
+   		$username=$_SESSION['username'];
+   		$uid=$_SESSION['id'];
+   		// dump($username);
+   		if($email!==null){
+   		 //TODO: 发送验证邮件
+		// dump('重复发邮件成功');
+		$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.tp.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
+			session_destroy();
+			$this->success('发送成功，请登录邮箱验证',U('User/login'));
+		}else{
+			$this->error('重复发送无效',U('User/login'));
+		}
+   	}
 	public function registeremailok(){
 		$this->display();
 	}
@@ -300,5 +325,6 @@ class UserController extends HomeController {
             $this->display();
         }
     }
+
 
 }
