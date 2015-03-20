@@ -52,25 +52,38 @@ $_SESSION['send_code'] = random(6,1);
 		<form id="form" action="__SELF__" method="post">
 			<div class="zc_cont_bot">		
 				<!--左边-->
-				<div class="zc_cont_bot_l">										
+				<div class="zc_cont_bot_l">		
+					<!--手机号码-->
 					<dl>
 						<dt>
 							<span>* </span>手机号码:
 						</dt>
 						<dd>
-							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" /><input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:right;" >
+							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" /><!--<input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:right;" >-->
 						</dd>
 						<span id="checkphone" style="line-height:48px;"></span>
 					</dl>
-			<dl>
-				<dt>
-					<span>&nbsp;</span>
-				</dt>
-				<dd>
-					<input type="text" size="8" name="mobile_code" placeholder="填写获取到的验证码" class="inputBg" style="width:130px;"/>
-				</dd>
-				<span id="checkphone" style="line-height:48px;"></span>
-			</dl>
+					<!--手机验证码-->
+					<dl>
+						<dt>
+							<span>* </span>手机验证码:
+						</dt>
+						<dd>
+							<input type="text" size="8" name="mobile_code" placeholder="填写获取到的验证码" class="inputBg" style="width:130px;float: left;margin-bottom: 0px;margin:5px 5px 0 0;"/><input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:left;" >
+						</dd>
+						<span id="checkphone" style="line-height:48px;"></span>
+					</dl>
+					<!--<dl>
+						<dt>
+							<span>&nbsp;</span>
+						</dt>
+						<dd>
+							<input type="text" size="8" name="mobile_code" placeholder="填写获取到的验证码" class="inputBg" style="width:130px;"/>
+						</dd>
+						<span id="checkphone" style="line-height:48px;"></span>
+					</dl>-->
+					
+					<!--电子邮箱-->
 					<dl>
 						<dt>
 							<span>* </span>电子邮箱:
