@@ -76,7 +76,7 @@ class UserController extends HomeController {
 		        }
 				//手机
 				if($email != ''){ //TODO: 发送验证邮件
-				$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.tp.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
+				$a = SendMail($email,'工合财富用户注册验证通知','亲爱的 '.$username.'，您好:欢迎注册工合财富账户，您的账户注册邮箱是：'.$email.' 。激活邮箱链接:http://www.ghcf.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活，此邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn');
 				}
            		$_SESSION['email']=$email;
            		$_SESSION['username']=$username;
@@ -116,7 +116,7 @@ class UserController extends HomeController {
    		if($email!==null){
    		 //TODO: 发送验证邮件
 		// dump('重复发邮件成功');
-		$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.tp.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
+		$a = SendMail($email,'工合财富用户注册验证通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.ghcf.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn');
 			session_destroy();
 			$this->success('发送成功，请登录邮箱验证',U('User/login'));
 		}else{

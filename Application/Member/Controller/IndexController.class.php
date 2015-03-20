@@ -17,6 +17,14 @@ class IndexController extends MemberController {
         is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
         $uid  =   is_login();//获取当前用户UID
        
+        /*用户邮箱检测*/
+        $mstatus = M('z_members_status');//用户验证状态
+        $condition2['uid'] =$uid;
+        $condition2['email_status']=1;
+        $member_status=$mstatus->where($condition2)->select();
+        if ($member_status==null){
+            $this->error('对不起，您的邮箱还未认证！',U('Member/Userinfo/usermailbanding'));
+        }
         $listMember = M('member');
         $condition['gica_member.uid'] =$uid;
         $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();

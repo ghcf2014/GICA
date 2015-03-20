@@ -261,7 +261,10 @@ class BorrowController extends HomeController {
 		if (! ($id && is_numeric ( $id ))) {
 			$this->error ( '投标ID错误！' );
 		}
-		
+		//登录状态显示
+		if (is_login()<=0){
+			$this->redirect('Home/User/login');
+		}
 		/* 页码检测 */
 		$p = intval ( $p );
 		$p = empty ( $p ) ? 1 : $p;

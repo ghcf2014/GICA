@@ -1595,7 +1595,7 @@ function sendsms($mob, $content) {
 	    		$email=$userresult[0]['email'];
 	    		$username=$userresult[0]['username'];
 	    		$time=time();
-				$a = SendMail($email,'工合财富通知:','尊敬的会员： <b style="color:red;text-decoration:underline">'.$username.'</b>，您的工合基金账户'.$action.'如有任何疑问，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>'.date( "l dS of F Y h：i：s A" ));
+				$a = SendMail($email,'工合财富账户信息通知:','尊敬的会员： <b style="color:red;text-decoration:underline">'.$username.'</b>，您好，您的工合基金账户'.$action.'如有任何疑问，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn'.date( "l dS of F Y h：i：s A" ));
 	    }
 	    if (substr($result,2,1)=='1'){
 	    	echo '已经发短信啦！';

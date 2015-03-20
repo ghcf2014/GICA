@@ -56,7 +56,7 @@ class FinanceController extends HomeController {
             /* 页码检测 */
             $p = intval($p);
             $p = empty($p) ? 1 : $p;
-            is_login() || $this->error('您还没有登录，请先登录！');
+            is_login() || $this->error('您还没有登录，请先登录！',U('Home/User/login'));
             $uid        =   is_login();//获取当前用户UID
 
             $listMember = M('member');

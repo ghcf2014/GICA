@@ -144,7 +144,7 @@
                               <if condition="$login eq 1">
                                     <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao_260x40.png"/></a>
                                   <elseif condition="$login eq 0"/>
-                                    <a class="ajax-get"  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao_260x40.png"/>
+                                    <a href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao_260x40.png"/></a>
                               </if>
 	                          <elseif condition="$vo.borrow_status eq 0"/>
 	                          <img alt="" src="__PUBLIC__/Home/images/shenhe_260x40.png" />
