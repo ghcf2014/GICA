@@ -26,13 +26,13 @@ class UserController extends HomeController {
 			session_start();
 			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
 			$this->error('手机验证码输入错误。');
-			}elseif($_POST['mobile']==$_SESSION['mobile'] or $_POST['mobile_code']==$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
-				$_SESSION['mobile'] = '';
-				$_SESSION['mobile_code'] = '';	
 			}
+			$_SESSION['mobile'] = '';
+			$_SESSION['mobile_code'] = '';	
+			
 			$_SESSION['send_code'] = random(6,1);
 
-			
+
 			/* 检测验证码 */
 			if(!check_verify($verify)){
 				$this->error('验证码输入错误！');
@@ -69,7 +69,6 @@ class UserController extends HomeController {
 				if($email != ''){ //TODO: 发送验证邮件
 				$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.tp.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
 				}
-           		session_start();
            		$_SESSION['email']=$email;
            		$_SESSION['username']=$username;
            		$_SESSION['id']=$uid;
