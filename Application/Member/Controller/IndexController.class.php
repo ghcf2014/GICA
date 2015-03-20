@@ -32,13 +32,6 @@ class IndexController extends MemberController {
         $condition1['gica_ucenter_member.id'] =$uid;
         $m=$m->where($condition1)->select();
 
-        $mstatus = M('z_members_status');//用户验证状态
-        $condition2['uid'] =$uid;
-        $member_status=$mstatus->where($condition2)->select();
-        if ($member_status==null){
-            $arr['uid']=$uid;
-            $result=$mstatus->add($arr);
-        }
         $this->assign('list', $list);
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);
