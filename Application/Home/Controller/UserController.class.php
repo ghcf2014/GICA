@@ -64,8 +64,17 @@ class UserController extends HomeController {
 					$sql = "insert into gica_z_member_friend(uid,friend_id,apply_status,add_time) values({$uid},{$userinfo[0]['id']},'1',{$time})";
 					//var_dump ( $sql );
 					$friend->query ( $sql );
-				} 
-				
+				}
+
+				$mstatus = M('z_members_status');//用户验证状态
+		        $condition2['uid'] =$uid;
+		        $member_status=$mstatus->where($condition2)->select();
+		        if ($member_status==null){
+		            $arr['uid']=$uid;
+		            $arr['phone_status']=1;
+		            $result=$mstatus->add($arr);
+		        }
+				//手机
 				if($email != ''){ //TODO: 发送验证邮件
 				$a = SendMail($email,'工合财富注册通知','亲爱的 '.$username.'，您好:欢迎注册工合财富，您的注册邮箱是：'.$email.' 。激活邮箱链接:http://www.tp.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
 				}
