@@ -31,7 +31,7 @@ class SystemController extends HomeController {
 		// dump($uid);
 		if(0 < $uid[0]['id']){
 			if($email != ''){ //TODO: 发送验证邮件
-					$a = SendMail($email,'工合财富修改密码通知','亲爱的'.$uid[0]['username'].'，您进行了修改密码操作，激活修改链接:http://127.0.0.1/index.php?s=/Home/System/setpassword/basename/'.$basename.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
+					$a = SendMail($email,'工合财富修改密码通知','亲爱的'.$uid[0]['username'].'，您进行了修改密码操作，激活修改链接:http://www.ghcf.comm.cn/index.php?s=/Home/System/setpassword/basename/'.$basename.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，请登陆ghcf.com.cn');
 			   }
 			   else{
 			   	$this->error('发送失败！');

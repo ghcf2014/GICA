@@ -29,6 +29,29 @@ class FriendsController extends MemberController {
 		// 查询当前登录用户的真实姓名
 		$arr['uid']=$uid;
 		$realName = M ( 'z_member_info' )->where ($arr)->select ();
+		if (strlen($realName [0] ['real_name'])==5){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],1,-1),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==6){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],3),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==7){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],2,-2),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==8){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],2,-2),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==9){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],3,-3),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==10){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],2,-2),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==11){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],2,-2),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==12){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],3,-3),'**',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==13){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],2,-2),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==14){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],2,-2),'*',$realName [0] ['real_name']);
+		}if (strlen($realName [0] ['real_name'])==15){
+			$realName [0] ['real_name']=str_replace(substr($realName [0] ['real_name'],3,-3),'***',$realName [0] ['real_name']);
+		}
 		$this->assign ( 'realName', $realName [0] ['real_name'] );
 		
 		if ($email != '') { // TODO: 发送验证邮件

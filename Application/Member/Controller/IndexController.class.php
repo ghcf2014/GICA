@@ -14,7 +14,7 @@ class IndexController extends MemberController {
         // $this->assign('list', $list);
   //       $this->display();
 
-        is_login() || $this->error('您还没有登录，请先登录！', U('Home/User/login'));
+        is_login() || $this->redirect('Home/User/login');
         $uid  =   is_login();//获取当前用户UID
        
         /*用户邮箱检测*/

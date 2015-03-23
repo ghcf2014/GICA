@@ -237,7 +237,7 @@ class UserController extends HomeController {
 	public function logout(){
 		if(is_login()){
 			D('Member')->logout();
-			$this->success('退出成功！', U('User/login'));
+			$this->redirect('User/login');
 		} else {
 			$this->redirect('User/login');
 		}
@@ -302,7 +302,7 @@ class UserController extends HomeController {
      */
     public function profile(){
 		if ( !is_login() ) {
-			$this->error( '您还没有登陆',U('User/login') );
+			$this->redirect('User/login');
 		}
         if ( IS_POST ) {
             //获取参数

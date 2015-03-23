@@ -1013,7 +1013,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zhmm h2{width: 730px;height: 45px;line-height: 45px;color: #666;border-bottom: 1px solid #ddd;font-size: 20px;font-weight: normal;padding-left: 20px;}
 /*标题*/
 .zhmm .zhmm_way{height: auto;width: 220px;margin:70px auto;}
-.zhmm .zhmm_way li{width: 160px;padding-left: 60px;height: 60px;font-size: 16px;line-height: 55px;cursor: pointer;margin-bottom: 30px;border-radius: 6px;border: 1px solid #ddd;}
+.zhmm .zhmm_way li{width: 200px;padding-left: 60px;height: 60px;font-size: 16px;line-height: 55px;cursor: pointer;margin-bottom: 30px;border-radius: 6px;border: 1px solid #ddd;}
 .zhmm .zhmm_way li a{color: #fff;}
 
 /*tab*/

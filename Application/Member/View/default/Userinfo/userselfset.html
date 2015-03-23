@@ -29,14 +29,38 @@
                         	</dl>
                         
 	                        <dl class="jbrz">
-	                        	<dt>身份证</dt>
+	                        	<dt>身份证号码</dt>
                                 <if condition="$vo.real_name eq null">
                                     <dd><input type="text" class="txt" name="idcard" id="idNo"/></dd>
                                 <else/>
                                     <dd><div class="txt" name="idcard" id="idNo">{$vo.idcard}</div></dd>
                                 </if>
 	                        </dl>                      
-                        
+                            <dl class="jbrz sfz" >
+                            <dt>身份证正面</dt>
+                            <dd>
+                                
+                                    <if condition="$vo.card_img eq ''">
+                                        <input type="button" class="btn" value="上传" id="card_img" >
+                                        <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
+                                    <elseif condition="$vo.card_img  neq ''"/>
+                                        <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
+                                    </if>
+                            </dd>
+                            </dl>
+                            
+                            <dl class="jbrz sfz">
+                                <dt>身份证反面</dt>
+                                <dd>
+                                    
+                                    <if condition="$vo.card_back_img eq ''">
+                                        <input type="button"  class="btn" value="上传"id="card_back_img">
+                                        <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
+                                    <elseif condition="$vo.card_back_img  neq ''"/>
+                                        <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
+                                    </if>
+                                </dd>
+                            </dl>
 	                        <dl class="jbrz sex">
 	                        	<dt>性别</dt>
 	                            <dd><if condition="$vo.sex eq '1'">
@@ -119,6 +143,7 @@
                         </dl>
                         <p class="wxts"><b style="font-weight: normal;color: red;">温馨提示：</b>我们将严格对用户的所有资料进行保密。</p>
                         <div class="jbrz_sub_btn">
+
                         	<input type="submit" class="btn" value="保存"/>
                         </div>
                         </div>

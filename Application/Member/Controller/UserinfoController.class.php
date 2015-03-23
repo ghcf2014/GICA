@@ -309,6 +309,7 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userselfset() {
+		
 		$uid = is_login();
 		$chk = M ( "z_member_info" );
 		$condition ['uid'] = $uid;
@@ -317,13 +318,42 @@ class UserinfoController extends MemberController {
 		$phone=$memberphpone->where($arr)->select();
 		$cellphone=$phone[0]['mobile'];
 		$condition ['cell_phone']=$cellphone;
+		$condition['uid']=$uid;
 		$arrs['uid']=$uid;
 		$m = $chk->where ( $arrs )->select ();
 		if ($m !== null) {
+			$m = $chk->where ( $arrs )->select ();
+			$m[0]['cell_phone']=str_replace(substr($m[0]['cell_phone'],3,-2),'******',$m[0]['cell_phone']);
+			if (strlen($m[0]['real_name'])==5){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],1,-1),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==6){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==7){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==8){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==9){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3,-3),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==10){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==11){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==12){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3,-3),'**',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==13){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==14){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==15){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3,-3),'***',$m[0]['real_name']);
+			}
+			$m[0]['idcard']=str_replace(substr($m[0]['idcard'],2,-2),'******',$m[0]['idcard']);			
 			$this->assign ( 'mlist', $m );
+
 		} else {
 			$n = $chk->add ( $condition );			
 			$k= $chk->where ( $arrs )->select ();
+
 			$this->assign ( 'mlist', $k );
 
 		}
