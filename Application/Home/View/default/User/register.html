@@ -10,24 +10,7 @@
 </header> </block>
 
 <block name="body"> 
-<?php
-session_start();
-function random($length = 6 , $numeric = 0) {
-	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
-	if($numeric) {
-		$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
-	} else {
-		$hash = '';
-		$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
-		$max = strlen($chars) - 1;
-		for($i = 0; $i < $length; $i++) {
-			$hash .= $chars[mt_rand(0, $max)];
-		}
-	}
-	return $hash;
-}
-$_SESSION['send_code'] = random(6,1);
-?>
+
 <!--content start-->
 <div class="zc_cont_out">
 	<div class="zc_cont">
@@ -44,25 +27,7 @@ $_SESSION['send_code'] = random(6,1);
 				<!--左边-->
 				<div class="zc_cont_bot_l">		
 					<!--手机号码-->
-					<dl>
-						<dt>
-							<span>* </span>手机号码:
-						</dt>
-						<dd>
-							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" /><!--<input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:right;" >-->
-						</dd>
-						<span id="checkphone" style="line-height:48px;"></span>
-					</dl>
-					<!--手机验证码-->
-					<dl>
-						<dt>
-							<span>* </span>手机验证码:
-						</dt>
-						<dd>
-							<input type="text" size="8" name="mobile_code" placeholder="填写获取到的验证码" class="inputBg" style="width:130px;float: left;margin-bottom: 0px;margin:5px 5px 0 0;"/><input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:left;" >
-						</dd>
-						<span id="checkphone" style="line-height:48px;"></span>
-					</dl>
+					
 					<!--<dl>
 						<dt>
 							<span>&nbsp;</span>
@@ -76,17 +41,6 @@ $_SESSION['send_code'] = random(6,1);
 					<!--电子邮箱-->
 					<dl>
 						<dt>
-							<span>* </span>电子邮箱:
-						</dt>
-						<dd>
-							<input type="text" value="" placeholder="请输入您的电子邮箱" id="email"
-								ajaxurl="/member/checkUserEmailUnique.html" errormsg="请填写正确格式的邮箱"
-								nullmsg="请填写邮箱" datatype="e" name="email" class="txt" />
-						</dd>
-						<span id="checkemail" style="line-height:48px;"></span>
-					</dl>
-					<dl>
-						<dt>
 							<span>* </span>用户名:
 						</dt>
 						<dd>
@@ -97,6 +51,18 @@ $_SESSION['send_code'] = random(6,1);
 						</dd>
 						<span id="checkuser" style="line-height:48px;"></span>
 					</dl>
+					<dl>
+						<dt>
+							<span>* </span>电子邮箱:
+						</dt>
+						<dd>
+							<input type="text" value="" placeholder="请输入您的电子邮箱" id="email"
+								ajaxurl="/member/checkUserEmailUnique.html" errormsg="请填写正确格式的邮箱"
+								nullmsg="请填写邮箱" datatype="e" name="email" class="txt" />
+						</dd>
+						<span id="checkemail" style="line-height:48px;"></span>
+					</dl>
+					
 					<dl>
 						<dt>
 							<span>* </span>密码:
@@ -119,8 +85,27 @@ $_SESSION['send_code'] = random(6,1);
 						</dd>
 						<span id="checkrepwd" style="line-height:48px;"></span>
 					</dl>
-
 					<dl>
+						<dt>
+							<span>* </span>手机号码:
+						</dt>
+						<dd>
+							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" /><!--<input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:right;" >-->
+						</dd>
+						<span id="checkphone" style="line-height:48px;"></span>
+					</dl>
+					<!--手机验证码-->
+					<dl>
+						<dt>
+							<span>* </span>验证码:
+						</dt>
+						<dd>
+							<input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="width:130px;float: left;margin-bottom: 0px;margin:5px 5px 0 0;"/><input id="zphone" type="button" value="获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:left;" >
+						</dd>
+						<span id="checkphone" style="line-height:48px;"></span>
+					</dl>
+
+					<!-- <dl>
 						<dt>
 							<span>* </span>验证码:
 						</dt>
@@ -129,11 +114,9 @@ $_SESSION['send_code'] = random(6,1);
 								errormsg="请填写5位验证码" nullmsg="请填写验证码" datatype="*5-5" name="verify"
 								id="verify" /> <img class="yzBtn verifyimg reloadverify" alt="点击切换" src="{:U('verify')}"
 								style="cursor: pointer;">
-							<!-- <input type="button" value="手机验证" name="" class="yzBtn"/>
-		                    <p class="yz_call">如果收不到验证码，请拨打<span>400-123-4567</span></p> -->
 						</dd>
 						<span id="checkcode" style="line-height:48px;"></span>
-					</dl>
+					</dl> -->
 					<dl>
 						<dt>
 							<span></span>推荐人:
@@ -168,6 +151,25 @@ $_SESSION['send_code'] = random(6,1);
 		</form>
 	</div>
 </div>
+<?php
+//短信验证码存值
+session_start();
+function random($length = 6 , $numeric = 0) {
+	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
+	if($numeric) {
+		$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
+	} else {
+		$hash = '';
+		$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
+		$max = strlen($chars) - 1;
+		for($i = 0; $i < $length; $i++) {
+			$hash .= $chars[mt_rand(0, $max)];
+		}
+	}
+	return $hash;
+}
+$_SESSION['send_code'] = random(6,1);
+?>
 <script language="javascript">
 	function get_mobile_code(){
         $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {

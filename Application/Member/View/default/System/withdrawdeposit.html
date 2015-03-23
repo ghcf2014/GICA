@@ -63,22 +63,32 @@
 										<td><span style="float: none;" class="formtips"> *
 												以下是绑定的银行卡信息，如果没有银行卡请先进行提现银行卡设置</span></td>
 									</tr>
-									<s:if test="#request.banks!=null && #request.banks.size>0">
-										<s:iterator value="#request.banks" var="bean" status="sta">
 
 											<!-- 并且银行卡的状态为绑定状态 -->
-											<s:if test="#bean.cardStatus==1">
-												<tr>
-													<td></td>
-													<td><input type="radio" name="wbank"
-														value="{$userinfo[0]['bank_address']}" id="bankradio" />
-														<!-- ${bean.bankName}&nbsp;&nbsp;${bean.branchBankName} -->&nbsp;{$bank['bank_address']}
-														<span style="color: red; float: none;" id="wbank_tip"
-														class="formtips"></span></td>
-												</tr>
-											</s:if>
-										</s:iterator>
-									</s:if>
+									<tr>
+										<td style="padding-top: 20px;" colspan="2">
+											<div id="xxdiv" >
+												<table style="line-height: 30px;">
+													<tr align="center" height="30px">
+														<td width="30px">&nbsp;</td>
+														<td width="40px">银行</td>
+														<td width="70px">账号</td>
+														<td width="60px">开户人</td>
+														<td width="70px">开户行</td>
+													</tr>
+													<tr align="center">
+														<td><input type="radio" value="${bank.bankname }"name="paramMap.banks" style="float: none;"/></td>
+														<td><image src="__PUBLIC__/Home/images/banks/bank_18.png"
+																style="width:130px;height:60px;" /></td>
+														<td>{$bank['bank_address']}</td>
+														<td>{$memberdata['real_name']}</td>
+														<td>${bank.accountbank }</td>
+													</tr>
+												</table>
+											</div>
+										</td>
+									</tr>
+											
 									<tr>
 										<td>交易密码： <strong>*</strong>
 										</td>

@@ -27,16 +27,15 @@ class UserController extends HomeController {
 			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
 			$this->error('手机验证码输入错误。');
 			}
-			$_SESSION['mobile'] = '';
-			$_SESSION['mobile_code'] = '';	
+			// $_SESSION['mobile'] = '';
+			// $_SESSION['mobile_code'] = '';	
 			
-			$_SESSION['send_code'] = random(6,1);
 
 
 			/* 检测验证码 */
-			if(!check_verify($verify)){
-				$this->error('验证码输入错误！');
-			}
+			// if(!check_verify($verify)){
+			// 	$this->error('验证码输入错误！');
+			// }
 			if(!isusername($username)){
 			 $this->error('用户名长度必须在5-20个字符以内！');
 		    }
@@ -128,20 +127,20 @@ class UserController extends HomeController {
 	}
 
 	//手机验证码随机生成方法
-	public function random($length = 6 , $numeric = 0) {
-		PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
-		if($numeric) {
-			$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
-		} else {
-			$hash = '';
-			$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
-			$max = strlen($chars) - 1;
-			for($i = 0; $i < $length; $i++) {
-				$hash .= $chars[mt_rand(0, $max)];
-			}
-		}
-		return $hash;
-	}
+	// public function random($length = 6 , $numeric = 0) {
+	// 	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
+	// 	if($numeric) {
+	// 		$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
+	// 	} else {
+	// 		$hash = '';
+	// 		$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
+	// 		$max = strlen($chars) - 1;
+	// 		for($i = 0; $i < $length; $i++) {
+	// 			$hash .= $chars[mt_rand(0, $max)];
+	// 		}
+	// 	}
+	// 	return $hash;
+	// }
 	/* 登录页面 */
 	public function login($username = '', $password = '', $verify = '',$email = ''){
 		//已经登录过隐藏登陆界面
@@ -178,7 +177,7 @@ class UserController extends HomeController {
 			        $member_status=$mstatus->where($condition2)->select();
 			        if ($member_status==null){
 			            $arr['uid']=$uid;
-			            $result=$mstatus->add($arr);
+			            $result=$mstatus->add($arr); 
 			        }
 					$this->success('登录成功！',U('Member/Index/index'));
 											               
@@ -189,7 +188,7 @@ class UserController extends HomeController {
 			} else { //登录失败
 				switch($uid) {
 					case -1: $error = '用户不存在或被禁用！'; break; //系统级别禁用
-					case -2: $error = '密码错误！'; break;
+					case -2: $error = '密码错误！'; break ; 
 					default: $error = '未知错误！'; break; // 0-接口参数错误（调试阶段使用）
 				}
 				$this->error($error);

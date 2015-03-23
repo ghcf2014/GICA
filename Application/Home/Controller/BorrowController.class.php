@@ -364,10 +364,12 @@ class BorrowController extends HomeController {
 	}
 	// 上传
 	public function upload() {
+		$uid=is_login(); 
 		$config = array (
 				'maxSize' => 100 * 1024 * 1024 * 1024,
 				'mimes' => array (),
-				'rootPath' => './Uploads/',
+				'rootPath'=>'./Uploads/User/',
+                'savePath'=>$uid.'/',
 				'ext' => array (),
 				'autoSub' => true 
 		);
@@ -409,10 +411,12 @@ class BorrowController extends HomeController {
 		return true;
 	}
 	public function borrow_upload($depict) {
+		$uid=is_login(); 
 		$config = array (
 				'maxSize' => 100 * 1024 * 1024 * 1024,
 				'mimes' => array (),
-				'rootPath' => './Uploads/',
+				'rootPath'=>'./Uploads/User/',
+                'savePath'=>$uid.'/',
 				'ext' => array (),
 				'autoSub' => true 
 		);
