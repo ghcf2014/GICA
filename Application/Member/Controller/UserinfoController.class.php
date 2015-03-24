@@ -293,19 +293,73 @@ class UserinfoController extends MemberController {
 	 *         身份证设置2015-1-30
 	 */
 	public function userselfidcard() {
-		$uid = is_login ();
-		$userinfo = M ( 'z_member_info' );
-		$meminfo = $userinfo->where ( "uid=" . $uid )->select ();
-		// var_dump($userinfo);
-		$realName = $meminfo [0] ['real_name'];
-		$idcard = $meminfo [0] ['idcard'];
-		if ($realName != null && $idcard != null) {
-			$this->assign ( "realName", $realName );
-			$this->assign ( "idcard", $idcard );
-			$this->display ();
+		// $uid = is_login ();
+		// $mstatus = M ( 'z_members_status' );
+		// $map['uid']=$uid;
+
+		// $ms = $mstatus ->where ($map)->select ();
+		// // var_dump($userinfo);
+		// $id_status = $ms [0] ['id_status'];
+		// if ($id_status == 0) {
+			
+		// } elseif ($id_status == 1) {
+
+
+
+			
+		// } elseif ($id_status == 2) {
+		// 	$this->error ( "您还没有进行基本身份认证！", U ( 'Member/Userinfo/userselfset' ) );
+		// }
+		// dump($id_status);
+		// $this->display ();
+		$uid = is_login();
+		$chk = M ( "z_member_info" );
+		$condition ['uid'] = $uid;
+		$arr['id']=$uid;
+		$memberphpone=M('ucenter_member');
+		$phone=$memberphpone->where($arr)->select();
+		$cellphone=$phone[0]['mobile'];
+		$condition ['cell_phone']=$cellphone;
+		$condition['uid']=$uid;
+		$arrs['uid']=$uid;
+		$m = $chk->where ( $arrs )->select ();
+		if ($m !== null) {
+			$m = $chk->where ( $arrs )->select ();
+			$m[0]['cell_phone']=str_replace(substr($m[0]['cell_phone'],3,-2),'******',$m[0]['cell_phone']);
+			if (strlen($m[0]['real_name'])==5){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],1,-1),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==6){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==7){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==8){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==9){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3,-3),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==10){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==11){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==12){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3,-3),'**',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==13){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==14){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],2,-2),'*',$m[0]['real_name']);
+			}if (strlen($m[0]['real_name'])==15){
+				$m[0]['real_name']=str_replace(substr($m[0]['real_name'],3,-3),'***',$m[0]['real_name']);
+			}
+			$m[0]['idcard']=str_replace(substr($m[0]['idcard'],2,-2),'******',$m[0]['idcard']);			
+			$this->assign ( 'mlist', $m );
+
 		} else {
-			$this->error ( "您还没有进行基本身份认证！", U ( 'Member/Userinfo/userselfset' ) );
+			$n = $chk->add ( $condition );			
+			$k= $chk->where ( $arrs )->select ();
+
+			$this->assign ( 'mlist', $k );
+
 		}
+		
 		$this->display ();
 	}
 	public function userselfset() {

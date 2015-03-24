@@ -822,10 +822,10 @@ a:hover{color:#66ccfb;text-decoration:none;}
 /*我的账户内页*/
 .mes_con{width: 893px;height: auto;min-height: 1091px;background: #fff;border: 1px solid #ddd;margin-top: 5px;}
 .tabtil {width:893px; height: 38px; background: url(../rzg_images/neiye1_133.jpg) repeat-x;}
-.tabtil ul{overflow:hidden;}
-.tabtil ul li { font-family: "微软雅黑"; font-size: 18px; line-height: 38px; color: #333; float: left;padding:0 20px; cursor: pointer; }
+.tabtil ul{width:100%;height: 45px;overflow: hidden;}
+.tabtil ul li { float: left;width: 177px;height: 43px;line-height: 43px;text-align: center;border-right: 1px solid #ddd;border-bottom:1px solid #ddd;font-size: 16px;cursor: pointer;}
 .tabtil ul li:hover{ text-decoration:underline}
-.tabtil ul .on { line-height: 38px; color: #6ecefb; background-image: url(../images/neiye_menu_on.jpg); background-repeat: repeat-x; }
+.tabtil ul .on {border-bottom:2px solid #f56627;color: #f56627;}
 .tabbox .tabmain { padding-top: 15px; padding-right: 15px; padding-bottom: 25px; padding-left: 15px; border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; border-right-color: #d1d9de; border-left-color: #d1d9de; }
 .box{width:893px;margin: auto;}
 .box  .biaoge { margin-top: 20px; }
@@ -958,8 +958,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .sfz p{color: red;width: 330px;margin: auto;font-size: 14px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .sfz .btn{width: 100px;height: 45px;background: url(../images/100x44pxblue.png) no-repeat;margin: 25px 0 0 385px;font-size: 16px;text-shadow: none;font-weight: normal;color:#fff;box-shadow: none;border: none;padding: 0;line-height: 45px;}
 /*-------银行卡---------*/
-.zh_cont .zh_cont_r .tab .aqset_tab .yhk_head{width: 890px;height: 45px;border-bottom:1px solid #ddd;overflow: hidden;}
-.zh_cont .zh_cont_r .tab .aqset_tab .yhk_head li{float: left;width: 200px;height: 43px;line-height: 43px;text-align: center;border-right: 1px solid #ddd;font-size: 16px;cursor: pointer;}
+.zh_cont .zh_cont_r .tab .aqset_tab .yhk_head{width:100%;height: 45px;border-bottom:1px solid #ddd;overflow: hidden;}
+.zh_cont .zh_cont_r .tab .aqset_tab .yhk_head li{float: left;width: 177px;height: 43px;line-height: 43px;text-align: center;border-right: 1px solid #ddd;font-size: 16px;cursor: pointer;}
 .zh_cont .zh_cont_r .tab .aqset_tab .yhk_head .cur{border-bottom:2px solid #f56627;color: #f56627;}
 
 .zh_cont .zh_cont_r .tab .aqset_tabC .yhk{width:870px;height:42px;padding-bottom:30px;overflow:hidden;border: 0;}

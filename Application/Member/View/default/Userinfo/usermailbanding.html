@@ -6,15 +6,14 @@
 		<include file="Public/left" />
 		<div class="zh_cont_r">
 			<div class="tab">
-				<h3>当前位置 > <span style="color: #D41010;">安全设置</span></h3>
+				<h3>当前位置 > <span style="color: #D41010;">安全认证</span></h3>
 				<div class="aqset_tab">
-					<ul class="aqset_tabH">
-					<li><a href="{:U('Home/User/profile')}">登录密码</a></li>
-					<li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
-					<li><a href="{:U('Userinfo/usermailbanding')}" class="cur">邮箱设置</a></li>
-					<li><a href="{:U('Userinfo/userfindpassbyphone')}">手机设置</a></li>
-					<!-- <li><a href="{:U('Userinfo/userbankset')}">银行卡</a></li> -->
-					<li><a href="{:U('Member/Userinfo/userselfidcard')}">身份证</a></li>
+					<ul class="yhk_head">
+					<a href="{:U('Home/User/profile')}"><li>登录密码</li></a>
+					<a href="{:U('Userinfo/paypassword')}"><li>交易密码</li></a>
+					<a href="{:U('Userinfo/usermailbanding')}"><li class="cur">邮箱认证</li></a>
+					<a href="{:U('Userinfo/userfindpassbyphone')}"><li>手机认证</li></a>
+					<a href="{:U('Member/Userinfo/userselfset')}"><li>实名认证</li></a>
 				</ul>
 				<div class="aqset_tabC_out">
 					<div id="top-alert" class="fixed alert alert-error"
@@ -26,18 +25,14 @@
 					<div class="aqset_tabC" id="oldemail">
 						<!--<p class="aqset_tabC_head">邮箱验证</p>-->
 						<dl class="email">
-							<dt>已绑定邮件：</dt>
+							<dt><if condition="$email eq 1">【<span style="color:blue">已认证</span>】<else/>【<span style="color:red">未认证</span>】</if>邮箱：</dt>
 							<dd>
 								<div style="width: 190px; height: 44px; line-height: 44px; display: inline-block;">{$vo.email}&nbsp;&nbsp;&nbsp;</div>
 								<span>
-								<if condition="$email eq 1">
-									<input type="button" value="已验证" style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxgreen.png) no-repeat;" />
-								<else/>
-								<span style="color:red">未验证，点击</span><a href="{$url}" target="_blank" style=" background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color:black;" >立即验证</a>
+								<if condition="$email eq 0">
+								<a href="{$url}" target="_blank" style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color: #fff;" >立即验证</a>
 								</if>
-								<input onclick="javascript:void(0);" id="upEmail" type="button"
-									value="修改邮箱"
-									style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color: #fff;" />
+								<input onclick="javascript:void(0);" id="upEmail" type="button" value="修改邮箱" style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color: #fff;" />
 								</span>
 							</dd>
 						</dl>

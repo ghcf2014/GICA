@@ -475,3 +475,36 @@ float: left;
 text-align: center;
 overflow: hidden;
 }
+
+-----------------15-03-24-----------
+.list-person {
+height: auto;
+font-size: 16px;
+margin-bottom: 20px;
+border-bottom: 1px dotted #ddd;
+clear: both;
+}
+.list-one {
+padding-right: 96px;
+color: #333333;
+font-size: 24px;
+width: 20%;
+}
+.list-two {
+width: 59%;
+padding-bottom: 20px;
+}
+.fl{
+    float: left;
+}
+.ri{
+    float:right;
+}
+.person-lp {
+font-size: 18px;
+color: #4ac0ff;
+}
+.list-two p {
+line-height: 32px;
+margin-bottom: 10px;
+}
