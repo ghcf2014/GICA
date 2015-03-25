@@ -2,6 +2,7 @@
 
 namespace Member\Controller;
 
+
 use OT\DataDictionary;
 use Think\Controller;
 use Think\Model;
@@ -125,7 +126,6 @@ class UserinfoController extends MemberController {
 		$money = M ( "z_member_money" );
 		$condition ['uid'] = $uid;
 		$money = $money->where ( $condition )->select ();
-		// var_dump($ml);
 		
 		$this->assign ( 'ml', $ml );
 		$this->assign ( 'list', $money );
@@ -152,41 +152,45 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
-		// var_dump ( $m );
 		$this->display ();
 	}
 	public function userphone_save() {
 		// 从表单中获取来的数据
-		$uid = is_login ();
-		$m = M ( "ucenter_member" );
-		
-		$data ['mobile'] = $_POST ['mobile'];
-		$condition ['uid'] = $uid;
-		
-		if ($_POST ['mobile'] == null) {
-			$this->error ( '您未输入变更的手机号码！' );
-		}
-		
-		$mList = $m->select ();
-		// 如果有相同的邮箱就终止循环
-		for($i = 0; $i < count ( $mList ); $i ++) {
-			if ($mList [$i] ['mobile'] == $_POST ['mobile']) {
-				$this->error ( '该手机号码已经存在！' );
-				break;
+		if(IS_POST){ 
+			$uid = is_login ();
+			$m = M ( "ucenter_member" );
+			
+			$data ['mobile'] = $_POST ['mobile'];
+			$condition ['id'] = $uid;
+			
+			session_start();
+			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+			$this->error('手机验证码输入错误。');
 			}
-		}
-		// 保存当前数据对象
-		if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
-		    
 
-		    //发送站内信
-		    $type="phonechange";
-		    $action="您绑定了新手机：". str_replace(substr($data['mobile'],3,-3),'*****',$data['mobile'])." !";
-		    systemmsg($type,$action);
-			$this->success ( '保存成功！' );
-		} else {
-			// 失败提示
-			$this->error ( '保存失败' );
+			if ($_POST ['mobile'] == null) {
+				$this->error ( '您未输入变更的手机号码！' );
+			}
+			
+			$mList = $m->select ();
+			// 如果有相同的邮箱就终止循环
+			for($i = 0; $i < count ( $mList ); $i ++) {
+				if ($mList [$i] ['mobile'] == $_POST ['mobile']) {
+					$this->error ( '该手机号码已经存在！' );
+					break;
+				}
+			}
+			// 保存当前数据对象
+			if ($m = $m->where ( $condition )->save ( $data )) { // 保存成功
+			    //发送站内信
+			    $type="phonechange";
+			    $action="您绑定了新手机：". str_replace(substr($data['mobile'],3,-3),'*****',$data['mobile'])." !";
+			    systemmsg($type,$action);
+				$this->success ( '保存成功！' );
+			} else {
+				// 失败提示
+				$this->error ( '保存失败' );
+			}
 		}
 	}
 	public function userfindpaypass() {
@@ -214,6 +218,7 @@ class UserinfoController extends MemberController {
         $arr['id']=$uid;
         $emails=$emaildata->where($arr)->select();
         $email_addr=$emails[0]['email'];
+
         $domain = substr(strstr($email_addr, '@'),1);
    		$url='http://mail.'.$domain;
         $this->assign('url',$url);
@@ -221,18 +226,52 @@ class UserinfoController extends MemberController {
 		$this->assign ( 'list', $m );
 		$this->display ();
 	}
-	
-	/**
-	 *
-	 * @author liuy
-	 *         2015-1-15修改邮箱地址
-	 */
+	public function usermail_send() {
+		$uid = is_login ();
+		$m = M ( 'ucenter_member' );
+		$m_id ['id'] = $uid;
+		$m = $m->where ( $m_id )->select ();
+
+		$email=$m[0]['email'];
+        if($email!==null){
+		$a = SendMail($email,'工合财富邮箱验证','您的邮箱验证地址:http://'.$_SERVER['SERVER_NAME'].'/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活本邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn');
+			$this->success('发送成功，请登录邮箱验证');
+		}else{
+			$this->error('发送失败');
+		}
+
+		$m[0]['email']=str_replace(substr($m[0]['email'],2,(strpos($m[0]['email'],'@')-4)),'*****',$m[0]['email']);
+		//邮箱认证状态
+		$mstatus = M('z_members_status');//用户验证状态
+        $condition2['uid'] =$uid;
+        $member_status=$mstatus->where($condition2)->select();
+        $email=$member_status['0']['email_status'];
+        //邮箱地址域名
+        $emaildata=M('ucenter_member');
+        $arr['id']=$uid;
+        $emails=$emaildata->where($arr)->select();
+        $email_addr=$emails[0]['email'];
+        
+        $domain = substr(strstr($email_addr, '@'),1);
+   		$url='http://mail.'.$domain;
+        $this->assign('url',$url);
+        $this->assign('email',$email);
+		$this->assign ( 'list', $m );
+		$this->display ();
+	}
 	public function usermail_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		$m = M ( "ucenter_member" );
 		$data ['email'] = $_POST ['email'];
-		
+		// $data ['pw'] = $_POST ['pw'];
+
+		// /* 验证用户密码 */
+		$map['id'] = $uid;
+		$user = $m->where($map)->select();
+			if(think_ucenter_md5($_POST ['pw'], UC_AUTH_KEY) !== $user[0]['password']){
+				$this->error ( '密码错误！' );
+			} 
 		// 邮箱修改前需进行邮箱唯一性判断，如果存在相同邮箱不可进行修改！
 		$mList = $m->select ();
 
@@ -256,7 +295,7 @@ class UserinfoController extends MemberController {
 			$username=$userdata[0]['username'];
 			$pattern = "/^([0-9A-Za-z\\-_\\.]+)@([0-9a-z]+\\.[a-z]{2,3}(\\.[a-z]{2})?)$/i";
         	if ( preg_match( $pattern,$data ['email'])){
-				$a = SendMail($data ['email'],'工合财富邮箱更改通知','亲爱的 '.$username.'，您好,您重新绑定了账户邮箱：'.$data ['email'].' 。激活邮箱链接:http://www.ghcf.com.cn/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活，此邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn');
+				$a = SendMail($data ['email'],'工合财富邮箱更改通知','亲爱的 '.$username.'，您好,您重新绑定了账户邮箱：'.$data ['email'].' 。激活邮箱链接:http://'.$_SERVER['SERVER_NAME'].'/index.php?s=/Home/User/emailyz/emailyz/'.$uid.'.html 邮件发送时间： '.date( "l dS of F Y h：i：s A" ).'请在24小时内激活，此邮件由工合财富系统自动发出，请勿直接回复！如果您有任何疑问或建议，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn');
 			}else{
 				$this->error('您填写的邮箱不合法',U('Member/Userinfo/usermailbanding'));
 			}
@@ -264,10 +303,10 @@ class UserinfoController extends MemberController {
 			$type="emailchange";
 			$action='修改了新邮箱：'.str_replace(substr($data['email'],3,(strpos($data['email'],'@')-5)),'*****',$data['email']);
 			systemmsg($type,$action);
-			$this->success ( '修改成功！请进入邮箱进行验证', U('Member/Userinfo/usermailbanding') );
+			$this->success ( '修改成功！请进入邮箱进行验证');
 		} else {
 			// 失败提示
-			$this->error ( '修改失败！' ,U('Member/Userinfo/usermailbanding') );
+			$this->error ( '修改失败！');
 		}
 	}
 	public function userpapersinfo() {
@@ -668,4 +707,5 @@ class UserinfoController extends MemberController {
 			$this->error ( '修改失败！' );
 		}
 	}
+	
 }

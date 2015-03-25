@@ -1,4 +1,5 @@
 <?php
+define('UC_AUTH_KEY', 'Y9k>up5P=Aa([EFr|DsO0cdSH3Jm]$W+Qxi.g)~Z'); 
 return array(
 	//'配置项'=>'配置值'
 
