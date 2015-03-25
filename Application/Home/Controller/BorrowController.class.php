@@ -73,8 +73,9 @@ class BorrowController extends HomeController {
 		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$uid=is_login();
 		$data=M('z_borrow_apply');
+		$condition['apply_uid']=$uid;
 		//没有申请
-		$applydata=$data->where('apply_uid=%s',$uid)->select();
+		$applydata=$data->where($condition)->select();
 		if (is_array($applydata)==true){
 			//申请审核中
 			$applydata1=$data->where('status=0 and apply_uid=%s',$uid)->select();
@@ -90,11 +91,36 @@ class BorrowController extends HomeController {
 				$this->error('您的申请正在审核中...',U('Member/Borrow/checkingapply'));
 			}
 		}else {
+			$arrs['uid']=$uid;
+			$borrowfile=M('z_members_status');
+			$borrowfile_status=$borrowfile->where($arrs)->select();
+			$files=$borrowfile_status[0];
+			$this->assign('file',$files);
 			$this->display ();
 		}	
 	}
 	public function borrowapply_save(){
 		$uid=is_login();
+		//资料上传查询
+		$arrs['uid']=$uid;
+		$borrowfile=M('z_members_status');
+		$borrowfile_status=$borrowfile->where($arrs)->select();
+		$files=$borrowfile_status[0];
+		if ($files['identity_report']==0){
+			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
+		}
+		if ($files['work_report']==0){
+			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
+		}
+		if ($files['living_report']==0){
+			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
+		}
+		if ($files['income_report']==0){
+			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
+		}
+		if ($files['credit_report']==0){
+			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
+		}
 		$arr=array(
 			'apply_ip'=>ip2long($_SERVER['REMOTE_ADDR']),
 			'apply_uid'=>$uid
@@ -534,6 +560,59 @@ class BorrowController extends HomeController {
 			}
 		}
 	}
-	
+	public function borrowfile_upload(){
+		$uid=is_login();
+		$arrs['uid']=$uid;
+		$borrowfile=M('z_members_status');
+		$borrowfile_status=$borrowfile->where($arrs)->select();
+		$files=$borrowfile_status[0];
+		$this->assign('file',$files);
+		$this->display();
+	}
+	public function borrowfile_add(){
+		$uid=is_login();
+		$config = array (
+				'maxSize' => 100 * 1024 * 1024 * 1024,
+				'mimes' => array (),
+				'rootPath' => './Uploads/User/',
+				'savePath' => $uid . '/',
+				'ext' => array ('jpg','gif','bmp','png','pdf','rtf','tif'),
+				'autoSub' => true 
+		);
+		$upload = new \Think\Upload ( $config ); // 实例化上传类
+		$info = $upload->upload (); // 上传文件
+		$data['identity_report']=$info['identity_report']['savepath'].$info['identity_report']['savename'];
+		$data['credit_report']=$info['credit_report']['savepath'].$info['credit_report']['savename'];
+		$data['living_report']=$info['living_report']['savepath'].$info['living_report']['savename'];
+		$data['work_report']=$info['work_report']['savepath'].$info['work_report']['savename'];
+		$data['income_report']=$info['income_report']['savepath'].$info['income_report']['savename'];
+		$data['other_report']=$info['other_report']['savepath'].$info['other_report']['savename'];
+		if (! $info) { // 上传错误提示错误信息
+			$this->error ( $upload->getError () );
+		} else { // 上传成功
+	     	$borrowinfo=M('z_member_info');
+			$arrid['uid']=$uid;    
+			$result=$borrowinfo->where($arrid)->save($data);
+			if ($result){
+				$borrowfile_status=M('z_members_status');
+				$arr=array_keys(array_filter($data));
+				foreach($arr as $vo){
+					$arrs[$vo]=1;
+					$sta[]=$arrs;
+				}
+				$arr1=array_pop($sta);
+				$result=$borrowfile_status->where($arrid)->save($arr1);
+				if ($result){
+					$this->success('上传成功！',U('Borrow/borrowfile_upload'));
+				}else{
+					$this->error('资料上传失败，请认证核对资料');
+				}
+				
+			}else{
+				$this->error('上传失败！');
+			}
+		}
+		
+	}
 
 }
