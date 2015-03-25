@@ -27,12 +27,36 @@
 				<dt><img src="__PUBLIC__/Home/images/sqzl.png"/></dt>
 				<dd>
 					<ul class="sqzl">
-						<li>身份证</li>
-						<li>工作证明</li>
-						<li>征信报告</li>
-						<li>收入证明</li>
-						<li>居住证明</li>
-						<li>辅助资料</li>
+						<if condition="$file['identity_report'] eq 1">
+							<li>身份证<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>身份证<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['credit_report'] eq 1">
+							<li>工作证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>工作证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['living_report'] eq 1">
+							<li>征信证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>征信证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png"title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['work_report'] eq 1">
+							<li>收入证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>收入证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['income_report'] eq 1">
+							<li>居住证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>居住证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['other_report'] eq 1">
+							<li>辅助证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>辅助证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
 					</ul>
 				</dd>
 			</dl>

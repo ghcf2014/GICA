@@ -542,7 +542,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*----------------基本认证---------------------------*/
-.zh_cont .zh_cont_r .tab .jbrz_con{width: 893px;height: auto;min-height:1091px;background: #fff;border: 1px solid #ddd;margin-top: 5px;} 
+.zh_cont .zh_cont_r .tab .jbrz_con{width: 893px;height: auto;min-height:1035px;background: #fff;margin-top: 5px;} 
 
 .zh_cont .zh_cont_r .tab .jbrz_con .warning{width: 580px;padding-left:40px;height: 40px;line-height: 40px;background:#eee url(../images/warning_red.png) no-repeat 5px center;margin: 10px auto;}
 
