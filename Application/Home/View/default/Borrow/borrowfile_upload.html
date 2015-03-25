@@ -54,30 +54,12 @@
 				<div class="zlsc_cont_in_tab">
 					<h5>申请表下载</h5>
 					<table border="0" cellspacing="0" cellpadding="0">
+						<volist name="applyfile" id="vo">
 						<tr>
-							<td style="width: 550px;">借款申请表借款申请表借款申请表借款申请表</td>
-							<td style="width: 30px;"><a href="javascript:;">下载</a></td>
+							<td style="width: 550px;">借款申请表{$vo.filetype}</td>
+							<td style="width: 30px;"><a href="Uploads/{$vo.filepath}" target="_blank">下载</a></td>
 						</tr>
-						<tr>
-							<td style="width: 550px;">借款申请表借款申请表借款申请表</td>
-							<td style="width: 30px;"><a href="javascript:;">下载</a></td>
-						</tr>
-						<tr>
-							<td style="width: 550px;">借款申请表借款申请表借款申请表借款申请表借</td>
-							<td style="width: 30px;"><a href="javascript:;">下载</a></td>
-						</tr>
-						<tr>
-							<td style="width: 550px;">借款申请表借款申请表</td>
-							<td style="width: 30px;"><a href="javascript:;">下载</a></td>
-						</tr>
-						<tr>
-							<td style="width: 550px;">借款申请表借款申请表借款申请表借款申请表借款申请表</td>
-							<td style="width: 30px;"><a href="javascript:;">下载</a></td>
-						</tr>
-						<tr>
-							<td style="width: 550px;">借款申请表借款申请表借款申请表借款申请表借款申请表借款申请表</td>
-							<td style="width: 30px;"><a href="javascript:;">下载</a></td>
-						</tr>
+						</volist>
 					</table>
 				</div>
 				<div class="zlsc_cont_in_tab" style="display: none;">
@@ -101,14 +83,6 @@
 							</if>
 						</dl>
 						<dl>
-							<dt>居住证明</dt>
-							<if condition="$file['living_report'] eq 1">
-								<dd>已上传</dd>
-							<else/>  
-							<dd><input type="file" name="living_report" id=""  /></dd>
-							</if>
-						</dl>
-						<dl>
 							<dt>工作证明</dt>
 							<if condition="$file['work_report'] eq 1">
 								<dd>已上传</dd>
@@ -124,6 +98,16 @@
 							<dd><input type="file" name="income_report" id=""  /></dd>
 							</if>
 						</dl>
+						<dl>
+							<dt>居住证明</dt>
+							<if condition="$file['living_report'] eq 1">
+								<dd>已上传</dd>
+							<else/>  
+							<dd><input type="file" name="living_report" id=""  /></dd>
+							</if>
+						</dl>
+						
+						
 						<dl>
 							<dt>辅助资料</dt>
 							<if condition="$file['other_report'] eq 1">

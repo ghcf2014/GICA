@@ -1,0 +1,4088 @@
+[ 2015-02-04T09:31:01+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T09:31:01+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:01:25+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:01:25+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T10:04:14+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:04:14+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:04:14+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T10:24:45+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Favicon
+
+[ 2015-02-04T10:24:45+08:00 ] 127.0.0.1 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Favicon
+
+[ 2015-02-04T10:42:45+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:42:45+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:42:47+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:47:41+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:47:42+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:47:52+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:47:52+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:47:58+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:47:58+08:00 ] 127.0.0.1 /jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Jquery.min
+
+[ 2015-02-04T10:47:58+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:47:58+08:00 ] 127.0.0.1 /d3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:D3.min
+
+[ 2015-02-04T10:47:58+08:00 ] 127.0.0.1 /jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Jquery.min
+
+[ 2015-02-04T10:47:58+08:00 ] 127.0.0.1 /triangloid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Triangloid
+
+[ 2015-02-04T10:48:09+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:48:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:48:12+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T10:48:12+08:00 ] 127.0.0.1 /Uploads/2015-02-02/54cf445f17a1b.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Uploads
+
+[ 2015-02-04T10:48:18+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T10:48:18+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-zh-CN.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:48:37+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:54:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:54:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:54:55+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T10:55:44+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:44+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:44+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:55:46+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:46+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:46+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:55:47+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:47+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:47+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:55:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:48+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:55:49+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:49+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:49+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:55:51+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:55:51+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:51+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:55:51+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:52+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:55:52+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:55:52+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:55:52+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T10:55:54+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:54+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:55:58+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:55:58+08:00 ] 127.0.0.1 /Public/Home/rzg_images/030213_3.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:33+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:56:33+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:56:34+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:56:34+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:56:34+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:56:34+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:56:37+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:37+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.046800s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046800s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031201s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.046801s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046801s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:56:38+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.046800s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046800s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.046800s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046800s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.078000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.078000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_19.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T10:57:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.062400s ]
+INFO: [ app_init ] --END-- [ RunTime:0.062400s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.046800s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046800s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031201s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:19+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T10:57:22+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:57:22+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T10:57:22+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T10:57:22+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T11:00:09+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:00:09+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:00:09+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:00:09+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:08:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:08:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031001s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:08:13+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012001s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T11:08:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:08:15+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:13:11+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:13:11+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:13:11+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:13:28+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:13:28+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:13:49+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:13:49+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:13:49+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:14:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:14:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:14:48+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:15:18+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:15:18+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:15:18+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:20:50+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:20:51+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:20:51+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015601s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:26:33+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015601s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:26:34+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015601s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T11:27:27+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:27+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:27+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T11:27:38+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:38+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:46+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:46+08:00 ] 127.0.0.1 /triangloid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Triangloid
+
+[ 2015-02-04T11:27:46+08:00 ] 127.0.0.1 /jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Jquery.min
+
+[ 2015-02-04T11:27:46+08:00 ] 127.0.0.1 /d3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:D3.min
+
+[ 2015-02-04T11:27:46+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:47+08:00 ] 127.0.0.1 /d3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:D3.min
+
+[ 2015-02-04T11:27:47+08:00 ] 127.0.0.1 /Public/Home/rzg_images/sqdk_03.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T11:27:47+08:00 ] 127.0.0.1 /jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Jquery.min
+
+[ 2015-02-04T11:27:47+08:00 ] 127.0.0.1 /triangloid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Triangloid
+
+[ 2015-02-04T11:27:55+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:27:59+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:59+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:27:59+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:28:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:28:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031200s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.062400s ]
+INFO: [ app_init ] --END-- [ RunTime:0.062400s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T11:31:16+08:00 ] 127.0.0.1 /My97DatePicker/WdatePicker.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:My97DatePicker
+
+[ 2015-02-04T11:31:41+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:31:41+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:32:10+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:32:10+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:32:13+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:32:13+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:32:13+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:55:50+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:57:06+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:57:06+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:57:06+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:57:57+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:57:57+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:57:58+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:58:00+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:00+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:01+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:58:07+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:08+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:58:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:12+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T11:58:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:15+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:58:20+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:20+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:58:20+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T11:59:34+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:59:34+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T11:59:34+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T12:00:02+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:03+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:03+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T12:00:04+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:04+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:04+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T12:00:24+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:24+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:25+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:25+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T12:00:25+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T13:59:29+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T13:59:52+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T13:59:53+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T14:00:02+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:00:04+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:00:04+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:00:04+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T14:01:51+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:01:51+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:02:00+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:02:02+08:00 ] 127.0.0.1 /d3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:D3.min
+
+[ 2015-02-04T14:02:02+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:02:02+08:00 ] 127.0.0.1 /jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Jquery.min
+
+[ 2015-02-04T14:02:02+08:00 ] 127.0.0.1 /triangloid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Triangloid
+
+[ 2015-02-04T14:02:03+08:00 ] 127.0.0.1 /d3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:D3.min
+
+[ 2015-02-04T14:02:03+08:00 ] 127.0.0.1 /Public/Home/rzg_images/sqdk_03.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:02:03+08:00 ] 127.0.0.1 /jquery.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Jquery.min
+
+[ 2015-02-04T14:02:03+08:00 ] 127.0.0.1 /triangloid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Triangloid
+
+[ 2015-02-04T14:05:57+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:05:58+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:07:49+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:07:49+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:07:59+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.024001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:07:59+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.019001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:07:59+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T14:07:59+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-zh-CN.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:08:00+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T14:08:00+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:08:00+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-zh-CN.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:30:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:30:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:30:12+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T14:31:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:31:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:31:15+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T14:52:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:52:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:52:08+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.025001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.022001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.028601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_19.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.035201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.035201s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.019601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031601s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:54:03+08:00 ] 127.0.0.1 /$%7Bbank.bankimage%20%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:${bank
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.022600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.034200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.034200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.161802s ]
+INFO: [ app_init ] --END-- [ RunTime:0.161802s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.023600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.040200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.040200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.024002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.019001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.019001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.022600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_19.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:04+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:10+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:54:10+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.030002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.051003s ]
+INFO: [ app_init ] --END-- [ RunTime:0.051003s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.025601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_19.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /$%7Bbank.bankimage%20%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:${bank
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:12+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.035200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.035200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.028601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021601s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.036201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036201s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.030600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.035601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.035601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.030601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.028601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_19.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.028002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.023001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /$%7Bbank.bankimage%20%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:${bank
+
+[ 2015-02-04T14:54:13+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T14:54:16+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T14:54:16+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T17:11:17+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:11:17+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T17:11:44+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:11:44+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:11:44+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T17:12:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:12:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:12:15+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T17:14:54+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:14:55+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:14:55+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T17:15:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:15:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:15:08+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T17:23:06+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:23:06+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:23:06+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T17:23:39+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:23:39+08:00 ] 127.0.0.1 /$%7Bpath%7D/script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.059201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.059201s ]
+ERR: 无法加载模块:${path}
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.019600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.028600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.028600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /$%7Bpath%7D/script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013001s ]
+ERR: 无法加载模块:${path}
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:40+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T17:23:52+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /$%7Bpath%7D/script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:${path}
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021001s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /$%7Bpath%7D/script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:${path}
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /script/nav-zh.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T17:23:57+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T17:24:02+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:24:02+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:24:04+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T17:24:04+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T18:18:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T18:18:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T18:18:15+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T20:03:44+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:03:45+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:16:22+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015601s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:16:22+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T20:18:49+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T20:19:37+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:19:37+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:19:37+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T20:24:19+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:24:43+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:51:59+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:52:03+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:52:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:52:08+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:52:55+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:52:55+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:52:58+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:52:58+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.031601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.031601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.042201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.042201s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.025001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /$%7Bbank.bankimage%20%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.048602s ]
+ERR: 无法加载模块:${bank
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.023600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023600s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T20:55:17+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.250807s ]
+INFO: [ app_init ] --END-- [ RunTime:0.251807s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:18+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.019600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.206408s ]
+INFO: [ app_init ] --END-- [ RunTime:0.206408s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_19.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:24+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.004000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.045602s ]
+INFO: [ app_init ] --END-- [ RunTime:0.045602s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.029002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.039201s ]
+INFO: [ app_init ] --END-- [ RunTime:0.039201s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.041200s ]
+INFO: [ app_init ] --END-- [ RunTime:0.041200s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.036601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_12.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.027002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_16.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.030601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.030601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.036602s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036602s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033601s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /$%7Bbank.bankimage%20%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013000s ]
+ERR: 无法加载模块:${bank
+
+[ 2015-02-04T20:55:25+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T20:56:12+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.029601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.029601s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:05:14+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026601s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /script/jquery.shove-1.0.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-zh-CN.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.023001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024001s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /Uploads/2015-02-03/54d02789b8cab.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:Uploads
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /css/popom.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:Css
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.003000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T21:05:15+08:00 ] 127.0.0.1 /script/jbox/jquery.jBox-zh-CN.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T21:06:09+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:06:16+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:06:16+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:06:18+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:06:18+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.033002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.033002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.036002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.037002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_06.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.023001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.021001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.022002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.034002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.034002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.047002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.047002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_10.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.026001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_11.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.036002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.036002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_14.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_13.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_mages/banks/bank_15.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015000s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_19.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_20.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.024002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /$%7Bbank.bankimage%20%7D
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:${bank
+
+[ 2015-02-04T21:06:20+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_18.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_01.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_02.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.014001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_04.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.025001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_03.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.039002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.039002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /script/jquery-1.7.1.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.022001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023001s ]
+ERR: 无法加载模块:Script
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_07.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_09.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.018001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018001s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_08.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.026002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.027002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/Home/rzg_images/neiye1_133.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.022002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:06:21+08:00 ] 127.0.0.1 /Public/static/rzg_images/banks/bank_05.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020002s ]
+ERR: 无法加载模块:Public
+
+[ 2015-02-04T21:09:24+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:09:24+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:09:26+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:09:28+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:09:31+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:09:31+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:09:32+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.013000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:09:33+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:17:40+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020002s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:17:40+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:17:43+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:17:43+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:17:43+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:18:28+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:18:29+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:18:29+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.008000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:24:54+08:00 ] 127.0.0.1 /autoinvest_save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.006001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006001s ]
+ERR: 无法加载模块:Autoinvest_save
+
+[ 2015-02-04T21:27:41+08:00 ] 127.0.0.1 /autoinvest_save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Autoinvest_save
+
+[ 2015-02-04T21:27:46+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.029601s ]
+INFO: [ app_init ] --END-- [ RunTime:0.029601s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:27:46+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:27:46+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:29:33+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.019001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.019001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:29:33+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:29:34+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:29:53+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:29:53+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:29:53+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.016600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:29:56+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:29:56+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:30:08+08:00 ] 127.0.0.1 /autoinvest_save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020600s ]
+ERR: 无法加载模块:Autoinvest_save
+
+[ 2015-02-04T21:30:51+08:00 ] 127.0.0.1 /autoinvest_save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Autoinvest_save
+
+[ 2015-02-04T21:30:52+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.020600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.020600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:30:53+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:30:54+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.017600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017600s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:32:12+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010000s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:32:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.023002s ]
+INFO: [ app_init ] --END-- [ RunTime:0.025002s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:32:15+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:32:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.006001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007001s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:32:48+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:33:53+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:33:53+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009001s ]
+ERR: 无法加载模块:Images
+
+[ 2015-02-04T21:34:06+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:34:06+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.009000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:34:07+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.011000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.012000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:34:07+08:00 ] 127.0.0.1 /_PUBLIC_/Home/js/jquery-1.7.2.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.012000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013000s ]
+ERR: 无法加载模块:_PUBLIC_
+
+[ 2015-02-04T21:34:08+08:00 ] 127.0.0.1 /images/wenhao.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.010001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.010001s ]
+ERR: 无法加载模块:Images
+

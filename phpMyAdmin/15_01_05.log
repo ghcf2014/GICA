@@ -1,0 +1,14 @@
+[ 2015-01-05T15:59:32+08:00 ] 127.0.0.1 /GICA/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:GICA
+
+[ 2015-01-05T16:02:33+08:00 ] 127.0.0.1 /GICA/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015600s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载模块:GICA
+

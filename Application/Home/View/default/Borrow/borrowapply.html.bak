@@ -8,7 +8,62 @@
 				<img src="__PUBLIC__/Home/images/jklc.png" width="1000" height="374" />
 			</div>
 		</div>
-
+		
+		<!--sqjk_cont_cen 开始-->
+		<div class="sqjk_cont_cen">
+			<dl>
+				<dt><img src="__PUBLIC__/Home/images/zrtj.png"/></dt>
+				<dd>
+					<ul class="zrtj">
+						<li>在深圳居住6个月以上</li>
+						<li>22-60周岁，大陆公民</li>
+						<li>在深圳单位工作满6个月以上</li>
+						<li>个人信用记录良好，无不良嗜好</li>
+						<li>银行代发工资人民币4000元以上</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl style="border-right: 0;float: right;">
+				<dt><img src="__PUBLIC__/Home/images/sqzl.png"/></dt>
+				<dd>
+					<ul class="sqzl">
+						<if condition="$file['identity_report'] eq 1">
+							<li>身份证<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>身份证<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['credit_report'] eq 1">
+							<li>工作证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>工作证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['living_report'] eq 1">
+							<li>征信证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>征信证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png"title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['work_report'] eq 1">
+							<li>收入证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>收入证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['income_report'] eq 1">
+							<li>居住证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>居住证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						<if condition="$file['other_report'] eq 1">
+							<li>辅助证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>辅助证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		<!--sqjk_cont_cen 结束-->
+		
+		<!--sqjk_cont_bot 开始-->
 		<div class="sqjk_cont_bot">
 			<div class="sqjk_cont_foucs">
 				<dl>
@@ -26,7 +81,7 @@
 				<p style="background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; color: #fff; padding-left: 40px; width: 88%;line-height: 32px;">您必须成为VIP会员后，才能提交正式借款申请。</p>
 			</div>
 			
-			<div class="tjsqjk">
+			<div class="tjsqjk" onload="setup();preselect('陕西省');promptinfo();">
 			<form action="{:U('borrowapply_save')}" method="post">
 				<h2>借款意向</h2>
 				<dl>
@@ -103,7 +158,10 @@
 				</form>
 			</div>
 		</div>
+		<!--sqjk_cont_bot 结束-->
 
 	</div>
 </div>
+<body onload="setup();preselect('广东省');promptinfo();">     
+</body>
 </block>
