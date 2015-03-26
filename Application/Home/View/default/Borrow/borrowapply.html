@@ -33,21 +33,22 @@
 							<li>身份证<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
 						</if>
 						<if condition="$file['credit_report'] eq 1">
-							<li>工作证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
-						<else/>
-							<li>工作证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
-						</if>
-						<if condition="$file['living_report'] eq 1">
 							<li>征信证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
 						<else/>
 							<li>征信证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png"title="点击上传"/></a></li>
 						</if>
 						<if condition="$file['work_report'] eq 1">
+							<li>工作证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+						<else/>
+							<li>工作证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+						</if>
+						
+						<if condition="$file['income_report'] eq 1">
 							<li>收入证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
 						<else/>
 							<li>收入证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
 						</if>
-						<if condition="$file['income_report'] eq 1">
+						<if condition="$file['living_report'] eq 1">
 							<li>居住证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
 						<else/>
 							<li>居住证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
@@ -77,6 +78,7 @@
 					<dd>
 						3．工合或担保机构进行审核后，并与您本人沟通，出具受理<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;意见，会在本网站发布您的借款标，并呈现具体借款的详<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;情附带资料。
 					</dd>				
+					<dd><a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/sqzldown.png"/></a></dd>				
 				</dl>
 				<p style="background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; color: #fff; padding-left: 40px; width: 88%;line-height: 32px;">您必须成为VIP会员后，才能提交正式借款申请。</p>
 			</div>

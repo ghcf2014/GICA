@@ -565,7 +565,15 @@ class BorrowController extends HomeController {
 		$arrs['uid']=$uid;
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
+		//文件上传数据储存表
 		$files=$borrowfile_status[0];
+		$applydata=M('applyfile_download');
+		$applyfile=$applydata->select();
+		// dump($applyfile);
+		$this->assign('applyfile',$applyfile);
+
+
+
 		$this->assign('file',$files);
 		$this->display();
 	}
