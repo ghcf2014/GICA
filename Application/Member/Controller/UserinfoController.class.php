@@ -442,7 +442,6 @@ class UserinfoController extends MemberController {
 			}
 			$m[0]['idcard']=str_replace(substr($m[0]['idcard'],2,-2),'******',$m[0]['idcard']);			
 			$this->assign ( 'mlist', $m );
-
 		} else {
 			$n = $chk->add ( $condition );			
 			$k= $chk->where ( $arrs )->select ();
@@ -450,7 +449,10 @@ class UserinfoController extends MemberController {
 			$this->assign ( 'mlist', $k );
 
 		}
-		
+		$status = M ( 'z_members_status' );
+		$condition1['uid']=$uid;
+		$st=$status->where($condition1)->select();
+		$this->id_status=$st[0]['id_status'];
 		$this->display ();
 	}
 	private function AddFile($fileinfo, $depict) {

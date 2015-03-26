@@ -93,6 +93,6 @@ class IndexController extends HomeController {
 		$name = $_POST ['name'];
 		$content = $_POST ['content'];
 		
-		$a = SendMail ( 'weishuyeblog@sina.com', $name . '技术反馈', '【' . $content . '】  邮件发送时间： ' . date ( "l dS of F Y h：i：s A" ) );
+		$a = SendMail ( '380003832@qq.com', $name . '技术反馈', '【' . $content . '】  邮件发送时间： ' . date ( "l dS of F Y h：i：s A" ) );
 	}
 }

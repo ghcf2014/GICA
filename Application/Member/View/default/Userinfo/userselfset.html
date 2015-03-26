@@ -20,142 +20,145 @@
                     <a href="{:U('Userinfo/userfindpassbyphone')}"><li>手机认证</li></a>
                     <a href="{:U('Member/Userinfo/userselfset')}"><li class="cur">实名认证</li></a>
                 </ul>
-                        <div class="jbrz_con">
-                        	<p class="warning"><b style="font-weight: normal;color: #b30000;">注意：</b>请填写真实有效的信息，认证审核通过后将不能修改。</p>
-                        	<dl class="jbrz">
-                                <dt>手机号码</dt>
-                                <dd><div class="txt" readonly id="idNo">{$vo.cell_phone}</div></dd>
-                            </dl>
-
-                            <dl class="jbrz">
-                        		<dt>真实姓名</dt>
-                                <if condition="$vo.real_name eq null">
-                                    <dd><input type="text" class="txt" name="real_name" id="realName" /></dd>
-                                <else/>
-                                    <dd><div class="txt" name="real_name" id="realName">{$vo.real_name}</div></dd>
-                                </if>
-                        	</dl>
+                <if condition="$id_status eq '2'">实名信息审核中...
                         
-	                        <dl class="jbrz">
-	                        	<dt>身份证号码</dt>
-                                <if condition="$vo.real_name eq null">
-                                    <dd><input type="text" class="txt" name="idcard" id="idNo"/></dd>
-                                <else/>
-                                    <dd><div class="txt" name="idcard" id="idNo">{$vo.idcard}</div></dd>
-                                </if>
-	                        </dl>                      
-                            <dl class="jbrz sfz" >
-                            <dt>身份证正面</dt>
-                            <dd>
-                                
-                                    <if condition="$vo.card_img eq ''">
-                                        <input type="button" class="btn" value="上传" id="card_img" >
-                                        <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
-                                    <elseif condition="$vo.card_img  neq ''"/>
-                                        <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
+                        <else/>
+                            <div class="jbrz_con">
+                                <p class="warning"><b style="font-weight: normal;color: #b30000;">注意：</b>请填写真实有效的信息，认证审核通过后将不能修改。</p>
+                                <dl class="jbrz">
+                                    <dt>手机号码</dt>
+                                    <dd><div class="txt" readonly id="idNo">{$vo.cell_phone}</div></dd>
+                                </dl>
+
+                                <dl class="jbrz">
+                                    <dt>真实姓名</dt>
+                                    <if condition="$vo.real_name eq null">
+                                        <dd><input type="text" class="txt" name="real_name" id="realName" /></dd>
+                                    <else/>
+                                        <dd><div class="txt" name="real_name" id="realName">{$vo.real_name}</div></dd>
                                     </if>
-                            </dd>
-                            </dl>
+                                </dl>
                             
-                            <dl class="jbrz sfz">
-                                <dt>身份证反面</dt>
+                                <dl class="jbrz">
+                                    <dt>身份证号码</dt>
+                                    <if condition="$vo.real_name eq null">
+                                        <dd><input type="text" class="txt" name="idcard" id="idNo"/></dd>
+                                    <else/>
+                                        <dd><div class="txt" name="idcard" id="idNo">{$vo.idcard}</div></dd>
+                                    </if>
+                                </dl>                      
+                                <dl class="jbrz sfz" >
+                                <dt>身份证正面</dt>
                                 <dd>
                                     
-                                    <if condition="$vo.card_back_img eq ''">
-                                        <input type="button"  class="btn" value="上传"id="card_back_img">
-                                        <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
-                                    <elseif condition="$vo.card_back_img  neq ''"/>
-                                        <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
-                                    </if>
+                                        <if condition="$vo.card_img eq ''">
+                                            <input type="button" class="btn" value="上传" id="card_img" >
+                                            <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
+                                        <elseif condition="$vo.card_img  neq ''"/>
+                                            <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
+                                        </if>
+                                </dd>
+                                </dl>
+                                
+                                <dl class="jbrz sfz">
+                                    <dt>身份证反面</dt>
+                                    <dd>
+                                        
+                                        <if condition="$vo.card_back_img eq ''">
+                                            <input type="button"  class="btn" value="上传"id="card_back_img">
+                                            <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
+                                        <elseif condition="$vo.card_back_img  neq ''"/>
+                                            <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
+                                        </if>
+                                    </dd>
+                                </dl>
+                                <dl class="jbrz sex">
+                                    <dt>性别</dt>
+                                    <dd><if condition="$vo.sex eq '1'">
+                                            男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
+                                            女<input type="radio" class="radio" name="sex" value="0" />
+                                        <elseif condition="$vo.sex eq '0'"/>
+                                            男<input type="radio" class="radio" name="sex" value="1" />
+                                            女<input type="radio" class="radio" name="sex" value="0" checked="checked"/>
+                                        <else/>
+                                            男<input type="radio" class="radio" name="sex" value="1" />
+                                            女<input type="radio" class="radio" name="sex" value="0"/>                                      
+                                        </if>
+                                    </dd>
+                                </dl>
+                            
+                            <dl class="jbrz">
+                                <dt>职业</dt>
+                                <dd>
+                                <if condition="$vo.zy eq null">
+                                        <select name="zy"  class="inp50" style="font-size: 16px;height: 40px;">                                
+                                           <option>----请选择----</option>    
+                                           <option value="学生">学生</option>    
+                                           <option value="工人">工人</option>   
+                                           <option value="工程师">工程师</option>   
+                                           <option value="公司职员">公司职员</option>   
+                                           <option value="公司老板">公司老板</option>
+                                           <option value="银行职员">银行职员</option>
+                                           <option value="企业员工">企业员工</option>
+                                           <option value="公司董事">公司董事</option>
+                                           <option value="集团老总">集团老总</option>      
+                                        </select>                                    
+                                    <else/>
+                                        <div class="txt" name="idcard" id="idNo">{$vo.zy}</div>
+                                    </if>                            
                                 </dd>
                             </dl>
-	                        <dl class="jbrz sex">
-	                        	<dt>性别</dt>
-	                            <dd><if condition="$vo.sex eq '1'">
-	    	                        	男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
-	    	                            女<input type="radio" class="radio" name="sex" value="0" />
-	                                <elseif condition="$vo.sex eq '0'"/>
-	    	                            男<input type="radio" class="radio" name="sex" value="1" />
-	    	                            女<input type="radio" class="radio" name="sex" value="0" checked="checked"/>
-	                                <else/>
-	                                    男<input type="radio" class="radio" name="sex" value="1" />
-	                                    女<input type="radio" class="radio" name="sex" value="0"/>	                                   
-	                                </if>
-	                            </dd>
-	                        </dl>
-                        
-                        <dl class="jbrz">
-                        	<dt>职业</dt>
-                            <dd>
-                            <if condition="$vo.zy eq null">
-                                    <select name="zy"  class="inp50" style="font-size: 16px;height: 40px;">                                
-                                       <option>----请选择----</option>    
-                                       <option value="学生">学生</option>    
-                                       <option value="工人">工人</option>   
-                                       <option value="工程师">工程师</option>   
-                                       <option value="公司职员">公司职员</option>   
-                                       <option value="公司老板">公司老板</option>
-                                       <option value="银行职员">银行职员</option>
-                                       <option value="企业员工">企业员工</option>
-                                       <option value="公司董事">公司董事</option>
-                                       <option value="集团老总">集团老总</option>      
-                                    </select>                                    
-                                <else/>
-                                    <div class="txt" name="idcard" id="idNo">{$vo.zy}</div>
-                                </if>                            
-                            </dd>
-                        </dl>
-                       
-                        
-                        <dl class="jbrz">
-                        	<dt>教育</dt>
-                            <dd>
-                            <if condition="$vo.zy eq null">
-                                    <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">                                
-                                       <option >----请选择----</option>    
-                                       <option value="博士以上">博士以上</option>    
-                                       <option value="博士">博士</option>   
-                                       <option value="硕士">硕士</option>   
-                                       <option value="研究生">研究生</option>   
-                                       <option value="本科">本科</option>
-                                       <option value="专科">专科</option>
-                                       <option value="高中">高中</option>
-                                       <option value="初中">初中</option>
-                                       <option value="小学">小学</option>      
-                                    </select>                                    
-                                <else/>
-                                    <div class="txt" name="idcard" id="idNo">{$vo.education}</div>
-                                </if>                            
-                            </dd>
+                           
                             
-                        </dl>
-                        
-                        <dl class="jbrz adress">
-                        	<dt>现居地址</dt>
-                            <dd>
-                                <if condition="$vo.province_now eq null">
-                                    <select class="select" name="province_now" id="s1">
-                                        <option></option>
-                                    </select>
-                                    <select class="select" name="city_now" id="s2">
-                                        <option></option>
-                                    </select>
-                                    <select class="select" name="area_now" id="s3">
-                                        <option></option>
-                                    </select>
-                                    
-                                <else/>
-                                    <div class="txt" name="idcard" id="idNo">{$vo.province_now}--{$vo.city_now}--{$vo.area_now}</div>
-                                </if>                              
-                            </dd>
-                        </dl>
-                        <p class="wxts"><b style="font-weight: normal;color: red;">温馨提示：</b>我们将严格对用户的所有资料进行保密。</p>
-                        <div class="jbrz_sub_btn">
+                            <dl class="jbrz">
+                                <dt>教育</dt>
+                                <dd>
+                                <if condition="$vo.zy eq null">
+                                        <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">                                
+                                           <option >----请选择----</option>    
+                                           <option value="博士以上">博士以上</option>    
+                                           <option value="博士">博士</option>   
+                                           <option value="硕士">硕士</option>   
+                                           <option value="研究生">研究生</option>   
+                                           <option value="本科">本科</option>
+                                           <option value="专科">专科</option>
+                                           <option value="高中">高中</option>
+                                           <option value="初中">初中</option>
+                                           <option value="小学">小学</option>      
+                                        </select>                                    
+                                    <else/>
+                                        <div class="txt" name="idcard" id="idNo">{$vo.education}</div>
+                                    </if>                            
+                                </dd>
+                                
+                            </dl>
+                            
+                            <dl class="jbrz adress">
+                                <dt>现居地址</dt>
+                                <dd>
+                                    <if condition="$vo.province_now eq null">
+                                        <select class="select" name="province_now" id="s1">
+                                            <option></option>
+                                        </select>
+                                        <select class="select" name="city_now" id="s2">
+                                            <option></option>
+                                        </select>
+                                        <select class="select" name="area_now" id="s3">
+                                            <option></option>
+                                        </select>
+                                        
+                                    <else/>
+                                        <div class="txt" name="idcard" id="idNo">{$vo.province_now}--{$vo.city_now}--{$vo.area_now}</div>
+                                    </if>                              
+                                </dd>
+                            </dl>
+                            <p class="wxts"><b style="font-weight: normal;color: red;">温馨提示：</b>我们将严格对用户的所有资料进行保密。</p>
+                            <div class="jbrz_sub_btn">
 
-                        	<input type="submit" class="btn" value="保存"/>
-                        </div>
-                        </div>
-                        
+                                <input type="submit" class="btn" value="保存"/>
+                            </div>
+                            </div>
+                        </if>
                     </form>
                 </div>
                 

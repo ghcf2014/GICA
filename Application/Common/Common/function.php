@@ -1,7 +1,6 @@
 <?php
 
 // 常量定义
-const ONETHINK_VERSION = '1.1.141101';
 const ONETHINK_ADDON_PATH = './Addons/';
 
 /**
@@ -130,7 +129,6 @@ function hidestr($str, $start = 0, $length, $charset = "utf-8", $suffix = true) 
 
 /**
  * 系统加密方法
- *
  * @param string $data
  *        	要加密的字符串
  * @param string $key
@@ -1413,33 +1411,6 @@ function money_upper($money = 0) {
 // return $mail->Send() ? true : $mail->ErrorInfo;//返回错误信息
 // }
 function sendMail($to, $subject, $content) {
- 
-Vendor('PHPmailer.PHPMailerAutoload');
- 
-$mail = new PHPMailer(); //实例化
- $mail->IsSMTP(); // 启用SMTP
- $mail->Host=C('MAIL_HOST'); //smtp服务器的名称（这里以126邮箱为例）
- $mail->SMTPAuth = C('MAIL_SMTPAUTH'); //启用smtp认证
- $mail->Username = C('MAIL_USERNAME'); //你的邮箱名
- $mail->Password = C('MAIL_PASSWORD') ; //邮箱密码
- $mail->From = C('MAIL_FROM'); //发件人地址（也就是你的邮箱地址）
- $mail->FromName = C('MAIL_FROMNAME'); //发件人姓名
- $mail->AddAddress($to,"name");
- $mail->WordWrap = 50; //设置每行字符长度
- $mail->IsHTML(C('MAIL_ISHTML')); // 是否HTML格式邮件
- $mail->CharSet=C('MAIL_CHARSET'); //设置邮件编码
- $mail->Subject =$subject; //邮件主题
- $mail->Body = $content; //邮件内容
- $mail->AltBody = "This is the body in plain text for non-HTML mail clients"; //邮件正文不支持HTML的备用显示
- if(!$mail->Send()) {
- echo "消息不能发送。<p>";
- echo "邮箱出现错误: " . $mail->ErrorInfo;
- exit();
- } else {
-     $text="消息发送成功。O(∩_∩)O";
-     return $text;
-     echo "消息发送成功。O(∩_∩)O";
- }
 	Vendor ( 'PHPmailer.PHPMailerAutoload' );
 	
 	$mail = new PHPMailer (); // 实例化
@@ -1514,32 +1485,6 @@ function sendsms($mob, $content) {
 		return false;
 		echo "消息发送失败。";
 	}
-	
-	// /**
-	//  *
-	//  * @author liuy
-	//  *         2015-1-16分页通用方法
-	//  * @param $m 分页数据        	
-	//  * @param $where 分页调节        	
-	//  * @param $pagesize 分页条数        	
-	//  * @return \Think\Page
-	//  */
-	// function getpage($m, $where, $pagesize = 10) {
-	// 	$m1 = clone $m; // 浅复制一个模型
-	// 	$count = $m->where ( $where )->count (); // 连惯操作后会对join等操作进行重置
-	// 	$m = $m1; // 为保持在为定的连惯操作，浅复制一个模型
-	// 	$p = new Think\Page ( $count, $pagesize );
-	// 	$p->lastSuffix = false;
-	// 	$p->setConfig ( 'header', '<li class="rows">共<b>%TOTAL_ROW%</b>条记录  每页<b>%LIST_ROW%</b>条  第<b>%NOW_PAGE%</b>页/共<b>%TOTAL_PAGE%</b>页</li>' );
-	// 	$p->setConfig ( 'prev', '上一页' );
-	// 	$p->setConfig ( 'next', '下一页' );
-	// 	$p->setConfig ( 'last', '末页' );
-	// 	$p->setConfig ( 'first', '首页' );
-	// 	$p->setConfig ( 'theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%' );
-	// 	$p->parameter = I ( 'get.' );
-	// 	$m->limit ( $p->firstRow, $p->listRows );
-	// 	return $p;
-	// }
     function isPersonalCard($username) {
         if (!$username) {
             return false;
@@ -1595,7 +1540,7 @@ function sendsms($mob, $content) {
 	    		$email=$userresult[0]['email'];
 	    		$username=$userresult[0]['username'];
 	    		$time=time();
-				$a = SendMail($email,'工合财富账户信息通知:','尊敬的会员： <b style="color:red;text-decoration:underline">'.$username.'</b>，您好，您的工合基金账户'.$action.'如有任何疑问，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn'.date( "l dS of F Y h：i：s A" ));
+				$a = SendMail($email,'工合财富账户通知:','尊敬的会员： <b style="color:red;text-decoration:underline">'.$username.'</b>，您好，您的工合财富账户'.$action.'如有任何疑问，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn'.date( "l dS of F Y h：i：s A" ));
 	    }
 	    if (substr($result,2,1)=='1'){
 	    	echo '已经发短信啦！';
