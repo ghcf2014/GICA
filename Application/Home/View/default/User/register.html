@@ -27,17 +27,7 @@
 				<!--左边-->
 				<div class="zc_cont_bot_l">		
 					<!--手机号码-->
-					
-					<!--<dl>
-						<dt>
-							<span>&nbsp;</span>
-						</dt>
-						<dd>
-							<input type="text" size="8" name="mobile_code" placeholder="填写获取到的验证码" class="inputBg" style="width:130px;"/>
-						</dd>
-						<span id="checkphone" style="line-height:48px;"></span>
-					</dl>-->
-					
+
 					<!--电子邮箱-->
 					<dl>
 						<dt>
@@ -90,7 +80,7 @@
 							<span>* </span>手机号码:
 						</dt>
 						<dd>
-							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" /><!--<input id="zphone" type="button" value="点击获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:right;" >-->
+							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" />
 						</dd>
 						<span id="checkphone" style="line-height:48px;"></span>
 					</dl>
@@ -104,7 +94,6 @@
 						</dd>
 						<span id="checkphone" style="line-height:48px;"></span>
 					</dl>
-
 					<!-- <dl>
 						<dt>
 							<span>* </span>验证码:
@@ -257,107 +246,6 @@ $_SESSION['send_code'] = random(6,1);
 		var repassword = $("#repassword").val();
 		var verify = $("#verify").val();
 		
-		//var isMobile=/^(?:13\d|15\d|18\d)\d{5}(\d{3}|\*{3})$/;  //手机号码验证正则表达式
-	// 	if (phone == "") {
-	// 		$("#checkphone").html("<font color='red'>手机号码不能为空！</font>");
-	// 		return false;
-	// 	}else{
-	// 		/* if(!isMobile.test(phone)){
-	// 			$("#checkphone").html("<font color='red'>请输入正确的手机号码！</font>");
-	// 			return false;
-	// 		} */
-	// 	}
-		
-	// //	var re = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
-	// 	if (email == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		$("#checkemail").html("<font color='red'>邮箱地址不能为空！</font>");
-	// 		return false;
-	// 	}else{
-	// 		/* if(！re.test(email)){
-	// 			$("#checkemail").html("<font color='red'>请输入正确的邮箱地址！</font>");
-	// 			return false;
-	// 		} */
-	// 	}
-	// 	if (username == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		$("#checkuser").html("<font color='red'>用户名不能为空！</font>");
-	// 		return false;
-	// 	}
-	// 	if (password == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		$("#checkpwd").html("<font color='red'>注册密码不能为空！</font>");
-	// 		return false;
-	// 	}
-
-	// 	if (repassword == "") {
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		if (password != null) {
-	// 			$("#checkpwd").hide();
-	// 		}
-	// 		$("#checkrepwd").html("<font color='red'>确认注册密码不能为空！</font>");
-	// 		return false;
-	// 	}else{
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		if (password != null) {
-	// 			$("#checkpwd").hide();
-	// 		}
-	// 		if(password!=repassword){
-	// 			$("#checkrepwd").html("<font color='red'>两次输入的密码不一致！</font>");
-	// 			return false;
-	// 		}
-	// 	}
-		
-	// 	if(verify==""){
-	// 		if (phone != null) {
-	// 			$("#checkphone").hide();
-	// 		}
-	// 		if (email != null) {
-	// 			$("#checkemail").hide();
-	// 		}
-	// 		if (username != null) {
-	// 			$("#checkuser").hide();
-	// 		}
-	// 		if (password != null) {
-	// 			$("#checkpwd").hide();
-	// 		}
-	// 		if(repassword!=null){
-	// 			$("#checkrepwd").hide();
-	// 		}
-	// 		$("#checkcode").html("<font color='red'>验证码不能为空！</font>");
-	// 		return false;
-	// 	}
 		$("#form").submit();
 
 	});
@@ -365,21 +253,10 @@ $_SESSION['send_code'] = random(6,1);
 
 
 <!--
-	作者：1339070342@qq.com
-	时间：2015-01-19
 	描述：服务条款是否选择同意
 -->
 <script type="text/javascript">
 	$(function(){
-		//alert(1);			
-		//alert($('.check').prop( "checked"));
-//		$('.check').click(function(event) {
-//          if($(this).prop( "checked", true)){
-//              $('#zc').prop( "disabled", false);
-//          }
-//         
-//      });
-
 		$('.check').bind("change",function() {
            if($(this).is(':checked')){
                 $('#zc').prop( "disabled", false);

@@ -230,5 +230,34 @@ class UserController extends AdminController {
         }
         return $error;
     }
+    //实名信息审核
+    public function realidentity(){
+         $nickname       =   I('nickname');
+        $map['id_status']  =  2;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_members_status', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '实名待审核列表';
+        $this->display();
+
+    }
+     /**
+     * 设置一条或者多条数据的状态
+     */
+    public function setStatus(){
+        // return parent::setStatus('z_members_status');
+        $map['uid']=I('ids',0);
+        if($User = M('z_members_status')-> where($map)->setField('id_status','1')){
+            $this->success('更新成功！');
+        }
+        
+       
+    }
 
 }

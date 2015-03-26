@@ -1431,10 +1431,11 @@ function sendMail($to, $subject, $content) {
 	if (! $mail->Send ()) {
 		echo "消息不能发送。<p>";
 		echo "邮箱出现错误: " . $mail->ErrorInfo;
-		exit ();
+		// exit ();
 	} else {
-		
-		echo "消息发送成功。O(∩_∩)O";
+		$text="消息发送成功。O(∩_∩)O";
+        return $text;//注册返回
+		echo "消息发送成功。O(∩_∩)O";//问题返回
 	}
 }
 // 这样在模版中调用的话，只需要用 {$vo.title|subtext=10} 这样即可，同时实现了，如果没超出长度，则不追加省略号的效果。
