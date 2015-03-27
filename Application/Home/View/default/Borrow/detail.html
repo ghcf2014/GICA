@@ -123,8 +123,9 @@
 	                    <li>月还本金</li>
 	                    <li>月还利息</li>
 	                    <li>剩余还款</li>
+	                    <li>还款状态</li>
 	                </ul>
-	                <for start="0" end="12" step="1" name="i" >
+	                <for start="0" end="$num" step="1" name="i" >
 	                	<ul class="con2" style="height:53px;">
 		                    <li>{$i+1}</li>
 		                    <li>{$cons['repayment_time'][$i]|date='Y-m-d',###}</li>
@@ -136,6 +137,8 @@
 		                    <li>￥:{$cons['interest'][$i]}</li>
 
 		                    <li>￥:{$cons['remain_money'][$i]}</li>
+
+		                    <li>待还</li>
 		                    
 	                	</ul>	                	
 	                </for>

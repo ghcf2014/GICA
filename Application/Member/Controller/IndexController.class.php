@@ -15,12 +15,11 @@ class IndexController extends MemberController {
   //       $this->display();
 
         is_login() || $this->redirect('Home/User/login');
-        $uid  =   is_login();//获取当前用户UID
+        $uid=is_login();//获取当前用户UID
        
-        /*用户邮箱检测*/
+       /*用户邮箱检测*/
         $mstatus = M('z_members_status');//用户验证状态
         $condition2['uid'] =$uid;
-        $condition2['email_status']=1;
         $member_status=$mstatus->where($condition2)->select();
         // if ($member_status==null){
         //     $this->error('对不起，您的邮箱还未认证！',U('Member/Userinfo/usermailbanding'));
@@ -49,7 +48,7 @@ class IndexController extends MemberController {
         $this->display();
     }
     //文件信息写入数据库
-    function AddFile($fileinfo,$depict){
+    public function AddFile($fileinfo,$depict){
           $i=0;
        // var_dump($fileinfo);
         $uid=is_login(); 

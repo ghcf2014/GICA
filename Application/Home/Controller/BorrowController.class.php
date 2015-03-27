@@ -306,7 +306,7 @@ class BorrowController extends HomeController {
 		$data = $userlist->field ( 'username,reg_time,last_login_time' )->where ( 'id=%s', $uid )->select ();
 		$this->assign ( 'data', $data [0] );
 		$updata = unserialize ( $list [0] ['updata'] );
-		
+		$repayment_type=$list[0]['repayment_type'];
 		//查询当前标详情中的证明材料
 		$filedata=M('z_member_info');
 		$arrs['uid']=$uid;
@@ -358,17 +358,47 @@ class BorrowController extends HomeController {
 		// $condition ['sort_order'] = 1;
 		// $detail = $detail->where ( $condition )->select ();
 
-		for($i=0;$i<=(count($detail)-1);$i++){
-			$cons['allcapital'][]=($detail[$i]['capital']+$detail[$i]['interest']);
-			$cons['remain_money'][]=$cons['allcapital'][$i]*(count($detail)-1-$i);
-			$cons['capital'][]=$detail[$i]['capital'];
-			$cons['interest'][]=$detail[$i]['interest'];
-			$cons['repayment_time'][]=$detail[$i]['repayment_time'];
-			$cons['num']=count($detail);
-		}
+		//还款计划查询
 		$num=count($detail);
-		$this->assign('num',$num);
-		$this->assign('cons',$cons);
+		if($repayment_type==5){
+			for($i=0;$i<=($num-1);$i++){
+				$cons['allcapital'][]=($detail[$i]['capital']+$detail[$i]['interest']);
+				$cons['remain_money'][]=$cons['allcapital'][$i]*(count($detail)-1-$i);
+				$cons['capital'][]=$detail[$i]['capital'];
+				$cons['interest'][]=$detail[$i]['interest'];
+				$cons['repayment_time'][]=$detail[$i]['repayment_time'];
+				$cons['num']=$num;
+			}
+			
+			$this->assign('num',$num);
+			$this->assign('cons',$cons);
+		}elseif($repayment_type==6){
+			for($i=0;$i<=($num-1);$i++){
+				$cons['allcapital'][$i]=round($detail[$i]['interest']);
+				$cons['allcapital'][($num-1)]=round(($detail['1']['capital']*($num))+$detail['1']['interest']);
+				$cons['remain_money'][$i]=round($detail[2]['capital']*($num)+($detail['1']['interest']*($num-$i-1)));
+				$cons['remain_money'][($num-1)]=0;
+
+				$cons['capital'][$i] =0;
+				$cons['capital'][($num-1)]=round($detail['1']['capital']*($num));
+				$cons['interest'][]=round($detail[$i]['interest']);
+				$cons['repayment_time'][]=$detail[$i]['repayment_time'];
+				$cons['num']=$num;
+			}
+			$num=count($detail);
+			$this->assign('num',$num);
+			$this->assign('cons',$cons);
+		}else {
+			$cons['allcapital'][0]=round($detail[0]['capital']+($detail[0]['interest']));
+			$cons['remain_money'][0]=round($detail[0]['capital']+($detail[0]['interest']));
+			$cons['capital'][0]=round($detail[0]['capital']);
+			$cons['interest'][0]=round($detail[0]['interest']);
+			$cons['repayment_time'][0]=$detail[0]['repayment_time'];
+			$num=count($detail);
+			$this->assign('num',$num);
+			$this->assign('cons',$cons);
+		}
+		
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
