@@ -61,17 +61,18 @@ class FinanceController extends HomeController {
 
             $listMember = M('member');
             $condition['gica_member.uid'] =$uid;
-            $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();           
+            $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
+
+            // $list2 =$listMember->join('LEFT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
+            
             $this->assign('list', $list);
             $this->assign('list2', $list2);
+
+            //$borrowinfo = M("z_borrow_info bi")->field('bi.*,ac.type_name,ac.type_nid')->join('z_article_category ac on ac.id= bi.danbao')->where('bi.id='.$id)->find();
+            // if(!is_array($borrowinfo) || ($borrowinfo['borrow_status']==0 && $this->uid!=$borrowinfo['borrow_uid']) ) $this->error("数据有误");
             $map = array('id' => $id);
             $listBorrow  = M('z_borrow_info');
             $list = $listBorrow->where($map)->select();
-            $borrow_uid=$list[0]['borrow_uid'];
-            $memberid['uid']=$borrow_uid;
-            $memberdata=M('z_member_info');
-            $members=$memberdata->where($memberid)->select();
-            $this->assign('members',$members[0]);
             $this->assign('list3',$list);
             if ($list[0]['borrow_uid']!==$uid){
                 $this->display();

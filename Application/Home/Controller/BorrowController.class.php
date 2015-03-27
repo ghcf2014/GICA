@@ -306,6 +306,13 @@ class BorrowController extends HomeController {
 		$data = $userlist->field ( 'username,reg_time,last_login_time' )->where ( 'id=%s', $uid )->select ();
 		$this->assign ( 'data', $data [0] );
 		$updata = unserialize ( $list [0] ['updata'] );
+		
+		//查询当前标详情中的证明材料
+		$filedata=M('z_member_info');
+		$arrs['uid']=$uid;
+		$file=$filedata->where($arrs)->select();
+		$arry=array_filter($file[0]);
+		$this->assign('files',$arry);
 		$this->assign ( 'updata', $updata );
 		$this->assign ( 'list3', $list );
 		// 查询用户资料审核状态
@@ -351,15 +358,17 @@ class BorrowController extends HomeController {
 		// $condition ['sort_order'] = 1;
 		// $detail = $detail->where ( $condition )->select ();
 
-		for($i=1;$i<=intval($detail[0]['total']);$i++){
-			
-			$detail1 = M ('z_investor_detail');
-			$condition1 ['sort_order'] = $i;
-		    $condition1 ['borrow_id'] = $id;
-		    $dd[$i]= $detail1->field ( 'id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital')->where ( $condition1 )->group ( 'sort_order' )->select ();
+		for($i=0;$i<=(count($detail)-1);$i++){
+			$cons['allcapital'][]=($detail[$i]['capital']+$detail[$i]['interest']);
+			$cons['remain_money'][]=$cons['allcapital'][$i]*(count($detail)-1-$i);
+			$cons['capital'][]=$detail[$i]['capital'];
+			$cons['interest'][]=$detail[$i]['interest'];
+			$cons['repayment_time'][]=$detail[$i]['repayment_time'];
+			$cons['num']=count($detail);
 		}
-
-		$this->assign('list1',$dd);
+		$num=count($detail);
+		$this->assign('num',$num);
+		$this->assign('cons',$cons);
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
