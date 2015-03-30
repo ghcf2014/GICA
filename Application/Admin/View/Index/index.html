@@ -12,43 +12,60 @@
     <!-- 主体 -->
     <div id="indexMain" class="index-main">
        <!-- 插件块 -->
-       <div class="canvasmain"><canvas id="myChart" width="888" height="400"></canvas><div class="canvas_r">
+       <br/>
+       会员登录曲线图
+       <div class="canvasmain"><canvas id="myChart"  width="800" height="300"></canvas><div class="canvas_r">
        <canvas id="canvas" height="250" width="250"></canvas><div class="canvascode">
        <ul>
-          <li><span class="canvas1"></span>2项独立页</li>
-          <li><span class="canvas4"></span>7篇文章</li>
-          <li><span class="canvas3"></span>4个分类</li>
-          <li><span class="canvas2"></span>0条评论</li>
+          <li><span class="canvas1"></span>充值(元)2000000</li>
+          <li><span class="canvas4"></span>提现(元)7</li>
+          <li><span class="canvas3"></span>冻结(元)4</li>
+          <li><span class="canvas2"></span>奖励(元)0</li>
         </ul></div></div></div>
        <div class="container-span">{:hook('AdminIndex')}</div>
     </div>
 
 <script type="text/javascript">
 //线形图
+var myDate = new Date();
+myDate.getYear();        //获取当前年份(2位)
+myDate.getFullYear();    //获取完整的年份(4位,1970-????)
+myDate.getMonth();       //获取当前月份(0-11,0代表1月)
+myDate.getDate();        //获取当前日(1-31)
+myDate.getDay();         //获取当前星期X(0-6,0代表星期天)
+myDate.getTime();        //获取当前时间(从1970.1.1开始的毫秒数)
+myDate.getHours();       //获取当前小时数(0-23)
+myDate.getMinutes();     //获取当前分钟数(0-59)
+myDate.getSeconds();     //获取当前秒数(0-59)
+myDate.getMilliseconds();    //获取当前毫秒数(0-999)
+myDate.toLocaleDateString();     //获取当前日期
+var mytime=myDate.toLocaleTimeString();     //获取当前时间
+myDate.toLocaleString( );        //获取日期与时间
 var data = {
-	labels : ["3月7日","3月7日","3月7日","3月7日","3月7日","3月7日","今天"],
+	labels : [myDate.getDate()-6+"日",myDate.getDate()-5+"日",myDate.getDate()-4+"日",myDate.getDate()-3+"日",myDate.getDate()-2+"日",myDate.getDate()-1+"日",myDate.getDate()+"日"],
 	datasets : [
 		{
 			fillColor : "rgba(220,220,220,0.5)",
 			strokeColor : "rgba(220,220,220,1)",
 			pointColor : "rgba(220,220,220,1)",
 			pointStrokeColor : "#000",
-			data : [65,59,90,81,56,55,40]
-		},
-		{
-			fillColor : "rgba(151,187,205,0.5)",
-			strokeColor : "rgba(151,187,205,1)",
-			pointColor : "rgba(151,187,205,1)",
-			pointStrokeColor : "#000",
-			data : [28,48,40,19,96,27,100]
+			data : ["{$i7}","{$i6}","{$i5}","{$i4}","{$i3}","{$i2}","{$i1}"]
+
 		}
+		// ,
+		// {
+		// 	fillColor : "rgba(151,187,205,0.5)",
+		// 	strokeColor : "rgba(151,187,205,1)",
+		// 	pointColor : "rgba(151,187,205,1)",
+		// 	pointStrokeColor : "#000",
+		// 	data : [1,2,3,4,5,6,7]
+		// }
 	]
 }
 
 	var myDoughnut = new Chart(document.getElementById("myChart").getContext("2d")).Line(data);
 </script>
 <script>
-
 //饼形图
 var doughnutData = [
 				{

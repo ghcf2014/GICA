@@ -197,6 +197,9 @@ class UserController extends AdminController {
                 if(!M('Member')->add($user)){
                     $this->error('用户添加失败！');
                 } else {
+                    $m=M("z_member_money");//关联会员资金表
+                    $m->uid=$uid;
+                    $count=$m->add();
                     $this->success('用户添加成功！',U('index'));
                 }
             } else { //注册失败，显示错误信息
@@ -246,6 +249,66 @@ class UserController extends AdminController {
         $this->meta_title = '实名待审核列表';
         $this->display();
 
+    }
+    public function realidentity_audit($ids = 0){
+        $map['uid']  = $ids;
+        $list  = $this->lists('z_member_info', $map);
+        int_to_string($list);
+        $this->id = $id;
+        $this->assign('_list', $list);
+        $this->meta_title = '真实信息审核';
+        $this->display();
+
+    }
+    public function audit_save($id = 0){
+        $map['id']  = $id;
+        $m = M ( 'z_borrow_info' ); // 用户头像
+        $s =$m ->where($map)->select();
+
+        $s=$s[0]['borrow_status'];
+
+        $sta = $_POST ["group_id"];
+       
+       
+        if($sta ==1){
+             if ($s==0) {
+                $sb=2;
+             }
+             if ($s==2) {
+                $sb=4;
+             }
+             if ($s==4) {
+                $sb=6;
+             }
+        }
+        if ($sta ==0) {
+            if ($s==0) {
+                $sb=1;
+             }
+             if ($s==2) {
+                $sb=3;
+             }
+             if ($s==4) {
+                $sb=5;
+             }
+        }
+
+        
+        $data ['borrow_status']=$sb ;
+        // 保存当前数据对象
+        if ($m = $m->where ( $map )->save ( $data )) { // 保存成功
+                                                             // 成功提示
+            $this->success('操作成功');
+        } else {
+            // 失败提示
+            $this->error ( L ( '操作失败' ) );
+        }
+        $list   = $this->lists('z_borrow_info', $map);
+        int_to_string($list);
+        
+        $this->assign('_list', $list);
+        $this->meta_title = '借款信息';
+        $this->display();
     }
      /**
      * 设置一条或者多条数据的状态

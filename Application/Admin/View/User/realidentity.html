@@ -50,8 +50,8 @@
 			<td><span>{:long2ip($vo['last_login_ip'])}</span></td>
 			<td>{$vo.status_text}</td>
 			<td>
-                <a href="#">详情</a>
-                <a href="{:U('User/setStatus?ids='.$vo['uid'].'&id_status=1')}" class="ajax-get">审核</a>
+                <a href="{:U('User/realidentity_audit?ids='.$vo['uid'].'&id_status=1')}">详情</a>
+                <a href="{:U('User/setStatus?ids='.$vo['uid'].'&id_status=1')}" class="ajax-get">审核通过</a>
                 </td>
 		</tr>
 		</volist>

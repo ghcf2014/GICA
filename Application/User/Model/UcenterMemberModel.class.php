@@ -209,6 +209,16 @@ class UcenterMemberModel extends Model{
 			'last_login_ip'   => get_client_ip(1),
 		);
 		$this->save($data);
+
+		//会员登录日志
+		$mlogin=M(z_member_login);
+		$datalogin = array(
+			'uid'              => $uid,
+			'add_time' => NOW_TIME,
+			'ip'   => get_client_ip(),
+		);
+		$mlogin=$mlogin->add($datalogin);
+
 	}
 
 	/**
