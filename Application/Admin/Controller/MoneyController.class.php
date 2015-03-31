@@ -309,5 +309,36 @@ class MoneyController extends AdminController {
         $this->meta_title = '资金信息';
         $this->display();
     }
+    public function account_save($id=0){
+        $nickname       =   I('nickname');
+        $map['status']  =   array('egt',0);
+        $map['uid']  =  $id;
+        if(is_numeric($nickname)){
+            $map['uid|nickname']=   array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
+        }else{
+            $map['nickname']    =   array('like', '%'.(string)$nickname.'%');
+        }
+
+        $list   = $this->lists('z_member_money', $map);
+        int_to_string($list);
+        $this->assign('_list', $list);
+        $this->meta_title = '资金信息变更';
+        $this->display();
+    }
+    public function account_save_add(){
+        $mmoney = M ( 'z_member_money' );
+        $data['account_money'] =$_POST['account_money'];
+        $data['money_freeze'] =$_POST['money_freeze'];
+        $data['money_collect'] =$_POST['money_collect'];
+        $data['borrow_vouch_limit'] =$_POST['borrow_vouch_limit'];
+        $data['credit_limit'] =$_POST['credit_limit'];
+        $map_uid['uid'] =$_POST['uid'];
+
+        if($result=$mmoney->where($map_uid)->save($data)){
+            $this->success('变更成功！');
+        }else{
+            $this->error('变更失败！');
+        }
+    } 
 
 }

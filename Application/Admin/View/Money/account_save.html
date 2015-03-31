@@ -1,0 +1,59 @@
+<extend name="Public/base"/>
+
+<block name="body">
+    <div class="main-title">
+        <h2>用户资金变更</h2>
+    </div>
+    <form action="{:U(account_save_add)}" method="post" class="form-horizontal">
+    <volist name="_list" id="vo">
+        <div class="form-item">
+            <label class="item-label">用户名<span class="check-tips">（用户名会作为默认的昵称）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="username" value="{$vo.uid|get_uname}">
+                <input type="text" class="text input-large" name="uid" value="{$vo.uid}" style="display:none;">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">可用余额<span class="check-tips">（用户可以投资使用的真实金额）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="account_money" value="{$vo.account_money}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">冻结金额</label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="money_freeze" value="{$vo.money_freeze}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">待收金额<span class="check-tips">（用户借出去，未到期收回的金额）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="money_collect" value="{$vo.money_collect}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">借款担保总额<span class="check-tips">（用户在担保方的担保金额）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="borrow_vouch_limit" value="{$vo.borrow_vouch_limit}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">信用总额<span class="check-tips">（用户邮箱，用于找回密码等安全操作）</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="credit_limit" value="{$vo.credit_limit}">
+            </div>
+        </div>
+        <div class="form-item">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确定变更</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+        </div>
+     </volist>
+    </form>
+</block>
+
+<block name="script">
+    <script type="text/javascript">
+        //导航高亮
+        highlight_subnav('{:U('Money/account_save')}');
+    </script>
+</block>

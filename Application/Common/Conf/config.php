@@ -31,8 +31,8 @@ return array(
 
     /* 数据库配置 */
     'DB_TYPE'   => 'mysql', // 数据库类型
-    'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
-    // 'DB_HOST'   => '59.188.8.43',
+    // 'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
+    'DB_HOST'   => '59.188.8.43',
     'DB_NAME'   => 'gica', // 数据库名
     'DB_USER'   => 'root', // 用户名
     'DB_PWD'    => 'root',  // 密码
@@ -58,12 +58,12 @@ return array(
     //  'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
 
       // 配置邮件发送服务器
-	 'MAIL_HOST' =>'smtp.exmail.qq.com',
+	 // 'MAIL_HOST' =>'smtp.exmail.qq.com',
 	 'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
-	 'MAIL_USERNAME' =>'admin@ghcf.com.cn',
+	 // 'MAIL_USERNAME' =>'admin@ghcf.com.cn',
 	 'MAIL_FROM' =>'admin@ghcf.com.cn',
 	 'MAIL_FROMNAME' =>'工合财富',
-	 'MAIL_PASSWORD' =>'g121019',
+	 // 'MAIL_PASSWORD' =>'g121019',
 	 'MAIL_CHARSET' =>'utf-8',
 	 'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
 

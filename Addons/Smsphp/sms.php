@@ -59,8 +59,13 @@ if(empty($_SESSION['send_code']) or $send_code!=$_SESSION['send_code']){
 	//防用户恶意请求
 	exit('请求超时，请刷新页面后重试');
 }
-
-$post_data = "account=cf_gonghecaifu&password=1234567&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
+// $account=C ( 'SMS_ACCOUNT' );?
+// $password=C ( 'SMS_PASSWORD' );
+// $account="cf_gonghecaifu";
+// $password="1234567";
+// echo $account;
+// $post_data = "account=cf_gonghecaifu&password=1234567&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
+$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
 //密码可以使用明文密码或使用32位MD5加密
 $gets =  xml_to_array(Post($post_data, $target));
 if($gets['SubmitResult']['code']==2){

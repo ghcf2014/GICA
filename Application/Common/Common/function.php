@@ -1428,6 +1428,7 @@ function sendMail($to, $subject, $content) {
 	$mail->Subject = $subject; // 邮件主题
 	$mail->Body = $content; // 邮件内容
 	$mail->AltBody = "This is the body in plain text for non-HTML mail clients"; // 邮件正文不支持HTML的备用显示
+	echo "消息发送成功。".C ( 'MAIL_SMTPAUTH' )."O(∩_∩)O";
 	if (! $mail->Send ()) {
 		echo "消息不能发送。<p>";
 		echo "邮箱出现错误: " . $mail->ErrorInfo;
@@ -1444,48 +1445,72 @@ function subtext($text, $length) {
 		return mb_substr ( $text, 0, $length, 'utf8' ) . '...';
 	return $text;
 }
-
 // 短信发送函数方法
-function sendsms($mob, $content) {
-	$uid = $msgconfig ['sms'] ['user3']; // 分配给你的账号
-	$pwd = $msgconfig ['sms'] ['pass3']; // 密码
-	$mob = $mob; // 发送号码用逗号分隔
-	$content = urlencode ( auto_charset ( $content, "utf-8", 'gbk' ) ); // 短信内容
+// function sendsms($mob, $content) {
+// 	$uid = $msgconfig ['sms'] ['user3']; // 分配给你的账号
+// 	$pwd = $msgconfig ['sms'] ['pass3']; // 密码
+// 	$mob = $mob; // 发送号码用逗号分隔
+// 	$content = urlencode ( auto_charset ( $content, "utf-8", 'gbk' ) ); // 短信内容
 	
-	$sendurl = "http://106.ihuyi.cn/webservice/sms.php?method=Submit&";
-	$sendurl .= 'account=' . $serialNumber . '&password=' . $pwd . '&mobile=' . $mob . '&content=' . $content;
-	$d = @file_get_contents ( $sendurl, false );
-	
-	preg_match_all ( '/
-    <response>
-    (.*)<\/response>/isU', $d, $arr );
-	
-	foreach ( $arr [1] as $k => $v ) {
-		preg_match_all ( '#
-    <error>(.*)</error>
-    #isU',$v,$ar[$k]);
-    $data[]=$ar[$k][1];
-    }
+// 	$sendurl = "http://106.ihuyi.cn/webservice/sms.php?method=Submit&";
 
-    if($data[0][0]=="0"){
-    return true;
-    echo "消息发送成功。O(∩_∩)O";
-    }else{
-    return false;
-    
-    echo "消息发送失败。";
-    }
-    #isU', $v, $ar [$k] );
-		$data [] = $ar [$k] [1];
-	}
+// 	$sendurl .= 'account=cf_gonghecaifu&password=1234567&mobile=' . $mob . '&content=' . $content;
+// 	$d = @file_get_contents ( $sendurl, false );
 	
-	if ($data [0] [0] == "0") {
+// 	preg_match_all ( '/
+//     <response>
+//     (.*)<\/response>/isU', $d, $arr );
+	
+// 	foreach ( $arr [1] as $k => $v ) {
+// 		preg_match_all ( '#
+//     <error>(.*)</error>
+//     #isU',$v,$ar[$k]);
+//     $data[]=$ar[$k][1];
+//     }
+
+//     if($data[0][0]=="0"){
+//     return true;
+//     echo "消息发送成功。O(∩_∩)O";
+//     }else{
+//     return false;
+    
+//     echo "消息发送失败。";
+//     }
+//     #isU', $v, $ar [$k] );
+// 		$data [] = $ar [$k] [1];
+// 	}
+	
+// 	if ($data [0] [0] == "0") {
+// 		return true;
+// 		echo "消息发送成功。O(∩_∩)O";
+// 	} else {
+// 		return false;
+// 		echo "消息发送失败。";
+// 	}
+	function Post($curlPost,$url){
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $url);
+		curl_setopt($curl, CURLOPT_HEADER, false);
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($curl, CURLOPT_NOBODY, true);
+		curl_setopt($curl, CURLOPT_POST, true);
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $curlPost);
+		$return_str = curl_exec($curl);
+		curl_close($curl);
+		return $return_str;
+    }
+    function sendsms($mobile,$content){
+    	$account="cf_gonghecaifu";
+        $password="1234567";
+    	$target = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
+    	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
+//密码可以使用明文密码或使用32位MD5加密
+        $gets =Post($post_data, $target);
+  //       $gets['SubmitResult']['msg']='已发送';
+		// echo $gets['SubmitResult']['msg'];
 		return true;
-		echo "消息发送成功。O(∩_∩)O";
-	} else {
-		return false;
-		echo "消息发送失败。";
-	}
+    }
+    
     function isPersonalCard($username) {
         if (!$username) {
             return false;

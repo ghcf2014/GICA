@@ -171,6 +171,9 @@ class UserinfoController extends MemberController {
 			if ($_POST ['mobile'] == null) {
 				$this->error ( '您未输入变更的手机号码！' );
 			}
+
+            
+
 			
 			$mList = $m->select ();
 			// 如果有相同的邮箱就终止循环
@@ -717,5 +720,16 @@ class UserinfoController extends MemberController {
 			$this->error ( '修改失败！' );
 		}
 	}
+	public function sms() {
+
+	if(sendsms($mob,$send_code)){
+				$this->success ( '已发送！' );
+			}else {
+				// 失败提示
+				$this->error ( '发送失败' );
+			}
+	exit();
+	}
 	
+
 }
