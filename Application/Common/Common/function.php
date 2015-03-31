@@ -1494,6 +1494,20 @@ function subtext($text, $length) {
 // 		return false;
 // 		echo "消息发送失败。";
 // 	}
+	// function random($length = 6 , $numeric = 0) {
+	// 	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
+	// 	if($numeric) {
+	// 		$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
+	// 	} else {
+	// 		$hash = '';
+	// 		$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
+	// 		$max = strlen($chars) - 1;
+	// 		for($i = 0; $i < $length; $i++) {
+	// 			$hash .= $chars[mt_rand(0, $max)];
+	// 		}
+	// 	}
+	// 	return $hash;
+	// }
 	function Post($curlPost,$url){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);
@@ -1506,18 +1520,46 @@ function subtext($text, $length) {
 		curl_close($curl);
 		return $return_str;
     }
+    function xml_to_array($xml){
+		$reg = "/<(\w+)[^>]*>([\\x00-\\xFF]*)<\\/\\1>/";
+		if(preg_match_all($reg, $xml, $matches)){
+			$count = count($matches[0]);
+			for($i = 0; $i < $count; $i++){
+			$subxml= $matches[2][$i];
+			$key = $matches[1][$i];
+				if(preg_match( $reg, $subxml )){
+					$arr[$key] = xml_to_array( $subxml );
+				}else{
+					$arr[$key] = $subxml;
+				}
+			}
+		}
+		return $arr;
+	}
     function sendsms($mobile,$content){
-    	$account="cf_gonghecaifu";
-        $password="1234567";
+    	$mobile = $_POST['mobile'];
+        $send_code = $_POST['send_code'];
+        // $mobile_code = random(4,1);
+    	$account=C ( 'SMS_ACCOUNT' );
+		$password=C ( 'SMS_PASSWORD' );
+
+    	// $account="cf_gonghecaifu";
+        //    $password="1234567";
     	$target = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
     	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
-//密码可以使用明文密码或使用32位MD5加密
-        $gets =Post($post_data, $target);
+
+        //密码可以使用明文密码或使用32位MD5加密
+        $gets =  xml_to_array(Post($post_data, $target));
   //       $gets['SubmitResult']['msg']='已发送';
+		// echo $gets['SubmitResult']['msg'];
+		if($gets['SubmitResult']['code']==2){
+			$_SESSION['mobile'] = $mobile;
+			$_SESSION['mobile_code'] = $mobile_code;
+		}
+		$gets['SubmitResult']['msg']='已发送';
 		// echo $gets['SubmitResult']['msg'];
 		return true;
     }
-    
     function isPersonalCard($username) {
         if (!$username) {
             return false;

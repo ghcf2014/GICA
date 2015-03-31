@@ -724,11 +724,12 @@ class UserinfoController extends MemberController {
 
 	if(sendsms($mob,$send_code)){
 				$this->success ( '已发送！' );
+				// exit();
 			}else {
 				// 失败提示
 				$this->error ( '发送失败' );
 			}
-	exit();
+	
 	}
 	
 

@@ -2,7 +2,7 @@
 session_start();
 
 header("Content-type:text/html; charset=UTF-8");
-
+// 发送URL的代码
 function Post($curlPost,$url){
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_URL, $url);
@@ -15,6 +15,7 @@ function Post($curlPost,$url){
 		curl_close($curl);
 		return $return_str;
 }
+//校验格式代码
 function xml_to_array($xml){
 	$reg = "/<(\w+)[^>]*>([\\x00-\\xFF]*)<\\/\\1>/";
 	if(preg_match_all($reg, $xml, $matches)){
@@ -59,11 +60,8 @@ if(empty($_SESSION['send_code']) or $send_code!=$_SESSION['send_code']){
 	//防用户恶意请求
 	exit('请求超时，请刷新页面后重试');
 }
-// $account=C ( 'SMS_ACCOUNT' );?
-// $password=C ( 'SMS_PASSWORD' );
-// $account="cf_gonghecaifu";
-// $password="1234567";
-// echo $account;
+$account="cf_gonghecaifu";
+$password="1234567";
 // $post_data = "account=cf_gonghecaifu&password=1234567&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
 $post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
 //密码可以使用明文密码或使用32位MD5加密

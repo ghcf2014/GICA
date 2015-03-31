@@ -5,51 +5,76 @@
 <title>跳转提示</title>
 <style type="text/css">
 *{ padding: 0; margin: 0; }
-body{ background: #30333F; font-family: '微软雅黑'; color: #fff; font-size: 16px; }
-.system-message{ padding: 24px 48px; }
-.system-message h1{ font-size: 80px; font-weight: normal; line-height: 120px; margin-bottom: 12px }
-.system-message .jump{ padding-top: 10px;margin-bottom:20px}
-.system-message .jump a{ color: #333;}
-.system-message .success,.system-message .error{ line-height: 1.8em; font-size: 36px }
-.system-message .detail{ font-size: 12px; line-height: 20px; margin-top: 12px; display:none}
-#wait {
-    font-size:46px;
+body{ background: #f6f6f6; font-family: '微软雅黑'; color: #fff; font-size: 16px; }
+.nymain8 dl {
+    overflow: hidden;
+    margin: 0px;
 }
-#btn-stop,#href{
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 16px;
-    line-height: 18px;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 0 none;
-    background-color: #308B04;
-    padding: 10px 20px;
-    color: #fff;
-    font-weight: bold;
-    border-color: transparent;
-    text-decoration:none;
+.nymain8 dt {
+    font-size: 18px;
+    padding: 20px 30px;
+    border-bottom: 1px solid #E1E1E1;
+}
+.nymain8 dd {
+    display: block;
+    padding: 30px 30px;
+    float: left;
 }
 
-#btn-stop:hover,#href:hover{
-    background-color: #43BD08;
+.nymain8 {
+    /*top: 50%;*/
+    width: 800px;
+    margin: 11%  auto 24%;
+    overflow: hidden;
+    height:auto;
+    color: #666;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.ifbox18 {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    /*background: url("../images/df.jpg") repeat-x scroll 0% 0% transparent;*/
+    background:#fff;
+}
+.boxmain8 {
+    overflow: hidden;
+    padding: 15px;
+}
+.Prompt_x {
+display: inline-block;
+width: 68px;
+height: 68px;
+background-image: url(../Public/Home/images/pic_rw.png);
+background-repeat: no-repeat;
+background-position: 0 0;
+}
+.Prompt_o {
+display: inline-block;
+width: 68px;
+height: 68px;
+background-image: url(../Public/Home/images/pic_rw.png);
+background-repeat: no-repeat;
+background-position: -68px 0px;
 }
 </style>
 </head>
 <body>
-<div class="system-message">
-<h1>恭喜您!</h1>
-<p class="success"><?php echo($message); ?></p>
-<p class="detail"></p>
-<p class="jump">
-<b id="wait"><?php echo($waitSecond); ?></b> 秒后页面将自动跳转
-</p>
-<div>
-    <a id="href" id="btn-now" href="<?php echo($jumpUrl); ?>">立即跳转</a> 
-    <button id="btn-stop" type="button" onclick="stop()">停止跳转</button> 
-</div>
-</div>
+<div class="nymain8">
+            <div class="ifbox18">
+                <dl>
+                <dt>提示信息</dt>
+                    <dd>
+                        <span class="Prompt_o"></span> 
+                    </dd>
+                    <dd>
+                    <h2><?php echo($message); ?></h2>
+                        <p>
+                        系统将在 <span id="wait" style="color:blue;font-weight:bold"><?php echo($waitSecond); ?></span> 秒后自动跳转,如果不想等待,直接点击 <a id="href" id="btn-now" href="<?php echo($jumpUrl); ?>">【这里】</a>跳转 <br>或者<button id="btn-stop" type="button" onclick="stop()">【停止跳转】</button> 
+                        </p> 
+                    </dd>
+                </dl>
+            </div>
+        </div>
 <script type="text/javascript">
 (function(){
  var wait = document.getElementById('wait'),href = document.getElementById('href').href;
@@ -59,7 +84,7 @@ body{ background: #30333F; font-family: '微软雅黑'; color: #fff; font-size: 
      		location.href = href;
      		clearInterval(interval);
      	};
-     }, 1000);
+     }, 3000);
   window.stop = function (){
          console.log(111);
             clearInterval(interval);
@@ -68,3 +93,4 @@ body{ background: #30333F; font-family: '微软雅黑'; color: #fff; font-size: 
 </script>
 </body>
 </html>
+
