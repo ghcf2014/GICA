@@ -31,8 +31,8 @@ class IndexController extends HomeController {
 				'category_id' => 43
 		);
 		$lists = D ( 'Document' )->where ( $map )->limit ( 6 )->select ();
-		$lists1 = D ( 'Document' )->where ( $map1 )->lists ( null );
-		$lists3 = D ( 'Document' )->where ( $map2 )->limit ( 6 )->select ();
+		$lists1 = D ( 'Document' )->where ( $map1 )->limit ( 7 )->select ();
+		$lists3 = D ( 'Document' )->where ( $map2 )->limit ( 7 )->select ();
 		
 		$lists2 = D ( 'z_borrow_investor' )->field ( 'investor_uid,sum(investor_capital)investor_capital' )->order ( 'investor_capital desc' )->group ( 'investor_uid' )->select ();
 		

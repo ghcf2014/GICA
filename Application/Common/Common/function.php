@@ -504,24 +504,28 @@ function get_username($uid = 0) {
 	}
 	return $name;
 }
+//ID返回用户名
 function get_uname($uid = 0) {
 	$map = $uid;
 	$name = M ( 'member' )->field ( 'nickname' )->find ( $map );
 	// var_dump($name['nickname']);
 	return $name ['nickname'];
 }
+//ID返回用户真实姓名
 function get_real_name($uid = 0) {
 	$map = $uid;
 	$name = M ( 'z_member_info' )->field ( 'real_name' )->find ( $map );
 	// var_dump($name['nickname']);
 	return $name ['real_name'];
 }
+//ID返回借款用户名
 function get_borrow_username($borrow_uid = 0) {
 	$map = $borrow_uid;
 	$name = M ( 'member' )->field ( 'nickname' )->find ( $map );
 	// var_dump($name['nickname']);
 	return $name ['nickname'];
 }
+//ID返回投资用户名
 function get_investor_username($investor_uid = 0) {
 	$map = $investor_uid;
 	$name = M ( 'member' )->field ( 'nickname' )->find ( $map );
@@ -534,6 +538,7 @@ function get_borrow_name($id = 0) {
 	// var_dump($name['nickname']);
 	return $name ['borrow_name'];
 }
+//标类型ID转换为中文
 function get_borrow_type_name($id = 0) {
 	if($id == 1){
 		$name='信用标';
@@ -553,6 +558,7 @@ function get_borrow_type_name($id = 0) {
 	// var_dump($name['nickname']);
 	return $name;
 }
+//返回资金分类记录
 function get_jilu_type($type = 0) {
 	//收入
 	if($type == 101){$name='线下充值';}
@@ -573,6 +579,7 @@ function get_jilu_type($type = 0) {
 	// var_dump($name['nickname']);
 	return $name;
 }
+//返回标还款方式
 function get_repayment_type($type = 0) {
 	if($type == 1){
 		$name='按月还款';

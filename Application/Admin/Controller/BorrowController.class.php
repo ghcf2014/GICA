@@ -1,12 +1,27 @@
 <?php
 
 namespace Admin\Controller;
+use Admin\Model\AuthGroupModel;
 use User\Api\UserApi;
 
 /**
  * 后台用户控制器
  */
 class BorrowController extends AdminController {
+     /* 保存允许访问的公共方法 */
+    static protected $allow = array( 'draftbox','mydocument');
+
+    private $cate_id        =   null; //文档分类id
+
+    /**
+     * 检测需要动态判断的文档类目有关的权限
+     *
+     * @return boolean|null
+     *      返回true则表示当前访问有权限
+     *      返回false则表示当前访问无权限
+     *      返回null，则会进入checkRule根据节点授权判断权限
+     *
+     */
 
     /**
      * 借款管理首页
@@ -479,6 +494,14 @@ class BorrowController extends AdminController {
         $this->assign('_list', $list);
         $this->meta_title = '已借款申请信息';
         $this->display();
+    }
+    public function setStatus(){
+        // return parent::setStatus('z_members_status');
+        $map['id']=I('id',0);
+        $st=I('id_status',0);
+        if($User = M('z_borrow_apply')-> where($map)->setField('status',$st)){
+            $this->success('更新成功！');
+        } 
     }
 
 }

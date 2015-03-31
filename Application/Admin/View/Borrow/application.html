@@ -31,7 +31,7 @@
 		<th class="">申请借款时间</th>
 		<th class="">借款期限</th>
 		<th class="">标类型</th>
-		<th class="">操作</th>
+		<th class="">审核操作</th>
 		</tr>
     </thead>
     <tbody>
@@ -47,7 +47,9 @@
 			<td><span>{$vo.borrow_duration}月</span></td>
 			<td>{$vo.borrow_type}</td>
 			<td>
-				<a href="{:U('Borrow/application_audit?id='.$vo['id'])}" class="authorize">审核</a>
+				<a href="{:U('Borrow/setStatus?id='.$vo['id'].'&id_status=1')}" class="ajax-get">【通过】</a>
+                <a href="{:U('Borrow/setStatus?id='.$vo['id'].'&id_status=0')}" class="ajax-get">【不过】</a>
+            </td>
                 </td>
 		</tr>
 		</volist>

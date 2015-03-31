@@ -26,7 +26,6 @@ class UserController extends AdminController {
         $this->meta_title = '用户信息';
         $this->display();
     }
-
     /**
      * 修改昵称初始化
      */
@@ -316,11 +315,10 @@ class UserController extends AdminController {
     public function setStatus(){
         // return parent::setStatus('z_members_status');
         $map['uid']=I('ids',0);
-        if($User = M('z_members_status')-> where($map)->setField('id_status','1')){
+        $st=I('id_status',0);
+        if($User = M('z_members_status')-> where($map)->setField('id_status',$st)){
             $this->success('更新成功！');
-        }
-        
-       
-    }
+        } 
+    } 
 
 }
