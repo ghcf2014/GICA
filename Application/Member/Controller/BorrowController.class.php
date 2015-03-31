@@ -366,6 +366,25 @@ class BorrowController extends MemberController {
 	}
 	public function myborrowapply(){
 		$uid=is_login();
+		$arrs['uid']=$uid;
+		$borrowfile=M('z_members_status');
+		$borrowfile_status=$borrowfile->where($arrs)->select();
+		$files=$borrowfile_status[0];
+		if ($files['identity_report']==0){
+			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
+		}
+		if ($files['work_report']==0){
+			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
+		}
+		if ($files['living_report']==0){
+			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
+		}
+		if ($files['income_report']==0){
+			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
+		}
+		if ($files['credit_report']==0){
+			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
+		}
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
 		$this->assign('list',$result);

@@ -76,51 +76,30 @@ class BorrowController extends HomeController {
 		$condition['apply_uid']=$uid;
 		//没有申请
 		$applydata=$data->where($condition)->select();
-		if (is_array($applydata)==true){
-			//申请审核中
-			$applydata1=$data->where('status=0 and apply_uid=%s',$uid)->select();
-			if (is_array($applydata1)==false){
+		if ($applydata){
+			//申请不通过
+			$condition['status']=2;
+			$applydata1=$data->where($condition)->select();
+			if (!$applydata1){
 				//申请通过
-				$applydata2=$data->where('status=1 and apply_uid=%s',$uid)->select();
-				if (is_array($applydata2)==false){
-					$this->display ();
-				}else{
-					$this->redirect('Home/Borrow/index');
+				$condition['status']=3;
+				$applydata2=$data->where($condition)->select();
+				if (!$applydata2){
+					
+					$this->redirect('Member/Borrow/myborrowapply');
 				}
-			}else{
-				$this->error('您的申请正在审核中...',U('Member/Borrow/checkingapply'));
 			}
-		}else {
-			$arrs['uid']=$uid;
-			$borrowfile=M('z_members_status');
-			$borrowfile_status=$borrowfile->where($arrs)->select();
-			$files=$borrowfile_status[0];
-			$this->assign('file',$files);
-			$this->display ();
-		}	
-	}
-	public function borrowapply_save(){
-		$uid=is_login();
-		//资料上传查询
+		}
 		$arrs['uid']=$uid;
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
 		$files=$borrowfile_status[0];
-		if ($files['identity_report']==0){
-			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
-		}
-		if ($files['work_report']==0){
-			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
-		}
-		if ($files['living_report']==0){
-			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
-		}
-		if ($files['income_report']==0){
-			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
-		}
-		if ($files['credit_report']==0){
-			$this->error('您有部分证明材料未上传',U('Borrow/borrowfile_upload'));
-		}
+		$this->assign('file',$files);
+		$this->display ();
+	
+	}
+	public function borrowapply_save(){
+		$uid=is_login();
 		$arr=array(
 			'apply_ip'=>ip2long($_SERVER['REMOTE_ADDR']),
 			'apply_uid'=>$uid
@@ -650,6 +629,17 @@ class BorrowController extends HomeController {
 				$arr1=array_pop($sta);
 				$result=$borrowfile_status->where($arrid)->save($arr1);
 				if ($result){
+					$status['uid']=$uid;
+					$status['identity_report']==1;
+					$status['work_report']==1;
+					$status['living_report']==1;
+					$status['income_report']==1;
+					$status['credit_report']==1;
+					$borrowfile=M('z_members_status');
+					$borrowfile_status=$borrowfile->where($status)->select();
+					if($borrowfile_status){
+						$this->redirect('Borrow/borrowapply');
+					}
 					$this->success('上传成功！',U('Borrow/borrowfile_upload'));
 				}else{
 					$this->error('资料上传失败，请认证核对资料');
