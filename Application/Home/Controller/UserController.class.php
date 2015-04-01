@@ -46,10 +46,6 @@ class UserController extends HomeController {
 			$uid = $User->register($username, $password, $email,$mobile);
 			
 			if(0 < $uid){ //注册成功
-				$m=M("z_member_money");//关联会员资金表
-           		$m->uid=$uid;
-           		$count=$m->add();
-
            		// 如果推荐人不为空
 				 if ($reffer != null) {
 					$userinfo = M ( 'ucenter_member' )->field ( "id" )->where ( $reffer )->select ();

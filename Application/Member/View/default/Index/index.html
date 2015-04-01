@@ -12,7 +12,7 @@
 							condition="$vo.logo_url eq ''"> <img
 							src="__PUBLIC__/Home/images/default-img.jpg" width="200"
 							height="200"> <elseif condition="$vo.logo_url  neq ''" />
-						<img src="Uploads/User/{$vo.logo_url}" width="200" height="200" />
+						<img src="Uploads/User/{$vo.logo_url|logo_url}" width="200" height="200" />
 						</if> </volist>
 						<p>
 							<a id="test2">更换图像</a>
@@ -30,7 +30,7 @@
 						注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span>
 					</p>
 					<p>
-						所属客服：<span>客服-丫丫</span>
+						所属客服：<span>璐璐<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=380003832&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:380003832:51" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span>
 					</p>
 					<p>
 						登录时间：<span>{$vo.last_login_time|date='Y-m-d H:i:s',###}</span>

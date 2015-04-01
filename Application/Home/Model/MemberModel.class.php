@@ -36,6 +36,14 @@ class MemberModel extends Model{
                 $this->error = '前台用户信息注册失败，请重试！';
                 return false;
             }
+            //关联会员资金表
+            $member_money=M("z_member_money");
+            $member_money->uid=$uid;
+            $member_money_count=$member_money->add();
+            //关联会员资料表
+            $member_info=M("z_member_info");
+            $member_info->uid=$uid;
+            $member_info_count=$member_info->add();
         } elseif(1 != $user['status']) {
             $this->error = '用户未激活或已禁用！'; //应用级别禁用
             return false;

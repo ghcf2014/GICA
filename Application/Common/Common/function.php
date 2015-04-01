@@ -525,6 +525,18 @@ function get_borrow_username($borrow_uid = 0) {
 	// var_dump($name['nickname']);
 	return $name ['nickname'];
 }
+function get_member_info($uid = 0) {
+	$map = $uid;
+	$name = M ( 'z_member_info' )->field ( 'city_now' )->find ( $map );
+	// var_dump($name['nickname']);
+	return $name ['city_now'];
+}
+function get_logo_url($uid = 0) {
+	$map = $uid;
+	$name = M ( 'ucenter_member' )->field ( 'logo_url' )->find ( $map );
+	// var_dump($name['nickname']);
+	return $name ['logo_url'];
+}
 //ID返回投资用户名
 function get_investor_username($investor_uid = 0) {
 	$map = $investor_uid;

@@ -118,7 +118,7 @@
 			<div class="cont_bot2">
 				<h2><a href="{:U('Finance/index')}">投资列表</a></h2>
 				<div class="cont_bot2_con">
-					<volist name="list2" id="vo">
+					<volist name="list2" id="vo" >
 					<div class="cont_bot2_con_in">
 						<h3><a href="{:U('borrow/detail?id='.$vo['id'])}">{$vo.borrow_name}</a></h3>
 						<p style="height: 30px;font-size: 14px;line-height: 30px;">借款金额</p>
@@ -134,7 +134,7 @@
 						
 						<div class="jdt">
 							<p>进度</p>
-							<span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;line-height:18px;color:white;text-align: center;">{$vo['has_borrow']/$vo['borrow_money']*100}%</span></span>
+							<span class="out"><span class="in" style="width:{$vo['has_borrow']/$vo['borrow_money']*100}%;line-height:18px;color:white;text-align: center;">{$vo['jindu']}%</span></span>
 						</div>
 						<div class="fb_date endTime"  value="{$vo['djtime']}"></div>
 						<div class="fb_date">发标时间：{$vo['add_time']|date='Y-m-d',###}</div>

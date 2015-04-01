@@ -182,7 +182,7 @@ class BorrowController extends HomeController {
 		$depict ['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
 		$depict ['borrow_use'] = $_POST ["borrow_use"];
 		$depict ['borrow_duration'] = $_POST ["borrow_duration"];
-		$depict ['collect_day'] = 10;
+		$depict ['collect_day'] = $_POST ["collect_day"];;
 		$depict ['borrow_min'] = $_POST ["borrow_min"];
 		$depict ['borrow_max'] = $_POST ["borrow_max"];
 		$depict ['collect_time'] = $_POST ["collect_time"];
@@ -280,6 +280,7 @@ class BorrowController extends HomeController {
 		// 查询借款详情表
 		$listBorrow = M ( 'z_borrow_info' );
 		$list = $listBorrow->where ( $map )->select ();
+		$list[0]['jindu']=round($list[0]['has_borrow']/$list[0]['borrow_money']*100, 1);
 		$uid = $list [0] ['borrow_uid'];
 		$userlist = M ( 'ucenter_member' );
 		$data = $userlist->field ( 'username,reg_time,last_login_time' )->where ( 'id=%s', $uid )->select ();

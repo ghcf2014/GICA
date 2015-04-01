@@ -413,7 +413,6 @@ class UserinfoController extends MemberController {
 		$st=$status->where($condition1)->select();
 
 		 if($st[0]['id_status'] ==0){//审核不通过不显示
-		 	dump($st[0]['id_status']);
 			$uid='';
 			}
 			// 会员信息查询

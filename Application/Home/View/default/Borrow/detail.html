@@ -7,12 +7,17 @@
         	<h2>标的详情</h2>
             <dl>
                 <dt>
-                    <div class="header"></div><volist name="list3" id="vb">
+                    <div class="header"><if
+							condition="$vb.logo_url eq ''"> <img
+							src="__PUBLIC__/Home/images/default-img.jpg" width="200"
+							height="200"> <elseif condition="$vb.logo_url  neq ''" />
+						<img src="Uploads/User/{$vb.logo_url|get_logo_url}" width="200" height="200" />
+						</if></div><volist name="list3" id="vb">
                     <ul>
-                        <li>用户名称：<span>{$data.username}</span></li>
+                        <li>用户名称：<span>{$vb.borrow_uid|get_borrow_username}</span></li>
                         <li>注册时间：<span>{$data.reg_time|date='Y-m-d',###}</span></li>
                         <li>最后登录：<span>{$data.last_login_time|date='Y-m-d',###}</span></li>
-                        <li>居住地：<span>深圳市</span></li>
+                        <li>居住地：<span>{$vb.uid|get_member_info}</span></li>
                     </ul>
                     <!--<a href="#">关注此人</a><a href="#">关注此借款</a>-->
                 </dt>
@@ -24,8 +29,8 @@
                         <li>借款目的：<span>{$vb.borrow_use}</span></li>
                         <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>
                         <li>借款期限：<span>{$vb.borrow_duration}个月</span></li>
-                        <li>还差：<span>￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
-                        <li><strong>投标进度：</strong><span class="out"><span style="width:{$vb['has_borrow']/$vb['borrow_money']*100}%;" class="in"></span></span><span class="data">{$vb['has_borrow']/$vb['borrow_money']*100}%</span></li>
+                        <li>招募时间：<span>{$vb.collect_day}天</span></li>
+                        <li><strong>投标进度：</strong><span class="out"><span style="width:{$vb['jindu']}%;" class="in"></span></span><span class="data">{$vb['jindu']}%还差：￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
                         <li>还款方式：<span style="color:#ef681f;">{$vb.repayment_type|get_repayment_type}</span></li>
                         <li>交易类型：<span>线下交易</span></li>
                         <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>

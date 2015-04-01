@@ -73,10 +73,13 @@ class IndexController extends HomeController {
 				//招募时间流标
 				M('z_borrow_info')->where(array('id'=>$list[$i]["id"]))->setField(array('borrow_status'=>3));
 			}
+			//进度计算
+			$list[$i]['jindu']=round($list[$i]['has_borrow']/$list[$i]['borrow_money']*100, 1);
 		}
 
+
+
 		$this->assign('login',$login);
-		$this->assign ( 'jindu', $jindu ); // 进度
 		$this->assign ( 'category', $category ); // 栏目
 		$this->assign ( 'lists', $lists ); // 列表
 		$this->assign ( 'lists1', $lists1 );
