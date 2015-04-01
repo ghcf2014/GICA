@@ -274,12 +274,7 @@ class SystemController extends MemberController {
 	 */
 	public function recharge() {
 		$uid = is_login (); // 获取当前登录用户ID
-		$member_checked=M('z_member_info');
-		$memberdata=$member_checked->where('uid=%s',$uid)->select();
-		$username=$memberdata[0]['real_name'];
-		if (($username)==null){
-			$this->error('您还未进行基本认证',U('Member/Userinfo/userselfset'));
-		}
+
 		$banks_checked =M('z_member_banks');
 		$banks_data=$banks_checked->where('uid=%s',$uid)->select();
 		$bank_num=$banks_data['0']['bank_num'];
