@@ -335,6 +335,7 @@ class InvestController extends MemberController {
 	 *         2015-1-22自动投标
 	 */
 	public function autoinvest() {
+		is_login () ||$this->redirect('Home/User/login');
 		$uid = is_login (); // 获取当前用户UID
 		$condition ['uid'] = $uid;
 		//查询余额
@@ -408,12 +409,11 @@ public function auto_borrow(){
                 $p[$k]['borrow_money']=$member_auto[$i]['borrow_money'];
                 $log = M ( 'z_borrow_investor' );
                 $logarr['borrow_id']=$p[$k]['id'];
-                $logarr['borrow_uid']=$p[$k]['uid'];
+                $logarr['investor_uid']=$p[$k]['uid'];
                 $logdata=$log->where($logarr)->select();
-                if(!$logdata){
-    	           	// dump($p[$k]['uid']);
-					// dump($p[$k]['borrow_money']);
-					// dump($p[$k]['id']);
+
+                if(is_null($logdata)){
+    				
                 	$this->auto_borrow_add($p[$k]['borrow_money'],$p[$k]['id'],$p[$k]['uid']);
                 }else{
                 	continue;
