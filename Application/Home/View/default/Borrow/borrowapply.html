@@ -28,35 +28,35 @@
 				<dd>
 					<ul class="sqzl">
 						<if condition="$file['identity_report'] eq 1">
-							<li>身份证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+							<li><span>身份证明</span><span><img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></span></li>
 						<else/>
-							<li>身份证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+							<li><span>身份证明</span><span><a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></span></li>
 						</if>
 						<if condition="$file['credit_report'] eq 1">
-							<li>征信证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+							<li><span>征信证明</span><span><img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></span></li>
 						<else/>
-							<li>征信证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png"title="点击上传"/></a></li>
+							<li><span>征信证明</span><span><a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png"title="点击上传"/></a></span></li>
 						</if>
 						<if condition="$file['work_report'] eq 1">
-							<li>工作证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+							<li><span>工作证明</span><span><img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></span></li>
 						<else/>
-							<li>工作证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+							<li><span>工作证明</span><span><a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></span></li>
 						</if>
 						
 						<if condition="$file['income_report'] eq 1">
-							<li>收入证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+							<li><span>收入证明</span><span><img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></span></li>
 						<else/>
-							<li>收入证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+							<li><span>收入证明</span><span><a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></span></li>
 						</if>
 						<if condition="$file['living_report'] eq 1">
-							<li>居住证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+							<li><span>居住证明</span><span><img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
 						<else/>
-							<li>居住证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+							<li><span>居住证明</span><span><a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></span></li>
 						</if>
 						<if condition="$file['other_report'] eq 1">
-							<li>辅助证明<img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
+							<li><span>辅助证明</span><span><img src="__PUBLIC__/Home/images/cont_bot_r_hover_ok.png"/></li>
 						<else/>
-							<li>辅助证明<a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></li>
+							<li><span>辅助证明</span><span><a href="{:U('Borrow/borrowfile_upload')}"><img src="__PUBLIC__/Home/images/cont_bot_r_hover_no.png" title="点击上传"/></a></span></li>
 						</if>
 					</ul>
 				</dd>
@@ -138,10 +138,10 @@
 				<dl>
 					<dt>所在地区</dt>
 					<dd>
-						<select class="select" name="province" id="s1">
+						<select class="select" name="province" id="s1" style="width: 25%;">
 							<option></option>
 						</select>
-						<select class="select" name="city" id="s2">
+						<select class="select" name="city" id="s2" style="width: 33%;">
 							<option></option>
 						</select>
 						<select class="select" name="town" id="s3">

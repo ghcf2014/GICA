@@ -1,4 +1,4 @@
-﻿<block name="body">
+<block name="body">
 <extend name="Base/common"/>
 <block name="body">
 	<!--content start-->
@@ -14,12 +14,12 @@
                         <h3>当前位置 > <span style="color:#D41010;">安全认证</span></h3>
                         <div class="aqset_tab">
                     <ul class="yhk_head">
-                    <a href="{:U('Home/User/profile')}"><li>登录密码</li></a>
-                    <a href="{:U('Userinfo/paypassword')}"><li>交易密码</li></a>
-                    <a href="{:U('Userinfo/usermailbanding')}"><li>邮箱认证</li></a>
-                    <a href="{:U('Userinfo/userfindpassbyphone')}"><li>手机认证</li></a>
-                    <a href="{:U('Member/Userinfo/userselfset')}"><li class="cur">实名认证</li></a>
-                </ul><if condition="$id_status neq '1'">
+	                    <li><a href="{:U('Home/User/profile')}">登录密码</a></li>
+	                    <li><a href="{:U('Userinfo/paypassword')}">交易密码</a></li>
+	                    <li><a href="{:U('Userinfo/usermailbanding')}">邮箱认证</a></li>
+	                    <li><a href="{:U('Userinfo/userfindpassbyphone')}">手机认证</a></li>
+	                    <li class="cur" style="border-right: none;"><a href="{:U('Member/Userinfo/userselfset')}">实名认证</a></li>
+                	</ul><if condition="$id_status neq '1'">
                 <if condition="$id_status eq '2'">实名信息审核中...
                         
                         <else/>
