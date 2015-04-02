@@ -1447,15 +1447,16 @@ function sendMail($to, $subject, $content) {
 	$mail->Subject = $subject; // 邮件主题
 	$mail->Body = $content; // 邮件内容
 	$mail->AltBody = "This is the body in plain text for non-HTML mail clients"; // 邮件正文不支持HTML的备用显示
-	echo "消息发送成功。".C ( 'MAIL_SMTPAUTH' )."O(∩_∩)O";
+	// echo "消息发送成功。".C ( 'MAIL_SMTPAUTH' )."O(∩_∩)O";
 	if (! $mail->Send ()) {
 		echo "消息不能发送。<p>";
-		echo "邮箱出现错误: " . $mail->ErrorInfo;
+		echo "邮箱发送出现错误: " . $mail->ErrorInfo;
 		// exit ();
 	} else {
-		$text="消息发送成功。O(∩_∩)O";
-        return $text;//注册返回
-		echo "消息发送成功。O(∩_∩)O";//问题返回
+		// $text="消息发送成功。O(∩_∩)O";
+        // return $text;//注册返回
+		// echo "消息发送成功。O(∩_∩)O";//问题返回
+		return true;
 	}
 }
 // 这样在模版中调用的话，只需要用 {$vo.title|subtext=10} 这样即可，同时实现了，如果没超出长度，则不追加省略号的效果。

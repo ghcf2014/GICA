@@ -216,7 +216,6 @@ $_SESSION['send_code'] = random(6,1);
     		function success(data){
     			if(data.status){
     				layer.msg(data.info, 3,1, function(){
-					
 							window.location.href = data.url;
 					});	
     			} else {

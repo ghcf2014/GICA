@@ -96,6 +96,10 @@ class IndexController extends HomeController {
 		$name = $_POST ['name'];
 		$content = $_POST ['content'];
 		
-		$a = SendMail ( '380003832@qq.com', $name . '技术反馈', '【' . $content . '】  邮件发送时间： ' . date ( "l dS of F Y h：i：s A" ) );
+		if($a = SendMail ( '380003832@qq.com', $name . '技术反馈', '【' . $content . '】  邮件发送时间： ' . date ( "l dS of F Y h：i：s A" ) )){
+		    echo "消息已发送。O(∩_∩)O~<p>";
+		}else{
+			echo "消息不能发送。o_O???<p>";
+		}
 	}
 }
