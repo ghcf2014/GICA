@@ -13,44 +13,56 @@
 				<h3>当前位置 > <span style="color: #D41010;">安全认证</span></h3>
 				<div class="aqset_tab">
 					<ul class="yhk_head">
-						<li class="cur"><a href="{:U('Home/User/profile')}" >登录密码</a></li>
-						<li><a href="{:U('Member/Userinfo/paypassword')}">交易密码</a></li>
+						<li class="cur"><a href="{:U('Home/User/profile')}" >账户安全</a></li>
+						<li><a href="{:U('Home/Borrow/papersinfo')}">信征认证</a></li>
 						<li><a href="{:U('Member/Userinfo/usermailbanding')}">邮箱认证</a></li>
 						<li><a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机认证</a></li>
 						<li style="border-right: none;"><a href="{:U('Member/Userinfo/userselfset')}">实名认证</a></li>
 				</ul>
 				<div class="aqset_tabC_out">
-					<form class="login-form" action="__SELF__" method="post">
 						<!--登录密码-->
 						<div class="aqset_tabC">
-							<!--  <p class="aqset_tabC_head2">上次登录时间：<span>2014-11-22</span></p> -->
-							<dl class="dlmm" style="padding-top: 40px;">
-								<dt>原始密码：</dt>
-								<dd>
-									<input type="password" class="dlmm_txt" placeholder="请输入密码"
-										errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
-										name="old">
-								</dd>
-							</dl>
-							<dl class="dlmm">
-								<dt>新密码：</dt>
-								<dd>
-									<input type="password" class="dlmm_txt" placeholder="请输入密码"
-										errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
-										name="password">
-								</dd>
-							</dl>
-							<dl class="dlmm">
-								<dt>确认密码：</dt>
-								<dd>
-									<input type="password" class="dlmm_txt" placeholder="请再次输入密码"
-										recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码"
-										datatype="*" name="repassword">
-								</dd>
-							</dl>
-							<input type="submit" class="yhk_btn" value="提交">
+							<form class="login-form" action="__SELF__" method="post">
+								<div class="list-person clearfix">
+									<p class="list-one fl"><span class="icon icon-6"></span><span class="list-text">登录密码</span></p>
+									<div class="list-two fl">
+										<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换密码。</p>
+										<button type="button" class="btn btn-primary   btn-type-to  " key="update-pwd">修改登录密码</button>
+										<div class="p-hide update-pwd-c" style="display: none;">	
+											<p><span class="person-span-1">原密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码"errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
+											name="old"></span></p>
+											<p><span class="person-span-1">新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码"
+											errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
+											name="password"></span></p>
+											<p><span class="person-span-1">确认新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请再次输入密码"
+											recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码"
+											datatype="*" name="repassword"></span></p>
+											<p class="show-message"></p>
+											 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改登录密码</button>
+											 <button type="button" class="btn   btn-hid">隐藏</button>
+										</div>
+									</div>
+								</div>
+							</form>
+							<!--支付密码-->
+							<form class="login-form" action="{:U('Member/Userinfo/paypassword_save')}" method="post">
+							<div class="list-person clearfix">
+								<p class="list-one fl"><span class="icon icon-6"></span><span class="list-text">支付密码</span></p>
+								<div class="list-two fl">
+									<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换密码。</p>
+									<button type="button" class="btn btn-primary   btn-type-to1  " key="update-pwd">修改支付密码</button>
+									<div class="p-hide1 update-pwd-c" style="display: none;">	
+										<p><span class="person-span-1">原密码：</span><span><input type="password" name="oldpwd"></span></p>
+										<p><span class="person-span-1">新密码：</span><span><input type="password" name="pwd"></span></p>
+										<p><span class="person-span-1">确认新密码：</span><span><input type="password" name="dbpwd"></span></p>
+										<p class="show-message"></p>
+										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改支付密码</button>
+										 <button type="button" class="btn   btn-hid1">隐藏</button>
+									</div>
+								</div>
+							</div>
+							</form>
 						</div>
-					</form>
 				</div>
 				</div>
 				
@@ -60,25 +72,25 @@
 	</div>
 </div>
 
-<!--content end--> <script
-	type="text/javascript">
-	$(document).ajaxStart(function() {
-		$("button:submit").addClass("log-in").attr("disabled", true);
-	}).ajaxStop(function() {
-		$("button:submit").removeClass("log-in").attr("disabled", false);
+<!--content end--> 
+<script type="text/javascript">
+	$(document).ready(function(){
+	  $(".btn-type-to").click(function(){
+	  $(".p-hide").show();
+	  $(".btn-type-to").hide();
+	  });
+	  $(".btn-hid").click(function(){
+	  $(".p-hide").hide();
+	  $(".btn-type-to").show();
+	  });
+	  $(".btn-type-to1").click(function(){
+	  $(".p-hide1").show();
+	  $(".btn-type-to1").hide();
+	  });
+	  $(".btn-hid1").click(function(){
+	  $(".p-hide1").hide();
+	  $(".btn-type-to1").show();
+	  });
 	});
-
-	$("form").submit(function() {
-		var self = $(this);
-		$.post(self.attr("action"), self.serialize(), success, "json");
-		return false;
-
-		function success(data) {
-			if (data.status) {
-				window.location.href = data.url;
-			} else {
-				self.find(".Validform_checktip").text(data.info);
-			}
-		}
-	});
-</script> </block>
+</script>
+ </block>

@@ -1,5 +1,5 @@
-<block name="body"> <extend name="Base/common" /> <block
-	name="body"> <!--content start-->
+<block name="body"> <extend name="Base/common" /> 
+<block	name="body"> <!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
 		<include file="Public/left" />
@@ -10,9 +10,9 @@
 					<div class="img">
 						<volist name="list3" id="vo"> <if
 							condition="$vo.logo_url eq ''"> <img
-							src="__PUBLIC__/Home/images/default-img.jpg" width="200"
+							src="__PUBLIC__/Home/images/default-img.jpg" style="border-radius: 100px;"width="200"
 							height="200"> <elseif condition="$vo.logo_url  neq ''" />
-						<img src="Uploads/User/{$vo.logo_url|logo_url}" width="200" height="200" />
+						<img src="Uploads/User/{$vo.logo_url|logo_url}" style="border-radius: 100px;" width="200" height="200" />
 						</if> </volist>
 						<p>
 							<a id="test2">更换图像</a>
@@ -21,7 +21,11 @@
 				</dt>
 				<dd>
 					<p>
-						用户名称：<span style="color: #66ccfb;">{:get_username()}</span>
+						用户名称：<span style="color: #66ccfb;">{:get_username()}<if condition="$ms.video_status eq 1">
+						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx.png" title="VIP已认证" /> </a>
+					<else/>
+						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx_h.png" title="VIP未认证" /></a>
+					</if></span>
 					</p>
 					<p>
 						会员积分：<span><volist name="list" id="vo">{$vo.score}分</volist></span>
@@ -30,7 +34,7 @@
 						注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span>
 					</p>
 					<p>
-						所属客服：<span>璐璐<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=380003832&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:380003832:51" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span>
+						所属客服：<span><a href="{:U('Member/Userinfo/kf_index')}" >璐璐</a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=380003832&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:380003832:51" alt="点击这里给我发消息" title="点击这里给我发消息"></a></span>
 					</p>
 					<p>
 						登录时间：<span>{$vo.last_login_time|date='Y-m-d H:i:s',###}</span>
@@ -51,40 +55,40 @@
 
 				<volist name="mstatus" id="ms">
 				<li>认证管理：</li>
-				<li>
+				<li >
 					<if condition="$ms.email_status eq 1"> 
-						<a href="{:U('Userinfo/usermailbanding')}"><img src="__PUBLIC__/Home/images/img/l_yx_pic.jpg" title="邮箱已认证" /> </a> 
+						<a href="{:U('Userinfo/usermailbanding')}" style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">邮箱</a> 
 					<else/> 
-						<a href="{:U('Userinfo/usermailbanding')}"><img src="__PUBLIC__/Home/images/img/h_yx_pic.jpg" title="邮箱未认证" /> </a> 
+						<a href="{:U('Userinfo/usermailbanding')}"  style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">邮箱</a> 
 					</if>
 				</li>
 				<li>
 					<if condition="$ms.phone_status eq 1"> 
-						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img src="__PUBLIC__/Home/images/img/l_sj_pic.jpg" title="手机已认证" /></a>
+						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">手机</a>
 
 					<else/>
-						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}"><img src="__PUBLIC__/Home/images/img/h_sj_pic.jpg" title="手机未认证" /></a>
+						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">手机</a>
 					</if>
 
 				</li>
 				<li>
 					<if condition="$ms.id_status eq 1">
-						<a href="{:U('Userinfo/userselfset')}"><img src="__PUBLIC__/Home/images/img/l_sfz_pic.jpg" title="身份证已认证" /> </a> 
+						<a href="{:U('Userinfo/userselfset')}" style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">实名</a> 
 					<else/>
-						 <a href="{:U('Userinfo/userselfset')}"><img src="__PUBLIC__/Home/images/img/h_sfz_pic.jpg" title="身份证未认证" /> </a>
+						 <a href="{:U('Userinfo/userselfset')}" style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">实名</a>
 					</if>
 				</li>
 				<li>
 					<if condition="$ms.credit_status eq 1">
-						<a href="{:U('Userinfo/userbankset')}"> <img src="__PUBLIC__/Home/images/img/l_yhk_pic.jpg" title="银行卡已认证" /> </a> 
+						<a href="{:U('Userinfo/userbankset')}"style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">银行卡</a> 
 					<else/> 
-						<a href="{:U('Userinfo/userbankset')}"> <img src="__PUBLIC__/Home/images/img/h_yhk_pic.jpg" title="银行卡未认证" /> </a>
+						<a href="{:U('Userinfo/userbankset')}"style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">银行卡</a>
 					</if>
 				</li>
 				<li><if condition="$ms.video_status eq 1">
-						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/l_vip_pic.jpg" title="VIP已认证" /> </a>
+						<a href="{:U('Home/Borrow/papersinfo')}"style="color:#fff; background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">信征</a>
 					<else/>
-						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/h_vip_pic.jpg" title="VIP未认证" /> </a>
+						<a href="{:U('Home/Borrow/papersinfo')}"style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">信证</a>
 					</if>
 				</li>
 			</volist>

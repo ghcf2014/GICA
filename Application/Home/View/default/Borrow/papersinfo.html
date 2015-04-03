@@ -5,18 +5,18 @@
 	<div class="zh_cont_out">
     	<div class="zh_cont" style="background: #fff;border: 1px solid #ddd;">
             <!--<h2><a href="{:U('Index')}">我的账户</a></h2>-->	
-            <include file="Public/borrowleft"/>
+            <include file="Member@default/Public/left" />
             <div class="zh_cont_r" style="border-top: none;">
-            	<div class="r-main" style="border: none;">
-						<div class="til01">
-							<ul>
-								<li>
-									<h3 style="height: 38px;line-height: 20px;color: red;">当前位置 > 上传资料</h3>
-								</li>
-
+            	<div class="tab">
+						<h3>当前位置 > <span style="color: #D41010;">安全认证</span></h3>
+							<div class="aqset_tab">
+								<ul class="yhk_head">
+									<li class="cur"><a href="{:U('Home/User/profile')}" >账户安全</a></li>
+									<li><a href="{:U('Home/Borrow/papersinfo')}">信征认证</a></li>
+									<li><a href="{:U('Member/Userinfo/usermailbanding')}">邮箱认证</a></li>
+									<li><a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机认证</a></li>
+									<li style="border-right: none;"><a href="{:U('Member/Userinfo/userselfset')}">实名认证</a></li>
 							</ul>
-						</div>
-						<p style="background:#ddd;width:948px;height:1px;"></p>
 						<div class="rmainbox">
 
 							<p class="tips">

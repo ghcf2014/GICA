@@ -730,6 +730,11 @@ class UserinfoController extends MemberController {
 			}
 	
 	}
+	public function kf_index() {
+
+	$this->display ();
+	
+	}
 	
 
 }
