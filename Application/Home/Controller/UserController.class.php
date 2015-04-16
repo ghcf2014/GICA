@@ -58,7 +58,12 @@ class UserController extends HomeController {
 					$f['apply_status']=1;
 					$f['add_time']=$time;
 					$f['friend_id']=$userinfo[0]['id'];
-					$friends=$friend->add($friend);
+					$friendf=$friend->add($f);
+					$m['uid']=$userinfo[0]['id'];
+					$m['apply_status']=1;
+					$m['add_time']=$time;
+					$m['friend_id']=$uid;
+					$friendm=$friend->add($m);
 				}
 
 				$mstatus = M('z_members_status');//用户验证状态
@@ -94,6 +99,9 @@ class UserController extends HomeController {
 	public function registerok(){
 		if ($_SESSION['email']==null){
 			$this->redirect('Home/User/login');
+		}
+		if (is_login()>0){
+			$this->redirect('Member/Index/index');
 		}
 		$email=$_SESSION['email'];
    		$domain = substr(strstr($email, '@'),1);

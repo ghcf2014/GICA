@@ -27,11 +27,116 @@
 								<dd></dd>
 							</dl> -->
 							<dl class="yhk">
-								<dt>开户行：</dt>
+								<dt>选择开户银行：</dt>
 								<dd>
-									<input type="text" class="yhk_txt" name="bankName"
-										id="bankName" value=""><span color="red"
-										id="sBankName">输入您的开户银行名称</span>
+									<input type="text" name="bank_name" value="" class="theme-login"/><span color="red"
+										id="sBankName">请输入开户银行</span>
+								</dd>
+								<div class="theme-popover">
+									     <div class="theme-poptit">
+									        <td colspan="5"><strong>请选择开户银行：</strong></td>
+									     </div>
+									     <div class="theme-popbod dform">
+									           <table border="0" align="center" cellpadding="0"
+									              cellspacing="0">              
+									              <tr>
+									                <td>
+									                <input type="radio" name="bankType" value="中国工商银行" id="rd_gopay_icbc" /><img src="__PUBLIC__/Home/images/banks/bank_01.png" width="128" height="33" />
+									                </td>
+									                <td><input type="radio" name="bankType" value="招商银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_02.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="中国建设银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_03.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="中国农业银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_04.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="中国银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_05.png"
+									                  width="128" height="33" /></td>
+									              </tr>
+									              <tr>
+									                <td><input type="radio" name="bankType" value="浦发银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_06.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="深圳发展银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_07.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="兴业银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_08.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="北京银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_09.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="中国光大银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_10.png"
+									                  width="128" height="33" /></td>
+									              </tr>
+									              <tr>
+									                <td><input type="radio" name="bankType" value="交通银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_11.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="中国民生银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_12.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="中信银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_13.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="广发银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_14.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="平安银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_15.png"
+									                  width="128" height="33" /></td>
+									              </tr>
+									              <tr>
+									                <td><input type="radio" name="bankType" value="中国邮政储蓄银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_16.png"
+									                  width="128" height="33" /></td>
+
+									                <td><input type="radio" name="bankType" value="上海农商银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_18.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="上海银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_19.png"
+									                  width="128" height="33" /></td>
+									                <td><input type="radio" name="bankType" value="华夏银行" />
+									                  <img src="__PUBLIC__/Home/images/banks/bank_20.png"
+									                  width="128" height="33" /></td>
+									                <td></td>
+
+
+									              </tr>
+									             <tr>
+									             	<td colspan="5" align="center">
+										             	<span class="theme-poptit">
+										        			<a href="javascript:;" title="确定" style="color:blue;" onclick="javascript:yhk_add()"class="close">确定</a>
+										        		</span>
+									        		</td>
+									             	
+									             </tr>
+									             	
+									             
+									            </table>
+
+										     </div>
+										</div>
+										<div class="theme-popover-mask"></div>	
+								
+							</dl>
+							<dl class="yhk">
+								<dt>开户行所在地：</dt>
+								<dd>
+									<select class="select" name="bank_province" id="s1" style="width:150px;">
+	                                    <option></option>
+	                                </select>
+	                                <select class="select" name="bank_city" id="s2" style="width:150px;">
+	                                    <option></option>
+	                                </select>
+                                	<select class="select" name="bank_area" id="s3" style="width:150px;">
+                                    	<option></option>
+                                </select>
 								</dd>
 							</dl>
 							<dl class="yhk">
@@ -40,7 +145,7 @@
 									<input type="text" class="yhk_txt" name="subBankName"
 										id="subBankName" value=""><span color="red"
 										id="subBankNode">输入您的开户支行</span>
-								</dd>
+								<span style="display:none;color:red;" id="area_bank">如果您不确定开户行,可以打电话向银行咨询或上网查询。</span></dd>
 							</dl>
 							<dl class="yhk">
 								<dt>卡号：</dt>
@@ -56,7 +161,7 @@
 					
 				
 					<!--已绑定银行卡-->					
-						<div class="aqset_tabC" style="display: none;">
+						<div class="aqset_tabC">
 							<table border="0" cellspacing="0" cellpadding="0" class="ybd">
 								<tr>
 									<th style="width: 200px;">开户行</th>
@@ -68,7 +173,7 @@
 								<volist name="list" id="vo">
 								<tr>
 									<td>{$vo.bank_name}</td>
-									<td>{$vo.bank_address}</td>
+									<td>{$vo.bank_province}{$vo.bank_city}{$vo.bank_area}{$vo.bank_address}</td>
 									<td>{$vo.bank_num}</td>
 									<td>{$vo.add_time|date='Y-m-d',###}</td>
 									<td>
@@ -91,26 +196,49 @@
 		</div>
 	</div>
 	<!--content end-->
+<script>
+jQuery(document).ready(function($) {
+	$('.theme-login').click(function(){
+		$('.theme-popover-mask').fadeIn(100);
+		$('.theme-popover').slideDown(200);
+	})
+	$('.theme-poptit .close').click(function(){
+		$('.theme-popover-mask').fadeOut(100);
+		$('.theme-popover').slideUp(200);
+	})
 
+})
+</script>
+<script type="text/javascript">
+	var bank;
+	var name;
+	function yhk_add(){
+		
+		bank=$("input[name='bankType']:checked").val();
+
+		$("input[name='bank_name']").val(bank);
+	}
+</script>
 	<script type="text/javascript" src="script/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript">
 		$("#submitBank").click(function() {
-			var bankName = $("#bankName").val();
+			var bankName = $(".theme-login").val();
 			var subBankName = $("#subBankName").val();
 			var bankCard = $("#bankCard").val();
 			if (bankName == "") {
-				$("#sBankName").html("<font color='red'>请输入开户银行名称</font>");
+				$("#sBankName").html("<font color='red'>请选择开户银行</font>");
 				return false;
 			}
 			if (subBankName == "") {
 				$("#sBankName").hide();
 				$("#subBankNode").html("<font color='red'>请输入开户支行名称</font>");
+				$('#area_bank').show();
 				return false;
 			}
 			if (bankCard == "") {
 				$("#sBankName").hide();
 				$("#subBankNode").hide();
-				$("#sBankCard").html("<font color='red'>请输入开户银行名称</font>");
+				$("#sBankCard").html("<font color='red'>请输入银行卡号</font>");
 				return false;
 			}
 			$("#form").submit();
@@ -128,7 +256,9 @@
 			})
 		})
 	</script>
-	
+
+<body onload="setup();preselect('广东省');promptinfo();">     
+</body>	
 	
 	
 	

@@ -56,14 +56,16 @@ class UserinfoController extends MemberController {
 	public function userbankset_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
+		dump($_POST);
 		$m = M ( "z_member_banks" );
 		// 获取表单数据
 		$data ['uid'] = $uid;
 		$data ['bank_num'] = $_POST ['bankCard'];
-		$data ['bank_province'] = '';
-		$data ['bank_city'] = '';
+		$data ['bank_province'] = $_POST ['bank_province'];
+		$data ['bank_city'] = $_POST ['bank_city'];
+		$data ['bank_area'] = $_POST ["bank_area"];
 		$data ['bank_address'] = $_POST ["subBankName"];
-		$data ['bank_name'] = $_POST ["bankName"];
+		$data ['bank_name'] = $_POST ["bank_name"];
 		$data ['add_time'] = time();
 		$data ['add_ip'] = '';
 		$condition ['uid'] = $uid;
