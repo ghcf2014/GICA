@@ -1,4 +1,4 @@
-/* ÒøĞĞ¿¨°ó¶¨µ¯³ö¿ò*/
+/* ï¿½ï¿½ï¿½Ğ¿ï¿½ï¿½ó¶¨µï¿½ï¿½ï¿½ï¿½ï¿½*/
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, del, dfn, em, img, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, button, input, table, caption, tbody, tfoot, thead, tr, th, td, menu {
 	margin:0;
 	padding:0;
@@ -13,7 +13,7 @@ audio, canvas, video {
 }
 audio:not([controls]) {
 display:none
-}/* ´úÂëÕûÀí£ºÀÁÈËÖ®¼Ò www.lanrenzhijia.com */
+}/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ www.lanrenzhijia.com */
 table {
 	border-collapse:collapse;
 	border-spacing:0;
@@ -192,7 +192,7 @@ input.btn {
 	border-color:#4d90fe;
 	outline:none
 }
-/* ´úÂëÕûÀí£ºÀÁÈËÖ®¼Ò www.lanrenzhijia.com */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ www.lanrenzhijia.com */
 .theme-buy {
 	margin-top:10%;
 	text-align: center;
@@ -295,7 +295,7 @@ input.btn {
 	margin-right:6px
 }
 .dform {
-	padding:80px 60px 40px;
+	padding:20px 0 40px 25px;
 	text-align: center;
 }
 .dform .ipt_error {
