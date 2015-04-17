@@ -46,6 +46,11 @@ class UserinfoController extends MemberController {
 		$m = M ( 'z_member_banks' );
 		$m_id ['uid'] = $uid;
 		$m = $m->where ( $m_id )->select ();
+		$num=count($m);
+		for($i=0;$i<$num;$i++){
+			$b=$m[$i]['bank_num'];
+			$m[$i]['bank_num']=str_replace(substr(($m[$i]['bank_num']),3,14),"************",($m[$i]['bank_num']));
+		}
 		$this->assign ( 'list', $m );
 		$this->display ();
 	}

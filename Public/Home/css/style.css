@@ -1190,7 +1190,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*---------------------推广管理-------------------------------------------------------*/
-.zh_cont_r .tggl{background: #fff;border: 1px solid #ddd;margin-top: 5px;height: auto;min-height: 1091px;width: 893px;}
+.zh_cont_r .tggl{background: #fff;border: 1px solid #ddd;margin-top: 5px;height: auto;min-height: auto;width: 893px;}
 .zh_cont_r .tggl dl{border: 0;margin:10px auto;width: 840px;height: auto;padding: 0 0 10px 0;margin-bottom: 20px;background: #eee;}
 .zh_cont_r .tggl dl dt{float: none;width: 800px;height: 30px;line-height: 30px;font-size: 16px;font-weight: normal;padding: 15px 20px 5px;}
 .zh_cont_r .tggl dl dd{float: none;width: 740px;padding: 0 50px;height: auto;line-height: 30px;}

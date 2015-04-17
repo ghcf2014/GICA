@@ -104,14 +104,6 @@
 												src="https://d3nwyuy0nl342s.cloudfront.net/flash/clippy.swf?v5">
 										</object>
 									</span>
-
-									<!-- <textarea class="txta_1" name="contents" id="contents">中国工合实业集团旗下 网贷平台【ghcf】，P2P理财首选平台。综合年化收益18%以上，100%本息安全保障，50元超低门槛，是草根、家庭的理财专属通道！你也赶快来投资，别被银行榨取我们的存款利息！进入平台先注册:${url}reg.htm?param=${userId}</textarea>
-								<div class="fzfx_an">
-									<a href="javascript:void(0);" onclick=
-	jsCopy();
-><img
-											src="./images/img/fzfx_an.jpg" width="103" height="29" /> </a>
-								</div>  -->
 								</div>
 								<form action="__SELF__" method="post" id="form">
 									<div class="yqhy_text1">
@@ -152,40 +144,106 @@
 										</div>
 									</div>
 								</form>
-							</div>
-						</div>
+								<div class="tggl">
+									<dl>
+										<dt>温馨提示：</dt>
+										<dd>1、推荐一级会员可获得投资利息的5%；</dd>
+										<dd>2、推荐二级会员可获得投资利息的3%；</dd>
+										<dd>3、推荐三级会员可获得投资利息的1%；</dd>
+										<dd>4、只有参与了投资才有推广费；</dd>
+										<dd>5、自动投标不参与活动。</dd>
+									</dl>
+								</div>
+					</div>
+		</div>
 						<div class="friend_tab" style="display: none; margin-top: 20px;">
 							<table style="margin: auto;">
 								<tr>
 									<td
 										style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">编号</td>
 									<td
-										style="text-align: center; width: 200px; border: 1px solid #ddd; line-height: 40px;">用户名</td>
+										style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">用户名</td>
 									<td
-										style="text-align: center; width: 200px; line-height: 40px; border: 1px solid #ddd;">注册时间</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">注册时间</td>
 									<td
-										style="text-align: center; width: 200px; line-height: 40px; border: 1px solid #ddd;">投资</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">累计投资额</td>
 									<td
-										style="text-align: center; width: 200px; line-height: 40px; border: 1px solid #ddd;">投资时间</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">投资时间</td>
+									<td
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">好友会员等级</td>
+									
 								</tr>
 								<volist name="friendList" id="vo" key="i">
 								<tr>
 									<td
 										style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">{$i}</td>
 									<td
-										style="text-align: center; width: 200px; border: 1px solid #ddd; line-height: 40px;">{$vo.username}</td>
+										style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">{$vo.username}</td>
 									<td
-										style="text-align: center; width: 200px; line-height: 40px; border: 1px solid #ddd;">{$vo.reg_time|date='Y-m-d',###}</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo.reg_time|date='Y-m-d',###}</td>
 									<td
-										style="text-align: center; width: 200px; line-height: 40px; border: 1px solid #ddd;">{$vo.investor_capital}</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo.investor_capital}</td>
 									<td
-										style="text-align: center; width: 200px; line-height: 40px; border: 1px solid #ddd;">{$vo.add_time|date='Y-m-d',###}</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo.add_time|date='Y-m-d',###}</td>
+									<td
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">A</td>
+										
 								</tr>
 								</volist>
 							</table>
+										<div class="tggl">	
+				<dl>
+					<dt>等级说明：</dt>
+					<dd>1、一级会员（A）为当前用户直接推荐的投资客；</dd>
+					<dd>2、二级会员（B）为一级会员（A）间接推荐的投资客；</dd>
+					<dd>3、三级会员（C）为二级会员（B）间接推荐的投资客。</dd>
+				</dl>
+				
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<th>推广统计</th>
+					</tr>
+					<tr>
+						<td>等级</td>
+						<td>人数</td>
+						<td>当日投资额</td>
+						<td>当月推广费</td>
+						<td>累计投资额</td>
+						<td>累计推广费</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>5</td>
+						<td>200</td>
+						<td>10</td>
+						<td>200</td>
+						<td>10</td>
+						<td>领取奖励</td>
+					</tr>
+					<tr>
+						<td>B</td>
+						<td>10</td>
+						<td>200</td>
+						<td>10</td>
+						<td>200</td>
+						<td>10</td>
+						<td>领取奖励</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td>15</td>
+						<td>200</td>
+						<td>10</td>
+						<td>200</td>
+						<td>10</td>
+						<td>领取奖励</td>
+					</tr>					
+				</table>
+			</div>
 						</div>
 						<div class="page">{$page}</div>
-					</div>
+						</div>
 				</div>
 
 
