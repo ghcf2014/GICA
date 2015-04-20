@@ -78,12 +78,12 @@ text-shadow:none
 	display:none
 }
 a {
-	color:#0088DB;
+	/*color:#0088DB;*/color: #595959;
 	text-decoration:none;
 	cursor:pointer
 }
 a:hover {
-	color:#2A5E8E
+	/*color:#2A5E8E;*/color: #66ccfb;
 }
 .clearfix:after, .central:after, .widget ul:after, .paging:after, .pagenav:after, .base-tit:after {
 	content:".";
