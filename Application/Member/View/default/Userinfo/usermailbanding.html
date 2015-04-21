@@ -27,13 +27,13 @@
 						<dl class="email">
 							<dt><if condition="$email eq 1">【<span style="color:blue">已认证</span>】<else/>【<span style="color:red">未认证</span>】</if>邮箱：</dt>
 							<dd>
-								<div style="width: 190px; height: 44px; line-height: 44px; display: inline-block;">{$vo.email}&nbsp;&nbsp;&nbsp;</div>
-								<span>
+								<div style="width: 190px; height: 44px; line-height: 44px; float: left;">{$vo.email}&nbsp;&nbsp;&nbsp;</div>
+								<span style="float: left;padding-top: 6px;overflow: hidden;">
 								<if condition="$email eq 0">
-								<a href="{:U('Member/Userinfo/usermail_send')}" target="_blank" style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color: #fff;display: inline-block;line-height: 30px;text-align: center;" >立即验证</a>
+								<a href="{:U('Member/Userinfo/usermail_send')}" target="_blank" style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color: #fff;float:left;line-height: 30px;text-align: center;margin-right: 5px;" >立即验证</a>
 
 								</if>
-								<input onclick="javascript:void(0);" id="upEmail" type="button" value="修改邮箱" style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color: #fff;" />
+								<input onclick="javascript:void(0);" id="upEmail" type="button" value="修改邮箱" style="width: 100px; height: 30px;background: #66CCFB; color: #fff;float: left;border-radius: 5px;border: 0;" />
 								</span>
 							</dd>
 						</dl>
@@ -56,9 +56,9 @@
 								</dd>
 							</dl>
 							<input type="button" value="修改" id="queryok"
-								style="width: 60px; height: 20px; background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat; color: #fff; margin-left: 320px; margin-top: 20px;" />
+								style="width: 60px; height: 20px; background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat; color: #fff; margin-left: 320px; margin-top: 20px;border: 0;" />
 							&nbsp;&nbsp;&nbsp;<input type="button" value="取消" id="cancel"
-								style="width: 60px; height: 20px; background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat; color: #fff; margin-top: 20px;" />
+								style="width: 60px; height: 20px; background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat; color: #fff; margin-top: 20px;border: 0;" />
 						</div>
 					</form>
 					<!--身份证验证-->

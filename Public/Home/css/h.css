@@ -486,9 +486,11 @@ clear: both;
 }
 
 .list-one {
-padding-right: 96px;
-color: #333333;
-font-size: 24px;
+overflow: hidden;
+/*padding-right: 96px;*/
+padding-right: 25px;
+color: #595959;
+font-size: 22px;
 width: 30%;
 }
 .list-two {
@@ -513,12 +515,15 @@ margin-bottom: 10px;
 background: url(../images/img/user-icon.png) -210px -253px;
 }
 .list-one .icon {
+float: left;
 width: 38px;
 height: 38px;
 display: inline-block;
-margin-left: 70px;
+margin-left: 130px;
 margin-top: 20px;
 }
 .list-one .list-text {
-padding-top: 20px;
+	color: #248ed1;
+float: left;
+line-height: 72px;
 }
