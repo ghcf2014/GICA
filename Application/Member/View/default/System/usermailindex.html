@@ -115,7 +115,7 @@
 										  	<th>{$val['postname']}</th>
 										  	<th>{$val['title']}</th>
 										  	<th>{$val['send_time']}</th>
-										  	<th><input name="button" type="button" id="button" onclick="javascript:checkemail('{$val.msg}')" value="查看" />|<a href="javascript:emaildel({$val['id']})">删除</a>
+										  	<th><input name="button" type="button" id="button" onclick="javascript:checkreceive('{$val.msg}')" value="查看" />|<a href="javascript:emaildel({$val['id']})">删除</a>
 									  	</tr>
 									  </foreach>
 									 
@@ -297,10 +297,11 @@
     </div>
 	<!--content end-->
 	<script language=JavaScript>
-
-	function checkemail(contents)
-	{
-		windows.alert(contents);
+	var content;
+	function checkreceive(contents)
+	{	
+		content=contents;
+		alert(content);
 	}
 	</script>
 	<script language=JavaScript>

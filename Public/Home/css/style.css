@@ -77,8 +77,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .nav h1 img{float:left;}
 .nav .nav_wrap{width:560px;height:110px;float:right;overflow:hidden;}
 .nav .nav_wrap li{width:80px;height:110px;/*margin:0 10px;*/margin:0 18px;line-height:110px;float:left;font-size:16px;text-align:center;}
-.nav .nav_wrap li a:hover{color:#59cdfe;text-decoration:none;}
-.nav .nav_wrap li .current{color:#59cdfe;text-decoration:none;}
+.nav .nav_wrap li a:hover{color:#66CCFB;text-decoration:none;}
+.nav .nav_wrap li .current{color:#66CCFB;text-decoration:none;}
 
 
 /*----------------------nav2-----------------------*/
@@ -515,7 +515,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 /*--右边--*/
 .zh_cont .zh_cont_r{width:895px;height:auto;float:right;}
 .zh_cont .zh_cont_r h3{width: 873px;height: 66px;border: 1px solid #ddd;background: #fff;line-height:66px;font-size:18px;font-weight:normal;padding-left: 20px;}
-.zh_cont .zh_cont_r .img{border: 1px solid #eee;padding: 5px;}
+.zh_cont .zh_cont_r .img{border: 1px solid #eee;padding: 5px;height: 240px;}
 .zh_cont .zh_cont_r .tab{width:947px;height:auto;padding:0;}
 
 

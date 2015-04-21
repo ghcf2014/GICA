@@ -24,9 +24,9 @@ class UserController extends HomeController {
 		if(IS_POST){ //注册用户
 			//手机发送验证码
 			session_start();
-			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+			/*if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
 			$this->error('手机验证码输入错误。');
-			}
+			}*/
 			// $_SESSION['mobile'] = '';
 			// $_SESSION['mobile_code'] = '';	
 			
@@ -48,10 +48,20 @@ class UserController extends HomeController {
 			if(0 < $uid){ //注册成功
            		// 如果推荐人不为空
 				 if ($reffer != null) {
+
 				 	$reffer = base64_decode ( $reffer );
 				 	$reffers['username']=$reffer;
-					$userinfo = M ( 'ucenter_member' )->field ( "id" )->where ($reffers)->select ();
+					$userinfo = M ( 'ucenter_member' )->field ( "id,member_level" )->where ($reffers)->select ();
+					$member_level=$userinfo[0]['member_level'];
+					if ($member_level>=0 && $member_level<=2){
+						$now_level=($member_level+1);
+						$level['member_level']=$now_level;
+						$arr['id']=$uid;
+						$levels=M('ucenter_member')->where($arr)->save($level);
+					}
+
 					// 添加相关联的好友关系数据
+					
 					$friend= M ( 'z_member_friend' );
 					$time = time ();
 					$f['uid']=$uid;
@@ -59,6 +69,34 @@ class UserController extends HomeController {
 					$f['add_time']=$time;
 					$f['friend_id']=$userinfo[0]['id'];
 					$friendf=$friend->add($f);
+
+					$m['uid']=$userinfo[0]['id'];
+					$m['apply_status']=1;
+					$m['add_time']=$time;
+					$m['friend_id']=$uid;
+					$friendm=$friend->add($m);
+				}
+				if($friends !=null){
+				 	$reffers['username']=$friends;
+					$userinfo = M ( 'ucenter_member' )->field ( "id,member_level" )->where ($reffers)->select ();
+					$member_level=$userinfo[0]['member_level'];
+					if ($member_level>=0 && $member_level<=2){
+						$now_level=($member_level+1);
+						$level['member_level']=$now_level;
+						$arr['id']=$uid;
+						$levels=M('ucenter_member')->where($arr)->save($level);
+					}
+
+					// 添加相关联的好友关系数据
+					
+					$friend= M ( 'z_member_friend' );
+					$time = time ();
+					$f['uid']=$uid;
+					$f['apply_status']=1;
+					$f['add_time']=$time;
+					$f['friend_id']=$userinfo[0]['id'];
+					$friendf=$friend->add($f);
+
 					$m['uid']=$userinfo[0]['id'];
 					$m['apply_status']=1;
 					$m['add_time']=$time;

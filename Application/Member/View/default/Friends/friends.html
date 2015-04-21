@@ -182,11 +182,33 @@
 									<td
 										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo.reg_time|date='Y-m-d',###}</td>
 									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo.investor_capital}</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+										<if condition="$vo[investor_capital] neq null">{$vo.investor_capital}
+										<else/>
+											无数据
+										</if>
+										</td>
 									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo.add_time|date='Y-m-d',###}</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+										<if condition="$vo[add_timel] neq null">{$vo.add_time|date='Y-m-d',###}
+										<else/>
+											无数据
+										</if>
+									</td>
 									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">A</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+										<if condition="$vo.member_level eq 1">
+											一级会员
+										<elseif condition="$vo.member_level eq 2"/>
+											二级会员
+										<elseif condition="$vo.member_level eq 3"/>
+											三级会员
+										<else/>
+											普通会员
+										</if>
+
+										
+									</td>
 										
 								</tr>
 								</volist>
@@ -214,7 +236,12 @@
 					</tr>
 					<tr>
 						<td>A</td>
-						<td>5</td>
+						<td>
+							<if condition="$count[1] neq 0">{$count.1}
+							<else/>
+								0
+							</if>
+						</td>
 						<td>200</td>
 						<td>10</td>
 						<td>200</td>
@@ -223,7 +250,10 @@
 					</tr>
 					<tr>
 						<td>B</td>
-						<td>10</td>
+						<td><if condition="$count[2] neq 0">{$count.2}
+							<else/>
+								0
+							</if></td>
 						<td>200</td>
 						<td>10</td>
 						<td>200</td>
@@ -232,13 +262,17 @@
 					</tr>
 					<tr>
 						<td>C</td>
-						<td>15</td>
+						<td><if condition="$count[3] neq 0">{$count.3}
+							<else/>
+								0
+							</if></td>
 						<td>200</td>
 						<td>10</td>
 						<td>200</td>
 						<td>10</td>
 						<td>领取奖励</td>
-					</tr>					
+					</tr>
+
 				</table>
 			</div>
 						</div>
