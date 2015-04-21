@@ -210,7 +210,7 @@
 							<div id="btn_submit">
 								<!-- <input type="button" class="btn" value="提交充值" id="addrecharge"
 									style="text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 120px;" /> -->
-									<input type="button" class="btn r_post" name="b1" value="下一步"  >
+									<input type="button" class="btn r_post" name="b1" value="下一步"  >功能未完善，请勿充值
 								<!-- <input type="button" class="bcbtn" value="保存并继续"id="addrecharge" /> -->
 								<!-- <a href="javascript:void(0);" class="bcbtn" onclick="addRechargeInfo();">保存并继续</a> -->
 							</div>
@@ -228,9 +228,9 @@
 	</div>
 </div>
 </div>
-<!--content end--> <script type="text/javascript"
-	src="/script/jquery-1.7.1.min.js"></script> <script>
-		$('#addrecharge').click(function() {
+<!--content end-->
+<script>
+$('#addrecharge').click(function() {
 			var money = $("#money").val();
 			if (money < 100) {
 				alert("温馨提示:充值金额不能小于100元！");
@@ -238,11 +238,22 @@
 			}
 			$("form").submit();
 		});
-	</script> 
-	<script type="text/javascript"
+</script> 
+<script type="text/javascript">
 $('.r_post').click(function(){
-             layer.alert('内容')
+	      var money = document.getElementById("money").value;
+		  var bid =1;	
+          $.post('__URL__/recharge_post',{bid:bid,money:money},function success(data){
+          	layer.open({
+						    type: 1,
+						    area: ['480px', '600px'], //宽高
+						    content: '<form action="https://pay.ecpss.com/sslpayment" method="post" name="E_FORM"><table align="center"><tr><td></td><td><input type="text" name="MerNo" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="BillNo" value="'+data.BillNo+'"></td></tr><tr><td></td><td><input type="text" name="Amount" value="'+data.Amount+'"></td></tr><tr><td></td><td><input type="text" name="ReturnURL" value="'+data.ReturnURL+'"></td></tr><tr><td></td><td><input type="text" name="AdviceURL" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="orderTime" value="'+data.orderTime+'"></td></tr><tr><td></td><td><input type="text" name="defaultBankNumber" value="'+data.defaultBankNumber+'"></td></tr><tr><td></td><td><input type="text" name="SignInfo" value="'+data.SignInfo+'"></td></tr><tr><td></td><td><input type="text" name="Remark" value="'+data.Remark+'"></td></tr><tr><td></td><td><input type="text" name="products" value="'+data.products+'"></td></tr></table><p align="center"><input type="submit" name="b1" value="确定提交"></p></form>'
+						});
+
+
+          	// layer.alert();
+          		});
          });
-	</script>
-	</block>
+</script>
+</block>
     

@@ -105,17 +105,15 @@
 		});
 	});
 	$('.fankui').on('click', function() {
-		$.layer({
-			type : 2,
-			shade : [ 0 ],
-			fix : false,
-			title : '平台问题反馈',
-			maxmin : true,
-			iframe : {
-				src : 'Home/Index/fankui'
-			},
-			area : [ '600px', '440px' ],
-			shift : 'top'
-		})
-	});
+	layer.open({
+            type: 2,
+            title: '平台问题反馈',
+            shadeClose: true,
+            shade: false,
+            maxmin: true, //开启最大化最小化按钮
+            area: ['640px', '450px'],
+           
+            content: 'Home/Index/fankui',
+        });
+});
 </script>

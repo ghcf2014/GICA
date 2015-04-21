@@ -287,7 +287,7 @@ class SystemController extends MemberController {
 	}
 	public function recharge_post() {
 		 $uid = is_login (); // 获取当前登录用户ID
-		 $Amount = $_POST ['account_money'];
+		 $Amount = $_POST ['money'];
 
 		 $MD5key = "ekNEwsTK";		//MD5私钥
 	     $MerNo = "26798";					//商户号
@@ -317,9 +317,22 @@ class SystemController extends MemberController {
 	    $this->defaultBankNumber=$defaultBankNumber;
 	    $this->products=$products;
 
+
+	    $data['MD5key']=$MD5key;
+	    $data['MerNo']=$MerNo;
+	    $data['BillNo']=$BillNo;
+	    $data['Amount']=$Amount;
+	    $data['ReturnURL']=$ReturnURL;
+	    $data['Remark']=$Remark;
+	    $data['md5src']=$md5src;
+	    $data['SignInfo']=$SignInfo;
+	    $data['AdviceURL']=$AdviceURL;
+	    $data['orderTime']=$orderTime;
+	    $data['defaultBankNumber']=$defaultBankNumber;
+	    $data['products']=$products;
+
 	    
-	    $this->ajaxReturn($data);
-		$this->display ();
+	    if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
 	}
 	public function recharge_save() {
 		$uid = is_login ();
