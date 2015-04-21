@@ -285,6 +285,42 @@ class SystemController extends MemberController {
 		$this->assign('banksdata',$banks_data[0]);
 		$this->display ();
 	}
+	public function recharge_post() {
+		 $uid = is_login (); // 获取当前登录用户ID
+		 $Amount = $_POST ['account_money'];
+
+		 $MD5key = "ekNEwsTK";		//MD5私钥
+	     $MerNo = "26798";					//商户号
+	     $BillNo =date("his");		//[必填]订单号(商户自己产生：要求不重复)
+	     // $Amount = "0.02";				//[必填]订单金额
+	     $ReturnURL = "http://".$_SERVER['SERVER_NAME']."/PayResult.php"; 			//[必填]返回数据给商户的地址(商户自己填写):
+	     $Remark = "";  //[选填]升级。
+	    $md5src = $MerNo."&".$BillNo."&".$Amount."&".$ReturnURL."&".$MD5key;		//校验源字符串
+	    $SignInfo = strtoupper(md5($md5src));		//MD5检验结果
+		 $AdviceURL ="http://".$_SERVER['SERVER_NAME']."/PayResult.php";   //[必填]支付完成后，后台接收支付结果，可用来更新数据库值;和ReturnURL接受的支付结果是一样的，这个是异步接受的。
+		 $orderTime ="";   //[必填]交易时间YYYYMMDDHHMMSS
+		 $defaultBankNumber ="CCBSH";   //[选填]银行代码s 
+		 //送货信息(方便维护，请尽量收集！如果没有以下信息提供，请传空值:'')
+		 //因为关系到风险问题和以后商户升级的需要，如果有相应或相似的内容的一定要收集，实在没有的才赋空值,谢谢。
+	    $products="金额充值";// '------------------物品信息
+
+	    $this->MD5key=$MD5key;
+	    $this->MerNo=$MerNo;
+	    $this->BillNo=$BillNo;
+	    $this->Amount=$Amount;
+	    $this->ReturnURL=$ReturnURL;
+	    $this->Remark=$Remark;
+	    $this->md5src=$md5src;
+	    $this->SignInfo=$SignInfo;
+	    $this->AdviceURL=$AdviceURL;
+	    $this->orderTime=$orderTime;
+	    $this->defaultBankNumber=$defaultBankNumber;
+	    $this->products=$products;
+
+	    
+	    $this->ajaxReturn($data);
+		$this->display ();
+	}
 	public function recharge_save() {
 		$uid = is_login ();
 		$condition ['uid'] = $uid;

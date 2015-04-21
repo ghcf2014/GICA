@@ -1,6 +1,6 @@
 ﻿<?
 		//MD5私钥
-	$MD5key = "12345678";
+	$MD5key = "ekNEwsTK";
 
 	//订单号
 	$BillNo = $_POST["BillNo"];

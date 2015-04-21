@@ -108,7 +108,6 @@
 			                         <dd><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a><span>{$list.create_time|date='Y-m-d',###}</span></dd>
 			                    </volist>
 			                </dl>-->
-
 					<dl>
 						<dt>
 							<span>网站公告</span> <a
@@ -117,12 +116,10 @@
 						</dt>
 						<volist name="lists3" id="list3">
 						<dd>
-							<a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a><span>{$list1.create_time|date='Y-m-d',###}</span>
+							<a href="{:U('Article/detail?id='.$list3['id'])}">{$list3.title}</a><span>{$list3.create_time|date='Y-m-d',###}</span>
 						</dd>
 						</volist>
-
 					</dl>
-
 					<dl>
 						<dt>
 							<span>行业资讯</span> <a href="{:U('Article/lists?category='.get_category_name(40))}"class="more">更多</a>

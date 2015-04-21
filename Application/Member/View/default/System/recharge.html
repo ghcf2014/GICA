@@ -1,5 +1,7 @@
-<block name="body"> <extend name="Base/common" /> <block
-	name="body"> <!--content start-->
+
+<block name="body"> <extend name="Base/common" /> 
+<block name="body">
+<!--content start-->
 <div class="zh_cont_out">
 	<div class="zh_cont">
 
@@ -10,7 +12,7 @@
 			</h3>
 			<div class="r_main">
 				<div class="mes_con">
-									<form id="form" action="{:U('recharge_save')}" method="post">
+									<!-- <form id="form" action="{:U('recharge_save')}" method="post"> -->
 					<!--tabtil start-->
 					<div class="tabtil">
 						<ul>
@@ -20,6 +22,17 @@
 						</ul>
 					</div>
 					<!--tabtil end-->
+					<form action="https://pay.ecpss.com/sslpayment" method="post" name="E_FORM">
+					<input type="hidden" name="MerNo" value="{$MerNo}">
+					<input type="hidden" name="BillNo" value="{$BillNo}">
+					<input type="hidden" name="Amount" value="{$Amount}">
+					<input type="hidden" name="ReturnURL" value="{$ReturnURL}" >
+					<input type="hidden" name="AdviceURL" value="{$AdviceURL}" >
+					<input type="hidden" name="orderTime" value="{$orderTime}">
+					<input type="hidden" name="defaultBankNumber" value="{$defaultBankNumber}">
+					<input type="hidden" name="SignInfo" value="{$SignInfo}">
+					<input type="hidden" name="Remark" value="{$Remark}">
+					<input type="hidden" name="products" value="{$products}">
 					<div class="box">
 						<div class="boxmain2">
 							<p class="tips">
@@ -32,33 +45,69 @@
 							<div class="biaoge2">
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
-										<td>充值金额：</td>
+										<td><strong>充值金额：</strong></td>
 										<td><input id="money" type="text" class="inp140"
-											name="account_money" /> <span
+											name="account_money" /><span
 											style="color: red; float: none;" id="money_tip"
 											class="formtips"></span></td>
 									</tr>
-									<tr>
-										<td>充值类型：</td>
-										<td style="">
-											<!--      <s:if test="#request.gopay==2">
-                                                        <input id="gopay" type="radio" name="pay" value="2"
-                                                            style="float: none;" />&nbsp;
-           <img src="__PUBLIC__/Home/images/gopay.png" width="121px" height="33px" />&nbsp;&nbsp;&nbsp;&nbsp; 
-           </s:if>
-                                                    <s:if test="#request.IPS==2">
-                                                        <input id="ipay" type="radio" name="pay" value="1"
-                                                            style="float: none;" />&nbsp;&nbsp;
-           <img src="__PUBLIC__/Home/images/ipay.png" width="121px" height="33px" />
-                                                    </s:if> --> <input
-											type="radio" name="pay" id="xxpay" value="3"
-											style="float: none;" checked="checked" /> &nbsp;线下充值<strong>(提交金额后,请联系客服进行线下充值)</strong>
-										</td>
+									<div class="border_" id="div_ipay">
+												<table border="0" align="center" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td colspan="5"><strong>请选择支付方式：</strong></td>
+													</tr>
+													<tr valign="middle">
+														
+														<td><input type="radio" name="pay" value="128" value="2" checked="checked"/>
+															汇潮支付<img src="__PUBLIC__/Home/images/banks/bank_06.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="pay" id="xxpay" value="3"style="float: none;"  /> &nbsp;线下充值<strong>(需要提交转账凭证给客服核实)</strong></td>
+														<!-- <td><input type="radio" name="bankType" value="04" />
+															IPS账户支付</td>
+														<td><input type="radio" name="bankType" value="16" />
+															电话支付</td>
+														<td><input type="radio" name="bankType" value="32" />
+															手机支付</td> -->
+														<!-- <td><input type="radio" name="pay" value="128" value="2" checked="checked"/>网上银行</td> -->
+													</tr>
+													<tr><td>操作银行：
+															<select name="momeyType" id="momeyType" class="inp80">
+																<option value="">--请选择--</option>
+																<option value="-1">{$banksdata['bank_num']}/{$memberdata['real_name']}/${bank.bankname }</option>
+																<option value="804">扣除VIP会费</option>
+															</select>
+														</td>
+														<td height="10"></td>
+													</tr>
+													<tr>
+														<td height="10"></td>
+														<td height="10"></td>
+														<td height="10"></td>
+														<td height="10"></td>
+														<td height="10"></td>
+													</tr>
+
+													<tr>
+
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<!--         <tr>
+                  <td colspan="2">&nbsp;</td>
+                  <td><input name="下一步" type="submit" value="下一步" style="border:0px; color:#FFF; font-weight:bold; margin:10px; width:100px; background:#1064AC"/></td>
+                  <td></td>
+                  <td></td>
+                </tr> -->
+												</table>
+											</div>
+									     <tr>
 									</tr>
 									<tr>
 										<td colspan="2">
 											<div class="border_" id="div_gopay">
-												<table border="0" align="center" cellpadding="0"
+												<!-- <table border="0" align="center" cellpadding="0"
 													cellspacing="0">
 													<tr>
 														<td colspan="5"><strong>请选择支付方式：</strong></td>
@@ -130,8 +179,8 @@
 															<img src="__PUBLIC__/Home/images/banks/bank_20.png"
 															width="128" height="33" /></td>
 
-														<!--         <td><input type="radio"   name="bankType"   value="TCCB" />
-                    <img src="images/banks/bank_30.png" width="128" height="33" /></td> -->
+														<td><input type="radio"   name="bankType"   value="TCCB" />
+                    <img src="__PUBLIC__/Home/images/banks/bank_30.png" width="128" height="33" /></td>
 														<td></td>
 
 
@@ -143,102 +192,25 @@
 														<td height="10"></td>
 														<td height="10"></td>
 													</tr>
-													<tr>
-														<td colspan="2"><input type="radio" name="bankType"
-															value="DEFAULT" /> <span
-															style="float: left; margin-left: 10px">使用汇潮支付<font
-																color="#999999"></font>
-														</span></td>
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
 
-													<!--         <tr>
+													        <tr>
           <td colspan="2">&nbsp;</td>
           <td><input name="下一步" type="submit" value="下一步" style="border:0px; color:#FFF; font-weight:bold; margin:10px; width:100px; background:#1064AC"/></td>
           <td></td>
           <td></td>
-        </tr> -->
-												</table>
+        </tr>
+												</table> -->
 											</div>
-											<div class="border_" id="div_ipay">
-												<table border="0" align="center" cellpadding="0"
-													cellspacing="0">
-													<tr>
-														<td colspan="5"><strong>请选择支付方式：</strong></td>
-													</tr>
-													<tr valign="middle">
-														<td><input type="radio" name="bankType" value="01"
-															id="rd_ipay_jieji" /> 人民币借记卡</td>
-														<td><input type="radio" name="bankType" value="128" />
-															信用卡支付</td>
-														<td><input type="radio" name="bankType" value="04" />
-															IPS账户支付</td>
-														<td><input type="radio" name="bankType" value="16" />
-															电话支付</td>
-														<td><input type="radio" name="bankType" value="32" />
-															手机支付</td>
-													</tr>
-													<tr>
-														<td colspan="5"><input type="radio" name="bankType"
-															value="1024" /> 手机语音支付</td>
-
-													</tr>
-
-
-													<tr>
-														<td height="10"></td>
-														<td height="10"></td>
-														<td height="10"></td>
-														<td height="10"></td>
-														<td height="10"></td>
-													</tr>
-
-													<tr>
-
-														<td></td>
-														<td></td>
-														<td></td>
-													</tr>
-													<!--         <tr>
-                  <td colspan="2">&nbsp;</td>
-                  <td><input name="下一步" type="submit" value="下一步" style="border:0px; color:#FFF; font-weight:bold; margin:10px; width:100px; background:#1064AC"/></td>
-                  <td></td>
-                  <td></td>
-                </tr> -->
-												</table>
-											</div>
+											
 										</td>
 									</tr>
-									<tr>
-										<td style="padding-top: 20px;" colspan="2">
-											<div id="xxdiv" >
-												<table style="line-height: 30px;">
-													<tr align="center" height="30px">
-														<td width="30px">&nbsp;</td>
-														<td width="40px">银行</td>
-														<td width="70px">账号</td>
-														<td width="60px">开户人</td>
-														<td width="70px">开户行</td>
-													</tr>
-													<tr align="center">
-														<td><input type="radio" value="${bank.bankname }"name="paramMap.banks" style="float: none;"/></td>
-														<td><image src="__PUBLIC__/Home/images/banks/bank_18.png"
-																style="width:130px;height:60px;" /></td>
-														<td>{$banksdata['bank_num']}</td>
-														<td>{$memberdata['real_name']}</td>
-														<td>${bank.accountbank }</td>
-													</tr>
-												</table>
-											</div>
-										</td>
-									</tr>
+									
 								</table>
 							</div>
 							<div id="btn_submit">
-								<input type="button" class="btn" value="提交充值" id="addrecharge"
-									style="text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 120px;" />
+								<!-- <input type="button" class="btn" value="提交充值" id="addrecharge"
+									style="text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 120px;" /> -->
+									<input type="button" class="btn r_post" name="b1" value="下一步"  >
 								<!-- <input type="button" class="bcbtn" value="保存并继续"id="addrecharge" /> -->
 								<!-- <a href="javascript:void(0);" class="bcbtn" onclick="addRechargeInfo();">保存并继续</a> -->
 							</div>
@@ -247,11 +219,11 @@
 								<span id="rechargeInfo"></span>
 							</div>
 						</div>
-					</div>
+					</div></from>
 				</div>
 
 			</div>
-			</from>
+			
 		</div>
 	</div>
 </div>
@@ -268,21 +240,9 @@
 		});
 	</script> 
 	<script type="text/javascript"
-	$("#gopay")
-				.click(
-						function() {
-							$("#div_gopay").attr("style", "display:block;");
-							$("#btn_submit").attr("style", "display:block;");
-							$("#xxdiv").attr("style", "display:none;");
-							$("#div_ipay").attr("style", "display:none;");
-							$("#rd_gopay_icbc").attr("checked", "checked");
-							$("#p_about")
-									.html(
-											"国付宝简介:国付宝信息科技有限公司（以下简称“国付宝”）是商务部中国国际电子商务中心（以下简称“CIECC”）与海航商业控股有限公司（以下简称“海航商业”）合资成立，"
-													+ "针对政府及企业的需求和电子商务的发展，精心打造的国有背景的，引入社会诚信体系的独立第三方电子支付平台，也是“金关工程”的重要组成部分。"
-													+ "国付宝信息科技有限公司成立于2011年1月25日，由商务部中国国际电子商务中心与海航商业控股有限公司合作成立，主要经营第三方支付业务。"
-													+ "公司注册资本14285.72万元，主要经营第三方支付业务，互联网支付及移动电话支付（全国）。");
-						});
+$('.r_post').click(function(){
+             layer.alert('内容')
+         });
 	</script>
 	</block>
     
