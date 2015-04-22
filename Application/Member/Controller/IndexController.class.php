@@ -45,6 +45,14 @@ class IndexController extends MemberController {
         $this->assign('list3', $m);
         $this->assign('mstatus', $member_status);
 
+        $arr['id']=$uid;
+        $leveldata=M('ucenter_member');
+        $levels=$leveldata->where($arr)->field('member_level')->select();
+        $level=$levels[0]['member_level'];
+        $this->assign('member_level',$level);
+
+
+
         $this->display();
     }
     //文件信息写入数据库

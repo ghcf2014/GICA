@@ -64,17 +64,12 @@ class UserController extends HomeController {
 					
 					$friend= M ( 'z_member_friend' );
 					$time = time ();
-					$f['uid']=$uid;
+					$f['friend_id']=$uid;
 					$f['apply_status']=1;
 					$f['add_time']=$time;
-					$f['friend_id']=$userinfo[0]['id'];
+					$f['uid']=$userinfo[0]['id'];
 					$friendf=$friend->add($f);
 
-					$m['uid']=$userinfo[0]['id'];
-					$m['apply_status']=1;
-					$m['add_time']=$time;
-					$m['friend_id']=$uid;
-					$friendm=$friend->add($m);
 				}
 				if($friends !=null){
 				 	$reffers['username']=$friends;
@@ -91,17 +86,12 @@ class UserController extends HomeController {
 					
 					$friend= M ( 'z_member_friend' );
 					$time = time ();
-					$f['uid']=$uid;
+					$f['friend_id']=$uid;
 					$f['apply_status']=1;
 					$f['add_time']=$time;
-					$f['friend_id']=$userinfo[0]['id'];
+					$f['uid']=$userinfo[0]['id'];
 					$friendf=$friend->add($f);
 
-					$m['uid']=$userinfo[0]['id'];
-					$m['apply_status']=1;
-					$m['add_time']=$time;
-					$m['friend_id']=$uid;
-					$friendm=$friend->add($m);
 				}
 
 				$mstatus = M('z_members_status');//用户验证状态

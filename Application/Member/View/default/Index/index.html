@@ -25,7 +25,20 @@
 						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx.png" title="VIP已认证" /> </a>
 					<else/>
 						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx_h.png" title="VIP未认证" /></a>
-					</if></span>
+					</if><if condition="$member_level eq 0">
+							<img src="__PUBLIC__/Home/images/level_p.png" title="普通会员" />
+						<elseif condition="$member_level eq 1"/>
+							<img src="__PUBLIC__/Home/images/level_a.png" title="A级会员" />
+						<elseif condition="$member_level eq 2"/>
+							<img src="__PUBLIC__/Home/images/level_b.png" title="B级会员" />
+						<elseif condition="$member_level eq 3"/>
+							<img src="__PUBLIC__/Home/images/level_c.png" title="C级会员" />
+						</if>	
+						
+						
+						
+						
+					</span>
 					</p>
 					<p>
 						会员积分：<span><volist name="list" id="vo">{$vo.score}分</volist></span>

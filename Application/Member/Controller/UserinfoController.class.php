@@ -419,9 +419,6 @@ class UserinfoController extends MemberController {
 		$condition1['uid']=$uid;
 		$st=$status->where($condition1)->select();
 
-		 if($st[0]['id_status'] ==0){//审核不通过不显示
-			$uid='';
-			}
 			// 会员信息查询
 			$chk = M ( "z_member_info" );
 			$condition ['uid'] = $uid;
