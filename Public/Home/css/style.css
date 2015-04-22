@@ -370,7 +370,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .jk_cont .jk_cont_in .jk_cont_in_cont .jk_cont_in_cont_in h4{width:265px;height:38px;line-height:38px;font-size:18px;font-weight:normal;padding-left:23px;}
 .jk_cont .jk_cont_in .jk_cont_in_cont ul{width:265px;height:auto;line-height:21px;font-size:14px;font-weight:normal;padding-left:23px;margin-bottom:10px;}
 .jk_cont .jk_cont_in .jk_cont_in_cont ul li{width:250px;line-height:25px;padding-left:15px;color:#353535;}
-.jk_cont .jk_cont_in .jk_cont_in_cont .jk_btn{width:332px;height:40px;background:#990000;font-size:18px;line-height:32px;cursor:pointer;text-align:center;}
+.jk_cont .jk_cont_in .jk_cont_in_cont .jk_btn{width:332px;height:40px;background:#66ccfb;font-size:18px;line-height:32px;cursor:pointer;text-align:center;}
 .jk_cont .jk_cont_in .jk_cont_in_cont .jk_btn a{color: #fff;}
 
 .jk_cont .jk_cont_in .jk_cont_in_cont .h3_01{background:#ddd;}
@@ -615,7 +615,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .descrition p{line-height: 28px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .picture{float: right;width: 549px;height: 423px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .advantage{display: block;width: 865px;padding: 15px 0 0;height: auto;}
-.xszy_cont .xszy_cont_r .xszy_cont_r_cont .advantage li{width: auto;height: 100px;padding-left: 130px;font-size: 16px;color: #595959;line-height: 130px;padding-bottom: 30px;}
+.xszy_cont .xszy_cont_r .xszy_cont_r_cont .advantage li{width: auto;height: 75px;font-size: 16px;color: #595959;line-height: 4px;padding: 25px 0 30px 130px;}
+.xszy_cont .xszy_cont_r .xszy_cont_r_cont .advantage li p{color: #23a3dd;font-weight:bold;font-size: 20px;line-height: 50px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .advantage li b{font-weight: normal;color: #0aaae6;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .rhtz{width: 865px;padding: 60px 0 0;height: auto;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .rhtz dt{height: 50px;line-height: 50px;color:#0aaae6;font-size: 24px;padding-left: 0;padding-bottom: 20px;font-weight: normal;}
