@@ -525,6 +525,25 @@ function get_borrow_username($borrow_uid = 0) {
 	// var_dump($name['nickname']);
 	return $name ['nickname'];
 }
+function user_leve($id = 0) {
+	if($id == 0){
+		$name='非会员';
+	}
+	if($id == 1){
+		$name='会员';
+	}if($id == 3){
+		$name='会员';
+	}if($id == 4){
+		$name='会员';
+	}if($id == 5){
+		$name='会员';
+	}
+	if($id == 6){
+		$name='会员';
+	}
+	// var_dump($name['nickname']);
+	return $name;
+}
 function get_member_info($uid = 0) {
 	$map = $uid;
 	$name = M ( 'z_member_info' )->field ( 'city_now' )->find ( $map );

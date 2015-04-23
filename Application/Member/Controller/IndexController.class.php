@@ -37,6 +37,7 @@ class IndexController extends MemberController {
         //会员充值金额查询
         $mstatus = M('z_member_payonline');//用户验证状态
         $condition2['uid'] =$uid;
+        $condition2['status'] =88;
         $paymoney=$mstatus->field('sum(money)money')->where($condition2)->group('uid')->select();
         
 
