@@ -1,4 +1,4 @@
-﻿
+
 <?
      
      $MD5key = "ekNEwsTK";		//MD5私钥

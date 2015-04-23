@@ -94,19 +94,6 @@ class UserController extends HomeController {
 
 				}
 
-
-				// //默认设置系统消息通知方式
-				$status_sys=M('z_systemset');
-				$st["rechar"] = 100;
-			    $st["loginchange"] = 100;
-			    $st["tradechange"] = 100;
-			    $st["phonechange"] = 100;
-			    $st["emailchange"] = 100;
-			    $st["set_time"] = time();
-			    $st["uid"] =$uid;
-			    $st=$status_sys->add($st);
-
-
 				$mstatus = M('z_members_status');//用户验证状态
 		        $condition2['uid'] =$uid;
 		        $member_status=$mstatus->where($condition2)->select();
