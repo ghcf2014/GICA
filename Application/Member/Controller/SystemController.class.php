@@ -293,11 +293,11 @@ class SystemController extends MemberController {
 	     $MerNo = "26798";					//商户号
 	     $BillNo =date("his");		//[必填]订单号(商户自己产生：要求不重复)
 	     // $Amount = "0.02";				//[必填]订单金额
-	     $ReturnURL = "http://".$_SERVER['SERVER_NAME']."/PayResult.php"; 			//[必填]返回数据给商户的地址(商户自己填写):
+	     $ReturnURL = "http://".$_SERVER['SERVER_NAME']."/Member/System/payresult?uid=".$uid; 			//[必填]返回数据给商户的地址(商户自己填写):
 	     $Remark = "";  //[选填]升级。
 	    $md5src = $MerNo."&".$BillNo."&".$Amount."&".$ReturnURL."&".$MD5key;		//校验源字符串
 	    $SignInfo = strtoupper(md5($md5src));		//MD5检验结果
-		 $AdviceURL ="http://".$_SERVER['SERVER_NAME']."/PayResult.php";   //[必填]支付完成后，后台接收支付结果，可用来更新数据库值;和ReturnURL接受的支付结果是一样的，这个是异步接受的。
+		 $AdviceURL ="http://".$_SERVER['SERVER_NAME']."/Member/System/payresult?uid=".$uid;   //[必填]支付完成后，后台接收支付结果，可用来更新数据库值;和ReturnURL接受的支付结果是一样的，这个是异步接受的。
 		 $orderTime ="";   //[必填]交易时间YYYYMMDDHHMMSS
 		 $defaultBankNumber ="CCBSH";   //[选填]银行代码s 
 		 //送货信息(方便维护，请尽量收集！如果没有以下信息提供，请传空值:'')
@@ -316,6 +316,25 @@ class SystemController extends MemberController {
 	    $this->orderTime=$orderTime;
 	    $this->defaultBankNumber=$defaultBankNumber;
 	    $this->products=$products;
+
+		if(IS_POST){ 
+			// if($BillNo != ''){
+				$payinfo=M('z_member_payonline');
+				$data['money']=$Amount;
+				$data['status']=$Result;
+				$data['tran_id']=$BillNo;
+				$data['add_time']=time();
+				$data['add_ip']== get_client_ip ();
+				$data['way']=1;
+				$data['off_bank']=1;
+				$data['uid']=$uid;
+				// $payinfo=$payinfo->where($map)->add(data);
+				if(!$pay=$payinfo->add($data)){
+					$this->error('交易失败');
+				}
+			// } 
+		}
+
 
 
 	    $data['MD5key']=$MD5key;
@@ -368,6 +387,81 @@ class SystemController extends MemberController {
 			// 失败提示
 			$this->error ( '充值失败!' );
 		}
+	}
+	public function payresult($uid=0) {
+	//MD5私钥
+	$MD5key = "ekNEwsTK";
+
+	//订单号
+	$BillNo = $_POST["BillNo"];
+	//金额
+	$Amount = $_POST["Amount"];
+	//支付状态
+	$Succeed = $_POST["Succeed"];
+	//支付结果
+	$Result = $_POST["Result"];
+	//取得的MD5校验信息
+	$SignMD5info = $_POST["SignMD5info"]; 
+	//备注
+	$Remark = $_POST["Remark"];
+
+		if(IS_POST){ 
+			// if($BillNo != ''){
+				$payinfo=M('z_member_payonline');
+				// $data['money']=$Amount;
+				$data['status']=$Succeed;
+				$map['tran_id']=$BillNo;
+				// $data['add_time']=time();
+				// $map['uid']=$uid;
+				// $payinfo=$payinfo->where($map)->add(data);
+				if(!$pay=$payinfo->where($map)->save($data)){
+					$this->error('充值失败');
+				}
+
+
+				//影响会员资金
+				$condition ['uid'] = $uid;
+				$money = M ( "z_member_money" );
+				$money = $money->field ( 'account_money' )->where ( $condition )->select (); // 余额查询
+				
+				$m1 = M ( "z_member_money" );
+				$money = floatval( $money [0] ['account_money'] ) +floatval($Amount); // 余额加充值金额
+				$data1 ['account_money'] = $money;
+				
+
+				// 保存当前数据对象
+				if ($m1 = $m1->where ( $condition )->save ( $data1 )) { // 保存成功
+				                                                                                                        
+					// 资金日志记录
+					$log = M ( 'z_member_moneylog' );
+					$logdata ['uid'] = $uid;
+					$logdata ['type'] = 102;
+					$logdata ['affect_money'] =floatval($Amount);
+					$logdata ['info'] = '在线充值';
+					$logdata ['add_time'] = time ();
+					$log = $log->add ( $logdata );
+					
+					//发送站内信
+					$type="rechar";
+			        $action=$logdata ['info'].floatval($Amount).'元,请注意资金安全！';
+			        systemmsg($type,$action);
+				} 
+		}
+
+	$this->MD5key=$MD5key;
+	$this->BillNo =$BillNo;
+	$this->Amount=$Amount;
+	$this->Succeed=$Succeed;
+	$this->Result=$Result;
+	$this->SignMD5info=$SignMD5info;
+	$this->Remark=$Remark;
+
+	//校验源字符串
+  	$md5src = $BillNo."&".$Amount."&".$Succeed."&".$MD5key;
+  	//MD5检验结果
+	$md5sign = strtoupper(md5($md5src));
+	$this->md5sign=$md5sign;
+	$this->display ();
 	}
 	public function userbankInfo() {
 		$this->display ();

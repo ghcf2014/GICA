@@ -74,8 +74,7 @@
 													<tr><td>操作银行：
 															<select name="momeyType" id="momeyType" class="inp80">
 																<option value="">--请选择--</option>
-																<option value="-1">{$banksdata['bank_num']}/{$memberdata['real_name']}/${bank.bankname }</option>
-																<option value="804">扣除VIP会费</option>
+																<option value="{$banksdata['bank_num']}">{$banksdata['bank_num']}/{$memberdata['real_name']}/{$banksdata['bank_name']}</option>
 															</select>
 														</td>
 														<td height="10"></td>
@@ -210,7 +209,7 @@
 							<div id="btn_submit">
 								<!-- <input type="button" class="btn" value="提交充值" id="addrecharge"
 									style="text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 120px;" /> -->
-									<input type="button" class="btn r_post" name="b1" value="下一步"  >功能未完善，请勿充值
+									<input type="button" class="btn r_post" name="b1" value="提交"  >功能未完善，请勿充值
 								<!-- <input type="button" class="bcbtn" value="保存并继续"id="addrecharge" /> -->
 								<!-- <a href="javascript:void(0);" class="bcbtn" onclick="addRechargeInfo();">保存并继续</a> -->
 							</div>
@@ -247,7 +246,7 @@ $('.r_post').click(function(){
           	layer.open({
 						    type: 1,
 						    area: ['480px', '600px'], //宽高
-						    content: '<form action="https://pay.ecpss.com/sslpayment" method="post" name="E_FORM"><table align="center"><tr><td></td><td><input type="text" name="MerNo" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="BillNo" value="'+data.BillNo+'"></td></tr><tr><td></td><td><input type="text" name="Amount" value="'+data.Amount+'"></td></tr><tr><td></td><td><input type="text" name="ReturnURL" value="'+data.ReturnURL+'"></td></tr><tr><td></td><td><input type="text" name="AdviceURL" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="orderTime" value="'+data.orderTime+'"></td></tr><tr><td></td><td><input type="text" name="defaultBankNumber" value="'+data.defaultBankNumber+'"></td></tr><tr><td></td><td><input type="text" name="SignInfo" value="'+data.SignInfo+'"></td></tr><tr><td></td><td><input type="text" name="Remark" value="'+data.Remark+'"></td></tr><tr><td></td><td><input type="text" name="products" value="'+data.products+'"></td></tr></table><p align="center"><input type="submit" name="b1" value="确定提交"></p></form>'
+						    content: '<form action="https://pay.ecpss.com/sslpayment" method="post" name="E_FORM"><table align="center"><tr><td></td><td><input type="text" name="MerNo" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="BillNo" value="'+data.BillNo+'"></td></tr><tr><td></td><td><input type="text" name="Amount" value="'+data.Amount+'"></td></tr><tr><td></td><td><input type="text" name="ReturnURL" value="'+data.ReturnURL+'"></td></tr><tr><td></td><td><input type="text" name="AdviceURL" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="orderTime" value="'+data.orderTime+'"></td></tr><tr><td></td><td><input type="text" name="defaultBankNumber" value="'+data.defaultBankNumber+'"></td></tr><tr><td></td><td><input type="text" name="SignInfo" value="'+data.SignInfo+'"></td></tr><tr><td></td><td><input type="text" name="Remark" value="'+data.Remark+'"></td></tr><tr><td></td><td><input type="text" name="products" value="'+data.products+'"></td></tr></table><p align="center"><input type="submit" name="b1" value="继续前往"></p></form>'
 						});
 
 

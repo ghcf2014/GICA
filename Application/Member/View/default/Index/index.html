@@ -121,9 +121,9 @@
 				<div class="zh_cont_r_bot">
 					<volist name="list" id="vo">
 					<ul>
-						<li>账户总额（元）：{$vo.account_money|default="0.00"}</li>
+						<li>账户总额（元）：{$vo['account_money']+$vo['money_freeze']}</li>
 						<li>可用余额（元）：{$vo.account_money|default="0.00"}</li>
-						<li>冻结金额（元）：{$vo.account_money|default="0.00"}</li>
+						<li>冻结金额（元）：{$vo.money_freeze|default="0.00"}</li>
 					</ul>
 					</volist>
 				</div>
@@ -151,10 +151,12 @@
 				</div>
 				<h4>充值提现：</h4>
 				<div class="zh_cont_r_bot">
+				<volist name="paymoney" id="vo">
 					<ul>
-						<li>充值总金额（元）：{$bm.borrow_money|default="0.00"}</li>
+						<li>充值总金额（元）：{$vo.money|default="0.00"}</li>
 						<li>提现总金额（元）：{$bm.borrow_money|default="0.00"}</li>
 					</ul>
+				</volist>
 				</div>
 			</div>
 			
