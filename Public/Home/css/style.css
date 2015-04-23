@@ -898,7 +898,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .box .tongzhiWay dd ul li{float: left;width: auto;height: 40px;line-height: 40px;overflow: hidden;margin: 0 20px 0 10px;font-size: 14px;}
 .zh_cont .zh_cont_r .box .tongzhiWay dd ul li label{line-height: 40px;}
 .zh_cont .zh_cont_r .box .tongzhiWay dd ul li input{float: left;margin: 15px 5px 0 0;}
-.zh_cont .zh_cont_r .box .tongzhiWay_btn{width: 140px;height: 40px;background: url(../images/140x40pxblue.png) no-repeat;color: #fff;font-size: 16px;margin:45px 350px;}
+.zh_cont .zh_cont_r .box .tongzhiWay_btn{width: 100px;height: 40px;background: url(../images/100x40.png) no-repeat;color: #fff;font-size: 16px;margin:45px 350px;}
 
 
 

@@ -47,8 +47,8 @@
 		<div class="zlsc_cont">		
 			<h2>&nbsp;&nbsp;资料上传</h2>
 			<ul class="zlsc_cont_in01">
-				<li><input type="button" value="申请表下载" style="background: #169bff url(images/download20x20.png) no-repeat 25px 8px;"/></li>
-				<li><input type="button" value="资料上传"  style="background: #7ecd1a url(images/upload20x20.png) no-repeat 25px 8px;"/></li>
+				<li><input type="button" value="申请表下载" style="background: #169bff url(images/download20x20.png) no-repeat 25px 8px;padding-right: 45px;"/></li>
+				<li><input type="button" value="资料上传"  style="background: #7ecd1a url(images/upload20x20.png) no-repeat 25px 8px;padding-right: 45px"/></li>
 			</ul>
 			<div class="zlsc_cont_in02">
 				<div class="zlsc_cont_in_tab">
@@ -71,7 +71,10 @@
 							<if condition="$file['identity_report'] eq 1">
 								<dd>已上传</dd>
 							<else/>  
-								<dd><input type="file" name="identity_report" id=""  /></dd>
+								<dd style="height:36px;position:relative;top:4px;border: none;"><input type="file" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:100%;height:30px;border:none;cursor:pointer;" value="" name="filenamer" class="filer">
+									<dd style="width: 300px;margin-left: -300px;overflow: hidden;"><input type="text" style="float:left;width:220px;height:20px;border-radius:0;border-right:0;opacity: 0;" value="" class="filenamer">
+										<input type="button" style="margin-top:-44px;float:left;width:60px;height:39px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff; margin-left: 240px;" value="浏 览"></dd>
+										</dd>
 							</if>
 						</dl>
 						<dl>
@@ -79,7 +82,10 @@
 							<if condition="$file['credit_report'] eq 1">
 								<dd>已上传</dd>
 							<else/>	
-								<dd><input type="file" name="credit_report" id=""  /></dd>
+								<dd style="height:36px;position:relative;top:4px;border: none;"><input type="file" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:100%;height:30px;border:none;cursor:pointer;" value="" name="filenamer" class="filer">
+									<dd style="width: 300px;margin-left: -300px;overflow: hidden;"><input type="text" style="float:left;width:220px;height:20px;border-radius:0;border-right:0;opacity: 0;" value="" class="filenamer">
+										<input type="button" style="margin-top:-44px;float:left;width:60px;height:39px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff; margin-left: 240px;" value="浏 览"></dd>
+										</dd>
 							</if>
 						</dl>
 						<dl>
@@ -87,7 +93,10 @@
 							<if condition="$file['work_report'] eq 1">
 								<dd>已上传</dd>
 							<else/>  
-							<dd><input type="file" name="work_report" id=""  /></dd>
+							<dd style="height:36px;position:relative;top:4px;border: none;"><input type="file" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:100%;height:30px;border:none;cursor:pointer;" value="" name="filenamer" class="filer">
+									<dd style="width: 300px;margin-left: -300px;overflow: hidden;"><input type="text" style="float:left;width:220px;height:20px;border-radius:0;border-right:0;opacity: 0;" value="" class="filenamer">
+										<input type="button" style="margin-top:-44px;float:left;width:60px;height:39px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff; margin-left: 240px;" value="浏 览"></dd>
+										</dd>
 							</if>
 						</dl>
 						<dl>
@@ -95,7 +104,10 @@
 							<if condition="$file['income_report'] eq 1">
 								<dd>已上传</dd>
 							<else/>  
-							<dd><input type="file" name="income_report" id=""  /></dd>
+							<dd style="height:36px;position:relative;top:4px;border: none;"><input type="file" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:100%;height:30px;border:none;cursor:pointer;" value="" name="filenamer" class="filer">
+									<dd style="width: 300px;margin-left: -300px;overflow: hidden;"><input type="text" style="float:left;width:220px;height:20px;border-radius:0;border-right:0;opacity: 0;" value="" class="filenamer">
+										<input type="button" style="margin-top:-44px;float:left;width:60px;height:39px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff; margin-left: 240px;" value="浏 览"></dd>
+										</dd>
 							</if>
 						</dl>
 						<dl>
@@ -103,7 +115,10 @@
 							<if condition="$file['living_report'] eq 1">
 								<dd>已上传</dd>
 							<else/>  
-							<dd><input type="file" name="living_report" id=""  /></dd>
+							<dd style="height:36px;position:relative;top:4px;border: none;"><input type="file" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:100%;height:30px;border:none;cursor:pointer;" value="" name="filenamer" class="filer">
+									<dd style="width: 300px;margin-left: -300px;overflow: hidden;"><input type="text" style="float:left;width:220px;height:20px;border-radius:0;border-right:0;opacity: 0;" value="" class="filenamer">
+										<input type="button" style="margin-top:-44px;float:left;width:60px;height:39px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff; margin-left: 240px;" value="浏 览"></dd>
+										</dd>
 							</if>
 						</dl>
 						
@@ -113,11 +128,14 @@
 							<if condition="$file['other_report'] eq 1">
 								<dd>已上传</dd>
 							<else/>  
-							<dd><input type="file" name="other_report" id=""  /></dd>
+							<dd style="height:36px;position:relative;top:4px;border: none;"><input type="file" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:100%;height:30px;border:none;cursor:pointer;" value="" name="filenamer" class="filer">
+									<dd style="width: 300px;margin-left: -300px;overflow: hidden;"><input type="text" style="float:left;width:220px;height:20px;border-radius:0;border-right:0;opacity: 0;" value="" class="filenamer">
+										<input type="button" style="margin-top:-44px;float:left;width:60px;height:39px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff; margin-left: 240px;" value="浏 览"></dd>
+										</dd>
 							</if>
 						</dl>												
 					</div>
-						<input type="submit" id="" value="上传" class="upbtn"/>
+						<input type="submit" id="" value="上传" class="upbtn"style="padding-right: 34px;margin-left:220px;"/>
 					</form>
 					
 					<p>请上传jpg,gif,bmp,png,pdf,rtf,tif 等格式的文件（pdf,rtf,tif文件无法显示图标噢）</p>

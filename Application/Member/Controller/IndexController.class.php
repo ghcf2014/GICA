@@ -33,12 +33,15 @@ class IndexController extends MemberController {
         $lists2    = D('z_borrow_investor')->field('sum(investor_capital)investor_capital')->where($lists2_uid)->order('investor_capital desc')->group('investor_uid')->select();
         $lists3_uid['borrow_uid'] =$uid;
         $lists3    = D('z_borrow_info')->field('sum(borrow_money)borrow_money')->where($lists3_uid)->group('borrow_uid')->select();
+<<<<<<< HEAD
 
         //会员充值金额查询
         $mstatus = M('z_member_payonline');//用户验证状态
         $condition2['uid'] =$uid;
         $condition2['status'] =88;
         $paymoney=$mstatus->field('sum(money)money')->where($condition2)->group('uid')->select();
+=======
+>>>>>>> origin/master
         
 
         $m = M('ucenter_member');//用户头像
@@ -50,7 +53,6 @@ class IndexController extends MemberController {
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
         $this->assign('mstatus', $member_status);
-        $this->assign('paymoney', $paymoney);
 
         $arr['id']=$uid;
         $leveldata=M('ucenter_member');

@@ -43,6 +43,7 @@
 								3、工合财富网贷禁止信用卡套现、虚假交易等行为，一经发现将予以处罚。<br />
 								处罚包括但不限于以下几种方式：限制收款、冻结账户、永久停止服务，并对相关信用记录有影响。
 							</p>
+<<<<<<< HEAD
 						</div>
 						<!--biaoge2 end-->
 						<div style="padding-left: 50px;">
@@ -50,6 +51,149 @@
 							    <!-- <form class="demo form-horizontal" id="demo1" action="#" method="post"> -->
 							        <div class="form-item">
 							            <label for="username"><strong>充值金额：</strong></label>
+=======
+							<!--biaoge2 end-->
+							<div class="biaoge2">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td><strong>充值金额：</strong></td>
+										<td><input id="money" type="text" class="inp140"
+											name="account_money" /><span
+											style="color: red; float: none;" id="money_tip"
+											class="formtips"></span></td>
+									</tr>
+									<div class="border_" id="div_ipay">
+												<table border="0" align="center" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td colspan="5"><strong>请选择支付方式：</strong></td>
+													</tr>
+													<tr valign="middle">
+														
+														<td><input type="radio" name="pay" value="128" value="2" checked="checked"/>
+															汇潮支付<img src="__PUBLIC__/Home/images/banks/bank_06.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="pay" id="xxpay" value="3"style="float: none;"  /> &nbsp;线下充值<strong>(需要提交转账凭证给客服核实)</strong></td>
+														<!-- <td><input type="radio" name="bankType" value="04" />
+															IPS账户支付</td>
+														<td><input type="radio" name="bankType" value="16" />
+															电话支付</td>
+														<td><input type="radio" name="bankType" value="32" />
+															手机支付</td> -->
+														<!-- <td><input type="radio" name="pay" value="128" value="2" checked="checked"/>网上银行</td> -->
+													</tr>
+													<tr><td>操作银行：
+															<select name="momeyType" id="momeyType" class="inp80">
+																<option value="">--请选择--</option>
+																<option value="-1">{$banksdata['bank_num']}/{$memberdata['real_name']}/${bank.bankname }</option>
+																<option value="804">扣除VIP会费</option>
+															</select>
+														</td>
+														<td height="10"></td>
+													</tr>
+													<tr>
+														<td height="10"></td>
+														<td height="10"></td>
+														<td height="10"></td>
+														<td height="10"></td>
+														<td height="10"></td>
+													</tr>
+
+													<tr>
+
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>
+													<!--         <tr>
+                  <td colspan="2">&nbsp;</td>
+                  <td><input name="下一步" type="submit" value="下一步" style="border:0px; color:#FFF; font-weight:bold; margin:10px; width:100px; background:#1064AC"/></td>
+                  <td></td>
+                  <td></td>
+                </tr> -->
+												</table>
+											</div>
+									     <tr>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<div class="border_" id="div_gopay">
+												<!-- <table border="0" align="center" cellpadding="0"
+													cellspacing="0">
+													<tr>
+														<td colspan="5"><strong>请选择支付方式：</strong></td>
+													</tr>
+													<tr valign="middle">
+														<td><input type="radio" name="bankType" value="ICBC"
+															id="rd_gopay_icbc" /> <img
+															src="__PUBLIC__/Home/images/banks/bank_01.png" width="128"
+															height="33" /></td>
+														<td><input type="radio" name="bankType" value="CMB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_02.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="CCB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_03.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="ABC" />
+															<img src="__PUBLIC__/Home/images/banks/bank_04.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="BOC" />
+															<img src="__PUBLIC__/Home/images/banks/bank_05.png"
+															width="128" height="33" /></td>
+													</tr>
+													<tr>
+														<td><input type="radio" name="bankType" value="SPDB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_06.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="SDB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_07.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="CIB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_08.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="BOBJ" />
+															<img src="__PUBLIC__/Home/images/banks/bank_09.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="CEB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_10.png"
+															width="128" height="33" /></td>
+													</tr>
+													<tr>
+														<td><input type="radio" name="bankType" value="BOCOM" />
+															<img src="__PUBLIC__/Home/images/banks/bank_11.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="CMBC" />
+															<img src="__PUBLIC__/Home/images/banks/bank_12.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="CITIC" />
+															<img src="__PUBLIC__/Home/images/banks/bank_13.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="GDB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_14.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="PAB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_15.png"
+															width="128" height="33" /></td>
+													</tr>
+													<tr>
+														<td><input type="radio" name="bankType" value="PSBC" />
+															<img src="__PUBLIC__/Home/images/banks/bank_16.png"
+															width="128" height="33" /></td>
+
+														<td><input type="radio" name="bankType" value="SRCB" />
+															<img src="__PUBLIC__/Home/images/banks/bank_18.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="BOS" />
+															<img src="__PUBLIC__/Home/images/banks/bank_19.png"
+															width="128" height="33" /></td>
+														<td><input type="radio" name="bankType" value="HXBC" />
+															<img src="__PUBLIC__/Home/images/banks/bank_20.png"
+															width="128" height="33" /></td>
+
+														<td><input type="radio"   name="bankType"   value="TCCB" />
+                    <img src="__PUBLIC__/Home/images/banks/bank_30.png" width="128" height="33" /></td>
+														<td></td>
+>>>>>>> origin/master
 
 							            <div class="form-field"><input type="text" name="account_money" id="money" class="form-text"><span class="form-error">不能填写数字以外的字符，以及负数。</span>
 
@@ -58,6 +202,7 @@
 							        <div class="form-item form-radio-checkbox-wrap">
 							            <label><strong>充值方式：</strong></label>
 
+<<<<<<< HEAD
 							            <div class="form-field">
 							                <label><input type="radio" name="pay" value="128" value="2" checked="checked"/>
 											<img src="__PUBLIC__/Home/images/banks/bank_31.png"
@@ -79,6 +224,33 @@
 									</div>
 							    <!-- </form> -->
 							</section>
+=======
+													        <tr>
+          <td colspan="2">&nbsp;</td>
+          <td><input name="下一步" type="submit" value="下一步" style="border:0px; color:#FFF; font-weight:bold; margin:10px; width:100px; background:#1064AC"/></td>
+          <td></td>
+          <td></td>
+        </tr>
+												</table> -->
+											</div>
+											
+										</td>
+									</tr>
+									
+								</table>
+							</div>
+							<div id="btn_submit">
+								<!-- <input type="button" class="btn" value="提交充值" id="addrecharge"
+									style="text-align: center; padding-top: 15px; padding-bottom: 15px; margin: 15px 0 20px 120px;" /> -->
+									<input type="button" class="btn r_post" name="b1" value="下一步"  >功能未完善，请勿充值
+								<!-- <input type="button" class="bcbtn" value="保存并继续"id="addrecharge" /> -->
+								<!-- <a href="javascript:void(0);" class="bcbtn" onclick="addRechargeInfo();">保存并继续</a> -->
+							</div>
+							<p id="p_about" class="tips2" style="border: none;"></p>
+							<div class="biaoge" style="margin-top: 25px;">
+								<span id="rechargeInfo"></span>
+							</div>
+>>>>>>> origin/master
 						</div>
 					</div>
 				</div>
@@ -105,7 +277,7 @@ $('.r_post').click(function(){
           	layer.open({
 						    type: 1,
 						    area: ['480px', '600px'], //宽高
-						    content: '<form action="https://pay.ecpss.com/sslpayment" method="post" name="E_FORM"><table align="center"><tr><td></td><td><input type="text" name="MerNo" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="BillNo" value="'+data.BillNo+'"></td></tr><tr><td></td><td><input type="text" name="Amount" value="'+data.Amount+'"></td></tr><tr><td></td><td><input type="text" name="ReturnURL" value="'+data.ReturnURL+'"></td></tr><tr><td></td><td><input type="text" name="AdviceURL" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="orderTime" value="'+data.orderTime+'"></td></tr><tr><td></td><td><input type="text" name="defaultBankNumber" value="'+data.defaultBankNumber+'"></td></tr><tr><td></td><td><input type="text" name="SignInfo" value="'+data.SignInfo+'"></td></tr><tr><td></td><td><input type="text" name="Remark" value="'+data.Remark+'"></td></tr><tr><td></td><td><input type="text" name="products" value="'+data.products+'"></td></tr></table><p align="center"><input type="submit" name="b1" value="继续前往"></p></form>'
+						    content: '<form action="https://pay.ecpss.com/sslpayment" method="post" name="E_FORM"><table align="center"><tr><td></td><td><input type="text" name="MerNo" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="BillNo" value="'+data.BillNo+'"></td></tr><tr><td></td><td><input type="text" name="Amount" value="'+data.Amount+'"></td></tr><tr><td></td><td><input type="text" name="ReturnURL" value="'+data.ReturnURL+'"></td></tr><tr><td></td><td><input type="text" name="AdviceURL" value="'+data.MerNo+'"></td></tr><tr><td></td><td><input type="text" name="orderTime" value="'+data.orderTime+'"></td></tr><tr><td></td><td><input type="text" name="defaultBankNumber" value="'+data.defaultBankNumber+'"></td></tr><tr><td></td><td><input type="text" name="SignInfo" value="'+data.SignInfo+'"></td></tr><tr><td></td><td><input type="text" name="Remark" value="'+data.Remark+'"></td></tr><tr><td></td><td><input type="text" name="products" value="'+data.products+'"></td></tr></table><p align="center"><input type="submit" name="b1" value="确定提交"></p></form>'
 						});
 
 

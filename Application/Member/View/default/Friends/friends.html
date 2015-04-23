@@ -16,23 +16,13 @@
 							<li class="on">邀请好友</li>
 							<!--</a>-->
 							<!--<a href="friendManagerInits.htm">-->
-							<li>好友列表</li>
+							<li>邀请好友列表</li>
 							<!--</a>-->
 						</ul>
 					</div>
 					<div class="box">
 						<div class="friend_tab">
 							<div class="boxmain2 yqhy">
-								<div class="tggl" style="border: 0;min-height: 0;">
-									<dl>
-										<dt>温馨提示：</dt>
-										<dd>1、推荐一级会员可获得投资利息的5%；</dd>
-										<dd>2、推荐二级会员可获得投资利息的3%；</dd>
-										<dd>3、推荐三级会员可获得投资利息的1%；</dd>
-										<dd>4、只有参与了投资才有推广费；</dd>
-										<dd>5、自动投标不参与活动。</dd>
-									</dl>
-								</div>
 								<!-- <div class="rrdslcj">
 								<img src="./images/yqhy.jpg" alt="邀请好友，挣金币，兑大礼" />
 							</div> -->
@@ -74,7 +64,7 @@
 												+ ~(-new Date() / 36e5)];
 								</script>
 								<div class="yqhy_text1">
-									<h4 style="border-bottom: 0; width: 870px;">复制链接发给QQ/MSN上的好友</h4>
+									<h4 style="border-bottom: 0; width: 910px;">复制链接发给QQ/MSN上的好友</h4>
 									<div style="width: auto; height: auto; overflow: hidden;">
 										<span id="testcopy"
 											style="float: left; width: 650px; padding-left: 20px; height: 19px; padding-top: 5px; color: red;">http://www.ghcf.com.cn/index.php/?s=/Home/register.html&&reffer={$username}</span><a
@@ -118,7 +108,7 @@
 								<form action="__SELF__" method="post" id="form">
 									<div class="yqhy_text1">
 										<h4
-											style="border-bottom: 0; border-top: 1px solid #ddd; width: 870px;">还可以通过邮件推荐</h4>
+											style="border-bottom: 0; border-top: 1px solid #ddd; width: 910px;">还可以通过邮件推荐</h4>
 										<ul class="yjtj" style="padding-left: 20px;">
 											<li style="overflow: hidden;"><label class="lab1 "
 												style="float: left; line-height: 30px"> 好友邮箱： </label> <input
@@ -144,7 +134,7 @@
 													style="float: left; resize: none; width: 450px; height: 130px;">特意邀请您注册“工合财富” 网贷平台【www.ghcf.com.cn】，P2P理财首选平台。综合年化收益18%，100%本息安全保障，50元起投，超低门槛，是草根、家庭的理财专属通道！你也赶快来投资吧，别被银行榨取我们的存款利息！进入平台先注册:http://www.ghcf.com.cn/index.php?s=/Home/User/register.html&&reffer={$username}</textarea>
 											</li>
 										</ul>
-										<div class="fzfx_an" style="margin-left: 90px;margin-top: 15px;">
+										<div class="fzfx_an" style="margin-left: 90px;">
 											<span style="color: red; float: none;" id="s_tip"
 												class="formtips"></span> <a href="javascript:void(0);"
 												id="sendmail"> <img
@@ -154,73 +144,20 @@
 										</div>
 									</div>
 								</form>
-								
+								<div class="tggl">
+									<dl>
+										<dt>温馨提示：</dt>
+										<dd>1、推荐一级会员可获得投资利息的5%；</dd>
+										<dd>2、推荐二级会员可获得投资利息的3%；</dd>
+										<dd>3、推荐三级会员可获得投资利息的1%；</dd>
+										<dd>4、只有参与了投资才有推广费；</dd>
+										<dd>5、自动投标不参与活动。</dd>
+									</dl>
+								</div>
 					</div>
 		</div>
 						<div class="friend_tab" style="display: none; margin-top: 20px;">
-							<div class="tggl" style="border: 0;min-height: 0;">	
-								<dl>
-									<dt>等级说明：</dt>
-									<dd>1、一级会员（A）为当前用户直接推荐的投资客；</dd>
-									<dd>2、二级会员（B）为一级会员（A）间接推荐的投资客；</dd>
-									<dd>3、三级会员（C）为二级会员（B）间接推荐的投资客。</dd>
-								</dl>
-				
-								<table border="0" cellspacing="0" cellpadding="0" style="width: 840px;">
-									<tr>
-										<th>推广统计</th>
-									</tr>
-									<tr>
-										<td>等级</td>
-										<td>人数</td>
-										<td>当日投资额</td>
-										<td>当月推广费</td>
-										<td>累计投资额</td>
-										<td>累计推广费</td>
-										<td>操作</td>
-									</tr>
-									<tr>
-										<td>A</td>
-										<td>
-											<if condition="$count[1] neq 0">{$count.1}
-											<else/>
-												0
-											</if>
-										</td>
-										<td>200</td>
-										<td>10</td>
-										<td>200</td>
-										<td>10</td>
-										<td>领取奖励</td>
-									</tr>
-									<tr>
-										<td>B</td>
-										<td><if condition="$count[2] neq 0">{$count.2}
-											<else/>
-												0
-											</if></td>
-										<td>200</td>
-										<td>10</td>
-										<td>200</td>
-										<td>10</td>
-										<td>领取奖励</td>
-									</tr>
-									<tr>
-										<td>C</td>
-										<td><if condition="$count[3] neq 0">{$count.3}
-											<else/>
-												0
-											</if></td>
-										<td>200</td>
-										<td>10</td>
-										<td>200</td>
-										<td>10</td>
-										<td>领取奖励</td>
-									</tr>
-				
-								</table>
-							</div>
-							<table style="margin:40px auto;">
+							<table style="margin: auto;">
 								<tr>
 									<td
 										style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">编号</td>
@@ -231,7 +168,7 @@
 									<td
 										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">累计投资额</td>
 									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">投资时间</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">最后投资时间</td>
 									<td
 										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">好友会员等级</td>
 									
@@ -241,31 +178,31 @@
 									<td
 										style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">{$i}</td>
 									<td
-										style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">{$vo.username}</td>
+										style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">{$vo[0][username]}</td>
 									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo.reg_time|date='Y-m-d',###}</td>
+										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo[0][reg_time]|date='Y-m-d',###}</td>
 									<td
 										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
-										<if condition="$vo[investor_capital] neq null">{$vo.investor_capital}
+										<if condition="$vo[1][investor_capital] neq null">{$vo[1]['sum(investor_capital)']}
 										<else/>
-											无数据
+											0
 										</if>
 										</td>
 									<td
 										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
-										<if condition="$vo[add_timel] neq null">{$vo.add_time|date='Y-m-d',###}
+										<if condition="$vo[2][0][add_time] neq null">{$vo[2][0]['add_time']|date='Y-m-d',###}
 										<else/>
-											无数据
+											----
 										</if>
 									</td>
 									<td
 										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
-										<if condition="$vo.member_level eq 1">
-											一级会员
-										<elseif condition="$vo.member_level eq 2"/>
-											二级会员
-										<elseif condition="$vo.member_level eq 3"/>
-											三级会员
+										<if condition="$vo[0][member_level] eq 1">
+											A级会员
+										<elseif condition="$vo[0][member_level] eq 2"/>
+											B级会员
+										<elseif condition="$vo[0][member_level] eq 3"/>
+											C级会员
 										<else/>
 											普通会员
 										</if>
@@ -276,7 +213,76 @@
 								</tr>
 								</volist>
 							</table>
-							
+										<div class="tggl"style="display: none;">	
+				<dl>
+					<dt>等级说明：</dt>
+					<dd>1、<span style="color:red;"><u>A级会员</u></span>为当前用户直接推荐的投资客；</dd>
+					<dd>2、B级会员为<span style="color:red;"><u>A级会员</u></span>间接推荐的投资客；</dd>
+					<dd>3、C级会员为<span style="color:red;"><u>B级会员</u></span>间接推荐的投资客。</dd>
+				</dl>
+				
+				<table border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<th>推广统计</th>
+					</tr>
+					<tr>
+						<td>等级</td>
+						<td>人数</td>
+						<td>当日投资额</td>
+						<td>当日推广费</td>
+						<td>当月投资额</td>
+						<td>当月推广费</td>
+						<td>累计投资额</td>
+						<td>累计推广费</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>
+							<if condition="$count[1] neq 0">{$count.1}
+							<else/>
+								0
+							</if>
+						</td>
+						<td>200</td>
+						<td>10</td>
+						<td>10</td>
+						<td>200</td>
+						<td>200</td>
+						<td>10</td>
+						<td>领取奖励</td>
+					</tr>
+					<tr>
+						<td>B</td>
+						<td><if condition="$count[2] neq 0">{$count.2}
+							<else/>
+								0
+							</if></td>
+						<td>200</td>
+						<td>10</td>
+						<td>10</td>
+						<td>200</td>
+						<td>200</td>
+						<td>10</td>
+						<td>领取奖励</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td><if condition="$count[3] neq 0">{$count.3}
+							<else/>
+								0
+							</if></td>
+						<td>200</td>
+						<td>200</td>
+						<td>1010</td>
+						<td>1010</td>
+						<td>200</td>
+						<td>10</td>
+						<td>领取奖励</td>
+					</tr>
+
+				</table>
+			</div>
 						</div>
 						<div class="page">{$page}</div>
 						</div>
