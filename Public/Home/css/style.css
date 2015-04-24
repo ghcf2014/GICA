@@ -257,7 +257,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .dl_cont dl{width:790px;height:52px;overflow:hidden;margin-bottom:30px; }
 .dl_cont dl div{width: 290px;height: 42px;border: 1px solid #D7D7D7;margin-bottom: 25px;float:left;}
 .dl_cont dl div img{width: 43px;height: 42px;border-right: 1px solid #D7D7D7;float: left;}
-.dl_cont dl div .txt1 { width: 234px;height: 34px;line-height:40px;border:0px none; background: none repeat scroll 0% 0% #FBFBFB;font-size: 16px;float: left;}
+.dl_cont dl div .txt1 {height: 34px;line-height:40px;border:0px none; background: none repeat scroll 0% 0% #FBFBFB;font-size: 16px;float: left;}
 .dl_cont dt{width:215px;height:44px;float:left;text-align:right;line-height:44px;font-size:18px;font-weight:normal;padding-right:12px;}
 .dl_cont dt span{color:#6acbff;}
 .dl_cont dd{width:406px;height:52px;float:left;overflow:hidden;}
@@ -490,7 +490,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r ul li{width:210px;height:48px;padding-left:40px;float:left;line-height:48px;font-size:16px;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje{width:478px;height:120px;line-height:30px;font-size:20px;padding:10px 0 0 40px;overflow:hidden;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje span{display:inline-block;float:left;margin-right:10px;}
-.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje .txt{width:112px;height:28px;background:#fff;border:1px solid #ddd;float:left;margin-right:5px;line-height:28px;padding-left:5px;margin-top: 12px;}
+.qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje .txt{width:112px;background:#fff;border:1px solid #ddd;float:left;margin-right:5px;line-height:28px;padding-left:5px;margin-top: 12px;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r .tzje .btn{width:100px;height:31px;background:url(../images/100x30pxbule.png) no-repeat;line-height:20px;font-size:14px;color:#fff;float:left;cursor:pointer;margin-top: 15px;text-shadow: none;border: 0;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r p{width:438px;height:60px;padding-left:40px;font-size:16px;line-height:60px;}
 .qrb_cont .qrb_cont_bot .qrb_cont_bot_r .btn2{width:120px;height:40px;background:url(../images/120x40orange.png) no-repeat;line-height:40px;font-size:18px;margin-left:210px;cursor:pointer;color: #fff;}
@@ -609,7 +609,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont{width:865px;height:auto;overflow: hidden;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont h4{width:860px;height:32px;line-height:32px;font-size:16px;font-weight:normal;padding-top:14px;cursor:pointer;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont ul{width:800px;height:auto;padding-left:20px;display:none;}
-.xszy_cont .xszy_cont_r .xszy_cont_r_cont ul li{font-size:14px;line-height:30px;color: #888;}
+.xszy_cont .xszy_cont_r .xszy_cont_r_cont ul li{font-size:14px;line-height:30px;color: #888;margin-top: 10px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .descrition{float: left;width: 270px;height: auto;padding-top: 72px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .descrition h2{font-size: 24px;font-weight: normal;color: #0aaae6;line-height: 50px;}
 .xszy_cont .xszy_cont_r .xszy_cont_r_cont .descrition p{line-height: 28px;}
@@ -1002,7 +1002,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_txt{width:150px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_btn{background:url(../images/120x40pxblue.png) no-repeat;color:#fff;width:120px;height:41px;float:left;font-size:14px;line-height:40px;text-align:center;cursor:pointer;margin-left:28px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd span{float:left;line-height:40px;padding-left:10px;font-size:14px;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;font-size:18px;cursor:pointer;margin-left:400px;color:#fff;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/80x38.png) no-repeat;font-size:18px;cursor:pointer;margin-left:400px;color:#fff;}
 /*----------邮箱验证-----------*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head{width:879px;height:55px;line-height:55px;font-size:16px;padding-left:68px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .email{width:863px;height:42px;overflow:hidden;padding-top: 50px;border: 0;}
@@ -1194,12 +1194,12 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*---------------------推广管理-------------------------------------------------------*/
-.zh_cont_r .tggl{background: #fff;/*border: 1px solid #ddd;*/margin-top: 5px;height: auto;/*min-height: 1091px;*/width: 893px;}
+.zh_cont_r .tggl{background: #fff;border: 1px solid #ddd;margin-top: 5px;height: auto;min-height: 1091px;width: 893px;}
 .zh_cont_r .tggl dl{border: 0;margin:10px auto;width: 840px;height: auto;padding: 0 0 10px 0;margin-bottom: 20px;background: #eee;}
 .zh_cont_r .tggl dl dt{float: none;width: 800px;height: 30px;line-height: 30px;font-size: 16px;font-weight: normal;padding: 15px 20px 5px;}
 .zh_cont_r .tggl dl dd{float: none;width: 740px;padding: 0 50px;height: auto;line-height: 30px;}
 
-.zh_cont_r .tggl table{margin: auto;width: 94%;}
+.zh_cont_r .tggl table{margin: auto;}
 .zh_cont_r .tggl table tr th{width: 145px;height: 45px;line-height: 45px;text-align: left;font-size: 18px;font-weight: normal;padding: 10px 0;}
 .zh_cont_r .tggl table tr td{border: 1px solid #ddd;width: 130px;height: 35px;line-height: 35px;text-align: center;font-size: 14px;}
 
