@@ -44,6 +44,7 @@ class IndexController extends MemberController {
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
         $this->assign('mstatus', $member_status);
+        $this->assign('paymoney', $paymoney);
 
         $arr['id']=$uid;
         $leveldata=M('ucenter_member');
@@ -265,9 +266,6 @@ class IndexController extends MemberController {
         $id=$_GET['id'];
 
         $model=M("ucenter_member");
-
-
-
         $data=$model->find($id);
         $filepath=$data['filepath'];
         $file_name=$data['filename'];
@@ -278,10 +276,7 @@ class IndexController extends MemberController {
             $num=$model->delete($id);
             if($num > 0)
             {
-
-
                 $this->success("删除成功","/fileupload/index.php/Home/Index/manage");
-
             }
         }
 

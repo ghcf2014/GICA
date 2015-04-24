@@ -22,31 +22,27 @@
 					<dl style="width: 300px;padding-left: 31px;">
 						<div>
 							<img src="__PUBLIC__/Home/images/loginname.png"> <input
-								type="text" value="" name="username" class="txt txt1"
+								type="text" value="" name="username" class="txt txt1 utip"
 								id="username" placeholder="用户名/手机号/邮箱"
 								ajaxurl="/member/checkUserNameUnique.html" errormsg="请填写1-16位用户名"
 								datatype="*1-16" />
 						</div>
-						<span style="color: red; line-height: 40px;" id="checkname"
-							class="formtips"></span>
 					</dl>
 					<dl style="width: 300px;padding-left: 31px;">
 						<div>
 							<img src="__PUBLIC__/Home/images/password.png"> <input
-								type="password" value="" name="password" class="txt txt1"
+								type="password" value="" name="password" class="txt txt1 pwtip"
 								id="password" placeholder="密 码" errormsg="密码为6-20位"
 								nullmsg="请填写密码" datatype="*6-20" />
 						</div>
-						<span style="color: red; line-height: 40px;" id="checkpwd"
-							class="formtips"></span>
 					</dl>
 					<dl style="width: 300px;padding-left: 31px; margin-bottom: 0px;">
 						<div>
 							<img src="__PUBLIC__/Home/images/yanzheng.png"> <input
-								type="text" value="" name="verify" class="txt txt1"
+								type="text" value="" name="verify" class="txt txt1 "
 								style="width: 140px;" id="verifycode" placeholder="验证码"
 								errormsg="" nullmsg="请填写验证码" datatype="*6-20" /> <img
-								class="verifyimg reloadverify" src="{:U('verify')}" width="101"
+								class="verifyimg reloadverify vtip" src="{:U('verify')}" width="101"
 								height="44" alt="点击切换"
 								style="cursor: pointer; width: 90px; float: right;">
 						</div>
@@ -128,7 +124,18 @@
 	}).ajaxStop(function() {
 		$("button:submit").removeClass("log-in").attr("disabled", false);
 	});
-
+	// 异步验证
+	$(".utip").blur(function() {
+	 var username = document.getElementById("username").value;
+		  var bid =1;	
+          $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
+          	if (data.MerNo =='用户不存在')
+          	 {
+				layer.tips(data.MerNo, '.utip');
+			    } 
+          	// layer.alert(data.MerNo);
+          		});
+	});
 	$("form").submit(function() {
 		var self = $(this);
 		$.post(self.attr("action"), self.serialize(), success, "json");
@@ -138,9 +145,18 @@
 			if (data.status) {
 				window.location.href = data.url;
 			} else {
-				self.find(".Validform_checktip").text(data.info);
-				// layer.alert(data.info);
-
+				if (data.info =='验证码输入错误！') {
+				layer.tips(data.info, '.vtip');
+			    } 
+			    else if(data.info =='密码错误！') {
+				layer.tips(data.info, '.pwtip');
+				}
+				else if(data.info =='验证码错误！') {
+				layer.tips(data.info, '.vtip');
+				}
+				else{
+					self.find(".Validform_checktip").text(data.info);
+				}
 				//刷新验证码
 				$(".reloadverify").click();
 			}
@@ -200,4 +216,6 @@
 
 		$("#form").submit();
 	});
-</script> <!--content end--> </block>
+</script>
+
+</block>

@@ -175,8 +175,6 @@ class UserController extends HomeController {
 		if (is_login()>0){
 			$this->redirect('Member/Index/index');
 		}
-
-
 		if(IS_POST){ //登录验证
 
 			/* 检测验证码 */
@@ -207,12 +205,10 @@ class UserController extends HomeController {
 			            $arr['uid']=$uid;
 			            $result=$mstatus->add($arr); 
 			        }
-					$this->success('登录成功！',U('Member/Index/index'));
-											               
+					$this->success('登录成功！',U('Member/Index/index'));				               
 				} else {
 					$this->error($Member->getError());
 				}
-
 			} else { //登录失败
 				switch($uid) {
 					case -1: $error = '用户不存在或被禁用！'; break; //系统级别禁用
@@ -226,6 +222,41 @@ class UserController extends HomeController {
 			$this->display();
 		}
 	}
+	public function login_array($username='',$mobile='',$email=''){
+				$umap['username'] = $username;
+				$mmap['mobile'] = $mobile;
+				$emap['email'] = $email;
+
+
+		/* 获取用户数据 */
+		$user=M('ucenter_member');
+		$uuser = $user->where($umap)->find();
+		$muser = $user->where($mmap)->find();
+		$euser = $user->where($emap)->find();
+		if(is_array($euser)){
+			/* 验证用户密码 */
+
+			$data['MerNo']="邮箱被占用";
+			// $this->success($data);
+			
+		}
+		if(is_array($muser)){
+			/* 验证用户密码 */
+
+			$data['MerNo']="手机号被占用";
+			// $this->success($data);
+			
+		}
+		if(is_array($uuser)){
+			/* 验证用户密码 */
+
+			$data['MerNo']="用户已存在";
+			// $this->success($data);
+			
+		}$this->ajaxReturn($data);
+		$this->display();
+	}
+
 	/* 退出登录 */
 	public function emailyz($emailyz = 0){
 		session_start();
