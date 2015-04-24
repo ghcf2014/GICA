@@ -2,6 +2,7 @@
 <extend name="Base/common"/>
 <block name="body">
 		<!-- 引用头部公共部分 -->
+		<jsp:include page="/include/topref.jsp"></jsp:include>
 		<div class="nymain">
 			<div class="bigbox"style="background-color: #fffcf7; border:1px solid #b9b9b9;">
 				<div class="til">
@@ -23,54 +24,72 @@
 									<br />
 									享有借款资格，及时缓解资金压力。 参与网站举行的各种活动。
 								</p>
-								<div style="padding-left: 300px;">
-									<section class="demozone">
-									<volist name="list" id="vo"> 
-									    <form class="demo form-horizontal" id="demo1" action="{:U('userrenewalvip_post')}" method="post">
-									        <div class="form-item">
-									            <label for="username"><strong>会员状态：</strong></label>{$vo.user_leve|user_leve}<if condition="$vo.user_leve eq 1">
-						【VIP到期时间：<span>{$vo.time_limit|date='Y-m-d',###}</span>】
-					</if>
-									        </div>
-									        <div class="form-item">
-									            <label for="username"><strong>用户名：</strong></label>{$vo.username}
-									        </div>
-									        <div class="form-item">
-									        	<label><strong>开通周期：</strong></label>
-									        	<div class="form-field">
-									        		<select name="viptime" id="momeyType" class="inp80">
-														<option value="">--请选择--</option>
-														<!-- <option value="{$banksdata['bank_num']}">{$banksdata['bank_num']}/{$memberdata['real_name']}/{$banksdata['bank_name']}</option> -->
-														<option value="1">1个月</option>
-														<option value="2">2个月</option>
-														<option value="3">3个月</option>
-														<option value="4">4个月</option>
-														<option value="5">5个月</option>
-														<option value="6">6个月</option>
-														<option value="7">7个月</option>
-														<option value="8">8个月</option>
-														<option value="9">9个月</option>
-														<option value="10">10个月</option>
-														<option value="11">11个月</option>
-														<option value="12">一年</option>
-														<option value="24">二年</option>
-														<option value="36">三年</option>
-														<option value="222">免费试用2天</option>
-													</select>
-									        	</div>
-									        </div>
-									        <div class="form-item">
-									            <label for="username"><strong>验证码：</strong></label>
-									            <div class="form-field"><input type="text" name="verify" class="form-text" placeholder="请输验证码"><img class="yzBtn verifyimg reloadverify" alt="点击切换" src="{:U('verify')}"style="cursor: pointer; width: 100px;">
-									                <p class="form-des">请确保有充足的余额。</p></div>
-									        </div>
-									        <div id="btn_submit" style="padding-left: 170px;">
-													<input type="submit" class="btn r_post" name="b1" value="<if condition='$vo.user_leve eq 1'>续费
-					<else/>开通</if>"  >
-											</div>
-									    </form>
-									    </volist> 
-									</section>
+								<div class="tab">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td align="right">
+												您的状态是：
+											</td>
+											<td>
+												<s:if test="%{#request.renewalVIPMap.vipStatus ==2}">会员</s:if>
+<!-- 												<s:else>非会员</s:else> -->
+											</td>
+										</tr>
+										<tr>
+											<td align="right">
+												用 户 名：
+											</td>
+											<td>
+												<!-- ${renewalVIPMap.username} -->
+											</td>
+										</tr>
+										<tr>
+											<td align="right">
+												姓 名：
+											</td>
+											<td>
+												<!-- ${renewalVIPMap.realName} -->
+											</td>
+										</tr>
+										<tr>
+											<td align="right">
+												邮 箱：
+											</td>
+											<td>
+												<!-- ${renewalVIPMap.email} -->
+											</td>
+										</tr>
+										<tr>
+											<td align="right">
+												会员到期时间：
+											</td>
+											<td>
+												<!-- ${renewalVIPMap.vipCreateTime} -->
+											</td>
+										</tr>
+										<tr>
+											<td align="right">
+												验 证 码：
+											</td>
+											<td>
+												<input type="text" class="inp100x" id="code" />
+												<img src="" title="点击更换验证码" style="cursor: pointer;"
+													id="codeNum" width="46" height="18"
+													onclick=
+	javascript: switchCode();
+/>
+											</td>
+										</tr>
+										<tr>
+											<td align="right">
+												&nbsp;
+											</td>
+											<td style="padding-top: 20px;">
+												<a href="javascript:void(0);" id="savebtn" class="bcbtn"style="display:block;width:70px;color:white;background: #0597D9;border-radius:2px;line-height: 30px;text-align: center;">我要续费</a>
+											</td>
+										</tr>
+									</table>
+
 								</div>
 							</div>
 						</div>
@@ -78,41 +97,73 @@
 				</div>
 			</div>
 		</div>
-<script type="text/javascript">
-//验证码刷新
-    	$(document)
-    	.ajaxStart(function(){
-	    		$("button:submit").addClass("log-in").attr("disabled", true);
-	    	})
-	    	.ajaxStop(function(){
-	    		$("button:submit").removeClass("log-in").attr("disabled", false);
-	    	});
-    	$("form").submit(function(){
-    		var self = $(this);
-    		$.post(self.attr("action"), self.serialize(), success, "json");
-    		return false;
-
-    		function success(data){
-    			if(data.status){
-    				layer.msg(data.info, 3,1, function(){
-							window.location.href = data.url;
-					});	
-    			} else {
-    				self.find(".Validform_checktip").text(data.info);
-    				//刷新验证码
-    				$(".reloadverify").click();
-    			}
-    		}
-    	});
-		$(function(){
-			var verifyimg = $(".verifyimg").attr("src");
-            $(".reloadverify").click(function(){
-                if( verifyimg.indexOf('?')>0){
-                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
-                }else{
-                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
-                }
-            });
+		<!-- 引用底部公共部分 -->
+		<jsp:include page="/include/footer.jsp"></jsp:include>
+		<script type="text/javascript" src="script/nav-zh.js"></script>
+		<script type="text/javascript" src="script/jquery.shove-1.0.js"></script>
+		<script>
+	$(function() {
+		//样式选中
+		$("#zh_hover").attr('class', 'nav_first');
+		$("#zh_hover div").removeClass('none');
+		$('#li_1').addClass('on');
+		$("#btn_img")
+				.click(
+						function() {
+							var dir = getDirNum();
+							var json = "{'fileType':'JPG,BMP,GIF,TIF,PNG','fileSource':'user/"
+									+ dir
+									+ "','fileLimitSize':0.5,'title':'上传图片','cfn':'uploadCall','cp':'img'}";
+							json = encodeURIComponent(json);
+							window.showModalDialog("uploadFileAction.htm?obj="
+									+ json, window,
+									"dialogWidth=500px;dialogHeight=400px");
+							var headImgPath = $("#img").attr("src");
+							if (headImgPath == "") {
+								alert("上传失败！");
+							}
+						});
+		$("#savebtn").click(function() {
+			param['paramMap.code'] = $('#code').val();
+			$.shovePost("renewalVIPSubmit.htm", param, function(data) {
+				if (data.msg = 'VIP续费成功') {
+					alert(data.msg);
+					window.location.href = 'home.htm';
+					return;
+				}
+				alert(data.msg);
+			});
 		});
-	</script>
+		switchCode();
+	});
+	function uploadCall(basepath, fileName, cp) {
+		if (cp == "img") {
+			var path = "upload/" + basepath + "/" + fileName;
+			$("#img").attr("src", path);
+			param['paramMap.imgPath'] = path;
+			$.shovePost("updatePersonImg.htm", param, initCallBack);
+		}
+	}
+	function initCallBack(data) {
+		alert(data.msg);
+	}
+	function getDirNum() {
+		var date = new Date();
+		var m = date.getMonth() + 1;
+		var d = date.getDate();
+		if (m < 10) {
+			m = "0" + m;
+		}
+		if (d < 10) {
+			d = "0" + d;
+		}
+		var dirName = date.getFullYear() + "" + m + "" + d;
+		return dirName;
+	}
+	function switchCode() {
+		var timenow = new Date();
+		$('#codeNum')
+				.attr('src', 'admin/imageCode.do?pageId=code&d=' + timenow);
+	};
+</script>
 </block>

@@ -21,7 +21,7 @@
 				</dt>
 				<dd>
 					<p>
-						用户名称：<span style="color: #66ccfb;">{:get_username()}<if condition="$vo.user_leve eq 1">
+						用户名称：<span style="color: #66ccfb;">{:get_username()}<if condition="$ms.video_status eq 1">
 						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx.png" title="VIP已认证" /> </a>
 					<else/>
 						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx_h.png" title="VIP未认证" /></a>
@@ -43,11 +43,6 @@
 					<p>
 						会员积分：<span><volist name="list" id="vo">{$vo.score}分</volist></span>
 					</p>
-					<if condition="$vo.user_leve eq 1">
-					<p>
-						VIP到期时间：<span>{$vo.time_limit|date='Y-m-d',###}</span>
-					</p>
-					</if>
 					<p>
 						注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span>
 					</p>

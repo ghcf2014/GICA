@@ -1002,7 +1002,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_txt{width:150px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_btn{background:url(../images/120x40pxblue.png) no-repeat;color:#fff;width:120px;height:41px;float:left;font-size:14px;line-height:40px;text-align:center;cursor:pointer;margin-left:28px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd span{float:left;line-height:40px;padding-left:10px;font-size:14px;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;font-size:18px;cursor:pointer;margin-left:400px;color:#fff;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/80x38.png) no-repeat;font-size:18px;cursor:pointer;margin-left:400px;color:#fff;}
 /*----------邮箱验证-----------*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head{width:879px;height:55px;line-height:55px;font-size:16px;padding-left:68px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .email{width:863px;height:42px;overflow:hidden;padding-top: 50px;border: 0;}

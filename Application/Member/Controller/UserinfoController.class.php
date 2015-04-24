@@ -323,79 +323,7 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userrenewalvip() {
-		is_login() || $this->redirect('Home/User/login');
-        $uid=is_login();//获取当前用户UID
-		$member = M('ucenter_member');//用户验证状态
-        $condition2['id'] =$uid;
-        $list=$member->field('user_leve,id,username,time_limit')->where($condition2)->select();
-        $this->assign('list', $list);
 		$this->display ();
-	}
-	public function userrenewalvip_post($verify = '',$viptime='') {
-		/* 检测验证码 */
-		if(!check_verify($verify)){
-			$this->success('验证码输入错误！');
-		}
-
-		$uid=is_login();//获取当前用户UID
-		$condition3 ['uid'] = $uid;
-		$money = M ( "z_member_money" );
-		$money = $money->field ( 'account_money' )->where ( $condition3 )->select (); 
-		$vipmoney=intval(10)*intval($viptime);
-		if($viptime !=222){
-			if(floatval( $money [0] ['account_money'] )<intval($vipmoney)){
-				$this->success('余额不足！');
-			}
-		
-			$money =floatval( $money [0] ['account_money'] ) - floatval(10); // 余额加充值金额
-			$data1 ['account_money'] = floatval($money);
-			// 保存当前数据对象
-			if (!$m1 = $m1->where ( $condition3 )->save ( $data1 )) { // 保存成功
-			     $this->success( '充值失败!' );                                                                                             	
-			}
-		}
-		// // 资金日志记录
-		// $log = M ( 'z_member_moneylog' );
-		// $logdata ['uid'] = $uid;
-		// $logdata ['type'] = 102;
-		// $logdata ['affect_money'] =10;
-		// $logdata ['info'] = '会员服务开通';
-		// $logdata ['add_time'] = time ();
-		// $log = $log->add ( $logdata );
-		
-		// //发送站内信
-		// $type="rechar";
-  //       $action=$logdata ['info'].$_POST['account_money'].'元,请注意资金安全！';
-  //       systemmsg($type,$action);
-
-
-		$member = M('ucenter_member');//用户验证状态
-        $condition2['id'] =$uid;
-        $t=$member->field('time_limit')->where($condition2)->select();
-        // if($t[0]['time_limit'] > time()){
-        	// $timetext=','.strtotime(date("Y-m-d",$t[0]['time_limit']));
-        // }
-        if($t[0]['time_limit'] <= time()){
-        	$t[0]['time_limit']=time();
-        }
-
-        $data['user_leve']=1;
-        
-        $data['time_limit'] = strtotime ( '+'.$viptime.' month',strtotime(date("Y-m-d",$t[0]['time_limit'])));
-        if($viptime==222){
-        	 $data['time_limit'] = strtotime ( '+2 days',strtotime(date("Y-m-d",$t[0]['time_limit'])));
-        }
-        $list=$member->where($condition2)->save($data);
-        if($list>0){
-        	$this->success('开通成功！');
-
-        }
-		$this->display ();
-	}
-	public function verify(){
-	    ob_clean();//要正常显示验证码，这个是重点！
-		$verify = new \Think\Verify();
-		$verify->entry(1);
 	}
 	public function userreplaymail() {
 		$this->display ();
