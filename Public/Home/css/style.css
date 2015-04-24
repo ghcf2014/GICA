@@ -1002,7 +1002,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_txt{width:150px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_btn{background:url(../images/120x40pxblue.png) no-repeat;color:#fff;width:120px;height:41px;float:left;font-size:14px;line-height:40px;text-align:center;cursor:pointer;margin-left:28px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd span{float:left;line-height:40px;padding-left:10px;font-size:14px;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/80x38.png) no-repeat;font-size:18px;cursor:pointer;margin-left:400px;color:#fff;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;font-size:18px;cursor:pointer;margin-left:400px;color:#fff;}
 /*----------邮箱验证-----------*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head{width:879px;height:55px;line-height:55px;font-size:16px;padding-left:68px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .email{width:863px;height:42px;overflow:hidden;padding-top: 50px;border: 0;}
@@ -1194,12 +1194,12 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*---------------------推广管理-------------------------------------------------------*/
-.zh_cont_r .tggl{background: #fff;border: 1px solid #ddd;margin-top: 5px;height: auto;min-height: 1091px;width: 893px;}
+.zh_cont_r .tggl{background: #fff;/*border: 1px solid #ddd;*/margin-top: 5px;height: auto;/*min-height: 1091px;*/width: 893px;}
 .zh_cont_r .tggl dl{border: 0;margin:10px auto;width: 840px;height: auto;padding: 0 0 10px 0;margin-bottom: 20px;background: #eee;}
 .zh_cont_r .tggl dl dt{float: none;width: 800px;height: 30px;line-height: 30px;font-size: 16px;font-weight: normal;padding: 15px 20px 5px;}
 .zh_cont_r .tggl dl dd{float: none;width: 740px;padding: 0 50px;height: auto;line-height: 30px;}
 
-.zh_cont_r .tggl table{margin: auto;}
+.zh_cont_r .tggl table{margin: auto;width: 94%;}
 .zh_cont_r .tggl table tr th{width: 145px;height: 45px;line-height: 45px;text-align: left;font-size: 18px;font-weight: normal;padding: 10px 0;}
 .zh_cont_r .tggl table tr td{border: 1px solid #ddd;width: 130px;height: 35px;line-height: 35px;text-align: center;font-size: 14px;}
 
