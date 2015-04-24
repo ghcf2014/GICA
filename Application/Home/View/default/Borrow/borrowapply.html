@@ -89,31 +89,31 @@
 				<dl>
 					<dt>姓名</dt>
 					<dd>
-						<input type="text" name="username" class="txt" />
+						<input type="text" id="uname" name="username" class="txt" onblur="javascript:checkName(this.value)" /><div id="u1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
 					<dt>联系电话</dt>
 					<dd>
-						<input type="text" name="tel" class="txt" />
+						<input type="text" name="tel" class="txt" onblur="javascript:checkPhone(this.value)"/><div id="p1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
 					<dt>身份证号码</dt>
 					<dd>
-						<input type="text" name="id_card" class="txt" />
+						<input type="text" name="id_card" class="txt" onblur="javascript:checkId(this.value)"/><div id="c1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
 					<dt>借款金额</dt>
 					<dd>
-						<input type="text" name="borrow_money" class="txt" />
+						<input type="text" name="borrow_money" class="txt" onblur="javascript:checkMoney(this.value)"/><div id="m1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
 					<dt>借款类型</dt>
 					<dd>
-						<select class="borrow" name="borrow_type">
+						<select class="borrow" name="borrow_type" onfocus="javascript:checkType(this.value)"><div id="t1" style="display:none;"></div>
 							<option selected="selected">---请选择---</option>
 							<option value="1">信用标</option>
 							<option value="2">净值标</option>
@@ -127,8 +127,8 @@
 				<dl>
 					<dt>借款期限</dt>
 					<dd>
-						<input type="text" name="borrow_duration" class="txt2" /> 
-						<select class="date" name="time_type">
+						<input type="text" name="borrow_duration" class="txt2" onkeyup="javascript:borrow_time()"/> 
+						<select class="date" name="time_type" onfocus="javascript:t_type()">
 							<option value="1">年</option>
 							<option value="2">月</option>
 							<option value="3">日</option>
@@ -138,13 +138,13 @@
 				<dl>
 					<dt>所在地区</dt>
 					<dd>
-						<select class="select" name="province" id="s1" style="width: 25%;">
+						<select class="select" name="province" id="s1" style="width: 25%;" onfocus="javascript:province_c()">
 							<option></option>
 						</select>
-						<select class="select" name="city" id="s2" style="width: 33%;">
+						<select class="select" name="city" id="s2" style="width: 33%;" onfocus="javascript:city_c()">
 							<option></option>
 						</select>
-						<select class="select" name="town" id="s3">
+						<select class="select" name="town" id="s3" onfocus="javascript:area_c()">
 							<option></option>
 						</select>
 						
@@ -153,7 +153,7 @@
 				<dl>
 					<dt>借款说明</dt>
 					<dd>
-						<textarea name="borrow_info"></textarea>
+						<textarea name="borrow_info" onfocus="javascript:info_c()"></textarea>
 					</dd>
 				</dl>
 					<input type="submit" class="btn" value="提交申请" />
@@ -166,4 +166,57 @@
 </div>
 <body onload="setup();preselect('广东省');promptinfo();">     
 </body>
+<script type="text/javascript">
+    function checkName(name){
+	    if(name.length==0){
+	    	u1.innerHTML = "<p style='color:red'>姓名不能为空！</p>";
+			u1.style.display = 'block';//显示div
+	    }else{
+	    	u1.innerHTML = "<p style='color:green'>正确！</p>";
+			u1.style.display = 'block';//显示div
+	    }
+  	}
+
+    function checkPhone(phone){
+	    if(phone.length==0){
+	    	p1.innerHTML = "<p style='color:red'>联系电话不能为空！</p>";
+			p1.style.display = 'block';//显示div
+	    }else{
+	    	p1.innerHTML = "<p style='color:green'>正确！</p>";
+			p1.style.display = 'block';//显示div
+	    }
+  	}
+    function checkId(id){
+	    if(id.length==0){
+	    	c1.innerHTML = "<p style='color:red'>身份证号码不能为空！</p>";
+			c1.style.display = 'block';//显示div
+	    }else{
+	    	c1.innerHTML = "<p style='color:green'>正确！</p>";
+			c1.style.display = 'block';//显示div
+	    }
+  	}
+
+    function checkMoney(money){
+	    if(money.length==0){
+	    	m1.innerHTML = "<p style='color:red'>金额不能为空！</p>";
+			m1.style.display = 'block';//显示div
+	    }else{
+	    	m1.innerHTML = "<p style='color:green'>正确！</p>";
+			m1.style.display = 'block';//显示div
+	    }
+  	}
+
+    function checkType(type){
+	    if(type.length==0){
+	    	t1.innerHTML = "<p style='color:red'>请选择类型！</p>";
+			t1.style.display = 'block';//显示div
+	    }else{
+	    	t1.innerHTML = "<p style='color:green'>正确！</p>";
+			t1.style.display = 'block';//显示div
+	    }
+  	}
+
+
+</script>
 </block>
+
