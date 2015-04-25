@@ -550,6 +550,25 @@ function get_borrow_name($id = 0) {
 	// var_dump($name['nickname']);
 	return $name ['borrow_name'];
 }
+function user_leve($id = 0) {
+	if($id == 0){
+		$name='非会员';
+	}
+	if($id == 1){
+		$name='会员';
+	}if($id == 3){
+		$name='会员';
+	}if($id == 4){
+		$name='会员';
+	}if($id == 5){
+		$name='会员';
+	}
+	if($id == 6){
+		$name='会员';
+	}
+	// var_dump($name['nickname']);
+	return $name;
+}
 //标类型ID转换为中文
 function get_borrow_type_name($id = 0) {
 	if($id == 1){

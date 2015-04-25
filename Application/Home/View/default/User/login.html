@@ -127,21 +127,27 @@
 	// 异步验证
 	$(".utip").blur(function() {
 	 var username = document.getElementById("username").value;
-		  var bid =1;	
+		  var bid =1;
+		  var index = layer.load(1);	
           $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
-          	if (data.MerNo =='用户不存在')
+          	if (data.nuser =='用户不存在')
           	 {
-				layer.tips(data.MerNo, '.utip');
+				layer.tips(data.nuser, '.utip');
+				layer.closeAll('loading');
 			    } 
-          	// layer.alert(data.MerNo);
+			    else{
+			    	layer.closeAll('loading');
+			    }
           		});
 	});
 	$("form").submit(function() {
+		var index = layer.load(1);
 		var self = $(this);
 		$.post(self.attr("action"), self.serialize(), success, "json");
 		return false;
 
 		function success(data) {
+
 			if (data.status) {
 				window.location.href = data.url;
 			} else {
@@ -159,6 +165,7 @@
 				}
 				//刷新验证码
 				$(".reloadverify").click();
+				layer.closeAll('loading');
 			}
 		}
 	});

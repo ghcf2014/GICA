@@ -222,7 +222,7 @@ class UserController extends HomeController {
 			$this->display();
 		}
 	}
-	public function login_array($username='',$mobile='',$email=''){
+	public function login_array($username='',$email='',$mobile=''){
 				$umap['username'] = $username;
 				$mmap['mobile'] = $mobile;
 				$emap['email'] = $email;
@@ -236,24 +236,32 @@ class UserController extends HomeController {
 		if(is_array($euser)){
 			/* 验证用户密码 */
 
-			$data['MerNo']="邮箱被占用";
+			$data['euser']="邮箱被占用";
 			// $this->success($data);
 			
 		}
 		if(is_array($muser)){
 			/* 验证用户密码 */
 
-			$data['MerNo']="手机号被占用";
+			$data['muser']="手机号被占用";
 			// $this->success($data);
 			
 		}
 		if(is_array($uuser)){
 			/* 验证用户密码 */
 
-			$data['MerNo']="用户已存在";
+			$data['uuser']="用户已存在";
 			// $this->success($data);
 			
-		}$this->ajaxReturn($data);
+		}
+		if(!is_array($uuser)){
+			/* 验证用户密码 */
+
+			$data['nuser']="用户不存在";
+			// $this->success($data);
+			
+		}
+		$this->ajaxReturn($data);
 		$this->display();
 	}
 
