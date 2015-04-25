@@ -671,7 +671,7 @@ class UserinfoController extends MemberController {
 			// 查询是否已提交过资料
 			if ($re = $status->where ( "uid=%s", $uid )->select ()) {
 				$result = $status->save( $arr );
-				$this->success ( L ( '资料修改成功，等待审核！' ) );
+				$this->success ( L ( '信息已提交，等待审核！' ) );
 			} else {
 				// 若没有提交过资料则更新认证状态
 				$result = $status->add ( $arr );
@@ -681,7 +681,7 @@ class UserinfoController extends MemberController {
 			}
 		} else {
 			// 失败提示
-			$this->error ( L ( '您未做任何修改' ) );
+			$this->error ( L ( '您未做任何修改或者修改失败。' ) );
 		}
 	}
 	public function userselfset_2() {

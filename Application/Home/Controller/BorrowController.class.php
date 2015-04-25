@@ -11,7 +11,7 @@ use OT\DataDictionary;
 class BorrowController extends HomeController {
 	
 	// 系统首页
-	public function index() {
+	public function index(){
 		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
 		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
