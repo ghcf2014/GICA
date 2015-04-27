@@ -156,7 +156,7 @@
 				</div>
 				<h4>充值提现：</h4>
 				<div class="zh_cont_r_bot">
-				<volist name="paymoney" id="vo">
+				<volist name="paymoney" id="vo" empty="暂时没有数据">
 					<ul>
 						<li>充值总金额（元）：{$vo.money|default="0.00"}</li>
 						<li>提现总金额（元）：{$bm.borrow_money|default="0.00"}</li>
