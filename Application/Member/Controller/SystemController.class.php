@@ -32,7 +32,7 @@ class SystemController extends MemberController {
 		$this->assign('cell_phone',$cell_phone[0]);
 		$this->assign ( 'userinfo',$memberdata);
 		$this->assign ( 'bank',$banks_data[0]);
-		$this->assign ( 'list', $money );
+		$this->assign ( 'list', $money);
 		$this->display ();
 
 	}
@@ -289,8 +289,9 @@ class SystemController extends MemberController {
 		 $uid = is_login (); // 获取当前登录用户ID
 		 $Amount = $_POST ['money'];
 
-		 $MD5key = "ekNEwsTK";		//MD5私钥
-	     $MerNo = "26798";					//商户号
+		 $MD5key =C('HC_MD5KEY');
+		 	//MD5私钥
+	     $MerNo = C('HC_MERNO');					//商户号
 	     $BillNo =date("his");		//[必填]订单号(商户自己产生：要求不重复)
 	     // $Amount = "0.02";				//[必填]订单金额
 	     $ReturnURL = "http://".$_SERVER['SERVER_NAME']."/Member/System/payresult?uid=".$uid; 			//[必填]返回数据给商户的地址(商户自己填写):
@@ -390,7 +391,7 @@ class SystemController extends MemberController {
 	}
 	public function payresult($uid=0) {
 	//MD5私钥
-	$MD5key = "ekNEwsTK";
+	$MD5key = C('HC_MD5KEY');
 
 	//订单号
 	$BillNo = $_POST["BillNo"];

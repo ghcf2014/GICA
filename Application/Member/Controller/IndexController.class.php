@@ -45,6 +45,13 @@ class IndexController extends MemberController {
         $condition1['gica_ucenter_member.id'] =$uid;
         $m=$m->where($condition1)->select();
 
+        $mqq = M ( "z_qq" );
+        $qqid['id'] = $m[0]['customer_id'];
+        // $mqqdata = $mqq->where ( $condition )->field ( 'pin_pass' )->select ();
+        $mqqdata = $mqq->where ( $qqid )->select ();
+        $this->qqtitle=$mqqdata[0]['qq_title'];
+        $this->qqnum=$mqqdata[0]['qq_num'];
+
         $this->assign('list', $list);
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);
@@ -57,9 +64,6 @@ class IndexController extends MemberController {
         $levels=$leveldata->where($arr)->field('member_level')->select();
         $level=$levels[0]['member_level'];
         $this->assign('member_level',$level);
-
-
-
         $this->display();
     }
     //文件信息写入数据库

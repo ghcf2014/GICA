@@ -328,6 +328,8 @@ class UserinfoController extends MemberController {
 		$member = M('ucenter_member');//用户验证状态
         $condition2['id'] =$uid;
         $list=$member->field('user_leve,id,username,time_limit')->where($condition2)->select();
+
+        $this->mvip=C('FEE_VIP');
         $this->assign('list', $list);
 		$this->display ();
 	}
@@ -337,36 +339,41 @@ class UserinfoController extends MemberController {
 			$this->success('验证码输入错误！');
 		}
 
+		
+		$mvip=C('FEE_VIP');
+
 		$uid=is_login();//获取当前用户UID
 		$condition3 ['uid'] = $uid;
-		$money = M ( "z_member_money" );
-		$money = $money->field ( 'account_money' )->where ( $condition3 )->select (); 
-		$vipmoney=intval(10)*intval($viptime);
-		if($viptime !=222){
+		$moneydata = M ( "z_member_money" );
+		$money = $moneydata->field ( 'account_money' )->where ( $condition3 )->select (); 
+		$vipmoney=intval($mvip)*intval($viptime);
+		if($viptime ==222){
+			$mvip=0;
+		}
 			if(floatval( $money [0] ['account_money'] )<intval($vipmoney)){
 				$this->success('余额不足！');
 			}
 		
-			$money =floatval( $money [0] ['account_money'] ) - floatval(10); // 余额加充值金额
-			$data1 ['account_money'] = floatval($money);
-			// 保存当前数据对象
-			if (!$m1 = $m1->where ( $condition3 )->save ( $data1 )) { // 保存成功
-			     $this->success( '充值失败!' );                                                                                             	
-			}
-		}
-		// // 资金日志记录
-		// $log = M ( 'z_member_moneylog' );
-		// $logdata ['uid'] = $uid;
-		// $logdata ['type'] = 102;
-		// $logdata ['affect_money'] =10;
-		// $logdata ['info'] = '会员服务开通';
-		// $logdata ['add_time'] = time ();
-		// $log = $log->add ( $logdata );
+		$money =(floatval( $money [0] ['account_money'] ) - floatval($mvip)); // 余额加充值金额
 		
-		// //发送站内信
-		// $type="rechar";
-  //       $action=$logdata ['info'].$_POST['account_money'].'元,请注意资金安全！';
-  //       systemmsg($type,$action);
+		$data1 ['account_money'] =$money;
+		// 保存当前数据对象
+		if (!$result = $moneydata->where ( $condition3 )->save ( $data1 )) { // 保存成功
+		     $this->success( '充值失败!' );                                                                                             	
+		}
+		// 资金日志记录
+		$log = M ( 'z_member_moneylog' );
+		$logdata ['uid'] = $uid;
+		$logdata ['type'] = 102;
+		$logdata ['affect_money'] =10;
+		$logdata ['info'] = '会员服务开通';
+		$logdata ['add_time'] = time ();
+		$log = $log->add ( $logdata );
+		
+		//发送站内信
+		$type="rechar";
+        $action=$logdata ['info'].$vipmoney.'元,请注意资金安全！';
+        systemmsg($type,$action);
 
 
 		$member = M('ucenter_member');//用户验证状态
@@ -378,7 +385,7 @@ class UserinfoController extends MemberController {
         if($t[0]['time_limit'] <= time()){
         	$t[0]['time_limit']=time();
         }
-
+        
         $data['user_leve']=1;
         
         $data['time_limit'] = strtotime ( '+'.$viptime.' month',strtotime(date("Y-m-d",$t[0]['time_limit'])));
@@ -807,9 +814,26 @@ class UserinfoController extends MemberController {
 	
 	}
 	public function kf_index() {
-
-	$this->display ();
-	
+		$uid = is_login ();
+		// $password = I('post.old');
+		// $repassword = I('post.repassword');
+		// $data['pin_pass'] = I('post.pin_pas');
+		// empty($password) && $this->error('请输入原密码');
+		// empty($data['pin_pass']) && $this->error('请输入新密码');
+		// empty($repassword) && $this->error('请输入确认密码');
+		// 从表单中获取来的数据
+		
+		$m = M ( "ucenter_member" );
+		$condition ['id'] = $uid;
+		$pin = $m->where ( $condition )->select ();
+		$mqq = M ( "z_qq" );
+		$condition1 ['id'] = $pin[0]['customer_id'];
+		// $mqqdata = $mqq->where ( $condition )->field ( 'pin_pass' )->select ();
+		$mqqdata = $mqq->where ( $condition1 )->select ();
+		$mqqlist= $mqq->select ();
+		$this->assign ( 'mqq', $mqqdata);
+		$this->assign ( 'qqlist', $mqqlist);
+		$this->display ();
 	}
 	
 

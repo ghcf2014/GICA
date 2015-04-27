@@ -31,7 +31,6 @@ class ConfigController extends AdminController {
         $this->meta_title = '配置管理';
         $this->display();
     }
-
     /**
      * 新增配置
      */

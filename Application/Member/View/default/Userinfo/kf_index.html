@@ -41,7 +41,12 @@
 							
 							<dl class="dlmm">
 								<dt>QQ号码：</dt>
-								<dd>380003832
+								<dd><select name="banks" id="momeyType" class="inp80">
+										<volist name="mqq" id="vo">
+												<option value="{$vo.qq_num}">{$vo.qq_title}</option></volist>
+										<volist name="qqlist" id="vo">
+												<option value="{$vo.qq_num}">{$vo.qq_title}</option></volist>
+									</select>
 									<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=380003832&amp;site=qq&amp;menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:380003832:51" alt="点击这里给我发消息" title="点击这里给我发消息"></a>
 								</dd>
 							</dl>
