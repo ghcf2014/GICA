@@ -60,10 +60,10 @@
 								<tr>
 									<td align="center" class="b0">{$i}</td>
 									<td align="center" class="b1">{$chkdata.borrow_money}</td>
-									<td align="center" class="b2">{$chkdata.borrow_duration}
-										<if condition="$chkdata.time_type eq '1'">年 
-										<elseif condition="$chkdata.time_type eq 2"/> 个月 
-										<elseif condition="$chkdata.time_type eq 3"/> 天
+									<td align="center" class="b2">
+										<if condition="$chkdata.time_type eq '1'">{$chkdata.year_time}年 
+										<elseif condition="$chkdata.time_type eq 2"/>{$chkdata.month_time}个月 
+										<elseif condition="$chkdata.time_type eq 3"/>{$chkdata.day_time}天
 										</if>
 									</td>
 									<td align="center" class="b3">
