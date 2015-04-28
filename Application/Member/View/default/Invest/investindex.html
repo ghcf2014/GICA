@@ -360,26 +360,26 @@ $('.xiangqing_10').click(function(){
 // 	});
 
 //  }); 
-
-
-
-
-//显示当前位置   class="on"
-var urlstr = location.href;
-  		//alert((urlstr + '/').indexOf($(this).attr('href')));
-  		var urlstatus=false;
- 		$(".tabtil ul li a").each(function (index,element) {
-    		if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href')!='') {
-      			$(element).parent().addClass('on'); 
-      			urlstatus = true;
-
-    		} 
-    		else {
-      			$(element).parent().removeClass('on');
-    		}
-  		});
-  		if (!urlstatus) {$(".tabtil ul li").eq(0).addClass('on'); }
-
+</script>
+<script type="text/javascript">
+$(function(){
+	//显示当前位置   class="on"
+	var urlstr = location.href;
+	var urlstatus=false;
+	//alert($(".tabtil ul li a").length)
+	$(".tabtil ul li a").each(function (index,element) {
+		if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href')!='') {
+			$(element).parent().addClass('on'); 
+			urlstatus = true;
+	
+		} 
+		else {
+			$(element).parent().removeClass('on');
+		}
+	});
+	if (!urlstatus) {$(".tabtil ul li").eq(0).addClass('on'); }
+})
+	
 
 </script>
 

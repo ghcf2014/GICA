@@ -2,9 +2,9 @@
 <extend name="Base/common"/>
 <block name="body">
 		<!-- 引用头部公共部分 -->
-		<div class="nymain">
-			<div class="bigbox"style="background-color: #fffcf7; border:1px solid #b9b9b9;">
-				<div class="til">
+		<div class="nymain" style="width: 850px;">
+			<div class="bigbox"style="background-color: #fff; border:1px solid #ddd;">
+				<div class="til" style="width: 95%;text-align: center;line-height: 50px;height: 50px;margin:0 auto;padding: 0;font-size: 18px;border-bottom: 1px solid #ddd;">
 					会员续费
 				</div>
 				<div class="sqdk" style="background: none;">
@@ -23,21 +23,21 @@
 									<br />
 									享有借款资格，及时缓解资金压力。 参与网站举行的各种活动。
 								</p>
-								<div style="padding-left: 300px;">
+								<div style="width: 55%;margin: auto;">
 									<section class="demozone">
 									<volist name="list" id="vo"> 
 									    <form class="demo form-horizontal" id="demo1" action="{:U('userrenewalvip_post')}" method="post">
-									        <div class="form-item">
-									            <label for="username"><strong>会员状态：{$vo.user_leve|user_leve}</strong></label><if condition="$vo.user_leve eq 1">
-						【VIP到期时间：<span>{$vo.time_limit|date='Y-m-d',###}</span>】
+									        <div class="form-item" style="height: 35px;line-height: 35px;">
+									            <label for="username" style="display: inline-block;"><strong style="font-weight: normal;">会员状态：{$vo.user_leve|user_leve}</strong></label><if condition="$vo.user_leve eq 1">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【VIP到期时间：<span>{$vo.time_limit|date='Y-m-d',###}</span>】
 					</if>
 									        </div>
-									        <div class="form-item">
-									            <label for="username"><strong>用户名：{$vo.username}</strong></label>
+									        <div class="form-item" style="height: 35px;line-height: 35px;margin-bottom: 10px;">
+									            <label for="username" style="display: inline-block;"><strong style="font-weight: normal;">用户名：{$vo.username}</strong></label>
 									        </div>
-									        <div class="form-item">
-									        	<label><strong>开通周期：{$mvip}元/月</strong></label>
-									        	<div class="form-field">
+									        <div class="form-item" style="height: 35px;line-height: 35px;margin-bottom: 10px;">
+									        	<label style="display: inline-block;"><strong style="font-weight: normal;">开通周期({$mvip}元/月)：</strong></label>
+									        	<div class="form-field"  style="display: inline-block;">
 									        		<select name="viptime" id="momeyType" class="inp80">
 														<option value="">--请选择--</option>
 														<!-- <option value="{$banksdata['bank_num']}">{$banksdata['bank_num']}/{$memberdata['real_name']}/{$banksdata['bank_name']}</option> -->
@@ -59,14 +59,15 @@
 													</select>
 									        	</div>
 									        </div>
-									        <div class="form-item">
-									            <label for="username"><strong>验证码：</strong></label>
-									            <div class="form-field"><input type="text" name="verify" class="form-text" placeholder="请输验证码"><img class="yzBtn verifyimg reloadverify" alt="点击切换" src="{:U('verify')}"style="cursor: pointer; width: 100px;">
-									                <p class="form-des">请确保有充足的余额。</p></div>
+									        <div class="form-item" style="height: auto;line-height: 35px;width: 100%;margin-bottom: 10px;">
+									            <label for="username" style="display: inline-block;"><strong style="font-weight: normal;">验证码：</strong></label>
+									            <div class="form-field" style="display: inline-block;width: 290px;"><input type="text" name="verify" class="form-text" placeholder="请输验证码" style="width: 175px;"><img class="yzBtn verifyimg reloadverify" alt="点击切换" src="{:U('verify')}"style="cursor: pointer; width: 100px;">
+									                </div>
+									                <p class="form-des" style="padding-left: 60px;box-sizing: border-box;">请确保有充足的余额。</p>
 									        </div>
-									        <div id="btn_submit" style="padding-left: 170px;">
+									        <div id="btn_submit" style="margin: auto;width: 270px;">
 													<input type="submit" class="btn r_post" name="b1" value="<if condition='$vo.user_leve eq 1'>续费
-					<else/>开通</if>"  >
+					<else/>开通</if>"/>
 											</div>
 									    </form>
 									    </volist> 
