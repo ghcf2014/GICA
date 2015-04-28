@@ -128,7 +128,7 @@
 	$(".utip").blur(function() {
 	 var username = document.getElementById("username").value;
 		  var bid =1;
-		  var index = layer.load(1);	
+		  var index = layer.load(1,{time: 7*1000});	
           $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
           	if (data.nuser =='用户不存在')
           	 {

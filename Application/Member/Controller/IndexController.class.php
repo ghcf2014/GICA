@@ -52,6 +52,11 @@ class IndexController extends MemberController {
         $this->qqtitle=$mqqdata[0]['qq_title'];
         $this->qqnum=$mqqdata[0]['qq_num'];
 
+        $inves = M ( "z_investor_detail" );
+        $iuid['investor_uid'] =$uid;
+        // $mqqdata = $mqq->where ( $condition )->field ( 'pin_pass' )->select ();
+        $inlist = $inves->field('sum(interest)interest')->where($iuid)->group('investor_uid')->select();
+        $this->interest=$inlist[0]['interest'];
         $this->assign('list', $list);
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);

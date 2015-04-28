@@ -155,10 +155,14 @@ $_SESSION['send_code'] = random(6,1);
 <script language="javascript">
 	function get_mobile_code(){
         $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
-            alert(jQuery.trim(unescape(msg)));
-			if(msg=='已发送'){
-				RemainTime();
-			}
+            layer.msg(jQuery.trim(unescape(msg)), {
+					    icon: 1,
+					    time: 2000 //2秒关闭（如果不配置，默认是3秒）
+					}, function(){
+						if(msg=='已发送'){
+							RemainTime();
+						}
+					}); 
         });
 	};
 	var iTime = 59;
@@ -204,7 +208,7 @@ $_SESSION['send_code'] = random(6,1);
 
 	    // 异步验证
 		$(".utip").blur(function() {
-			var index = layer.load(1);
+			var index = layer.load(1,{time: 5*1000});
 		 var username = document.getElementById("username").value;
 			  var bid =1;	
 	          $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
@@ -221,7 +225,7 @@ $_SESSION['send_code'] = random(6,1);
 		});
 		
 		$(".etip").blur(function() {
-			var index = layer.load(1);
+			var index = layer.load(1,{time: 5*1000});
 		 var email = document.getElementById("email").value;
 			  var bid =1;	
 	          $.post('__URL__/login_array',{bid:bid,email:email},function success(data){
@@ -237,7 +241,7 @@ $_SESSION['send_code'] = random(6,1);
 	          		});
 		});
 		$(".mtip").blur(function() {
-			var index = layer.load(1);
+			var index = layer.load(1,{time: 5*1000});
 		 var mobile = document.getElementById("mobile").value;
 			  var bid =1;	
 	          $.post('__URL__/login_array',{bid:bid,mobile:mobile},function success(data){
@@ -254,16 +258,21 @@ $_SESSION['send_code'] = random(6,1);
 		});
 
     	$("form").submit(function(){
-    		var index = layer.load(1);
+    		var index = layer.load(1,{time: 5*1000});
     		var self = $(this);
     		$.post(self.attr("action"), self.serialize(), success, "json");
     		return false;
 
     		function success(data){
     			if(data.status){
-    				layer.msg(data.info, 3,1, function(){
-							window.location.href = data.url;
-					});	
+    				layer.msg(data.info, {
+					    icon: 1,
+					    time: 4000 //2秒关闭（如果不配置，默认是3秒）
+					}, function(){
+						window.location.href = data.url;
+					    //do something
+					}); 
+					layer.closeAll('loading');
     			} else {
     				self.find(".Validform_checktip").text(data.info);
     				//刷新验证码
@@ -296,8 +305,6 @@ $_SESSION['send_code'] = random(6,1);
 
 	});
 </script> <!--content end--> 
-
-
 <!--
 	描述：服务条款是否选择同意
 -->

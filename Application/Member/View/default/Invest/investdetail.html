@@ -32,7 +32,7 @@
             </div>
           <div class="list-con-count clearfix">
                <ul>
-                <li>￥<span class="cn_borrow_count countfont-2">{$vo.borrow_money}</span></li>
+                <li><span class="cn_borrow_count countfont-2">￥{$vo.borrow_money}</span></li>
                 <li><span class="countfont-2">{$vo.borrow_interest}</span></li>
                 <li><span class="cn_recycle_count countfont-2">{$vo.borrow_interest_rate}%</span></li>
                 <li><span class="countfont-2">{$vo.total}天</span></li>
@@ -51,7 +51,7 @@
                <ul>
                 <li><span class="cn_borrow_count countfont-2">{$vo.borrow_type|get_borrow_type_name}</span></li>
                 <li><span class="countfont-2">{$vo.repayment_type|get_repayment_type}</span></li>
-                <li><span class="cn_recycle_count countfont-2">{$vo.repayment_type}人</span></li>
+                <li><span class="cn_recycle_count countfont-2 " >{$countuid}人</span></li>
                </ul>
             </div>
             <p style="padding-top: 20px;color: red;">* 被叫停的项目不在统计范围内</p>
@@ -104,7 +104,6 @@
 	</div>
 </div>
 <!--  -->
-
 <!--content end--> 
 <script>
   // $('#test2')

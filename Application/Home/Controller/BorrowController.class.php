@@ -278,11 +278,36 @@ class BorrowController extends HomeController {
 		$map = array (
 				'id' => $id 
 		);
+		//投标数查询
+		$detail = M ('z_investor_detail');
+		$b_id ['borrow_id'] =$id;
+		$inscount= $detail->field ( 'count(investor_uid)')->where ($b_id)->group ('investor_uid')->select();
+	    $this->countuid=count($inscount);
 		// 查询借款详情表
 		$listBorrow = M ( 'z_borrow_info' );
 		$list = $listBorrow->where ( $map )->select ();
+
+
 		$list[0]['jindu']=round($list[0]['has_borrow']/$list[0]['borrow_money']*100, 1);
 		$uid = $list [0] ['borrow_uid'];
+		$buid['borrow_uid']=$list [0] ['borrow_uid'];
+
+
+		$blist = $listBorrow->where ($buid)->select ();
+		$byuqi = $listBorrow->where ($buid,'borrow_status in (8,9,10) ')->select ();
+		$cgjiekuan = $listBorrow->where ($buid,'borrow_status in (7,9) ')->select ();
+		$byuqing = $listBorrow->where ($buid,'borrow_status in (8) ')->select ();
+		$cgmoney = $listBorrow->field ( 'sum(borrow_money)borrow_money')->where ($buid,'borrow_status in (7.9) ')->group ('borrow_uid')->select ();
+		$byuqimoney = $listBorrow->field ( 'sum(borrow_money)borrow_money')->where ($buid,'borrow_status in (8,9,10) ')->group ('borrow_uid')->select ();
+		
+		$this->bcount=count($blist);
+		$this->byuqi=count($byuqi);
+		$this->cgjiekuan=count($cgjiekuan);
+		$this->byuqing=count($byuqing);
+		$this->cgmoney=$cgmoney[0]['borrow_money'];
+		$this->byuqimoney=$byuqimoney[0]['borrow_money'];
+
+
 		$userlist = M ( 'ucenter_member' );
 		$data = $userlist->field ( 'username,reg_time,last_login_time' )->where ( 'id=%s', $uid )->select ();
 		$this->assign ( 'data', $data [0] );

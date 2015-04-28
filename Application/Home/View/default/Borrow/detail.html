@@ -35,7 +35,7 @@
                         <li>交易类型：<span>线下交易</span></li>
                         <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
                         <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
-                        <li>总投标数：<span style="margin-right:20px;">0</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="__PUBLIC__/Home/images/page_view.jpg" style="height:20px;"></span></li>
+                        <li>总投标数：<span style="margin-right:20px;">{$countuid}位</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="__PUBLIC__/Home/images/page_view.jpg" style="height:20px;"></span></li>
                         <li>  <if condition="$vb.borrow_status eq 2">
                                     <a  href="{:U('Finance/invest?id='.$vb['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
                           <elseif condition="$vb.borrow_status eq 0"/>
@@ -86,12 +86,12 @@
                 		<td>当前逾期待还金额</td>
                 	</tr>
                 	<tr>
-                		<td>3</td>
-                		<td>0</td>
-                		<td>0</td>
-                		<td>无</td>
-                		<td>0.00</td>
-                		<td>0.00</td>
+                		<td>{$bcount}</td>
+                		<td>{$byuqi}</td>
+                		<td>{$cgjiekuan}</td>
+                		<td>{$byuqing}</td>
+                		<td>{$cgmoney}</td>
+                		<td>{$byuqimoney}</td>
                 	</tr>
                 </table>
             </div>
@@ -127,40 +127,34 @@
 	                    <li>月还本息</li>
 	                    <li>月还本金</li>
 	                    <li>月还利息</li>
-	                    <li>剩余还款</li>
-	                    <li>还款状态</li>
+	                    <!-- <li>剩余还款</li>
+	                    <li>还款状态</li> -->
 	                </ul><p>&nbsp&nbsp&nbsp&nbsp&nbsp还款期数：总共&nbsp&nbsp<b style="color:red;text-decoration:underline;">{$num}</b>&nbsp&nbsp期</p>
 	                <for start="0" end="$num" step="1" name="i" >
 	                	<ul class="con2" style="height:53px;">
 		                    <li>{$i+1}</li>
 		                    <li>{$cons[$i+1]['repayment_time']|date='Y-m-d',###}</li>
-
 		                    <li>￥:{$cons[$i+1]['allcapital']}</li>
-
 		                    <li>￥:{$cons[$i+1]['capital']}</li>
-
 		                    <li>￥:{$cons[$i+1]['interest']}</li>
-
-		                    <li>￥:{$cons[$i+1]['remain_money']}</li>
-
-		                    <li>待还</li>
-		                    
+		                    <!-- <li>￥:{$cons[$i+1]['remain_money']}</li>
+		                    <li>待还</li> -->
 	                	</ul>	                	
-	                </for>
-
-
-	                
+	                </for>  
             	</div>
             	<div class="tab" style="display:none">			
 	                <ul class="con2" style="padding: 5px;width: 1018px;height:auto;">
-	                	<volist name="updata" id="val">
+	                	<div id="layer-photos-demo" class="layer-photos-demo">
+	                	<volist name="updata" id="val" key='i'>
 	                    <li style="width: 180px;padding: 10px 5px;height: 200px;">
-	                    	<if condition=" $val['updata'] eq null">	
+	                    	<if condition=" $val['updata'] eq null">暂时没有数据
 							<else/>
-								<img src="Uploads/User/{$val.updata}" width="200" height="130" id="img_identiy" />
+							
+								<img src="Uploads/User/{$val.updata}" layer-pid="{$i}" layer-src="Uploads/User/{$val.updata}" width="200" height="130" />
+								
 							</if>
 							
-						</li></volist>
+						</li></volist></div>
 						<if condition="$files['card_img']  eq null">							
 						<else/>
 							<li style="width: 180px;padding: 10px 5px;height: 180px;"><img src="Uploads/User/{$files.card_img}" width="200" height="130" id="img_identiy" /></li>
@@ -254,24 +248,22 @@
         </div>
     </div>
 	<!--content end-->
-
-		<!-- 引用底部公共部分 -->
-		<jsp:include page="/include/footer.jsp"></jsp:include>
-
-		<script type="text/javascript" src="script/jquery.shove-1.0.js">
 	
+<script>
+$.getJSON('/jquery/layer/test/photos.json', function(json){
+    layer.photos({
+        photos: json
+    });
+});	
+//调用示例
+layer.ready(function(){ //为了layer.ext.js加载完毕再执行
+    layer.photos({
+        photos: '#layer-photos-demo',
+        shift:0
+    });
+});  	
 </script>
-		<script type="text/javascript" src="css/popom.js">
-	
-</script>
-		<script type="text/javascript"
-			src="script/jbox/jquery.jBox-2.3.min.js">
-	
-</script>
-		<script type="text/javascript" src="script/jbox/jquery.jBox-zh-CN.js">
-	
-</script>
-		<script>
+<script>
 	var param = {};
 	function initListInfo(param) {
 		param['paramMap.id'] = '${borrowDetailMap.id}';

@@ -605,13 +605,13 @@ public function auto_borrow(){
 		$condition1 ['sort_order'] = $i;
 	    $condition ['borrow_id'] =$id;
 	    $condition ['investor_uid'] =$uid;
+	    $b_id ['borrow_id'] =$id;
 
 
 	    $de= $detail->field ( 'id,borrow_id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital,status,receive_interest')->where ( $condition )->group ('sort_order')->select();
+	    $inscount= $detail->field ( 'count(investor_uid)')->where ($b_id)->group ('investor_uid')->select();
 
-
-
-
+	    $this->countuid=count($inscount);
 
 		$this->assign('list',$de);
 		$this->display();

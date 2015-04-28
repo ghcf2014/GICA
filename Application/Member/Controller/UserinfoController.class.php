@@ -353,7 +353,7 @@ class UserinfoController extends MemberController {
 				$this->success('余额不足！');
 			}
 		
-		$money =(floatval( $money [0] ['account_money'] ) - floatval($mvip)); // 余额加充值金额
+		$money =(floatval( $money [0] ['account_money'] ) - floatval($vipmoney)); // 余额加充值金额
 		
 		$data1 ['account_money'] =$money;
 		// 保存当前数据对象
@@ -386,7 +386,7 @@ class UserinfoController extends MemberController {
         }
         
         $data['user_leve']=1;
-        
+        $data['customer_id']=1;
         $data['time_limit'] = strtotime ( '+'.$viptime.' month',strtotime(date("Y-m-d",$t[0]['time_limit'])));
         if($viptime==222){
         	 $data['time_limit'] = strtotime ( '+2 days',strtotime(date("Y-m-d",$t[0]['time_limit'])));
