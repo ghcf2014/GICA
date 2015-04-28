@@ -61,7 +61,6 @@ class UserinfoController extends MemberController {
 	public function userbankset_save() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
-		dump($_POST);
 		$m = M ( "z_member_banks" );
 		// 获取表单数据
 		$data ['uid'] = $uid;

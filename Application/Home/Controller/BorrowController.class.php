@@ -105,6 +105,7 @@ class BorrowController extends HomeController {
 			'apply_uid'=>$uid
 			);
 		$receive=$_POST;
+		array_filter($receive);
 		$data = array_merge($receive,$arr);
 		$model=M('z_borrow_apply');
 		$result=$model->add($data);
@@ -548,7 +549,6 @@ class BorrowController extends HomeController {
 		$files=$borrowfile_status[0];
 		$applydata=M('applyfile_download');
 		$applyfile=$applydata->select();
-		// dump($applyfile);
 		$this->assign('applyfile',$applyfile);
 
 

@@ -26,6 +26,16 @@
 								<!-- <div class="rrdslcj">
 								<img src="./images/yqhy.jpg" alt="邀请好友，挣金币，兑大礼" />
 							</div> -->
+								<div class="tggl">
+									<dl>
+										<dt>温馨提示：</dt>
+										<dd>1、推荐A级会员可获得投资利息的5%；</dd>
+										<dd>2、推荐B级会员可获得投资利息的3%；</dd>
+										<dd>3、推荐C级会员可获得投资利息的1%；</dd>
+										<dd>4、只有参与了投资才有推广费；</dd>
+										<dd>5、自动投标不参与活动。</dd>
+									</dl>
+								
 								<div class="bdsharebuttonbox" style="padding-left: 20px;">
 									<a href="#" class="bds_more" data-cmd="more"></a> <a href="#"
 										class="bds_qzone" data-cmd="qzone"></a> <a href="#"
@@ -34,6 +44,7 @@
 										class="bds_renren" data-cmd="renren"></a> <a href="#"
 										class="bds_weixin" data-cmd="weixin"></a>
 								</div>
+
 								<script>
 									window._bd_share_config = {
 										"common" : {
@@ -105,6 +116,7 @@
 										</object>
 									</span>
 								</div>
+								
 								<form action="__SELF__" method="post" id="form">
 									<div class="yqhy_text1">
 										<h4
@@ -134,7 +146,7 @@
 													style="float: left; resize: none; width: 450px; height: 130px;">特意邀请您注册“工合财富” 网贷平台【www.ghcf.com.cn】，P2P理财首选平台。综合年化收益18%，100%本息安全保障，50元起投，超低门槛，是草根、家庭的理财专属通道！你也赶快来投资吧，别被银行榨取我们的存款利息！进入平台先注册:http://www.ghcf.com.cn/index.php?s=/Home/User/register.html&&reffer={$username}</textarea>
 											</li>
 										</ul>
-										<div class="fzfx_an" style="margin-left: 90px;">
+										<div class="fzfx_an" style="margin-left: 90px;margin-top: 20px;">
 											<span style="color: red; float: none;" id="s_tip"
 												class="formtips"></span> <a href="javascript:void(0);"
 												id="sendmail"> <img
@@ -144,20 +156,11 @@
 										</div>
 									</div>
 								</form>
-								<div class="tggl">
-									<dl>
-										<dt>温馨提示：</dt>
-										<dd>1、推荐一级会员可获得投资利息的5%；</dd>
-										<dd>2、推荐二级会员可获得投资利息的3%；</dd>
-										<dd>3、推荐三级会员可获得投资利息的1%；</dd>
-										<dd>4、只有参与了投资才有推广费；</dd>
-										<dd>5、自动投标不参与活动。</dd>
-									</dl>
 								</div>
 					</div>
 		</div>
 						<div class="friend_tab" style="display: none; margin-top: 20px;">
-							<table style="margin: auto;">
+							<table style="margin:0 auto 50px;">
 								<tr>
 									<td
 										style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">编号</td>
@@ -173,47 +176,59 @@
 										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">好友会员等级</td>
 									
 								</tr>
-								<volist name="friendList" id="vo" key="i">
-								<tr>
-									<td
-										style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">{$i}</td>
-									<td
-										style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">{$vo[0][username]}</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo[0][reg_time]|date='Y-m-d',###}</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
-										<if condition="$vo[1][investor_capital] neq null">{$vo[1]['sum(investor_capital)']}
-										<else/>
-											0
-										</if>
+								<if condition="$friendList neq null">
+									<volist name="friendList" id="vo" key="i">
+									<tr>
+										<td
+											style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">{$i}</td>
+										<td
+											style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">{$vo[0][username]}</td>
+										<td
+											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo[0][reg_time]|date='Y-m-d',###}</td>
+										<td
+											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+											<if condition="$vo[1][investor_capital] neq null">{$vo[1]['sum(investor_capital)']}
+											<else/>
+												0
+											</if>
+											</td>
+										<td
+											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+											<if condition="$vo[2][0][add_time] neq null">{$vo[2][0]['add_time']|date='Y-m-d',###}
+											<else/>
+												----
+											</if>
 										</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
-										<if condition="$vo[2][0][add_time] neq null">{$vo[2][0]['add_time']|date='Y-m-d',###}
-										<else/>
-											----
-										</if>
-									</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
-										<if condition="$vo[0][member_level] eq 1">
-											A级会员
-										<elseif condition="$vo[0][member_level] eq 2"/>
-											B级会员
-										<elseif condition="$vo[0][member_level] eq 3"/>
-											C级会员
-										<else/>
-											普通会员
-										</if>
+										<td
+											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+											<if condition="$vo[0][member_level] eq 1">
+												A级会员
+											<elseif condition="$vo[0][member_level] eq 2"/>
+												B级会员
+											<elseif condition="$vo[0][member_level] eq 3"/>
+												C级会员
+											<else/>
+												普通会员
+											</if>
 
-										
-									</td>
-										
-								</tr>
-								</volist>
+											
+										</td>
+											
+									</tr>
+									</volist>
+									<else/>
+										<tr>
+											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
+											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
+											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
+											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
+											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
+											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
+										</tr>
+
+									</if>
 							</table>
-										<div class="tggl"style="display: none;">	
+										<div class="tggl">	
 				<dl>
 					<dt>等级说明：</dt>
 					<dd>1、<span style="color:red;"><u>A级会员</u></span>为当前用户直接推荐的投资客；</dd>
@@ -244,13 +259,28 @@
 								0
 							</if>
 						</td>
-						<td>200</td>
-						<td>10</td>
-						<td>10</td>
-						<td>200</td>
-						<td>200</td>
-						<td>10</td>
-						<td>领取奖励</td>
+						<td style="color:red;">
+							<if condition="$days_investors.level_1 neq null">{$days_investors.level_1}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td style="color:red;">
+							<if condition="$month_investors.level_1 neq null">{$month_investors.level_1}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td style="color:red;">
+							<if condition="$all_investors.level_1 neq null">{$all_investors.level_1}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td><a href="#" title="领取奖励">领取奖励</a></td>
 					</tr>
 					<tr>
 						<td>B</td>
@@ -258,13 +288,28 @@
 							<else/>
 								0
 							</if></td>
-						<td>200</td>
-						<td>10</td>
-						<td>10</td>
-						<td>200</td>
-						<td>200</td>
-						<td>10</td>
-						<td>领取奖励</td>
+						<td style="color:red;">
+							<if condition="$days_investors.level_2 neq null">{$days_investors.level_2}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td style="color:red;">
+							<if condition="$month_investors.level_2 neq null">{$month_investors.level_2}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td style="color:red;">
+							<if condition="$all_investors.level_2 neq null">{$all_investors.level_2}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td><a href="#" title="领取奖励">领取奖励</a></td>
 					</tr>
 					<tr>
 						<td>C</td>
@@ -272,13 +317,28 @@
 							<else/>
 								0
 							</if></td>
-						<td>200</td>
-						<td>200</td>
-						<td>1010</td>
-						<td>1010</td>
-						<td>200</td>
-						<td>10</td>
-						<td>领取奖励</td>
+						<td style="color:red;">
+							<if condition="$days_investors.level_3 neq null">{$days_investors.level_3}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td style="color:red;">
+							<if condition="$month_investors.level_3 neq null">{$month_investors.level_3}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td style="color:red;">
+							<if condition="$all_investors.level_3 neq null">{$all_investors.level_3}
+							<else/>
+								0
+							</if>
+						</td>
+						<td style="color:green;">0</td>
+						<td><a href="#" title="领取奖励">领取奖励</a></td>
 					</tr>
 
 				</table>

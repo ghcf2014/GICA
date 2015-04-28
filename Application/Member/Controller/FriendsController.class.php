@@ -39,7 +39,17 @@ class FriendsController extends MemberController {
 		$friends=M('z_member_friend');
 		$f['uid']=$uid;
 		$friend_id=$friends->where($f)->select();
-
+		$k=0;
+		$v=0;
+		$x=0;
+		$j=0;
+		$d=0;
+		$g=0;
+		$h=0;
+		$i=0;
+		$m=0;
+		$n=0;
+		$z=0;
 		foreach ($friend_id as $value) {
 			//查询注册信息
 			$friends_id['id']=$value['friend_id'];
@@ -52,13 +62,99 @@ class FriendsController extends MemberController {
 			$investor_msg=$investors->where($investor_uid)->field('add_time,investor_capital,sum(investor_capital)')->select();
 			//最后一次投资时间
 			$investor_time[3]=$investor2->where($investor_uid)->field('add_time')->order('add_time desc')->limit(1)->select();
-			// //当天投资总额
-			// $investor_day[4]=$investor2->where()
-			// dump($investor_time);// echo $investor2->getLastsql();
+			// //当天会员投资总额
+			$investor3=M('z_borrow_investor');
+			$y=date("Y",time());
+			$m=date("m",time());
+			$d=date("d",time());
+			$todays=mktime(0,0,0,$m,$d,$y);
+			$torrows=mktime(23,59,59,$m,$d,$y);
+			$common['add_time']=array('between',array($todays,$torrows));
+			$common['investor_uid']=$value['friend_id'];
+			$members_level_day=$friend_data[$k]['member_level'];
+			
+			if ($members_level_day=="1"){
+				$data_money_day=$investor3->where($common)->field('sum(investor_capital)')->select();
+				$v=($v+$data_money_day[0]['sum(investor_capital)']);
+			}elseif ($members_level_day=="2") {
+				
+				$data_money_day=$investor3->where($common)->field('sum(investor_capital)')->select();
+				$x=($x+$data_money_day[0]['sum(investor_capital)']);
+				
+			}elseif ($members_level_day=="3") {
+				$data_money_day=$investor3->where($common)->field('sum(investor_capital)')->select();
+				$j=($j+$data_money_day[0]['sum(investor_capital)']);
+			}
+			$days_investors['level_1']=$v;
+			$days_investors['level_2']=$x;
+			$days_investors['level_3']=$j;
+
+			// //当月会员投资总额
+			// $d=0;
+			// $g=0;
+			// $h=0;
+			// $i=0;
+			$investor4=M('z_borrow_investor');
+			$year = date("Y");
+			$month = date("m");
+			$allday = date("t");
+			$strat_time = strtotime($year."-".$month."-1");
+			$end_time = (strtotime($year."-".$month."-".$allday)+86399);
+			$common1['add_time']=array('between',array($strat_time,$end_time));
+			$common1['investor_uid']=$value['friend_id'];
+			$members_level_month=$friend_data[$k]['member_level'];
+			
+			if ($members_level_month=="1"){
+				$data_money_month=$investor4->where($common1)->field('sum(investor_capital)')->select();
+				$g=($g+$data_money_month[0]['sum(investor_capital)']);
+			}elseif ($members_level_month=="2") {
+				
+				$data_money_month=$investor4->where($common1)->field('sum(investor_capital)')->select();
+				$h=($h+$data_money_month[0]['sum(investor_capital)']);
+				
+			}elseif ($members_level_month=="3") {
+				$data_money_month=$investor4->where($common1)->field('sum(investor_capital)')->select();
+				$i=($i+$data_money_month[0]['sum(investor_capital)']);
+			}
+			$month_investors['level_1']=$g;
+			$month_investors['level_2']=$h;
+			$month_investors['level_3']=$i;
+
+
+			//会员累计投资总额
+			// $d=0;
+			// $g=0;
+			// $h=0;
+			// $i=0;
+			$investor5=M('z_borrow_investor');
+			
+			$common2['investor_uid']=$value['friend_id'];
+			$members_level_all=$friend_data[$k]['member_level'];
+			
+			if ($members_level_all=="1"){
+				$data_money_all=$investor4->where($common2)->field('sum(investor_capital)')->select();
+				$g=($g+$data_money_all[0]['sum(investor_capital)']);
+			}elseif ($members_level_all=="2") {
+				
+				$data_money_all=$investor4->where($common2)->field('sum(investor_capital)')->select();
+				$n=($n+$data_money_all[0]['sum(investor_capital)']);
+				
+			}elseif ($members_level_all=="3") {
+				$data_money_all=$investor4->where($common2)->field('sum(investor_capital)')->select();
+				$z=($z+$data_money_all[0]['sum(investor_capital)']);
+			}
+			$all_investors['level_1']=$g;
+			$all_investors['level_2']=$n;
+			$all_investors['level_3']=$z;
+
+			
+			
 			$dd[]=array_merge($friend_data,$investor_msg ,$investor_time);
+			$k+1;
 		}
-		// dump($dd);
-		
+		$this->assign('days_investors',$days_investors);
+		$this->assign('month_investors',$month_investors);
+		$this->assign('all_investors',$all_investors);
 		$num1=1;
 		$num2=1;
 		$num3=1;
@@ -67,7 +163,6 @@ class FriendsController extends MemberController {
 			// dump($value);
 			$level=$value[0]['member_level'];
 			if ($level==1){
-
 				$count1=$num1;
 				$num1++;
 			}elseif ($level==2) {
@@ -81,10 +176,7 @@ class FriendsController extends MemberController {
 			$arr[2]=$count2;
 			$arr[3]=$count3;
 		}
-
-		$this->assign('count',$arr);
-		
-		
+		$this->assign('count',$arr);		
 		$this->assign ( "friendList", $dd );
 		$this->display ();
 	}

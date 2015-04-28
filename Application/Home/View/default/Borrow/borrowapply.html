@@ -87,25 +87,25 @@
 			<form action="{:U('borrowapply_save')}" method="post">
 				<h2>借款意向</h2>
 				<dl>
-					<dt>姓名</dt>
+					<dt>姓名<b style="color:red">*</b></dt>
 					<dd>
 						<input type="text" id="uname" name="username" class="txt" onblur="javascript:checkName(this.value)" /><div id="u1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
-					<dt>联系电话</dt>
+					<dt>联系电话 <b style="color:red">*</b></dt>
 					<dd>
 						<input type="text" name="tel" class="txt" onblur="javascript:checkPhone(this.value)"/><div id="p1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
-					<dt>身份证号码</dt>
+					<dt>身份证号码 <b style="color:red">*</b></dt>
 					<dd>
 						<input type="text" name="id_card" class="txt" onblur="javascript:checkId(this.value)"/><div id="c1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
-					<dt>借款金额</dt>
+					<dt>借款金额<b style="color:red">*</b></dt>
 					<dd>
 						<input type="text" name="borrow_money" class="txt" onblur="javascript:checkMoney(this.value)"/><div id="m1" style="display:none;"></div>
 					</dd>
@@ -113,7 +113,7 @@
 				<dl>
 					<dt>借款类型</dt>
 					<dd>
-						<select class="borrow" name="borrow_type" onfocus="javascript:checkType(this.value)"><div id="t1" style="display:none;"></div>
+						<select class="borrow" name="borrow_type" onblur="javascript:checkType(this.value)"><div id="t1" style="display:none;"></div>
 							<option selected="selected">---请选择---</option>
 							<option value="1">信用标</option>
 							<option value="2">净值标</option>
@@ -125,13 +125,84 @@
 					</dd>
 				</dl>
 				<dl>
+					<dt>借款年利率：<b style="color:red">*</b></dt>
+					<dd valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                	<div class="User_ratings User_grade" id="div_fraction0">
+                      <div class="ratings_bars"> 
+                        <span class="bars_10" style="display:none;">0</span>
+                        <div class="scale" id="bar0">
+                          <div></div>
+                          <span id="btn0"></span>
+                        </div>
+                        <span class="bars_10" style="display:none;">100</span><input name="borrow_interest_rate" id="title0" type="text" title="年化率" value="0"  leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 30px;"/><span class="span" >%</span>
+                      </div>
+                    </div>
+					</dd>
+				</dl>
+				<dl>
 					<dt>借款期限</dt>
 					<dd>
-						<input type="text" name="borrow_duration" class="txt2" onkeyup="javascript:borrow_time()"/> 
-						<select class="date" name="time_type" onfocus="javascript:t_type()">
-							<option value="1">年</option>
-							<option value="2">月</option>
-							<option value="3">日</option>
+						<!-- <input type="text" name="borrow_duration" class="txt2" onkeyup="javascript:borrow_time()"/> -->
+						
+						<select id="days" name="day_time">
+							<option value="" checked>请选择</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+						</select>
+						<select id="month" style="display:none" name="month_time">
+							<option value="" checked>请选择</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+						<select id="year" style="display:none" name="year_time">
+							<option value="" checked>请选择</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+
+						<select class="date" name="time_type" >
+							<option value="3" onclick="javascript:c_days()">日</option>
+							<option value="2" onclick="javascript:c_month()">月</option>
+							<option value="1" onclick="javascript:c_year()" >年</option>
 						</select>
 					</dd>
 				</dl>
@@ -151,13 +222,16 @@
 					</dd>
 				</dl>
 				<dl>
-					<dt>借款说明</dt>
+					<dt>借款说明 <b style="color:red">*</b></dt>
 					<dd>
-						<textarea name="borrow_info" onfocus="javascript:info_c()"></textarea>
+						<textarea name="borrow_info"></textarea>
 					</dd>
+					
 				</dl>
+				<p style="background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; color: #fff; padding-left: 40px; width: 88%;line-height: 32px;">带<b style="color:red;">*</b>号为必填项，申请资料提交后将不能修改！</p>
 					<input type="submit" class="btn" value="提交申请" />
 				</form>
+
 			</div>
 		</div>
 		<!--sqjk_cont_bot 结束-->
@@ -178,11 +252,12 @@
   	}
 
     function checkPhone(phone){
+    	var reg=new RegExp("/^[0]{1}$/");
 	    if(phone.length==0){
 	    	p1.innerHTML = "<p style='color:red'>联系电话不能为空！</p>";
 			p1.style.display = 'block';//显示div
 	    }else{
-	    	p1.innerHTML = "<p style='color:green'>正确！</p>";
+			p1.innerHTML = "<p style='color:green'>正确！</p>";
 			p1.style.display = 'block';//显示div
 	    }
   	}
@@ -207,7 +282,7 @@
   	}
 
     function checkType(type){
-	    if(type.length==0){
+	    if(type.value==null){
 	    	t1.innerHTML = "<p style='color:red'>请选择类型！</p>";
 			t1.style.display = 'block';//显示div
 	    }else{
@@ -215,8 +290,59 @@
 			t1.style.display = 'block';//显示div
 	    }
   	}
-
-
+  	  function c_year(){
+  	  	year.style.display="block";
+  	  	month.style.display="none";
+		days.style.display="none";
+  	  }  	  
+  	  function c_month(){
+  	  	year.style.display="none";
+  	  	month.style.display="block";
+  	  	days.style.display="none";
+  	  }  	  
+  	  function c_days(){
+  	  	year.style.display="none";
+  	  	month.style.display="none";
+  	  	days.style.display="block";
+  	  }
+</script>
+<script type="text/javascript">
+scale = function (btn, bar, title) {
+  this.btn = document.getElementById(btn);
+  this.bar = document.getElementById(bar);
+  this.title = document.getElementById(title);
+  this.step = this.bar.getElementsByTagName("DIV")[0];
+  this.init();
+};
+scale.prototype = {
+  init: function () {
+    var f = this, g = document, b = window, m = Math;
+    f.btn.onmousedown = function (e) {
+      var x = (e || b.event).clientX;
+      var l = this.offsetLeft;
+      var max = f.bar.offsetWidth - this.offsetWidth;
+      g.onmousemove = function (e) {
+        var thisX = (e || b.event).clientX;
+        var to = m.min(max, m.max(-10, l + (thisX - x)));
+        f.btn.style.left = to + 'px';
+        f.ondrag(m.round(m.max(0, to / max) * 100), to);
+        b.getSelection ? b.getSelection().removeAllRanges() : g.selection.empty();
+      };
+      g.onmouseup = new Function('this.onmousemove=null');
+    };
+  },
+  ondrag: function (pos, x) {
+    this.step.style.width = Math.max(0, x) + 'px';
+    // this.title.innerHTML = pos / 1 + '';
+    var rval= pos / 1 + '';
+    $("#title0").val(rval);
+  }
+}
+new scale('btn0', 'bar0', 'title0');
+new scale('btn1', 'bar1', 'title1');
+new scale('btn2', 'bar2', 'title2');
+new scale('btn3', 'bar3', 'title3');
+new scale('btn4', 'bar4', 'title4');
 </script>
 </block>
 
