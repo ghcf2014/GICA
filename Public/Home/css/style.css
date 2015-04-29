@@ -1210,7 +1210,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont_r .tggl dl dt{float: none;width: 800px;height: 30px;line-height: 30px;font-size: 16px;font-weight: normal;padding: 15px 20px 5px;}
 .zh_cont_r .tggl dl dd{float: none;width: 740px;padding: 0 50px;height: auto;line-height: 30px;}
 
-.zh_cont_r .tggl table{margin: auto;}
+.zh_cont_r .tggl table{margin: auto;width: 95%;}
 .zh_cont_r .tggl table tr th{width: 145px;height: 45px;line-height: 45px;text-align: left;font-size: 18px;font-weight: normal;padding: 10px 0;}
 .zh_cont_r .tggl table tr td{border: 1px solid #ddd;width: 130px;height: 35px;line-height: 35px;text-align: center;font-size: 14px;}
 
