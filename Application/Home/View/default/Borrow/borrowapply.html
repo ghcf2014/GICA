@@ -87,25 +87,25 @@
 			<form action="{:U('borrowapply_save')}" method="post">
 				<h2>借款意向</h2>
 				<dl>
-					<dt>姓名<b style="color:red">*</b></dt>
+					<dt><b style="color:red">*</b>姓名</dt>
 					<dd>
 						<input type="text" id="uname" name="username" class="txt" onblur="javascript:checkName(this.value)" /><div id="u1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
-					<dt>联系电话 <b style="color:red">*</b></dt>
+					<dt><b style="color:red">*</b>联系电话 </dt>
 					<dd>
 						<input type="text" name="tel" class="txt" onblur="javascript:checkPhone(this.value)"/><div id="p1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
-					<dt>身份证号码 <b style="color:red">*</b></dt>
+					<dt><b style="color:red">*</b>身份证号码 </dt>
 					<dd>
 						<input type="text" name="id_card" class="txt" onblur="javascript:checkId(this.value)"/><div id="c1" style="display:none;"></div>
 					</dd>
 				</dl>
 				<dl>
-					<dt>借款金额<b style="color:red">*</b></dt>
+					<dt><b style="color:red">*</b>借款金额</dt>
 					<dd>
 						<input type="text" name="borrow_money" class="txt" onblur="javascript:checkMoney(this.value)"/><div id="m1" style="display:none;"></div>
 					</dd>
@@ -125,7 +125,7 @@
 					</dd>
 				</dl>
 				<dl>
-					<dt>借款年利率：<b style="color:red">*</b></dt>
+					<dt><b style="color:red">*</b>借款年利率：</dt>
 					<dd valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
                 	<div class="User_ratings User_grade" id="div_fraction0">
                       <div class="ratings_bars"> 
@@ -222,17 +222,17 @@
 					</dd>
 				</dl>
 				<dl>
-					<dt>借款说明 <b style="color:red">*</b></dt>
+					<dt> <b style="color:red">*</b>借款说明</dt>
 					<dd>
 						<textarea name="borrow_info"></textarea>
 					</dd>
 					
 				</dl>
 
-				<p style="background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; color: #fff; padding-left: 40px; width: 88%;line-height: 32px;">带<b style="color:red;">*</b>号为必填项，申请资料提交后将不能修改！</p>
+				<p style="color: orange; padding-left: 40px; width: 88%;line-height: 32px;margin: 10px 0;text-align: center;">带<b style="color:red;"> * </b>号为必填项，申请资料提交后将不能修改！</p>
 					<input type="submit" class="btn" value="提交申请" />
 				</form>
-
+<!--background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; -->
 			</div>
 		</div>
 		<!--sqjk_cont_bot 结束-->
