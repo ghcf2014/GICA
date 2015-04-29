@@ -33,28 +33,28 @@ a:hover{color:#66ccfb;text-decoration:none;}
 /*--微博--*/
 .header_out .header ul .weibo{width:80px; padding-left:30px;}
 .header_out .header ul .weibo div{width:30px;background: url(../images/top_icons2.png) repeat scroll 0px 8px transparent;height:38px;float: left;}
-.header_out .header ul .weibo div:hover{width:30px;background: url(../images/top_icons.png) repeat scroll 40px 8px transparent;height:38px;float: left;}
+/*.header_out .header ul .weibo div:hover{width:30px;background: url(../images/top_icons.png) repeat scroll 40px 8px transparent;height:38px;float: left;}*/
 	/*鼠标划上*/
 .weibo_eweima{width: 100px;height: 105px;padding:13px 10px 0;background: url(../images/up_qipao.png) no-repeat left bottom;position: absolute;float: left;left: 0;top: 30px;display: none;}
 
 /*--微信--*/
 .header_out .header ul .weixin{width:80px;}
 .header_out .header ul .weixin div{width:30px;background: url(../images/top_icons2.png) repeat scroll 0px -30px transparent;height:38px;float: left;}
-.header_out .header ul .weixin div:hover{width:30px;background: url(../images/top_icons.png) repeat scroll 40px -36px transparent;height:38px;float: left;}
+/*.header_out .header ul .weixin div:hover{width:30px;background: url(../images/top_icons.png) repeat scroll 40px -36px transparent;height:38px;float: left;}*/
 	/*鼠标划上*/
 .weixin_eweima{width: 100px;height: 105px;padding:13px 10px 0;background: url(../images/up_qipao.png) no-repeat left bottom;position: absolute;float: left;left: 80px;top: 30px;display: none;}
 
 /*--QQ--*/
 .header_out .header ul .QQ{width:80px;}
 .header_out .header ul .QQ div{width:30px;background: url(../images/top_icons2.png) repeat scroll 0px -69px transparent;height:38px;float: left;}
-.header_out .header ul .QQ div:hover{width:30px;background: url(../images/top_icons.png) repeat scroll 40px -81px transparent;height:38px;float: left;}
+/*.header_out .header ul .QQ div:hover{width:30px;background: url(../images/top_icons.png) repeat scroll 40px -81px transparent;height:38px;float: left;}*/
 	/*鼠标划上*/
 .QQ_eweima{width: 100px;height: 105px;padding:13px 10px 0;background: url(../images/up_qipao.png) no-repeat left bottom;position: absolute;float: left;left: 160px;top: 30px;display: none;}
 
 /*--热线--*/
 .header_out .header ul .call{width:80px;margin-right: 120px;}
 .header_out .header ul .call div{width:25px;background: url(../images/top_icons2.png) repeat scroll 0px -111px transparent;height:38px;float: left;}
-.header_out .header ul .call div:hover{width:25px;background: url(../images/top_icons.png) repeat scroll 40px -119px transparent;height:38px;float: left;}
+/*.header_out .header ul .call div:hover{width:25px;background: url(../images/top_icons.png) repeat scroll 40px -119px transparent;height:38px;float: left;}*/
 	/*鼠标划上*/
 .phonenumber{width: 105px;height: 30px;line-height:30px;position: absolute;float: left;left: 330px;top: 4px;background: url(../images/left_qipao.png) no-repeat;color: red;font-weight: bold;padding-left: 15px;display: none;}
 
@@ -180,8 +180,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .cont .cont_bot .cont_bot2 h2 a{background: #fff;display:inline-block;width: 170px;line-height: 45px;}
 
 .cont .cont_bot .cont_bot2 .cont_bot2_con{overflow: hidden;}
-.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in{float: left;width: 260px;height: 386px;border: 1px solid #ddd;margin-right: 5px;margin-bottom: 25px;}
-.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in h3{width: 260px;height: 45px;background: #e6e6e6;font-weight: normal;font-size: 18px;line-height: 40px;text-align: center;margin-bottom: 30px;}
+.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in{float: left;width: 260px;height: 385px;border: 1px solid #ddd;margin-right: 5px;margin-bottom: 25px;}
+.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in h3{width: 260px;height: 45px;border-bottom:1px dashed #ddd;font-weight: normal;font-size: 18px;line-height: 40px;text-align: center;margin-bottom: 30px;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in h3 a{color: #666;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in h3 a:hover{color: #66CCFC;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in p{width: 260px;font-weight: normal;text-align: center;}
@@ -190,8 +190,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in ul li p{width: 70px;line-height: 22px;font-size: 14px;text-align: center;padding: 0 5px;font-weight: normal;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .jdt{width: 260px;height: auto;margin-bottom: 30px;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .jdt p{text-align: left;width: 250px;padding-left: 10px;line-height: 30px;font-size: 16px;}
-.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .jdt .out{display: block;width: 240px;height: 18px;background: #ccc;margin: auto;padding: 1px 0;}
-.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .jdt .out .in{display: block;width: 30%;height: 18px;background: #ffa21e;}
+.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .jdt .out{display: block;width: 240px;height: 16px;background: #dfdfdf;margin: auto;padding: 1px;}
+.cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .jdt .out .in{display: block;width: 30%;height: 16px;background: #ffa21e;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .fb_date{width: 260px;height: 20px;text-align: center;font-size: 16px;line-height: 20px;}
 .cont .cont_bot .cont_bot2 .cont_bot2_con .cont_bot2_con_in .button{width: 260px;height: 40px;border-top: 1px solid #ddd;}
 .cont .cont_bot .cont_bot2 .more{display:block;width: 200px;height: 30px;font-size: 16px;color: #666;margin: auto;text-align: center;line-height: 30px;border-bottom: 1px solid #ddd;}
