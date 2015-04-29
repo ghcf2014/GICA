@@ -5,6 +5,9 @@
  * 所有系统级别的配置
  */
 return array(
+    /* 路由开启 */
+    'URL_ROUTER_ON'   => true, 
+    
     /* 模块相关配置 */
     'AUTOLOAD_NAMESPACE' => array('Addons' => ONETHINK_ADDON_PATH), //扩展模块列表
     'DEFAULT_MODULE'     => 'Home',

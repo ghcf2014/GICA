@@ -82,23 +82,20 @@ class UserinfoController extends MemberController {
 			$bank_msg=str_replace(substr($bankdata,4,-4),'******',$bankdata);
             $action='绑定银行卡:'.$bank_msg;
             systemmsg($action);
-
 			//查询是否创建交易密码
             $paypass=M('ucenter_member');
             $arr['id']=$uid;
             $paypassword=$paypass->where($arr)->select();
             $pin_pass=$paypassword[0]['pin_pass'];
             if ($pin_pass==null){
-            	$this->redirect('/Member/Userinfo/paypassword');
+            	$this->redirect('/Home/User/profile');
             }else{
             	$this->success ( "添加成功！", U ( "Userinfo/userbankset" ) );
             }
-            
 		} else {
 			// 失败提示
 			$this->error ( L ( '添加失败!' ) );
 		}
-
 	}
 	public function userbasicdata() {
 		$this->display ();

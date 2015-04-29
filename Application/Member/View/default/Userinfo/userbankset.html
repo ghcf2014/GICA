@@ -232,19 +232,48 @@ jQuery(document).ready(function($) {
 				$("#sBankName").html("<font color='red'>请选择开户银行</font>");
 				return false;
 			}
-			if (subBankName == "") {
+			else if (subBankName == "") {
 				$("#sBankName").hide();
 				$("#subBankNode").html("<font color='red'>请输入开户支行名称</font>");
 				$('#area_bank').show();
 				return false;
 			}
-			if (bankCard == "") {
+			else if (bankCard == "") {
 				$("#sBankName").hide();
 				$("#subBankNode").hide();
 				$("#sBankCard").html("<font color='red'>请输入银行卡号</font>");
 				return false;
 			}
-			$("#form").submit();
+			else{
+				layer.prompt({
+				title: '新建支付密码',
+				formType: 1 //prompt风格，支持0-2
+				}, function(pass){
+				    layer.prompt({title: '再次输入支付密码', formType: 1}, function(cpass){
+
+				    	if(pass==cpass){
+				    		
+					        var index = layer.load(1,{time: 7*1000});	
+					        $.post('__URL__/paypassword_save',{pin_pass:pass},function success(data){
+					        if (data.status) {
+								layer.msg(data.info);
+								$("#form").submit();
+								layer.closeAll('loading');
+							    } 
+							    else{	
+						    	layer.msg(data.info);
+						    	layer.closeAll('loading');
+							    }
+					         });
+				    	}
+				    	else{
+				    		layer.msg('您两次输入的密码不一致。');
+				    	}
+				        // $("#form").submit();
+				    });
+				});
+			}
+			
 		});
 	</script>
 	
@@ -260,12 +289,10 @@ jQuery(document).ready(function($) {
 		})
 	</script>
 
-<body onload="setup();preselect('广东省');promptinfo();">     
+<body onload="setup();preselect('广东省');promptinfo();">   
+
 </body>	
-	
-	
-	
-	
+
 	
 	
 	

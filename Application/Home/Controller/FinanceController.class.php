@@ -89,11 +89,12 @@ class FinanceController extends HomeController {
 			$paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
 
 			
-			// if (md5($dealpwd) != $paypass) {
-			// 	$this->error ( L ( '您输入的交易密码有误！' ) );
-			// }
+			if (md5($dealpwd) != $paypass) {
+				$this->error ( L ( '您输入的交易密码有误！' ) );
+			}
             
-            $bid = $id;//投标id赋值
+            // $bid = $id;//投标id赋值
+            $bid = $_POST ['id'];//投标id赋值
             $listMember = M('member');
             $condition['gica_member.uid'] =$uid ;
             $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
@@ -105,7 +106,7 @@ class FinanceController extends HomeController {
             $listBorrow  = M('z_borrow_info');
             $list3 = $listBorrow->where($map)->select();
             //从表单中获取来的数据 
-            $capital=$_POST["capital"];
+            $capital=floatval ($_POST["capital"]);
 
 
             if ($list3[0]['repayment_type']== 5) {
@@ -299,14 +300,6 @@ class FinanceController extends HomeController {
 
                                         }
                                         //投资详情表
-                                        
-
-
-
-
-
-
-
 
                                         //日志
                                         $log = M ( 'z_member_moneylog' );

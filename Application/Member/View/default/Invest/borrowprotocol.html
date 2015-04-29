@@ -2,29 +2,29 @@
 <extend name="Base/common"/>
 <block name="body">
 		<div class="nymain">
-			<!--<div class="lcnav">
+			<div class="lcnav">
 				<div class="tab">
 					<div class="tabmain">
 						<ul>
 							<li class="on" style="padding: 0 20px;">
-								借款协议
+								借款协议 <span style="float: right; width:50px;" onClick="self.PrintNoHdr()"><a href="javascript:printme()" target="_self">[打印]</a></span>
 							</li>
 						</ul>
 					</div>
 				</div>
 				<div class="line">
 				</div>
-			</div>-->
-			<div class="lcmain"><volist name="list" id="vo">
+			</div>
+			<div class="lcmain" id='div1' >
 				<div class="lcmain_l" style="width: 98%;background: #fff;margin-bottom: 50px;">
-					<div class="lctab" style="padding: 0 10px; width: 98%">
+					<div  class="lctab" style="padding: 0 10px; width: 98%" >
 						<div class="gginfo" style="position: relative;">
 							<h2 style="font-size: 20px">
 								借款协议
 							</h2>
 							<p align="right">
 								合同编号:
-								<b><u>工合财富</u> </b>
+								<b><u>{$bid}</u> </b>
 						  </p>
 							<p align="right">
 						  签约日期:</p>
@@ -32,18 +32,10 @@
 								协议三方定义:
 							</p>
 							<p>
-								贷出者(甲方):
-								<s:if
-									test="#request.user_invest_map==null || #request.user_invest_map.size==0">
-		     　暂无贷出者</s:if>
-								<s:else>
-								  <s:iterator var="mapBeans" value="#request.user_invest_map"><b> </b>
-									</s:iterator>
-								</s:else>
-								，以下称“甲方”；
+								贷出者(甲方):{$iuid|get_uname}({$iuid|get_real_name})，以下称“甲方”；
 							</p>
 							<p>
-								借入者(乙方):，以下称“乙方”；
+								借入者(乙方):{$buid|get_uname}({$buid|get_real_name})，以下称“乙方”；
 						  </p>
 							<p>
 								担保方(丙方):
@@ -76,6 +68,13 @@
 											<td valign="middle"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
+													<span style="font-family: 宋体; color: windowtext;">出借笔数</span><span
+														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
+												</p>
+											</td>
+											<td valign="middle"
+												style="border: solid black 1.0pt; background: #D9D9D9;">
+												<p>
 													<span style="font-family: 宋体; color: windowtext;">出借人名称</span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 												</p>
@@ -92,7 +91,7 @@
 											<td width="198" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
-													<span style="font-family: 宋体; color: windowtext;">借款期限</span><span
+													<span style="font-family: 宋体; color: windowtext;">借款期限(月)</span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span><span
 														style="font-family: 宋体; color: windowtext;"></span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
@@ -102,14 +101,14 @@
 											<td width="187" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
-													<span style="font-family: 宋体; color: windowtext;">年利率</span><span
+													<span style="font-family: 宋体; color: windowtext;">年利率(%)</span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span><span
 														style="font-family: 宋体; color: windowtext;"></span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 												</p>
 											</td>
 
-											<td width="158" valign="top"
+											<!-- <td width="158" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
 													<span style="font-family: 宋体; color: windowtext;">借款开始日期</span><span
@@ -138,10 +137,7 @@
 														style="font-family: 宋体; color: windowtext;"></span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 												</p>
-											</td>
-
-
-
+											</td> -->
 
 											<td width="337" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
@@ -153,38 +149,39 @@
 												</p>
 											</td>
 										</tr>
-										<s:if
-											test="#request.investMaps==null || #request.investMaps.size==0">
-					暂无数据
-	</s:if>
-										<s:else>
-											<s:iterator var="mapBean" value="#request.investMaps">
-
+												<volist name="ilists" id="vo" key='i'>
 												<tr>
 													<td width="152" valign="top"
 														style="border: solid black 1.0pt; background: white;">
 														<p>
-															<span style="font-family: 宋体; color: windowtext;"></span><span
+															<span style="font-family: 宋体; color: windowtext;">{$i}<if condition="$i neq '1'">(追加)</if></span><span
+																style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
+														</p>
+													</td>
+													<td width="152" valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p>
+															<span style="font-family: 宋体; color: windowtext;">{$vo.investor_uid|get_uname}</span><span
 																style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 														</p>
 													</td>
 													<td valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p align="center" style="text-align: center;">&nbsp;</p>
+														<p align="center" style="text-align: center;">{$vo.investor_capital}</p>
 													</td>
 
 													<td valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p align="center" style="text-align: center;">&nbsp;</p>
+														<p align="center" style="text-align: center;">{$borrow_duration}</p>
 													</td>
 
 
 													<td width="187" valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p align="center" style="text-align: center;">&nbsp;</p>
+														<p align="center" style="text-align: center;">{$vo.invest_fee}</p>
 													</td>
 
-													<td valign="top"
+													<!-- <td valign="top"
 														style="border: solid black 1.0pt; background: white;">
 														<p align="center" style="text-align: center;">&nbsp;</p>
 													</td>
@@ -199,71 +196,21 @@
 															<span
 																style="font-family: &amp; amp; amp; quot; color: windowtext;">&nbsp;&nbsp;</span>
 														</p>
-													</td>
+													</td> -->
 
 													<td valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p align="center" style="text-align: center;">&nbsp;</p>
+														<p align="center" style="text-align: center;">&nbsp;{$vo['investor_capital']+$vo['investor_interest']}</p>
 													</td>
+													
 												</tr>
+												</volist>
 											</s:iterator>
 										</s:else>
-
-										<tr>
-											<td width="152" valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p>&nbsp;</p>
-											</td>
-											<td valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p align="center" style="text-align: center;">&nbsp;</p>
-											</td>
-
-											<td valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p align="center" style="text-align: center;">&nbsp;</p>
-											</td>
-
-
-											<td valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p align="center" style="text-align: center;">
-													<span
-														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
-												</p>
-											</td>
-
-											<td valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p align="center" style="text-align: center;">
-													<span
-														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
-												</p>
-											</td>
-
-											<td valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p align="center" style="text-align: center;">
-													<span
-														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
-												</p>
-											</td>
-											<td valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p align="center" style="text-align: center;">&nbsp;</p>
-											</td>
-
-											<td valign="top"
-												style="border: solid black 1.0pt; background: white;">
-												<p align="center" style="text-align: center;">&nbsp;</p>
-											</td>
-										</tr>
 									</tbody>
 								</table>
 							</div>
 							<p>&nbsp;
-								
-
 					    </p>
 							<p>
 							</p>
@@ -289,6 +236,7 @@
 
 							</p>
 							<div align="center">
+							    <volist name="blist" id="vo">
 								<table border="1" cellspacing="0" cellpadding="0"
 									style="border: none;">
 									<tbody>
@@ -367,7 +315,7 @@
 											</td>
 											<td width="397" valign="top"
 												style="border: solid black 1.0pt; background: white;">
-												<p>{$vo.repayment_type}</p>
+												<p>{$vo.repayment_type|get_repayment_type}</p>
 											</td>
 										</tr>
 
@@ -411,16 +359,14 @@
 											</td>
 										</tr>
 									</tbody>
-								</table>
-          </div>
+								</table></volist>
+								</div>
 							<p>&nbsp;
-								
 							</p>
 							<p>
 								分期还款列表
 							</p>
 							<p>&nbsp;
-								
 							</p>
 							<div style="padding-left: 20px; padding-right: 20px;">
 								<table border="1" cellspacing="0" cellpadding="0"
@@ -430,7 +376,7 @@
 											<td width="57" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
-													<span style="font-family: 宋体; color: windowtext;">期数</span><span
+													<span style="font-family: 宋体; color: windowtext;">期数(期)</span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 												</p>
 											</td>
@@ -455,21 +401,21 @@
 											<td width="198" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
-													<span style="font-family: 宋体; color: windowtext;">应还本息</span><span
+													<span style="font-family: 宋体; color: windowtext;">应还本息(元)</span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 												</p>
 											</td>
 											<td width="198" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
-													<span style="font-family: 宋体; color: windowtext;">还款本金</span><span
+													<span style="font-family: 宋体; color: windowtext;">还款本金(元)</span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 												</p>
 											</td>
 											<td width="198" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
 												<p>
-													<span style="font-family: 宋体; color: windowtext;">还款利息</span><span
+													<span style="font-family: 宋体; color: windowtext;">还款利息(元)</span><span
 														style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
 												</p>
 											</td>
@@ -481,6 +427,7 @@
 			</s:if> -->
 										<s:else>
 											<s:iterator value="#request.borrow_map" var="bean">
+											<volist name="ilistd" id="vo" key='i'>
 												<tr>
 													<td width="57" valign="top"
 														style="border: solid black 1.0pt; background: white;">
@@ -488,29 +435,30 @@
 													</td>
 													<td width="142" valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p>{$vo.borrow_interest_rate}%</p>
+														<p>{$borrow_interest_rate}%</p>
 													</td>
 													<td width="142" valign="top"
 														style="border: solid black 1.0pt; background: white;">
 														<p>
 															<span
 																style="font-family: &amp; amp; amp; quot; color: windowtext;"><s:date
-																	name="#bean.repayDate" format="yyyy-MM-dd" /> {$vo.deadline|date='Y-m-d',###}</span>
+																	name="#bean.repayDate" format="yyyy-MM-dd" /> {$vo.repayment_time|date='Y-m-d',###}</span>
 														</p>
 													</td>
 													<td width="198" valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p>{$vo['borrow_money']+$vo['borrow_money']*($vo['borrow_interest_rate']/100)}</p>
+														<p>{$vo['capital']+$vo['interest']}</p>
 													</td>
 													<td width="198" valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p>{$vo['borrow_money']}</p>
+														<p>{$vo.capital}</p>
 													</td>
 													<td width="198" valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p>{$vo['borrow_money']*($vo['borrow_interest_rate']/100)}</p>
+														<p>{$vo.interest}</p>
 													</td>
 												</tr>
+											</volist>
 											</s:iterator>
 										</s:else>
 
@@ -536,18 +484,13 @@
 								（以下无正文）
 							</p>
 							<p>
-								贷出者(甲方):
-								<s:if
-									test="#request.user_invest_map==null || #request.user_invest_map.size==0">
-		     　暂无贷出者</s:if>
-          </p>
-							
-							<p style="position:absolute;bottom:100px;left:100px;z-index:9;"><img style="width:140px;" src="images/img/rzg_tz.png"></p>
-							<p style="position:absolute;bottom:100px;right:180px;z-index:9;"><img style="width:110px;" src="images/img/gkt_tz.png"></p>
+								贷出者(甲方):{$iuid|get_uname}({$iuid|get_real_name})
+							<p style="position:absolute;bottom:100px;left:100px;z-index:9;"><img style="width:140px;" src="__PUBLIC__/Home/images/img/2.png"></p>
+							<p style="position:absolute;bottom:100px;right:180px;z-index:9;"><img style="width:110px;" src="__PUBLIC__/Home/images/img/2.png"></p>
 						
 
 							<p>
-								借入者(乙方):
+								借入者(乙方):{$buid|get_uname}({$buid|get_real_name})
 							  <b>&nbsp;&nbsp;</b>
 						  </p>
 							<p>
@@ -571,12 +514,19 @@
 							</p>
 						</div>
 					</div>
-				</div></volist>
+				</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="script/jquery.shove-1.0.js"></script>
 		<script>
 	dqzt(2);
+
+function printme()
+{
+document.body.innerHTML=document.getElementById('div1').innerHTML;
+window.print();
+}
+
 </script>
 </block>
 

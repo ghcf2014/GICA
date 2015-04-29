@@ -322,10 +322,35 @@ class InvestController extends MemberController {
 		$map = array (
 				'id' => $id 
 		);
+		$uid = is_login (); 
 		$listBorrow = M ( 'z_borrow_info' );
-		$list = $listBorrow->where ( $map )->select ();
-		$this->assign ( 'list', $list );
-		
+		$blist = $listBorrow->where ( $map )->select ();
+		$listinvestor = M ( 'z_borrow_investor' );
+		$iuid['investor_uid'] =$uid;
+		$ilist = $listinvestor->field('investor_uid,sum(investor_capital)investor_capital,borrow_uid')->where($iuid)->group('investor_uid')->select();
+
+		$ilists = $listinvestor->where($iuid)->select();
+
+		$detail = M ('z_investor_detail');
+	    $condition ['borrow_id'] =$id;
+	    $condition ['investor_uid'] =$uid;
+	    $b_id ['borrow_id'] =$id;
+
+
+	    $de= $detail->field ( 'id,borrow_id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital,status,receive_interest')->where ( $condition )->group ('sort_order')->select();
+
+		$this->assign('ilistd',$de);
+
+		$this->iuid=$ilist[0]['investor_uid'];
+		$this->buid=$ilist[0]['borrow_uid'];
+		$this->bid=$id;
+		$this->borrow_interest_rate=$blist[0]['borrow_interest_rate'];
+		$this->borrow_duration=$blist[0]['borrow_duration'];
+
+
+		$this->assign ( 'ilists', $ilists);
+		$this->assign ( 'blist', $blist );
+		$this->assign ( 'ilist', $ilist );
 		$this->display ();
 	}
 	
