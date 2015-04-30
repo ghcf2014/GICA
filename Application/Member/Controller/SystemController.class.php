@@ -128,23 +128,21 @@ class SystemController extends MemberController {
         $arr['uid']=$uid;
         $sysresult=$syssetdata->where($arr)->select();
         $sum=$sysresult[0];
-
-        //去除多余信息
-        for($i=1;$i<=2;$i++){
-        	array_shift($sum);
+        if ($sum['sys_msg']==1){
+        	$check['sys_msg']="checked";
+        }else{
+        	$check['sys_msg']=null;
         }
-        array_pop($sum);
-
-        //组装结果集
-        foreach ($sum  as  $key =>$value) {
-        	$num=$sum[$key];
-        	// dump($num);
-        	$k="checked";
-	    	$nums[$key][one]=(substr($num,0,1)=='1')?$k:null;
-	    	$nums[$key][two]=(substr($num,1,1)=='1')?$k:null;
-	    	$nums[$key][three]=(substr($num,2,1)=='1')?$k:null;	    	
-       	}
-        $check=$nums;
+        if ($sum['email_msg']==1){
+        	$check['email_msg']="checked";
+        }else{
+        	$check['email_msg']=null;
+        }
+        if ($sum['short_msg']==1){
+        	$check['short_msg']="checked";
+        }else{
+        	$check['short_msg']=null;
+        }
         $this->assign("check",$check);
         $this->assign('counts',$counts);
         $this->assign('syscount',$syscount);
@@ -152,38 +150,65 @@ class SystemController extends MemberController {
         $this->assign('post',$post);
         $this->assign('sendname',$sendname);
         $this->assign('uid',$uid);
-        $this->display();
+
+        //测试
+        $uid=is_login();
+    	$sysdata= M('z_systemset');
+	    $arr['uid']=$uid;
+	    $sysresult=$sysdata->where($arr)->select();
+	    $result=$sysresult[0];
+	    if ($result["sys_msg"]=='1'){
+	    	 $danger =array(
+                "username"=>$_SESSION[gica_home]['user_auth']['username'],
+                "uid" =>$_SESSION[gica_home]['user_auth']['uid'],
+                "action" =>$action,
+                "status" =>'0'
+	            );
+	     	$msgs =M('z_system_msg')->add($danger);
+	    }
+	    if ($result["email_msg"]=='1'){
+				$action="尊敬的会员：，您好，您的工合财富平台账户".$username."修改了登陆密码";
+
+	    		$arrs['id']=$uid;
+	    		$userdata=M('ucenter_member');
+	    		$userresult=$userdata->where($arrs)->select();
+	    		$email=$userresult[0]['email'];
+	    		$username=$userresult[0]['username'];
+				$a = SendMail($email,'工合财富账户通知:','尊敬的会员： <b style="color:red;text-decoration:underline">'.$username.'</b>，您好，您的工合财富账户'.$action.'如有任何疑问，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn'.date( "l dS of F Y h：i：s A" ));
+	    }
+	    if ($result["short_msg"]=='1'){
+	    	$userdata=M('ucenter_member');
+    		$arrs['id']=$uid;
+    		$userresult=$userdata->where($arrs)->select();
+    		$mobile=$userresult[0]['mobile'];
+	    	$account=C ( 'SMS_ACCOUNT' );
+			$password=C ( 'SMS_PASSWORD' );
+	    	$target = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
+	    	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".$action;
+	    	$gets =  xml_to_array(Post($post_data, $target));
+	    }
+	    $this->display();
     }
 
     
 	//系统消息通知设置
     public function systemsetup(){
     	$uid=is_login();
-		$data=$_POST;		
-		for ($m='11';$m<=19;$m++){
-			if ($data[$m]==null){
-				$data[$m]='0';
-			}
-			if ($data[$m+10]==null){
-				$data[$m+10]='0';
-			}
-			if ($data[$m+20]==null){
-				$data[$m+20]='0';
-			}
-			$datas[]=$data[$m].$data[$m+10].$data[$m+20];
+		$data=$_POST;
+		if ($data['sys_msg']==null){
+			$data['sys_msg']=0;
 		}
-		$map['receive_money']=$datas['0'];
-		$map['rechar']=$datas['1'];
-		$map['mention']=$datas['2'];
-		$map['borrow']=$datas['3'];
-		$map['overtime']=$datas['4'];
-		$map['loginchange']=$datas['5'];
-		$map['phonechange']=$datas['6'];
-		$map['emailchange']=$datas['7'];
-		$map['tradechange']=$datas['8'];
+		if($data['email_msg']==null){
+			$data['email_msg']=0;
+		}
+		if ($data['short_msg']==null){
+			$data['short_msg']=0;
+		}
 		$map['uid']=$uid;
 		$map['set_time']=time();
-
+		$map['sys_msg']=$data['sys_msg'];
+		$map['email_msg']=$data['email_msg'];
+		$map['short_msg']=$data['short_msg'];
 		$arr['uid']=$uid;
 		$setdata=M('z_systemset');
 		$setmsg=$setdata->where($arr)->select();

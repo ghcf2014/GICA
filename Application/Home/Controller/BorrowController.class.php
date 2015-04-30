@@ -38,8 +38,7 @@ class BorrowController extends HomeController {
 		$m = M ( "z_member_data_info" );
 		$condition ['uid'] = $uid;
 		$condition ['type'] = 2;
-		$m = $m->where ( $condition )->select ();
-		
+		$m = $m->where ( $condition )->select ();		
 		$this->assign ( 'list', $m );
 		$this->display ();
 	}
