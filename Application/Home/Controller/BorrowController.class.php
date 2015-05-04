@@ -12,7 +12,7 @@ class BorrowController extends HomeController {
 	
 	// 系统首页
 	public function index(){
-		is_login () || $this->redirect( 'Home/User/login' );
+		is_login () || $this->redirect( 'User/login' );
 		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
 		//是否进行基本认证
@@ -34,7 +34,7 @@ class BorrowController extends HomeController {
 
 	public function papersinfo() {
 		$uid = is_login ();
-		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
+		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'User/login' ) );
 		$m = M ( "z_member_data_info" );
 		$condition ['uid'] = $uid;
 		$condition ['type'] = 2;
@@ -69,7 +69,7 @@ class BorrowController extends HomeController {
 	 *         2015-1-27申请借款
 	 */
 	public function borrowapply() {
-		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
+		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'User/login' ) );
 		$uid=is_login();
 		$data=M('z_borrow_apply');
 		$condition['apply_uid']=$uid;
@@ -248,7 +248,7 @@ class BorrowController extends HomeController {
 				$map['borrow_uid']=$uid;
 				$bid=$bdata->where($map)->order('add_time desc')->select();
 				$b_id=$bid[0]['id'];
-				$this->success ('发布审核已提交',U( 'Home/Borrow/detail?id='.$b_id));
+				$this->success ('发布审核已提交',U( 'Borrow/detail?id='.$b_id));
 			} else {
 				$this->error('申请数据提交失败');
 			}

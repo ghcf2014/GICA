@@ -7,12 +7,20 @@
 return array(
     /* 路由开启 */
     'URL_ROUTER_ON'   => true, 
-    
+    'URL_ROUTE_RULES' => array( //定义路由规则
+        'home/:id\d'    => array('Home/Index','Home/Finance'),
+        'home/:name'    => 'Home/Index',
+        'home/:year\d/:month\d'  => 'Home/Index',
+        // 'Home/:year/:month/:day' => array('Home/Borrow', 'status=1'),
+        // 'Home/:id'               => 'Home/read',
+        // 'Home/read/:id'          => '/Home/:1',
+     ),
     /* 模块相关配置 */
     'AUTOLOAD_NAMESPACE' => array('Addons' => ONETHINK_ADDON_PATH), //扩展模块列表
+    'MULTI_MODULE'=>true,//模块名显示隐藏
     'DEFAULT_MODULE'     => 'Home',
     'MODULE_DENY_LIST'   => array('Common','User','Admin','Install'),
-    //'MODULE_ALLOW_LIST'  => array('Home','Admin'),
+    'MODULE_ALLOW_LIST'  => array('Home','Member'),
     'APP_GROUP_LIST' => 'Home,Admin,Member',//创建分组
 
     /* 系统数据加密设置 */
@@ -24,7 +32,7 @@ return array(
 
     /* URL配置 */
     'URL_CASE_INSENSITIVE' => true, //默认false 表示URL区分大小写 true则表示不区分大小写
-    'URL_MODEL'            => 3, //URL模式
+    'URL_MODEL'            => 2, //URL模式
     'VAR_URL_PARAMS'       => '', // PATHINFO URL参数变量
     'URL_PATHINFO_DEPR'    => '/', //PATHINFO URL分割符
 

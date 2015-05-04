@@ -549,7 +549,7 @@ line-height: 72px;
     box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
-/* 按钮和登陆框样式 */
+/*/* 按钮和登陆框样式 */
 .flatbtn{
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -693,4 +693,4 @@ h1:after{left:.5em;margin:0 -50% 0 0;}
 h1 > span{display:inline-block;vertical-align:middle;white-space:normal;}
 .loginmodal{
     padding: 30px;
-}
+}*/

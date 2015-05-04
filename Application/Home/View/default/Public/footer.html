@@ -1,4 +1,41 @@
-
+<div class="flo_aside">
+	<!--浮动框标题-->
+    <ul class="flo_l">
+    	<li style="padding-top: 30px;">计<br />算<br />器</li>
+        <li>联<br />系<br />我<br />们</li>
+        <li style="padding-top: 40px;" class="fankui hot" ><div></div>反<br />馈</li>
+        <li class="returnTop" style="display:none;height: 35px;padding-top: 0;"><a href="#returntop" style="color: #fff;display: block;width: 35px;height: 35px;background: url(__PUBLIC__/Home/images/returntop.png) no-repeat center center;"></a></li>
+    </ul>
+    <div class="flo_r" style="display:none">
+    	<!--计算器-->
+    	<ul class="flo_jsq" style="display:none">
+            	<li><a href="{:U('Home/Newhelp/compare_tools')}">收益计算器</a></li>
+            	<!--<li><a href="#">CPI计算器</a></li>
+            	<li><a href="#">收益对比</a></li>
+            	<li><a href="#">身价计算器</a></li>-->
+        </ul>
+        <!--联系方式-->
+        <ul class="flo_lx" style="display:none">
+            <li style="font-size:18px;line-height:30px">客服热线<br /><span>400-123-4567</span></li>
+            <li><a href="tencent://message/?uin=3058467611">客服QQ</a></li>
+            <li>
+                <dl>
+                    <dt>官方微信</dt>
+                    <dd>微信号：3058467611@qq.com</dd>
+                    <dd><img src="__PUBLIC__/Home/images/weixin_eweima.jpg" width="100" height="100" /></dd>    
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>官方微博</dt>
+                    <dd style="margin-bottom:0;"><a href="http://weibo.com/u/5385565766?topnav=1&wvr=6&topsug=1" target="_blank">点击关注</a></dd>
+                    <dd><img src="__PUBLIC__/Home/images/weibo_eweima.png" width="100" height="100" /></dd>
+                </dl>
+            </li>
+    	</ul>
+        
+    </div>
+</div>
 <!--footer start-->
 <div class="footer">
 	<div class="footer_in">
@@ -101,6 +138,10 @@
 		<div class="center"><input type="submit" name="loginbtn" id="loginIn"  class="flatbtn-blu hidemodal" value="登陆" tabindex="3"></div>
 	</form>
  </div>
+
+ <!--浮动侧边栏  计算器  客服QQ-->
+<!--联系我们-->
+
  <script type="text/javascript">
 	//验证码刷新
 	$(document).ajaxStart(function() {
@@ -199,10 +240,23 @@
             shadeClose: true,
             shade: false,
             maxmin: true, //开启最大化最小化按钮
-            area: ['200px', '100px'],
+            area: ['550px', '420px'],
            
-            content: 'Home/Index/fankui',
+            content: 'http://www.ghcf.cn/Home/Index/fankui.html'
         });
+// layer.open({
+  //   type: 2,
+  //   title: false,
+  //   closeBtn: false,
+  //   shade: [0],
+  //   area: ['340px', '215px'],
+  //   offset: 'rb', //右下角弹出
+  //   time: 2000, //2秒后自动关闭
+  //   shift: 2,
+  //   content: ['Home/Index/fankui', 'no'], //iframe的url，no代表不显示滚动条
+// });
+
+
 });
 	$('#modaltrigger').click(function(){
 		layer.open({
@@ -211,9 +265,118 @@
 		    skin: 'layui-layer-demo', //样式类名
 		    closeBtn: false, //不显示关闭按钮
 		    shift: 0,
-		    area: ['640px', '450px'],
+		    area: ['350px', '400px'],
 		    shadeClose: true, //开启遮罩关闭
 		    content: ''+$("#loginmodal").html()+''
 		});
 	});
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		//alert(1);	
+		//浮动侧边栏
+		$('.flo_aside').hover(function(){
+			//alert(2);
+			$('.flo_aside .flo_l li').each(function(index,element){
+				$(element).hover(function(){
+					if($(element).index()!=2)
+					{
+						$('.flo_aside .flo_r').show();
+						$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
+					}
+				});
+			})	
+		},function(){
+			$('.flo_aside .flo_r').hide();	
+		});
+		
+		//返回顶部
+		$(document).scroll(function(){
+			if($(document).scrollTop() > $(window).height())
+			{
+				$('.returnTop').show();				
+			}
+			else
+			{
+				$('.returnTop').hide();
+			}
+		});	
+		
+		//导航栏
+		var urlstr = location.href;
+  		//alert((urlstr + '/').indexOf($(this).attr('href')));
+  		var urlstatus=false;
+ 		$(".nav_out .nav .nav_wrap li a").each(function (index,element) {
+    		if ((urlstr + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href')!='') {
+      			$(element).addClass('current'); 
+      			urlstatus = true;
+
+    		} 
+    		else {
+      			$(element).removeClass('current');
+    		}
+  		});
+  		if (!urlstatus) {$(".nav_out .nav .nav_wrap li").eq(0).children().addClass('current'); }
+  		
+  		
+  		
+  		
+  		
+  		
+  		//顶部 微博 微信 QQ 热线
+  		//微博
+  		$('.header_out .header ul .weibo').hover(function(){
+  			$('.header_out .header ul .weibo').children('div').css('background','url(__PUBLIC__/Home/images/top_icons.png) repeat scroll 40px 8px transparent');
+  			$('.weibo_eweima').stop().slideDown();
+  		},function(){
+  			$('.header_out .header ul .weibo').children('div').css('background','url(__PUBLIC__/Home/images/top_icons2.png) repeat scroll 0px 8px transparent');
+  			$('.weibo_eweima').stop().slideUp();
+  		})
+  		//微信
+  		$('.header_out .header ul .weixin').hover(function(){
+  			$('.header_out .header ul .weixin').children('div').css('background','url(__PUBLIC__/Home/images/top_icons.png) repeat scroll 40px -36px transparent');
+  			$('.weixin_eweima').stop().slideDown();
+  		},function(){
+  			$('.header_out .header ul .weixin').children('div').css('background','url(__PUBLIC__/Home/images/top_icons2.png) repeat scroll 0px -30px transparent');
+  			$('.weixin_eweima').stop().slideUp();
+  		})
+  		//QQ
+  		$('.header_out .header ul .QQ').hover(function(){
+  			$('.header_out .header ul .QQ').children('div').css('background','url(__PUBLIC__/Home/images/top_icons.png) repeat scroll 40px -81px transparent');
+  			$('.QQ_eweima').stop().slideDown();
+  		},function(){
+  			$('.header_out .header ul .QQ').children('div').css('background','url(__PUBLIC__/Home/images/top_icons2.png) repeat scroll 0px -69px transparent');
+  			$('.QQ_eweima').stop().slideUp();
+  		})
+  		//热线
+  		$('.header_out .header ul .call').hover(function(){
+  			$('.header_out .header ul .call').children('div').css('background','url(__PUBLIC__/Home/images/top_icons.png) repeat scroll 40px -119px transparent');
+  			$('.phonenumber').stop().fadeIn();
+  		},function(){
+  			$('.header_out .header ul .call').children('div').css('background','url(__PUBLIC__/Home/images/top_icons2.png) repeat scroll 0px -111px transparent');
+  			$('.phonenumber').stop().fadeOut();
+  		})
+  		
+  		
+  		//导航栏固定在顶部
+  		$(document).scroll(function(){
+//			if($(document).scrollTop() > $('.header_out').height()+$('.nav_out').height()+$('.banner').height())
+			if($(document).scrollTop() > $(window).height())
+			{
+				$('.nav_out').css({'position':'fixed','top':'0','z-index':'1000','box-shadow':'2px 0 5px #ccc'})
+				//$('.nav2_out').css({'position':'fixed','top':'0','z-index':'1000','display':'block'})
+			}
+			else
+			{
+				$('.nav_out').css({'position':'static','box-shadow':'none'})
+				//$('.nav2_out').css({'position':'static','display':'none'})
+			}
+			
+		});	
+  		
+  		
+  		
+		
+})
 </script>
