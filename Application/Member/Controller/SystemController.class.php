@@ -110,6 +110,11 @@ class SystemController extends MemberController {
         $sendname=$_SESSION["gica_home"]["user_auth"]['username'];
         $uid=is_login();
         $uid=$_SESSION[gica_home]['user_auth']['uid'];
+        $statu['status']=1;
+        $system['uid']=$uid;
+        $inner['tid']=$uid;
+        M('z_inner_msg')->where($inner)->save($statu);
+		M('z_system_msg')->where($system)->save($statu);
         $counts =M('z_inner_msg')->where("status=0 and tid=%s",$uid)->count();
         $syscount =M('z_system_msg')->where("status=0 and uid=%s",$uid)->count();
 		//系统敏感操作提示消息

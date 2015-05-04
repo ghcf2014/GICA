@@ -773,9 +773,9 @@ class UserinfoController extends MemberController {
 			if ($m = $m->where ( $condition )->save ( $data )) {
 
 				//发送站内信
-				$type="tradechange";
+				
                 $action='创建交易密码成功！';
-               	systemmsg($type,$action);
+               	system_msg($action);
 				$this->success ( '新建交易密码成功！' );
 			}
 		}
@@ -787,11 +787,14 @@ class UserinfoController extends MemberController {
 			if ($m = $m->where ( $condition )->save ( $data )) {
 
 				//发送站内信
-				$type="tradechange";
                 $action='修改交易密码成功，请注意资金安全！';
-				systemmsg($type,$action);
-				$this->success ( '修改密码成功！' );
+				system_msg($action);
+				$this->success ( '修改密码成功，请注意资金安全！' );
 			} else {
+				//发送站内信
+				
+                $action='修改交易密码失败，请注意资金安全！';
+               	system_msg($action);
 				$this->error ( '修改失败！' );
 			}
 		} else {

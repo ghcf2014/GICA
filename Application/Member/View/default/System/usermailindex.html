@@ -66,7 +66,7 @@
 															<th>系统消息</th>
 															<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<b style="color:red;"><u>{$danger['add_time']}</u></b>{$danger['action']}</th>
 															<th>{$danger['add_time']}</th>
-															<th><a href="{:U('/Member/Userinfo/userchagerwithdraw')}" title="点击查看详情">查看</a>|<a href="javascript:msgdel({$danger['id']})" title="点击删除消息" >删除</a></th>
+															<th><a href="javascript:msgdel({$danger['id']})" title="点击删除消息" >删除</a></th>
 														</tr>
 							  							</foreach>
 							  						<else/>
