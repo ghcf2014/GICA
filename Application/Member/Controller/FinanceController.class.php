@@ -22,6 +22,7 @@ class FinanceController extends MemberController {
 		//var_dump($suminvestor);
 		$this->assign('countinvestor', $countinvestor);
 		$this->assign('suminvestor', $suminvestor[0]['investor_capital']);
+		$this->pagetitle="工合财富直通贷款-投标统计";
 		$this->display();
 	}
 	public function borrowloanstatis(){
@@ -34,6 +35,7 @@ class FinanceController extends MemberController {
 		
 		$this->assign('countborrow', $countborrow);
 		$this->assign('sumborrow', $sumborrow[0]['borrow_money']);
+		$this->pagetitle="工合财富直通贷款-借款统计";
 		$this->display();
 	}
 }

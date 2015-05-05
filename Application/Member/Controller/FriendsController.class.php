@@ -152,6 +152,7 @@ class FriendsController extends MemberController {
 			$dd[]=array_merge($friend_data,$investor_msg ,$investor_time);
 			$k+1;
 		}
+		$this->pagetitle="工合财富直通贷款-好友推广";
 		$this->assign('days_investors',$days_investors);
 		$this->assign('month_investors',$month_investors);
 		$this->assign('all_investors',$all_investors);
@@ -179,6 +180,7 @@ class FriendsController extends MemberController {
 		$this->assign('count',$arr);		
 		$this->assign ( "friendList", $dd );
 		$this->display ();
+
 	}
 	
 	/**

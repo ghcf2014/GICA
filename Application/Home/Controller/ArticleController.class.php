@@ -35,6 +35,7 @@ class ArticleController extends HomeController {
 		/* 模板赋值并渲染模板 */
 		$this->assign('category', $category);
 		$this->assign('list', $list);
+		$this->pagetitle="工合财富直通贷款-公告详情";
 		$this->display($category['template_lists']);
 	}
 
@@ -74,7 +75,7 @@ class ArticleController extends HomeController {
 		$Document->where($map)->setInc('view');
 
 		// var_dump($info);
-
+		$this->pagetitle="工合财富直通贷款-".$info['title'];
 		/* 模板赋值并渲染模板 */
 		$this->assign('category', $category);
 		$this->assign('info', $info);

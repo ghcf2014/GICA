@@ -11,16 +11,19 @@ use OT\DataDictionary;
 class NewhelpController extends HomeController {
 	
 	// 系统首页
-	public function index() {
-		$this->display ();
-	}
+	// public function index() {
+	// 	$this->display ();
+	// }
 	public function borrowhelp() {
+
+		$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-新手指引";
 		$this->display ();
 	}
 	public function companyintr() {
 		$this->display ();
 	}
 	public function compare_tools() {
+		$this->pagetitle="工合财富直通贷款-收益计算器";
 		$this->display ();
 	}
 	public function compare_tools_swf() {
@@ -82,6 +85,7 @@ class NewhelpController extends HomeController {
 	 * 关于我们
 	 */
 	public function aboutus() {
+		$this->pagetitle="工合财富直通贷款-关于我们";
 		$this->display ();
 	}
 	// 网站服务协议
@@ -108,6 +112,7 @@ class NewhelpController extends HomeController {
 	 *         2015-2-13网站地图
 	 */
 	public function websitemap() {
+		$this->pagetitle="工合财富直通贷款-网站地图";
 		$this->display ();
 	}
 }

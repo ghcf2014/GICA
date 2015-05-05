@@ -38,6 +38,7 @@ class FinanceController extends HomeController {
             $this->assign('list2',$list);
             $this->assign('login',$login);
             $this->assign('page',$show);
+            $this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-投标列表";
             $this->display();
     }
     public function papersinfo(){
@@ -74,6 +75,7 @@ class FinanceController extends HomeController {
             $this->assign('members',$members[0]);
             $this->assign('list3',$list);
             if ($list[0]['borrow_uid']!==$uid){
+                $this->pagetitle="工合财富直通贷款-投资详情页-确认投标";
                 $this->display();
             }else {
                 $this->error('对不起，您不能投自己的标！');

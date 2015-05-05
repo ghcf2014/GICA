@@ -18,6 +18,7 @@ class SystemController extends MemberController {
 		$member_checked=M('z_member_info');
 		$memberdata=$member_checked->where('uid=%s',$uid)->select();
 		$username=$memberdata[0]['real_name'];
+		
 		if (($username)==null){
 			$this->error('您还未进行基本认证',U('Member/Userinfo/userselfset'));
 		}
@@ -31,6 +32,7 @@ class SystemController extends MemberController {
 		$cell_phone=$member_info->where('id=%s',$uid)->select();
 		$this->assign('cell_phone',$cell_phone[0]);
 		$this->assign ( 'userinfo',$memberdata);
+		$this->pagetitle="工合财富直通贷款-提现详情页";
 		$this->assign ( 'bank',$banks_data[0]);
 		$this->assign ( 'list', $money);
 		$this->display ();
@@ -155,7 +157,7 @@ class SystemController extends MemberController {
         $this->assign('post',$post);
         $this->assign('sendname',$sendname);
         $this->assign('uid',$uid);
-
+        $this->pagetitle="工合财富直通贷款-个人中心-消息中心";
 	    $this->display();
     }
 
@@ -181,6 +183,7 @@ class SystemController extends MemberController {
 		$arr['uid']=$uid;
 		$setdata=M('z_systemset');
 		$setmsg=$setdata->where($arr)->select();
+		$this->pagetitle="工合财富直通贷款-个人中心-消息中心-通知方式";
 		if (is_array($setmsg)==true){
 			$setresult=$setdata->where($arr)->save($map);
 			if ($setresult){
@@ -277,6 +280,7 @@ class SystemController extends MemberController {
 		}
 		$this->assign('memberdata',$memberdata[0]);
 		$this->assign('banksdata',$banks_data[0]);
+		$this->pagetitle="工合财富直通贷款-充值详情页";
 		$this->display ();
 	}
 	public function recharge_post() {
