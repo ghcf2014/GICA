@@ -44,7 +44,6 @@ abstract class Api{
 
 		$this->_init();
 	}
-
 	/**
 	 * 抽象方法，用于设置模型实例
 	 */

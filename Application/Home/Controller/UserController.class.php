@@ -174,16 +174,15 @@ class UserController extends HomeController {
 	public function login($username = '', $password = '', $verify = '',$email = ''){
 		//已经登录过隐藏登陆界面
 		if (is_login()>0){
-			$this->redirect('Member/Index/index');
+		$this->redirect('Member/Index/index');
 		}
 		if(IS_POST){ //登录验证
-
 			/* 检测验证码 */
 			if(!check_verify($verify)){
-				$this->error('验证码输入错误！');
+			$this->error('验证码输入错误！');
 			}
 			if(isusername($username)){
-			 $type = 1;
+			$type = 1;
 		    }
 			if(isEmail($username)){
 			$type = 2;
@@ -191,7 +190,6 @@ class UserController extends HomeController {
 		    if(isMobile($username)){
 			$type = 3;
 		    }
-
 			$user = new UserApi();
 			$uid = $user->login($username, $password,$type);
 			

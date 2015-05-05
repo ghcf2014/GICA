@@ -12,7 +12,7 @@
 							<if condition="$vo.logo_url eq ''"> 
 								<img src="__PUBLIC__/Home/images/default-img.jpg" style="border-radius: 100px;"width="200" height="200"> 
 							<elseif condition="$vo.logo_url  neq ''" />
-								<img src="Uploads/User/{$vo.logo_url}" style="border-radius: 100px;height: 180px;" width="200" height="200" />
+								<img src="/Uploads/User/{$vo.logo_url}" style="border-radius: 100px;height: 180px;" width="200" height="200" />
 							</if> </volist>
 						<p>
 							<a id="test2">更换图像</a>
