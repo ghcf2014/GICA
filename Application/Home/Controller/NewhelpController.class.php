@@ -11,10 +11,12 @@ use OT\DataDictionary;
 class NewhelpController extends HomeController {
 	
 	// 系统首页
-	public function index() {
-		$this->display ();
-	}
+	// public function index() {
+	// 	$this->display ();
+	// }
 	public function borrowhelp() {
+
+		$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-新手指引";
 		$this->display ();
 	}
 	public function companyintr() {

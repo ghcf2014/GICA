@@ -155,6 +155,7 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
+		$this->pagetitle="工合财富直通贷款-个人中心-安全认证-手机认证";
 		$this->display ();
 	}
 	public function userphone_save() {
@@ -542,6 +543,7 @@ class UserinfoController extends MemberController {
 			}
 		
 		$this->id_status=$st[0]['id_status'];
+		$this->pagetitle="工合财富直通贷款-个人中心-安全认证-实名认证";
 		$this->display ();
 	}
 	private function AddFile($fileinfo, $depict) {

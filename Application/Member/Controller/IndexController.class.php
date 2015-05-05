@@ -69,6 +69,7 @@ class IndexController extends MemberController {
         $levels=$leveldata->where($arr)->field('member_level')->select();
         $level=$levels[0]['member_level'];
         $this->assign('member_level',$level);
+        $this->pagetitle="工合财富直通贷款-个人中心-账户详情";
         $this->display();
     }
     //文件信息写入数据库

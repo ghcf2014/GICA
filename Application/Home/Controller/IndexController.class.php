@@ -48,7 +48,7 @@ class IndexController extends HomeController {
 		// $parm['orderby']="b.borrow_status ASC,b.id DESC";
 		// var_dump($listBorrow);
 		// $this->assign("listBorrow",$listBorrow);
-		
+		$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送";
 		import ( 'ORG.Util.Page' ); // 导入分页类
 		$listBorrow = M ( 'z_borrow_info' );
 		$count = $listBorrow->where ( 'borrow_status not in (1,5,3)' )->count ();
@@ -90,6 +90,8 @@ class IndexController extends HomeController {
 		$this->display ();
 	}
 	public function fankui() {
+		$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-反馈";
+
 		$this->display ();
 	}
 	public function fankui_add() {
