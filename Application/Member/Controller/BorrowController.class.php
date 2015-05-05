@@ -23,6 +23,7 @@ class BorrowController extends MemberController {
 		$borrow_info = M ( 'z_borrow_info' );
 		$condition ['borrow_uid'] = $uid;
 		$borrow_info = $borrow_info->where ( $condition )->select ();
+		$this->pagetitle="工合财富直通贷款-借款记录";
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
@@ -298,6 +299,7 @@ class BorrowController extends MemberController {
 		$arr['borrow_uid']=$uid;
 		$borrow_info = $borrow_info->where($arr)->select();
 		$this->assign ( 'list', $borrow_info );
+		$this->pagetitle="工合财富直通贷款-审核中的借款";
 		$this->display ();
 	}
 	
@@ -311,6 +313,7 @@ class BorrowController extends MemberController {
 		$borrow_info = M ( 'z_borrow_info' );
 		$borrow_info = $borrow_info->where ( 'borrow_uid=' . $uid . " and borrow_status=2" )->select ();
 		$this->assign ( 'list', $borrow_info );
+		$this->pagetitle="工合财富直通贷款-招标中的借款";
 		$this->display ();
 	}
 	
@@ -323,6 +326,7 @@ class BorrowController extends MemberController {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
 		$borrow_info = $borrow_info->where ( "borrow_uid=" . $uid . " and borrow_status=7" )->select ();
+		$this->pagetitle="工合财富直通贷款-成功的借款";
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
@@ -337,6 +341,7 @@ class BorrowController extends MemberController {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
 		$borrow_info = $borrow_info->where ( "borrow_uid=" . $uid . " and borrow_status=6" )->select ();
+		$this->pagetitle="工合财富直通贷款-还款中的借款";
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
@@ -370,30 +375,20 @@ class BorrowController extends MemberController {
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
 		$files=$borrowfile_status[0];
-		if ($files['identity_report']==0){
-			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		}
-		if ($files['work_report']==0){
-			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		}
-		if ($files['living_report']==0){
-			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		}
-		if ($files['income_report']==0){
-			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		}
-		if ($files['credit_report']==0){
-			$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		}
+		
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
 		$this->assign('list',$result);
+		$this->pagetitle="工合财富直通贷款-申请记录";
+
 		$this->display();
 	}
 	public function checkingapply(){
 		$uid=is_login();
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('status=0 and apply_uid=%s',$uid)->select();
+		$this->pagetitle="工合财富直通贷款-审核中的申请";
+
 		$this->assign('list',$result);
 		$this->display();
 	}
@@ -401,6 +396,7 @@ class BorrowController extends MemberController {
 		$uid=is_login();
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('status=1 and apply_uid=%s',$uid)->select();
+		$this->pagetitle="工合财富直通贷款-已通过的申请";
 		$this->assign('list',$result);
 		$this->display();
 	}
@@ -409,6 +405,7 @@ class BorrowController extends MemberController {
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('status=3 and apply_uid=%s',$uid)->select();
 		$this->assign('list',$result);
+		$this->pagetitle="工合财富直通贷款-已完成的申请";
 		$this->display();
 	}
 }

@@ -23,6 +23,7 @@ class NewhelpController extends HomeController {
 		$this->display ();
 	}
 	public function compare_tools() {
+		$this->pagetitle="工合财富直通贷款-收益计算器";
 		$this->display ();
 	}
 	public function compare_tools_swf() {
@@ -84,6 +85,7 @@ class NewhelpController extends HomeController {
 	 * 关于我们
 	 */
 	public function aboutus() {
+		$this->pagetitle="工合财富直通贷款-关于我们";
 		$this->display ();
 	}
 	// 网站服务协议
@@ -110,6 +112,7 @@ class NewhelpController extends HomeController {
 	 *         2015-2-13网站地图
 	 */
 	public function websitemap() {
+		$this->pagetitle="工合财富直通贷款-网站地图";
 		$this->display ();
 	}
 }

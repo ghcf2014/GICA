@@ -402,7 +402,7 @@ class UserController extends HomeController {
                 $this->error($res['info']);
             }
         }else{
-        	$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-修改密码";
+        	$this->pagetitle="工合财富直通贷款-账户安全";
             $this->display();
         }
     }

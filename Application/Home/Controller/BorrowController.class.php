@@ -40,6 +40,7 @@ class BorrowController extends HomeController {
 		$condition ['type'] = 2;
 		$m = $m->where ( $condition )->select ();		
 		$this->assign ( 'list', $m );
+		$this->pagetitle="工合财富直通贷款-信征认证";
 		$this->display ();
 	}
 	public function circulation($id = 0, $uid = 0) {

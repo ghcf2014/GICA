@@ -52,6 +52,7 @@ class UserinfoController extends MemberController {
 			$m[$i]['bank_num']=str_replace(substr(($m[$i]['bank_num']),3,14),"************",($m[$i]['bank_num']));
 		}
 		$this->assign ( 'list', $m );
+		$this->pagetitle="工合财富直通贷款-银行卡设置";
 		$this->display ();
 	}
 	
@@ -132,6 +133,7 @@ class UserinfoController extends MemberController {
 		
 		$this->assign ( 'ml', $ml );
 		$this->assign ( 'list', $money );
+		$this->pagetitle="工合财富直通贷款-资金明细";
 		$this->display ();
 	}
 	public function userchangebankInfo() {
@@ -155,7 +157,7 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
-		$this->pagetitle="工合财富直通贷款-个人中心-安全认证-手机认证";
+		$this->pagetitle="工合财富直通贷款-手机认证 ";
 		$this->display ();
 	}
 	public function userphone_save() {
@@ -231,6 +233,7 @@ class UserinfoController extends MemberController {
         $this->assign('url',$url);
         $this->assign('email',$email);
 		$this->assign ( 'list', $m );
+		$this->pagetitle="工合财富直通贷款-邮箱认证";
 		$this->display ();
 	}
 	public function usermail_send() {
@@ -317,6 +320,7 @@ class UserinfoController extends MemberController {
 		}
 	}
 	public function userpapersinfo() {
+		$this->pagetitle="工合财富直通贷款-个人中心-安全认证-信征认证";
 		$this->display ();
 	}
 	public function userrenewalvip() {
@@ -543,7 +547,7 @@ class UserinfoController extends MemberController {
 			}
 		
 		$this->id_status=$st[0]['id_status'];
-		$this->pagetitle="工合财富直通贷款-个人中心-安全认证-实名认证";
+		$this->pagetitle="工合财富直通贷款-实名认证";
 		$this->display ();
 	}
 	private function AddFile($fileinfo, $depict) {
