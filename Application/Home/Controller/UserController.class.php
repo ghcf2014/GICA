@@ -389,13 +389,9 @@ class UserController extends HomeController {
             if($res['status']){
 
             	//发送站内信
-            	$userdata=M('ucenter_member');
-	    		$arrs['id']=$uid;
-	    		$userresult=$userdata->where($arrs)->select();
-	    		$time=time();
-	    		$username=$userresult[0]['username'];
-                $action="尊敬的会员：，您好，您的工合财富平台账户".$username."修改了登陆密码，如不是本人操作请尽快联系客服400-1234-567，为您带来的不便，敬请谅解！";
-                system_msg($action);
+            	$type='loginchange';
+                $action='修改了登陆密码，请注意资金安全！';
+                systemmsg($type,$action);
                 
                 $this->success('修改密码成功！');
             }else{

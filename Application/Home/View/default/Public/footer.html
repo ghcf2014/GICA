@@ -84,94 +84,6 @@
 		<p>Copyrightc2011-2014工合财富 All rights reserved</p>
 	</div>
 </div>
-
-<div id="loginmodal" style="display:none;">
- <div class="loginmodal">
-	<h1>登陆</h1>
-	<form class="login-form" action="{:U('Home/User/login')}" method="post" id="loginform">
-		<label for="username">用户名/手机/邮箱:</label>
-		<input type="text" name="username" value="" id="username" class="txtfield utip" tabindex="1" />
-	
-		<label for="password">密码:</label>
-		<input type="password" name="password" id="password" class="txtfield pwtip" tabindex="2" />
-		<label for="password">验证码:</label>
-		<input type="text" name="verify" id="verifycode" class="txtfield" tabindex="2" /><img
-								class="verifyimg reloadverify vtip" src="{:U('Home/User/verify')}" width="101"height="44" alt="点击切换"style="cursor: pointer; width: 90px; float: right;">
-		<span style="color: red; line-height: 40px;" id="checkcode" class="formtips Validform_checktip "></span>
-		<div class="center"><input type="submit" name="loginbtn" id="loginIn"  class="flatbtn-blu hidemodal" value="登陆" tabindex="3"></div>
-	</form>
- </div>
- <script type="text/javascript">
-	//验证码刷新
-	$(document).ajaxStart(function() {
-		$("button:submit").addClass("log-in").attr("disabled", true);
-	}).ajaxStop(function() {
-		$("button:submit").removeClass("log-in").attr("disabled", false);
-	});
-	// 异步验证
-	$(".utip").blur(function() {
-	 var username = document.getElementById("username").value;
-		  var bid =1;
-		  var index = layer.load(1,{time: 5*1000});	
-          $.post('Home/User/login_array',{bid:bid,username:username},function success(data){
-    //       	if (data.nuser=='用户不存在')
-    //       	 {
-				// layer.msg(data.nuser);
-				// layer.closeAll('loading');
-			 //    } 
-			 //    else{
-			    	layer.closeAll('loading');
-			    // }
-          		});
-	});
-	$("loginform").submit(function() {
-		var index = layer.load(1);
-		var self = $(this);
-		$.post(self.attr("action"), self.serialize(), success, "json");
-		return false;
-
-		function success(data) {
-
-			if (data.status) {
-				layer.msg('成功登陆');
-				window.location.href = data.url;
-			} else {
-				if (data.info =='验证码输入错误！') {
-				layer.msg(data.info);
-			    } 
-			    else if(data.info =='密码错误！') {
-				layer.msg(data.info);
-				}
-				else if(data.info =='验证码错误！') {
-				layer.msg(data.info);
-				}
-				else{
-					self.find(".Validform_checktip").text(data.info);
-				}
-				//刷新验证码
-				$(".reloadverify").click();
-				layer.closeAll('loading');
-			}
-		}
-	});
-
-	$(function() {
-		var verifyimg = $(".verifyimg").attr("src");
-		$(".reloadverify").click(
-				function() {
-					if (verifyimg.indexOf('?') > 0) {
-						$(".verifyimg").attr("src",
-								verifyimg + '&random=' + Math.random());
-					} else {
-						$(".verifyimg").attr(
-								"src",
-								verifyimg.replace(/\?.*$/, '') + '?'
-										+ Math.random());
-					}
-				});
-	});
-</script>
-</div>
 <!--banQuan end-->
 <script type="text/javascript">
 	$('.shigong').on('click', function() {
@@ -199,21 +111,9 @@
             shadeClose: true,
             shade: false,
             maxmin: true, //开启最大化最小化按钮
-            area: ['200px', '100px'],
+            area: ['640px', '450px'],
            
             content: 'Home/Index/fankui',
         });
 });
-	$('#modaltrigger').click(function(){
-		layer.open({
-		    type: 1,
-		    title: false,
-		    skin: 'layui-layer-demo', //样式类名
-		    closeBtn: false, //不显示关闭按钮
-		    shift: 0,
-		    area: ['640px', '450px'],
-		    shadeClose: true, //开启遮罩关闭
-		    content: ''+$("#loginmodal").html()+''
-		});
-	});
 </script>

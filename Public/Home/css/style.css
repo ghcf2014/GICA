@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 /*----------清空默认样式---------------*/
-*{margin:0;padding:0;list-style:none;border:none;}
+*{margin:auto;padding:0;list-style:none;border:none;}
 body{font-size:14px;font-family:"微软雅黑","宋体";font-weight:normal;color:#595959;background:#f5f5f5;}
 a{color:#595959;text-decoration:none;}
 a:hover{color:#66ccfb;text-decoration:none;}
@@ -845,7 +845,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .tabtil ul .on {border-bottom:2px solid #f56627;color: #f56627;height: 42px;}
 .tabbox .tabmain { padding-top: 15px; padding-right: 15px; padding-bottom: 25px; padding-left: 15px; border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; border-right-color: #d1d9de; border-left-color: #d1d9de; }
 .box{width:893px;margin: auto;}
-.box  .biaoge { margin-top: 20px; }
+.box  .biaoge { margin-top: 16px; }
 .box  .biaoge table a { color: #136dad; }
 .box  .biaoge table a:hover { color: #00315d; }
 
@@ -863,9 +863,9 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .box .jkjl_search .search_cont .search_date span{float: left;width: 15px;height: 30px;line-height: 28px;margin: 0px 5px; }
 .box .jkjl_search .search_btn{float: left;width: 64px;height: 22px;margin: 14px 10px 0;background:url(../images/104.gif) no-repeat;border: none;}
 
-.box .boxmain2 { padding-top: 20px; padding-bottom: 25px; }
+.box .boxmain2 { padding-top: 2px; padding-bottom: 25px; }
 .box .boxmain2 .srh { line-height: 32px; margin-bottom: 12px; }
-.box .boxmain2 .srh input{width:140px; vertical-align: middle;height: 30px;border-radius: 3px;background: #ddd;margin: 0 5px;}
+.box .boxmain2 .srh input{width:140px; vertical-align: middle;height: 20px;border-radius: 3px;background: #ddd;margin: 0 5px;}
 .box .boxmain2 .srh a{ vertical-align: middle;margin: 0 5px;text-decoration: underline;}
 .cxbtn { line-height: 18px; color: #333; background-image: url(../rzg_images/030213_3.jpg); background-repeat: repeat-x; text-align: center; display: inline-block; height: 18px; width: 58px; border: 1px solid #ccc; }
 .cxbtn:hover { color: #000; }
@@ -1013,7 +1013,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_txt{width:150px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd .phone_btn{background:url(../images/120x40pxblue.png) no-repeat;color:#fff;width:120px;height:41px;float:left;font-size:14px;line-height:40px;text-align:center;cursor:pointer;margin-left:28px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dd span{float:left;line-height:40px;padding-left:10px;font-size:14px;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:103px;height:46px;font-size:18px;cursor:pointer;margin-left:400px;color:#fff;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .yhk_btn{width:103px;height:46px;font-size:18px;cursor:pointer;margin-left:170px;color:#fff;margin-top: 10px;}
 /*----------邮箱验证-----------*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head{width:879px;height:55px;line-height:55px;font-size:16px;padding-left:68px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .email{width:863px;height:42px;overflow:hidden;padding-top: 50px;border: 0;}
@@ -1031,8 +1031,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 /*-----------登录密码-------------------*/
 /*.zh_cont .zh_cont_r .tab .aqset_tabC .aqset_tabC_head2{width:900px;height:55px;line-height:55px;font-size:16px;padding-left:68px;}*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm{width:870px;height:42px;padding-bottom:10px;padding-top:15px;overflow:hidden;border: 0;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dt{width:240px;height:42px;line-height:42px;float:left;font-size:18px;text-align:right;font-weight:normal;}
-.zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dd{width:590px;height:42px;float:left;padding-left:25px;overflow:hidden;margin-top: 13px;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dt{width:240px;height:42px;line-height:42px;float:left;font-size:18px;text-align:right;font-weight:normal;margin-top: -2px;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dd{width:590px;height:42px;float:left;padding-left:25px;overflow:hidden;margin-top: 10px;font-size: 14px;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm dd .dlmm_txt{width:330px;height:36px;line-height:36px;border:1px solid #dcd6d3;float:left;padding:2px 5px;}
 
 .zh_cont .zh_cont_r .tab .aqset_tabC .dlmm_btn{width:102px;height:44px;background:url(../images/100x44pxblue.png) no-repeat;margin:25px 0 0 400px;font-size:18px;cursor:pointer;}
@@ -1145,11 +1145,11 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .zdtb_con dl dd{float: left;width: 500px;height: 45px;padding-left: 30px;line-height: 45px;overflow: hidden;}
 .zh_cont .zh_cont_r .zdtb_con dl dd span{float: left;width: auto;height: auto;color: red;}
 .zh_cont .zh_cont_r .zdtb_con dl dd select{width: 110px;}
-.zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_btn{float: left;width: 100px;height: 25px;background: #0697DA;border-radius: 3px;color: #fff;margin: 10px 0 0 10px;cursor: pointer;}
-.zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_btn01{float: left;width: 100px;height: 25px;background: #F90006;border-radius: 3px;color: #fff;margin: 10px 0 0 10px;cursor: pointer;}
+.zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_btn{float: left;width: 80px;height: 25px;background: #0697DA;border-radius: 3px;color: #fff;margin: 10px 0 0 0px;cursor: pointer;}
+.zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_btn01{float: left;width: 80px;height: 25px;background: #F90006;border-radius: 3px;color: #fff;margin: 10px 0 0 0px;cursor: pointer;}
 .zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_txt{float: left;width: 160px;border: 1px solid #ddd;border-radius: 3px;height: 30px;margin-top: 7px;line-height: 30px;padding-left: 5px;padding: 0 5px;}
 .zh_cont .zh_cont_r .zdtb_con dl dd .zdtb_con_txt2{float: left;width: 60px;border: 1px solid #ddd;border-radius: 3px;height: 30px;margin-top: 7px;line-height: 30px;padding:0 0 0 5px;}
-.zh_cont .zh_cont_r .zdtb_con .zdtb_con_btn2{width: 100px;height: 35px;color: #fff;background: #0697DA;border-radius: 3px;margin: 30px 0 10px 270px;cursor: pointer;}
+.zh_cont .zh_cont_r .zdtb_con .zdtb_con_btn2{width: 100px;height: 35px;color: #fff;background: #0697DA;border-radius: 3px;margin: 30px 0 10px 270px;cursor: pointer;font-size: 14px;}
 
 
 

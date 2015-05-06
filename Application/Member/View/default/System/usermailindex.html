@@ -231,18 +231,57 @@
 								<div class="box"  style="display: none;">
 							<form action="{:U('systemsetup')}" method="post">
 							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">站内信通知：</dt>
 								<dd>
 									<ul class="ul1">
 										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="SelectAll" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox" name="sys_msg" value="1"  class="subcheck"{$check.sys_msg} onclick="setSelectAll();"/>站内信通知</label></li>
-										<li><label><input type="checkbox" name="email_msg" value="1"  class="subcheck"{$check.email_msg} onclick="setSelectAll();"/>邮件通知</label></li>
-										<li><label><input type="checkbox" name="short_msg" value="1"  class="subcheck"{$check.short_msg} onclick="setSelectAll();"/>短信通知 </label></li>
-										
-									
+										<li><label><input type="checkbox" name="11"  class="subcheck" value="1" {$check.receive_money.one} onclick="setSelectAll();"/>收到还款</label></li>
+										<li><label><input type="checkbox" name="12"  class="subcheck" value="1" {$check.rechar.one} onclick="setSelectAll();"/>充值成功</label></li>
+										<li><label><input type="checkbox" name="13"  class="subcheck" value="1" {$check.mention.one} onclick="setSelectAll();"/>提现成功</label></li>
+										<li><label><input type="checkbox" name="14"  class="subcheck" value="1" {$check.borrow.one} onclick="setSelectAll();"/>借款成功</label></li>
+										<li><label><input type="checkbox" name="15"  class="subcheck" value="1" {$check.overtime.one} onclick="setSelectAll();"/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="16"  class="subcheck" value="1" {$check.loginchange.one} onclick="setSelectAll();"/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="17"  class="subcheck" value="1" {$check.phonechange.one} onclick="setSelectAll();"/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="18"  class="subcheck" value="1" {$check.emailchange.one} onclick="setSelectAll();"/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="19"  class="subcheck" value="1" {$check.tradechange.one} onclick="setSelectAll();"/>交易密码变更</label></li>
+
 									</ul>
 								</dd>
 							</dl>
-							
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">邮件通知：</dt>
+								<dd>
+									<ul class="ul2">
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="SelectAll2" onclick="selectAll2();" />全选</label></li>
+										<li><label><input type="checkbox" name="21"   class="subcheck2" value="1" {$check.receive_money.two} onclick="setSelectAll2();"/>收到还款</label></li>
+										<li><label><input type="checkbox" name="22"   class="subcheck2" value="1" {$check.rechar.two} onclick="setSelectAll2();"/>充值成功</label></li>
+										<li><label><input type="checkbox" name="23"   class="subcheck2" value="1" {$check.mention.two} onclick="setSelectAll2();"/>提现成功</label></li>
+										<li><label><input type="checkbox" name="24"   class="subcheck2" value="1" {$check.borrow.two} onclick="setSelectAll2();"/>借款成功</label></li>
+										<li><label><input type="checkbox" name="25"   class="subcheck2" value="1" {$check.overtime.two} onclick="setSelectAll2();"/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="26"   class="subcheck2" value="1" {$check.loginchange.two} onclick="setSelectAll2();"/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="27"   class="subcheck2" value="1" {$check.phonechange.two} onclick="setSelectAll2();"/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="28"   class="subcheck2" value="1" {$check.emailchange.two} onclick="setSelectAll2();"/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="29"   class="subcheck2" value="1" {$check.tradechange.two} onclick="setSelectAll2();"/>交易密码变更</label></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">短信通知：</dt>
+								<dd>
+									<ul class="ul3">
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="SelectAll3" onclick="selectAll3();" />全选</label></li>
+										<li><label><input type="checkbox" name="31"  class="subcheck3" value="1" {$check.receive_money.three} onclick="setSelectAll3();"/>收到还款</label></li>
+										<li><label><input type="checkbox" name="32"  class="subcheck3" value="1" {$check.rechar.three} onclick="setSelectAll3();"/>充值成功</label></li>
+										<li><label><input type="checkbox" name="33"  class="subcheck3" value="1" {$check.mention.three} onclick="setSelectAll3();"/>提现成功</label></li>
+										<li><label><input type="checkbox" name="34"  class="subcheck3" value="1" {$check.borrow.three} onclick="setSelectAll3();"/>借款成功</label></li>
+										<li><label><input type="checkbox" name="35"  class="subcheck3" value="1" {$check.overtime.three} onclick="setSelectAll3();"/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="36"  class="subcheck3" value="1" {$check.loginchange.three} onclick="setSelectAll3();"/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="37"  class="subcheck3" value="1" {$check.phonechange.three} onclick="setSelectAll3();"/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="38"  class="subcheck3" value="1" {$check.emailchange.three} onclick="setSelectAll3();"/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="39"  class="subcheck3" value="1" {$check.tradechange.three} onclick="setSelectAll3();"/>交易密码变更</label></li>
+									</ul>
+								</dd>
+							</dl>
 							
 							<input type="submit" name=""  value="保&nbsp;&nbsp;&nbsp;&nbsp;存" class="tongzhiWay_btn" style="border: 0;"/>
 							</form>
