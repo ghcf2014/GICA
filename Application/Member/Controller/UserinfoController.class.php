@@ -59,9 +59,24 @@ class UserinfoController extends MemberController {
 	/**
 	 * 银行卡设置
 	 */
+	public function userbankset_save_pw() {
+		// 从表单中获取来的数据
+		$uid  = is_login();//获取当前用户UID
+
+		$dealpwd=$_POST ['pin_pass'];
+	    $userinfo = M ( 'ucenter_member' )->where ( 'id=' . $uid )->select ();
+	    $paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
+
+	    
+	    if (md5($dealpwd) != $paypass) {
+	        $this->error ( L ( '您输入的交易密码有误！' ) );
+	    }
+	    $this->success( L ( '正在提交...' ) );
+	}
 	public function userbankset_save() {
 		// 从表单中获取来的数据
-		$uid = is_login ();
+		$uid  = is_login();//获取当前用户UID
+
 		$m = M ( "z_member_banks" );
 		// 获取表单数据
 		$data ['uid'] = $uid;
@@ -88,6 +103,7 @@ class UserinfoController extends MemberController {
             $arr['id']=$uid;
             $paypassword=$paypass->where($arr)->select();
             $pin_pass=$paypassword[0]['pin_pass'];
+            $this->pin_pass=$pin_pass;
             if ($pin_pass==null){
             	$this->redirect('/Home/User/profile');
             }else{

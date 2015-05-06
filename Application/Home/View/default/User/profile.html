@@ -45,6 +45,8 @@
 								</div>
 							</form>
 							<!--支付密码-->
+							
+							<if condition="$pin_pass neq ''">
 							<form class="login-form" action="{:U('Member/Userinfo/paypassword_save')}" method="post">
 							<div class="list-person clearfix">
 								<p class="list-one fl"><span class="icon icon-6"></span><span class="list-text">支付密码</span></p>
@@ -62,6 +64,7 @@
 								</div>
 							</div>
 							</form>
+							</if>
 						</div>
 				</div>
 				</div>

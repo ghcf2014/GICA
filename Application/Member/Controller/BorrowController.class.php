@@ -135,11 +135,7 @@ class BorrowController extends MemberController {
 		$condition1 ['sort_order'] = $i;
 	    $condition ['borrow_id'] =$id;
 
-	    $de= $detail->field ( 'id,borrow_id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital,status')->where ( $condition )->group ('sort_order')->select();
-
-
-
-
+	    $de= $detail->field('id,borrow_id,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital,status')->where ( $condition )->group ('sort_order')->select();
 
 		$this->assign('list',$de);
 		$this->display();
@@ -374,7 +370,7 @@ class BorrowController extends MemberController {
 		$arrs['uid']=$uid;
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
-<<<<<<< HEAD
+
 		// $files=$borrowfile_status[0];
 		// if ($files['identity_report']==0){
 		// 	$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
@@ -393,12 +389,11 @@ class BorrowController extends MemberController {
 		// }
 		// $applydata =M('z_borrow_apply');
 		// $result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
-=======
+
 		$files=$borrowfile_status[0];
 		
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
->>>>>>> origin/master
 		$this->assign('list',$result);
 		$this->pagetitle="工合财富直通贷款-申请记录";
 

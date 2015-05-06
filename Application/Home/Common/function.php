@@ -127,6 +127,7 @@ function pay_pw($dealpwd=0){
 
     
     if (md5($dealpwd) != $paypass) {
-        return $this->error ( L ( '您输入的交易密码有误！' ) );
+        return $this->error( L ( '您输入的交易密码有误！' ) );
     }
+    return true;
 }

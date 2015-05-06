@@ -27,6 +27,7 @@
 						<!--银行卡验证-->
 						<div class="aqset_tabC" id="add_banks">
 							<form action="{:U('userbankset_save')}" method="post" id="form">
+							<input type="hidden" id="pin_pass" value="{$pin_pass}">
 							<!-- <dl class="yhk">
 								<dt>平台昵称：{:get_username()}</dt>
 								<dd></dd>
@@ -34,7 +35,7 @@
 							<dl class="yhk">
 								<dt>选择开户银行：</dt>
 								<dd>
-									<input type="text" name="bank_name" value="" class="theme-login" style="float: left;height: 28px;"/><span color="red"
+									<input type="text" name="bank_name" id="bank_name" value="" class="theme-login" style="float: left;height: 28px;"/><span color="red"
 										id="sBankName">请输入开户银行</span>
 								</dd>
 								<div class="theme-popover">
@@ -434,7 +435,27 @@ jQuery(document).ready(function($) {
 				return false;
 			}
 			else{
-				layer.prompt({
+				var ppass = $("#pin_pass").val();
+
+				if(ppass!=""){
+					layer.prompt({title: '输入支付密码', formType: 1}, function(pass){
+						var index = layer.load(1,{time: 7*1000});	
+					        $.post('__URL__/userbankset_save_pw',{pin_pass:pass},function success(data){
+					        if (data.status) {
+								layer.msg(data.info);
+								$("#form").submit();
+								layer.closeAll('loading');
+							    } 
+							    else{	
+						    	layer.msg(data.info);
+						    	layer.closeAll('loading');
+							    }
+					         });
+					    });
+
+				}
+				else{
+					layer.prompt({
 				title: '新建支付密码',
 				formType: 1 //prompt风格，支持0-2
 				}, function(pass){
@@ -461,6 +482,8 @@ jQuery(document).ready(function($) {
 				        // $("#form").submit();
 				    });
 				});
+				}
+				
 			}
 			
 		});

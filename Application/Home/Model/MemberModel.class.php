@@ -52,6 +52,9 @@ class MemberModel extends Model{
         /* 登录用户 */
         $this->autoLogin($user);
 
+        
+        M('member')->where('uid='.$uid)->setInc('score');
+
         //记录行为
         action_log('user_login', 'member', $uid, $uid);
 

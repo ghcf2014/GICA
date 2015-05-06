@@ -370,6 +370,13 @@ class UserController extends HomeController {
      * 修改密码提交
      */
     public function profile(){
+    	$uid  = is_login();//获取当前用户UID
+    	//查询是否创建交易密码
+            $paypass=M('ucenter_member');
+            $arr['id']=$uid;
+            $paypassword=$paypass->where($arr)->select();
+            $pin_pass=$paypassword[0]['pin_pass'];
+            $this->pin_pass=$pin_pass;
 		if ( !is_login() ) {
 			$this->redirect('User/login');
 		}
