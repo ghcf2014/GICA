@@ -413,5 +413,4 @@ class UserController extends HomeController {
         }
     }
 
-
 }

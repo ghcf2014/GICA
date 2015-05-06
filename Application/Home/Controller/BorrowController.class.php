@@ -45,7 +45,7 @@ class BorrowController extends HomeController {
 		$condition ['uid'] = $uid;
 		$condition ['type'] = 2;
 		$m = $m->where ( $condition )->select ();
-		
+		$this->pagetitle="工合财富直通贷款-信征认证";
 		$this->assign ( 'list', $m );
 		$this->display ();
 	}
@@ -101,6 +101,7 @@ class BorrowController extends HomeController {
 		$borrowfile_status=$borrowfile->where($arrs)->select();
 		$files=$borrowfile_status[0];
 		$this->assign('file',$files);
+		$this->pagetitle="工合财富直通贷款-借款申请";
 		$this->display ();
 	
 	}
@@ -566,7 +567,7 @@ class BorrowController extends HomeController {
 		$this->assign('applyfile',$applyfile);
 
 
-
+		$this->pagetitle="工合财富直通贷款-资料上传";
 		$this->assign('file',$files);
 		$this->display();
 	}

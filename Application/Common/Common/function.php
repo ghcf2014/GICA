@@ -1628,9 +1628,8 @@ function subtext($text, $length) {
     	$sysdata= M('z_systemset');
 	    $arr['uid']=$uid;
 	    $sysresult=$sysdata->where($arr)->select();
-	    $result=$sysresult[0][$type];
-	    // dump($result);
-	    if (substr($result,0,1)=='1'){
+	    $result=$sysresult[0];
+	    if ($result['sys_msg']=='1'){
 	    	 $danger =array(
                 "username"=>$_SESSION[gica_home]['user_auth']['username'],
                 "uid" =>$_SESSION[gica_home]['user_auth']['uid'],
@@ -1639,11 +1638,10 @@ function subtext($text, $length) {
 	            );
 	     	$msgs =M('z_system_msg')->add($danger);
 	    }
-	    if (substr($result,1,1)=='1'){
-	    		
-	    		//TODO: 发送邮件
+	    if ($result['email_msg']=='1'){
+	    		$arrs['id']=$uid;
 	    		$userdata=M('ucenter_member');
-	    		$userresult=$userdata->where($arr)->select();
+	    		$userresult=$userdata->where($arrs)->select();
 	    		$email=$userresult[0]['email'];
 	    		$username=$userresult[0]['username'];
 				$realnames=M('z_member_info');
