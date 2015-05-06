@@ -598,9 +598,8 @@ public function auto_borrow(){
 										$log = $log->add ( $logdata );
 
 										//发送站内信
-                                        $type="borrow";
                                         $action=$logdata ['info'];
-                                        systemmsg($type,$action);
+                                        system_msg($action);
                             } 
                         }  
                 }

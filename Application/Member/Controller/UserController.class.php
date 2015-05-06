@@ -148,7 +148,7 @@ class UserController extends HomeController {
             	//发送站内信
             	$type='loginchange';
                 $action='修改了登陆密码，请注意资金安全！';
-                systemmsg($type,$action);
+                system_msg($type,$action);
                 
                 $this->success('修改密码成功！');
             }else{

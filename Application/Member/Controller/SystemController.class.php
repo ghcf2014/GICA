@@ -92,9 +92,8 @@ class SystemController extends MemberController {
 
 
 					//发送站内信
-					$type="mention";
                     $action='提现资金'.$_POST ['withdraw_money'].'元，请注意资金安全！';
-                    systemmsg($type,$action);
+                    system_msg($action);
 
 					$this->success ( L ( '提现已提交，我们会尽快审核。' ) ); // 成功提示add_time
 				} else {
@@ -378,9 +377,8 @@ class SystemController extends MemberController {
 			$log = $log->add ( $logdata );
 			
 			//发送站内信
-			$type="rechar";
 	        $action=$logdata ['info'].$_POST['account_money'].'元,请注意资金安全！';
-	        systemmsg($type,$action);
+	        system_msg($action);
 			$this->success ( '线下充值金额已提交! ' );
 		} else {
 			// 失败提示
@@ -441,9 +439,8 @@ class SystemController extends MemberController {
 					$log = $log->add ( $logdata );
 					
 					//发送站内信
-					$type="rechar";
 			        $action=$logdata ['info'].floatval($Amount).'元,请注意资金安全！';
-			        systemmsg($type,$action);
+			        system_msg($action);
 				} 
 		}
 
