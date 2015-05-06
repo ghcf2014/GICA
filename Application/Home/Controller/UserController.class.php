@@ -71,6 +71,7 @@ class UserController extends HomeController {
 					$friendf=$friend->add($f);
 
 				}
+				register($uid);
 				if($friends !=null){
 				 	$reffers['username']=$friends;
 					$userinfo = M ( 'ucenter_member' )->field ( "id,member_level" )->where ($reffers)->select ();
@@ -112,6 +113,7 @@ class UserController extends HomeController {
 					$this->error('注册成功。邮件不能发送。',U('User/login'));
 				}			} else { //注册失败，显示错误信息
 				$this->error($this->showRegError($uid));
+				$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-注册";
 			}
 		} else { //显示注册表单
 			// $reffer = $_REQUEST ['reffer'];
@@ -120,6 +122,7 @@ class UserController extends HomeController {
 				// var_dump($reffer);
 				$this->assign ( 'reffer', $reffer );
 			}
+			$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-注册";
 			$this->display();
 		}
 
@@ -135,6 +138,7 @@ class UserController extends HomeController {
    		$domain = substr(strstr($email, '@'),1);
    		$url='http://mail.'.$domain;
    		$this->assign('url',$url);
+   		$this->pagetitle="工合财富直通贷款-恭喜您注册成功！";
 		$this->display();
 	}
 	//重新发邮件
@@ -173,16 +177,15 @@ class UserController extends HomeController {
 	public function login($username = '', $password = '', $verify = '',$email = ''){
 		//已经登录过隐藏登陆界面
 		if (is_login()>0){
-			$this->redirect('Member/Index/index');
+		$this->redirect('Member/Index/index');
 		}
 		if(IS_POST){ //登录验证
-
 			/* 检测验证码 */
 			if(!check_verify($verify)){
-				$this->error('验证码输入错误！');
+			$this->error('验证码输入错误！');
 			}
 			if(isusername($username)){
-			 $type = 1;
+			$type = 1;
 		    }
 			if(isEmail($username)){
 			$type = 2;
@@ -190,7 +193,6 @@ class UserController extends HomeController {
 		    if(isMobile($username)){
 			$type = 3;
 		    }
-
 			$user = new UserApi();
 			$uid = $user->login($username, $password,$type);
 			
@@ -219,6 +221,7 @@ class UserController extends HomeController {
 			}
 
 		} else { //显示登录表单
+			$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-登录页";
 			$this->display();
 		}
 	}
@@ -389,15 +392,21 @@ class UserController extends HomeController {
             if($res['status']){
 
             	//发送站内信
+<<<<<<< HEAD
             	$type='loginchange';
                 $action='修改了登陆密码，请注意资金安全！';
                 systemmsg($type,$action);
+=======
+                $action="修改了登陆密码";
+                system_msg($action);
+>>>>>>> origin/master
                 
                 $this->success('修改密码成功！');
             }else{
                 $this->error($res['info']);
             }
         }else{
+        	$this->pagetitle="工合财富直通贷款-账户安全";
             $this->display();
         }
     }

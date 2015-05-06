@@ -3,16 +3,22 @@
 namespace Home\Controller;
 
 use OT\DataDictionary;
+use Home\Model\BorrowModel;
 
 /**
  * 前台首页控制器
  * 主要获取首页聚合数据
  */
 class BorrowController extends HomeController {
+
+
+	protected function _init() {
+		$this->model = new BorrowModel();
+	}
 	
 	// 系统首页
 	public function index(){
-		is_login () || $this->redirect( 'Home/User/login' );
+		is_login () || $this->redirect( 'User/login' );
 		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
 		//是否进行基本认证
@@ -34,7 +40,7 @@ class BorrowController extends HomeController {
 
 	public function papersinfo() {
 		$uid = is_login ();
-		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
+		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'User/login' ) );
 		$m = M ( "z_member_data_info" );
 		$condition ['uid'] = $uid;
 		$condition ['type'] = 2;
@@ -70,7 +76,7 @@ class BorrowController extends HomeController {
 	 *         2015-1-27申请借款
 	 */
 	public function borrowapply() {
-		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'Home/User/login' ) );
+		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'User/login' ) );
 		$uid=is_login();
 		$data=M('z_borrow_apply');
 		$condition['apply_uid']=$uid;
@@ -176,7 +182,6 @@ class BorrowController extends HomeController {
 	}
 	public function circulation_save($id = 1) {
 		$uid = is_login ();
-
 		$depict ['borrow_type'] = $id;
 		$depict ['borrow_name'] = $_POST ['borrow_name'];
 		$depict ['borrow_money'] = $_POST ["borrow_money"];
@@ -210,10 +215,11 @@ class BorrowController extends HomeController {
 			$action="发布了一次实地考察标";
 		}
 		
-		systemmsg($action);
+		system_msg($action);
 
-		//等额本息公式带进
+		//公式带进
 		// $depict['repayment_interest']=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
+<<<<<<< HEAD
 		if ($_POST ["repayment_type"] == 5) {
 			$depict ['repayment_interest'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] ) - floatval ( $_POST ["borrow_money"] );
 			$depict ['repayment_money'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] );
@@ -234,6 +240,13 @@ class BorrowController extends HomeController {
 		}
 
 		// $files=($_FILES['img']);
+=======
+		$borrow_money =$depict ['borrow_money'];
+		$borrow_interest_rate=$depict ['borrow_interest_rate'];
+		$borrow_duration=$depict ['borrow_duration'];
+		$repayment_type=$depict ['repayment_type'];
+		$depict+=type_formula($borrow_money,$borrow_interest_rate,$borrow_duration,$repayment_type);
+>>>>>>> origin/master
 		
 		// 保存当前数据对象
 		if ($this->borrow_upload ( $depict )) { // 保存成功
@@ -243,8 +256,6 @@ class BorrowController extends HomeController {
 			$apply_uid['apply_uid'] =$uid;
 			$result=$applydata->where($apply_uid)->save($arrs);
 			if ($result>0){
-
-
 				$bdata=M('z_borrow_info');
 				$map['borrow_uid']=$uid;
 				$bid=$bdata->where($map)->order('add_time desc')->select();

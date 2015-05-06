@@ -271,7 +271,7 @@ class InvestController extends MemberController {
 		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,sum(investor_interest)investor_interest,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
 
         if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
-
+        $this->pagetitle="工合财富直通贷款-投资记录";
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
@@ -373,6 +373,7 @@ class InvestController extends MemberController {
 		$auto_data=$auto_data[0];
 		$this->assign('auto_data',$auto_data);
 		$this->assign('money',$money);
+		$this->pagetitle="工合财富直通贷款-自动投标";
 		$this->display ();
 	}
 	public function autoinvest_save(){

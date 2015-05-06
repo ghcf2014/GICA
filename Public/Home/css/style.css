@@ -1178,12 +1178,12 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .sqjk_cont .sqjk_cont_cen dl dd .sqzl li span img{float: left;margin-top: 8px;}
 
 .sqjk_cont .sqjk_cont_bot{overflow: hidden;margin: 20px 0;}
-.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs{width: 35%;height:645px;float: left;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
+.sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs{width: 35%;height:auto;float: left;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
 .sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dl{width:100%;height: 610px;}
 .sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dl dt{width: 100%;height: 40px;font-size: 20px;font-weight:normal;color: #0597D9;line-height: 40px;border-bottom: 1px solid #ddd;margin-bottom: 15px;}
 .sqjk_cont .sqjk_cont_bot .sqjk_cont_foucs dl dd{width: 100%;height: auto;line-height: 32px;}
 
-.sqjk_cont .sqjk_cont_bot .tjsqjk{float: right;width: 50%;height:645px;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
+.sqjk_cont .sqjk_cont_bot .tjsqjk{float: right;width: 50%;height:auto;border: 1px solid #ddd;background: #fff;padding: 20px 35px;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk h2{width: 100%;height: 40px;font-size: 20px;color: #0597D9;line-height: 40px;border-bottom: 1px solid #ddd;margin-bottom: 15px;font-weight: normal;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl{overflow: hidden;}
 .sqjk_cont .sqjk_cont_bot .tjsqjk dl dt{float: left;width: 25%;text-align: right;font-size: 16px;font-weight:normal;height: auto;line-height: 40px;}

@@ -63,3 +63,28 @@ function pd($arr){
     echo "</pre>";
     die;
 }
+function type_formula($borrow_money=0,$borrow_interest_rate=0,$borrow_duration=0,$repayment_type=0){
+
+        // return false;
+        if ($repayment_type == 5) {
+            $depict ['repayment_interest'] = (floatval ( $borrow_money ) * (floatval ( $borrow_interest_rate ) / 100 / 12) * pow ( (1 + (floatval ( $borrow_interest_rate) / 100 / 12)), floatval ( $borrow_duration ) ) / (pow ( (1 + (floatval ( $borrow_interest_rate ) / 100 / 12)), floatval ( $borrow_duration ) ) - 1)) * floatval ( $borrow_duration ) - floatval ( $borrow_money);
+            $depict ['repayment_money'] = (floatval ( $borrow_money ) * (floatval ( $borrow_interest_rate) / 100 / 12) * pow ( (1 + (floatval ( $borrow_interest_rate) / 100 / 12)), floatval ( $borrow_duration ) ) / (pow ( (1 + (floatval ( $borrow_interest_rate ) / 100 / 12)), floatval ( $borrow_duration ) ) - 1)) * floatval ( $borrow_duration );
+            $depict ['total'] = $borrow_duration;
+            return $depict;
+        }
+        //先息后本公式带进
+        if ($repayment_type == 6) {
+            $depict ['repayment_interest'] =floatval ($borrow_money )*(floatval ( $borrow_interest_rate ) / 100 / 12);
+            $depict ['repayment_money'] = floatval ( $borrow_money)+(floatval ( $borrow_money)*(floatval ( $borrow_interest_rate) / 100 / 12));
+            $depict ['total'] = $borrow_duration;
+            return $depict;
+        }
+        //一次性还款公式带进
+        if ($repayment_type == 7) {
+            
+            $depict ['repayment_interest'] =floatval ( $borrow_money)*((floatval ( $borrow_interest_rate ) / 100 / 12)*floatval($borrow_duration));
+            $depict ['repayment_money']=floatval ( $borrow_money )*(1+((floatval ( $borrow_interest_rate) / 100 / 12))*floatval ($borrow_duration));
+            $depict ['total'] =1;
+            return $depict;
+        }
+}

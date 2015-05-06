@@ -52,6 +52,7 @@ class UserinfoController extends MemberController {
 			$m[$i]['bank_num']=str_replace(substr(($m[$i]['bank_num']),3,14),"************",($m[$i]['bank_num']));
 		}
 		$this->assign ( 'list', $m );
+		$this->pagetitle="工合财富直通贷款-银行卡设置";
 		$this->display ();
 	}
 	
@@ -132,6 +133,7 @@ class UserinfoController extends MemberController {
 		
 		$this->assign ( 'ml', $ml );
 		$this->assign ( 'list', $money );
+		$this->pagetitle="工合财富直通贷款-资金明细";
 		$this->display ();
 	}
 	public function userchangebankInfo() {
@@ -155,6 +157,7 @@ class UserinfoController extends MemberController {
 		$m_id ['id'] = $uid;
 		$m = $m->where ( $m_id )->select ();
 		$this->assign ( 'list', $m );
+		$this->pagetitle="工合财富直通贷款-手机认证 ";
 		$this->display ();
 	}
 	public function userphone_save() {
@@ -230,6 +233,7 @@ class UserinfoController extends MemberController {
         $this->assign('url',$url);
         $this->assign('email',$email);
 		$this->assign ( 'list', $m );
+		$this->pagetitle="工合财富直通贷款-邮箱认证";
 		$this->display ();
 	}
 	public function usermail_send() {
@@ -316,6 +320,7 @@ class UserinfoController extends MemberController {
 		}
 	}
 	public function userpapersinfo() {
+		$this->pagetitle="工合财富直通贷款-个人中心-安全认证-信征认证";
 		$this->display ();
 	}
 	public function userrenewalvip() {
@@ -542,6 +547,7 @@ class UserinfoController extends MemberController {
 			}
 		
 		$this->id_status=$st[0]['id_status'];
+		$this->pagetitle="工合财富直通贷款-实名认证";
 		$this->display ();
 	}
 	private function AddFile($fileinfo, $depict) {
@@ -773,9 +779,9 @@ class UserinfoController extends MemberController {
 			if ($m = $m->where ( $condition )->save ( $data )) {
 
 				//发送站内信
-				$type="tradechange";
+				
                 $action='创建交易密码成功！';
-               	systemmsg($type,$action);
+               	system_msg($action);
 				$this->success ( '新建交易密码成功！' );
 			}
 		}
@@ -787,11 +793,14 @@ class UserinfoController extends MemberController {
 			if ($m = $m->where ( $condition )->save ( $data )) {
 
 				//发送站内信
-				$type="tradechange";
                 $action='修改交易密码成功，请注意资金安全！';
-				systemmsg($type,$action);
-				$this->success ( '修改密码成功！' );
+				system_msg($action);
+				$this->success ( '修改密码成功，请注意资金安全！' );
 			} else {
+				//发送站内信
+				
+                $action='修改交易密码失败，请注意资金安全！';
+               	system_msg($action);
 				$this->error ( '修改失败！' );
 			}
 		} else {
