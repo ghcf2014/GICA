@@ -4,18 +4,14 @@
 		<!--content start-->
 	<div class="zh_cont_out">
     	<div class="zh_cont">
-            
-            	<include file="Public/left"/>
+			<include file="Public/left"/>
             <div class="zh_cont_r">
             	<h3 style="border-bottom: 1px solid #ddd;">当前位置 > <span style="color:#D41010;">消息中心</span></h3>	
             	<div class="r_main">
             		<div class="mes_con">
             			<div class="tabtil">
-							<ul>
-								<li class="on" >
-									通知方式
-								</li>
-								<li onclick=showSysMails();;>
+							<ul>								
+								<li onclick=showSysMails();; class="on" >
 									系统消息<if condition="$syscount eq 0">[0]<else/><span style="color:red;">[{$syscount}]</span></if>
 								</li>
 								<li onclick=showReceiveMails();;>
@@ -27,62 +23,32 @@
 								<li>
 									发信息
 								</li>
+								<li style="border-right: none;">
+									通知方式
+								</li>
 							</ul>
 						</div>
 						
-						<div class="box">
-							<dl class="tongzhiWay">
-								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">短信通知：</dt>		
-								
-								<dd>
-									<ul>
-										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();" />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();" />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll" id="checkAll" onclick="setSelectAll();"  />提现</label></li>
-									</ul>
-								</dd>
-							</dl>
-							<dl class="tongzhiWay">
-								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">邮件通知：</dt>
-								<dd>
-									<ul>
-										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="selAll2" onclick="selectAll();" />全选</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />充值</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />提现</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />投资</label></li>
-										<li><label><input type="checkbox"  name="checkAll2" id="checkAll2" onclick="setSelectAll();"  />充值</label></li>
-									</ul>
-								</dd>
-							</dl>
-							
-							<input type="button" name="" value="保&nbsp;&nbsp;&nbsp;&nbsp;存" class="tongzhiWay_btn"/>
-							
-						</div>
 						
-						<div class="box" style="display: none;">
+						
+						<div class="box">
 							<span id="sysInfo">
 								<div class="boxmain2">
-					            	<div class="srh" id="srh">
-							        	<input class="scbtn" onclick="delSys();" value="删除" type="button" id="delSys">
-							        	<input class="scbtn" onclick="readedSys();" value="标记为已读" type="button" id="readedSys">
-							        	<input class="scbtn" onclick="unReadSys();" value="标记为未读" type="button" id="unReadSys">
-							        	<a href="javascript:void(0);" class="scbtn" onclick="showUnReadSys();">未读邮件</a>
-							        </div>
 							        <span id="sys_mail_list">
 							        	<div class="biaoge" id="biaoge">
 							        		<input type="hidden" id="curPage" value="1">
 							          		<table width="98%" border="0" cellspacing="0" cellpadding="0">
 							  					<tbody>
+							  					      <tr>
+							  					      	<td colspan="10">
+								  					        <div class="srh" id="srh">
+													        	<a href="javascript:void(0);"  onclick="delSys();">删除</a> 
+															    <a href="javascript:void(0);"  onclick="readedSys();">标记为已读</a> 
+															    <a href="javascript:void(0);"  onclick="unReadSys();">标记为未读</a>
+													        	<a href="javascript:void(0);"  onclick="showUnReadSys();">未读邮件</a>
+													        </div>
+													    </td>
+													  </tr>
 													  <tr>
 													    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
 													    <th>标记</th>
@@ -98,9 +64,9 @@
 															<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
 															<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
 															<th>系统消息</th>
-															<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<u>{$danger['add_time']}</u><b style="color:red;">{$danger['action']}</b></th>
+															<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<b style="color:red;"><u>{$danger['add_time']}</u></b>{$danger['action']}</th>
 															<th>{$danger['add_time']}</th>
-															<th><a href="{:U('Home/Borrow/detail?add_time='.$danger['add_time'])}" title="点击查看详情">查看</a>|<a href="{:U('Member/System/usermailindex_danger_del?id='.$danger['id'])}" title="点击删除消息">删除</a></th>
+															<th><a href="javascript:msgdel({$danger['id']})" title="点击删除消息" >删除</a></th>
 														</tr>
 							  							</foreach>
 							  						<else/>
@@ -121,15 +87,18 @@
 					<div class="box" style="display: none;">
 						<span id="receiveInfo">
 							<div class="boxmain2">
-							      <div class="srh" id="re_srh">
-							    <a href="javascript:void(0);" class="scbtn" onclick="delReceives();">删除</a> 
-							    <a href="javascript:void(0);" class="scbtn" onclick="readedReceives();">标记为已读</a> 
-							    <a href="javascript:void(0);" class="scbtn" onclick="unReadReceives();">标记为未读</a>
-							    <a href="javascript:void(0);" class="scbtn" onclick="showUnReadReceives();">未读邮件</a>
-							    </div>
 							    <span id="receive_mail_list"><div class="biaoge" id="re_biaoge">
 							      <table width="98%" border="0" cellspacing="0" cellpadding="0">
 									  <tbody>
+									  	<tr><td colspan="11" >
+											  	<div class="srh" id="re_srh">
+												    <a href="javascript:void(0);"  onclick="delReceives();">删除</a> 
+												    <a href="javascript:void(0);"  onclick="readedReceives();">标记为已读</a> 
+												    <a href="javascript:void(0);"  onclick="unReadReceives();">标记为未读</a>
+												    <a href="javascript:void(0);"  onclick="showUnReadReceives();">未读邮件</a>
+												</div>
+											</td>
+							    		</tr>
 									  	<tr> 
 										    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
 										    <th>标记</th>
@@ -146,12 +115,8 @@
 										  	<th>{$val['postname']}</th>
 										  	<th>{$val['title']}</th>
 										  	<th>{$val['send_time']}</th>
-										  	<th><input name="button" type="button" id="button" value="查看" />|<a href="{:U('Member/System/usermailindex_email_del?id='.$val['id'])}">删除</a>
-										 
+										  	<th><input name="button" type="button" id="button" onclick="javascript:checkreceive('{$val.msg}')" value="查看" />|<a href="javascript:emaildel({$val['id']})">删除</a>
 									  	</tr>
-										<tr id="table" style="display:none;">
-										    <th colspan="6" >这是站内信详情</td>
-									    </tr>
 									  </foreach>
 									 
 									  
@@ -171,18 +136,23 @@
 					</div>
 					<div class="box" style="display: none;">
 						<span id="sendInfo"><div class="boxmain2">
-							          <div class="srh" id="send_srh">
-							        <a href="javascript:void(0);" class="scbtn" onclick="delSends();">删除</a> 
-							        
-							        </div>
+							          
 							        <span id="send_mail_list"><div class="biaoge" id="send_biaoge">
 							          <table width="98%" border="0" cellspacing="0" cellpadding="0">
-							     	<tbody><tr> 
-									    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
-									    <th>收件人</th>
-									    <th>标题</th>
-									    <th>发送时间</th>
-							  		</tr>
+							     	<tbody>
+								     	<tr>
+								     		<td colspan="9" >
+									     		<div class="srh" id="send_srh">
+								        			<a href="javascript:void(0);"  onclick="delSends();">删除</a> 
+									        	</div>
+								        	</td>
+								        </tr>
+								     	<tr> 
+										    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
+										    <th>收件人</th>
+										    <th>标题</th>
+										    <th>发送时间</th>
+								  		</tr>
 									
 									<!--发件箱信息-->
 									<foreach name="post" item="values">
@@ -237,14 +207,14 @@
 												  </tr>
 												  <tr>
 												    <td valign="top">内容：</td>
-												    <td><textarea class="txt420" name="msg" id="content"></textarea>
+												    <td><textarea class="txt420" name="msg" id="content" style="max-width: 500px;max-height: 300px;"></textarea>
 												    <span style="color: red; float: none;" id="s_content" class="formtips"></span>
 												    </td>
 												  </tr>
 												  <tr>
 												    <td>&nbsp;</td>
 												    <td style="padding-top:20px;">
-												    <input type="submit" class="bcbtn " style='border-radius:1px;background:#66CCFB;width:35%;height:100%';onclick="addMail()" id="btnSave" value="提交发送" style="width:88px;"></td>
+												    <input type="submit" class="bcbtn " style='border:none;font-size:14px;border-radius:1px;background:#66CCFB;width:10%;height:100%';onclick="addMail()" id="btnSave" value="提交发送" style="width:88px;"></td>
 												  </tr>
 												  <tr>
 												    <td>&nbsp;</td>
@@ -257,6 +227,66 @@
 								    </div>
 								    </div>
 								</div>
+								
+								<div class="box"  style="display: none;">
+							<form action="{:U('systemsetup')}" method="post">
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/message.png) no-repeat center left;">站内信通知：</dt>
+								<dd>
+									<ul class="ul1">
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="SelectAll" onclick="selectAll();" />全选</label></li>
+										<li><label><input type="checkbox" name="11"  class="subcheck" value="1" {$check.receive_money.one} onclick="setSelectAll();"/>收到还款</label></li>
+										<li><label><input type="checkbox" name="12"  class="subcheck" value="1" {$check.rechar.one} onclick="setSelectAll();"/>充值成功</label></li>
+										<li><label><input type="checkbox" name="13"  class="subcheck" value="1" {$check.mention.one} onclick="setSelectAll();"/>提现成功</label></li>
+										<li><label><input type="checkbox" name="14"  class="subcheck" value="1" {$check.borrow.one} onclick="setSelectAll();"/>借款成功</label></li>
+										<li><label><input type="checkbox" name="15"  class="subcheck" value="1" {$check.overtime.one} onclick="setSelectAll();"/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="16"  class="subcheck" value="1" {$check.loginchange.one} onclick="setSelectAll();"/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="17"  class="subcheck" value="1" {$check.phonechange.one} onclick="setSelectAll();"/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="18"  class="subcheck" value="1" {$check.emailchange.one} onclick="setSelectAll();"/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="19"  class="subcheck" value="1" {$check.tradechange.one} onclick="setSelectAll();"/>交易密码变更</label></li>
+
+									</ul>
+								</dd>
+							</dl>
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">邮件通知：</dt>
+								<dd>
+									<ul class="ul2">
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="SelectAll2" onclick="selectAll2();" />全选</label></li>
+										<li><label><input type="checkbox" name="21"   class="subcheck2" value="1" {$check.receive_money.two} onclick="setSelectAll2();"/>收到还款</label></li>
+										<li><label><input type="checkbox" name="22"   class="subcheck2" value="1" {$check.rechar.two} onclick="setSelectAll2();"/>充值成功</label></li>
+										<li><label><input type="checkbox" name="23"   class="subcheck2" value="1" {$check.mention.two} onclick="setSelectAll2();"/>提现成功</label></li>
+										<li><label><input type="checkbox" name="24"   class="subcheck2" value="1" {$check.borrow.two} onclick="setSelectAll2();"/>借款成功</label></li>
+										<li><label><input type="checkbox" name="25"   class="subcheck2" value="1" {$check.overtime.two} onclick="setSelectAll2();"/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="26"   class="subcheck2" value="1" {$check.loginchange.two} onclick="setSelectAll2();"/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="27"   class="subcheck2" value="1" {$check.phonechange.two} onclick="setSelectAll2();"/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="28"   class="subcheck2" value="1" {$check.emailchange.two} onclick="setSelectAll2();"/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="29"   class="subcheck2" value="1" {$check.tradechange.two} onclick="setSelectAll2();"/>交易密码变更</label></li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="tongzhiWay">
+								<dt style="background: url(__PUBLIC__/Home/images/emailWay.png) no-repeat center left;">短信通知：</dt>
+								<dd>
+									<ul class="ul3">
+										<li style="width: 100%;border-bottom: 1px solid #eee;"><label><input type="checkbox" id="SelectAll3" onclick="selectAll3();" />全选</label></li>
+										<li><label><input type="checkbox" name="31"  class="subcheck3" value="1" {$check.receive_money.three} onclick="setSelectAll3();"/>收到还款</label></li>
+										<li><label><input type="checkbox" name="32"  class="subcheck3" value="1" {$check.rechar.three} onclick="setSelectAll3();"/>充值成功</label></li>
+										<li><label><input type="checkbox" name="33"  class="subcheck3" value="1" {$check.mention.three} onclick="setSelectAll3();"/>提现成功</label></li>
+										<li><label><input type="checkbox" name="34"  class="subcheck3" value="1" {$check.borrow.three} onclick="setSelectAll3();"/>借款成功</label></li>
+										<li><label><input type="checkbox" name="35"  class="subcheck3" value="1" {$check.overtime.three} onclick="setSelectAll3();"/>还款逾期</label></li>
+										<li><label><input type="checkbox" name="36"  class="subcheck3" value="1" {$check.loginchange.three} onclick="setSelectAll3();"/>登录密码变更</label></li>
+										<li><label><input type="checkbox" name="37"  class="subcheck3" value="1" {$check.phonechange.three} onclick="setSelectAll3();"/>手机号码变更</label></li>
+										<li><label><input type="checkbox" name="38"  class="subcheck3" value="1" {$check.emailchange.three} onclick="setSelectAll3();"/>邮箱变更</label></li>
+										<li><label><input type="checkbox" name="39"  class="subcheck3" value="1" {$check.tradechange.three} onclick="setSelectAll3();"/>交易密码变更</label></li>
+									</ul>
+								</dd>
+							</dl>
+							
+							<input type="submit" name=""  value="保&nbsp;&nbsp;&nbsp;&nbsp;存" class="tongzhiWay_btn" style="border: 0;"/>
+							</form>
+						</div>
+								
 					<jsp:include page="usersendmail.jsp"></jsp:include>
             		</div>
 					
@@ -265,23 +295,30 @@
             </div>
         </div>
     </div>
-	<!--content end-->		
-		<script type="text/javascript">
-		   $(document).ready(function(){
-		         $("#table").hide();
-		         $("#button").click(function(){
-				   if($("#button").val()=="查看") {
-				     $("#button").val("关闭");
-				     $("#table").show();
-				   }else {
-				   	$("#button").val("查看");
-				   	$("#table").hide();
-				   }
-
-				});
-		   });
-
-		</script>
+	<!--content end-->
+	<script language=JavaScript>
+	var content;
+	function checkreceive(contents)
+	{	
+		content=contents;
+		alert(content);
+	}
+	</script>
+	<script language=JavaScript>
+	function msgdel(datas)
+	{
+	if (confirm("确定删除吗？"))
+		window.location = "Member/System/usermailindex_danger_del?id=" + datas ;
+	}
+	</script>
+	<script language=JavaScript>
+	function emaildel(params)
+	{
+	if (confirm("确定删除吗？"))
+		window.location = "Member/System/usermailindex_email_del?id=" + params ;
+	}
+	</script>		
+		
 
 
 		<script type="text/javascript"
@@ -533,90 +570,74 @@
 	}*/
 </script>
 
-<script type="text/javascript">
-	//全选事件
-	//选中全选按钮，下面的checkbox全部选中
-	var selAll = document.getElementById("selAll"); 
-	function selectAll() 
-	{ 
-		  var obj = document.getElementsByName("checkAll");
-		  var obj2 =  document.getElementsByName("checkAll2");
-		  
-		  if(document.getElementById("selAll").checked == false) 
-		  { 
-  				for(var i=0; i<obj.length; i++) 
-  				{ 
-    				obj[i].checked=false; 
-  				} 
-  			}else { 
-  				for(var i=0; i<obj.length; i++) 
-  				{	  
-    				obj[i].checked=true; 
-  				}	
- 			 }
-  			
-  			if(document.getElementById("selAll2").checked == false) 
-		  { 
-  				for(var i=0; i<obj2.length; i++) 
-  				{ 
-    				obj2[i].checked=false; 
-  				} 
-  			}else { 
-  				for(var i=0; i<obj2.length; i++) 
-  				{	  
-    				obj2[i].checked=true; 
-  				}	
- 			 }
-  
-	} 
-	//当选中所有的时候，全选按钮会勾上 
-	function setSelectAll() 
-	{ 
-		var obj=document.getElementsByName("checkAll"); 	
-		var count = obj.length; 
-		var selectCount = 0; 
-	
-		for(var i = 0; i < count; i++) 
-		{ 
-			if(obj[i].checked == true) 
-			{ 
-				selectCount++;	
-			} 
-		} 
-		if(count == selectCount) 
-		{	
-			document.all.selAll.checked = true; 
-		} 
-		else 
-		{ 
-			document.all.selAll.checked = false; 
-		} 
-		
-		
-		
-		var obj2=document.getElementsByName("checkAll2"); 	
-		var count2 = obj2.length; 
-		var selectCount2 = 0; 
-	
-		for(var i = 0; i < count2; i++) 
-		{ 
-			if(obj2[i].checked == true) 
-			{ 
-				selectCount2++;	
-			} 
-		} 
-		if(count2 == selectCount2) 
-		{	
-			document.all.selAll2.checked = true; 
-		} 
-		else 
-		{ 
-			document.all.selAll2.checked = false; 
-		} 
-		
-		
-	} 
-</script>
+<script type="text/javascript">         
+			//全选、取消全选的事件
+			//--1--
+			function selectAll(){
+				if ($(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul1 li #SelectAll").prop("checked")) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul1 li label input[type=checkbox]").prop("checked", true);
+				} else {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul1 li label input[type=checkbox]").prop("checked", false);
+				}
+			}
+			//子复选框的事件
+			function setSelectAll(){
+				//当没有选中某个子复选框时，SelectAll取消选中
+				if (!$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul1 li .subcheck").checked) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul1 li #SelectAll").prop("checked", false);
+				}
+				var chsub = $("input[type='checkbox'][class='subcheck']").length; //获取subcheck的个数
+				var checkedsub = $("input[type='checkbox'][class='subcheck']:checked").length; //获取选中的subcheck的个数
+				if (checkedsub == chsub) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul1 li #SelectAll").prop("checked", true);
+				}
+			}
+			
+			
+			//--2--
+			function selectAll2(){
+				if ($(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul2 li #SelectAll2").prop("checked")) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul2 li  label input[type=checkbox]").prop("checked", true);
+				} else {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul2 li  label input[type=checkbox]").prop("checked", false);
+				}
+			}
+			//子复选框的事件
+			function setSelectAll2(){
+				//当没有选中某个子复选框时，SelectAll取消选中
+				if (!$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul2 li .subcheck2").checked) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul2 li #SelectAll2").prop("checked", false);
+				}
+				var chsub2 = $("input[type='checkbox'][class='subcheck2']").length; //获取subcheck的个数
+				var checkedsub2 = $("input[type='checkbox'][class='subcheck2']:checked").length; //获取选中的subcheck的个数
+				if (checkedsub2 == chsub2) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul2 li #SelectAll2").prop("checked", true);
+				}
+			}
+			
+			
+			//--3--
+			function selectAll3(){
+				if ($(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul3 li #SelectAll3").prop("checked")) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul3 li label input[type=checkbox]").prop("checked", true);
+				} else {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul3 li label input[type=checkbox]").prop("checked", false);
+				}
+			}
+			//子复选框的事件
+			function setSelectAll3(){
+				//当没有选中某个子复选框时，SelectAll取消选中
+				if (!$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul3 li .subcheck3").checked) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul3 li #SelectAll3").prop("checked", false);
+				}
+				var chsub3 = $("input[type='checkbox'][class='subcheck3']").length; //获取subcheck的个数
+				var checkedsub3 = $("input[type='checkbox'][class='subcheck3']:checked").length; //获取选中的subcheck的个数
+				if (checkedsub3 == chsub3) {
+					$(".zh_cont .zh_cont_r .box .tongzhiWay dd .ul3 li #SelectAll3").prop("checked", true);
+				}
+			}
+			
+        </script>
 
 
 </block>

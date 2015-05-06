@@ -18,6 +18,7 @@ class SystemController extends MemberController {
 		$member_checked=M('z_member_info');
 		$memberdata=$member_checked->where('uid=%s',$uid)->select();
 		$username=$memberdata[0]['real_name'];
+		
 		if (($username)==null){
 			$this->error('您还未进行基本认证',U('Member/Userinfo/userselfset'));
 		}
@@ -134,21 +135,23 @@ class SystemController extends MemberController {
         $arr['uid']=$uid;
         $sysresult=$syssetdata->where($arr)->select();
         $sum=$sysresult[0];
-        if ($sum['sys_msg']==1){
-        	$check['sys_msg']="checked";
-        }else{
-        	$check['sys_msg']=null;
+
+        //去除多余信息
+        for($i=1;$i<=2;$i++){
+        	array_shift($sum);
         }
-        if ($sum['email_msg']==1){
-        	$check['email_msg']="checked";
-        }else{
-        	$check['email_msg']=null;
-        }
-        if ($sum['short_msg']==1){
-        	$check['short_msg']="checked";
-        }else{
-        	$check['short_msg']=null;
-        }
+        array_pop($sum);
+
+        //组装结果集
+        foreach ($sum  as  $key =>$value) {
+        	$num=$sum[$key];
+        	// dump($num);
+        	$k="checked";
+	    	$nums[$key][one]=(substr($num,0,1)=='1')?$k:null;
+	    	$nums[$key][two]=(substr($num,1,1)=='1')?$k:null;
+	    	$nums[$key][three]=(substr($num,2,1)=='1')?$k:null;	    	
+       	}
+        $check=$nums;
         $this->assign("check",$check);
         $this->assign('counts',$counts);
         $this->assign('syscount',$syscount);
@@ -165,21 +168,31 @@ class SystemController extends MemberController {
 	//系统消息通知设置
     public function systemsetup(){
     	$uid=is_login();
-		$data=$_POST;
-		if ($data['sys_msg']==null){
-			$data['sys_msg']=0;
+		$data=$_POST;		
+		for ($m='11';$m<=19;$m++){
+			if ($data[$m]==null){
+				$data[$m]='0';
+			}
+			if ($data[$m+10]==null){
+				$data[$m+10]='0';
+			}
+			if ($data[$m+20]==null){
+				$data[$m+20]='0';
+			}
+			$datas[]=$data[$m].$data[$m+10].$data[$m+20];
 		}
-		if($data['email_msg']==null){
-			$data['email_msg']=0;
-		}
-		if ($data['short_msg']==null){
-			$data['short_msg']=0;
-		}
+		$map['receive_money']=$datas['0'];
+		$map['rechar']=$datas['1'];
+		$map['mention']=$datas['2'];
+		$map['borrow']=$datas['3'];
+		$map['overtime']=$datas['4'];
+		$map['loginchange']=$datas['5'];
+		$map['phonechange']=$datas['6'];
+		$map['emailchange']=$datas['7'];
+		$map['tradechange']=$datas['8'];
 		$map['uid']=$uid;
 		$map['set_time']=time();
-		$map['sys_msg']=$data['sys_msg'];
-		$map['email_msg']=$data['email_msg'];
-		$map['short_msg']=$data['short_msg'];
+
 		$arr['uid']=$uid;
 		$setdata=M('z_systemset');
 		$setmsg=$setdata->where($arr)->select();
