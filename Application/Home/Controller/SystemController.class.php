@@ -17,6 +17,7 @@ class SystemController extends HomeController {
 	 *         2015-1-29找回密码
 	 */
 	public function findpassword() {
+		$this->pagetitle="工合财富直通贷款-找回密码";
 		$this->display ();
 	}
 	public function findpassword_send() {
@@ -50,6 +51,7 @@ class SystemController extends HomeController {
 	 *         2015-2-13通过手机号码找回密码
 	 */
 	public function findpassbyphone() {
+		$this->pagetitle="工合财富直通贷款-通过手机找回";
 		$this->display ();
 	}
 	
@@ -60,6 +62,7 @@ class SystemController extends HomeController {
 	 *         2015-2-13通过邮箱地址找回密码
 	 */
 	public function findpassbyemail() {
+		$this->pagetitle="工合财富直通贷款-通过邮箱找回";
 		$this->display ();
 	}
 	

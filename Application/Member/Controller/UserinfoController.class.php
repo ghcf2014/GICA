@@ -82,7 +82,7 @@ class UserinfoController extends MemberController {
 			$bankdata=$data ['bank_num'];
 			$bank_msg=str_replace(substr($bankdata,4,-4),'******',$bankdata);
             $action='绑定银行卡:'.$bank_msg;
-            systemmsg($action);
+            system_msg($action);
 			//查询是否创建交易密码
             $paypass=M('ucenter_member');
             $arr['id']=$uid;
@@ -332,6 +332,7 @@ class UserinfoController extends MemberController {
 
         $this->mvip=C('FEE_VIP');
         $this->assign('list', $list);
+        $this->pagetitle="工合财富直通贷款-会员续费";
 		$this->display ();
 	}
 	public function userrenewalvip_post($verify = '',$viptime='') {
