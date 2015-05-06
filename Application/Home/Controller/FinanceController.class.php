@@ -59,7 +59,6 @@ class FinanceController extends HomeController {
             $p = empty($p) ? 1 : $p;
             is_login() || $this->error('您还没有登录，请先登录！',U('Home/User/login'));
             $uid        =   is_login();//获取当前用户UID
-
             $listMember = M('member');
             $condition['gica_member.uid'] =$uid;
             $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();           
@@ -80,21 +79,11 @@ class FinanceController extends HomeController {
             }else {
                 $this->error('对不起，您不能投自己的标！');
             }
-            
-            
     }
     public function add($id= 0){
             $uid  = is_login();//获取当前用户UID
 
             $dealpwd = $_POST ['dealpwd'];
-            $userinfo = M ( 'ucenter_member' )->where ( 'id=' . $uid )->select ();
-			$paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
-
-			
-			if (md5($dealpwd) != $paypass) {
-				$this->error ( L ( '您输入的交易密码有误！' ) );
-			}
-            
             // $bid = $id;//投标id赋值
             $bid = $_POST ['id'];//投标id赋值
             $listMember = M('member');
@@ -181,12 +170,17 @@ class FinanceController extends HomeController {
                         $mcollect=floatval ($money[0]['money_collect'])+floatval ($capital);
                         $data1['account_money']=$mmoney;
                         $data1['money_collect']=$mcollect;
-                        // dump($money);
 
+
+
+                        // $result=$this->change_money($capital,$uid,$dealpwd);
+                        // 	$this->error(.$result.);
+                        exit();
+
+                        // dump($money);
                         // exit();
 
 
-                            if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
 
 
                                         $m2=M("z_borrow_info");
@@ -303,15 +297,7 @@ class FinanceController extends HomeController {
                                         }
                                         //投资详情表
 
-                                        //日志
-                                        $log = M ( 'z_member_moneylog' );
-										$logdata ['uid'] = $uid;
-										$logdata ['type'] = 204;
-                                        $logdata ['borrowinfo_id']=$uid;
-										$logdata ['affect_money'] = $capital;
-										$logdata ['info'] = '您投资了'.$list3[0]['id'].'号标'.$capital.'元';
-										$logdata ['add_time'] = time ();
-										$log = $log->add ( $logdata );
+                                       
 
 
                                         //发送站内信
@@ -321,11 +307,7 @@ class FinanceController extends HomeController {
 
                                 //成功提示
                                 $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
-                            } 
-                            else {
-                                //失败提示
-                                $this->error(L('投资失败，如发现金额已经投出，请及时联系我们处理。'));
-                            }
+                           
 
                         }
                         else{
