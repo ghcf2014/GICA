@@ -19,6 +19,7 @@ class SystemController extends MemberController {
 		$memberdata=$member_checked->where('uid=%s',$uid)->select();
 		$username=$memberdata[0]['real_name'];
 		if (($username)==null){
+			$this->pagetitle="工合财富直通贷款-提现详情页";
 			$this->error('您还未进行基本认证',U('Member/Userinfo/userselfset'));
 		}
 		$banks_checked =M('z_member_banks');

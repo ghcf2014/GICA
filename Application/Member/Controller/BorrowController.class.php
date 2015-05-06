@@ -374,31 +374,11 @@ class BorrowController extends MemberController {
 		$arrs['uid']=$uid;
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
-<<<<<<< HEAD
-		// $files=$borrowfile_status[0];
-		// if ($files['identity_report']==0){
-		// 	$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		// }
-		// if ($files['work_report']==0){
-		// 	$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		// }
-		// if ($files['living_report']==0){
-		// 	$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		// }
-		// if ($files['income_report']==0){
-		// 	$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		// }
-		// if ($files['credit_report']==0){
-		// 	$this->error('您有部分证明材料未上传',U('Home/Borrow/borrowfile_upload'));
-		// }
-		// $applydata =M('z_borrow_apply');
-		// $result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
-=======
+
 		$files=$borrowfile_status[0];
 		
 		$applydata =M('z_borrow_apply');
 		$result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
->>>>>>> origin/master
 		$this->assign('list',$result);
 		$this->pagetitle="工合财富直通贷款-申请记录";
 
