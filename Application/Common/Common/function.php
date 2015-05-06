@@ -1622,15 +1622,9 @@ function subtext($text, $length) {
         }
         return preg_match('/^[a-z\d_]{5,20}$/i', $username) ? true : false;
     }
-<<<<<<< HEAD
-    //发送站内信
-    function systemmsg($type,$action){
-    	$uid=is_login();
-=======
     //消息发送站
     function system_msg($action){
         $uid=is_login();
->>>>>>> origin/master
     	$sysdata= M('z_systemset');
 	    $arr['uid']=$uid;
 	    $sysresult=$sysdata->where($arr)->select();
@@ -1652,16 +1646,6 @@ function subtext($text, $length) {
 	    		$userresult=$userdata->where($arr)->select();
 	    		$email=$userresult[0]['email'];
 	    		$username=$userresult[0]['username'];
-<<<<<<< HEAD
-	    		$time=time();
-				$a = SendMail($email,'工合财富账户通知:','尊敬的会员： <b style="color:red;text-decoration:underline">'.$username.'</b>，您好，您的工合财富账户'.$action.'如有任何疑问，可拨打客服电话<b style="color:red;text-decoration:underline">400-123-4567</b>，或者登陆官网：www.ghcf.com.cn'.date( "l dS of F Y h：i：s A" ));
-	    }
-	    if (substr($result,2,1)=='1'){
-	    	echo '已经发短信啦！';
-	    }
-       
-    }
-=======
 				$realnames=M('z_member_info');
 				$real['uid']=$uid;
 				$realname=$realnames->where($real)->select();
@@ -1708,4 +1692,3 @@ function subtext($text, $length) {
 	    	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".$content;
 	    	$gets =  xml_to_array(Post($post_data, $target));
 	}
->>>>>>> origin/master

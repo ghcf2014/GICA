@@ -219,34 +219,12 @@ class BorrowController extends HomeController {
 
 		//公式带进
 		// $depict['repayment_interest']=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
-<<<<<<< HEAD
-		if ($_POST ["repayment_type"] == 5) {
-			$depict ['repayment_interest'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] ) - floatval ( $_POST ["borrow_money"] );
-			$depict ['repayment_money'] = (floatval ( $_POST ["borrow_money"] ) * (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), floatval ( $_POST ["borrow_duration"] ) ) - 1)) * floatval ( $_POST ["borrow_duration"] );
-			$depict ['total'] = $_POST ["borrow_duration"];
-		}
-		//先息后本公式带进
-		if ($_POST ["repayment_type"] == 6) {
-			$depict ['repayment_interest'] =floatval ( $_POST ["borrow_money"] )*(floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12);
-			$depict ['repayment_money'] = floatval ( $_POST ["borrow_money"] )+(floatval ( $_POST ["borrow_money"] )*(floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12));
-			$depict ['total'] = $_POST ["borrow_duration"];
-		}
-		//一次性还款公式带进
-		if ($_POST ["repayment_type"] == 7) {
-			
-			$depict ['repayment_interest'] =floatval ( $_POST ["borrow_money"] )*((floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)*floatval($_POST ["borrow_duration"]));
-			$depict ['repayment_money']=floatval ( $_POST ["borrow_money"] )*(1+((floatval ( $_POST ["borrow_interest_rate"] ) / 100 / 12))*floatval ( $_POST ["borrow_duration"] ));
-			$depict ['total'] =1;
-		}
 
-		// $files=($_FILES['img']);
-=======
 		$borrow_money =$depict ['borrow_money'];
 		$borrow_interest_rate=$depict ['borrow_interest_rate'];
 		$borrow_duration=$depict ['borrow_duration'];
 		$repayment_type=$depict ['repayment_type'];
 		$depict+=type_formula($borrow_money,$borrow_interest_rate,$borrow_duration,$repayment_type);
->>>>>>> origin/master
 		
 		// 保存当前数据对象
 		if ($this->borrow_upload ( $depict )) { // 保存成功

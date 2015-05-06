@@ -392,14 +392,9 @@ class UserController extends HomeController {
             if($res['status']){
 
             	//发送站内信
-<<<<<<< HEAD
-            	$type='loginchange';
-                $action='修改了登陆密码，请注意资金安全！';
-                systemmsg($type,$action);
-=======
+
                 $action="修改了登陆密码";
                 system_msg($action);
->>>>>>> origin/master
                 
                 $this->success('修改密码成功！');
             }else{

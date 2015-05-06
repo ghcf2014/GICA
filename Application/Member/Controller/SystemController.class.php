@@ -159,12 +159,9 @@ class SystemController extends MemberController {
         $this->assign('post',$post);
         $this->assign('sendname',$sendname);
         $this->assign('uid',$uid);
-<<<<<<< HEAD
-        $this->display();
-=======
+
         $this->pagetitle="工合财富直通贷款-个人中心-消息中心";
 	    $this->display();
->>>>>>> origin/master
     }
 
     
