@@ -104,4 +104,7 @@ class IndexController extends HomeController {
 			echo "消息不能发送。o_O???<p>";
 		}
 	}
+	 public function huodong(){
+    $this->display();
+}
 }

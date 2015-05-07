@@ -304,4 +304,5 @@ class IndexController extends MemberController {
     $data = I('post.all_school');
     $this->ajaxReturn($data);
 }
+
 }
