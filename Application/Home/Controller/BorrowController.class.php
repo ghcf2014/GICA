@@ -25,12 +25,14 @@ class BorrowController extends HomeController {
 		$status = M ( 'z_members_status' );
 		$result = $status->where ( "uid=%s", $uid )->select ();
 		if ($result == null) {
+			$this->pagetitle="工合财富直通贷款-信息未认证";
 			$this->error ( '对不起，您还没进行基本认证！', U ( 'Member/Userinfo/userselfset' ) );			
 		} 
 		//是否有申请
 		$data=M('z_borrow_apply');		
 		$applydata=$data->where('status=1 and apply_uid=%s',$uid)->select();
 		if (is_array($applydata)==true){
+			$this->pagetitle="工合财富直通贷款-借款发布";
 			$this->assign('session',$session);
 			$this->display();
 		}else {
@@ -107,15 +109,24 @@ class BorrowController extends HomeController {
 	}
 	public function borrowapply_save(){
 		$uid=is_login();
-		$arr=array(
-			'apply_ip'=>ip2long($_SERVER['REMOTE_ADDR']),
-			'apply_uid'=>$uid
-			);
-		$receive=$_POST;
-		array_filter($receive);
-		$data = array_merge($receive,$arr);
+
+		$receive['apply_ip']=ip2long($_SERVER['REMOTE_ADDR']);
+		$receive['apply_uid']=$uid;
+		$receive["username"]=$_POST['username'];                            
+		$receive["tel"]=$_POST['tel'];                                 
+		$receive["id_card"]=$_POST['id_card'];                             
+		$receive["borrow_money"]=$_POST['borrow_money'];                        
+		$receive["borrow_type"]=$_POST['borrow_type'];                         
+		$receive["borrow_interest_rate"]=$_POST['borrow_interest_rate'];                
+		$receive["day_time"]=$_POST['day_time'];                            
+		$receive["month_time"]=$_POST['month_time'];                          
+		$receive["year_time"]=$_POST['year_time'];                           
+		$receive["time_type"]=$_POST['time_type'];                           
+		$receive['address']=$_POST["province"].$_POST["city"].$_POST["town"];                               
+		$receive["borrow_info"]=$_POST["borrow_info"];                        
+
 		$model=M('z_borrow_apply');
-		$result=$model->add($data);
+		$result=$model->add($receive);
 		if ($result>0){
 			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Borrow/checkingapply'));
 		}else {

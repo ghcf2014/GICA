@@ -309,6 +309,7 @@ class BorrowController extends MemberController {
 		$borrow_info = M ( 'z_borrow_info' );
 		$borrow_info = $borrow_info->where ( 'borrow_uid=' . $uid . " and borrow_status=2" )->select ();
 		$this->assign ( 'list', $borrow_info );
+		dump($borrow_info);
 		$this->pagetitle="工合财富直通贷款-招标中的借款";
 		$this->display ();
 	}

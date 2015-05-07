@@ -49,7 +49,7 @@ class UserinfoController extends MemberController {
 		$num=count($m);
 		for($i=0;$i<$num;$i++){
 			$b=$m[$i]['bank_num'];
-			$m[$i]['bank_num']=str_replace(substr(($m[$i]['bank_num']),3,14),"************",($m[$i]['bank_num']));
+			$m[$i]['bank_num']=str_replace(substr(($m[$i]['bank_num']),4,12),"************",($m[$i]['bank_num']));
 		}
 		$this->assign ( 'list', $m );
 		$this->pagetitle="工合财富直通贷款-银行卡设置";
@@ -81,10 +81,7 @@ class UserinfoController extends MemberController {
 		// 获取表单数据
 		$data ['uid'] = $uid;
 		$data ['bank_num'] = $_POST ['bankCard'];
-		$data ['bank_province'] = $_POST ['bank_province'];
-		$data ['bank_city'] = $_POST ['bank_city'];
-		$data ['bank_area'] = $_POST ["bank_area"];
-		$data ['bank_address'] = $_POST ["subBankName"];
+		$data ['bank_address'] = $_POST ['bank_province'].$_POST ['bank_city'].$_POST ["bank_area"].$_POST ["subBankName"];
 		$data ['bank_name'] = $_POST ["bank_name"];
 		$data ['add_time'] = time();
 		$data ['add_ip'] = '';
@@ -95,8 +92,9 @@ class UserinfoController extends MemberController {
 		if ($count) { // 保存成功			
 			//发送站内信
 			$bankdata=$data ['bank_num'];
+			$bank_name=$data['bank_name'];
 			$bank_msg=str_replace(substr($bankdata,4,-4),'******',$bankdata);
-            $action='绑定银行卡:'.$bank_msg;
+            $action='绑定银行卡:'.$bank_msg.$bank_name;
             system_msg($action);
 			//查询是否创建交易密码
             $paypass=M('ucenter_member');
@@ -597,8 +595,8 @@ class UserinfoController extends MemberController {
 				$this->assign ( 'mlist', $k );
 
 			}
-		
-		$this->id_status=$st[0]['id_status'];
+		$id_status=$st[0]['id_status'];
+		$this->assign('id_status',$id_status);
 		$this->pagetitle="工合财富直通贷款-实名认证";
 		$this->display ();
 	}
@@ -712,10 +710,7 @@ class UserinfoController extends MemberController {
 		$data ['sex'] = $_POST ["sex"];
 		$data ['zy'] = $_POST ["zy"];
 		$data ['education'] = $_POST ["education"];
-		$data ['province_now'] = $_POST ["province_now"];
-		$data ['city_now'] = $_POST ['city_now'];
-		$data ['area_now'] = $_POST ['area_now'];
-		// dump($data);
+		$data ['address'] = $_POST ["province_now"].$_POST ['city_now'].$_POST ['area_now'].$_POST ['addr_detail'];
 		$condition ['uid'] = $uid;
 		
 		// 保存当前数据对象

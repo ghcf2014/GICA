@@ -10,8 +10,6 @@
             <div class="zh_cont_r"><volist name="mlist" id="vo">
                 <!--基本认证-->
                 <div class="tab">
-                    <form action="{:U('add?id='.$vb['id'])}" method="post">
-                        <h3>当前位置 > <span style="color:#D41010;">安全认证</span></h3>
                         <div class="aqset_tab">
                     <ul class="yhk_head">
                         <li ><a href="{:U('Home/User/profile')}" >账户安全</a></li>
@@ -162,15 +160,15 @@
                             <dl class="jbrz adress">
                                 <dt>现居地址</dt>
                                 <dd>
-                                 <select class="select" name="province_now" id="s1">
-                                            <option></option>
-                                        </select>
-                                        <select class="select" name="city_now" id="s2">
-                                            <option></option>
-                                        </select>
-                                        <select class="select" name="area_now" id="s3">
-                                            <option></option>
-                                        </select>
+                                    <select class="select" name="province_now" id="s1">
+                                        <option></option>
+                                    </select>
+                                    <select class="select" name="city_now" id="s2">
+                                        <option></option>
+                                    </select>
+                                    <select class="select" name="area_now" id="s3">
+                                        <option></option>
+                                    </select>
                                     <!-- <if condition="$vo.province_now eq null">
                                         <select class="select" name="province_now" id="s1">
                                             <option></option>
@@ -184,9 +182,18 @@
                                         
                                     <else/>
                                         <div class="txt" name="idcard" id="idNo">{$vo.province_now}--{$vo.city_now}--{$vo.area_now}</div>
-                                    </if>  -->                             
+                                    </if>  --> 
+
+                                   
+                                                           
                                 </dd>
+                                
                             </dl>
+                            <dl class="jbrz">
+                                <dt>详细地址</dt>
+                                <input type="text" name="addr_detail" class="select"/><span>（县区、村镇街道或门牌号）</span>
+                            </dl> 
+                            
                             <p class="wxts"><b style="font-weight: normal;color: red;">温馨提示：</b>我们将严格对用户的所有资料进行保密。</p>
                             <div class="jbrz_sub_btn">
 
