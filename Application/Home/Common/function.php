@@ -88,11 +88,10 @@ function type_formula($borrow_money=0,$borrow_interest_rate=0,$borrow_duration=0
             return $depict;
         }
 }
-function change_money($capital=0,$uid=0,$dealpwd=0){
+function change_money($capital=0,$uid=0){
     
-    return $this->pay_pw($dealpwd=0);
-    exit();
-    $uid=is_login(); 
+
+
     $condition1['uid'] =$uid;
     $money=M("z_member_money");
     $money=$money->field('account_money,money_collect')->where($condition1)->select();//余额查询
@@ -102,11 +101,10 @@ function change_money($capital=0,$uid=0,$dealpwd=0){
     $data1['account_money']=$mmoney;
     $data1['money_collect']=$mcollect;
     if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
-
-
+    return true;
     }else {
         //失败提示
-        $this->error(L('投资失败，如发现金额已经投出，请及时联系我们处理。'));
+      return  false;
     }
 }
 function money_log($money=0,$uid=0,$password=0){
@@ -120,14 +118,12 @@ function money_log($money=0,$uid=0,$password=0){
         $logdata ['add_time'] = time ();
         $log = $log->add ( $logdata );
 }
-function pay_pw($dealpwd=0){
-    $uid  = is_login();//获取当前用户UID
+function pay_pw($dealpwd=0,$uid=0){
     $userinfo = M ( 'ucenter_member' )->where ( 'id=' . $uid )->select ();
     $paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
-
-    
-    if (md5($dealpwd) != $paypass) {
-        return $this->error( L ( '您输入的交易密码有误！' ) );
+    if (md5($dealpwd) == $paypass) {
+        return true;
     }
-    return true;
+    
+    return false;
 }

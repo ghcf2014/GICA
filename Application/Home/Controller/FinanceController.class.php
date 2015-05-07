@@ -2,13 +2,15 @@
 
 namespace Home\Controller;
 use OT\DataDictionary;
-
+use Home\Model\BorrowModel;
 /**
  * 前台首页控制器
  * 主要获取首页聚合数据
  */
 class FinanceController extends HomeController {
-
+    protected function _init() {
+        $this->model = new BorrowModel();
+    }
 	//系统首页
     public function index($type=0,$order=borrow_status){
         $nickname  =   I('nickname');
@@ -82,9 +84,13 @@ class FinanceController extends HomeController {
     }
     public function add($id= 0){
             $uid  = is_login();//获取当前用户UID
-
+            //交易密码
             $dealpwd = $_POST ['dealpwd'];
-            // $bid = $id;//投标id赋值
+            $result_pw=pay_pw($dealpwd,$uid);
+            if (!$result_pw) {
+                $this->error ( L ( '您输入的交易密码有误！' ) );
+            }
+
             $bid = $_POST ['id'];//投标id赋值
             $listMember = M('member');
             $condition['gica_member.uid'] =$uid ;
@@ -99,12 +105,11 @@ class FinanceController extends HomeController {
             //从表单中获取来的数据 
             $capital=floatval ($_POST["capital"]);
 
-
             if ($list3[0]['repayment_type']== 5) {
-					 		$b= (floatval ($capital)* (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12) * pow ( (1 + (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) / (pow ( (1 + (floatval($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) - 1)) * intval ($list3[0]['borrow_duration']) - floatval ($capital);
-			// $b=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
+                $b= (floatval ($capital)* (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12) * pow ( (1 + (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) / (pow ( (1 + (floatval($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) - 1)) * intval ($list3[0]['borrow_duration']) - floatval ($capital);
+            // $b=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
 
-			}
+            }
             if ($list3[0]["repayment_type"] == 6) {
                             $b=floatval ($capital)*(floatval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
             // $depict ['repayment_money'] = intval ($capital)+(intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12));
@@ -116,7 +121,7 @@ class FinanceController extends HomeController {
                             $b=(floatval ($capital)*(floatval ( $list3[0]["borrow_interest_rate"]/ 100 / 12))*intval ($list3[0]['borrow_duration']));
                 // $depict ['repayment_money']=intval ($capital)*(1+((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12))*intval ($list3[0]["borrow_duration"] ));
             }
-			
+            
             
             //创建一个表对象，将传来的数据插入到数据库中
             $m=M("z_borrow_investor");
@@ -159,30 +164,12 @@ class FinanceController extends HomeController {
 
                         $m2=$m2->where($condition2)->save($data2);
                         $count=$m->add();
-                        // $this->success('投资成功！',U('Borrow/detail?id='.$bid));
 
-                        $uid=is_login(); 
-                        $condition1['uid'] =$uid;
-                        $money=M("z_member_money");
-                        $money=$money->field('account_money,money_collect')->where($condition1)->select();//余额查询
-                        $m1=M("z_member_money");
-                        $mmoney=floatval ($money[0]['account_money'])-floatval ($capital);//余额减掉金额
-                        $mcollect=floatval ($money[0]['money_collect'])+floatval ($capital);
-                        $data1['account_money']=$mmoney;
-                        $data1['money_collect']=$mcollect;
+                        
+                        $result=change_money($capital,$uid);
+                        if ($result) { //保存成功
 
-
-
-                        // $result=$this->change_money($capital,$uid,$dealpwd);
-                        // 	$this->error(.$result.);
-                        exit();
-
-                        // dump($money);
-                        // exit();
-
-
-
-
+                               
                                         $m2=M("z_borrow_info");
 
                                         $condition2['id'] =$bid;
@@ -297,16 +284,34 @@ class FinanceController extends HomeController {
                                         }
                                         //投资详情表
 
-                                       
+                                        //日志
+                                        $log = M ( 'z_member_moneylog' );
+                                        $logdata ['uid'] = $uid;
+                                        $logdata ['type'] = 204;
+                                        $logdata ['borrowinfo_id']=$uid;
+                                        $logdata ['affect_money'] = $capital;
+                                        $logdata ['info'] = '您投资了'.$list3[0]['id'].'号标'.$capital.'元';
+                                        $logdata ['add_time'] = time ();
+                                        $log = $log->add ( $logdata );
 
 
                                         //发送站内信
                                         $action=$logdata ['info'];
-                                        system_msg($action);
+                                        $opertype=1;
+                                        $result_ms=inner_msg($uid,$opertype,$action); 
+                                        if($result_ms){
+                                            $this->success("成功");
+                                        }
+
+                                        $this->success("失败");
 
                                 //成功提示
                                 $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
-                           
+                            } 
+                            else {
+                                //失败提示
+                                $this->error(L('投资失败，如发现金额已经投出，请及时联系我们处理。'));
+                            }
 
                         }
                         else{
@@ -319,6 +324,27 @@ class FinanceController extends HomeController {
         }
         else{
             $this->error('抱歉，您余额不足。请充值。');
+        }
+    }
+     public function change_money($capital=0,$uid=0,$dealpwd=0){
+        
+        // return $this->pay_pw($dealpwd=0);
+        // exit();
+        $uid=is_login(); 
+        $condition1['uid'] =$uid;
+        $money=M("z_member_money");
+        $money=$money->field('account_money,money_collect')->where($condition1)->select();//余额查询
+        $m1=M("z_member_money");
+        $mmoney=floatval ($money[0]['account_money'])-floatval ($capital);//余额减掉金额
+        $mcollect=floatval ($money[0]['money_collect'])+floatval ($capital);
+        $data1['account_money']=$mmoney;
+        $data1['money_collect']=$mcollect;
+        if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
+     $this->error(L('投资失败，如发现金额已经投出，请及时联系我们处理。'));
+
+        }else {
+            //失败提示
+            $this->error(L('投资失败，如发现金额已经投出，请及时联系我们处理。'));
         }
     }
 }

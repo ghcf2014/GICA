@@ -1623,57 +1623,98 @@ function subtext($text, $length) {
         return preg_match('/^[a-z\d_]{5,20}$/i', $username) ? true : false;
     }
     //消息发送站
-    function system_msg($action){
-        $uid=is_login();
-    	$sysdata= M('z_systemset');
-	    $arr['uid']=$uid;
-	    $sysresult=$sysdata->where($arr)->select();
-	    $result=$sysresult[0];
-	    if ($result['sys_msg']=='1'){
-	    	 $danger =array(
-                "username"=>$_SESSION[gica_home]['user_auth']['username'],
-                "uid" =>$_SESSION[gica_home]['user_auth']['uid'],
-                "action" =>$action,
-                "status" =>'0'
-	            );
-	     	$msgs =M('z_system_msg')->add($danger);
-	    }
-	    if ($result['email_msg']=='1'){
-	    		$arrs['id']=$uid;
-	    		$userdata=M('ucenter_member');
-	    		$userresult=$userdata->where($arrs)->select();
-	    		$email=$userresult[0]['email'];
-	    		$username=$userresult[0]['username'];
-				$realnames=M('z_member_info');
-				$real['uid']=$uid;
-				$realname=$realnames->where($real)->select();
-				$real_name=$realname[0]['real_name'];
-				$content="尊敬的会员：<u style='color:red;text-decoration:underline'>".$real_name."</u>，您好，您的工合财富登录账户：".$username."<u style='color:red;text-decoration:underline'>".$action."</u>";
-				$a = SendMail($email,'工合财富账户通知',':'.$content.'，请注意账户安全！如有任何疑问，可拨打客服电话:<u style="color:red;text-decoration:underline">400-123-4567</u>，或者登陆官网：www.ghcf.com.cn，以确认账户信息！');
-	    }
-	    if ($result["short_msg"]=='1'){
-			$arrs['id']=$uid;
-			$userdata=M('ucenter_member');
-			$userresult=$userdata->where($arrs)->select();
-			$email=$userresult[0]['email'];
-			$username=$userresult[0]['username'];
-			$realnames=M('z_member_info');
-			$real['uid']=$uid;
-			$realname=$realnames->where($real)->select();
-			$real_name=$realname[0]['real_name'];
-			$content="尊敬的会员：".$real_name."，您好，您的工合财富注册账户：".$username."，".$action."，请注意账户安全！如有任何疑问，可拨打客服电话:400-123-4567，或者登陆官网：www.ghcf.com.cn，以确认账户信息！";
-	    	$userdata=M('ucenter_member');
-    		$arrs['id']=$uid;
-    		$userresult=$userdata->where($arrs)->select();
-    		$mobile=$userresult[0]['mobile'];
-	    	$account=C ( 'SMS_ACCOUNT' );
-			$password=C ( 'SMS_PASSWORD' );
-	    	$target = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
-	    	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".$content;
-	    	$gets =  xml_to_array(Post($post_data, $target));
-	    }
+    function inner_msg($uid,$opertype,$action,$title){
+    	//站内信
+    	$title=opertype($opertype);
+
+		$data['uid']=$uid;
+		$data['tid']=$uid;
+		$data['title']=$title;
+		$data['msg']=$action;
+		$data['msgclass']=$opertype;
+		$data['way']='123';
+		$data['send_time']=time();
+
+
+	    // if ($result['sys_msg']=='1'){
+	     if ($msgs =M('z_inner_msg')->add($data)) {
+	     	return true;
+	     }
+	     return false;
+
+	    // }
+    	//邮件
+    	//短信
+    	// $a = SendMail($email,'工合财富账户通知',':'.$content.'，请注意账户安全！如有任何疑问，可拨打客服电话:<u style="color:red;text-decoration:underline">400-123-4567</u>，或者登陆官网：www.ghcf.com.cn，以确认账户信息！');
+    }
+    function opertype($opertype){
+    	static $type = array(
+            // Informational 1xx
+            1 => '账户通知',
+            2 => '系统通知',
+            // Success 2xx
+            3 => '活动通知',
+            4 => '好友通知',
+            5 => '审核通知',
+            6 => '工合团队通知'
+    	);
+    	if(isset($type[$opertype])) {
+    	return $type[$opertype];
+       }
+       return false;
 
     }
+   //  function system_msg($action){
+   //     $uid=is_login();
+   //  	$sysdata= M('z_systemset');
+	  //   $arr['uid']=$uid;
+	  //   $sysresult=$sysdata->where($arr)->select();
+	  //   $result=$sysresult[0];
+	  //   if ($result['sys_msg']=='1'){
+	  //   	 $danger =array(
+   //              "username"=>$_SESSION[gica_home]['user_auth']['username'],
+   //              "uid" =>$_SESSION[gica_home]['user_auth']['uid'],
+   //              "action" =>$action,
+   //              "status" =>'0'
+	  //           );
+	  //    	$msgs =M('z_system_msg')->add($danger);
+	  //   }
+	  //   if ($result['email_msg']=='1'){
+	  //   		$arrs['id']=$uid;
+	  //   		$userdata=M('ucenter_member');
+	  //   		$userresult=$userdata->where($arrs)->select();
+	  //   		$email=$userresult[0]['email'];
+	  //   		$username=$userresult[0]['username'];
+			// 	$realnames=M('z_member_info');
+			// 	$real['uid']=$uid;
+			// 	$realname=$realnames->where($real)->select();
+			// 	$real_name=$realname[0]['real_name'];
+			// 	$content="尊敬的会员：<u style='color:red;text-decoration:underline'>".$real_name."</u>，您好，您的工合财富登录账户：".$username."<u style='color:red;text-decoration:underline'>".$action."</u>";
+			// 	$a = SendMail($email,'工合财富账户通知',':'.$content.'，请注意账户安全！如有任何疑问，可拨打客服电话:<u style="color:red;text-decoration:underline">400-123-4567</u>，或者登陆官网：www.ghcf.com.cn，以确认账户信息！');
+	  //   }
+	  //   if ($result["short_msg"]=='1'){
+			// $arrs['id']=$uid;
+			// $userdata=M('ucenter_member');
+			// $userresult=$userdata->where($arrs)->select();
+			// $email=$userresult[0]['email'];
+			// $username=$userresult[0]['username'];
+			// $realnames=M('z_member_info');
+			// $real['uid']=$uid;
+			// $realname=$realnames->where($real)->select();
+			// $real_name=$realname[0]['real_name'];
+			// $content="尊敬的会员：".$real_name."，您好，您的工合财富注册账户：".$username."，".$action."，请注意账户安全！如有任何疑问，可拨打客服电话:400-123-4567，或者登陆官网：www.ghcf.com.cn，以确认账户信息！";
+	  //   	$userdata=M('ucenter_member');
+   //  		$arrs['id']=$uid;
+   //  		$userresult=$userdata->where($arrs)->select();
+   //  		$mobile=$userresult[0]['mobile'];
+	  //   	$account=C ( 'SMS_ACCOUNT' );
+			// $password=C ( 'SMS_PASSWORD' );
+	  //   	$target = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
+	  //   	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".$content;
+	  //   	$gets =  xml_to_array(Post($post_data, $target));
+	  //   }
+
+   //  }
 	function register($uid){
 			$arrs['id']=$uid;
 			$userdata=M('ucenter_member');
