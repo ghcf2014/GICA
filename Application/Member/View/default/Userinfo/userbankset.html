@@ -159,8 +159,7 @@
 							<dl class="yhk">
 								<dt>银行卡号：</dt>
 								<dd>
-									<input type="text" class="yhk_txt" name="bankCard"
-										id="bankCard" value=""><span color="red"
+<input type="text" value="" class="yhk_txt"  size="25" onkeyup="formatBankNo(this)" onkeydown="formatBankNo(this)" name="bankCard" id="bankCard"><span color="red"
 										id="sBankCard">输入您的卡号 </span>
 								</dd>
 							</dl>
@@ -334,8 +333,7 @@
 							<dl class="yhk">
 								<dt>银行卡号：</dt>
 								<dd>
-									<input type="text" class="yhk_txt" name="bankCard"
-										id="bankCard" value=""><span color="red"
+<input type="text" value="" class="yhk_txt"  size="25" onkeyup="formatBankNo(this)" onkeydown="formatBankNo(this)" name="bankCard" id="bankCard"><span color="red"
 										id="sBankCard">输入您的卡号 </span>
 								</dd>
 							</dl>
@@ -381,10 +379,41 @@
 		</div>
 	</div>
 	<!--content end-->
+<script language="javascript" type="text/javascript">
+function formatBankNo (BankNo){
+    if (BankNo.value == "") return;
+    var bankCard = new String (BankNo.value);
+    bankCard = bankCard.substring(0,27); /*帐号的总数, 包括空格在内 */
+    if (bankCard.match (".[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{7}") == null){
+        /* 对照格式 */
+        if (bankCard.match (".[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{7}|" + ".[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{7}|" +
+        ".[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{7}|" + ".[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{7}") == null){
+            var bankCardNumeric = bankCardChar = "", i;
+            for (i=0;i<bankCard.length;i++){
+                bankCardChar = bankCard.substr (i,1);
+                if (!isNaN (bankCardChar) && (bankCardChar != " ")) bankCardNumeric = bankCardNumeric + bankCardChar;
+            }
+            bankCard = "";
+            for (i=0;i<bankCardNumeric.length;i++){    /* 可将以下空格改为-,效果也不错 */
+                if (i == 4) bankCard = bankCard + "  "; /* 帐号第四位数后加空格 */
+                if (i == 8) bankCard = bankCard + "  "; /* 帐号第八位数后加空格 */
+                if (i == 12) bankCard = bankCard + "  ";/* 帐号第十二位后数后加空格 */
+                if (i == 16) bankCard = bankCard + "  ";/* 帐号第十六位后数后加空格 */
+                bankCard = bankCard + bankCardNumeric.substr (i,1)
+            }
+        }
+    }
+    else
+    {
+        bankCard = " " + bankCard.substring (1,5) + " " + bankCard.substring (6,10) + " " + bankCard.substring (14,18) + "-" + bankCard.substring(18,25);
+    }
+    if (bankCard != BankNo.value) BankNo.value = bankCard;
+}
+</script>
 <script>
 jQuery(document).ready(function($) {
 	$('.theme-login').click(function(){
-		$('.theme-popover-mask').fadeIn(100);
+		$('.theme-popover-mask').fadeIn(100); 
 		$('.theme-popover').slideDown(200);
 	})
 	$('.theme-poptit .close').click(function(){
