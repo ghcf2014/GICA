@@ -290,23 +290,19 @@ class FinanceController extends HomeController {
                                         $logdata ['type'] = 204;
                                         $logdata ['borrowinfo_id']=$uid;
                                         $logdata ['affect_money'] = $capital;
-                                        $logdata ['info'] = '您投资了'.$list3[0]['id'].'号标'.$capital.'元';
+                                        $logdata ['info'] = '您于'.date('Y-m-d H:i:s',time()).'投资'.$list3[0]['id'].'号标'.$capital.'元(资金冻结中)。';
                                         $logdata ['add_time'] = time ();
                                         $log = $log->add ( $logdata );
-
 
                                         //发送站内信
                                         $action=$logdata ['info'];
                                         $opertype=1;
                                         $result_ms=inner_msg($uid,$opertype,$action); 
                                         if($result_ms){
-                                            $this->success("成功");
+                                            //成功提示
+                                            $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
                                         }
-
-                                        $this->success("失败");
-
-                                //成功提示
-                                $this->success(L('投资成功。'),U('Borrow/detail?id='.$bid));
+                                        $this->success("参数错误");
                             } 
                             else {
                                 //失败提示

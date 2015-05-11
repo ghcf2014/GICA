@@ -1626,8 +1626,14 @@ function subtext($text, $length) {
     function inner_msg($uid,$opertype,$action,$title){
     	//站内信
     	$title=opertype($opertype);
-
-		$data['uid']=$uid;
+    	static $aduid = array(
+            1 => '1',
+            2 => '1',
+            3 => '1',
+            5 => '1',
+            6 => '1'
+    	);
+		$data['uid']=$aduid[$opertype];
 		$data['tid']=$uid;
 		$data['title']=$title;
 		$data['msg']=$action;

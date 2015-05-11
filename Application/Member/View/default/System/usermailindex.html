@@ -12,17 +12,14 @@
             			<div class="tabtil">
 							<ul>								
 								<li onclick=showSysMails();; class="on" >
-									系统消息<if condition="$syscount eq 0">[0]<else/><span style="color:red;">[{$syscount}]</span></if>
+									系统消息[{$syscount|default="暂无"}]</if>
 								</li>
-								<li onclick=showReceiveMails();;>
-									收件箱<if condition="$counts eq 0">[0]<else/>[<span style="color:red;">{$counts}</span>]</if>
-								</li>
-								<li onclick=showSendMails();;>
+								<!-- <li onclick=showSendMails();;>
 									发件箱
-								</li>
-								<li>
+								</li> -->
+								<!-- <li>
 									发信息
-								</li>
+								</li> -->
 								<li style="border-right: none;">
 									通知方式
 								</li>
@@ -39,7 +36,7 @@
 							        		<input type="hidden" id="curPage" value="1">
 							          		<table width="98%" border="0" cellspacing="0" cellpadding="0">
 							  					<tbody>
-							  					      <tr>
+							  					      <!-- <tr>
 							  					      	<td colspan="10">
 								  					        <div class="srh" id="srh">
 													        	<a href="javascript:void(0);"  onclick="delSys();">删除</a> 
@@ -48,30 +45,24 @@
 													        	<a href="javascript:void(0);"  onclick="showUnReadSys();">未读邮件</a>
 													        </div>
 													    </td>
-													  </tr>
+													  </tr> -->
 													  <tr>
-													    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
-													    <th>标记</th>
+													    <!-- <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th> -->
 													    <th>发件人</th>
 													    <th>标题</th>
-													    <th>发送时间</th>
+													    <th>发件时间</th>
 													    <th>操作</th>
 													  </tr>
 							  						<!--系统消息-->
-							  						<if condition="$danger neq null">
-							  							<foreach name="danger" item="danger" > 
+							  							<volist name="imsg" id="ms" empty="暂时没有数据">
 														<tr>
-															<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th>
-															<th><if condition="$danger['status'] eq 0">未查看<else/>已查看</if></th>
-															<th>系统消息</th>
-															<th>尊敬的{$_SESSION[gica_home]['user_auth']['username']},您于<b style="color:red;"><u>{$danger['add_time']}</u></b>{$danger['action']}</th>
-															<th>{$danger['add_time']}</th>
-															<th><a href="javascript:msgdel({$danger['id']})" title="点击删除消息" >删除</a></th>
+															<!-- <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th> -->
+															<th><if condition="$ms['uid'] eq 1">工合财富<else/>{$ms['uid']|get_uname}</if></th>
+															<th><if condition="$ms['status'] eq 0"><span class="on">[新]</span></if>{$ms['title']}：{$ms['msg']}</th>
+															<th>{$ms['send_time']|date='Y-m-d H:i:s',###}</th>
+															<th><a class="confirm" href="{:U('Member/System/usermailindex_danger_del?id='.$ms['id'])}" title="点击删除消息" >删除</a></th>
 														</tr>
-							  							</foreach>
-							  						<else/>
-							  							<tr><td colspan="10" align="center">暂无信息</td></tr>
-							  						</if>
+														</volist>
 												</tbody>
 							          		</table>
 											<div class="page">
@@ -81,57 +72,6 @@
 							        </span>
 							        <span id="show_mail"></span> 
 							    </div>
-						</span>
-					</div>
-								
-					<div class="box" style="display: none;">
-						<span id="receiveInfo">
-							<div class="boxmain2">
-							    <span id="receive_mail_list"><div class="biaoge" id="re_biaoge">
-							      <table width="98%" border="0" cellspacing="0" cellpadding="0">
-									  <tbody>
-									  	<tr><td colspan="11" >
-											  	<div class="srh" id="re_srh">
-												    <a href="javascript:void(0);"  onclick="delReceives();">删除</a> 
-												    <a href="javascript:void(0);"  onclick="readedReceives();">标记为已读</a> 
-												    <a href="javascript:void(0);"  onclick="unReadReceives();">标记为未读</a>
-												    <a href="javascript:void(0);"  onclick="showUnReadReceives();">未读邮件</a>
-												</div>
-											</td>
-							    		</tr>
-									  	<tr> 
-										    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
-										    <th>标记</th>
-										    <th>发件人</th>
-										    <th>标题</th>
-										    <th>发送时间</th>
-										    <th>操 作</th>
-									  	</tr>
-									  <!--收件箱信息-->
-									  <foreach name="receive" item="val" > 
-										<tr>
-										  	<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Receive(this)"></th>
-										  	<th><if condition="$val['status'] eq 0">未查看<else/>已查看</if></th>
-										  	<th>{$val['postname']}</th>
-										  	<th>{$val['title']}</th>
-										  	<th>{$val['send_time']}</th>
-										  	<th><input name="button" type="button" id="button" onclick="javascript:checkreceive('{$val.msg}')" value="查看" />|<a href="javascript:emaildel({$val['id']})">删除</a>
-									  	</tr>
-									  </foreach>
-									 
-									  
-									  <tr><td colspan="11" align="center">暂无信息</td></tr>
-									</tbody></table>
-							  
-							  <div class="page">
-									<p align="center">分页</p>
-								</div> 
-							</div>
-
-
-							</span>
-							<span id="show_receive_mail"></span> 
-							</div>
 						</span>
 					</div>
 					<div class="box" style="display: none;">
@@ -181,7 +121,7 @@
 							
 						</span>
 					</div>
-					<div class="box" style="display: none;">
+<!-- 					<div class="box" style="display: none;">
 								        <div class="boxmain2">
 								        <div class="biaoge2">
 								    <form method="post" action="{:U('Member/System/usermailindex_add')}">
@@ -226,8 +166,7 @@
 
 								    </div>
 								    </div>
-								</div>
-								
+								</div> -->
 								<div class="box"  style="display: none;">
 							<form action="{:U('systemsetup')}" method="post">
 							<dl class="tongzhiWay">
@@ -265,44 +204,9 @@
 		alert(content);
 	}
 	</script>
-	<script language=JavaScript>
-	function msgdel(datas)
-	{
-	if (confirm("确定删除吗？"))
-		window.location = "Member/System/usermailindex_danger_del?id=" + datas ;
-	}
-	</script>
-	<script language=JavaScript>
-	function emaildel(params)
-	{
-	if (confirm("确定删除吗？"))
-		window.location = "Member/System/usermailindex_email_del?id=" + params ;
-	}
-	</script>		
-		
 
 
-		<script type="text/javascript"
-			src="${path}/script/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="script/jquery.shove-1.0.js"></script>
-		<script type="text/javascript" src="script/nav-zh.js"></script>
-		<script type="text/javascript" src="css/popom.js"></script>
-		<script>
-	$(function() {
-		//样式选中
-		$("#zh_hover").attr('class', 'nav_first');
-		$("#zh_hover div").removeClass('none');
-		$('#li_4').addClass('on');
-		$('.tabmain').find('li').click(function() {
-			$('.tabmain').find('li').removeClass('on');
-			$(this).addClass('on');
-			$('.lcmain_l').children('div').hide();
-			$('.lcmain_l').children('div').eq($(this).index()).show();
-		})
-	})
-</script>
-
-		<script>
+<script>
 	$(function() {
 
 		$('.tabtil').find('li').click(function() {
@@ -412,123 +316,6 @@
 			$("#btnSave").attr("disabled", false);
 			return;
 		}
-		//有错误提示的时候不提交
-		if ($("#s_receiver").text() != "" || $("#s_title").text() != ""
-				|| $("#s_content").text() != "" || $("#s_code").text() != "") {
-			return;
-		}
-		$.shovePost("addMail.htm", param, function(data) {
-			if (data == 5) {
-				$("#s_code").html("验证码错误");
-				$("#btnSave").attr("disabled", false);
-				return;
-			} else if (data == 1) {
-				alert("邮件发送失败，请重新发送");
-				$("#btnSave").attr("disabled", false);
-				return;
-			} else if (data == 8) {
-				alert("你是黑名单用户不能发生站内信");
-				$("#btnSave").attr("disabled", false);
-				return;
-			} else {
-				alert("邮件发送成功");
-				$("#title_s").attr("value", "");
-				$("#code").attr("value", "");
-				$("#receiver").attr("value", "");
-				$("#content").attr("value", "");
-				$("#btnSave").attr("disabled", false);
-			}
-		});
-	}
-
-	function showReceiveMails() {
-		param["pageBean.pageNum"] = 1;
-		$.shovePost("queryReceiveMailsInit.htm", null, function(data) {
-			$("#receiveInfo").html(data);
-		});
-	}
-
-	function showSendMails() {
-		param["pageBean.pageNum"] = 1;
-		$.shovePost("querySendMailsInit.htm", null, function(data) {
-			$("#sendInfo").html(data);
-		});
-	}
-	//显示系统消息
-	function showSysMails() {
-		param["pageBean.pageNum"] = 1;
-		$.shovePost("querySysMailsInit.htm", null, function(data) {
-			$("#sysInfo").html(data);
-		});
-	}
-
-	//收件箱全选
-	function checkAll_Receive(e) {
-		if (e.checked) {
-			$(".re").attr("checked", "checked");
-		} else {
-			$(".re").removeAttr("checked");
-		}
-	}
-
-	function checkAll_Send(e) {
-		if (e.checked) {
-			$(".se").attr("checked", "checked");
-		} else {
-			$(".se").removeAttr("checked");
-		}
-	}
-
-	function checkAll_Sys(e) {
-		if (e.checked) {
-			$(".sys").attr("checked", "checked");
-		} else {
-			$(".sys").removeAttr("checked");
-		}
-	}
-
-	//弹出窗口关闭
-	function close() {
-		ClosePop();
-	}
-
-	//设置邮件信息为已读
-	/*function readedSends(){
-		if(!window.confirm("确定要将所选邮件标记为已读吗?")){
-			return;
-		}
-		var stIdArray = [];
-		$("input[name='sendMail']:checked").each(function(){
-			stIdArray.push($(this).val());
-		});
-		if(stIdArray.length == 0){
-			alert("请选择要标记的内容");
-			return ;
-		}
-		var ids = stIdArray.join(",");
-		$.shovePost("updateSend2Readed.htm",{ids:ids},function(data){
-	       $("#sendInfo").html(data);
-	    });
-	}*/
-
-	//设置邮件信息为未读
-	/*function unReadSends(){
-		if(!window.confirm("确定要将所选邮件标记为未读吗?")){
-			return;
-		}
-		var stIdArray = [];
-		$("input[name='sendMail']:checked").each(function(){
-			stIdArray.push($(this).val());
-		});
-		if(stIdArray.length == 0){
-			alert("请选择要标记的内容");
-			return ;
-		}
-		var ids = stIdArray.join(",");
-		$.shovePost("updateSend2UNReaded.htm",{ids:ids},function(data){
-	       $("#sendInfo").html(data);
-	    });
-	}*/
 </script>
 
 <script type="text/javascript">         

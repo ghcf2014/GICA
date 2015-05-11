@@ -111,10 +111,10 @@ class SystemController extends MemberController {
         $sendname=$_SESSION["gica_home"]["user_auth"]['username'];
         $uid=is_login();
         $uid=$_SESSION[gica_home]['user_auth']['uid'];
-        $statu['status']=1;
+       
         $system['uid']=$uid;
         $inner['tid']=$uid;
-        M('z_inner_msg')->where($inner)->save($statu);
+        
 		M('z_system_msg')->where($system)->save($statu);
         $counts =M('z_inner_msg')->where("status=0 and tid=%s",$uid)->count();
         $syscount =M('z_system_msg')->where("status=0 and uid=%s",$uid)->count();
@@ -127,8 +127,13 @@ class SystemController extends MemberController {
         $receive=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.uid = profile.uid and stats.tid=%s',$uid)->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time,stats.msg as msg, profile.nickname as postname')->order('stats.tid desc' )->select();
         //发件箱
         $post=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.uid=%s',$uid)->field('stats.id as id, stats.title as title,stats.send_time as send_time, profile.nickname as recvname')->order('stats.tid desc' )->select();
-        
 
+
+
+        $imsg =M('z_inner_msg')->where("tid=%s",$uid)->order(array("status=0 desc","send_time desc"))->select();
+   		$this->assign('imsg',$imsg);
+   		$statu['status']=1;
+        M('z_inner_msg')->where($inner)->save($statu);
         //系统通知状态查询
         $syssetdata= M('z_systemset');
         $arr['uid']=$uid;
@@ -157,6 +162,7 @@ class SystemController extends MemberController {
         $this->assign('sendname',$sendname);
         $this->assign('uid',$uid);
 
+        
         $this->pagetitle="工合财富直通贷款-个人中心-消息中心";
 	    $this->display();
     }
@@ -241,9 +247,9 @@ class SystemController extends MemberController {
 		*********删除系统消息
     */
     public function usermailindex_danger_del($id=0){
-       $danger=M('z_system_msg');
+       $danger=M('z_inner_msg');
        $result=$danger->where('id=%s',$id)->delete();
-       if ($result!==null){
+       if ($result>0){
        		$this->redirect('Member/System/usermailindex');
        } else {
        		$this->error('删除失败！',U('Member/System/usermailindex'));
@@ -435,13 +441,19 @@ class SystemController extends MemberController {
 					$logdata ['uid'] = $uid;
 					$logdata ['type'] = 102;
 					$logdata ['affect_money'] =floatval($Amount);
-					$logdata ['info'] = '在线充值';
+					$logdata ['info'] = '您于'.date('Y-m-d H:i:s',time()).'成功充值'.$Amount.'元，为避免您的资金闲置，请尽快投资获取收益。';
 					$logdata ['add_time'] = time ();
 					$log = $log->add ( $logdata );
 					
 					//发送站内信
-			        $action=$logdata ['info'].floatval($Amount).'元,请注意资金安全！';
-			        system_msg($action);
+                    $action=$logdata ['info'];
+                    $opertype=1;
+                    $result_ms=inner_msg($uid,$opertype,$action); 
+                    // if($result_ms){
+                    //     //成功提示
+                    //     $this->success(L('投资成功。'));
+                    // }
+                    // $this->success("参数错误");
 				} 
 		}
 

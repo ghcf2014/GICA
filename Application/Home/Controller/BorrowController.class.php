@@ -227,7 +227,6 @@ class BorrowController extends HomeController {
 			$action="发布了一次实地考察标";
 		}
 		
-		system_msg($action);
 
 		//公式带进
 		// $depict['repayment_interest']=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
@@ -366,7 +365,7 @@ class BorrowController extends HomeController {
 		$arry=array_filter($file[0]);
 		$this->assign('files',$arry);
 		$this->assign ( 'updata', $updata );
-		$this->assign ( 'list3', $list );
+		$this->assign ( 'list3',$list);
 		$this->display ();
 	}
 	// 上传
