@@ -26,7 +26,7 @@
 								<div class="list-person clearfix">
 									<p class="list-one fl"><span class="icon icon-6"></span><span class="list-text">登录密码</span></p>
 									<div class="list-two fl">
-										<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换密码。</p>
+										<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换登录密码。</p>
 										<button type="button" class="btn btn-primary   btn-type-to  " key="update-pwd">修改登录密码</button>
 										<div class="p-hide update-pwd-c" style="display: none;">	
 											<p><span class="person-span-1">原密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码"errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
@@ -47,23 +47,42 @@
 							<!--支付密码-->
 							
 							<if condition="$pin_pass neq ''">
-							<form class="login-form" action="{:U('Member/Userinfo/paypassword_save')}" method="post">
+							
 							<div class="list-person clearfix">
 								<p class="list-one fl"><span class="icon icon-6"></span><span class="list-text">支付密码</span></p>
 								<div class="list-two fl">
-									<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换密码。</p>
+									<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换交易密码。</p>
 									<button type="button" class="btn btn-primary   btn-type-to1  " key="update-pwd">修改支付密码</button>
-									<div class="p-hide1 update-pwd-c" style="display: none;">	
+									<button type="button" class="btn btn-primary   btn-type-to2  " key="update-pwd">忘记支付密码</button>
+									<div class="p-hide1 update-pwd-c" style="display: none;">
+										<form class="login-form" action="{:U('Member/Userinfo/paypassword_save')}" method="post">	
 										<p><span class="person-span-1">原密码：</span><span><input type="password" name="oldpwd"></span></p>
-										<p><span class="person-span-1">新密码：</span><span><input type="password" name="pwd"></span></p>
-										<p><span class="person-span-1">确认新密码：</span><span><input type="password" name="dbpwd"></span></p>
+										<p><span class="person-span-1">新密码：</span><span><input type="password" name="newpwd"></span></p>
+										<p><span class="person-span-1">确认新密码：</span><span><input type="password" name="new_pwd"></span></p>
 										<p class="show-message"></p>
 										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改支付密码</button>
 										 <button type="button" class="btn   btn-hid1">隐藏</button>
+										 </form>
+									</div>
+									<div class="p-hide2 update-pwd-c" style="display: none;">	
+										<form class="login-form" action="{:U('Member/Userinfo/paypassword_save')}" method="post">
+										<div class="phone">
+											<p><span class="person-span-1">手机验证码：</span></p>
+											<dd><input id="mobile" type="text"value="{$mobile}" readonly  style="float: left;margin-bottom: 0px;margin:5px 5px 0 0;"/><input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="float: left;margin-bottom: 0px;margin:5px 5px 0 0;  width:130px;display:none;"id="checkcode"/>
+											<input id="zphone" type="button" value="获取验证码 " onClick="get_mobile_code();" class="phone_btn" style="width:120px; float:left;border: 0;" /> </dd>
+										</div>
+										<p><span class="person-span-1">登录密码：</span><span><input type="password" name="login_pwd"></span></p>
+										<p><span class="person-span-1">新密码：</span><span><input type="password" name="newpwd"></span></p>
+										<p><span class="person-span-1">确认新密码：</span><span><input type="password" name="new_pwd"></span></p>
+										<p class="show-message"></p>
+										<p class="show-message"></p>
+										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改支付密码</button>
+										 <button type="button" class="btn   btn-hid2">隐藏</button>
+										</form>
 									</div>
 								</div>
 							</div>
-							</form>
+							
 							</if>
 						</div>
 				</div>
@@ -88,12 +107,114 @@
 	  });
 	  $(".btn-type-to1").click(function(){
 	  $(".p-hide1").show();
-	  $(".btn-type-to1").hide();
+	  $('.p-hide2').hide();
+	  });
+
+	  $(".btn-type-to2").click(function(){
+	  $(".p-hide2").show();
+	  $(".p-hide1").hide();
+	  $(".phone_btn").click(function(){
+	  	$("#mobile").hide();
+	  	$(".inputBg").show();
+	  });
 	  });
 	  $(".btn-hid1").click(function(){
 	  $(".p-hide1").hide();
-	  $(".btn-type-to1").show();
 	  });
+	  $(".btn-hid2").click(function(){
+	  $(".p-hide2").hide();
+
+	  });
+
 	});
 </script>
+<?php
+//短信验证码存值
+function random($length = 6 , $numeric = 0) {
+	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
+	if($numeric) {
+		$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
+	} else {
+		$hash = '';
+		$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
+		$max = strlen($chars) - 1;
+		for($i = 0; $i < $length; $i++) {
+			$hash .= $chars[mt_rand(0, $max)];
+		}
+	}
+	return $hash;
+}
+$_SESSION['send_code'] = random(6,1);
+?>
+<script language="javascript">
+	function get_mobile_code(){
+        $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+            alert(jQuery.trim(unescape(msg)));
+			if(msg=='已发送'){
+				RemainTime();
+			}
+        });
+	};
+	var iTime = 59;
+	var Account;
+	function RemainTime(){
+		document.getElementById('zphone').disabled = true;
+		var iSecond,sSecond="",sTime="";
+		if (iTime >= 0){
+			iSecond = parseInt(iTime%60);
+			iMinute = parseInt(iTime/60)
+			if (iSecond >= 0){
+				if(iMinute>0){
+					sSecond = iMinute + "分" + iSecond + "秒";
+				}else{
+					sSecond = iSecond + "秒";
+				}
+			}
+			sTime=sSecond;
+			if(iTime==0){
+				clearTimeout(Account);
+				sTime='获取手机验证码';
+				iTime = 59;
+				document.getElementById('zphone').disabled = false;
+			}else{
+				Account = setTimeout("RemainTime()",1000);
+				iTime=iTime-1;
+			}
+		}else{
+			sTime='没有倒计时';
+		}
+		document.getElementById('zphone').value = sTime;
+	}	
+</script>
+
+<script type="text/javascript"
+	src="__PUBLIC__/Admin/js/common.js"></script> <script>
+		$("#phone_btn").click(function() {
+			var mobile = $("#mobile").val();
+			if (mobile == "") {
+				alert("请填写变更的手机号码！");
+				return false;
+			}
+		});
+		$("#updatePhone").click(function() {
+			var reg = /^(?:13\d|15\d|18\d)\d{5}(\d{3}|\*{3})$/;
+			var mobile = $("#mobile").val();
+			var checkcode = $("#checkcode").val();
+			if (mobile == "") {
+				alert("请填写变更的手机号码！");
+				return false;
+			}
+			if (!reg.test(mobile)) {
+				alert("请填写正确的手机号码！！");
+				return false;
+			}
+			if (checkcode == "") {
+				alert("请填写手机验证码！");
+				return false;
+			}
+			$("#form").submit();
+		});
+	</script>
+
+
  </block>

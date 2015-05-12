@@ -376,6 +376,8 @@ class UserController extends HomeController {
             $arr['id']=$uid;
             $paypassword=$paypass->where($arr)->select();
             $pin_pass=$paypassword[0]['pin_pass'];
+            $mobile=$paypassword[0]['mobile'];
+            $this->mobile=$mobile;
             $this->pin_pass=$pin_pass;
 		if ( !is_login() ) {
 			$this->redirect('User/login');
@@ -399,9 +401,15 @@ class UserController extends HomeController {
             if($res['status']){
 
             	//发送站内信
+<<<<<<< HEAD
 	            $action='您于'.date('Y-m-d H:i:s',time()).'修改了密码。';
 	            $opertype=5;//系统通知
 	            $result_ms=inner_msg($uid,$opertype,$action);  
+=======
+
+                // $action="修改了登陆密码";
+                // system_msg($action);
+>>>>>>> origin/master
                 
                 $this->success('修改密码成功！');
             }else{

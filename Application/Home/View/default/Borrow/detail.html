@@ -6,8 +6,53 @@
     	<div class="bdxq_cont">
         	<h2>标的详情</h2>
             <dl>
-          
-           </dl>
+                <dt>
+                    <div class="header"><if
+							condition="$vb.logo_url eq ''"> <img
+							src="__PUBLIC__/Home/images/default-img.jpg" width="200"
+							height="200"> <elseif condition="$vb.logo_url  neq ''" />
+						<img src="Uploads/User/{$vb.logo_url|get_logo_url}" width="200" height="200" />
+						</if></div><volist name="list3" id="vb">
+                    <ul>
+                        <li>用户名称：<span>{$vb.borrow_uid|get_borrow_username}</span></li>
+                        <li>注册时间：<span>{$data.reg_time|date='Y-m-d',###}</span></li>
+                        <li>最后登录：<span>{$data.last_login_time|date='Y-m-d',###}</span></li>
+                        <li>居住地：<span>{$vb.borrow_uid|get_member_info}</span></li>
+                    </ul>
+                    <!--<a href="#">关注此人</a><a href="#">关注此借款</a>-->
+                </dt>
+                <dd>
+                    <ul>
+                        <li><h3>{$vb.borrow_name}</h3></li>
+                        <li><h3>（机构担保借款）</h3></li>
+                        <li>借款金额：<span style="color:#ef681f;">￥{$vb.borrow_money}元</span></li>
+                        <li>借款目的：<span>{$vb.borrow_use}</span></li>
+                        <li>借款年利率：<span>{$vb.borrow_interest_rate}%</span>
+                        <li>借款期限：<span>{$vb.borrow_duration}个月</span></li>
+                        <li>招募时间：<span>{$vb.collect_day}天</span></li>
+                        <li><strong>投标进度：</strong><span class="out"><span style="width:{$vb['jindu']}%;" class="in"></span></span><span class="data">{$vb['jindu']}%还差：￥{$vb['borrow_money']-$vb['has_borrow']}</span></li>
+                        <li>还款方式：<span style="color:#ef681f;">{$vb.repayment_type|get_repayment_type}</span></li>
+                        <li>交易类型：<span>线下交易</span></li>
+                        <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
+                        <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
+                        <li>总投标数：<span style="margin-right:20px;">{$countuid}位</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="__PUBLIC__/Home/images/page_view.jpg" style="height:20px;"></span></li>
+                        <li>  <if condition="$vb.borrow_status eq 2">
+                                    <a  href="{:U('Finance/invest?id='.$vb['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
+                          <elseif condition="$vb.borrow_status eq 0"/>
+                          <img alt="" src="__PUBLIC__/Home/images/shenhe.png" style="width:80px;height:30px;" />
+                           <elseif condition="$vb.borrow_status eq 4"/>
+                          <img alt="" src="__PUBLIC__/Home/images/fushen.png" style="width:80px;height:30px;" />
+                          <elseif condition="$vb.borrow_status eq 6"/>
+                          <img alt="" src="__PUBLIC__/Home/images/huankuan.png" style="width:80px;height:30px;" />
+                           <elseif condition="$vb.borrow_status eq 7"/>
+                           <img alt="" src="__PUBLIC__/Home/images/manbiao.png" style="width:80px;height:30px;" />
+                          </if></li>
+                        </volist>                             
+                    </ul>
+                    <p></p>
+                    <p><input type="button" class="share" style="background:url(../../../../../Public/Home/images/share.png) no-repeat 0 0;border: none;"><input type="button" class="share" style="background:url(../../../../../Public/Home/images/share.png) no-repeat -22px 0;border: none;"><input type="button" class="share" style="background:url(../../../../../Public/Home/images/share.png) no-repeat -44px 0;border: none;"><a href="#" class="more">更多</a></p>
+                </dd>
+            </dl>
         	
             <!--项目详情-->
             <div class="xmxq_out">
