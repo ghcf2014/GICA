@@ -827,27 +827,27 @@ class UserinfoController extends MemberController {
 
 				//发送站内信
 				
-                $action='创建交易密码成功！';
-               	system_msg($action);
+                // $action='创建交易密码成功！';
+               	// system_msg($action);
 				$this->success ( '新建交易密码成功！' );
 			}
 		}
 		
-		if (md5 ( $_POST ['old'] ) == $pin [0] ['pin_pass']) {
+		if (md5 ( $_POST ['oldpwd'] ) == $pin [0] ['pin_pass']) {
 			
-			$data ['pin_pass'] = md5 ( $_POST ['pin_pass'] );
+			$data ['pin_pass'] = md5 ( $_POST ['newpwd'] );
 			$condition ['id'] = $uid;
 			if ($m = $m->where ( $condition )->save ( $data )) {
 
 				//发送站内信
-                $action='修改交易密码成功，请注意资金安全！';
-				system_msg($action);
+    //             $action='修改交易密码成功，请注意资金安全！';
+				// system_msg($action);
 				$this->success ( '修改密码成功，请注意资金安全！' );
 			} else {
 				//发送站内信
 				
-                $action='修改交易密码失败，请注意资金安全！';
-               	system_msg($action);
+                // $action='修改交易密码失败，请注意资金安全！';
+               	// system_msg($action);
 				$this->error ( '修改失败！' );
 			}
 		} else {

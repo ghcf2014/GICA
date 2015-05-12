@@ -376,6 +376,8 @@ class UserController extends HomeController {
             $arr['id']=$uid;
             $paypassword=$paypass->where($arr)->select();
             $pin_pass=$paypassword[0]['pin_pass'];
+            $mobile=$paypassword[0]['mobile'];
+            $this->mobile=$mobile;
             $this->pin_pass=$pin_pass;
 		if ( !is_login() ) {
 			$this->redirect('User/login');
@@ -400,8 +402,8 @@ class UserController extends HomeController {
 
             	//发送站内信
 
-                $action="修改了登陆密码";
-                system_msg($action);
+                // $action="修改了登陆密码";
+                // system_msg($action);
                 
                 $this->success('修改密码成功！');
             }else{
