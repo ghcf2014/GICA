@@ -316,7 +316,19 @@ class UserController extends AdminController {
         // return parent::setStatus('z_members_status');
         $map['uid']=I('ids',0);
         $st=I('id_status',0);
+         static $type = array(
+            // Informational 1xx
+            1 => '通过',
+            0 => '不通过'
+            );
+        
         if($User = M('z_members_status')-> where($map)->setField('id_status',$st)){
+
+            //发送站内信
+            $action='您提交的实名认证信息已审核。审核员：2915,审核结果：【'.$type[$st].'】,审核理由：无。';
+            $opertype=5;//系统通知
+            $result_ms=inner_msg($uid,$opertype,$action);  
+
             $this->success('更新成功！');
         } 
     } 

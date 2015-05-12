@@ -327,7 +327,8 @@ class InvestController extends MemberController {
 		$blist = $listBorrow->where ( $map )->select ();
 		$listinvestor = M ( 'z_borrow_investor' );
 		$iuid['investor_uid'] =$uid;
-		$ilist = $listinvestor->field('investor_uid,sum(investor_capital)investor_capital,borrow_uid')->where($iuid)->group('investor_uid')->select();
+		$iuid['borrow_id'] =$id;
+		$ilist = $listinvestor->field('investor_uid,sum(investor_capital)investor_capital,borrow_uid,sum(investor_interest)investor_interest')->where($iuid)->group('investor_uid')->select();
 
 		$ilists = $listinvestor->where($iuid)->select();
 
@@ -347,7 +348,7 @@ class InvestController extends MemberController {
 		$this->borrow_interest_rate=$blist[0]['borrow_interest_rate'];
 		$this->borrow_duration=$blist[0]['borrow_duration'];
 
-
+		// dump(ilist);
 		$this->assign ( 'ilists', $ilists);
 		$this->assign ( 'blist', $blist );
 		$this->assign ( 'ilist', $ilist );
@@ -599,7 +600,7 @@ public function auto_borrow(){
 
 										//发送站内信
                                         $action=$logdata ['info'];
-                                        system_msg($action);
+                                        // system_msg($action);
                             } 
                         }  
                 }

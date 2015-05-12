@@ -93,7 +93,7 @@ class BorrowController extends HomeController {
 				$condition['status']=3;
 				$applydata2=$data->where($condition)->select();
 				if (!$applydata2){
-					
+
 					$this->redirect('Member/Borrow/myborrowapply');
 				}
 			}
@@ -102,6 +102,8 @@ class BorrowController extends HomeController {
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
 		$files=$borrowfile_status[0];
+
+
 		$this->assign('file',$files);
 		$this->pagetitle="工合财富直通贷款-借款申请";
 		$this->display ();
@@ -127,6 +129,13 @@ class BorrowController extends HomeController {
 
 		$model=M('z_borrow_apply');
 		$result=$model->add($receive);
+
+		//发送站内信
+        $action='您于'.date('Y-m-d H:i:s',time()).'申请一次借款金额为'.$receive["borrow_money"].'元的标。(等待初审)。';
+        $opertype=2;//系统通知
+        $result_ms=inner_msg($uid,$opertype,$action);  
+
+
 		if ($result>0){
 			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Borrow/checkingapply'));
 		}else {
@@ -214,17 +223,17 @@ class BorrowController extends HomeController {
 		$depict ['add_ip'] = get_client_ip ();
 		//生成敏感信息
 		if ($id==1){
-			$action="发布了一次信用标";
+			$action1="信用";
 		}elseif ($id==2) {
-			$action="发布了一次净值标";
+			$action1="净值";
 		}elseif ($id==3) {
-			$action="发布了一次秒还标";
+			$action1="秒还";
 		}elseif ($id==4) {
-			$action="发布了一次担保标";
+			$action1="担保";
 		}elseif ($id==5) {
-			$action="发布了一次抵押标";
+			$action1="抵押";
 		}else{
-			$action="发布了一次实地考察标";
+			$action1="考察";
 		}
 		
 
@@ -249,7 +258,21 @@ class BorrowController extends HomeController {
 				$map['borrow_uid']=$uid;
 				$bid=$bdata->where($map)->order('add_time desc')->select();
 				$b_id=$bid[0]['id'];
-				$this->success ('发布审核已提交',U( 'Home/Borrow/detail?id='.$b_id));
+				
+
+                //发送站内信
+                $action='您于'.date('Y-m-d H:i:s',time()).'发布一次名为《'.$depict ['borrow_name'].'》的'.$action1.'标,借款金额为'.$depict ['borrow_money'].'元(等待初审)。';
+                $opertype=2;//系统通知
+                $result_ms=inner_msg($uid,$opertype,$action); 
+
+                if($result_ms){
+                    //成功提示
+                    $this->success ('发布审核已提交',U( 'Home/Borrow/detail?id='.$b_id));
+                }
+                $this->success("参数错误");
+
+
+				
 			} else {
 				$this->error('申请数据提交失败');
 			}
@@ -331,7 +354,6 @@ class BorrowController extends HomeController {
 				$cons[$i]['remain_money']=round(($dcapital+$interest),2)*$num-round(($dcapital+$interest)*$i,2);
 				$cons[$i]['repayment_time']=strtotime('+ '.$i.' months',strtotime(''.date("Y-m-d",''.$list[0]['add_time'].'').''));
 			}
-
 			$this->assign('num',$num);
 			$this->assign('cons',$cons);
 		}elseif($repayment_type==6){

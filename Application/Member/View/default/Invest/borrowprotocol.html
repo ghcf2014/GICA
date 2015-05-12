@@ -167,7 +167,7 @@
 													</td>
 													<td valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p align="center" style="text-align: center;">{$vo.investor_capital}</p>
+														<p align="center" style="text-align: center;">{$vo.investor_capital|default="暂无法查询"}</p>
 													</td>
 
 													<td valign="top"
@@ -178,7 +178,7 @@
 
 													<td width="187" valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p align="center" style="text-align: center;">{$vo.invest_fee}</p>
+														<p align="center" style="text-align: center;">{$vo.invest_fee|default="暂无法查询"}</p>
 													</td>
 
 													<!-- <td valign="top"
@@ -200,13 +200,67 @@
 
 													<td valign="top"
 														style="border: solid black 1.0pt; background: white;">
-														<p align="center" style="text-align: center;">&nbsp;{$vo['investor_capital']+$vo['investor_interest']}</p>
+														<p align="center" style="text-align: center;">&nbsp;{$vo['investor_interest']|default="暂无法查询"}</p>
 													</td>
 													
 												</tr>
 												</volist>
-											</s:iterator>
-										</s:else>
+												<volist name="ilist" id="vo" key='i'>
+												<tr>
+													<td width="152" valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p>
+															<span style="font-family: 宋体; color: windowtext;">-<if condition="$i neq '1'">(追加)</if></span><span
+																style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
+														</p>
+													</td>
+													<td width="152" valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p>
+															<span style="font-family: 宋体; color: windowtext;">-</span><span
+																style="font-family: &amp; amp; amp; quot; color: windowtext;"></span>
+														</p>
+													</td>
+													<td valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p align="center" style="text-align: center;">合计：{$vo.investor_capital|default="暂无法查询"}</p>
+													</td>
+
+													<td valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p align="center" style="text-align: center;">-</p>
+													</td>
+
+
+													<td width="187" valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p align="center" style="text-align: center;">-</p>
+													</td>
+
+													<!-- <td valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p align="center" style="text-align: center;">&nbsp;</p>
+													</td>
+
+													<td valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p align="center" style="text-align: center;">&nbsp;</p>
+													</td>
+													<td valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p align="center" style="text-align: center;">
+															<span
+																style="font-family: &amp; amp; amp; quot; color: windowtext;">&nbsp;&nbsp;</span>
+														</p>
+													</td> -->
+
+													<td valign="top"
+														style="border: solid black 1.0pt; background: white;">
+														<p align="center" style="text-align: center;">&nbsp;合计：{$vo['investor_interest']}</p>
+													</td>
+													
+												</tr>
+												</volist>
 									</tbody>
 								</table>
 							</div>
@@ -216,8 +270,7 @@
 							</p>
 							借入者(乙方) :<b><u>(</u> </b><b><u>身份证号码：</u>
 							</b>
-					    <b><u><shove:sub value="#request.map.isno" size="12"
-										suffix="******" />)</u> </b>
+					    <b><u>{$buid|get_idnumber})</u> </b>
 							<p>
 								管理方(丁方):
 								<b><u>深圳市工合财富管理有限公司(工合财富)</u> </b>
@@ -276,7 +329,7 @@
 											</td>
 											<td width="397" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
-												<p>{$vo['borrow_money']+$vo['borrow_money']*($vo['borrow_interest_rate']/100)}</p>
+												<p>{$vo['repayment_money']}</p>
 											</td>
 										</tr>
 										<tr>
@@ -342,7 +395,7 @@
 											</td>
 											<td width="397" valign="top"
 												style="border: solid black 1.0pt; background: #D9D9D9;">
-												<p>{$vo.deadline|date='Y-m-d',###}</p>
+												<p>次月{$vo.deadline|date='d',###}日</p>
 											</td>
 										</tr>
 										<tr>
@@ -355,7 +408,7 @@
 											</td>
 											<td width="397" valign="top"
 												style="border: solid black 1.0pt; background: white;">
-												<p>{$vo.borrow_money}</p>
+												<p>{$vo.second_verify_time|date='Y-m-d',###}-{$vo.deadline|date='Y-m-d',###}</p>
 											</td>
 										</tr>
 									</tbody>
@@ -476,7 +529,7 @@
 							<p>
 								第二条 各方权利和义务
 							</p>
-							<p>&nbsp;
+							<p>&nbsp;按时还款是每个借款者立足这个市场必须履行的承诺。
 								
 							</p>
 							<div style="color: windowtext;"></div>

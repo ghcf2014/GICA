@@ -14,7 +14,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 .inner .closeBtn{width: 46px;height: 46px;margin-left: 645px;cursor: pointer;}
 
-.loading_con{width: 375px;height: 260px;margin: 124px 0 0 250px;}
+.loading_con{width: 375px;height: 260px;margin: 174px 0 0 250px;}
 .loading_con h2{font-size: 14px;color: #fff;line-height: 28px;}
 .loading_con p{font-size: 12px;color: #fff;line-height: 19px;font-family: "微软雅黑";}
 .loading_con p a{color: #fff;}
@@ -659,7 +659,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .bdxq_cont dl dd p .more{float:left;line-height:32px;background: none;margin: 0;text-align: left;}
 
 /*---------------项目详情----------------------------*/
-.bdxq_cont .xmxq_out{overflow:hidden;margin-bottom:40px;}
+.bdxq_cont .xmxq_out{overflow:hidden;margin-bottom:40px;float:left;}
 .bdxq_cont .xmxq{width:620px;height:368px;border-right:1px solid #ddd;float:left;}
 .bdxq_cont .xmxq h3{width:620px;height:63px;line-height:63px;font-size:20px;font-weight:normal;}
 .bdxq_cont .xmxq p{width:445px;padding:0 90px 0 46px;height:auto;line-height:27px;font-size:16px;}

@@ -60,3 +60,9 @@ function get_nav_url($url){
 function think_ucenter_md5($str, $key = 'ThinkUCenter'){
     return '' === $str ? '' : md5(sha1($str) . $key);
 }
+function get_idnumber($uid = 0) {
+    $map = $uid;
+    $name = M ( 'z_member_info' )->field ( 'idcard' )->find ( $map );
+    // var_dump($name['nickname']);
+    return $name ['idcard'];
+}

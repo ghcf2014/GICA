@@ -406,6 +406,7 @@ class BorrowController extends AdminController {
         $map['id']  = $id;
         $m = M ( 'z_borrow_info' ); // 用户头像
         $s =$m ->where($map)->select();
+        $uid=$s[0]['borrow_uid'];
 
         $s=$s[0]['borrow_status'];
 
@@ -440,6 +441,19 @@ class BorrowController extends AdminController {
         // 保存当前数据对象
         if ($m = $m->where ( $map )->save ( $data )) { // 保存成功
                                                              // 成功提示
+            static $type = array(
+            // Informational 1xx
+            2 => '通过',
+            3 => '不通过',
+            4 => '通过',
+            5 => '不通过'
+            );
+
+            //发送站内信
+            $action='您发布的'.$id.'借款标已审核。审核员：2915,审核结果：【'.$type[$sb].'】,审核理由：无。';
+            $opertype=5;//系统通知
+            $result_ms=inner_msg($uid,$opertype,$action);  
+
             $this->success('操作成功');
         } else {
             // 失败提示
@@ -467,7 +481,7 @@ class BorrowController extends AdminController {
         $map['id']  =$id;
         $list   = $this->lists('z_borrow_apply', $map);
         int_to_string($list);
-        $this->id = $id;
+        $this->id = $id; 
         $this->assign('_list', $list);
         $this->meta_title = '借款申请信息';
 
@@ -500,6 +514,18 @@ class BorrowController extends AdminController {
         $map['id']=I('id',0);
         $st=I('id_status',0);
         if($User = M('z_borrow_apply')-> where($map)->setField('status',$st)){
+
+            static $type = array(
+            // Informational 1xx
+            1 => '通过',
+            0 => '不通过'
+            );
+
+            //发送站内信
+            $action='您申请编号'.I('id',0).'借款信息已审核。审核员：2915,审核结果：【'.$type[$st].'】,审核理由：无。';
+            $opertype=5;//系统通知
+            $result_ms=inner_msg($uid,$opertype,$action);  
+
             $this->success('更新成功！');
         } 
     }

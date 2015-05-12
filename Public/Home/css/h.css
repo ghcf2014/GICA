@@ -693,4 +693,9 @@ h1:after{left:.5em;margin:0 -50% 0 0;}
 h1 > span{display:inline-block;vertical-align:middle;white-space:normal;}
 .loginmodal{
     padding: 30px;
-}*/
+}
+/*广告*/
+/*#top_ads{width:950px;height:500px;position:relative;margin:0 auto;}*/
+#top_ads #close{position:absolute;bottom:0;right:0;cursor:pointer;}
+
+#float_ad{display:none;position:fixed;_position:absolute;right:0px;bottom:0px;cursor:pointer;width:50px;}

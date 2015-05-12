@@ -1,8 +1,5 @@
 /* ���п��󶨵�����*/
-body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, del, dfn, em, img, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, button, input, table, caption, tbody, tfoot, thead, tr, th, td, menu {
-	margin:0;
-	padding:0;
-}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
 	display:block
 }
@@ -14,17 +11,11 @@ audio, canvas, video {
 audio:not([controls]) {
 display:none
 }/* �������?����֮�� www.lanrenzhijia.com */
-table {
-	border-collapse:collapse;
-	border-spacing:0;
-	empty-cells:show
-}
+
 ol, ul, menu {
 	list-style:none
 }
-img {
-	border:0
-}
+
 a:focus {
 	outline:none
 }
@@ -36,12 +27,6 @@ button, input, select, textarea {
 	margin:0;
 	vertical-align:-3px;
 	outline:none;
-}
-button, input {
-	border:1px solid;
-	outline:none;
-	line-height:normal;
-*overflow:visible
 }
 button::-moz-focus-inner, input::-moz-focus-inner {
 border:0;
@@ -78,14 +63,6 @@ text-shadow:none
 *[hidden] {
 	display:none
 }
-a {
-	/*color:#0088DB;*/color: #595959;
-	text-decoration:none;
-	cursor:pointer
-}
-a:hover {
-	/*color:#2A5E8E;*/color: #66ccfb;
-}
 .clearfix:after, .central:after, .widget ul:after, .paging:after, .pagenav:after, .base-tit:after {
 	content:".";
 	display:block;
@@ -95,11 +72,6 @@ a:hover {
 }
 .clearfix, .central, .widget ul, .paging, .pagenav, .base-tit {
 *+height:1%;
-}
-body, button, input, select, textarea, code {
-	font-size:12px;
-	font-family:microsoft yahei;
-	color: #444;
 }
 /*window*/
 
@@ -362,4 +334,28 @@ display:;
 }
 .theme-desc, .theme-version {
 	padding-top: 0
+}
+
+
+
+/*
+	借款申请记录table样式
+*/
+.biaoge .b0{
+	width:4%;
+}
+.biaoge .b1{
+	width:12%;
+}
+.biaoge .b2{
+	width:8%;
+}
+.biaoge .b3{
+	width:8%;
+}
+.biaoge .b4{
+	width:50%;
+}
+.biaoge .b5{
+	width:10%;
 }

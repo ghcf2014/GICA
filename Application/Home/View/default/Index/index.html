@@ -1,6 +1,6 @@
 <block name="body"> <extend name="Base/common" /> 
 <!--弹出层-->
-<div class="outer">
+<!-- <div class="outer">
 	<div class="inner">
 		<div class="closeBtn"><img src="__PUBLIC__/Home/images/closeBtn.png"/></div>
 		<div class="loading_con">
@@ -16,11 +16,47 @@
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总积分累计达到100000分以上，奖励50元现金红包</p>
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总积分累计达到1000000分以上，奖励100元现金红包</p>
 			<p style="text-align: center;">...... ......&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...... ......</p>
-			<p style="text-align: right;"><a href="huodong.html">点此进入详情 =></a></p>     <!--活动页的链接-->
+			<p style="text-align: right;"><a href="huodong.html">点此进入详情 =></a></p>  
 		</div>
 	</div>
+</div> -->
+
+
+
+<div id="top_ads">
+<div class="outer"  >
+    <div class="inner">
+    <!-- <div class="closeBtn"><img src="__PUBLIC__/Home/images/closeBtn.png"/></div> -->
+  <div id="header_ad"></div>
+    <div class="loading_con">
+			<h2>活动说明：（活动时限3个月）</h2>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平台新用户注册，立即送10元体验金(可进行提现),并奖励200积分;完成实名制认证、银行卡绑定以及VIP认证奖励200积分;邀请好友注册，立即送3元邀请奖励,并奖励100分积分。</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;充值投资累计达到1000元以上即送50积分+50元现金卷</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;充值投资累计达到10000元 以上即送120积分+150元现金卷</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;充值投资累计达到100000元以上即送200积分+300元现金卷</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;充值投资累计达到1000000元以上即送300积分+500元现金卷</p>
+		
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总积分累计达到1000分以上，奖励10元现金红包</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总积分累计达到10000分以上，奖励30元现金红包</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总积分累计达到100000分以上，奖励50元现金红包</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总积分累计达到1000000分以上，奖励100元现金红包</p>
+			<p style="text-align: center;">...... ......&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...... ......</p>
+			<p style="text-align: right;"><a href="huodong.html">点此进入详情 =></a></p>  
+	</div>
+  <div id="close"><img onclick="closeAd();" src="__PUBLIC__/Home/images/closeBtn.png" /></div>
+
+  </div>
+</div>
 </div>
 
+  <script src="__PUBLIC__/Home/js/floatad.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+showAds(500,0,500,500);
+scorll_y();
+var str = "<img src='images/chivas_ad.jpg' width=950 height=500 border=0 />"
+document.getElementById("header_ad").innerHTML = str;
+</script>
 <!--banner start-->
 <div class="banner_out">
 	<div class="banner">
@@ -250,6 +286,7 @@
   window.onload=GetRTime;
   </script>
   <script src="__PUBLIC__/Home/js/jquery-1.7.2.min.js" type="text/javascript" charset="utf-8"></script>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.outer').slideDown(1000);
