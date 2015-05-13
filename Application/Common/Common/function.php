@@ -1574,12 +1574,10 @@ function subtext($text, $length) {
         // $mobile_code = random(4,1);
     	$account=C ( 'SMS_ACCOUNT' );
 		$password=C ( 'SMS_PASSWORD' );
-
     	// $account="cf_gonghecaifu";
         //    $password="1234567";
     	$target = "http://106.ihuyi.cn/webservice/sms.php?method=Submit";
     	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".rawurlencode("您的验证码是：".$mobile_code."。请不要把验证码泄露给其他人。");
-
         //密码可以使用明文密码或使用32位MD5加密
         $gets =  xml_to_array(Post($post_data, $target));
   //       $gets['SubmitResult']['msg']='已发送';

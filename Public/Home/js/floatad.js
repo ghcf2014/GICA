@@ -2,7 +2,7 @@
 var time;
 var h;
 var T;
-var N; //璧傝劷闇茶劆
+var N; //高度
 var ad_timer;
 
 function addCount()
@@ -16,25 +16,25 @@ function addCount()
 //	{
 //		return;
 //	}
-//	if(h>=500)  //璧傝劷闇茶劆
+//	if(h>=500)  //高度
 //	{
 //		return;
 //	}
 	document.getElementById("top_ads").style.display = "block";
-	// document.getElementById("top_ads").style.height = h+"px";
+
 	//setTimeout("addCount()",10);
 }
 	
 function showAds(paramTime,paramh,paramT,paramN)
 {
-	//document.getElementById("top_ads").style.display = "none";
+	document.getElementById("top_ads").style.display = "none";
 	time = paramTime;
 	h = paramh;
 	h = 500;
 	T = paramT;
-	N = paramN; //璧傝劷闇茶劆
+	N = paramN; //高度
 	addCount();
-	ad_timer=setTimeout("noneAds()",5000); //鑴ユ嫝鑴曚箞鑴㈠崵褰曠洸鑴宠劖褰曟綖鑴㈣劉纰屽崵纰屾鑴病
+	ad_timer=setTimeout("noneAds()",5000); //停留时间自己适当调整
 }
 
 function noneAds()
@@ -72,7 +72,7 @@ function closeAd()
 	clearTimer();
 }
 
-function ggshow()
+function show()
 {
 	var obj_ad=document.getElementById("float_ad");
 	obj_ad.style.display="none";

@@ -126,7 +126,7 @@
 					title: '请输入支付密码',
 					formType: 1 //prompt风格，支持0-2
 					}, function(pass){
-				        var index = layer.load(1,{time: 7*1000});	
+				        var index = layer.load(1);	
 				        $.post('__URL__/add',{dealpwd:pass,capital:amount,id:id},function success(data){
 				        if (data.status) {
 							layer.msg(data.info,3);

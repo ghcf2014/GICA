@@ -154,7 +154,7 @@ $_SESSION['send_code'] = random(6,1);
 ?>
 <script language="javascript">
 	function get_mobile_code(){
-        $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+        $.post('/Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
             layer.msg(jQuery.trim(unescape(msg)), {
 					    icon: 1,
 					    time: 2000 //2秒关闭（如果不配置，默认是3秒）

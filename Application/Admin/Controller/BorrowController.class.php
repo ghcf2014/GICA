@@ -443,10 +443,10 @@ class BorrowController extends AdminController {
                                                              // 成功提示
             static $type = array(
             // Informational 1xx
-            2 => '通过',
-            3 => '不通过',
-            4 => '通过',
-            5 => '不通过'
+            2 => '通过初审',
+            3 => '不通过初审',
+            4 => '通过复审',
+            5 => '不通过复审'
             );
 
             //发送站内信
@@ -520,6 +520,8 @@ class BorrowController extends AdminController {
             1 => '通过',
             0 => '不通过'
             );
+            $Useruid = M('z_borrow_apply')-> where($map)->select();
+            $uid=$Useruid[0]['apply_uid'];
 
             //发送站内信
             $action='您申请编号'.I('id',0).'借款信息已审核。审核员：2915,审核结果：【'.$type[$st].'】,审核理由：无。';
