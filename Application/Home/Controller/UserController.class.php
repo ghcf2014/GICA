@@ -402,8 +402,6 @@ class UserController extends HomeController {
 
             	//发送站内信
 
-                // $action="修改了登陆密码";
-                // system_msg($action);
                 
                 $this->success('修改密码成功！');
             }else{
