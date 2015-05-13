@@ -534,8 +534,17 @@ function get_member_info($uid = 0) {
 function get_logo_url($uid = 0) {
 	$map = $uid;
 	$name = M ( 'ucenter_member' )->field ( 'logo_url' )->find ( $map );
-	// var_dump($name['nickname']);
 	return $name ['logo_url'];
+}
+function get_member_logo_img(){
+	$map=is_login();
+	$img=M('ucenter_member')->field('logo_url')->find($map);
+	if ($img['logo_url']==null){
+		return "../../Public/Home/images/default-img.jpg";
+	}else{
+		return "../../Uploads/User/".$img['logo_url'];
+	}
+	
 }
 //ID返回投资用户名
 function get_investor_username($investor_uid = 0) {

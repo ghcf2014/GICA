@@ -7,12 +7,14 @@
         	<h2>标的详情</h2>
             <dl>
                 <dt>
-                    <div class="header"><if
-							condition="$vb.logo_url eq ''"> <img
-							src="__PUBLIC__/Home/images/default-img.jpg" width="200"
-							height="200"> <elseif condition="$vb.logo_url  neq ''" />
-						<img src="Uploads/User/{$vb.logo_url|get_logo_url}" width="200" height="200" />
-						</if></div><volist name="list3" id="vb">
+                    <div class="header">
+	                    <if condition="$data['logo_url'] eq null"> 
+							<img src="__PUBLIC__/Home/images/default-img.jpg" style="border-radius: 100px;height: 200px; background-color:white;"width="200" height="200"> 
+						<else/>
+							<img src="__ROOT__/Uploads/User/{:get_logo_url($data['id'])}" style="border-radius: 100px;height: 200px;background-color:white;" width="200" height="200" />
+						</if>
+					</div>
+					<volist name="list3" id="vb">
                     <ul>
                         <li>用户名称：<span>{$vb.borrow_uid|get_borrow_username}</span></li>
                         <li>注册时间：<span>{$data.reg_time|date='Y-m-d',###}</span></li>

@@ -332,7 +332,7 @@ class BorrowController extends HomeController {
 
 
 		$userlist = M ( 'ucenter_member' );
-		$data = $userlist->field ( 'username,reg_time,last_login_time' )->where ( 'id=%s', $uid )->select ();
+		$data = $userlist->field ( 'id,username,reg_time,last_login_time,logo_url' )->where ( 'id=%s', $uid )->select ();
 		$this->assign ( 'data', $data [0] );
 		$updata = unserialize ( $list [0] ['updata'] );
 		$repayment_type=$list[0]['repayment_type'];
