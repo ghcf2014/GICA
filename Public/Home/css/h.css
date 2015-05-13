@@ -692,8 +692,15 @@ h1:before{left:-.5em;margin:0 0 0 -50%;}
 h1:after{left:.5em;margin:0 -50% 0 0;}
 h1 > span{display:inline-block;vertical-align:middle;white-space:normal;}
 .loginmodal{
-    padding: 30px;
+    padding: 20px;
 }
+.loginmodal img{
+    padding-top: 5px;
+}
+.loginmodal input{
+    padding-top: 5px;
+}
+
 /*广告*/
 /*#top_ads{width:950px;height:500px;position:relative;margin:0 auto;}*/
 #top_ads #close{position:absolute;bottom:0;right:0;cursor:pointer;}

@@ -126,23 +126,19 @@
 		<p>Copyrightc2011-2014工合财富 All rights reserved</p>
 	</div>
 </div>
-
+<!-- 登录弹出框 -->
 <div id="loginmodal" style="display:none;">
- <div class="loginmodal">
-	<h1>登陆</h1>
+ <div class="loginmodal"  style="width:300px; background-image:url(__PUBLIC__/Home/images/beijing-tiao.png); background-repeat:repeat-x; height:300px;margin-top:5px;">
+	<h1><img src="__PUBLIC__/Home/images/logo-denglu.png" /></h1>
 	<form class="login-form" action="{:U('Home/User/login')}" method="post" id="loginform">
-		<label for="username">用户名/手机/邮箱:</label>
-		<input type="text" name="username" value="" id="username" class="txtfield utip" tabindex="1" />
-	
-		<label for="password">密码:</label>
-		<input type="password" name="password" id="password" class="txtfield pwtip" tabindex="2" />
-		<label for="password">验证码:</label>
-		<input type="text" name="verify" id="verifycode" class="txtfield" tabindex="2" /><img
-								class="verifyimg reloadverify vtip" src="{:U('Home/User/verify')}" width="101"height="44" alt="点击切换"style="cursor: pointer; width: 90px; float: right;">
-		<span style="color: red; line-height: 40px;" id="checkcode" class="formtips Validform_checktip "></span>
-		<div class="center"><input type="submit" name="loginbtn" id="loginIn"  class="flatbtn-blu hidemodal" value="登陆" tabindex="3"></div>
+		<img  src="__PUBLIC__/Home/images/jiantou-denglu.png" /> <input type="text" name="username" value="" id="username" style="width:150px;margin-top:15px;" tabindex="1" />
+		<img src="__PUBLIC__/Home/images/jiantou-denglu-2.png" /> <input type="password" name="password" id="password" style="width:150px;margin-top:15px;" tabindex="2" />
+		<label for="password"><img src="__PUBLIC__/Home/images/jiantou-yanzhengma.png" />
+		 <span><input type="text" name="verify" style="width:50px;margin-top:15px;"/></span><img class="verifyimg reloadverify vtip" src="{:U('Home/User/verify')}" width="101"height="44" alt="点击切换"style="cursor: pointer; width: 90px; float-left:10px;"></label>
+		<div class="center"><input type="submit" id="login_btn" value=""/></div>
 	</form>
  </div>
+
 
  <!--浮动侧边栏  计算器  客服QQ-->
 <!--联系我们-->
@@ -245,7 +241,7 @@
             shadeClose: true,
             shade: false,
             maxmin: true, //开启最大化最小化按钮
-            area: ['550px', '420px'],
+            area: ['505px', '450px'],
             content: 'http://www.ghcf.cn/Home/Index/fankui.html'
         });
 // layer.open({
@@ -269,7 +265,7 @@
 		    skin: 'layui-layer-demo', //样式类名
 		    closeBtn: false, //不显示关闭按钮
 		    shift: 0,
-		    area: ['350px', '400px'],
+		    area: ['400px', '350px'],
 		    shadeClose: true, //开启遮罩关闭
 		    content: ''+$("#loginmodal").html()+''
 		});
