@@ -11,8 +11,11 @@
 			<volist name="list3" id="vb">
 			<dl>
 				<dt>
-					<img src="__PUBLIC__/Home/images/qrb_cont_top_pic.png" width="200"
-						height="200" />
+					<if condition="$data['logo_url'] eq null"> 
+						<img src="__PUBLIC__/Home/images/default-img.jpg" style="border-radius: 100px;height: 200px; background-color:white;"width="200" height="200"> 
+					<else/>
+						<img src="__ROOT__/Uploads/User/{:get_logo_url($data['id'])}" style="border-radius: 100px;height: 200px;background-color:white;" width="200" height="200" />
+					</if>
 				</dt>
 				<dd>
 					<p>
