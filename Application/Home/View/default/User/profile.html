@@ -29,14 +29,9 @@
 										<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换登录密码。</p>
 										<button type="button" class="btn btn-primary   btn-type-to  " key="update-pwd">修改登录密码</button>
 										<div class="p-hide update-pwd-c" style="display: none;">	
-											<p><span class="person-span-1">原密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码"errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
-											name="old"></span></p>
-											<p><span class="person-span-1">新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码"
-											errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20"
-											name="password"></span></p>
-											<p><span class="person-span-1">确认新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请再次输入密码"
-											recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码"
-											datatype="*" name="repassword"></span></p>
+											<p><span class="person-span-1">原密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old"></span></p>
+											<p><span class="person-span-1">新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password"></span></p>
+											<p><span class="person-span-1">确认新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword"></span></p>
 											<p class="show-message"></p>
 											 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改登录密码</button>
 											 <button type="button" class="btn   btn-hid">隐藏</button>
@@ -55,28 +50,27 @@
 									<button type="button" class="btn btn-primary   btn-type-to1  " key="update-pwd">修改支付密码</button>
 									<button type="button" class="btn btn-primary   btn-type-to2  " key="update-pwd">忘记支付密码</button>
 									<div class="p-hide1 update-pwd-c" style="display: none;">
-										<form class="login-form" action="{:U('Member/Userinfo/paypassword_save')}" method="post">	
-										<p><span class="person-span-1">原密码：</span><span><input type="password" name="oldpwd"></span></p>
-										<p><span class="person-span-1">新密码：</span><span><input type="password" name="newpwd"></span></p>
-										<p><span class="person-span-1">确认新密码：</span><span><input type="password" name="new_pwd"></span></p>
+										<form class="login-form" action="{:U('Member/Userinfo/changepaypassword_save')}" method="post">	
+										<p style="margin-top: 20px;"><span class="person-span-1">原支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="oldpassword" ></span></p>
+										<p style="margin-top: 20px;"><span class="person-span-1">新支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="newpassword"></span></p>
+										<p style="margin-top: 20px;"><span class="person-span-1">确认新支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="repassword"></span></p>
 										<p class="show-message"></p>
-										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改支付密码</button>
+										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">确认修改</button>
 										 <button type="button" class="btn   btn-hid1">隐藏</button>
 										 </form>
 									</div>
 									<div class="p-hide2 update-pwd-c" style="display: none;">	
-										<form class="login-form" action="{:U('Member/Userinfo/paypassword_save')}" method="post">
+										<form class="login-form" action="{:U('Member/Userinfo/findpaypassword_save')}" method="post">
 										<div class="phone">
-											<p style="margin-top: 16px;"><span class="person-span-1">手机验证码：</span></p>
-											<dd><input id="mobile" type="text"value="{$mobile}" readonly  style="float: left;margin-bottom: 0px;margin:5px 5px 0 0;"/><input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="float: left;margin-bottom: 0px;margin:5px 5px 0 0;  width:130px;display:none;"id="checkcode"/>
+											<p style="margin-top: 20px;"><span class="person-span-1">手机验证码：</span></p>
+											<dd><input id="mobile" type="text"value="{$mobile}" readonly  style="float: left;margin-left:0px;"/><input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="float: left;margin-bottom: 0px;margin:5px 5px 0 0;  width:130px;display:none;"id="checkcode"/>
 											<input id="zphone" type="button" value="获取验证码 " onClick="get_mobile_code();" class="phone_btn" style="width:120px; float:left;border: 0;" /> </dd>
 										</div>
-										<p style="margin-top: 20px;"><span class="person-span-1">登录密码：</span><span style="margin-left: 40px;"><input type="password" name="login_pwd"></span></p>
-										<p><span class="person-span-1">新密码：</span><span style=" margin-left: 54px;"><input type="password" name="newpwd"></span></p>
-										<p><span class="person-span-1">确认新密码：</span><span style=" margin-left: 26px;"><input type="password" name="new_pwd"></span></p>
+										
+										<p style="margin-top: 20px;"><span class="person-span-1">新支付密码：</span><span style=" margin-left: 12px;"><input type="password" class="dlmm_txt" name="newpassword"></span></p>
+										<p style="margin-top: 20px;"><span class="person-span-1">确认新支付密码：</span><span style=" margin-left: 12px;"><input type="password" class="dlmm_txt" name="repassword"></span></p>
 										<p class="show-message"></p>
-										<p class="show-message"></p>
-										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改支付密码</button>
+										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">确认修改</button>
 										 <button type="button" class="btn   btn-hid2">隐藏</button>
 										</form>
 									</div>
@@ -148,7 +142,7 @@ $_SESSION['send_code'] = random(6,1);
 ?>
 <script language="javascript">
 	function get_mobile_code(){
-        $.post('./Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
+        $.post('/Addons/Smsphp/sms.php', {mobile:jQuery.trim($('#mobile').val()),send_code:<?php echo $_SESSION['send_code'];?>}, function(msg) {
             alert(jQuery.trim(unescape(msg)));
 			if(msg=='已发送'){
 				RemainTime();
