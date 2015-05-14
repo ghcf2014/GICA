@@ -705,4 +705,4 @@ h1 > span{display:inline-block;vertical-align:middle;white-space:normal;}
 #top_ads{display:none;}
 #top_ads #close{position:absolute;bottom:0;right:0;cursor:pointer;}
 
-#float_ad{display:none;position:fixed;_position:absolute;right:0px;bottom:0px;cursor:pointer;width:50px;}
+#float_ad{position:fixed;_position:absolute;right:0px;bottom:0px;cursor:pointer;width:50px;}

@@ -44,6 +44,13 @@ class MemberModel extends Model{
             $member_info=M("z_member_info");
             $member_info->uid=$uid;
             $member_info_count=$member_info->add();
+            //关联会员认证表
+            $mstatus = M('z_members_status');//用户验证状态
+            $condition2['uid'] =$uid;
+            $member_status=$mstatus->where($condition2)->select();
+            $arr['uid']=$uid;
+            $result=$mstatus->add($arr); 
+ 
         } elseif(1 != $user['status']) {
             $this->error = '用户未激活或已禁用！'; //应用级别禁用
             return false;

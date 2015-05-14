@@ -395,6 +395,7 @@ class BorrowController extends AdminController {
     }
     public function audit_review($id = 0){
         $map['id']  = $id;
+
         $list   = $this->lists('z_borrow_info', $map);
         int_to_string($list);
         $this->id = $id;
@@ -404,6 +405,7 @@ class BorrowController extends AdminController {
     }
     public function audit_save($id = 0){
         $map['id']  = $id;
+        $mapd['borrow_id']  = $id;
         $m = M ( 'z_borrow_info' ); // 用户头像
         $s =$m ->where($map)->select();
         $uid=$s[0]['borrow_uid'];
@@ -438,6 +440,9 @@ class BorrowController extends AdminController {
 
         
         $data ['borrow_status']=$sb ;
+        $datad ['status']=$sb ;
+        $md = M ( 'z_investor_detail' );
+        $md = $md->where ( $mapd )->save ( $datad );
         // 保存当前数据对象
         if ($m = $m->where ( $map )->save ( $data )) { // 保存成功
                                                              // 成功提示
@@ -445,7 +450,7 @@ class BorrowController extends AdminController {
             // Informational 1xx
             2 => '通过初审',
             3 => '不通过初审',
-            4 => '通过复审',
+            6 => '通过复审',
             5 => '不通过复审'
             );
 
