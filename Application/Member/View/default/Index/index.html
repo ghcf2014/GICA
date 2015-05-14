@@ -63,7 +63,7 @@
 						</span>条
 					</p>
 					<p>登录IP:<span>{:get_client_ip()}</span></p>
-					<p><a href="{:U('Member/System/recharge')}">充值</a><a href="{:U('Member/System/withdrawdeposit')}">提现</a><!-- <a href="javascript:;">增值服务</a> --></p>
+					<p><a style="width: 40px; height: 30px; background-color:#60afff;color: white;" href="{:U('Member/System/recharge')}">充值</a><a style="width: 40px; height: 30px; background-color:#ef7203;color: white; margin-left: 4px;" href="{:U('Member/System/withdrawdeposit')}">提现</a><!-- <a href="javascript:;">增值服务</a> --></p>
 					
 					
 				</dd>
@@ -75,14 +75,14 @@
 				<li>认证管理：</li>
 				<li >
 					<if condition="$ms.email_status eq 1"> 
-						<a href="{:U('Userinfo/usermailbanding')}" style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">邮箱</a> 
+						<a href="{:U('Userinfo/usermailbanding')}" style="color:#fff;background: #0388e6;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">邮箱</a> 
 					<else/> 
 						<a href="{:U('Userinfo/usermailbanding')}"  style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">邮箱</a> 
 					</if>
 				</li>
 				<li>
 					<if condition="$ms.phone_status eq 1"> 
-						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">手机</a>
+						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" style="color:#fff;background: #0388e6;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">手机</a>
 
 					<else/>
 						<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">手机</a>
@@ -91,20 +91,20 @@
 				</li>
 				<li>
 					<if condition="$ms.id_status eq 1">
-						<a href="{:U('Userinfo/userselfset')}" style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">实名</a> 
+						<a href="{:U('Userinfo/userselfset')}" style="color:#fff;background: #0388e6;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">实名</a> 
 					<else/>
 						 <a href="{:U('Userinfo/userselfset')}" style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">实名</a>
 					</if>
 				</li>
 				<li>
 					<if condition="$ms.credit_status eq 1">
-						<a href="{:U('Userinfo/userbankset')}"style="color:#fff;background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">银行卡</a> 
+						<a href="{:U('Userinfo/userbankset')}"style="color:#fff;background: #0388e6;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">银行卡</a> 
 					<else/> 
 						<a href="{:U('Userinfo/userbankset')}"style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">银行卡</a>
 					</if>
 				</li>
 				<li><if condition="$ms.video_status eq 1">
-						<a href="{:U('Home/Borrow/papersinfo')}"style="color:#fff; background: #1A6BAD;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">信征</a>
+						<a href="{:U('Home/Borrow/papersinfo')}"style="color:#fff; background: #0388e6;padding:0 5px;border-radius: 5px; font-size: 14px;"title="已认证">信征</a>
 					<else/>
 						<a href="{:U('Home/Borrow/papersinfo')}"style="background: #E6E6E6; padding:0 5px ;border-radius: 5px; font-size: 14px;"title="未认证">信证</a>
 					</if>

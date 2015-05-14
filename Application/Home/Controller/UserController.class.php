@@ -403,7 +403,7 @@ class UserController extends HomeController {
             	//发送站内信
 
                 
-                $this->success('修改密码成功！');
+                $this->success('登录密码修改成功！');
             }else{
                 $this->error($res['info']);
             }

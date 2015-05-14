@@ -67,12 +67,18 @@ class FinanceController extends HomeController {
             $this->assign('list', $list);
             $this->assign('list2', $list2);
             $map = array('id' => $id);
+
             $listBorrow  = M('z_borrow_info');
             $list = $listBorrow->where($map)->select();
             $borrow_uid=$list[0]['borrow_uid'];
             $memberid['uid']=$borrow_uid;
             $memberdata=M('z_member_info');
             $members=$memberdata->where($memberid)->select();
+            $arrs['id']=$borrow_uid;
+            $userlist = M ( 'ucenter_member' );
+            $data = $userlist->where ( $arrs)->field ( 'id,logo_url' )->select ();
+            $this->assign ( 'data', $data [0] );
+
             $this->assign('members',$members[0]);
             $this->assign('list3',$list);
             if ($list[0]['borrow_uid']!==$uid){
