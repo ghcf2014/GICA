@@ -385,15 +385,15 @@ class UserController extends HomeController {
         if ( IS_POST ) {
             //获取参数
             $uid        =   is_login();
-            $password   =   I('post.old');
+            $password   =   I('post.oldpass');
             $repassword = I('post.repassword');
             $data['password'] = I('post.password');
-            empty($password) && $this->error('请输入原密码');
-            empty($data['password']) && $this->error('请输入新密码');
+            empty($password) && $this->error('请输入原登录密码');
+            empty($data['password']) && $this->error('请输入新登录密码');
             empty($repassword) && $this->error('请输入确认密码');
 
             if($data['password'] !== $repassword){
-                $this->error('您输入的新密码与确认密码不一致');
+                $this->error('两次输入的新密码不一致');
             }
 
             $Api = new UserApi();

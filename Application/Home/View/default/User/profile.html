@@ -22,23 +22,23 @@
 				<div class="aqset_tabC_out">
 						<!--登录密码-->
 						<div class="aqset_tabC" style="padding-top: 40px;">
-							<form class="login-form" action="__SELF__" method="post">
+							<!-- <form class="login-form" action="__SELF__" method="post"> -->
 								<div class="list-person clearfix">
 									<p class="list-one fl"><span class="icon icon-6"></span><span class="list-text">登录密码</span></p>
 									<div class="list-two fl">
 										<p class="color-99">安全性高的密码可以使帐号更安全。建议您定期更换登录密码。</p>
 										<button type="button" class="btn btn-primary   btn-type-to  " key="update-pwd">修改登录密码</button>
 										<div class="p-hide update-pwd-c" style="display: none;">	
-											<p><span class="person-span-1">原密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old"></span></p>
-											<p><span class="person-span-1">新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="password"></span></p>
-											<p><span class="person-span-1">确认新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" nullmsg="请填确认密码" datatype="*" name="repassword"></span></p>
-											<p class="show-message"></p>
+											<p><span class="person-span-1">原登录密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" name="old" id="oldp"></span></p>
+											<p><span class="person-span-1">新登录密码：</span><span><input type="password" class="dlmm_txt" placeholder="请输入密码" errormsg="密码为6-20位" nullmsg="请填写密码" datatype="*6-20" id="newp" name="password"></span></p>
+											<p><span class="person-span-1">确认新密码：</span><span><input type="password" class="dlmm_txt" placeholder="请再次输入密码" recheck="password" errormsg="您两次输入的密码不一致" id="rep" nullmsg="请填确认密码" datatype="*" name="repassword"></span></p>
+											
 											 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">修改登录密码</button>
 											 <button type="button" class="btn   btn-hid">隐藏</button>
 										</div>
 									</div>
 								</div>
-							</form>
+							<!-- </form> -->
 							<!--支付密码-->
 							
 							<if condition="$pin_pass neq ''">
@@ -50,29 +50,29 @@
 									<button type="button" class="btn btn-primary   btn-type-to1  " key="update-pwd">修改支付密码</button>
 									<button type="button" class="btn btn-primary   btn-type-to2  " key="update-pwd">忘记支付密码</button>
 									<div class="p-hide1 update-pwd-c" style="display: none;">
-										<form class="login-form" action="{:U('Member/Userinfo/changepaypassword_save')}" method="post">	
-										<p style="margin-top: 20px;"><span class="person-span-1">原支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="oldpassword" ></span></p>
-										<p style="margin-top: 20px;"><span class="person-span-1">新支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="newpassword"></span></p>
-										<p style="margin-top: 20px;"><span class="person-span-1">确认新支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="repassword"></span></p>
+											
+										<p style="margin-top: 20px;"><span class="person-span-1">原支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="oldpassword" id="oldppass"></span></p>
+										<p style="margin-top: 20px;"><span class="person-span-1">新支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="newpassword"id="newppass"></span></p>
+										<p style="margin-top: 20px;"><span class="person-span-1">确认新支付密码：</span><span style="margin-left: 12px;"><input type="password" class="dlmm_txt"name="repassword" id="reppass"></span></p>
 										<p class="show-message"></p>
-										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">确认修改</button>
+										 <button type="submit" class="btn btn-primary  pad-left " id="change-pwd">确认修改</button>
 										 <button type="button" class="btn   btn-hid1">隐藏</button>
-										 </form>
+										 
 									</div>
 									<div class="p-hide2 update-pwd-c" style="display: none;">	
-										<form class="login-form" action="{:U('Member/Userinfo/findpaypassword_save')}" method="post">
+										
 										<div class="phone">
 											<p style="margin-top: 20px;"><span class="person-span-1">手机验证码：</span></p>
 											<dd><input id="mobile" type="text"value="{$mobile}" readonly  style="float: left;margin-left:0px;"/><input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="float: left;margin-bottom: 0px;margin:5px 5px 0 0;  width:130px;display:none;"id="checkcode"/>
 											<input id="zphone" type="button" value="获取验证码 " onClick="get_mobile_code();" class="phone_btn" style="width:120px; float:left;border: 0;" /> </dd>
 										</div>
 										
-										<p style="margin-top: 20px;"><span class="person-span-1">新支付密码：</span><span style=" margin-left: 12px;"><input type="password" class="dlmm_txt" name="newpassword"></span></p>
-										<p style="margin-top: 20px;"><span class="person-span-1">确认新支付密码：</span><span style=" margin-left: 12px;"><input type="password" class="dlmm_txt" name="repassword"></span></p>
+										<p style="margin-top: 20px;"><span class="person-span-1">新支付密码：</span><span style=" margin-left: 12px;"><input type="password" class="dlmm_txt" name="newpassword" id="new_ppass"></span></p>
+										<p style="margin-top: 20px;"><span class="person-span-1">确认新支付密码：</span><span style=" margin-left: 12px;"><input type="password" class="dlmm_txt" name="repassword" id="re_ppass"></span></p>
 										<p class="show-message"></p>
-										 <button type="submit" class="btn btn-primary  pad-left " id="update-pwd">确认修改</button>
+										 <button type="submit" class="btn btn-primary  pad-left " id="find-pwd">确认修改</button>
 										 <button type="button" class="btn   btn-hid2">隐藏</button>
-										</form>
+										
 									</div>
 								</div>
 							</div>
@@ -183,32 +183,110 @@ $_SESSION['send_code'] = random(6,1);
 
 <script type="text/javascript"
 	src="__PUBLIC__/Admin/js/common.js"></script> <script>
-		$("#phone_btn").click(function() {
-			var mobile = $("#mobile").val();
-			if (mobile == "") {
-				alert("请填写变更的手机号码！");
-				return false;
-			}
+		$('#update-pwd').click(function(){
+			var oldp =$('#oldp').val();
+			var newp =$('#newp').val();
+			var rep =$('#rep').val();
+			
+			var index = layer.load(1,{time: 7*1000});	
+	        $.post('__SELF__',{oldpass:oldp,password:newp,repassword:rep},function success(data){
+	        if (data.status) {
+				layer.msg(data.info);
+				$("#form").submit();
+				layer.closeAll('loading');
+				$(".btn-hid").click();
+				layer.alert('登录密码修改成功');
+			    } 
+			    else{	
+		    	layer.msg(data.info);
+		    	layer.closeAll('loading');
+			    }
+	         });
 		});
-		$("#updatePhone").click(function() {
-			var reg = /^(?:13\d|15\d|18\d)\d{5}(\d{3}|\*{3})$/;
-			var mobile = $("#mobile").val();
-			var checkcode = $("#checkcode").val();
-			if (mobile == "") {
-				alert("请填写变更的手机号码！");
-				return false;
+</script>
+
+<script type="text/javascript">
+		$('#change-pwd').click(function(){
+			var oldppass=$('#oldppass').val();
+			var newppass=$('#newppass').val();
+			var reppass=$('#reppass').val();
+			if (oldppass!==''){
+				if (newppass!==''){
+					if (reppass!==''){
+						if (newppass==reppass){
+							var index = layer.load(1,{time: 7*1000});
+							$.post('__ROOT__/Member/Userinfo/changepaypassword_save',{oldpassword:oldppass,newpassword:newppass,repassword:reppass},function success(data){
+								if (data.status){
+									layer.msg(data.info);
+									layer.closeAll('loading');
+									$(".btn-hid1").click();
+									layer.alert('新支付密码修改成功');
+									
+									 	
+									
+								}else{
+									layer.msg(data.info);
+									
+									layer.closeAll('loading');
+								}
+							});
+							
+						}else{
+							layer.msg('两次输入新密码不一致');
+						}
+						
+					}else{
+						layer.msg('确认密码不能为空！');
+					}
+				}else{
+					layer.msg('新支付密码不能为空！');
+				}
+			}else{
+				layer.msg('原支付密码不能为空！');
 			}
-			if (!reg.test(mobile)) {
-				alert("请填写正确的手机号码！！");
-				return false;
-			}
-			if (checkcode == "") {
-				alert("请填写手机验证码！");
-				return false;
-			}
-			$("#form").submit();
 		});
 	</script>
 
+<script type="text/javascript">
+		$('#find-pwd').click(function(){
+			var mobile_code=$('#checkcode').val();
+			var new_ppass=$('#new_ppass').val();
+			var re_ppass=$('#re_ppass').val();
+			if (mobile_code!==''){
+				if (new_ppass!==''){
+					if (re_ppass!==''){
+						if (new_ppass==re_ppass){
+							var index = layer.load(1,{time: 7*1000});
+							$.post('__ROOT__/Member/Userinfo/findpaypassword_save',{mobile_code:mobile_code,new_ppass:new_ppass,re_ppass:re_ppass},function success(data){
+								if (data.status){
+									layer.msg(data.info);
+									layer.closeAll('loading');
+									$(".btn-hid2").click();
+									layer.alert('新支付密码修改成功');
+									
+									 	
+									
+								}else{
+									layer.msg(data.info);
+									
+									layer.closeAll('loading');
+								}
+							});
+							
+						}else{
+							layer.msg('两次输入新密码不一致');
+						}
+						
+					}else{
+						layer.msg('确认密码不能为空！');
+					}
+				}else{
+					layer.msg('新支付密码不能为空！');
+				}
+			}else{
+				layer.msg('手机验证码不能为空！');
+			}
+		});
+	</script>
 
  </block>
