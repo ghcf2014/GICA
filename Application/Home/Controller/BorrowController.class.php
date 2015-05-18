@@ -317,19 +317,20 @@ class BorrowController extends HomeController {
 
 
 		$blist = $listBorrow->where ($buid)->select ();
-		$byuqi = $listBorrow->where ($buid,'borrow_status in (8,9,10) ')->select ();
-		$cgjiekuan = $listBorrow->where ($buid,'borrow_status in (7,9) ')->select ();
-		$byuqing = $listBorrow->where ($buid,'borrow_status in (8) ')->select ();
-		$cgmoney = $listBorrow->field ( 'sum(borrow_money)borrow_money')->where ($buid,'borrow_status in (7.9) ')->group ('borrow_uid')->select ();
-		$byuqimoney = $listBorrow->field ( 'sum(borrow_money)borrow_money')->where ($buid,'borrow_status in (8,9,10) ')->group ('borrow_uid')->select ();
+		$byuqi = $listBorrow->where (array('borrow_uid'=>$buid['borrow_uid'],'borrow_status'=>array('in','8,9,10')))->select ();
+		$cgjiekuan = $listBorrow->where (array('borrow_uid'=>$buid['borrow_uid'],'borrow_status'=>array('in','7,9')))->select ();
+		$byuqing = $listBorrow->where (array('borrow_uid'=>$buid['borrow_uid'],'borrow_status'=>array('in','8')))->select ();
+		$cgmoney = $listBorrow->field ( 'sum(borrow_money)borrow_money')->where (array('borrow_uid'=>$buid['borrow_uid'],'borrow_status'=>array('in','7,9')))->group ('borrow_uid')->select ();
+		$byuqimoney = $listBorrow->field ( 'sum(borrow_money)borrow_money')->where (array('borrow_uid'=>$buid['borrow_uid'],'borrow_status'=>array('in','8,9,10')))->group ('borrow_uid')->select ();
+
 		
+
 		$this->bcount=count($blist);
 		$this->byuqi=count($byuqi);
 		$this->cgjiekuan=count($cgjiekuan);
 		$this->byuqing=count($byuqing);
 		$this->cgmoney=$cgmoney[0]['borrow_money'];
 		$this->byuqimoney=$byuqimoney[0]['borrow_money'];
-
 
 		$userlist = M ( 'ucenter_member' );
 		$data = $userlist->field ( 'id,username,reg_time,last_login_time,logo_url' )->where ( 'id=%s', $uid )->select ();

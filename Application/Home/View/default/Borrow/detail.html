@@ -88,12 +88,12 @@
                 		<td>当前逾期待还金额</td>
                 	</tr>
                 	<tr>
-                		<td>{$bcount}</td>
-                		<td>{$byuqi}</td>
-                		<td>{$cgjiekuan}</td>
-                		<td>{$byuqing}</td>
-                		<td>{$cgmoney}</td>
-                		<td>{$byuqimoney}</td>
+                		<td>{$bcount|default="0.00"}</td>
+                		<td>{$byuqi|default="0.00"}</td>
+                		<td>{$cgjiekuan|default="0.00"}</td>
+                		<td>{$byuqing|default="0.00"}</td>
+                		<td>{$cgmoney|default="0.00"}</td>
+                		<td>{$byuqimoney|default="0.00"}</td>
                 	</tr>
                 </table>
             </div>
@@ -136,9 +136,9 @@
 	                	<ul class="con2" style="height:53px;">
 		                    <li>{$i+1}</li>
 		                    <li>{$cons[$i+1]['repayment_time']|date='Y-m-d',###}</li>
-		                    <li>￥:{$cons[$i+1]['allcapital']}</li>
-		                    <li>￥:{$cons[$i+1]['capital']}</li>
-		                    <li>￥:{$cons[$i+1]['interest']}</li>
+		                    <li>{$cons[$i+1]['allcapital']}</li>
+		                    <li>{$cons[$i+1]['capital']}</li>
+		                    <li>{$cons[$i+1]['interest']}</li>
 		                    <!-- <li>￥:{$cons[$i+1]['remain_money']}</li>
 		                    <li>待还</li> -->
 	                	</ul>	                	

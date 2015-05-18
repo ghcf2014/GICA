@@ -42,7 +42,7 @@
 								type="text" value="" name="verify" class="txt txt1 "
 								style="width: 140px;" id="verifycode" placeholder="验证码"
 								errormsg="" nullmsg="请填写验证码" datatype="*6-20" /> <img
-								class="verifyimg reloadverify vtip" src="{:U('/User/verify')}" width="101"
+								class="verifyimg reloadverify vtip" src="{:U('verify')}" width="101"
 								height="44" alt="点击切换"
 								style="cursor: pointer; width: 90px; float: right;">
 						</div>
@@ -51,9 +51,11 @@
 					<dl style="width: 300px;padding-left: 50px; height: 40px; margin-bottom: 0px;">
 						<span style="color: red; line-height: 40px;" id="checkcode" class="formtips Validform_checktip "></span>
 					</dl>
-					<input type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" name="denglu" id="loginIn" class="btn"  style="margin-left: 53px;font-size: 18px;"/>
+					<input type="button" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" name="denglu" id="loginIn"
+						onclick="javascript:;" class="btn"  style="margin-left: 53px;font-size: 18px;"/>
 					<div class="dl_cont_bot" style="margin-left: 0px;">
-						<span class="right"><a href="{:U('System/findpassword')}">忘记密码？</a><a href="{:U('User/register')}">|&nbsp;立即注册</a></span>
+						<span class="right"><a href="{:U('System/findpassword')}">忘记密码？</a><a
+							href="{:U('User/register')}">|&nbsp;立即注册</a></span>
 					</div>
 					<div id="show"></div>
 					
@@ -123,21 +125,21 @@
 		$("button:submit").removeClass("log-in").attr("disabled", false);
 	});
 	// 异步验证
-	// $(".utip").blur(function() {
-	//  var username = document.getElementById("username").value;
-	// 	  var bid =1;
-	// 	  var index = layer.load(1,{time: 7*1000});	
- //          $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
- //          	if (data.nuser =='用户不存在')
- //          	 {
-	// 			layer.tips(data.nuser, '.utip');
-	// 			layer.closeAll('loading');
-	// 		    } 
-	// 		    else{
-	// 		    	layer.closeAll('loading');
-	// 		    }
- //          		});
-	// });
+	$(".utip").blur(function() {
+	 var username = document.getElementById("username").value;
+		  var bid =1;
+		  var index = layer.load(1,{time: 7*1000});	
+          $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
+          	if (data.nuser =='用户不存在')
+          	 {
+				layer.tips(data.nuser, '.utip');
+				layer.closeAll('loading');
+			    } 
+			    else{
+			    	layer.closeAll('loading');
+			    }
+          		});
+	});
 	$("form").submit(function() {
 		var index = layer.load(1);
 		var self = $(this);
@@ -183,5 +185,44 @@
 					}
 				});
 	});
+</script> <script>
+	$(function() {
+		$(document).keydown(function(event) {
+			if (event.keyCode == 13) {
+				$("#loginIn").click();
+			}
+		});
+	});
+
+	$("#loginIn").click(function() {
+		var username = $("#username").val();
+		var password = $("#password").val();
+		var verifycode = $("#verifycode").val();
+		// if (username == "") {
+		// 	$("#checkname").html(
+		// 			"<span><font color='red'>请输入用户名！</font></span>");
+		// 	return false;
+		// }
+		// if (password == "") {
+		// 	if (username != null) {
+		// 		$("#checkname").hide();
+		// 	}
+		// 	$("#checkpwd").html("请输入登录命名！");
+		// 	return false;
+		// }
+		// if (verifycode == "") {
+		// 	if (username != null) {
+		// 		$("#checkname").hide();
+		// 	}
+		// 	if (password != null) {
+		// 		$("#checkpwd").hide();
+		// 	}
+		// 	$("#checkcode").html("请输入验证码！");
+		// 	return false;
+		// }
+
+		$("#form").submit();
+	});
 </script>
+
 </block>

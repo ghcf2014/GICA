@@ -167,8 +167,7 @@ class BorrowController extends MemberController {
 
         M('z_member_money')->where(array('uid'=>$binfo[0]['borrow_uid']))->setField(array('account_money'=>floatval($data['money'])));
 
-     //    dump($data['money']);
-	    // exit();
+        
 
         for($i=0;$i<=(intval ($ccc)-1);$i++){
 	    $data[$i]['investor_uid'] =$dee[$i]['investor_uid'];
@@ -178,8 +177,11 @@ class BorrowController extends MemberController {
 	    $member_money = M ('z_member_money');
 	    $money=$member_money->where(array('uid'=>$data[$i]['investor_uid']))->select();
         $data[$i]['money']=floatval($dee[$i]['interest'])+floatval($dee[$i]['capital'])+floatval($money[0]['account_money']);
-
+        $data[$i]['interest']=floatval($dee[$i]['interest'])+floatval($money[0]['interest']);
+        //账户余额
 	    M('z_member_money')->where(array('uid'=>$money[0]['uid']))->setField(array('account_money'=>floatval($data[$i]['money'])));
+	    //投资收益
+	    M('z_member_money')->where(array('uid'=>$money[0]['uid']))->setField(array('interest'=>floatval($data[$i]['interest'])));
 
 	    $msgmoney=floatval($dee[$i]['interest'])+floatval($dee[$i]['capital']);
 	    $action='您的账户于'.date('Y-m-d H:i:s',time()).'收到'.$bid.'号标的'.$id.'期投资还款'.$msgmoney.'元。温馨提示：请合理安排投资，避免资金闲置。';
