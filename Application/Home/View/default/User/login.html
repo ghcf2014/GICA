@@ -123,21 +123,21 @@
 		$("button:submit").removeClass("log-in").attr("disabled", false);
 	});
 	// 异步验证
-	$(".utip").blur(function() {
-	 var username = document.getElementById("username").value;
-		  var bid =1;
-		  var index = layer.load(1,{time: 7*1000});	
-          $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
-          	if (data.nuser =='用户不存在')
-          	 {
-				layer.tips(data.nuser, '.utip');
-				layer.closeAll('loading');
-			    } 
-			    else{
-			    	layer.closeAll('loading');
-			    }
-          		});
-	});
+	// $(".utip").blur(function() {
+	//  var username = document.getElementById("username").value;
+	// 	  var bid =1;
+	// 	  var index = layer.load(1,{time: 7*1000});	
+ //          $.post('__URL__/login_array',{bid:bid,username:username},function success(data){
+ //          	if (data.nuser =='用户不存在')
+ //          	 {
+	// 			layer.tips(data.nuser, '.utip');
+	// 			layer.closeAll('loading');
+	// 		    } 
+	// 		    else{
+	// 		    	layer.closeAll('loading');
+	// 		    }
+ //          		});
+	// });
 	$("form").submit(function() {
 		var index = layer.load(1);
 		var self = $(this);

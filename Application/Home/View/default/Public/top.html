@@ -17,7 +17,7 @@
 				站内信[<a href="{:U('Member/System/usermailindex')}" style="color:white;">{:is_sysmsg()}</a>]
 			</if>
 			<a href="{:U('Member/Index/index')}"class="zc">
-			<img src="../{:get_member_logo_img()}" style="border-radius: 25px;height: 25px; background-color:white;" width="25" height="25" /> {:get_username()}</a>&nbsp;|&nbsp;<a href="{:U('Home/User/logout')}"class="dl">安全退出</a>
+			<img src="/{:get_member_logo_img()}" style="border-radius: 25px;height: 25px; background-color:white;" width="25" height="25" /> {:get_username()}</a>&nbsp;|&nbsp;<a href="{:U('Home/User/logout')}"class="dl">安全退出</a>
 		</p>
 		<else/>
 		<p>
@@ -35,9 +35,6 @@
 
 </div>
 <!--header end-->
-
-
-
 <!--nav start-->
 <div class="nav_out">
 	<!--nav_l-->	
@@ -62,23 +59,20 @@
 		</div>
 	</div>
 </div>
-<!--nav end-->
-
-<!--浮动导航-->
-<!--<div class="nav2_out">		
-	<ul class="nav2">
-    	<li style="width: 60px;"><a href="{:U('Home/Index/index')}" class="current">首页</a></li>
-		<li><a href="{:U('Home/Borrow/index')}">我要融资</a></li>
-		<li><a href="{:U('Home/Finance/index')}">我要投资</a></li>
-		<li><a href="{:U('Member/Index/index')}">我的账户</a></li>
-		<li><a href="{:U('Home/Newhelp/borrowhelp')}">新手指引</a></li>		
-	</ul>
-</div>-->
-<!-- <div id="top_ads" style="display:none;">
-  <div id="header_ad"></div>
-  <div id="close"><img onclick="closeAd();" src="images/close.gif" /></div>
-</div> -->
-
+<!-- 登录弹出框 -->
+<div id="loginmodal" style="display:none;">
+ <div class="loginmodal"  style="width:300px; background-image:url(__PUBLIC__/Home/images/beijing-tiao.png); background-repeat:repeat-x; height:300px;margin-top:5px;">
+	<h1><img src="__PUBLIC__/Home/images/logo-denglu.png" /></h1>
+	<form class="login-form" action="{:U('Home/User/login')}" method="post" id="loginform">
+		<img style="margin-left: -262px;"  src="__PUBLIC__/Home/images/jiantou-denglu.png" /><input style=" width;150px;height: 32px; border:1px solid #bedeff; float: left; margin-top: 8px; margin-left: 30px;" /> <input type="text" name="username" value="" id="username" style="width:150px;margin-top:15px; border: none;" tabindex="1" />
+		<img style="margin-left: -24px;margin-top: 14px;" src="__PUBLIC__/Home/images/jiantou-denglu-2.png" /> <input style="margin-left: 20px; float: left;border:1px solid #bedeff;height: 32px;margin-top: -46px; margin-left: 30px;"/><input type="password" name="password" id="password" style="width:150px;margin-top:22px; border: none;" tabindex="2" />
+		<label for="password"><img style=" margin-left: -159px;margin-top: 10px;" src="__PUBLIC__/Home/images/jiantou-yanzhengma.png" /><input style="margin-left: 20px; float: left;border:1px solid #bedeff;height: 32px;margin-top:16px; margin-left: 30px;width:104px"/>
+		 <span><input type="text" name="verify" style="width:50px;margin-top:21px; border: none;"/></span><img class="verifyimg reloadverify vtip" src="{:U('Home/User/verify')}" width="101"height="44" alt="点击切换"style="cursor: pointer; width: 90px; float-left:10px;margin-top: 6px; margin-left: 6px"></label>
+		<div class="center"><input style="margin-top: 24px;;" type="submit" id="login_btn" value=""/></div>
+	</form>
+ </div>
+ </div>
+<!--浮动新手任务广告-->
 <div id="top_ads">
 <div class="outer"  >
     <div class="inner">
@@ -132,14 +126,6 @@ scorll_y();
 var str = "<img src='images/chivas_ad.jpg' width=950 height=500 border=0 />"
 document.getElementById("header_ad").innerHTML = str;
 </script>
-
-
-
-
-
-
-
-
 <script type="text/javascript">
 	$(function(){
 		//alert(1);	
@@ -186,11 +172,6 @@ document.getElementById("header_ad").innerHTML = str;
     		}
   		});
   		if (!urlstatus) {$(".nav_out .nav .nav_wrap li").eq(0).children().addClass('current'); }
-  		
-  		
-  		
-  		
-  		
   		
   		//顶部 微博 微信 QQ 热线
   		//微博

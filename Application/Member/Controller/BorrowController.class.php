@@ -146,13 +146,14 @@ class BorrowController extends MemberController {
 		$condition['sort_order'] =$id;
 	    $condition['borrow_id'] =$bid;
 
-	    $de= $detail->field ( 'id,investor_uid,capital,interest,repayment_time,deadline,receive_capital')->where ( $condition )->select();
-	    $dee= $detail->field ( 'id,borrow_id,investor_uid,sum(capital)capital,repayment_time,deadline,receive_capital')->where ( $condition )->group ('investor_uid')->select();
+	    $de= $detail->field ( 'id,borrow_uid,investor_uid,capital,interest,repayment_time,deadline,receive_capital')->where ( $condition )->select();
+	    $dee= $detail->field ( 'id,borrow_id,investor_uid,sum(capital)capital,sum(interest)interest,repayment_time,deadline,receive_capital')->where ( $condition )->group ('investor_uid')->select();
 
         $ccc=count($dee);
         for($i=0;$i<=(intval ($ccc)-1);$i++){
 
-        	$cm=floatval($dee[$i]['capital'])+floatval($dee[$i]['capital']);
+        	$cm=floatval($dee[$i]['capital'])+floatval($dee[$i]['interest']);
+        	// floatval($dee[$i]['interest_fee']);
 
         }
 	    
@@ -179,13 +180,13 @@ class BorrowController extends MemberController {
         $data[$i]['money']=floatval($dee[$i]['interest'])+floatval($dee[$i]['capital'])+floatval($money[0]['account_money']);
 
 	    M('z_member_money')->where(array('uid'=>$money[0]['uid']))->setField(array('account_money'=>floatval($data[$i]['money'])));
-	    // dump($money);
 
-
+	    $msgmoney=floatval($dee[$i]['interest'])+floatval($dee[$i]['capital']);
+	    $action='您的账户于'.date('Y-m-d H:i:s',time()).'收到'.$bid.'号标的'.$id.'期投资还款'.$msgmoney.'元。温馨提示：请合理安排投资，避免资金闲置。';
+	    $uid=$money[0]['uid'];
+	    $opertype=7;//到账通知
+        $result_ms=inner_msg($uid,$opertype,$action); 
 	    }
-	    
-        // exit();
-
         $cc=count($de);
 
         for($i=0;$i<=(intval ($cc)-1);$i++){
@@ -225,7 +226,13 @@ class BorrowController extends MemberController {
 		// $data ['repayment_ed_money'] =(floatval($b[0]['repayment_ed_money'])+floatval($m));
 
 		// var_dump($b[0]['repayment_ed_money']);
-
+		//发送站内信
+        
+         
+        $action='您于'.date('Y-m-d H:i:s',time()).'对'.$bid.'号标'.$id.'期的还款操作成功。';
+	    $uid=$de[0]['borrow_uid'];
+	    $opertype=1;//系统通知
+        $result_ms=inner_msg($uid,$opertype,$action); 
 		$this->success ('还款成功');
 
 		//2015-2-3

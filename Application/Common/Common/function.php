@@ -1638,7 +1638,8 @@ function subtext($text, $length) {
             2 => '1',
             3 => '1',
             5 => '1',
-            6 => '1'
+            6 => '1',
+            7 => '1'
     	);
 		$data['uid']=$aduid[$opertype];
 		$data['tid']=$uid;
@@ -1669,7 +1670,8 @@ function subtext($text, $length) {
             3 => '活动通知',
             4 => '好友通知',
             5 => '审核通知',
-            6 => '工合团队通知'
+            6 => '工合团队通知',
+            7 => '到账通知'
     	);
     	if(isset($type[$opertype])) {
     	return $type[$opertype];
