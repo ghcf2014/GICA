@@ -58,9 +58,9 @@
 														<tr>
 															<!-- <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th> -->
 															<th><if condition="$ms['uid'] eq 1">工合财富<else/>{$ms['uid']|get_uname}</if></th>
-															<th><if condition="$ms['status'] eq 0"><span class="on">[新]</span></if>{$ms['title']}：{$ms['msg']}</th>
-															<th>{$ms['send_time']|date='Y-m-d H:i:s',###}</th>
-															<th><a class="confirm" href="{:U('Member/System/usermailindex_danger_del?id='.$ms['id'])}" title="点击删除消息" >删除</a></th>
+															<th ><if condition="$ms['status'] eq 0"><span class="on">[新]</span></if>{$ms['title']}：{$ms['msg']}</th>
+															<th style="width:165px;">{$ms['send_time']|date='Y-m-d H:i:s',###}</th>
+															<th  style="width:45px;"><a class="confirm" href="{:U('Member/System/usermailindex_danger_del?id='.$ms['id'])}" title="点击删除消息" >删除</a></th>
 														</tr>
 														</volist>
 												</tbody>

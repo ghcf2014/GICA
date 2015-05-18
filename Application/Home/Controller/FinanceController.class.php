@@ -160,7 +160,7 @@ class FinanceController extends HomeController {
 
                     if(floatval ($m22[0]['has_borrow']) == floatval ($m22[0]['borrow_money']))
                     {
-                        $data3['borrow_status']=4;//满标状态改变
+                        $data3['borrow_status']=7;//满标状态改变
                         $data3['full_time']=time();//满标时间
                         $m2=$m2->where($condition2)->save($data3);          
                     }
@@ -189,7 +189,7 @@ class FinanceController extends HomeController {
 
                                         if(floatval ($m22[0]['has_borrow']) == floatval ($m22[0]['borrow_money']))
                                         {
-                                            $data3['borrow_status']=4;//标状态改变
+                                            $data3['borrow_status']=7;//标状态改变
                                             $m2=$m2->where($condition2)->save($data3);          
                                         }
 

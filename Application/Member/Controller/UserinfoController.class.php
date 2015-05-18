@@ -811,12 +811,6 @@ class UserinfoController extends MemberController {
 		$oldpassword = I('post.oldpassword');
 		$newpassword = I('post.newpassword');
 		$repassword = I('post.repassword');
-		empty($oldpassword) && $this->error('请输入原支付密码');
-		empty($newpassword) && $this->error('请输入新支付密码');
-		empty($repassword) && $this->error('请输入确认支付密码');
-		if ($_POST[newpassword]!==$_POST['repassword']){
-			$this->error('两次输入的新密码不一致');
-		}
 		$m = M ( "ucenter_member" );
 
 		$condition ['id'] = $uid;
@@ -839,22 +833,16 @@ class UserinfoController extends MemberController {
 	}	
 	public function findpaypassword_save(){
 		$mobile_code=I('post.mobile_code');
-		$login_pwd=I('post.login_pwd');
-		$newpassword = I('post.newpassword');
-		$repassword = I('post.repassword');
-		empty($mobile_code) && $this->error('请输入手机验证码');
-		empty($login_pwd) && $this->error('请输入登录密码');
-		empty($newpassword) && $this->error('请输入新支付密码');
-		empty($repassword) && $this->error('请输入确认支付密码');
-
+		$newpassword = I('post.new_ppass');
+		$repassword = I('post.re_ppass');
 		session_start();
 		if($_SESSION['mobile_code'] == $_POST['mobile_code']){
 			$m = M ( "ucenter_member" );
 			$condition ['id'] =is_login();
-			$data ['pin_pass'] = md5 ( $_POST ['newpassword'] );
+			$data ['pin_pass'] = md5 ( $newpassword);
 			$result= $m->where($condition)->save($data);
 			if ($result) {
-				$this->success ( '支付密码修改成功，请注意资金安全',U('Home/User/profile'));
+				$this->success ( '支付密码修改成功!',U('Home/User/profile'));
 			} else {
 				$this->error ( '支付密码修改失败！' );
 			}

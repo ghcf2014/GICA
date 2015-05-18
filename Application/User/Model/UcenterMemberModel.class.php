@@ -230,13 +230,13 @@ class UcenterMemberModel extends Model{
 	 */
 	public function updateUserFields($uid, $password, $data){
 		if(empty($uid) || empty($password) || empty($data)){
-			$this->error = '参数错误！';
+			$this->error = '参数不能为空！';
 			return false;
 		}
 
 		//更新前检查用户密码
 		if(!$this->verifyUser($uid, $password)){
-			$this->error = '验证出错：密码不正确！';
+			$this->error = '登录密码不正确！';
 			return false;
 		}
 
