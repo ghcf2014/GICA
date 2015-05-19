@@ -504,9 +504,7 @@ public function auto_borrow(){
                 	continue;
                 }
 			}
-				// dump($p[$k]['uid']);
-				// dump($p[$k]['borrow_money']);
-				// dump($p[$k]['id']);
+
         }		
 	}
 	public function auto_borrow_add($borrow_money=0,$borrowinfo_id=0,$uid=0){
@@ -514,7 +512,7 @@ public function auto_borrow(){
             $listMember = M('member');
             $condition['gica_member.uid'] =$uid ;
             $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
-            $map = array('id' => $id);
+            $map['id']=$borrowinfo_id;
             $listBorrow  = M('z_borrow_info');
             $list3 = $listBorrow->where($map)->select();
             //从表单中获取来的数据 
@@ -525,14 +523,13 @@ public function auto_borrow(){
 
             }
             if ($list3[0]["repayment_type"] == 6) {
-                            $b=floatval ($capital)*(floatval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
+              $b=floatval ($capital)*(floatval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
             // $depict ['repayment_money'] = intval ($capital)+(intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12));
 
             }
             //一次性还款公式带进
             if ($list3[0]["repayment_type"] == 7) {
-                
-                            $b=(floatval ($capital)*(floatval ( $list3[0]["borrow_interest_rate"]/ 100 / 12))*intval ($list3[0]['borrow_duration']));
+                $b=(floatval ($capital)*(floatval ( $list3[0]["borrow_interest_rate"]/ 100 / 12))*intval ($list3[0]['borrow_duration']));
                 // $depict ['repayment_money']=intval ($capital)*(1+((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12))*intval ($list3[0]["borrow_duration"] ));
             }
             
@@ -632,23 +629,17 @@ public function auto_borrow(){
                                                     $detail->interest=$interest;
                                                     $detail->interest_fee=$b;
                                                     $detail->status=$binfo[0]['borrow_status'];
-                                                    // $detail->receive_interest=$b;
-                                                    // $detail->receive_capital=$b;
+                                                    
                                                     $detail->sort_order=$i;
                                                     $detail->total=$binfo[0]['total'];
-                                                    // $detail->deadline=$b;
-                                                    // $detail->expired_money=$b;
-                                                    // $detail->expired_days=$b;
-                                                    // $detail->call_fee=$b;
-                                                    // $detail->substitute_money=$b;
-                                                    // $detail->substitute_time=$b;
+                                                    
                                                     $detail=$detail->add();
 
                                             }
                                             if ($binfo[0]["repayment_type"] == 6) {
-                                                     // $huan[$i]['lixi'] =intval ( $borrow_info[0]["borrow_money"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
+                                                     
                                                      $dcapital =floatval ($capital )/floatval ($binfo[0]['total']);
-                                                     // $huan[1]['lixi'] =intval ($huan[0]['lixi'])+intval ( $binfo[0]["borrow_interest_rate"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
+                                                    
                                                      $t=$i+1;
                                                     $detail=M("z_investor_detail");
                                                     $detail->repayment_time=strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
@@ -660,16 +651,10 @@ public function auto_borrow(){
                                                     $detail->interest=$b;
                                                     $detail->interest_fee=$interest;
                                                     $detail->status=$binfo[0]['borrow_status'];
-                                                    // $detail->receive_interest=$b;
-                                                    // $detail->receive_capital=$b;
+                                                    
                                                     $detail->sort_order=$i;
                                                     $detail->total=$binfo[0]['total'];
-                                                    // $detail->deadline=$b;
-                                                    // $detail->expired_money=$b;
-                                                    // $detail->expired_days=$b;
-                                                    // $detail->call_fee=$b;
-                                                    // $detail->substitute_money=$b;
-                                                    // $detail->substitute_time=$b;
+                                                    
                                                     $detail=$detail->add();
                                             }
                                             if ($binfo[0]["repayment_type"] == 7){
@@ -688,12 +673,7 @@ public function auto_borrow(){
                                                     $detail->total=$binfo[0]['total'];
                                                     $detail=$detail->add();
                                                     continue;
-                                            }
-
-
-
-
-                                            
+                                            } 
 
                                         }
                                         //投资详情表
@@ -722,9 +702,7 @@ public function auto_borrow(){
                 }
                
         }
-        else{
-            $this->error('抱歉，您余额不足。请充值。');
-        }
+        
 	}
 
 	public function investdetail($id=0){
