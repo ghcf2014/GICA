@@ -27,11 +27,10 @@
 						<input type="hidden" value='0' name="status">
 					</dt>
 					<dd>
-						<if condition="$auto_data['status'] eq 1">
-							<a href="#"><input type="submit" class="zdtb_con_btn01"  value="开启" /></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{:U('Invest/autoinvest_open?status=0')}"><input type="submit" class="zdtb_con_btn" value="关闭" /></a>
-						<else/>
-							<a href="{:U('Invest/autoinvest_open?status=1')}"><input type="submit" class="zdtb_con_btn"  value="开启" /></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#"><input type="submit" class="zdtb_con_btn01" value="关闭" /></a>
-						</if >
+						<input type="button" class="zdtb_con_btn01" id="auto_open" value="开启" />
+						<input type="hidden" name="auto_o" value="1" />
+						<input type="hidden" name="auto_c" value="0" />
+						<input type="button" class="zdtb_con_btn"  id="auto_close" value="关闭" />
 					</dd>
 				</dl>
 				<dl>
@@ -39,16 +38,12 @@
 						<span>当前状态:</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<span>
-						<if condition="$auto_data['status'] eq 0">
-						已关闭
-						<else/>
-						已开启
-						</if >
+						<span id="member_auto_status">
+							{:member_auto_status()}
 						</span>
 					</dd>
 				</dl>
-				<form action="{:U('Invest/autoinvest_save')}" method="post">
+				
 				<dl>
 					<dt>
 						<span>账户总额</span><span style="color: red;">*</span>
@@ -61,7 +56,7 @@
 					</dt>
 					<dd>
 						<span style="color: #333;">￥</span><input type="text"
-						class="zdtb_con_txt" value="{$auto_data['keep_money']}" placeholder="{$auto_data['keep_money']}" name="keep_money"/>
+						class="zdtb_con_txt" value="{$auto_data['keep_money']}" placeholder="{$auto_data['keep_money']}" id="keep_money"name="keep_money"/>
 					</dd>
 				</dl>
 				<dl>
@@ -69,8 +64,7 @@
 						<span>投标金额</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<span style="color: #333;">￥</span><input type="text"
-							class="zdtb_con_txt" placeholder="{$auto_data['borrow_money']}" value="{$auto_data['borrow_money']}" name="borrow_money" /><span>&nbsp&nbsp&nbsp&nbsp投标金额只能为100的整数</span>
+						<span style="color: #333;">￥</span><input type="text" class="zdtb_con_txt" placeholder="{$auto_data['borrow_money']}" value="{$auto_data['borrow_money']}" id="borrow_money" name="borrow_money" /><span>&nbsp&nbsp&nbsp&nbsp投标金额只能为100的整数</span>
 					</dd>
 				</dl>
 				<dl>
@@ -78,7 +72,7 @@
 						<span>投标类型</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<select name="tender_type" id="">
+						<select name="tender_type" id="tender_type">
 							<option value="0">全部</option>
 							<option value="1">信用标</option>
 							<option value="2">净值标</option>
@@ -93,11 +87,29 @@
 						<span>借款利率</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<input type="text" name="apr_first" class="zdtb_con_txt2" value="{$auto_data['apr_first']}" /> <span
-							style="color: #333;">%</span> <span
-							style="margin: 0 6px; color: #333;">—</span> <input type="text"
-							name="apr_last" class="zdtb_con_txt2" value="{$auto_data['apr_last']}" /> <span
-							style="color: #333;">%</span><span>&nbsp&nbsp&nbsp&nbsp投资年利率 6.00% 至 20.00%</span>
+						<select name="apr_first" id="apr_first">
+							<option value="10">10%</option>
+							<option value="11">11%</option>
+							<option value="12">12%</option>
+							<option value="13">13%</option>
+							<option value="14">14%</option>
+							<option value="15">15%</option>
+							<option value="16">16%</option>
+							<option value="17">17%</option>
+							<option value="18">18%</option>
+						</select> ——
+						<select name="apr_last" id="apr_last">
+							<option value="10">10%</option>
+							<option value="11">11%</option>
+							<option value="12">12%</option>
+							<option value="13">13%</option>
+							<option value="14">14%</option>
+							<option value="15">15%</option>
+							<option value="16">16%</option>
+							<option value="17">17%</option>
+							<option value="18" checked="checked">18%</option>
+						</select>
+						<span style="float:right;">&nbsp&nbsp&nbsp&nbsp投资年利率 10.00% 至 18.00%</span>
 					</dd>
 				</dl>
 				<dl>
@@ -105,7 +117,7 @@
 						<span>借款期限</span><span style="color: red;">*</span>
 					</dt>
 					<dd>
-						<select name="borrow_low_timelimt" id="">
+						<select name="borrow_low_timelimt" id="borrow_low_timelimt">
 							<option value="1">1个月</option>
 							<option value="2">2个月</option>
 							<option value="3">3个月</option>
@@ -119,8 +131,8 @@
 							<option value="11">11个月</option>
 							<option value="12">12个月</option>
 							<option value="18">18个月</option>
-						</select> —
-						<select name="borrow_height_timelimt" id="">
+						</select> ——
+						<select name="borrow_height_timelimt" id="borrow_height_timelimt">
 							<option value="1">1个月</option>
 							<option value="2">2个月</option>
 							<option value="3">3个月</option>
@@ -137,12 +149,87 @@
 						</select>
 					</dd>
 				</dl>
-				<input type="submit" id="" value="保存设置" class="zdtb_con_btn2" />
-				</form>
+				<input type="button" value="保存设置" class="zdtb_con_btn2" id="auto_submit" />
+				
 			</div>
 
 
 		</div>
 	</div>
 </div>
-<!--content end--> </block>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/common.js"></script>
+<script type="text/javascript">
+	$('#auto_open').click(function(){
+		var auto_o=$('#auto_o').val();
+
+		var index = layer.load(1,{time: 7*1000});
+		$.post('__ROOT__/Member/Invest/autoinvest_open',{status:auto_o},function success(data){
+			if (data.status){
+				layer.msg(data.info);
+				$("#member_auto_status").load(location.href+" #member_auto_status"); 
+				layer.closeAll('loading');
+			}else{
+				layer.msg(data.info);
+				$("#member_auto_status").load(location.href+" #member_auto_status"); 
+				layer.closeAll('loading');
+			}
+		});
+	});
+	$('#auto_close').click(function(){
+		var auto_o=$('#auto_o').val();
+		var index = layer.load(1,{time: 7*1000});
+		$.post('__ROOT__/Member/Invest/autoinvest_close',{status:'1'},function success(data){
+			if (data.status){
+				layer.msg(data.info);
+				$("#member_auto_status").load(location.href+" #member_auto_status"); 
+				layer.closeAll('loading');
+			}else{
+				layer.msg(data.info);
+				$("#member_auto_status").load(location.href+" #member_auto_status"); 
+				layer.closeAll('loading');
+			}
+		});
+	});
+	$('#auto_submit').click(function(){
+		var keep_money=$('#keep_money').val();
+		var borrow_money=$('#borrow_money').val();
+		var tender_type=$('#tender_type').val();
+		var apr_first=$('#apr_first').val();
+		var apr_last=$('#apr_last').val();
+		var borrow_low_timelimt=$('#borrow_low_timelimt').val();
+		var borrow_height_timelimt=$('#borrow_height_timelimt').val();
+		if(borrow_money<100){
+			$('#borrow_money').focus();
+			layer.msg('投标金额不能低于100呢');
+		}else{
+
+			if(tender_type<=0){
+				layer.msg('请选择投标类型！');
+			}else{
+
+				if(apr_first>=apr_last){
+					layer.msg('借款利率最小值不能低于最大值！');
+				}else{
+					if(borrow_low_timelimt>=borrow_height_timelimt){
+						$('#borrow_low_timelimt').click();
+						layer.msg('借款期限最小值不能低于最大值！');
+					}else{
+						var index = layer.load(1,{time: 7*1000});
+						$.post('__ROOT__/Member/Invest/autoinvest_save',{keep_money:keep_money,borrow_money:borrow_money,tender_type:tender_type,apr_first:apr_first,apr_last:apr_last,borrow_low_timelimt:borrow_low_timelimt,borrow_height_timelimt:borrow_height_timelimt},function success(data){
+							if (data.status){
+								layer.msg(data.info);
+								layer.closeAll('loading');
+							}else{
+								layer.msg(data.info);
+								layer.closeAll('loading');
+							}
+						});
+					}
+				}	
+			}
+			
+		}
+	});
+</script>
+</block>
+	
