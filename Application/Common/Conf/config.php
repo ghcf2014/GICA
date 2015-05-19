@@ -24,8 +24,9 @@ return array(
     'APP_GROUP_LIST' => 'Home,Admin,Member',//创建分组
 
     /* 系统数据加密设置 */
-    'DATA_AUTH_KEY' => C('SYSTEM_DATA_KEY'), //默认数据加密KEY  
+    'DATA_AUTH_KEY' => 'Y9k>up5P=Aa([EFr|DsO0cdSH3Jm]$W+Qxi.g)~Z', //默认数据加密KEY  
 
+   // 'DATA_AUTH_KEY' => C('SYSTEM_DATA_KEY'), //默认数据加密KEY 
     /* 用户相关设置 */
     'USER_MAX_CACHE'     => 1000, //最大缓存用户数
     'USER_ADMINISTRATOR' => 1, //管理员用户ID

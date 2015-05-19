@@ -94,16 +94,11 @@
 		<img style="margin-left: -262px;"  src="__PUBLIC__/Home/images/jiantou-denglu.png" /><input style=" width;150px;height: 32px; border:1px solid #bedeff; float: left; margin-top: 8px; margin-left: 30px;" /> <input type="text" name="username" value="" id="username" style="width:150px;margin-top:15px; border: none;" tabindex="1" />
 		<img style="margin-left: -24px;margin-top: 14px;" src="__PUBLIC__/Home/images/jiantou-denglu-2.png" /> <input style="margin-left: 20px; float: left;border:1px solid #bedeff;height: 32px;margin-top: -46px; margin-left: 30px;"/><input type="password" name="password" id="password" style="width:150px;margin-top:22px; border: none;" tabindex="2" />
 		<label for="password"><img style=" margin-left: -159px;margin-top: 10px;" src="__PUBLIC__/Home/images/jiantou-yanzhengma.png" /><input style="margin-left: 20px; float: left;border:1px solid #bedeff;height: 32px;margin-top:16px; margin-left: 30px;width:104px"/>
-		 <span><input type="text" name="verify" style="width:50px;margin-top:21px; border: none;"/></span><img class="verifyimg reloadverify vtip" src="{:U('Home/User/verify')}" width="101"height="44" alt="点击切换"style="cursor: pointer; width: 90px; float-left:10px;margin-top: 6px; margin-left: 6px"></label>
+		 <span><input type="text" name="verify" style="width:50px;margin-top:21px; border: none;"/></span><img class="verifyimg reloadverify" src="{:U('Home/User/verify')}" width="101"height="44" alt="点击切换"style="cursor: pointer; width: 90px; float-left:10px;margin-top: 6px; margin-left: 6px"></label>
 		<div class="center"><input style="margin-top: 24px;;" type="submit" id="login_btn" value=""/></div>
 	</form>
  </div>
- </div>
-
- <!--浮动侧边栏  计算器  客服QQ-->
-<!--联系我们-->
-
- <script type="text/javascript">
+  <script type="text/javascript">
 	//验证码刷新
 	$(document).ajaxStart(function() {
 		$("button:submit").addClass("log-in").attr("disabled", true);
@@ -173,6 +168,11 @@
 				});
 	});
 </script>
+ </div>
+ <!--浮动侧边栏  计算器  客服QQ-->
+<!--联系我们-->
+
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		
