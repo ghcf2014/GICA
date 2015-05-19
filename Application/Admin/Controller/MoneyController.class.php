@@ -335,6 +335,21 @@ class MoneyController extends AdminController {
         $map_uid['uid'] =$_POST['uid'];
 
         if($result=$mmoney->where($map_uid)->save($data)){
+
+        $member_money = M ('z_member_money');
+        $money=$member_money->where(array('uid'=>$data[$i]['investor_uid']))->select();
+
+        $data['money']=floatval($data['account_money'])-floatval($money[0]['account_money']);
+
+            $log = M ( 'z_member_moneylog' );
+            $logdata ['uid'] = $map_uid['uid'];
+            $logdata ['type'] = 555;
+            $logdata ['borrowinfo_id']=$map_uid['uid'];
+            $logdata ['affect_money'] = $data['money'];
+            $logdata ['info'] = '资金调整：'.$data['account_money'];
+            $logdata ['add_time'] = time ();
+            $log = $log->add ( $logdata );
+            
             $this->success('变更成功！');
         }else{
             $this->error('变更失败！');

@@ -182,7 +182,7 @@ class UserController extends HomeController {
 		if(IS_POST){ //登录验证
 			/* 检测验证码 */
 			if(!check_verify($verify)){
-			$this->error('验证码输入错误！');
+			$this->error('验证码错误！');
 			}
 			if(isusername($username)){
 			$type = 1;
