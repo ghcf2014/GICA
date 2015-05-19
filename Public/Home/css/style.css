@@ -101,7 +101,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .banner ul li{width:100%;height:370px;position:absolute;text-align: center;}
 .banner ul li a{width:100%;height:370px;display:block;text-align: center;} 
 
-.banner ol{width:auto;height:22px;overflow:hidden;position:absolute;top:93%;left:48%;}
+.banner ol{width:auto;height:22px;overflow:hidden;position:absolute;top:93%;left:46.5%;}
 .banner ol li{width:20px;height:20px;background:url(../images/point.png) no-repeat;margin-right:18px;cursor:pointer;float:left;text-align:center;line-height:20px;}
 .banner ol .current{ background:url(../images/point_blue.png) no-repeat;color:#fff;}
 
@@ -361,12 +361,12 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 .jk_cont .jk_cont_in .jk_cont_in_cont{width:355px;height:450px;float:left;overflow: hidden;}
 
-.jk_cont .jk_cont_in .jk_cont_in_cont h3{width:332px;height:45px;line-height:45px;font-size:24px;font-weight:normal;text-align: center;color: #fff;}
+.jk_cont .jk_cont_in .jk_cont_in_cont h3{width:332px;height:45px;line-height:45px;font-size:24px;font-weight:normal;text-align: center;color: #fff; margin-left: 11px;}
 
 .jk_cont .jk_cont_in .jk_cont_in_cont .jk_cont_in_cont_in{border: 1px solid #ddd;background: #fff;width: 330px;height: 320px;} 
 .jk_cont .jk_cont_in .jk_cont_in_cont .jk_cont_in_cont_in h4{width:265px;height:38px;line-height:38px;font-size:18px;font-weight:normal;padding-left:23px;}
 .jk_cont .jk_cont_in .jk_cont_in_cont ul{width:265px;height:auto;line-height:21px;font-size:14px;font-weight:normal;padding-left:23px;margin-bottom:10px;}
-.jk_cont .jk_cont_in .jk_cont_in_cont ul li{width:250px;line-height:25px;padding-left:15px;color:#353535;}
+.jk_cont .jk_cont_in .jk_cont_in_cont ul li{width:260px;line-height:25px;padding-left:15px;color:#353535;}
 .jk_cont .jk_cont_in .jk_cont_in_cont .jk_btn{width:332px;height:40px;background:#66ccfb;font-size:18px;line-height:32px;cursor:pointer;text-align:center;}
 .jk_cont .jk_cont_in .jk_cont_in_cont .jk_btn a{color: #fff;}
 
@@ -1171,7 +1171,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .sqjk_cont .sqjk_cont_cen dl dd .zrtj li{width: 100%;height: auto;line-height: 28px;}
 .sqjk_cont .sqjk_cont_cen dl dd .sqzl{overflow: hidden;}
 .sqjk_cont .sqjk_cont_cen dl dd .sqzl li{float: left;width: 135px;height: auto;line-height: 30px;background: url(../images/cont_bot_r_hover_bg.png) no-repeat center left;padding-left: 15px;}
-.sqjk_cont .sqjk_cont_cen dl dd .sqzl li span{float: left;margin-right: 5px;}
+.sqjk_cont .sqjk_cont_cen dl dd .sqzl li span{float: left;margin-right: 5px; font-size: 18px;}
 .sqjk_cont .sqjk_cont_cen dl dd .sqzl li span img{float: left;margin-top: 8px;}
 
 .sqjk_cont .sqjk_cont_bot{overflow: hidden;margin: 20px 0;}
