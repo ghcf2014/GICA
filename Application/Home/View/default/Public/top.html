@@ -12,12 +12,13 @@
 		</ul>
 		<if condition="is_login()">
 		<p>
-			<if condition="is_sysmsg() eq 0">
-			<else/>
-				站内信[<a href="{:U('Member/System/usermailindex')}" style="color:white;">{:is_sysmsg()}</a>]
-			</if>
+			
 			<a href="{:U('Member/Index/index')}"class="zc">
 			<img src="__ROOT__/{:get_member_logo_img()}" style="border-radius: 25px;height: 25px; background-color:white;" width="25" height="25" /> {:get_username()}</a>&nbsp;|&nbsp;<a href="{:U('Home/User/logout')}"class="dl">安全退出</a>
+		<if condition="is_sysmsg() eq 0">
+			<else/>
+				<img src="__PUBLIC__/Home/images/zhanneixin.png"/>(<a href="{:U('Member/System/usermailindex')}" style="color:white;font-size: 10px;">{:is_sysmsg()}</a>)
+			</if>
 		</p>
 		<else/>
 		<p>
