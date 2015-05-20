@@ -363,43 +363,103 @@ class InvestController extends MemberController {
 	public function autoinvest() {
 		is_login () ||$this->redirect('Home/User/login');
 		$uid = is_login (); // 获取当前用户UID
-		$condition ['uid'] = $uid;
+		$condition ['set_uid'] = $uid;
 		//查询余额
 		$money = M ( "z_member_money" );
-		$money = $money->where ( $condition )->select (); // 余额查询
+		$condition1['uid']=$uid;
+		$money = $money->where ( $condition1 )->select (); // 余额查询
 		$money=$money[0]['account_money'];
 		//自动投标数据查询
 		$auto_checked =M('z_auto_borrow');
-		$auto_data=$auto_checked->where('uid=%s',$uid)->select();
-		$auto_data=$auto_data[0];
-		$this->assign('auto_data',$auto_data);
+		$auto_data=$auto_checked->where($condition)->select();
+		// dump($auto_data);
+		$this->assign('auto_data',$auto_data[0]);
 		$this->assign('money',$money);
 		$this->pagetitle="工合财富直通贷款-自动投标";
 		$this->display ();
 	}
 	public function autoinvest_save(){
 		$uid=is_login();
-		$data=$_POST;
-		$data['uid']=$uid;
+		$data['keep_money']=I('post.keep_money');
+		$data['borrow_money']=I('post.borrow_money');
+		$data['tender_type']=I('post.tender_type');
+		$data['apr_first']=I('post.apr_first');
+		$data['apr_last']=I('post.apr_last');
+		$data['borrow_low_timelimt']=I('post.borrow_low_timelimt');
+		$data['borrow_height_timelimt']=I('post.borrow_height_timelimt');
+		$arrs['set_uid']=$uid;
 		$auto_config=M("z_auto_borrow");
-		$auto_config_data=$auto_config->where("uid=%s",$uid)->select();
-		// dump($auto_config_data);
-		if (is_array($auto_config_data)==true){
-				$result=$auto_config->where("uid=%s",$uid)->save($data);
+		$auto_config_data=$auto_config->where($arrs)->select();
+		
+		if ($auto_config_data==null){
+			$data['set_status']=0;
+			$data['set_uid']=$uid;
+			$result=$auto_config->add($data);
 			if ($result>0){
-				$this->success('保存成功',U('Member/Invest/autoinvest'));
+				$this->success('投标参数保存成功！');
 			} else {
-				$this->error('保存失败',U('Member/Invest/autoinvest'));
+				$this->error('未知数据错误！');
+
 			}
+			
 		}else {
-				$result=$auto_config->add($data);
-			if ($result>0){
-				$this->success('保存成功',U('Member/Invest/autoinvest'));
+			$data['set_status']=1;
+			$result=$auto_config->where($arrs)->save($data);
+			if ($result==false){
+				$this->success('投标参数未更新，请重新设置！');
 			} else {
-				$this->error('保存失败',U('Member/Invest/autoinvest'));
+				$this->error('投标参数保存成功！');
 			}
 		}
 	}
+	public function autoinvest_open($status=0){
+		$auto_status =M('z_auto_borrow');
+		$uid=is_login();
+		$arr['set_uid']=$uid;
+		$arr['set_status']=1;
+		$data['status']=1;
+		$data['set_status']=0;
+		$setdata=$auto_status->where($arr)->select();
+		if ($setdata==null){
+			$this->error('请先设置参数！');
+			
+		}else{
+			$arrs['set_uid']=$uid;
+			$result=$auto_status->where($arrs)->save($data);
+			if ($result==false){
+				$this->success(L('自动状态已设置！'));
+			}else{
+				$this->error('自动投标状态开启成功！');
+			}
+			
+		}
+		
+	}
+	public function autoinvest_close($status=0){
+		$auto_status =M('z_auto_borrow');
+		$uid=is_login();
+		$arr['set_uid']=$uid;
+		$data['status']=0;
+		$setdata=$auto_status->where($arr)->select();
+		if ($setdata!==null){
+			$arrs['uid']=$uid;
+			$result=$auto_status->where($arrs)->save($data);
+			if ($result==false){
+				$this->success(L('关闭状态已设置！'));
+			}else{
+				$this->error('自动投标状态关闭成功！');
+			}
+			
+		}else{
+			$data['set_uid']=$uid;
+			$data['set_status']= 0;
+			$result=$auto_status->where($arr)->add($data);
+			if($result){
+				$this->success('关闭成功！');
+			}
+		}
+		
+	}	
 public function auto_borrow(){
 
 
@@ -407,18 +467,17 @@ public function auto_borrow(){
 		$auto_model=M('z_auto_borrow');
 		$count=$auto_model->where('status=1')->count();
 		$member_auto=$auto_model->where('status=1')->select();
-
-        
+ 		
 
         for($i=0;$i<intval($count);$i++){
 
-		    // $p[$i].=$member_auto[$i]['uid'];
+
 
 
 	        $borrowinfo = M('z_borrow_info');
-	    	// $map['borrow_money']=array('egt',$member_auto[$i]['borrow_money']);
+	    	$map['borrow_money']=array('egt',$member_auto[$i]['borrow_money']);
 			$map['borrow_interest_rate']=array('between',array($member_auto[$i]['apr_first'],$member_auto[$i]['apr_last']));
-			// $map['borrow_duration']=array('between',array($member_auto[$i]['borrow_low_timelimt'],$member_auto[$i]['borrow_height_timelimt']));
+			$map['borrow_duration']=array('between',array($member_auto[$i]['borrow_low_timelimt'],$member_auto[$i]['borrow_height_timelimt']));
 			$map['borrow_status']='2';
 
 
@@ -426,64 +485,54 @@ public function auto_borrow(){
 			//查询设置范围内所有的借款标
 			$count1=intval($borrowinfo->where($map)->count());
 
-			// $count2=intval($count)+intval($count1);
-			//查询设置范围内所有的借款标
+
 
 		    for($k=0;$k<intval($count1);$k++){
 
                 $p[$k]['id']=$bdata[$k]['id'];
-                $p[$k]['uid']=$member_auto[$i]['uid'];
+                $p[$k]['uid']=$member_auto[$i]['set_uid'];
                 $p[$k]['borrow_money']=$member_auto[$i]['borrow_money'];
                 $log = M ( 'z_borrow_investor' );
                 $logarr['borrow_id']=$p[$k]['id'];
                 $logarr['investor_uid']=$p[$k]['uid'];
                 $logdata=$log->where($logarr)->select();
-
+                // dump($logarr);
                 if(is_null($logdata)){
     				
                 	$this->auto_borrow_add($p[$k]['borrow_money'],$p[$k]['id'],$p[$k]['uid']);
                 }else{
                 	continue;
                 }
-				// echo ">>>>>>>>>> <br/>";
-				// var_dump($p[$k]['borrow_money'],$p[$k]['id'],$p[$k]['uid']);
-				// dump($p[$k]['uid']);
-				// dump($p[$k]['borrow_money']);
-				// dump($p[$k]['id']);
 			}
+
         }		
 	}
 	public function auto_borrow_add($borrow_money=0,$borrowinfo_id=0,$uid=0){
-		    // ---------------------
-  	        $bid = $borrowinfo_id;//投标id赋值
+            $bid = $borrowinfo_id;//投标id赋值
             $listMember = M('member');
-            $condition['gica_member.uid'] =$uid;
+            $condition['gica_member.uid'] =$uid ;
             $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
-            // echo $listMember->getLastsql();
-            // dump($list);die();
-            $mapb['id']=$borrowinfo_id;
+            $map['id']=$borrowinfo_id;
             $listBorrow  = M('z_borrow_info');
-            $list3 = $listBorrow->where($mapb)->select();
+            $list3 = $listBorrow->where($map)->select();
             //从表单中获取来的数据 
-            $capital=$borrow_money;
+            $capital=floatval ($borrow_money);
 
             if ($list3[0]['repayment_type']== 5) {
-					 		$b= (intval ($capital)* (intval ($list3[0]['borrow_interest_rate']) / 100 / 12) * pow ( (1 + (intval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) / (pow ( (1 + (intval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) - 1)) * intval ($list3[0]['borrow_duration']) - intval ($capital);
-			// $b=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
+                $b= (floatval ($capital)* (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12) * pow ( (1 + (floatval ($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) / (pow ( (1 + (floatval($list3[0]['borrow_interest_rate']) / 100 / 12)), intval ($list3[0]['borrow_duration']) ) - 1)) * intval ($list3[0]['borrow_duration']) - floatval ($capital);
 
-			}
+            }
             if ($list3[0]["repayment_type"] == 6) {
-                            $b=intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
+              $b=floatval ($capital)*(floatval ($list3[0]["borrow_interest_rate"] ) / 100 / 12);
             // $depict ['repayment_money'] = intval ($capital)+(intval ($capital)*(intval ($list3[0]["borrow_interest_rate"] ) / 100 / 12));
 
             }
             //一次性还款公式带进
             if ($list3[0]["repayment_type"] == 7) {
-                
-                            $b=intval ($capital)*((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12)*intval($list3[0]["borrow_duration"]));
+                $b=(floatval ($capital)*(floatval ( $list3[0]["borrow_interest_rate"]/ 100 / 12))*intval ($list3[0]['borrow_duration']));
                 // $depict ['repayment_money']=intval ($capital)*(1+((intval ( $list3[0]["borrow_interest_rate"] ) / 100 / 12))*intval ($list3[0]["borrow_duration"] ));
             }
-			
+            
             
             //创建一个表对象，将传来的数据插入到数据库中
             $m=M("z_borrow_investor");
@@ -508,15 +557,16 @@ public function auto_borrow(){
                 $condition2['id'] =$bid;
                 $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
 
-                $m2h=intval ($m22[0]['has_borrow'])+intval ($capital);
+                $m2h=floatval ($m22[0]['has_borrow'])+floatval ($capital);
 
-                $m222=intval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
+                $m222=floatval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
 
                 $data2['has_borrow']=$m2h;
 
-                    if(intval ($m22[0]['has_borrow']) == intval ($m22[0]['borrow_money']))
+                    if(floatval ($m22[0]['has_borrow']) == floatval ($m22[0]['borrow_money']))
                     {
-                        $data3['borrow_status']=4;//标状态改变
+                        $data3['borrow_status']=7;//满标状态改变
+                        $data3['full_time']=time();//满标时间
                         $m2=$m2->where($condition2)->save($data3);          
                     }
 
@@ -526,98 +576,135 @@ public function auto_borrow(){
                         $m2=$m2->where($condition2)->save($data2);
                         $count=$m->add();
 
-                        $condition1['uid'] =$condition['gica_member.uid'];
-                        $money=M("z_member_money");
-                        $money=$money->field('account_money')->where($condition1)->select();//余额查询
-                        $m1=M("z_member_money");
-                        $money=intval ($money[0]['account_money'])-intval ($capital);//余额减掉金额
-                        $data1['account_money']=$money;
+                        
+                        $result=change_money($capital,$uid);
+                        if ($result) { //保存成功
 
-                            if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
-
-
+                               
                                         $m2=M("z_borrow_info");
 
                                         $condition2['id'] =$bid;
                                         $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
 
-                                        $m2h=intval ($m22[0]['has_borrow'])+intval ($capital);
+                                        $m2h=floatval ($m22[0]['has_borrow'])+floatval ($capital);
 
-                                        $m222=intval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
+                                        $m222=floatval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
 
                                         $data2['has_borrow']=$m2h;
 
-                                        if(intval ($m22[0]['has_borrow']) == intval ($m22[0]['borrow_money']))
+                                        if(floatval ($m22[0]['has_borrow']) == floatval ($m22[0]['borrow_money']))
                                         {
-                                            $data3['borrow_status']=4;//标状态改变
+                                            $data3['borrow_status']=7;//标状态改变
                                             $m2=$m2->where($condition2)->save($data3);          
                                         }
 
 
                                         //投资还款管理表
                                         $binfo=M("z_borrow_info");
-                                        $bid['id'] =$bid;
-                                        $binfo=$binfo->where($bid)->select();
+                                        $binfoid['id'] =$bid;
+                                        $binfo=$binfo->where($binfoid)->select();
 
                                         $iinfo=M("z_borrow_investor");
                                         $iinfo=$iinfo->where($bid)->order ( 'id desc' )->select();
 
                                         for($i=1;$i<=$binfo[0]['total'];$i++){
 
-                                            $detail=M("z_investor_detail");
-                                            $detail->repayment_time=$binfo[0]['deadline'];
-                                            $detail->borrow_id=$bid;
-                                            $detail->invest_id=$iinfo[0]['id'];
-                                            $detail->investor_uid=$uid;
-                                            $detail->borrow_uid=$binfo[0]['borrow_uid'];
-                                            $detail->capital=$binfo[0]['borrow_money'];
-                                            $detail->interest=$binfo[0]['repayment_interest'];
-                                            $detail->interest_fee=$b;
+                                            if ($binfo[0]["repayment_type"] == 5) {
 
-                                            $detail->status=$binfo[0]['borrow_status'];
-                                            $detail->receive_interest=$b;
-                                            $detail->receive_capital=$b;
-                                            $detail->sort_order=$i;
-                                            $detail->total=$binfo[0]['total'];
-                                            $detail->deadline=$b; 
-                                            $detail->expired_money=$b;
-                                            $detail->expired_days=$b;
-                                            $detail->call_fee=$b;
-                                            $detail->substitute_money=$b;
-                                            $detail->substitute_time=$b;
-                                            $detail=$detail->add();
+
+                                                $dcapital1[$i]['repayment_money']=(floatval($capital) * (floatval ( $binfo[0]["borrow_interest_rate"] )/100/12) * pow((1 + (floatval($binfo[0]["borrow_interest_rate"])/100/12)), floatval($binfo[0]["borrow_duration"]))/(pow((1 + (floatval ( $binfo[0]["borrow_interest_rate"])/100/12)), floatval ( $binfo[0]["borrow_duration"]))- 1)) * floatval ($i);
+                                                $dcapital = (floatval ($dcapital1[$i]['repayment_money'])-floatval ($dcapital1[$i-1]['repayment_money']))-floatval($capital)*(floatval($binfo[0]["borrow_interest_rate"])/100/12)*(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),floatval($binfo[0]['total']))-(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),$i-1)))/(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),floatval($binfo[0]['total']))-1);
+
+
+
+                                                $interest=floatval($capital)*(floatval($binfo[0]["borrow_interest_rate"])/100/12)*(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),floatval($binfo[0]['total']))-(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),$i-1)))/(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),floatval($binfo[0]['total']))-1);
+                                                    $t=$i+1;
+                                                    $detail=M("z_investor_detail");
+                                                    $detail->repayment_time=strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
+                                                    $detail->borrow_id=$bid;
+                                                    $detail->invest_id=$iinfo[0]['id'];
+                                                    $detail->investor_uid=$uid;
+                                                    $detail->borrow_uid=$binfo[0]['borrow_uid'];
+                                                    $detail->capital=$dcapital;
+                                                    $detail->interest=$interest;
+                                                    $detail->interest_fee=$b;
+                                                    $detail->status=$binfo[0]['borrow_status'];
+                                                    
+                                                    $detail->sort_order=$i;
+                                                    $detail->total=$binfo[0]['total'];
+                                                    
+                                                    $detail=$detail->add();
+
+                                            }
+                                            if ($binfo[0]["repayment_type"] == 6) {
+                                                     
+                                                     $dcapital =floatval ($capital )/floatval ($binfo[0]['total']);
+                                                    
+                                                     $t=$i+1;
+                                                    $detail=M("z_investor_detail");
+                                                    $detail->repayment_time=strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
+                                                    $detail->borrow_id=$bid;
+                                                    $detail->invest_id=$iinfo[0]['id'];
+                                                    $detail->investor_uid=$uid;
+                                                    $detail->borrow_uid=$binfo[0]['borrow_uid'];
+                                                    $detail->capital=$dcapital;
+                                                    $detail->interest=$b;
+                                                    $detail->interest_fee=$interest;
+                                                    $detail->status=$binfo[0]['borrow_status'];
+                                                    
+                                                    $detail->sort_order=$i;
+                                                    $detail->total=$binfo[0]['total'];
+                                                    
+                                                    $detail=$detail->add();
+                                            }
+                                            if ($binfo[0]["repayment_type"] == 7){
+                                                    $t=(intval($list3[0]['borrow_duration']));
+                                                    $detail=M("z_investor_detail");
+                                                    $detail->repayment_time=strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
+                                                    $detail->borrow_id=$bid;
+                                                    $detail->invest_id=$iinfo[0]['id'];
+                                                    $detail->investor_uid=$uid;
+                                                    $detail->borrow_uid=$binfo[0]['borrow_uid'];
+                                                    $detail->capital=floatval ($capital );
+                                                    $detail->interest=$b;
+                                                    $detail->interest_fee=$interest;
+                                                    $detail->status=$binfo[0]['borrow_status'];
+                                                    $detail->sort_order=$i;
+                                                    $detail->total=$binfo[0]['total'];
+                                                    $detail=$detail->add();
+                                                    continue;
+                                            } 
 
                                         }
                                         //投资详情表
+
                                         //日志
                                         $log = M ( 'z_member_moneylog' );
-										$logdata ['uid'] = $uid;
-										$logdata ['type'] = 204;
-										$logdata ['affect_money'] = $capital;
-										$logdata ['info'] = '您投资了'.$list3[0]['id'].'号标'.$capital.'元';
-										$logdata ['add_time'] = time ();
-										$log = $log->add ( $logdata );
+                                        $logdata ['uid'] = $uid;
+                                        $logdata ['type'] = 204;
+                                        $logdata ['borrowinfo_id']=$uid;
+                                        $logdata ['affect_money'] = $capital;
+                                        $logdata ['info'] = '您于'.date('Y-m-d H:i:s',time()).'投资'.$list3[0]['id'].'号标'.$capital.'元(资金冻结中)。';
+                                        $logdata ['add_time'] = time ();
+                                        $log = $log->add ( $logdata );
 
-										//发送站内信
+                                        //发送站内信
                                         $action=$logdata ['info'];
-                                        // system_msg($action);
+                                        $opertype=1;
+                                        $result_ms=inner_msg($uid,$opertype,$action); 
+                                        
+                                        
                             } 
-                        }  
+                            
+
+                        }
+                            
                 }
+               
         }
+        
 	}
-	public function autoinvest_open($status=0){
-		$auto_status =M('z_auto_borrow');
-		$uid=is_login();
-		$data['status']=$_GET['status'];
-		$result=$auto_status->where('uid=%s',$uid)->save($data);
-		// dump($result);
-		if ($result!==false){
-			$this->redirect('Member/Invest/autoinvest');
-		}else{
-			$this->error('操作失败');
-		}
-	}
+
 	public function investdetail($id=0){
 		$uid=is_login();
 		 $condition1 ['id'] = $id;

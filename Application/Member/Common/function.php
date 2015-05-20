@@ -15,6 +15,23 @@ function check_verify($code, $id = 1){
 	return $verify->check($code, $id);
 }
 
+function change_money($capital=0,$uid=0){
+
+    $condition1['uid'] =$uid;
+    $money=M("z_member_money");
+    $money=$money->field('account_money,money_collect')->where($condition1)->select();//余额查询
+    $m1=M("z_member_money");
+    $mmoney=floatval ($money[0]['account_money'])-floatval ($capital);//余额减掉金额
+    $mcollect=floatval ($money[0]['money_collect'])+floatval ($capital);
+    $data1['account_money']=$mmoney;
+    $data1['money_collect']=$mcollect;
+    if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功
+    return true;
+    }else {
+        //失败提示
+      return  false;
+    }
+}
 /**
  * 获取列表总行数
  * @param  string  $category 分类ID

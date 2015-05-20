@@ -1746,3 +1746,17 @@ function subtext($text, $length) {
 	    	$post_data = "account=".$account."&password=".$password."&mobile=".$mobile."&content=".$content;
 	    	$gets =  xml_to_array(Post($post_data, $target));
 	}
+	/*
+		自动投标状态监测
+	*/
+	function member_auto_status(){
+		$uid=is_login();
+		$arr['set_uid']=$uid;
+		$members=M('z_auto_borrow');
+		$status=$members->where($arr)->field('status')->select();
+		if ($status[0]['status']==1){
+			return '已开启';
+		}else{
+			return '已关闭';
+		}
+	}
