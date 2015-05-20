@@ -12,7 +12,7 @@
             			<div class="tabtil">
 							<ul>								
 								<li onclick=showSysMails();; class="on" >
-									系统消息[{$syscount|default="暂无"}]</if>
+									系统消息<!-- [{$syscount|default="暂无"}] --></if>
 								</li>
 								<!-- <li onclick=showSendMails();;>
 									发件箱
@@ -66,7 +66,7 @@
 												</tbody>
 							          		</table>
 											<div class="page">
-												<p></p>
+												{$page}
 											</div> 
 							          </div>
 							        </span>
@@ -74,7 +74,7 @@
 							    </div>
 						</span>
 					</div>
-					<div class="box" style="display: none;">
+					<!-- <div class="box" style="display: none;">
 						<span id="sendInfo"><div class="boxmain2">
 							          
 							        <span id="send_mail_list"><div class="biaoge" id="send_biaoge">
@@ -91,10 +91,10 @@
 										    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
 										    <th>收件人</th>
 										    <th>标题</th>
-										    <th>发送时间</th>
+										    <th>发件时间</div></th>
 								  		</tr>
 									
-									<!--发件箱信息-->
+	
 									<foreach name="post" item="values">
 								  		<tr>
 								  			<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
@@ -107,10 +107,7 @@
 							  		<tr><td colspan="9" align="center">暂无信息</td></tr>
 									</tbody></table>
 
-								<div class="page">
-									<p>
-									</p>
-								</div> 
+								<div class="page"></div>
 								
 								</div>
 							          </span>
@@ -120,7 +117,7 @@
 							    </div>
 							
 						</span>
-					</div>
+					</div> -->
 <!-- 					<div class="box" style="display: none;">
 								        <div class="boxmain2">
 								        <div class="biaoge2">

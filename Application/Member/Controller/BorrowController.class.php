@@ -22,9 +22,15 @@ class BorrowController extends MemberController {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
 		$condition ['borrow_uid'] = $uid;
-		$borrow_info = $borrow_info->where ( $condition )->select ();
+
+		$count = $borrow_info->where($condition)->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $borrow_info = $borrow_info->where ( $condition )->order('add_time DESC')->limit(($Page->firstRow.',').$Page->listRows)->select();
+
 		$this->pagetitle="工合财富直通贷款-借款记录";
 		$this->assign ( 'list', $borrow_info );
+		$this->assign('page', $show);
 		$this->display ();
 	}
 	public function reimbursement($id=0) {
@@ -292,7 +298,6 @@ class BorrowController extends MemberController {
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
-	
 	/**
 	 *
 	 * @author liuy
@@ -301,9 +306,16 @@ class BorrowController extends MemberController {
 	public function checkingborrow() {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
-		$arr['borrow_uid']=$uid;
-		$borrow_info = $borrow_info->where($arr)->select();
+		$condition['borrow_uid']=$uid;
+
+		$count = $borrow_info->where($condition)->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $borrow_info = $borrow_info->where ( $condition )->order('add_time DESC')->limit(($Page->firstRow.',').$Page->listRows)->select();
+
+
 		$this->assign ( 'list', $borrow_info );
+		$this->assign('page', $show);
 		$this->pagetitle="工合财富直通贷款-审核中的借款";
 		$this->display ();
 	}
@@ -316,8 +328,12 @@ class BorrowController extends MemberController {
 	public function issueborrow() {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
-		$borrow_info = $borrow_info->where ( 'borrow_uid=' . $uid . " and borrow_status=2" )->select ();
+		$count = $borrow_info->where ( 'borrow_uid=' . $uid . " and borrow_status=2" )->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $borrow_info = $borrow_info->where ( 'borrow_uid=' . $uid . " and borrow_status=2" )->order('add_time DESC')->limit(($Page->firstRow.',').$Page->listRows)->select();
 		$this->assign ( 'list', $borrow_info );
+		$this->assign('page', $show);
 		$this->pagetitle="工合财富直通贷款-招标中的借款";
 		$this->display ();
 	}
@@ -379,6 +395,7 @@ class BorrowController extends MemberController {
 		$arrs['uid']=$uid;
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
+	
 
 		// $files=$borrowfile_status[0];
 		// if ($files['identity_report']==0){
@@ -402,7 +419,12 @@ class BorrowController extends MemberController {
 		$files=$borrowfile_status[0];
 		
 		$applydata =M('z_borrow_apply');
-		$result=$applydata->where('apply_uid=%s',$uid)->order('status',desc)->select();
+
+		$count = $applydata->where('apply_uid=%s',$uid)->order('status',desc)->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $result = $applydata->where('apply_uid=%s',$uid)->order('status',desc)->limit(($Page->firstRow.',').$Page->listRows)->select();
+		$this->assign('page', $show);
 		$this->assign('list',$result);
 		$this->pagetitle="工合财富直通贷款-申请记录";
 
@@ -411,7 +433,12 @@ class BorrowController extends MemberController {
 	public function checkingapply(){
 		$uid=is_login();
 		$applydata =M('z_borrow_apply');
-		$result=$applydata->where('status=0 and apply_uid=%s',$uid)->select();
+
+		$count = $applydata->where('status=0 and apply_uid=%s',$uid)->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $result = $applydata->where('status=0 and apply_uid=%s',$uid)->order('status',desc)->limit(($Page->firstRow.',').$Page->listRows)->select();
+		$this->assign('page', $show);
 		$this->pagetitle="工合财富直通贷款-审核中的申请";
 
 		$this->assign('list',$result);
@@ -420,7 +447,12 @@ class BorrowController extends MemberController {
 	public function passapply(){
 		$uid=is_login();
 		$applydata =M('z_borrow_apply');
-		$result=$applydata->where('status=1 and apply_uid=%s',$uid)->select();
+
+		$count = $applydata->where('status=1 and apply_uid=%s',$uid)->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $result = $applydata->where('status=1 and apply_uid=%s',$uid)->order('status',desc)->limit(($Page->firstRow.',').$Page->listRows)->select();
+		$this->assign('page', $show);
 		$this->pagetitle="工合财富直通贷款-已通过的申请";
 		$this->assign('list',$result);
 		$this->display();
@@ -428,7 +460,11 @@ class BorrowController extends MemberController {
 	public function overapply(){
 		$uid=is_login();
 		$applydata =M('z_borrow_apply');
-		$result=$applydata->where('status=3 and apply_uid=%s',$uid)->select();
+		$count = $applydata->where('status=3 and apply_uid=%s',$uid)->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $result = $applydata->where('status=3 and apply_uid=%s',$uid)->order('status',desc)->limit(($Page->firstRow.',').$Page->listRows)->select();
+		$this->assign('page', $show);
 		$this->assign('list',$result);
 		$this->pagetitle="工合财富直通贷款-已完成的申请";
 		$this->display();

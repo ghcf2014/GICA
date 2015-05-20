@@ -123,14 +123,20 @@ class SystemController extends MemberController {
    		$danger =M('z_system_msg')->where("uid=%s",$uid)->order(array("status=0 desc","add_time desc"))->select();
    		$this->assign('danger',$danger);
         $msg=M('z_inner_msg');
+        
         //收件箱
         $receive=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.uid = profile.uid and stats.tid=%s',$uid)->field('stats.id as id, stats.title as title,stats.status as status,stats.send_time as send_time,stats.msg as msg, profile.nickname as postname')->order('stats.tid desc' )->select();
         //发件箱
         $post=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.uid=%s',$uid)->field('stats.id as id, stats.title as title,stats.send_time as send_time, profile.nickname as recvname')->order('stats.tid desc' )->select();
 
 
+        $imsg =M('z_inner_msg');
 
-        $imsg =M('z_inner_msg')->where("tid=%s",$uid)->order(array("status=0 desc","send_time desc"))->select();
+        $count = $imsg->where("tid=%s",$uid)->count();
+        $Page = new \Think\Page($count,10);
+        $show = $Page->show();
+        $imsg = $imsg->where("tid=%s",$uid)->order(array("status=0 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
+
    		$this->assign('imsg',$imsg);
    		$statu['status']=1;
         M('z_inner_msg')->where($inner)->save($statu);
@@ -161,6 +167,7 @@ class SystemController extends MemberController {
         $this->assign('post',$post);
         $this->assign('sendname',$sendname);
         $this->assign('uid',$uid);
+        $this->assign('page', $show);
 
         
         $this->pagetitle="工合财富直通贷款-个人中心-消息中心";

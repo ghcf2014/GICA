@@ -268,9 +268,16 @@ class InvestController extends MemberController {
         	$pp=00;
         }
 		$borrow_info = M ( 'z_borrow_investor' );
-		$borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,sum(investor_interest)investor_interest,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->select ();
 
         if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
+
+        $count = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,sum(investor_interest)investor_interest,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->count();
+        $Page = new \Think\Page($count, 10);
+        $show = $Page->show();
+        $borrow_info = $borrow_info->field ( 'borrow_uid,borrow_id,sum(investor_capital)investor_capital,sum(investor_interest)investor_interest,deadline,add_time,invest_fee' )->where (array('investor_uid ='.$uid,'borrow_id in ('.$pp.')'))->order ( 'id asc', 'invest_fee desc', 'add_time desc' )->group ( 'borrow_id' )->limit(($Page->firstRow.',').$Page->listRows)->select();
+		$this->assign('page', $show);
+
+
         $this->pagetitle="工合财富直通贷款-投资记录";
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();

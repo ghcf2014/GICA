@@ -45,7 +45,11 @@ class UserinfoController extends MemberController {
 		$uid = is_login ();
 		$m = M ( 'z_member_banks' );
 		$m_id ['uid'] = $uid;
-		$m = $m->where ( $m_id )->select ();
+		$count = $m->where ( $m_id )->count();
+        $Page = new \Think\Page($count, 8);
+        $show = $Page->show();
+        $m = $m->where ( $m_id )->order('add_time',desc)->limit(($Page->firstRow.',').$Page->listRows)->select();
+		$this->assign('page', $show);
 		$num=count($m);
 		for($i=0;$i<$num;$i++){
 			$b=$m[$i]['bank_num'];
@@ -139,7 +143,11 @@ class UserinfoController extends MemberController {
 		$uid = is_login ();
 		$ml = M ( "z_member_moneylog" );
 		$condition ['uid'] = $uid;
-		$ml = $ml->where ( $condition )->select ();
+
+	    $count = $ml->where($condition)->count();
+        $Page = new \Think\Page($count, 20);
+        $show = $Page->show();
+        $ml = $ml->where ( $condition )->order('add_time DESC')->limit(($Page->firstRow.',').$Page->listRows)->select();
 		
 		$money = M ( "z_member_money" );
 		$condition ['uid'] = $uid;
@@ -147,6 +155,7 @@ class UserinfoController extends MemberController {
 		
 		$this->assign ( 'ml', $ml );
 		$this->assign ( 'list', $money );
+		$this->assign('page', $show);
 		$this->pagetitle="工合财富直通贷款-资金明细";
 		$this->display ();
 	}
