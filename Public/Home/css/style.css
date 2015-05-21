@@ -388,7 +388,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*--------------fabujiekuan  发布借款------------------------*/
-.jk_cont .fbjk_cont_in{width:1000px;height:auto;margin:auto;padding-top:10px;overflow:hidden;}
+.borrow_btn{height:40px;background:#66ccfb;color:white;font-size:20px;line-height:48px;cursor:pointer;}
 
 
 

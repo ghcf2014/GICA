@@ -717,6 +717,7 @@ class UserinfoController extends MemberController {
 		$data ['sex'] = I("post.sex");
 		$data ['zy'] = I("post.zy");
 		$data ['education'] = I("post.education");
+		$data ['city_now'] =I('post.city_now');
 		$data ['address'] = I("post.province_now").I('post.city_now').I('post.area_now').I('post.addr_detail');
 		$condition ['uid'] = $uid;
 		

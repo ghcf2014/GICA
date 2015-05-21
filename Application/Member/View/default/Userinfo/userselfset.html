@@ -1,136 +1,156 @@
 <block name="body">
-<extend name="Base/common"/>
-<block name="body">
-	<!--content start-->
-	<div class="zh_cont_out">
-    	<div class="zh_cont">
-            <!--zh_cont_l-->
-            <include file="Public/left" /> 
-            <!--zh_cont_r-->
-            <div class="zh_cont_r"><volist name="mlist" id="vo">
-                <!--基本认证-->
-                <div class="tab">
-                        <div class="aqset_tab">
-                    <ul class="yhk_head">
-                        <li ><a href="{:U('Home/User/profile')}" >账户安全</a></li>
-                        <li><a href="{:U('Home/Borrow/papersinfo')}">信征认证</a></li>
-                        <li ><a href="{:U('Member/Userinfo/usermailbanding')}">邮箱认证</a></li>
-                        <li ><a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机认证</a></li>
-                        <li class="cur" style="border-right: none;"><a href="{:U('Member/Userinfo/userselfset')}">实名认证</a></li>
-                    </ul>
-                    <if condition="$id_status neq '1'">
-                <if condition="$id_status eq '2'">
-                     <div style="padding:100px;text-align: center;">实名信息审核中...</div>
-                        
-                        <else/>
-                            <div class="jbrz_con">
-                                <p class="warning"><b style="font-weight: normal;color: #b30000;">注意：</b>请填写真实有效的信息，认证审核通过后将不能修改。</p>
+    <extend name="Base/common"/>
+    <block name="body">
+        <!--content start-->
+        <div class="zh_cont_out">
+            <div class="zh_cont">
+                <!--zh_cont_l-->
+                <include file="Public/left" />
+                <!--zh_cont_r-->
+                <div class="zh_cont_r">
+                    <volist name="mlist" id="vo">
+                        <!--基本认证-->
+                        <div class="tab">
+                            <div class="aqset_tab">
+                                <ul class="yhk_head">
+                                    <li >
+                                        <a href="{:U('Home/User/profile')}" >账户安全</a>
+                                    </li>
+                                    <li>
+                                        <a href="{:U('Home/Borrow/papersinfo')}">信征认证</a>
+                                    </li>
+                                    <li >
+                                        <a href="{:U('Member/Userinfo/usermailbanding')}">邮箱认证</a>
+                                    </li>
+                                    <li >
+                                        <a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机认证</a>
+                                    </li>
+                                    <li class="cur" style="border-right: none;">
+                                        <a href="{:U('Member/Userinfo/userselfset')}">实名认证</a>
+                                    </li>
+                                </ul>
+                                <if condition="$id_status neq '1'">
+                                    <if condition="$id_status eq '2'">
+                                        <div style="padding:100px;text-align: center;">实名信息审核中...</div>
 
-                                <dl class="jbrz">
-                                    <dt>真实姓名</dt>
-                                    <dd><input type="text" class="txt"  id="realName" /></dd>
-                                </dl>
-                            
-                                <dl class="jbrz">
-                                    <dt>身份证号码</dt>
-                                    <dd><input type="text" class="txt" id="idcard" /></dd>
-                                </dl>                      
-                                <dl class="jbrz sex">
-                                    <dt>性别</dt>
-                                       <select id="sex">
-                                           <option value="0">保密</option>
-                                           <option value="1">男</option>
-                                           <option value="2">女</option>
-                                       </select>                                      
-                                </dl>
-                            
-                            <dl class="jbrz">
-                                <dt>职业</dt>
-                                <dd>
-                                <select  id='zy' class="inp50" style="font-size: 16px;height: 40px;">                                
-                                           <option value="">请选择</option>   
-                                           <option value="学生">学生</option>    
-                                           <option value="工人">工人</option>   
-                                           <option value="工程师">工程师</option>   
-                                           <option value="公司职员">公司职员</option>   
-                                           <option value="公司老板">公司老板</option>
-                                           <option value="银行职员">银行职员</option>
-                                           <option value="企业员工">企业员工</option>
-                                           <option value="公司董事">公司董事</option>
-                                           <option value="集团老总">集团老总</option>      
-                                        </select>                          
-                                </dd>
-                            </dl>
-                            <dl class="jbrz">
-                                <dt>教育程度</dt>
-                                <dd>
-                                <select id="education" class="inp50" style="font-size: 16px;height: 40px;">                                
-                                   <option value="">请选择</option>     
-                                   <option value="博士以上">博士以上</option>    
-                                   <option value="博士">博士</option>   
-                                   <option value="硕士">硕士</option>   
-                                   <option value="研究生">研究生</option>   
-                                   <option value="本科">本科</option>
-                                   <option value="专科">专科</option>
-                                   <option value="高中">高中</option>
-                                   <option value="初中">初中</option>
-                                   <option value="小学">小学</option>      
-                                </select>                              
-                                </dd>
-                            </dl>
-                            <dl class="jbrz adress">
-                                <dt>现居地址</dt>
-                                <dd>
-                                    <select class="select" name="province_now" id="s1">
-                                        <option></option>
-                                    </select>
-                                    <select class="select" name="city_now" id="s2">
-                                        <option></option>
-                                    </select>
-                                    <select class="select" name="area_now" id="s3">
-                                        <option></option>
-                                    </select>
-                                </dd>
-                            </dl>
-                            <dl class="jbrz">
-                                <dt>详细地址</dt>
-                                <input type="text" id="addr_detail" class="select"/><span>（县区、村镇街道或门牌号）</span>
-                            </dl> 
-                            
-                            <p class="wxts"><b style="font-weight: normal;color: red;">温馨提示：</b>我们将严格对用户的所有资料进行保密。</p>
-                            <div class="jbrz_sub_btn">
+                                        <else/>
+                                        <div class="jbrz_con">
+                                            <p class="warning"> <b style="font-weight: normal;color: #b30000;">注意：</b>
+                                                请填写真实有效的信息，认证审核通过后将不能修改。
+                                            </p>
 
-                                <input type="submit" class="btn" id="info_btn" value="保存"/>
-                            </div>
-                            </div>
-                        </if>
-                        </if>
-                        <if condition="$id_status eq '1'">
-                         <div style="padding: 40px;text-align: center;">
-                        	<volist name="mlist" id="vo">
-                            <table>
-                                <tr>
-                                    <td align="right">真实姓名：</td>
-                                    <td >{$vo.real_name}</td>
-                                </tr>
-                                <tr>
-                                    <td align="right">身份证号码：</td>
-                                    <td>{$vo.idcard}</td>
-                                </tr>
-                            </table>
-                            </volist>
-                            </div>
-                        </if>
-                    </form>
+                                            <dl class="jbrz">
+                                                <dt>真实姓名</dt>
+                                                <dd>
+                                                    <input type="text" class="txt"  id="realName" />
+                                                </dd>
+                                            </dl>
+
+                                            <dl class="jbrz">
+                                                <dt>身份证号码</dt>
+                                                <dd>
+                                                    <input type="text" class="txt" id="idcard" />
+                                                </dd>
+                                            </dl>
+                                            <dl class="jbrz sex">
+                                                <dt>性别</dt>
+                                                <select id="sex">
+                                                    <option value="0">保密</option>
+                                                    <option value="1">男</option>
+                                                    <option value="2">女</option>
+                                                </select>
+                                            </dl>
+
+                                            <dl class="jbrz">
+                                                <dt>职业</dt>
+                                                <dd>
+                                                    <select  id='zy' class="inp50" style="font-size: 16px;height: 40px;">
+                                                        <option value="">请选择</option>
+                                                        <option value="学生">学生</option>
+                                                        <option value="工人">工人</option>
+                                                        <option value="工程师">工程师</option>
+                                                        <option value="公司职员">公司职员</option>
+                                                        <option value="公司老板">公司老板</option>
+                                                        <option value="银行职员">银行职员</option>
+                                                        <option value="企业员工">企业员工</option>
+                                                        <option value="公司董事">公司董事</option>
+                                                        <option value="集团老总">集团老总</option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                            <dl class="jbrz">
+                                                <dt>教育程度</dt>
+                                                <dd>
+                                                    <select id="education" class="inp50" style="font-size: 16px;height: 40px;">
+                                                        <option value="">请选择</option>
+                                                        <option value="博士以上">博士以上</option>
+                                                        <option value="博士">博士</option>
+                                                        <option value="硕士">硕士</option>
+                                                        <option value="研究生">研究生</option>
+                                                        <option value="本科">本科</option>
+                                                        <option value="专科">专科</option>
+                                                        <option value="高中">高中</option>
+                                                        <option value="初中">初中</option>
+                                                        <option value="小学">小学</option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                            <dl class="jbrz adress">
+                                                <dt>现居地址</dt>
+                                                <dd>
+                                                    <select class="select" name="province_now" id="s1">
+                                                        <option></option>
+                                                    </select>
+                                                    <select class="select" name="city_now" id="s2">
+                                                        <option></option>
+                                                    </select>
+                                                    <select class="select" name="area_now" id="s3">
+                                                        <option></option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                            <dl class="jbrz">
+                                                <dt>详细地址</dt>
+                                                <input type="text" id="addr_detail" class="select"/>
+                                                <span>（县区、村镇街道或门牌号）</span>
+                                            </dl>
+
+                                            <p class="wxts"> <b style="font-weight: normal;color: red;">温馨提示：</b>
+                                                我们将严格对用户的所有资料进行保密。
+                                            </p>
+                                            <div class="jbrz_sub_btn">
+
+                                                <input type="submit" class="btn" id="info_btn" value="保存"/>
+                                            </div>
+                                        </div>
+                                    </if>
+                                </if>
+                                <if condition="$id_status eq '1'">
+                                    <div style="padding: 40px;text-align: center;">
+                                        <volist name="mlist" id="vo">
+                                            <table>
+                                                <tr>
+                                                    <td align="right">真实姓名：</td>
+                                                    <td >{$vo.real_name}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">身份证号码：</td>
+                                                    <td>{$vo.idcard}</td>
+                                                </tr>
+                                            </table>
+                                        </volist>
+                                    </div>
+                                </if>
+                            </form>
+                        </div>
+
+                    </volist>
                 </div>
-                
-                </volist>
             </div>
         </div>
     </div>
-</div>
-	<!--content end-->
-<script type="text/javascript">
+    <!--content end-->
+    <script type="text/javascript">
     $('#info_btn').click(function(){
         var realName=$('#realName').val().replace(/(^\s*)|(\s*$)/g, "");
         var idcard=$('#idcard').val();
@@ -214,13 +234,5 @@
         }
     });
 </script>
-<body onload="setup();preselect('广东省');promptinfo();">     
-</body>
+<body onload="setup();preselect('广东省');promptinfo();"></body>
 </block>
-
-
-
-
-
-
-

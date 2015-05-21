@@ -205,22 +205,20 @@ class BorrowController extends HomeController {
 	public function circulation_save($id = 1) {
 		$uid = is_login ();
 		$depict ['borrow_type'] = $id;
-		$depict ['borrow_name'] = $_POST ['borrow_name'];
-		$depict ['borrow_money'] = $_POST ["borrow_money"];
-		$depict ['borrow_interest_rate'] = $_POST ["borrow_interest_rate"];
-		$depict ['borrow_use'] = $_POST ["borrow_use"];
-		$depict ['borrow_duration'] = $_POST ["borrow_duration"];
-		$depict ['collect_day'] = $_POST ["collect_day"];;
-		$depict ['borrow_min'] = $_POST ["borrow_min"];
-		$depict ['borrow_max'] = $_POST ["borrow_max"];
-		$depict ['collect_time'] = $_POST ["collect_time"];
-		$depict ['repayment_type'] = $_POST ["repayment_type"];
-		$depict ['reward_vouch_rate'] = $_POST ["reward_vouch_rate"];
-		$depict ['borrow_info'] = $_POST ["borrow_info"];
+		$depict ['borrow_name'] = I('borrow_name');
+		$depict ['borrow_money'] = I('borrow_money');
+		$depict ['borrow_interest_rate'] = I('borrow_interest_rate');
+		$depict ['borrow_use'] = I('borrow_use');
+		$depict ['borrow_min'] = I('borrow_min');
+		$depict ['borrow_max'] = I('borrow_max');
+		$depict ['collect_day'] = I('collect_day');
+		$depict ['collect_time'] = I('collect_time');
+		$depict ['repayment_type'] = I('repayment_type');
+		$depict ['borrow_info'] = I('borrow_info');
 		$depict ['borrow_status'] = 0;
 		$depict ['borrow_uid'] = $uid;
 		$depict ['add_time'] = time ();
-		$depict ['deadline'] = strtotime ( '+' . intval ( $_POST ["collect_day"] ) . ' year' );
+		$depict ['deadline'] = strtotime ( '+' . intval ( I('collect_day') ) . ' year' );
 		$depict ['add_ip'] = get_client_ip ();
 		//生成敏感信息
 		if ($id==1){

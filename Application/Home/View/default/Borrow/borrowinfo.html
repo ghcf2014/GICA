@@ -1,336 +1,338 @@
 <block name="body">
-<extend name="Base/common"/>
-<block name="body">
+  <extend name="Base/common"/>
+  <block name="body">
     <!--content start-->
     <div class="zh_cont_out">
       <div class="zh_cont">
-            
-            <div class="zh_cont_r" style="width: auto;">
-              <form action="{:U('circulation_save?id='.$type)}" method="post" enctype="multipart/form-data">
-                  <div class="r-main" style="border: none;">
-              <!-- <div class="til01"> -->
-              <div class="til01">
-                <ul id="ul">
-                  <li style="font-size:18px;width:1007px;height: 50px;padding: 0;overflow: hidden;border: 1px solid #ddd;background: #fff;"><h3 style="height: 50px;line-height: 50px;width: 690px;float: left;border: 0;">当前位置 > <b style="color: red;font-weight: normal;">发布借款</b></h3><span style="color: red;font-size: 20px; padding:0 40px;float: right;line-height: 50px;">{$type|get_borrow_type_name}</span></li>
-                </ul>
-              </div>
-                <!-- <ul id="ul"><li><span class="fred"><s:fielderror fieldName="enough"></s:fielderror></span></li></ul>
-              </div> -->
-              
-              <div class="rmainbox" style="background: #fff;border: 1px solid #ddd;margin-top: 10px;height: 1062px;">
-                <p class="tips"><span class="fred">*</span> 为必填项，所有资料均会严格保密。 </p>
-                <div class="tab">
-<!-- 分割线 -->
-        <table>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1">
-                借款标题
-            </td>
-            <td valign="top" style="word-break: break-all;">
-                金额
-            </td>
-            <td valign="top" style="word-break: break-all;">
-                
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1">
-                <input name="borrow_name" id="s_borrow_name" type="text" title="借款标题" placeholder="请填写借款标题" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 340px;"/> <span class="fred" id="t_borrow_name"></span>
-            </td>
-            <td width="233" valign="top">
-                <input name="borrow_money"id="s_borrow_money" type="text" title="金额" placeholder="请填写金额" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/><span class="fred" id="t_borrow_money"></span>
-            </td>
-            <td width="100" valign="top" style="word-break: break-all;">
-                
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1">
-                年化率
-            </td>
-            <td  valign="top" style="word-break: break-all;">
-                借款期限
-            </td>
-            <td valign="top" style="word-break: break-all;">
-                招募时间
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
-               
-                <div class="User_ratings User_grade" id="div_fraction0">
-                      <div class="ratings_bars"> 
-                        <!-- <span id="title0">0</span> -->
-                        <span class="bars_10" style="display:none;">0</span>
-                        <div class="scale" id="bar0">
-                          <div></div>
-                          <span id="btn0"></span>
+
+        <div class="zh_cont_r" style="width: auto;">
+
+          <div class="r-main" style="border: none;">
+            <!-- <div class="til01">
+            -->
+            <div class="til01">
+              <ul id="ul">
+                <li style="font-size:18px;width:1007px;height: 50px;padding: 0;overflow: hidden;border: 1px solid #ddd;background: #fff;">
+                  <h3 style="height: 50px;line-height: 50px;width: 690px;float: left;border: 0;">
+                    当前位置 > <b style="color: red;font-weight: normal;">发布借款</b>
+                  </h3>
+                  <span style="color: red;font-size: 20px; padding:0 40px;float: right;line-height: 50px;">{$type|get_borrow_type_name}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="rmainbox" style="background: #fff;border: 1px solid #ddd;margin-top: 10px;height: 1062px;">
+              <p class="tips">
+                <span class="fred">*</span>
+                为必填项，所有资料均会严格保密。
+              </p>
+              <div class="tab">
+                <table>
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1">借款标题</td>
+                    <td valign="top" style="word-break: break-all;">金额</td>
+                    <td valign="top" style="word-break: break-all;"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1">
+                      <input name="borrow_name" id="s_borrow_name" type="text" title="借款标题" placeholder="请填写借款标题" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 340px;"/>
+                      <span class="fred" id="t_borrow_name"></span>
+                    </td>
+                    <td width="233" valign="top">
+                      <input name="borrow_money"id="s_borrow_money" type="text" title="金额" placeholder="请填写金额" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
+                      <span class="fred" id="t_borrow_money"></span>
+                    </td>
+                    <td width="100" valign="top" style="word-break: break-all;"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1">年化率</td>
+                    <td  valign="top" style="word-break: break-all;">借款期限</td>
+                    <td valign="top" style="word-break: break-all;">招募时间</td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+
+                      <div class="User_ratings User_grade" id="div_fraction0">
+                        <div class="ratings_bars">
+                          <span class="bars_10" style="display:none;">0</span>
+                          <div class="scale" id="bar0">
+                            <div></div>
+                            <span id="btn0"></span>
+                          </div>
+                          <span class="bars_10" style="display:none;">100</span>
+                          <input name="borrow_interest_rate" id="title0" type="text" title="年化率" value="0"  leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 30px;"/>
+                          <span class="span" >%</span>
                         </div>
-                        <span class="bars_10" style="display:none;">100</span><input name="borrow_interest_rate" id="title0" type="text" title="年化率" value="0"  leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 30px;"/><span class="span" >%</span>
                       </div>
-                    </div>
-            </td>
-            <td rowspan="1" valign="top" align="null"  style="word-break: break-all;">
-                <select name="borrow_duration" title="借款期限" style="text-align: left; width: 70px;">
-					<option value="1">1月</option>
-					<option value="2">2月</option>
-					<option value="3">3月</option>
-					<option value="4">4月</option>
-					<option value="5">5月</option>
-					<option value="6">6月</option>
-					<option value="7">7月</option>
-					<option value="8">8月</option>
-					<option value="9">9月</option>
-					<option value="10">10月</option>
-					<option value="11">11月</option>
-					<option value="12">一年</option>
-					<option value="13">一年+1个月</option>
-					<option value="14">一年+2个月</option>
-					<option value="15">一年+3个月</option>
-					<option value="16">一年+4个月</option>
-					<option value="17">一年+5个月</option>
-					<option value="18">一年+6个月</option>
-					<option value="19">一年+7个月</option>
-					<option value="20">一年+8个月</option>
-					<option value="21">一年+9个月</option>
-					<option value="22">一年+10个月</option>
-					<option value="23">一年+11个月</option>
-					<option value="24">两年</option>
-				</select>
-            </td>
-            <td valign="top" style="word-break: break-all;">
-                <select name="collect_day" title="招募时间" style="text-align: left; width: 70px;">
-					<option value="1">1天</option>
-					<option value="2">2天</option>
-					<option value="3">3天</option>
-					<option value="4">4天</option>
-					<option value="5">5天</option>
-					<option value="6">6天</option>
-					<option value="7">7天</option>
-					<option value="8">8天</option>
-					<option value="9">9天</option>
-					<option value="10">10天</option>
-					<option value="11">11天</option>
-					<option value="12">12天</option>
-					<option value="13">13天</option>
-					<option value="14">14天</option>
-					<option value="15">15天</option>
-				</select>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
-                借款用途<br/>
-            </td>
-            <td width="233" valign="top"></td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="3" rowspan="1">
-                <textarea title="借款用途(50字以内)" id="s_borrow_use" name="borrow_use" leipiplugins="textarea" placeholder="借款用途(50字以内)" value="" orgrich="0" orgfontsize="" orgwidth="300" orgheight="80" style="width: 720px; height: 80px; margin: 0px;"></textarea><span class="fred" id="t_borrow_use"></span>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
-                还款方式
-            </td>
-            <td valign="top" colspan="1" rowspan="1"></td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="3" rowspan="1">
-                <span leipiplugins="radios" title="还款方式" name="repayment_type"><!-- <input name="repayment_type" value="1" type="radio" checked/>按天到期还款&nbsp;<input name="repayment_type" value="2" type="radio"/>按月分期还款&nbsp;<input name="repayment_type" value="3" type="radio"/>按季分期还款&nbsp;<input name="repayment_type" value="4" type="radio"/>每月还息到期还本&nbsp; --><input name="repayment_type" value="5" type="radio"/>等额本息&nbsp;<input name="repayment_type" value="6" type="radio"/>先息后本&nbsp;<input name="repayment_type" value="7" type="radio"/>一次性还款&nbsp;</span>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
-                投资金额范围
-            </td>
-            <td valign="top" colspan="1" rowspan="1"></td>
-        </tr>
-        <script>
-        function senfe_id(sid){
-        bmfw.style.display=sid;
-        bmfw1.style.display=sid;
-        }
-        </script>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1">
-                <span leipiplugins="radios" title="投资金额范围" name="leipiNewField"><input name="radio_bmfw"  value="1" type="radio" onchange="senfe_id('');"/>开启&nbsp;<input name="radio_bmfw" value="0" type="radio"  onchange="senfe_id('none');" checked />关闭(默认)&nbsp;</span>
-            </td>
-            <td valign="top" colspan="1" rowspan="1"></td>
-        </tr>
-        <tr id="bmfw" style="display:none;">
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
-                最低投资金额<br/>
-            </td>
-            <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">
-                最高投资金额
-            </td>
-        </tr>
-        <tr id="bmfw1" style="display:none;">
-            <td valign="top" colspan="2" rowspan="1">
-                <input name="borrow_min" id="s_borrow_min" type="text" title="最低" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>元<span class="fred"></span>
-            </td>
-            <td valign="top" colspan="1" rowspan="1">
-                <input name="borrow_max" id="s_borrow_max" type="text" title="最高" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>元<span class="fred"></span>
-            </td>
-        </tr>
-        
-        <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
-                项目介绍<br/>
-            </td>
-            <td valign="top" colspan="1" rowspan="1"></td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="3" rowspan="1">
-                <textarea title="项目说明（200字以内）" name="borrow_info" leipiplugins="textarea" value="" placeholder="吸引投资者的项目说明（200字以内）" orgrich="0" orgfontsize="" orgwidth="300" orgheight="80" style="width: 719px; height: 90px; margin: 0px;"></textarea><span class="fred"></span>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
-                上传必要审核的文件（目前仅支持jpg，png两种格式）<br/>
-            </td>
-            <td valign="top" colspan="1" rowspan="1"></td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="3" rowspan="1">
-                
-                <div id="demo" class="demo"></div>   
-                <!-- <div class="img_add">
-                <a href="javascript:void(0);" id="test2">+项目认证资料</a>
-                </div> -->
-            </td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
-            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
-            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
-        </tr>
-        <tr>
-            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
-            <td valign="top" colspan="1" rowspan="1"><input  type="submit" class="bcbtn" value="保存发布" style="width:88px;background: #0597D9;border-radius:2px ;color:#fff ;height: 30px;font-size: 14px;"></td>
-            <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
-        </tr>
-</table>
+                    </td>
+                    <td rowspan="1" valign="top" align="null"  style="word-break: break-all;">
+                      <select  id="collect_days" title="借款期限" style="text-align: left; width: 70px;">
+                        <option value="1">1月</option>
+                        <option value="2">2月</option>
+                        <option value="3">3月</option>
+                        <option value="4">4月</option>
+                        <option value="5">5月</option>
+                        <option value="6">6月</option>
+                        <option value="7">7月</option>
+                        <option value="8">8月</option>
+                        <option value="9">9月</option>
+                        <option value="10">10月</option>
+                        <option value="11">11月</option>
+                        <option value="12">一年</option>
+                        <option value="13">一年+1个月</option>
+                        <option value="14">一年+2个月</option>
+                        <option value="15">一年+3个月</option>
+                        <option value="16">一年+4个月</option>
+                        <option value="17">一年+5个月</option>
+                        <option value="18">一年+6个月</option>
+                        <option value="19">一年+7个月</option>
+                        <option value="20">一年+8个月</option>
+                        <option value="21">一年+9个月</option>
+                        <option value="22">一年+10个月</option>
+                        <option value="23">一年+11个月</option>
+                        <option value="24">两年</option>
+                      </select>
+                    </td>
+                    <td valign="top" style="word-break: break-all;">
+                      <select  id="collect_time" title="招募时间" style="text-align: left; width: 70px;">
+                        <option value="1">1天</option>
+                        <option value="2">2天</option>
+                        <option value="3">3天</option>
+                        <option value="4">4天</option>
+                        <option value="5">5天</option>
+                        <option value="6">6天</option>
+                        <option value="7">7天</option>
+                        <option value="8">8天</option>
+                        <option value="9">9天</option>
+                        <option value="10">10天</option>
+                        <option value="11">11天</option>
+                        <option value="12">12天</option>
+                        <option value="13">13天</option>
+                        <option value="14">14天</option>
+                        <option value="15">15天</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                      借款用途
+                      <br/>
+                    </td>
+                    <td width="233" valign="top"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="3" rowspan="1">
+                      <textarea title="借款用途(50字以内)" id="s_borrow_use" name="borrow_use" leipiplugins="textarea" placeholder="借款用途(50字以内)" value="" orgrich="0" orgfontsize="" orgwidth="300" orgheight="80" style="width: 720px; height: 80px; margin: 0px;"></textarea>
+                      <span class="fred" id="t_borrow_use"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">还款方式</td>
+                    <td valign="top" colspan="1" rowspan="1"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="3" rowspan="1">
+                      <select name="repayment_type" id="repayment_type">
+                        <option value="">请选择</option>
+                        <option value="5">等额本息</option>
+                        <option value="6">先息后本</option>
+                        <option value="7">一次性还款</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr id="bmfw">
+                    <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;">
+                      最低投资金额
+                      <br/>
+                    </td>
+                    <td valign="top" colspan="1" rowspan="1" style="word-break: break-all;">最高投资金额</td>
+                  </tr>
+                  <tr id="bmfw1">
+                    <td valign="top" colspan="2" rowspan="1">
+                      <input name="borrow_min" id="s_borrow_min" type="text" title="最低" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
+                      元
+                      <span class="fred"></span>
+                    </td>
+                    <td valign="top" colspan="1" rowspan="1">
+                      <input name="borrow_max" id="s_borrow_max" type="text" title="最高" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
+                      元
+                    </td>
+                  </tr>
 
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
+                      项目介绍
+                      <br/>
+                    </td>
+                    <td valign="top" colspan="1" rowspan="1"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="3" rowspan="1">
+                      <textarea title="吸引投资者的项目说明（100字以内）" id="borrow_info" leipiplugins="textarea" placeholder="吸引投资者的项目说明（100字以内）" value="" orgrich="0" orgfontsize="" orgwidth="300" orgheight="80" style="width: 720px; height: 80px; margin: 0px;"></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="2" rowspan="1" style="word-break: break-all;padding-top: 10px;">
+                      上传必要审核的文件（目前仅支持jpg，png两种格式）
+                      <br/>
+                    </td>
+                    <td valign="top" colspan="1" rowspan="1"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="3" rowspan="1">
 
-                <!-- 分割线 -->
-                  
-    </div>
-    </div>
-    </div>
-              </form>
+                      <div id="demo" class="demo"></div>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+                    <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+                    <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+                    <td valign="top" colspan="1" rowspan="1">
+                      <input  type="button" class="borrow_btn" onclick="javascript:borrow_sub()" value="保存发布"></td>
+                    <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
+                  </tr>
+                </table>
+
+              </div>
             </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
   <!--content end-->
-      
+
   <script src="d3.min.js"></script>
   <script src="jquery.min.js"></script>
   <script src="triangloid.js"></script>
-  
- 
-<script type="text/javascript">
-//不能为空
-  $("#s_borrow_name").blur(function() {
-    if ($("#s_borrow_name").val() == "") {
-      $("#t_borrow_name").html("*不能为空");
-    } else {
-      checkRegister();
-    }
-  });
-  $("#s_borrow_money").blur(function() {
-    if ($("#s_borrow_money").val() == "") {
-      $("#t_borrow_money").html("*不能为空");
-    } else {
-      checkRegister();
-    }
-  });
-  $("#s_borrow_interest_rate").blur(function() {
-    if ($("#s_borrow_interest_rate").val() == "") {
-      $("#t_borrow_interest_rate").html("*不能为空");
-    } else {
-      checkRegister();
-    }
-  });
-  $("#s_collect_day").blur(function() {
-    if ($("#s_collect_day").val() == "") {
-      $("#t_collect_day").html("*不能为空");
-    } else {
-      checkRegister();
-    }
-  });
-</script>
 
-<script type="text/javascript">
-  $(function(){
-    
-    $('#pid').change(function(event) {
-                var txt=$(this).val();
-                if(txt!=0){
-                 if(txt==1)
-                 {
-                     alert('你选择了房产证');
-                 }
-                 else if(txt==2)
-                 {
-                     alert('你选择了担保凭证');
-                 }
-                 else if(txt==3)
-                 {
-                     alert('你选择了抵押凭证');
-                 }
-                 else
-                 {
-                     alert('你选择了驾照');
-                 }
-            
-                 $('.yscfile').show();
-                }
-            });
-    
-    
-  })
-</script>
-<script>
-  // $('#test2')
-  //     .on(
-  //         'click',
-  //         function() {
-  //           // layer.msg('正在施工，无法更换')
-  //           $.layer({
-  //                 type : 1,
-  //                 title : [ '图片上传',
-  //                     'background:#2B2E37; height:40px; color:#fff; border:none;' //自定义标题样式
-  //                 ], //不显示默认标题栏
-  //                 offset : [ '250px', '' ],
-  //                 shade : [ 1 ], //不显示遮罩
-  //                 area : [ '260px', '100px' ],
-  //                 page : {
-  //                   html : '<form action="__URL__/upload" enctype="multipart/form-data" method="post"><input type="file"  name="filename" value=""><input  type="submit"  value="上传"></from>'
-  //                 },
-  //               });
-  //         });
-
-
-            $('#test2').on('click',function() {
-                    $.layer({
-                    type: 2,
-                    shade: [0],
-                    fix: false,
-                    title: [ '图片上传','background:#4AC0FF; height:40px; color:#fff; border:none;'],
-                    maxmin: true,
-                    iframe: {src : 'iframe.html'},
-                    area: ['800px' , '440px'],
-                    close: function(index){
-                        layer.msg('您获得了子窗口标记：' + layer.getChildFrame('#name', index).val(),3,1);
+  <script type="text/javascript">
+function borrow_sub(){
+  var s_borrow_name=$('#s_borrow_name').val();
+  var s_borrow_money=$('#s_borrow_money').val();
+  var title0=$('#title0').val();
+  var collect_day=$('#collect_days').val();
+  var collect_time=$('#collect_time').val();
+  var s_borrow_use=$('#s_borrow_use').val();
+  var repayment_type=$('#repayment_type').val();
+  var s_borrow_min=$('#s_borrow_min').val();
+  var s_borrow_max=$('#s_borrow_max').val();
+  var borrow_info=$('#borrow_info').val();
+  var borrow_name = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]");
+  alert(s_borrow_min);
+  if (s_borrow_name==''){
+    $('#s_borrow_name').focus();
+    document.getElementById("s_borrow_name").style.borderColor = "red";
+    layer.msg('请输入借款标题',{icon:0});
+  }else{
+    if(borrow_name.test(s_borrow_name)){
+      $('#s_borrow_name').focus();
+      document.getElementById("s_borrow_name").style.borderColor = "red";
+      layer.msg('借款标题不能有特殊字符！',{icon:0});
+    }else{
+      document.getElementById("s_borrow_name").style.borderColor = "green";
+      if(s_borrow_money<1000){
+          $('#s_borrow_money').focus();
+          document.getElementById("s_borrow_money").style.borderColor = "red";
+          layer.msg('借款金额大于1000以上',{icon:0});
+      }else{
+        document.getElementById("s_borrow_money").style.borderColor = "green";
+        if (title0==0 ||title0<=10||title0>=18){
+            $('#title0').focus();
+            document.getElementById("title0").style.borderColor = "red";
+            layer.msg('你输入的借款利率超出范围（10%~18%）',{icon:0});
+        }else{
+          document.getElementById("title0").style.borderColor = "green";
+          document.getElementById("collect_days").style.borderColor = "orange";
+          document.getElementById("collect_time").style.borderColor = "orange";
+          if(s_borrow_use==''){
+              $('#s_borrow_use').focus();
+              document.getElementById("s_borrow_use").style.borderColor = "red";
+              layer.msg('请输入借款说明（50字以内）',{icon:0});
+          }else{
+            if(s_borrow_use.length>50){
+              $('#s_borrow_use').focus();
+              document.getElementById("s_borrow_use").style.borderColor = "red";
+              layer.msg('借款说明超出字数范围（50字以内）',{icon:0});
+            }else{
+              document.getElementById("s_borrow_use").style.borderColor = "green";
+              if(repayment_type==''){
+                  $('#repayment_type').focus();
+                  document.getElementById("repayment_type").style.borderColor = "red";
+                  layer.msg('请选择还款方式',{icon:0});
+              }else{
+                if(s_borrow_min<100){
+                    $('#s_borrow_min').focus();
+                    document.getElementById("s_borrow_min").style.borderColor = "red";
+                    layer.msg('请输入最低投资金额！（大于100）',{icon:0});
+                }else{
+                    if(s_borrow_min >s_borrow_money){
+                      $('#s_borrow_min').focus();
+                      document.getElementById("s_borrow_min").style.borderColor = "red";
+                      layer.msg('允许最低投资金额已超出借款金额！',{icon:0});
+                    }else{
+                        if(s_borrow_max<100){
+                            $('#s_borrow_max').focus();
+                            document.getElementById("s_borrow_max").style.borderColor = "red";
+                            layer.msg('请输入高投资金额！（大于100）',{icon:0});
+                        }else{
+                          if(s_borrow_max >s_borrow_money){
+                            $('s_borrow_max').focus();
+                            document.getElementById('s_borrow_max').style.borderColor="red";
+                            layer.msg('允许最高投资金额已超出借款金额',{icon:0});
+                          }else{
+                            if(s_borrow_min>s_borrow_max){
+                               $('s_borrow_min').focus();
+                                document.getElementById('s_borrow_min').style.borderColor="red";
+                                layer.msg('允许最低投资金额不能大于最高投资金额！',{icon:0}); 
+                            }else{
+                              document.getElementById("repayment_type").style.borderColor = "green";
+                              if (borrow_info==''){
+                                  $('#borrow_info').focus();
+                                  document.getElementById("borrow_info").style.borderColor = "red";
+                                  layer.msg('请输入借款项目介绍（100字以内）',{icon:0});
+                              }else{
+                                if(borrow_info<5||borrow_info>100){
+                                    $('#borrow_info').focus();
+                                    document.getElementById('borrow_info').style.borderColor="red";
+                                }else{
+                                  document.getElementById("borrow_info").style.borderColor = "green";
+                                  var index=layer.load(1,{time:7*1000});
+                                  $.post('/Home/Borrow/circulation_save',{borrow_name:borrow_name,borrow_money:s_borrow_money,borrow_interest_rate:title0,borrow_use:s_borrow_use,s_borrow_min:s_borrow_min,s_borrow_max:s_borrow_max,collect_day:collect_day,collect_time:collect_time,repayment_type:repayment_type,borrow_info:borrow_info},function success(data){
+                                    if(data.status){
+                                      layer.alert(data.info);layer.closeAll('loading');
+                                    }else{
+                                      layer.alert(data.info);layer.closeAll('loading');
+                                    }
+                                  });
+                                } 
+                              }
+                            }
+                          }
+                        }
                     }
-                }); 
-            });
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </script>
-<script type="text/javascript">
+  <script>
+    function senfe_id(sid){
+      bmfw.style.display=sid;
+      bmfw1.style.display=sid;
+    }
+</script>
+  <script type="text/javascript">
 scale = function (btn, bar, title) {
   this.btn = document.getElementById(btn);
   this.bar = document.getElementById(bar);
