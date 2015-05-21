@@ -84,37 +84,30 @@
 			</div>
 			
 			<div class="tjsqjk" onload="setup();preselect('陕西省');promptinfo();">
-			<form action="{:U('borrowapply_save')}" method="post">
 				<h2>借款意向</h2>
 				<dl>
 					<dt><b style="color:red">*</b>姓名</dt>
 					<dd>
-						<input type="text" id="uname" name="username" class="txt" onblur="javascript:checkName(this.value)" /><div id="u1" style="display:none;"></div>
+						<input type="text" id="uname" class="txt"  />
 					</dd>
 				</dl>
 				<dl>
-					<dt><b style="color:red">*</b>联系电话 </dt>
+					<dt><b style="color:red">*</b>手机号码 </dt>
 					<dd>
-						<input type="text" name="tel" class="txt" onblur="javascript:checkPhone(this.value)"/><div id="p1" style="display:none;"></div>
-					</dd>
-				</dl>
-				<dl>
-					<dt><b style="color:red">*</b>身份证号码 </dt>
-					<dd>
-						<input type="text" name="id_card" class="txt" onblur="javascript:checkId(this.value)"/><div id="c1" style="display:none;"></div>
+						<input type="text" id="phone_num"class="txt" />
 					</dd>
 				</dl>
 				<dl>
 					<dt><b style="color:red">*</b>借款金额</dt>
 					<dd>
-						<input type="text" name="borrow_money" class="txt" onblur="javascript:checkMoney(this.value)"/><div id="m1" style="display:none;"></div>
+						<input type="text"  id="borrow_money" class="txt" />
 					</dd>
 				</dl>
 				<dl>
 					<dt>借款类型</dt>
 					<dd>
-						<select class="borrow" name="borrow_type" onblur="javascript:checkType(this.value)"><div id="t1" style="display:none;"></div>
-							<option selected="selected">---请选择---</option>
+						<select class="borrow" id="borrow_type" />
+							<option selected="selected" value="">---请选择---</option>
 							<option value="1">信用标</option>
 							<option value="2">净值标</option>
 							<option value="3">秒还标</option>
@@ -141,10 +134,8 @@
 				</dl>
 				<dl>
 					<dt>借款期限</dt>
-					<dd>
-						<!-- <input type="text" name="borrow_duration" class="txt2" onkeyup="javascript:borrow_time()"/> -->
-						
-						<select id="days" name="day_time">
+					<dd>						
+						<select id="day_time">
 							<option value="" checked>请选择</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -177,7 +168,7 @@
 							<option value="29">29</option>
 							<option value="30">30</option>
 						</select>
-						<select id="month" style="display:none" name="month_time">
+						<select  style="display:none" id="month_time">
 							<option value="" checked>请选择</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
@@ -192,30 +183,30 @@
 							<option value="11">11</option>
 							<option value="12">12</option>
 						</select>
-						<select id="year" style="display:none" name="year_time">
+						<select  style="display:none" id="year_time">
 							<option value="" checked>请选择</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 						</select>
 
-						<select class="date" name="time_type" >
-							<option value="3" onclick="javascript:c_days()">日</option>
-							<option value="2" onclick="javascript:c_month()">月</option>
-							<option value="1" onclick="javascript:c_year()" >年</option>
+						<select class="date" id="time_type" >
+							<option value="3" id="c_days">日</option>
+							<option value="2" id="c_month">月</option>
+							<option value="1" id="c_year" >年</option>
 						</select>
 					</dd>
 				</dl>
 				<dl>
 					<dt>所在地区</dt>
 					<dd>
-						<select class="select" name="province" id="s1" style="width: 25%;" onfocus="javascript:province_c()">
+						<select class="select" name="province" id="s1" style="width: 25%;">
 							<option></option>
 						</select>
-						<select class="select" name="city" id="s2" style="width: 33%;" onfocus="javascript:city_c()">
+						<select class="select" name="city" id="s2" style="width: 33%;">
 							<option></option>
 						</select>
-						<select class="select" name="town" id="s3" onfocus="javascript:area_c()">
+						<select class="select" name="town" id="s3" >
 							<option></option>
 						</select>
 						
@@ -224,15 +215,12 @@
 				<dl>
 					<dt> <b style="color:red">*</b>借款说明</dt>
 					<dd>
-						<textarea name="borrow_info"></textarea>
+						<textarea id="borrow_info"></textarea>
 					</dd>
-					
 				</dl>
-
 				<p style="color: orange; padding-left: 40px; width: 88%;line-height: 32px;margin: 10px 0;text-align: center;">带<b style="color:red;"> * </b>号为必填项，申请资料提交后将不能修改！</p>
-					<input type="submit" class="btn" value="提交申请" />
-				</form>
-<!--background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; -->
+					<input type="button" class="btn" id="apply_btn" value="提交申请" />
+				
 			</div>
 		</div>
 		<!--sqjk_cont_bot 结束-->
@@ -242,70 +230,124 @@
 <body onload="setup();preselect('广东省');promptinfo();">     
 </body>
 <script type="text/javascript">
-    function checkName(name){
-	    if(name.length==0){
-	    	u1.innerHTML = "<p style='color:red'>姓名不能为空！</p>";
-			u1.style.display = 'block';//显示div
-	    }else{
-	    	u1.innerHTML = "<p style='color:green'>正确！</p>";
-			u1.style.display = 'block';//显示div
-	    }
-  	}
-
-    function checkPhone(phone){
-    	var reg=new RegExp("/^[0]{1}$/");
-	    if(phone.length==0){
-	    	p1.innerHTML = "<p style='color:red'>联系电话不能为空！</p>";
-			p1.style.display = 'block';//显示div
-	    }else{
-			p1.innerHTML = "<p style='color:green'>正确！</p>";
-			p1.style.display = 'block';//显示div
-	    }
-  	}
-    function checkId(id){
-	    if(id.length==0){
-	    	c1.innerHTML = "<p style='color:red'>身份证号码不能为空！</p>";
-			c1.style.display = 'block';//显示div
-	    }else{
-	    	c1.innerHTML = "<p style='color:green'>正确！</p>";
-			c1.style.display = 'block';//显示div
-	    }
-  	}
-
-    function checkMoney(money){
-	    if(money.length==0){
-	    	m1.innerHTML = "<p style='color:red'>金额不能为空！</p>";
-			m1.style.display = 'block';//显示div
-	    }else{
-	    	m1.innerHTML = "<p style='color:green'>正确！</p>";
-			m1.style.display = 'block';//显示div
-	    }
-  	}
-
-    function checkType(type){
-	    if(type.value==null){
-	    	t1.innerHTML = "<p style='color:red'>请选择类型！</p>";
-			t1.style.display = 'block';//显示div
-	    }else{
-	    	t1.innerHTML = "<p style='color:green'>正确！</p>";
-			t1.style.display = 'block';//显示div
-	    }
-  	}
-  	  function c_year(){
-  	  	year.style.display="block";
-  	  	month.style.display="none";
-		days.style.display="none";
-  	  }  	  
-  	  function c_month(){
-  	  	year.style.display="none";
-  	  	month.style.display="block";
-  	  	days.style.display="none";
-  	  }  	  
-  	  function c_days(){
-  	  	year.style.display="none";
-  	  	month.style.display="none";
-  	  	days.style.display="block";
-  	  }
+   $('#apply_btn').click(function(){
+   		var uname=$('#uname').val().replace(/(^\s*)|(\s*$)/g, "");
+		var phone_num=$('#phone_num').val().replace(/(^\s*)|(\s*$)/g, "");
+		var borrow_money=$('#borrow_money').val().replace(/(^\s*)|(\s*$)/g, "");
+		var borrow_type=$('#borrow_type').val().replace(/(^\s*)|(\s*$)/g, "");
+		var title0=$('#title0').val();
+		var day_time=$('#day_time').val();
+		var month_time=$('#month_time').val();
+		var year_time=$('#year_time').val();
+		var time_type=$('#time_type').val();
+		var s1=$('#s1').val();
+		var s2=$('#s2').val();
+		var s3=$('#s3').val();
+		var borrow_info=$('#borrow_info').val();
+		var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]"); 
+		var phone = new RegExp("^[1]{1}[3,4,5,7,8]{1}[0-9]{9}$"); 
+		var card=new RegExp("^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$");
+   		if (uname==''){
+   			$('#uname').focus();
+   			document.getElementById("uname").style.borderColor = "red";
+   			layer.msg('请填写姓名！');
+   		}else{
+   			if (pattern.test(uname)) {
+   				$('#uname').focus();
+   				document.getElementById("uname").style.borderColor = "red";
+				alert('姓名不能有特殊字符');
+			}else{
+				document.getElementById("uname").style.borderColor = "green";
+	   			if (phone_num==''){
+	   				$('#phone_num').focus();
+	   				document.getElementById("phone_num").style.borderColor = "red";
+	   				layer.msg('请填写联系方式');	
+	   			}else{
+	   				if (!phone.test(phone_num)){
+	   					$('#phone_num').focus();
+	   					document.getElementById("phone_num").style.borderColor = "red";
+						layer.msg('手机号码格式不对！');
+					}else{
+						document.getElementById("phone_num").style.borderColor = "green";
+		   				if(borrow_money==''){
+		   					$('#borrow_money').focus();
+		   					document.getElementById("borrow_money").style.borderColor = "red";
+		   					layer.msg('请输入借款金额');
+		   				}else{
+		   					document.getElementById("borrow_money").style.borderColor = "green";
+		   					if (borrow_type==''){
+		   						$('#borrow_type').focus();
+			   					document.getElementById("borrow_type").style.borderColor = "red";
+			   					layer.msg('请选择借款类型');
+		   					}else{
+		   						document.getElementById("borrow_type").style.borderColor = "green";
+		   						if(title0==0 ||title0<=10||title0>=18){
+		   							$('#title0').focus();
+				   					document.getElementById("title0").style.borderColor = "red";
+				   					layer.msg('借款利率范围不正确（10%-18%）');
+		   						}else{
+		   							document.getElementById("title0").style.borderColor = "green";
+		   							if (day_time==''){
+					   					document.getElementById("day_time").style.borderColor = "red";
+					   					layer.msg('请选择借款期限');
+		   							}else{
+		   								document.getElementById("day_time").style.borderColor = "green";
+		   								if(s1==''||s2=='地级市'||s3=='市、县级市、县'){
+		   									document.getElementById("s1").style.borderColor = "red";
+		   									document.getElementById("s2").style.borderColor = "red";
+		   									document.getElementById("s3").style.borderColor = "red";
+					   						layer.msg('请选择所在地');
+		   								}else{
+		   									document.getElementById("s1").style.borderColor = "green";
+		   									document.getElementById("s2").style.borderColor = "green";
+		   									document.getElementById("s3").style.borderColor = "green";
+		   									if(borrow_info==''){
+		   										document.getElementById("borrow_info").style.borderColor = "red";
+		   										layer.msg('请填写借款说明');
+		   									}else{
+		   										document.getElementById("borrow_info").style.borderColor = "green";
+		   										var index = layer.load(1,{time: 7*1000});
+		   										$.post('__ROOT__/Home/Borrow/borrowapply_save',{username:uname,
+												tel:phone_num,borrow_money:borrow_money,
+												borrow_type:borrow_type,borrow_interest_rate:title0,
+												day_time:day_time,month_time:month_time,year_time:year_time,
+												time_type:time_type,province:s1,city:s2,town:s3,borrow_info:borrow_info},
+												function success(data){
+													if(data.status){
+														layer.alert(data.info);
+														layer.closeAll('loading');
+														location.reload(); 
+													}else{
+														layer.alert(data.info);
+														layer.closeAll('loading');
+													}
+												});
+		   									}
+		   								}
+		   							}	
+		   						}
+		   					}
+		   				}
+					}
+	   			}
+			}
+   		}
+   });
+	$('#c_days').click(function(){
+		document.getElementById('year_time').style.display="none";
+		document.getElementById('month_time').style.display="none";
+		document.getElementById('day_time').style.display="block";
+	});
+	$('#c_month').click(function(){
+		document.getElementById('year_time').style.display="none";
+		document.getElementById('month_time').style.display="block";
+		document.getElementById('day_time').style.display="none";
+	});
+	$('#c_year').click(function(){
+		document.getElementById('year_time').style.display="block";
+		document.getElementById('month_time').style.display="none";
+		document.getElementById('day_time').style.display="none";
+	});		
 </script>
 <script type="text/javascript">
 scale = function (btn, bar, title) {
