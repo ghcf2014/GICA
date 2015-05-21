@@ -707,19 +707,17 @@ class UserinfoController extends MemberController {
 			}
 		}
 	}
-	public function add() {
+	public function userselfset_add() {
 		// 从表单中获取来的数据
 		$uid = is_login ();
 		
 		$m = M ( "z_member_info" );
-		$data ['real_name'] = $_POST ["real_name"];
-		$data ['idcard'] = $_POST ["idcard"];
-		// $data ['card_img'] = $_POST ["card_img"];
-		// $data ['card_back_img'] = $_POST ["card_back_img"];
-		$data ['sex'] = $_POST ["sex"];
-		$data ['zy'] = $_POST ["zy"];
-		$data ['education'] = $_POST ["education"];
-		$data ['address'] = $_POST ["province_now"].$_POST ['city_now'].$_POST ['area_now'].$_POST ['addr_detail'];
+		$data ['real_name'] = I("post.real_name");
+		$data ['idcard'] = I("post.idcard");
+		$data ['sex'] = I("post.sex");
+		$data ['zy'] = I("post.zy");
+		$data ['education'] = I("post.education");
+		$data ['address'] = I("post.province_now").I('post.city_now').I('post.area_now').I('post.addr_detail');
 		$condition ['uid'] = $uid;
 		
 		// 保存当前数据对象

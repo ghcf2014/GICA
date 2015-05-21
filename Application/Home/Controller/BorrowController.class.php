@@ -22,8 +22,10 @@ class BorrowController extends HomeController {
 		$uid=is_login();
 		$session = isset ( $_SESSION ['gica_home'] ['user_auth'] ['username'] );
 		//是否进行基本认证
-		$status = M ( 'z_members_status' );
-		$result = $status->where ( "uid=%s", $uid )->select ();
+		$statudata = M ( 'z_members_status' );
+		$status['uid']=$uid;
+		$status['id_status']=1;
+		$result = $statudata->where ( $status )->select ();
 		if ($result == null) {
 			$this->pagetitle="工合财富直通贷款-信息未认证";
 			$this->error ( '对不起，您还没进行基本认证！', U ( 'Member/Userinfo/userselfset' ) );			
@@ -82,22 +84,22 @@ class BorrowController extends HomeController {
 		$uid=is_login();
 		$data=M('z_borrow_apply');
 		$condition['apply_uid']=$uid;
-		//没有申请
-		$applydata=$data->where($condition)->select();
-		if ($applydata){
-			//申请不通过
-			$condition['status']=2;
-			$applydata1=$data->where($condition)->select();
-			if (!$applydata1){
-				//申请通过
-				$condition['status']=3;
-				$applydata2=$data->where($condition)->select();
-				if (!$applydata2){
 
-					$this->redirect('Member/Borrow/myborrowapply');
-				}
+		$condition['status']=1;
+		$applydata1=$data->where($condition)->select();
+		if ($applydata1!==null){
+			//申请通过
+			$this->redirect('Member/Borrow/passapply');
+			
+			
+		}else{
+			$condition['status']=0;
+			$applydata2=$data->where($condition)->select();
+			if ($applydata2!==null){
+				$this->redirect('Member/Borrow/checkingapply');
 			}
 		}
+
 		$arrs['uid']=$uid;
 		$borrowfile=M('z_members_status');
 		$borrowfile_status=$borrowfile->where($arrs)->select();
@@ -114,18 +116,17 @@ class BorrowController extends HomeController {
 
 		$receive['apply_ip']=ip2long($_SERVER['REMOTE_ADDR']);
 		$receive['apply_uid']=$uid;
-		$receive["username"]=$_POST['username'];                            
-		$receive["tel"]=$_POST['tel'];                                 
-		$receive["id_card"]=$_POST['id_card'];                             
-		$receive["borrow_money"]=$_POST['borrow_money'];                        
-		$receive["borrow_type"]=$_POST['borrow_type'];                         
-		$receive["borrow_interest_rate"]=$_POST['borrow_interest_rate'];                
-		$receive["day_time"]=$_POST['day_time'];                            
-		$receive["month_time"]=$_POST['month_time'];                          
-		$receive["year_time"]=$_POST['year_time'];                           
-		$receive["time_type"]=$_POST['time_type'];                           
-		$receive['address']=$_POST["province"].$_POST["city"].$_POST["town"];                               
-		$receive["borrow_info"]=$_POST["borrow_info"];                        
+		$receive["username"]=I('post.username');                            
+		$receive["tel"]=I('post.tel');                                                              
+		$receive["borrow_money"]=I('post.borrow_money');                        
+		$receive["borrow_type"]=I('post.borrow_type');                         
+		$receive["borrow_interest_rate"]=I('post.borrow_interest_rate');                
+		$receive["day_time"]=I('post.day_time');                            
+		$receive["month_time"]=I('post.month_time');                          
+		$receive["year_time"]=I('post.year_time');                           
+		$receive["time_type"]=I('post.time_type');                           
+		$receive['address']=I('post.province').I('post.city').I('post.town');                               
+		$receive["borrow_info"]=I('post.borrow_info');                        
 
 		$model=M('z_borrow_apply');
 		$result=$model->add($receive);
@@ -137,7 +138,7 @@ class BorrowController extends HomeController {
 
 
 		if ($result>0){
-			$this->success('申请已提交，请耐心等待工作人员审核！',U('Member/Borrow/checkingapply'));
+			$this->success('申请已提交，请耐心等待工作人员审核！');
 		}else {
 			$this->error("信息提交失败，请重新核对信息！");
 		}

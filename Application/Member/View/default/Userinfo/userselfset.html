@@ -28,69 +28,26 @@
 
                                 <dl class="jbrz">
                                     <dt>真实姓名</dt>
-                                    <dd><input type="text" class="txt" name="real_name" id="realName" /></dd>
-                                    <!-- <if condition="$vo.real_name eq null">
-                                        <dd><input type="text" class="txt" name="real_name" id="realName" /></dd>
-                                    <else/>
-                                        <dd><div class="txt" name="real_name" id="realName">{$vo.real_name}</div></dd>
-                                    </if> -->
+                                    <dd><input type="text" class="txt"  id="realName" /></dd>
                                 </dl>
                             
                                 <dl class="jbrz">
                                     <dt>身份证号码</dt>
-                                    <dd><input type="text" class="txt" name="idcard" /></dd>
-                                    <!-- <if condition="$vo.real_name eq null">
-                                        <dd><input type="text" class="txt" name="idcard" /></dd>
-                                    <else/>
-                                        <dd><div class="txt" name="idcard" >{$vo.idcard}</div></dd>
-                                    </if> -->
+                                    <dd><input type="text" class="txt" id="idcard" /></dd>
                                 </dl>                      
-                                <dl class="jbrz sfz" >
-                                <dt>身份证正面</dt>
-                                <dd>
-                                    <input type="button" class="btn" value="上传" id="card_img" >
-                                    <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
-                                        <!-- <if condition="$vo.card_img eq ''">
-                                            <input type="button" class="btn" value="上传" id="card_img" >
-                                            <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
-                                        <elseif condition="$vo.card_img  neq ''"/>
-                                            <img src="Uploads/User/{$vo.card_img}" width="100" height="50" />
-                                        </if> -->
-                                </dd>
-                                </dl>
-                                
-                                <dl class="jbrz sfz">
-                                    <dt>身份证反面</dt>
-                                    <dd>
-                                        <input type="button"  class="btn" value="上传"id="card_back_img">
-                                        <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
-                                        <!-- <if condition="$vo.card_back_img eq ''">
-                                            <input type="button"  class="btn" value="上传"id="card_back_img">
-                                            <img src="__PUBLIC__/Home/images/default-img.jpg" width="100" height="50">
-                                        <elseif condition="$vo.card_back_img  neq ''"/>
-                                            <img src="Uploads/User/{$vo.card_back_img}" width="100" height="50" />
-                                        </if> -->
-                                    </dd>
-                                </dl>
                                 <dl class="jbrz sex">
                                     <dt>性别</dt>
-                                    <dd><if condition="$vo.sex eq '1'">
-                                            男<input type="radio" class="radio" name="sex" value="1" checked="checked"/>
-                                            女<input type="radio" class="radio" name="sex" value="0" />
-                                        <elseif condition="$vo.sex eq '0'"/>
-                                            男<input type="radio" class="radio" name="sex" value="1" />
-                                            女<input type="radio" class="radio" name="sex" value="0" checked="checked"/>
-                                        <else/>
-                                            男<input type="radio" class="radio" name="sex" value="1" />
-                                            女<input type="radio" class="radio" name="sex" value="0"/>                                      
-                                        </if>
-                                    </dd>
+                                       <select id="sex">
+                                           <option value="0">保密</option>
+                                           <option value="1">男</option>
+                                           <option value="2">女</option>
+                                       </select>                                      
                                 </dl>
                             
                             <dl class="jbrz">
                                 <dt>职业</dt>
                                 <dd>
-                                <select name="zy"  class="inp50" style="font-size: 16px;height: 40px;">                                
+                                <select  id='zy' class="inp50" style="font-size: 16px;height: 40px;">                                
                                            <option value="">请选择</option>   
                                            <option value="学生">学生</option>    
                                            <option value="工人">工人</option>   
@@ -101,62 +58,26 @@
                                            <option value="企业员工">企业员工</option>
                                            <option value="公司董事">公司董事</option>
                                            <option value="集团老总">集团老总</option>      
-                                        </select> 
-                               <!--  <if condition="$vo.zy eq null">
-                                        <select name="zy"  class="inp50" style="font-size: 16px;height: 40px;">                                
-                                           <option value="">请选择</option>   
-                                           <option value="学生">学生</option>    
-                                           <option value="工人">工人</option>   
-                                           <option value="工程师">工程师</option>   
-                                           <option value="公司职员">公司职员</option>   
-                                           <option value="公司老板">公司老板</option>
-                                           <option value="银行职员">银行职员</option>
-                                           <option value="企业员工">企业员工</option>
-                                           <option value="公司董事">公司董事</option>
-                                           <option value="集团老总">集团老总</option>      
-                                        </select>                                    
-                                    <else/>
-                                        <div class="txt" name="idcard" id="idNo">{$vo.zy}</div>
-                                    </if>  -->                           
+                                        </select>                          
                                 </dd>
                             </dl>
                             <dl class="jbrz">
-                                <dt>教育</dt>
+                                <dt>教育程度</dt>
                                 <dd>
-                                <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">                                
-                                           
-                                           <option value="">请选择</option>     
-                                           <option value="博士以上">博士以上</option>    
-                                           <option value="博士">博士</option>   
-                                           <option value="硕士">硕士</option>   
-                                           <option value="研究生">研究生</option>   
-                                           <option value="本科">本科</option>
-                                           <option value="专科">专科</option>
-                                           <option value="高中">高中</option>
-                                           <option value="初中">初中</option>
-                                           <option value="小学">小学</option>      
-                                        </select>  
-                                <!-- <if condition="$vo.zy eq null">
-                                        <select name="education"  class="inp50" style="font-size: 16px;height: 40px;">                                
-                                           
-                                           <option value="">请选择</option>     
-                                           <option value="博士以上">博士以上</option>    
-                                           <option value="博士">博士</option>   
-                                           <option value="硕士">硕士</option>   
-                                           <option value="研究生">研究生</option>   
-                                           <option value="本科">本科</option>
-                                           <option value="专科">专科</option>
-                                           <option value="高中">高中</option>
-                                           <option value="初中">初中</option>
-                                           <option value="小学">小学</option>      
-                                        </select>                                    
-                                    <else/>
-                                        <div class="txt" name="idcard">{$vo.education}</div>
-                                    </if> -->                            
+                                <select id="education" class="inp50" style="font-size: 16px;height: 40px;">                                
+                                   <option value="">请选择</option>     
+                                   <option value="博士以上">博士以上</option>    
+                                   <option value="博士">博士</option>   
+                                   <option value="硕士">硕士</option>   
+                                   <option value="研究生">研究生</option>   
+                                   <option value="本科">本科</option>
+                                   <option value="专科">专科</option>
+                                   <option value="高中">高中</option>
+                                   <option value="初中">初中</option>
+                                   <option value="小学">小学</option>      
+                                </select>                              
                                 </dd>
-                                
                             </dl>
-                            
                             <dl class="jbrz adress">
                                 <dt>现居地址</dt>
                                 <dd>
@@ -169,39 +90,18 @@
                                     <select class="select" name="area_now" id="s3">
                                         <option></option>
                                     </select>
-                                    <!-- <if condition="$vo.province_now eq null">
-                                        <select class="select" name="province_now" id="s1">
-                                            <option></option>
-                                        </select>
-                                        <select class="select" name="city_now" id="s2">
-                                            <option></option>
-                                        </select>
-                                        <select class="select" name="area_now" id="s3">
-                                            <option></option>
-                                        </select>
-                                        
-                                    <else/>
-                                        <div class="txt" name="idcard" id="idNo">{$vo.province_now}--{$vo.city_now}--{$vo.area_now}</div>
-                                    </if>  --> 
-
-                                   
-                                                           
                                 </dd>
-                                
                             </dl>
                             <dl class="jbrz">
                                 <dt>详细地址</dt>
-                                <input type="text" name="addr_detail" class="select"/><span>（县区、村镇街道或门牌号）</span>
+                                <input type="text" id="addr_detail" class="select"/><span>（县区、村镇街道或门牌号）</span>
                             </dl> 
                             
                             <p class="wxts"><b style="font-weight: normal;color: red;">温馨提示：</b>我们将严格对用户的所有资料进行保密。</p>
                             <div class="jbrz_sub_btn">
 
-                                <input type="submit" class="btn" value="保存"/>
+                                <input type="submit" class="btn" id="info_btn" value="保存"/>
                             </div>
-
-
-
                             </div>
                         </if>
                         </if>
@@ -230,44 +130,89 @@
     </div>
 </div>
 	<!--content end-->
-	<script>
-	$('#card_img').on('click', function(){
-		// layer.msg('正在施工，无法更换')
-    $.layer({
-        type: 1,
-        title: [
-            '图片上传', 
-            'background:#2B2E37; height:40px; color:#fff; border:none;' //自定义标题样式
-        ],  //不显示默认标题栏
-        offset : ['250px', ''],
-        shade: [1], //不显示遮罩
-        area: ['260px', '300px'],
-        page: {html: '<form action="__URL__/upload" enctype="multipart/form-data" method="post"><div style="width:100%;height:32px;position:relative;top:45px;left:18px;"><input class="file" type="file" name="filename" value="" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:223px;height:30px;border:0;"><div style="overflow:hidden;"><input class="filename" type="text" value="" style="float:left;width:150px;height:20px;border-radius:0;border-right:0;border-color:#66ccfb;"><input type="button" value="浏 览" style="float:left;width:60px;height:30px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff;"></div><input  type="submit"  value="上 传" style="width:75px;height:25px;background-color:#66ccfb;border:0;color:#fff;margin-left:75px;"></div></from>'},
+<script type="text/javascript">
+    $('#info_btn').click(function(){
+        var realName=$('#realName').val().replace(/(^\s*)|(\s*$)/g, "");
+        var idcard=$('#idcard').val();
+        var sex=$('#sex').val();
+        var zy=$('#zy').val();
+        var education=$('#education').val();
+        var s1=$('#s1').val();
+        var s2=$('#s2').val();
+        var s3=$('#s3').val();
+        var addr_detail=$('#addr_detail').val();
+        var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]");  
+        if (realName==''){
+            /*真实姓名验证*/
+            $('#realName').focus();
+            document.getElementById("realName").style.borderColor = "red";
+            layer.msg('请填写真实姓名！',{icon:0});
+        }else{
+            if (pattern.test(realName)){
+                $('#realName').focus();
+                document.getElementById("realName").style.borderColor = "red";
+                layer.msg('真实姓名不能有特殊字符！',{icon:0});
+            }else{
+                document.getElementById("realName").style.borderColor = "green";
+                /**身份证验证*/
+                if(idcard.length=='18'){
+                    document.getElementById("idcard").style.borderColor = "green";
+                    if(zy==''){
+                        $('#zy').focus();
+                        document.getElementById("zy").style.borderColor = "red";
+                        layer.msg('请选择职业',{icon:0});
+                    }else{
+                        document.getElementById("zy").style.borderColor = "green";
+                        if (education==''){
+                            $('#education').focus();
+                            document.getElementById("education").style.borderColor = "red";
+                            layer.msg('请选择教育程度',{icon:0});
+                        }else{
+                            document.getElementById("education").style.borderColor = "green";
+                            if(s1==''||s2=='地级市'||s3=='市、县级市、县'){
+                                document.getElementById("s1").style.borderColor = "red";
+                                document.getElementById("s2").style.borderColor = "red";
+                                document.getElementById("s3").style.borderColor = "red";
+                                layer.msg('省市县不完整，请选择！',{icon:0});
+                            }else{
+                                document.getElementById("s1").style.borderColor = "green";
+                                document.getElementById("s2").style.borderColor = "green";
+                                document.getElementById("s3").style.borderColor = "green";
+                                if(addr_detail==''){
+                                    $('#addr_detail').focus();
+                                    document.getElementById("addr_detail").style.borderColor = "red";
+                                    layer.msg('请填写详细地址',{icon:0})
+                                }else{
+                                    document.getElementById("addr_detail").style.borderColor = "green";
+                                    var index=layer.load(1,{time:7*1000});
+                                    $.post('__ROOT__/Member/Userinfo/userselfset_add',{real_name:realName,idcard:idcard,sex:sex,zy:zy,education:education,province_now:s1,city_now:s2,area_now:s3,addr_detail:addr_detail},function success(data){
+                                        if (data.status){
+                                            layer.alert(data.info);
+                                            location.reload();
+                                            layer.closeAll('loading');
+                                        }else{
+                                            layer.alert(data.info);
+                                            location.reload();
+                                            layer.closeAll('loading');
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    }
+
+
+
+                }else{
+                    $('#idcard').focus();
+                    document.getElementById("idcard").style.borderColor = "red";
+                    layer.msg('身份证号码位数不对！',{icon:0});
+                }
+
+
+            }
+        }
     });
-    $(".file").change(function(){
-		$(this).parents().find(".filename").val($(this).val());
-
-	});		
- });
-	$('#card_back_img').on('click', function(){
-		// layer.msg('正在施工，无法更换')
-    $.layer({
-        type: 1,
-        title: [
-            '图片上传', 
-            'background:#2B2E37; height:40px; color:#fff; border:none;' //自定义标题样式
-        ],  //不显示默认标题栏
-        offset : ['250px', ''],
-        shade: [1], //不显示遮罩
-        area: ['260px', '300px'],
-        page: {html: '<form action="__URL__/upload_back" enctype="multipart/form-data" method="post"><div style="width:100%;height:32px;position:relative;top:45px;left:18px;"><input class="file" type="file" name="filename" value="" style="position:absolute;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity:0;width:223px;height:30px;border:0;"><div style="overflow:hidden;"><input class="filename" type="text" value="" style="float:left;width:150px;height:20px;border-radius:0;border-right:0;border-color:#66ccfb;"><input type="button" value="浏 览" style="float:left;width:60px;height:30px;border-left:0;border-color:#66ccfb;background-color:#66ccfb;color:#fff;"></div><input  type="submit"  value="上 传" style="width:75px;height:25px;background-color:#66ccfb;border:0;color:#fff;margin-left:75px;"></div></from>'},
-    });
-    $(".file").change(function(){
-		$(this).parents().find(".filename").val($(this).val());
-
-	});
- });
-
 </script>
 <body onload="setup();preselect('广东省');promptinfo();">     
 </body>
