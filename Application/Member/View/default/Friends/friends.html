@@ -160,47 +160,35 @@
 					</div>
 		</div>
 						<div class="friend_tab" style="display: none; margin-top: 20px;">
-							<table style="margin:0 auto 50px;">
+							<table class="bordered">
 								<tr>
-									<td
-										style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">编号</td>
-									<td
-										style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">用户名</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">注册时间</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">累计投资额</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">最后投资时间</td>
-									<td
-										style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">好友会员等级</td>
+									<td>编号</td>
+									<td>用户名</td>
+									<td>注册时间</td>
+									<td>累计投资额</td>
+									<td>最后投资时间</td>
+									<td>好友会员等级</td>
 									
 								</tr>
 								<if condition="$friendList neq null">
 									<volist name="friendList" id="vo" key="i">
 									<tr>
-										<td
-											style="text-align: center; width: 50px; border: 1px solid #ddd; line-height: 40px;">{$i}</td>
-										<td
-											style="text-align: center; width: 100px; border: 1px solid #ddd; line-height: 40px;">{$vo[0][username]}</td>
-										<td
-											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">{$vo[0][reg_time]|date='Y-m-d',###}</td>
-										<td
-											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+										<td>{$i}</td>
+										<td>{$vo[0][username]}</td>
+										<td>{$vo[0][reg_time]|date='Y-m-d',###}</td>
+										<td>
 											<if condition="$vo[1][investor_capital] neq null">{$vo[1]['sum(investor_capital)']}
 											<else/>
 												0
 											</if>
 											</td>
-										<td
-											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+										<td>
 											<if condition="$vo[2][0][add_time] neq null">{$vo[2][0]['add_time']|date='Y-m-d',###}
 											<else/>
 												----
 											</if>
 										</td>
-										<td
-											style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">
+										<td>
 											<if condition="$vo[0][member_level] eq 1">
 												A级会员
 											<elseif condition="$vo[0][member_level] eq 2"/>
@@ -218,12 +206,12 @@
 									</volist>
 									<else/>
 										<tr>
-											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
-											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
-											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
-											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
-											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
-											<td style="text-align: center; width: 100px; line-height: 40px; border: 1px solid #ddd;">---</td>
+											<td>---</td>
+											<td>---</td>
+											<td>---</td>
+											<td>---</td>
+											<td>---</td>
+											<td>---</td>
 										</tr>
 
 									</if>
@@ -236,7 +224,7 @@
 					<dd>3、C级会员为<span style="color:red;"><u>B级会员</u></span>间接推荐的投资客。</dd>
 				</dl>
 				
-				<table border="0" cellspacing="0" cellpadding="0">
+				<table class="bordered">
 					<tr>
 						<th>推广统计</th>
 					</tr>

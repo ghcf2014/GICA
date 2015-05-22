@@ -34,7 +34,7 @@
 							        <span id="sys_mail_list">
 							        	<div class="biaoge" id="biaoge">
 							        		<input type="hidden" id="curPage" value="1">
-							          		<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							          		<table class="bordered">
 							  					<tbody>
 							  					      <!-- <tr>
 							  					      	<td colspan="10">
@@ -48,7 +48,7 @@
 													  </tr> -->
 													  <tr>
 													    <!-- <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th> -->
-													    <th>发件人</th>
+													    <th style="width: 80px;">发件人</th>
 													    <th>标题</th>
 													    <th>发件时间</th>
 													    <th>操作</th>
@@ -60,7 +60,7 @@
 															<th><if condition="$ms['uid'] eq 1">工合财富<else/>{$ms['uid']|get_uname}</if></th>
 															<th ><if condition="$ms['status'] eq 0"><span class="on">[新]</span></if>{$ms['title']}：{$ms['msg']}</th>
 															<th style="width:165px;">{$ms['send_time']|date='Y-m-d H:i:s',###}</th>
-															<th  style="width:45px;"><a class="confirm" href="{:U('Member/System/usermailindex_danger_del?id='.$ms['id'])}" title="点击删除消息" >删除</a></th>
+															<th  style="width:45px;"><a class="confirm" href="{:U('Member/System/usermailindex_danger_del?id='.$ms['id'])}" title="点击删除消息" ><img src="__PUBLIC__/Home/images/img/iconfont-shanchu.png" style="border-radius: 100px;"width="24" height="24"></a></th>
 														</tr>
 														</volist>
 												</tbody>

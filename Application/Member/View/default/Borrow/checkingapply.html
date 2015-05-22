@@ -46,7 +46,7 @@
 								</form>
 							</div> -->
 						<div class="biaoge">
-							<table width="98%" border="0" cellspacing="0" cellpadding="0">
+							<table class="bordered">
 								<tr>
 									<th>编号</th>
 									<th>借款金额</th>
@@ -58,15 +58,15 @@
 								</tr>
 								<volist name="list" id="chkdata" key="i">
 								<tr>
-									<td align="center" class="b0">{$i}</td>
-									<td align="center" class="b1">{$chkdata.borrow_money}</td>
-									<td align="center" class="b2">
+									<td >{$i}</td>
+									<td >{$chkdata.borrow_money}</td>
+									<td >
 										<if condition="$chkdata.time_type eq '1'">{$chkdata.year_time}年 
 										<elseif condition="$chkdata.time_type eq 2"/>{$chkdata.month_time}个月 
 										<elseif condition="$chkdata.time_type eq 3"/>{$chkdata.day_time}天
 										</if>
 									</td>
-									<td align="center" class="b3">
+									<td >
 										<if condition="$chkdata.borrow_type eq '1'">信用标 
 										<elseif condition="$chkdata.borrow_type eq 2" /> 净值标 
 										<elseif condition="$chkdata.borrow_type eq 3" /> 秒还标 
@@ -76,14 +76,14 @@
 										实地考察标 
 										</if>
 									</td>
-									<td class="b4">{$chkdata.borrow_info}</td>
-									<td align="center" class="b5">{$chkdata.apply_time}</td>
-									<td align="center" style="width:10%;">审核中</td>
+									<td >{$chkdata.borrow_info}</td>
+									<td >{$chkdata.apply_time}</td>
+									<td >审核中</td>
 								</volist>
 								</tr>
 								<tr>
 								<if condition="$i eq null">
-									<td align="center" colspan="10">亲！你还没成功借过款哦。</td>
+									<td >亲！你还没成功借过款哦。</td>
 								</if>
 								</tr>
 							</table>

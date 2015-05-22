@@ -30,10 +30,10 @@
 								<div style="width: 190px; height: 44px; line-height: 44px; float: left;font-size: 16px;">{$vo.email}&nbsp;&nbsp;&nbsp;</div>
 								<span style="float: left;padding-top: 6px;overflow: hidden;">
 								<if condition="$email eq 0">
-								<a href="{:U('Member/Userinfo/usermail_send')}" target="_blank" style="width: 100px; height: 30px; background: url(__PUBLIC__/Home/images/100x30pxbule.png) no-repeat; color: #fff;float:left;line-height: 30px;text-align: center;margin-right: 5px;" >立即验证</a>
+								<a href="{:U('Member/Userinfo/usermail_send')}" target="_blank" class="large button blue" >立即验证</a>
 
 								</if>
-								<input onclick="javascript:void(0);" id="upEmail" type="button" value="修改邮箱" style="width: 100px; height: 30px;background: #66CCFB; color: #fff;float: left;border-radius: 5px;border: 0;font-size:14px;" />
+								<a onclick="javascript:void(0);" id="upEmail"  class="large button blue" >修改邮箱</a>
 								</span>
 							</dd>
 						</dl>
@@ -56,9 +56,9 @@
 								</dd>
 							</dl>
 							<input type="button" value="修改" id="queryok"
-								style="width: 60px; height: 20px; background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat; color: #fff; margin-left: 320px; margin-top: 20px;border: 0;" />
+								class="large button blue" />
 							&nbsp;&nbsp;&nbsp;<input type="button" value="取消" id="cancel"
-								style="width: 60px; height: 20px; background: url(__PUBLIC__/Home/images/60X20PXblue.png) no-repeat; color: #fff; margin-top: 20px;border: 0;" />
+								class="large button blue" />
 						</div>
 					</form>
 					<!--身份证验证-->

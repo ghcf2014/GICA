@@ -35,7 +35,7 @@
 			<ul>
 				<li><strong>您的账户总额：</strong><span id="totalMoney">￥{$vo.account_money}</span></li>
 				<li><strong>您的可用余额：</strong><span id="leaveMoney">￥{$vo.account_money}</span></li>
-				<li><input type="button" class="btn" value="我要充值"
+				<li><input type="button" class="large button blue" value="我要充值"
 					onclick="javascript:;" id="recharge"></li>
 			</ul>
 			</volist>
@@ -78,11 +78,11 @@
 				<input type="hidden" value="{$vb['id']}" id="bid">
 				</volist>
 				<div class="tzje">
-					<p><span>投资金额</span><input type="text" class="txt" style="color: red;"id="amount" name="capital" maxlength="20" value=""/><span style="color: red;float: none;" id="amount_tip" class="formtips"></span><span>元</span><input type="button" value="最大金额" class="btn" id="maxMoney"onclick="javascript:;"></p>
+					<p><span>投资金额</span><input type="text" class="txt" style="color: red;"id="amount" name="capital" maxlength="20" value=""/><span style="color: red;float: none;" id="amount_tip" class="formtips"></span><span>元</span><input type="button" value="最大金额" class="large button blue" id="maxMoney"onclick="javascript:;"></p>
 					<!-- <p><span>交易密码</span><input type="password" class="txt" style="" id="dealpwd" name="dealpwd" maxlength="20" value=""/><span style="color: red;float: none;" id="pwd_tip" class="formtips"></span><a href="javascript:;" class="wjmm">忘记密码？</a></p> -->
 				</div>
 				<p style="color: red;width: 453px;padding-left: 65px;">注意：点击按钮表示您将确认投标金额并同意支付贷款</p>
-				<input type="button" value="确认投标" class="btn2" id="confirmInvest"/>
+				<input type="button" value="确认投标" class="large button blue" id="confirmInvest"/>
 				<!-- <input type="submit" value="确认投标" class="btn2" /> -->
 
 								</div>
