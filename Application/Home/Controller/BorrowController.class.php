@@ -29,7 +29,7 @@ model = new BorrowModel();
 		$result = $statudata->where ( $status )->select ();
 		if ($result == null) {
 			$this->pagetitle="工合财富直通贷款-信息未认证";
-			$this->error ( '对不起，您还没进行基本认证！', U ( 'Member/Userinfo/userselfset' ) );			
+			$this->error ( '您还没有通过基本认证！', U ( 'Member/Userinfo/userselfset' ) );			
 		} 
 		//是否有申请
 		$data=M('z_borrow_apply');		

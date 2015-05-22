@@ -350,8 +350,13 @@
 		$("#sendmail").click(function() {
 			var email = $('#emails').val();
 			var content = $('#content').val();
+			var email_check=/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
 			if (email == "") {
 				alert("好友邮箱地址不能为空！");
+				return false;
+			}
+			if(!email_check.test(email)){
+				alert('您输入的邮箱格式不对');
 				return false;
 			}
 			if (content == "") {
