@@ -13,7 +13,8 @@ class BorrowController extends HomeController {
 
 
 	protected function _init() {
-		$this->model = new BorrowModel();
+		$this->
+model = new BorrowModel();
 	}
 	
 	// 系统首页
@@ -113,7 +114,6 @@ class BorrowController extends HomeController {
 	}
 	public function borrowapply_save(){
 		$uid=is_login();
-
 		$receive['apply_ip']=ip2long($_SERVER['REMOTE_ADDR']);
 		$receive['apply_uid']=$uid;
 		$receive["username"]=I('post.username');                            
@@ -202,43 +202,49 @@ class BorrowController extends HomeController {
 			$this->error ( L ( '您未做任何修改' ) );
 		}
 	}
-	public function circulation_save($id = 1) {
+	public function circulation_save($type=0) {
 		$uid = is_login ();
-		$depict ['borrow_type'] = $id;
-		$depict ['borrow_name'] = I('borrow_name');
-		$depict ['borrow_money'] = I('borrow_money');
-		$depict ['borrow_interest_rate'] = I('borrow_interest_rate');
-		$depict ['borrow_use'] = I('borrow_use');
-		$depict ['borrow_min'] = I('borrow_min');
-		$depict ['borrow_max'] = I('borrow_max');
-		$depict ['collect_day'] = I('collect_day');
-		$depict ['collect_time'] = I('collect_time');
-		$depict ['repayment_type'] = I('repayment_type');
-		$depict ['borrow_info'] = I('borrow_info');
+		$depict ['borrow_type'] = $_GET['type'];
+		$depict ['borrow_name'] = $_POST['borrow_name'];
+		$depict ['borrow_money'] = $_POST['borrow_money'];
+		$depict ['borrow_interest_rate'] = $_POST['borrow_interest_rate'];
+		$depict ['borrow_use'] = $_POST['borrow_use'];
+		$depict ['borrow_min'] = $_POST['borrow_min'];
+		$depict ['borrow_max'] = $_POST['borrow_max'];
+		$depict ['collect_day'] = $_POST['collect_day'];
+		$depict ['collect_time'] = $_POST['collect_time'];
+		$depict ['repayment_type'] = $_POST['repayment_type'];
+		$depict ['borrow_info'] = $_POST['borrow_info'];
 		$depict ['borrow_status'] = 0;
 		$depict ['borrow_uid'] = $uid;
 		$depict ['add_time'] = time ();
-		$depict ['deadline'] = strtotime ( '+' . intval ( I('collect_day') ) . ' year' );
+		$depict ['deadline'] = strtotime ( '+' . intval ( $_POST['collect_day'] ) . ' year' );
 		$depict ['add_ip'] = get_client_ip ();
+		//判断最低投资额、最高投资额、借款金额
+		if($depict['borrow_min']>$depict['borrow_money']){
+			$this->error('最低投资额不能大于借款金额！');
+		}
+		if($depict['borrow_max']>$depict['borrow_money']){
+			$this->error('最高投资额不能大于借款金额！');
+		}
+		if($depict['borrow_min']>$depict['borrow_max']){
+			$this->error('最低投资额不能大于最高投资额！');
+		}
+
 		//生成敏感信息
-		if ($id==1){
+		if ($depict ['borrow_type']==1){
 			$action1="信用";
-		}elseif ($id==2) {
+		}elseif ($depict ['borrow_type']==2) {
 			$action1="净值";
-		}elseif ($id==3) {
+		}elseif ($depict ['borrow_type']==3) {
 			$action1="秒还";
-		}elseif ($id==4) {
+		}elseif ($depict ['borrow_type']==4) {
 			$action1="担保";
-		}elseif ($id==5) {
+		}elseif ($depict ['borrow_type']==5) {
 			$action1="抵押";
 		}else{
 			$action1="考察";
 		}
-		
-
-		//公式带进
-		// $depict['repayment_interest']=10000*(0.18/12)*pow((1+0.18/12),2)/(pow((1+0.18/12),2)-1);
-
 		$borrow_money =$depict ['borrow_money'];
 		$borrow_interest_rate=$depict ['borrow_interest_rate'];
 		$borrow_duration=$depict ['borrow_duration'];
@@ -280,6 +286,8 @@ class BorrowController extends HomeController {
 			// 失败提示
 			$this->error ( L ( '发布失败' ) );
 		}
+		// }
+		
 	}
 	/**
 	 * 新增页面初始化
@@ -290,8 +298,10 @@ class BorrowController extends HomeController {
 			$this->error ( '投标ID错误！' );
 		}
 		//登录状态显示
-		if (is_login()<=0){
-			$this->redirect('Home/User/login');
+		if (is_login()
+<=0){
+			$this->
+	redirect('Home/User/login');
 		}
 		/* 页码检测 */
 		$p = intval ( $p );
@@ -344,7 +354,8 @@ class BorrowController extends HomeController {
 		//还款计划查询
 		$num=$list[0]['borrow_duration'];
 		if($repayment_type==5){
-			for($i=1;$i<=$num;$i++){
+			for($i=1;$i
+	<=$num;$i++){
 				$dcapital1[$i]['repayment_money']=(floatval($list[0]['borrow_money']) * (floatval ( $list[0]["borrow_interest_rate"] )/100/12) * pow((1 + (floatval($list[0]["borrow_interest_rate"])/100/12)), floatval($list[0]["borrow_duration"]))/(pow((1 + (floatval ( $list[0]["borrow_interest_rate"])/100/12)), floatval ( $list[0]["borrow_duration"]))- 1)) * floatval ($i);
 	            $dcapital = (floatval ($dcapital1[$i]['repayment_money'])-floatval ($dcapital1[$i-1]['repayment_money']))-floatval($list[0]['borrow_money'])*(floatval($list[0]["borrow_interest_rate"])/100/12)*(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),$i-1)))/(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-1);
 	            $interest=floatval($list[0]["borrow_money"])*(floatval($list[0]["borrow_interest_rate"])/100/12)*(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),$i-1)))/(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-1);
@@ -354,11 +365,13 @@ class BorrowController extends HomeController {
 				$cons[$i]['remain_money']=round(($dcapital+$interest),2)*$num-round(($dcapital+$interest)*$i,2);
 				$cons[$i]['repayment_time']=strtotime('+ '.$i.' months',strtotime(''.date("Y-m-d",''.$list[0]['add_time'].'').''));
 			}
-			$this->assign('num',$num);
+			$this->
+		assign('num',$num);
 			$this->assign('cons',$cons);
 		}elseif($repayment_type==6){
 			//先息后本算法
-			for($i=1;$i<=$num;$i++){
+			for($i=1;$i
+		<=$num;$i++){
 				$cons[$i]['allcapital']=(floatval ($list[0]["borrow_money"])*(floatval ($list[0]["borrow_interest_rate"] )/100/12));
 				$cons[$i]['capital']=0;				       
 				$cons[$i]['interest']=floatval ($list[0]["borrow_money"] )*(floatval ($list[0]["borrow_interest_rate"] ) / 100 / 12); 
@@ -368,7 +381,8 @@ class BorrowController extends HomeController {
 			$cons[$num]['remain_money']=0;
 			$cons[$num]['allcapital']=(floatval ($list[0]["borrow_money"] )*(floatval ($list[0]["borrow_interest_rate"] ) / 100 / 12)+floatval ($list[0]["borrow_money"] ));	
 			$cons[$num]['capital']=$list[0]["borrow_money"];
-			$this->assign('num',$num);
+			$this->
+			assign('num',$num);
 			$this->assign('cons',$cons);
 		}else {
 			$cons[1]['allcapital']=(floatval ($list[0]["borrow_money"])+floatval ($list[0]["borrow_money"])*(floatval ($list[0]["borrow_interest_rate"]/100/12 )*$num));

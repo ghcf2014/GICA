@@ -581,19 +581,23 @@ function user_leve($id = 0) {
 //标类型ID转换为中文
 function get_borrow_type_name($id = 0) {
 	if($id == 1){
+		$name='新手体验标';
+	}elseif($id == 2){
 		$name='信用标';
-	}
-	if($id == 2){
+	}elseif($id == 3){
 		$name='净值标';
-	}if($id == 3){
-		$name='秒还标';
-	}if($id == 4){
+	}elseif($id == 4){
+		$name='车易贷';
+	}elseif($id == 5){
 		$name='担保标';
-	}if($id == 5){
+	}elseif($id == 6){
 		$name='抵押标';
-	}
-	if($id == 6){
+	}elseif($id == 7){
+		$name='秒还标';
+	}elseif($id == 8){
 		$name='实地考察标';
+	}elseif($id == 9){
+		$name='债券转移贷';
 	}
 	// var_dump($name['nickname']);
 	return $name;

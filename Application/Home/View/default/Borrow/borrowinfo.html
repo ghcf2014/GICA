@@ -16,7 +16,7 @@
                   <h3 style="height: 50px;line-height: 50px;width: 690px;float: left;border: 0;">
                     当前位置 > <b style="color: red;font-weight: normal;">发布借款</b>
                   </h3>
-                  <span style="color: red;font-size: 20px; padding:0 40px;float: right;line-height: 50px;">{$type|get_borrow_type_name}</span>
+                  <span style="color: red;font-size: 24px; padding:0 40px;float: right;line-height: 50px;">{$type|get_borrow_type_name}</span>
                 </li>
               </ul>
             </div>
@@ -25,7 +25,9 @@
                 <span class="fred">*</span>
                 为必填项，所有资料均会严格保密。
               </p>
+
               <div class="tab">
+              <form name="form"action="{:U('circulation_save?id='.$type)}" method="post" enctype="multipart/form-data"  onsubmit="return check()">
                 <table>
                   <tr>
                     <td valign="top" colspan="2" rowspan="1">借款标题</td>
@@ -34,11 +36,12 @@
                   </tr>
                   <tr>
                     <td valign="top" colspan="2" rowspan="1">
+                      <input type="hidden" value="{$type}" id="b_type">
                       <input name="borrow_name" id="s_borrow_name" type="text" title="借款标题" placeholder="请填写借款标题" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 340px;"/>
                       <span class="fred" id="t_borrow_name"></span>
                     </td>
                     <td width="233" valign="top">
-                      <input name="borrow_money"id="s_borrow_money" type="text" title="金额" placeholder="请填写金额" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
+                      <input name="borrow_money"id="s_borrow_money" type="text" title="金额" placeholder="请填写金额" onkeyup="if(/\D/.test(this.value)){layer.msg('只能输入数字');this.value='';}" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
                       <span class="fred" id="t_borrow_money"></span>
                     </td>
                     <td width="100" valign="top" style="word-break: break-all;"></td>
@@ -59,7 +62,7 @@
                             <span id="btn0"></span>
                           </div>
                           <span class="bars_10" style="display:none;">100</span>
-                          <input name="borrow_interest_rate" id="title0" type="text" title="年化率" value="0"  leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 30px;"/>
+                          <input name="borrow_interest_rate" id="title0" type="text" title="拖动左侧滑块" value="0" onkeyup="if(/\D/.test(this.value)){layer.msg('只能输入数字,请拖动左侧滑块');this.value='';}" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 30px;"/>
                           <span class="span" >%</span>
                         </div>
                       </div>
@@ -148,12 +151,12 @@
                   </tr>
                   <tr id="bmfw1">
                     <td valign="top" colspan="2" rowspan="1">
-                      <input name="borrow_min" id="s_borrow_min" type="text" title="最低" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
+                      <input name="borrow_min" id="s_borrow_min" type="text" title="最低" onkeyup="if(/\D/.test(this.value)){layer.msg('只能输入数字');this.value='';}" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
                       元
                       <span class="fred"></span>
                     </td>
                     <td valign="top" colspan="1" rowspan="1">
-                      <input name="borrow_max" id="s_borrow_max" type="text" title="最高" value="" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
+                      <input name="borrow_max" id="s_borrow_max" type="text" title="最高" onkeyup="if(/\D/.test(this.value)){layer.msg('只能输入数字');this.value='';}" leipiplugins="text" orghide="0" orgalign="left" orgwidth="150" orgtype="text" style="text-align: left; width: 150px;"/>
                       元
                     </td>
                   </tr>
@@ -192,11 +195,11 @@
                   <tr>
                     <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
                     <td valign="top" colspan="1" rowspan="1">
-                      <input  type="button" class="borrow_btn" onclick="javascript:borrow_sub()" value="保存发布"></td>
+                      <input  type="submit" class="borrow_btn" value="保存发布"></td>
                     <td valign="top" colspan="1" rowspan="1">&nbsp;</td>
                   </tr>
                 </table>
-
+              </form>
               </div>
             </div>
           </div>
@@ -211,8 +214,9 @@
   <script src="jquery.min.js"></script>
   <script src="triangloid.js"></script>
 
-  <script type="text/javascript">
-function borrow_sub(){
+<script type="text/javascript">
+function check(){
+  var borrow_type=$('#b_type').val();
   var s_borrow_name=$('#s_borrow_name').val();
   var s_borrow_money=$('#s_borrow_money').val();
   var title0=$('#title0').val();
@@ -224,104 +228,94 @@ function borrow_sub(){
   var s_borrow_max=$('#s_borrow_max').val();
   var borrow_info=$('#borrow_info').val();
   var borrow_name = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]");
-  alert(s_borrow_min);
+  var borrow_m= new RegExp("[0-9]");
   if (s_borrow_name==''){
     $('#s_borrow_name').focus();
     document.getElementById("s_borrow_name").style.borderColor = "red";
     layer.msg('请输入借款标题',{icon:0});
+    return false;
   }else{
     if(borrow_name.test(s_borrow_name)){
       $('#s_borrow_name').focus();
       document.getElementById("s_borrow_name").style.borderColor = "red";
       layer.msg('借款标题不能有特殊字符！',{icon:0});
+      return false;
     }else{
-      document.getElementById("s_borrow_name").style.borderColor = "green";
-      if(s_borrow_money<1000){
-          $('#s_borrow_money').focus();
-          document.getElementById("s_borrow_money").style.borderColor = "red";
-          layer.msg('借款金额大于1000以上',{icon:0});
-      }else{
-        document.getElementById("s_borrow_money").style.borderColor = "green";
-        if (title0==0 ||title0<=10||title0>=18){
-            $('#title0').focus();
-            document.getElementById("title0").style.borderColor = "red";
-            layer.msg('你输入的借款利率超出范围（10%~18%）',{icon:0});
+        document.getElementById("s_borrow_name").style.borderColor = "green";
+        if(s_borrow_money<1000){
+            $('#s_borrow_money').focus();
+            document.getElementById("s_borrow_money").style.borderColor = "red";
+            layer.msg('借款金额大于1000以上',{icon:0});
+            return false;
         }else{
-          document.getElementById("title0").style.borderColor = "green";
-          document.getElementById("collect_days").style.borderColor = "orange";
-          document.getElementById("collect_time").style.borderColor = "orange";
-          if(s_borrow_use==''){
-              $('#s_borrow_use').focus();
-              document.getElementById("s_borrow_use").style.borderColor = "red";
-              layer.msg('请输入借款说明（50字以内）',{icon:0});
+          document.getElementById("s_borrow_money").style.borderColor = "green";
+          if (title0==0 ||title0<=10||title0>=18){
+              $('#title0').focus();
+              document.getElementById("title0").style.borderColor = "red";
+              layer.msg('你输入的借款利率超出范围（10%~18%）',{icon:0});
+              return false;
           }else{
-            if(s_borrow_use.length>50){
-              $('#s_borrow_use').focus();
-              document.getElementById("s_borrow_use").style.borderColor = "red";
-              layer.msg('借款说明超出字数范围（50字以内）',{icon:0});
+            document.getElementById("title0").style.borderColor = "green";
+            document.getElementById("collect_days").style.borderColor = "orange";
+            document.getElementById("collect_time").style.borderColor = "orange";
+            if(s_borrow_use==''){
+                $('#s_borrow_use').focus();
+                document.getElementById("s_borrow_use").style.borderColor = "red";
+                layer.msg('请输入借款说明（50字以内）',{icon:0});
+                return false;
             }else{
-              document.getElementById("s_borrow_use").style.borderColor = "green";
-              if(repayment_type==''){
-                  $('#repayment_type').focus();
-                  document.getElementById("repayment_type").style.borderColor = "red";
-                  layer.msg('请选择还款方式',{icon:0});
+              if(s_borrow_use.length>50){
+                $('#s_borrow_use').focus();
+                document.getElementById("s_borrow_use").style.borderColor = "red";
+                layer.msg('借款说明超出字数范围（50字以内）',{icon:0});
+                return false;
               }else{
-                if(s_borrow_min<100){
-                    $('#s_borrow_min').focus();
-                    document.getElementById("s_borrow_min").style.borderColor = "red";
-                    layer.msg('请输入最低投资金额！（大于100）',{icon:0});
+                document.getElementById("s_borrow_use").style.borderColor = "green";
+                if(repayment_type==''){
+                    $('#repayment_type').focus();
+                    document.getElementById("repayment_type").style.borderColor = "red";
+                    layer.msg('请选择还款方式',{icon:0});
+                    return false;
                 }else{
-                    if(s_borrow_min >s_borrow_money){
+                  document.getElementById("repayment_type").style.borderColor = "green";
+                  if(s_borrow_min<100){
                       $('#s_borrow_min').focus();
                       document.getElementById("s_borrow_min").style.borderColor = "red";
-                      layer.msg('允许最低投资金额已超出借款金额！',{icon:0});
-                    }else{
-                        if(s_borrow_max<100){
-                            $('#s_borrow_max').focus();
-                            document.getElementById("s_borrow_max").style.borderColor = "red";
-                            layer.msg('请输入高投资金额！（大于100）',{icon:0});
-                        }else{
-                          if(s_borrow_max >s_borrow_money){
-                            $('s_borrow_max').focus();
-                            document.getElementById('s_borrow_max').style.borderColor="red";
-                            layer.msg('允许最高投资金额已超出借款金额',{icon:0});
+                      layer.msg('请输入最低投资金额！（大于100）',{icon:0});
+                      return false;
+                  }else{
+                    document.getElementById("s_borrow_min").style.borderColor = "green";
+                    if(s_borrow_max<100){
+                          $('#s_borrow_max').focus();
+                          document.getElementById("s_borrow_max").style.borderColor = "red";
+                          layer.msg('请输入高投资金额！（大于100）',{icon:0});
+                          return false;
+                      }else{
+                          document.getElementById("s_borrow_max").style.borderColor = "green";
+                          if (borrow_info==''){
+                              $('#borrow_info').focus();
+                              document.getElementById("borrow_info").style.borderColor = "red";
+                              layer.msg('请输入借款项目介绍（100字以内）',{icon:0});
+                              return false;
                           }else{
-                            if(s_borrow_min>s_borrow_max){
-                               $('s_borrow_min').focus();
-                                document.getElementById('s_borrow_min').style.borderColor="red";
-                                layer.msg('允许最低投资金额不能大于最高投资金额！',{icon:0}); 
+                            document.getElementById("borrow_info").style.borderColor = "green";
+                            if(borrow_info.length<90){
+                                $('#borrow_info').focus();
+                                document.getElementById('borrow_info').style.borderColor="red";
+                                layer.msg('不能少于30字以上的借款说明！',{icon:0});
+                                return false;
                             }else{
-                              document.getElementById("repayment_type").style.borderColor = "green";
-                              if (borrow_info==''){
-                                  $('#borrow_info').focus();
-                                  document.getElementById("borrow_info").style.borderColor = "red";
-                                  layer.msg('请输入借款项目介绍（100字以内）',{icon:0});
-                              }else{
-                                if(borrow_info<5||borrow_info>100){
-                                    $('#borrow_info').focus();
-                                    document.getElementById('borrow_info').style.borderColor="red";
-                                }else{
-                                  document.getElementById("borrow_info").style.borderColor = "green";
-                                  var index=layer.load(1,{time:7*1000});
-                                  $.post('/Home/Borrow/circulation_save',{borrow_name:borrow_name,borrow_money:s_borrow_money,borrow_interest_rate:title0,borrow_use:s_borrow_use,s_borrow_min:s_borrow_min,s_borrow_max:s_borrow_max,collect_day:collect_day,collect_time:collect_time,repayment_type:repayment_type,borrow_info:borrow_info},function success(data){
-                                    if(data.status){
-                                      layer.alert(data.info);layer.closeAll('loading');
-                                    }else{
-                                      layer.alert(data.info);layer.closeAll('loading');
-                                    }
-                                  });
-                                } 
-                              }
-                            }
-                          }
+                              document.getElementById("borrow_info").style.borderColor = "green";
+                              return true;
+                          } 
                         }
-                    }
+                      }
+                  }
                 }
               }
             }
           }
         }
-      }
     }
   }
 }
@@ -359,7 +353,6 @@ scale.prototype = {
   },
   ondrag: function (pos, x) {
     this.step.style.width = Math.max(0, x) + 'px';
-    // this.title.innerHTML = pos / 1 + '';
     var rval= pos / 1 + '';
     $("#title0").val(rval);
   }

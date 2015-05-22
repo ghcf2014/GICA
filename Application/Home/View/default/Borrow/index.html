@@ -5,9 +5,38 @@
         <div class="jk_cont">
             <div class="jk_cont_in">
                 
+
                 <!--模块1-->
                 <div class="jk_cont_in_cont">
-                	<h3 class="h3_01">信用标</h3>
+                    <h3 class="h3_01">新手体验标</h3>
+                    <div class="jk_cont_in_cont_in">
+                        <h4>申请条件</h4>
+                        <ul class="no6">
+                            <li>1、21-25岁的大陆公民</li>
+                            <li>2、手机绑定</li>
+                            <li>3、有固定工作</li>
+                        </ul>
+                        <h4>申请资料</h4>
+                        <ul class="no6">
+                            <li>1、身份证</li>
+                            <li>2、各项台帐资料</li>
+                            
+                        </ul>                       
+                   </div>
+                   <if condition="($session eq true)">
+    
+                                <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=1')}">立即申请</a></div>
+                            
+                            <else />
+                                <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=1')}">立即申请</a></div>
+                            </if>
+                </div>
+
+
+
+                <!--模块2-->
+                <div class="jk_cont_in_cont">
+                	<h3 class="h3_02">信用标</h3>
                     <div class="jk_cont_in_cont_in">                      
                         <h4>申请条件</h4>
                         <ul>
@@ -25,16 +54,16 @@
                     </div>
                     <if condition="($session eq true)">
 
-                            <div class="jk_btn"><a href="{:U('Borrow/circulation?type=1')}">立即申请</a></div>
+                            <div class="jk_btn"><a href="{:U('Borrow/circulation?type=2')}">立即申请</a></div>
                         
                         <else />
-                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=1')}">立即申请</a></div>
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=2')}">立即申请</a></div>
                         </if>
                 </div>
                 
-                <!--模块2-->
+                <!--模块3-->
                 <div class="jk_cont_in_cont">
-                	<h3 class="h3_02">净值标</h3>
+                	<h3 class="h3_03">净值标</h3>
                     <div class="jk_cont_in_cont_in">                                          
                         <h4>申请条件</h4>
                         <ul class="no2">
@@ -51,16 +80,16 @@
                     </div>
                     <if condition="($session eq true)">
 
-                            <div class="jk_btn no2Btn"><a href="{:U('Borrow/circulation?type=2')}">立即申请</a></div>
+                            <div class="jk_btn no2Btn"><a href="{:U('Borrow/circulation?type=3')}">立即申请</a></div>
                         
                         <else />
-                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=2')}">立即申请</a></div>
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=3')}">立即申请</a></div>
                         </if>
                 </div>
                 
-                <!--模块3-->
+                <!--模块4-->
                 <div class="jk_cont_in_cont">
-                    <h3 class="h3_03">车易贷</h3>
+                    <h3 class="h3_04">车易贷</h3>
                     <div class="jk_cont_in_cont_in">
 	                    <h4>申请条件</h4>
 	                    <ul class="no6">
@@ -77,19 +106,19 @@
                      </div>
                      <if condition="($session eq true)">
 	
-	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
+	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=4')}">立即申请</a></div>
 	                        
 	                        <else />
-	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
+	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=4')}">立即申请</a></div>
 	                        </if>
                 </div>
                 
                 
                 
                 
-                <!--模块4-->
+                <!--模块5-->
                 <div class="jk_cont_in_cont">
-                	<h3 class="h3_04">担保标</h3>
+                	<h3 class="h3_05">担保标</h3>
                     <div class="jk_cont_in_cont_in">               
                         
                         <h4>申请条件</h4>
@@ -107,16 +136,16 @@
                     </div>
                     <if condition="($session eq true)">
 
-                            <div class="jk_btn no4Btn"><a href="{:U('Borrow/circulation?type=4')}">立即申请</a></div>
+                            <div class="jk_btn no4Btn"><a href="{:U('Borrow/circulation?type=5')}">立即申请</a></div>
                         
                         <else />
-                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=4')}">立即申请</a></div>
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=5')}">立即申请</a></div>
                         </if>
                 </div>
                 
-                <!--模块5-->
+                <!--模块6-->
                 <div class="jk_cont_in_cont">
-                	<h3 class="h3_05">抵押标</h3>
+                	<h3 class="h3_06">抵押标</h3>
                     <div class="jk_cont_in_cont_in">                        
                         <h4>申请条件</h4>
                         <ul class="no5">
@@ -133,16 +162,16 @@
                     </div>
                     <if condition="($session eq true)">
 
-                            <div class="jk_btn no5Btn"><a href="{:U('Borrow/circulation?type=5')}">立即申请</a></div>
+                            <div class="jk_btn no5Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
                         
                         <else />
-                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=5')}">立即申请</a></div>
+                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
                         </if>
                 </div>
 
-                <!--模块6-->
+                <!--模块7-->
                 <div class="jk_cont_in_cont">
-                    <h3 class="h3_06">秒还标</h3>
+                    <h3 class="h3_07">秒还标</h3>
                     <div class="jk_cont_in_cont_in"> 
 	                    <h4>申请条件</h4>
 	                    <ul class="no3">
@@ -160,44 +189,18 @@
 	               </div>
 	               <if condition="($session eq true)">
 	
-	                        <div class="jk_btn no3Btn"><a href="{:U('Borrow/circulation?type=3')}">立即申请</a></div>
+	                        <div class="jk_btn no3Btn"><a href="{:U('Borrow/circulation?type=7')}">立即申请</a></div>
 	                        
 	                    <else />
-	                        <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=3')}">立即申请</a></div>
+	                        <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=7')}">立即申请</a></div>
 	                    </if>
                 </div>
                 
                 
                 
-                <!--模块7-->
-                <div class="jk_cont_in_cont">
-                    <h3 class="h3_07">实地考察标</h3>
-                    <div class="jk_cont_in_cont_in">
-	                    <h4>申请条件</h4>
-	                    <ul class="no6">
-	                        <li>1、21-25岁的大陆公民</li>
-	                        <li>2、手机绑定</li>
-	                        <li>3、有固定工作</li>
-	                    </ul>
-	                    <h4>申请资料</h4>
-	                    <ul class="no6">
-	                        <li>1、身份证</li>
-	                        <li>2、各项台帐资料</li>
-	                        
-	                    </ul>	                    
-                   </div>
-                   <if condition="($session eq true)">
-	
-	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
-	                        
-	                        <else />
-	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
-	                        </if>
-                </div>
-                
                 <!--模块8-->
                 <div class="jk_cont_in_cont">
-                    <h3 class="h3_08">债券转移贷</h3>
+                    <h3 class="h3_08">实地考察标</h3>
                     <div class="jk_cont_in_cont_in">
 	                    <h4>申请条件</h4>
 	                    <ul class="no6">
@@ -214,16 +217,16 @@
                    </div>
                    <if condition="($session eq true)">
 	
-	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
+	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=8')}">立即申请</a></div>
 	                        
 	                        <else />
-	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
+	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=8')}">立即申请</a></div>
 	                        </if>
                 </div>
                 
                 <!--模块9-->
                 <div class="jk_cont_in_cont">
-                    <h3 class="h3_09">新手体验标</h3>
+                    <h3 class="h3_09">债券转移贷</h3>
                     <div class="jk_cont_in_cont_in">
 	                    <h4>申请条件</h4>
 	                    <ul class="no6">
@@ -240,12 +243,14 @@
                    </div>
                    <if condition="($session eq true)">
 	
-	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=6')}">立即申请</a></div>
+	                            <div class="jk_btn no6Btn"><a href="{:U('Borrow/circulation?type=9')}">立即申请</a></div>
 	                        
 	                        <else />
-	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=6')}">立即申请</a></div>
+	                            <div class="jk_btn" style="background:#5C5D63"><a href="{:U('Home/User/login?type=9')}">立即申请</a></div>
 	                        </if>
                 </div>
+                
+                
                 
                   <h4>备注：</h4>
                   <p>申请周期为 3~5 个工作日，无论是否通过申请，我们都会以邮件形式通知您； </p>
