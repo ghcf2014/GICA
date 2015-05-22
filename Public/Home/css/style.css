@@ -65,8 +65,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .header_out .header ul .hot div{width:100px;background: url(../images/img/hot029.gif) no-repeat scroll 20px 3px transparent;height:38px;float: left; margin-right: -80px;}
 .header_out .header ul .hot div:hover{width:100px;background: url(../images/img/hot029.gif) no-repeat scroll 20px 0px transparent;height:38px;float: left;margin-right: -80px;}
 .header_out .header p{float:right;line-height:36px;}
-.header_out .header p .zc{color:#ffea00;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
-.header_out .header p .dl{color:#5ed3ff;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
+.header_out .header p .zc{color:#c3c3c3;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
+.header_out .header p .dl{color:#c3c3c3;background:none;border:0;box-shadow:none;border-radius:0;text-shadow:none;}
 
 /*---------nav-------------------------*/
 .nav_out{width: 100%;height: 113px;/*background: url(../images/nav_bg.png) repeat-x;*/background:#fff;border-bottom:1px solid #ddd;}
@@ -994,7 +994,8 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .yhk .theme-popover .theme-popbod table tr td{overflow: hidden;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .yhk .theme-popover .theme-popbod table tr td input{float: left;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .yhk .theme-popover .theme-popbod table tr td img{float: left;}
-
+.zh_cont .zh_cont_r .tab .aqset_tabC .wenxin-tishi p{width: 800px;margin-left: 10px; margin-top: 6px; color:#878787;}
+.zh_cont .zh_cont_r .tab .aqset_tabC .wenxin-tishi{margin-top: 80px;}
 /*----------手机验证-----------*/
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone{width:870px;height:42px;padding-bottom:15px;overflow:hidden;border: 0;}
 .zh_cont .zh_cont_r .tab .aqset_tabC .phone dt{font-weight:normal;width:340px;height:42px;line-height:42px;float:left;font-size:18px;text-align:right;}
