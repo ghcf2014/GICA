@@ -134,7 +134,7 @@
 						<div class="fb_date endTime"  value="{$vo['djtime']}"></div>
 						<div class="fb_date">发标时间：{$vo['add_time']|date='Y-m-d',###}</div>
 						
-						<div class="button">
+						<div >
 							<if condition="$vo.borrow_status eq 2">
                               <if condition="$login eq 1">
                                     <a  href="{:U('Finance/invest?id='.$vo['id'])}"><img  src="__PUBLIC__/Home/images/toubiao_260x40.png"/></a>

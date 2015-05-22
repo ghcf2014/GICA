@@ -37,7 +37,7 @@
                         <li>交易类型：<span>线下交易</span></li>
                         <li>最小投标金额：<span>￥{$vb.borrow_min}</span></li>
                         <li>最大投标金额：<span>￥{$vb.borrow_max}</span></li>
-                        <li>总投标数：<span style="margin-right:20px;">{$countuid}位</span>   浏览量：<span>{$vb.page_view}&nbsp&nbsp<img src="__PUBLIC__/Home/images/page_view.jpg" style="height:20px;"></span></li>
+                        <li>投资人：<span style="margin-right:20px;">{$countuid}位<img src="__PUBLIC__/Home/images/img/iconfont-iconfontyonghu.png" style="border-radius: 100px;"width="32" height="32"></span>   浏览量：<span>{$vb.page_view|default="0"}&nbsp&nbsp<img src="__PUBLIC__/Home/images/img/iconfont-liulan.png" style="border-radius: 100px;"width="32" height="32"></span></li>
                         <li>  <if condition="$vb.borrow_status eq 2">
                                     <a  href="{:U('Finance/invest?id='.$vb['id'])}"><img  src="__PUBLIC__/Home/images/toubiao.png" style="width:80px;height:30px;" /></a>
                           <elseif condition="$vb.borrow_status eq 0"/>
