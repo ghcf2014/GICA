@@ -24,59 +24,6 @@
 					</div>
 				</dt>
 				<dd>
-<<<<<<< HEAD
-					<p>
-						用户名称：<span style="color: #66ccfb;">{:get_username()}<if condition="$vo.user_leve eq 1">
-						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx.png" title="VIP已认证" /> </a>
-					<else/>
-						<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx_h.png" title="VIP未认证" /></a>
-					</if><if condition="$member_level eq 0">
-							<img src="__PUBLIC__/Home/images/level_p.png" title="普通会员" />
-						<elseif condition="$member_level eq 1"/>
-							<img src="__PUBLIC__/Home/images/level_a.png" title="A级会员" />
-						<elseif condition="$member_level eq 2"/>
-							<img src="__PUBLIC__/Home/images/level_b.png" title="B级会员" />
-						<elseif condition="$member_level eq 3"/>
-							<img src="__PUBLIC__/Home/images/level_c.png" title="C级会员" />
-						</if>	
-						
-						
-						
-						
-					</span>
-					</p>
-					<p>
-						会员积分：<span><volist name="list" id="vo">{$vo.score}分</volist></span>
-					</p>
-					<if condition="$vo.user_leve eq 1">
-					<p>
-						VIP到期时间：<span>{$vo.time_limit|date='Y-m-d',###}</span>
-					</p>
-					</if>
-					<p>
-						注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span>
-					</p>
-					<p>
-						专属客服：<span><if condition="$vo.user_leve eq 1"><a href="{:U('Member/Userinfo/kf_index')}" >{$qqtitle}<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$qqnum}&amp;site=qq&amp;menu=yes"><img style="border:0;" src="http://wpa.qq.com/pa?p=2:{$qqnum}:51" alt="点击这里给我发消息" title="点击这里给我发消息"></a></a><else/>无</if></span>
-					</p>
-					<p>
-						登录时间：<span>{$vo.last_login_time|date='Y-m-d H:i:s',###}</span>
-					</p>
-					<p style="display: none;">
-						站内信：<span>（<a href="{:U('System/usermailindex')}" style="text-decoration: none;"><font
-								color="#66ccfb;">{:is_sysmsg()}</font></a>）
-						</span>条
-					</p>
-					<p>登录IP:<span>{:get_client_ip()}</span></p>
-					<p><a style="width: 40px; height: 30px; background-color:#60afff;webkit-border-radius: 2px;	border-radius: 2px;color: white;" href="{:U('Member/System/recharge')}">充值</a>
-					   <a style="width: 40px; height: 30px; background-color:#ef7203;webkit-border-radius: 2px;border-radius: 2px;color: white; margin-left: 6px;" href="{:U('Member/System/withdrawdeposit')}">提现</a>
-					   <a style="width: 40px;margin-left: 6px; height: 30px; background-color:#ef604d;webkit-border-radius: 2px;	border-radius: 2px;color: white;"href="{:U('Member/Borrow/myborrowmanager')}">还款</a>
-					   <a style="width: 60px; height: 30px; background-color:#3fd74e;webkit-border-radius: 2px;	border-radius: 2px;margin-left:6px;color: white;" href="{:U('Member/System/usermailindex')}">站内信</a><span>(<a href="{:U('System/usermailindex')}" style="text-decoration: none;"><font
-								color="#66ccfb;">{:is_sysmsg()}</font></a>)
-						</span><!-- <a href="javascript:;">增值服务</a> --></p>
-					
-					
-=======
 				<div>
 					<div class="a-c-r-t-m">
 						<div style="border:none;">
@@ -143,7 +90,6 @@
 						<li>注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span></li>
 						<li>登录IP:<span>{:get_client_ip()}</span></li>
 					</ul>		
->>>>>>> origin/master
 				</dd>
 			</dl>
 			
