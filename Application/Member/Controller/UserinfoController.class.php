@@ -145,7 +145,7 @@ class UserinfoController extends MemberController {
 		$condition ['uid'] = $uid;
 
 	    $count = $ml->where($condition)->count();
-        $Page = new \Think\Page($count, 20);
+        $Page = new \Think\Page($count, 10);
         $show = $Page->show();
         $ml = $ml->where ( $condition )->order('add_time DESC')->limit(($Page->firstRow.',').$Page->listRows)->select();
 		

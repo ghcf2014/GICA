@@ -19,11 +19,33 @@ class IndexController extends MemberController {
        
        /*用户邮箱检测*/
         $mstatus = M('z_members_status');//用户验证状态
+
         $condition2['uid'] =$uid;
         $member_status=$mstatus->where($condition2)->select();
+
+        //资料进度
+        $member_status=$mstatus->where($condition2)->select();
+        if(intval($member_status[0]['phone_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['id_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['email_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['account_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['credit_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['safequestion_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['video_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['face_status'])==1){$sdata+=1;}
+        if(intval($member_status[0]['identity_report'])==1){$sdata+=1;}
+        if(intval($member_status[0]['credit_report'])==1){$sdata+=1;}
+        if(intval($member_status[0]['living_report'])==1){$sdata+=1;}
+        if(intval($member_status[0]['work_report'])==1){$sdata+=1;}
+        if(intval($member_status[0]['income_report'])==1){$sdata+=1;}
+        if(intval($member_status[0]['other_report'])==1){$sdata+=1;}
+        $sshow=$sdata/(count($member_status[0])-1)*100;
+        $this->sshow=$sshow;
+
         // if ($member_status==null){
         //     $this->error('对不起，您的邮箱还未认证！',U('Member/Userinfo/usermailbanding'));
         // }
+
         $listMember = M('member');
         $condition['gica_member.uid'] =$uid;
         $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();

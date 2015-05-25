@@ -78,7 +78,7 @@
 									<h4 style="border-bottom: 0; width: 910px;">复制链接发给QQ/MSN上的好友</h4>
 									<div style="width: auto; height: auto; overflow: hidden;">
 										<span id="testcopy"
-											style="float: left; width: 650px; padding-left: 20px; height: 19px; padding-top: 5px; color: red;">http://www.ghcf.com.cn/index.php/?s=/Home/register.html&&reffer={$username}</span><a
+											style="float: left; width: 650px; padding-left: 20px; height: 19px; padding-top: 5px; color: red;">http://{$_SERVER['SERVER_NAME']}/index.php/?s=/Home/register.html&&reffer={$username}</span><a
 											href="javascript:;" id="copy" style="float: left;"><embed
 												width="62" height="24" align="middle"
 												flashvars="txt=http://www.ghcf.com.cn/index.php?s=/Home/User/register.html?reffer={$username}"
@@ -91,7 +91,7 @@
 
 
 									<!--复制代码-->
-									<span id="url_box_clippy" style="display: none">http://www.ghcf.com.cn/index.php?s=/Home/User/register.html?reffer={$username}</span>
+									<span id="url_box_clippy" style="display: none">http://{$_SERVER['SERVER_NAME']}/index.php?s=/Home/User/register.html?reffer={$username}</span>
 									<span id="clippy_tooltip_url_box_clippy"
 										class="clippy-tooltip tooltipped" title="copy to clipboard">
 										<object id="clippy" class="clippy" width="14" height="14"
@@ -143,15 +143,13 @@
 												style="float: left; line-height: 30px"> 邮件内容： </label> <textarea
 													class="txta_2 no_ol b_ddd fc999" id="content"
 													name="content" rows="20"
-													style="float: left; resize: none; width: 450px; height: 130px;">特意邀请您注册“工合财富” 网贷平台【www.ghcf.com.cn】，P2P理财首选平台。综合年化收益18%，100%本息安全保障，50元起投，超低门槛，是草根、家庭的理财专属通道！你也赶快来投资吧，别被银行榨取我们的存款利息！进入平台先注册:http://www.ghcf.com.cn/index.php?s=/Home/User/register.html&&reffer={$username}</textarea>
+													style="float: left; resize: none; width: 450px; height: 130px;">特意邀请您注册“工合财富” 网贷平台【www.ghcf.com.cn】，P2P理财首选平台。综合年化收益18%，100%本息安全保障，50元起投，超低门槛，是草根、家庭的理财专属通道！你也赶快来投资吧，别被银行榨取我们的存款利息！进入平台先注册:http://{$_SERVER['SERVER_NAME']}/index.php?s=/Home/User/register.html&&reffer={$username}</textarea>
 											</li>
 										</ul>
 										<div class="fzfx_an" style="margin-left: 90px;margin-top: 20px;">
 											<span style="color: red; float: none;" id="s_tip"
 												class="formtips"></span> <a href="javascript:void(0);"
-												id="sendmail"> <img
-												src="__PUBLIC__/Member/images/fs_an.png" width="103"
-												height="29" />
+												id="sendmail" class="button blue btn-primary" style="text-align: center;width: 50px;line-height:25px;">发送
 											</a>
 										</div>
 									</div>
