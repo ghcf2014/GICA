@@ -13,8 +13,7 @@ class BorrowController extends HomeController {
 
 
 	protected function _init() {
-		$this->
-model = new BorrowModel();
+		$this->model = new BorrowModel();
 	}
 	
 	// 系统首页

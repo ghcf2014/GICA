@@ -15,7 +15,7 @@
 								<img src="__PUBLIC__/Home/images/default-img.jpg" style="border-radius: 100px;"width="200" height="200"> 
 								<strong title="标题" id="test2">求真像</strong>
 							<elseif condition="$vo.logo_url  neq ''" />
-								<img src="/Uploads/User/{$vo.logo_url}" style="border-radius: 100px;" width="200" height="200" />
+								<img src="/Uploads/User/{$vo.logo_url}" style="border-radius: 100px;height: 200px;" width="200" height="200" />
 								<strong title="标题" id="test2">更换图像</strong>
 							</if> </volist>
 						    </a></li>
@@ -44,13 +44,6 @@
 						</div>
 						<ul>
 						<volist name="mstatus" id="ms">
-						<li class="a-c-r-t-m-p-full">
-							<if condition="$ms.email_status eq 1"> 
-								<a href="{:U('Userinfo/usermailbanding')}" title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong.png" style="border-radius: 100px;"width="32" height="32"></a> 
-							<else/> 
-								<a href="{:U('Userinfo/usermailbanding')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong_h.png" style="border-radius: 100px;"width="32" height="32"></a> 
-							</if>
-						</li>	
 						<li class="a-c-r-t-m-i-full">
 							<if condition="$ms.phone_status eq 1"> 
 								<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-shoujitianchong.png" style="border-radius: 100px;"width="32" height="32"></a>
@@ -58,7 +51,15 @@
 							<else/>
 								<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-shoujitianchong_h.png" style="border-radius: 100px;"width="32" height="32"></a>
 							</if>
-						</li>		
+						</li>
+						<li class="a-c-r-t-m-p-full">
+							<if condition="$ms.email_status eq 1"> 
+								<a href="{:U('Userinfo/usermailbanding')}" title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong.png" style="border-radius: 100px;"width="32" height="32"></a> 
+							<else/> 
+								<a href="{:U('Userinfo/usermailbanding')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong_h.png" style="border-radius: 100px;"width="32" height="32"></a> 
+							</if>
+						</li>	
+								
 						<li class="a-c-r-t-m-e-full">
 							<if condition="$ms.id_status eq 1">
 								<a href="{:U('Userinfo/userselfset')}"title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-iconfontmingpian.png" style="border-radius: 100px;"width="32" height="32"> </a> 
@@ -69,8 +70,13 @@
 						</volist>
 						</ul>
 						<div class="m-roll-bg">
+<<<<<<< HEAD
 							 <div class="m-roll-one" style="width:{$sshow}%;background: #72d0eb;margin-left:0px;"></div>
 							 <div class="m-roll-show" style="width:100%"></div>
+=======
+							 <div class="m-roll-one"></div>
+							 <div class="m-roll-show" style="width:{$tasks.task_percent}"></div>
+>>>>>>> origin/master
 						</div>
 						<p>资料完整度</p>
 					</div>
@@ -94,38 +100,22 @@
 			</dl>
 			
 			<div class="ul01">
-
-				<volist name="mstatus" id="ms">
-				        <div class="lg-confirml" >
-						        <p class="i-btn-typical">您有未完成的认证。</p>
-						</div>
-						<div class="lg-confirm" >
-						        <a data-spm="d4919529" target="_blank" class="i-btn-typical" href="#">去完成</a>
-						</div>
-				<!-- <li>
-					<if condition="$ms.credit_status eq 1">
-						<a href="{:U('Userinfo/userbankset')}"title="已认证">银行卡</a> 
-					<else/> 
-						<a href="{:U('Userinfo/userbankset')}"title="未认证">银行卡</a>
-					</if>
-				</li>
-				<li><if condition="$ms.video_status eq 1">
-						<a href="{:U('Home/Borrow/papersinfo')}"title="已认证">信征</a>
-					<else/>
-						<a href="{:U('Home/Borrow/papersinfo')}"title="未认证">信证</a>
-					</if>
-				</li> -->
-			</volist>
+			<if condition="$tasks.main eq ''">
+			        <div class="lg-confirml" >
+					        <p class="i-btn-typical" id="i-btn-typical">暂无新任务</p>
+					</div>
+					<div class="lg-confirm" >
+					    <a data-spm="d4919529" target="_self" class="i-btn-typical" title="{$tasks.task_detail}" href="#">{$tasks.task_detail}</a>
+					</div>
+			<else/>
+				<div class="lg-confirml" >
+					<p class="i-btn-typical" id="i-btn-typical">您有未完成的认证。</p>
+				</div>
+				<div class="lg-confirm" >
+					<a data-spm="d4919529" target="_blank" class="i-btn-typical" title="{$tasks.task_detail}" href="__ROOT__/Member/Userinfo/{$tasks.main}">{$tasks.task_detail}</a>
+				</div>
+			</if>
 			</div>
-			<!--<ul class="ul02">
-				<li class="ul02_li01"><a href="javascript:;">会员续费</a></li>
-				<li><a href="{:U('Home/Borrow/index')}">我要借款</a></li>
-				<li><a href="{:U('System/recharge')}">我要充值</a></li>
-				<li><a href="javascript:;">我要还款</a></li>
-				<li><a href="{:U('System/withdrawdeposit')}">我要提现</a></li>
-				<li><a href="javascript:;">待收金额</a></li>
-			</ul>-->
-
 			<!-- 账户详情 -->
 			<div class="zh_cont_r_con_bot">
 				<h4 ><img src="__PUBLIC__/Home/images/img/iconfont-icon.png" style="border-radius: 100px;"width="32" height="32">账户详情：</h4>
@@ -205,4 +195,13 @@
                               $("#test2").hide();
                          });
 	
-</script> </block>
+</script> 
+<script type="text/javascript">
+	$('.i-btn-typical').function(){
+		layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', '吸附元素选择器', {
+		    tips: [1, '#3595CC'],
+		    time: 4000
+		});
+	};
+</script>>
+</block>

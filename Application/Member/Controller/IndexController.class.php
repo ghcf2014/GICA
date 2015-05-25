@@ -22,6 +22,7 @@ class IndexController extends MemberController {
 
         $condition2['uid'] =$uid;
         $member_status=$mstatus->where($condition2)->select();
+<<<<<<< HEAD
 
         //资料进度
         $member_status=$mstatus->where($condition2)->select();
@@ -46,6 +47,10 @@ class IndexController extends MemberController {
         //     $this->error('对不起，您的邮箱还未认证！',U('Member/Userinfo/usermailbanding'));
         // }
 
+=======
+        $task=member_task($member_status[0]);
+        // dump($task);
+>>>>>>> origin/master
         $listMember = M('member');
         $condition['gica_member.uid'] =$uid;
         $list =$listMember->join('RIGHT JOIN gica_ucenter_member ON gica_member.uid = gica_ucenter_member.id' )->join('RIGHT JOIN gica_z_member_money ON gica_member.uid = gica_z_member_money.uid' )->where($condition)->select();
@@ -83,6 +88,7 @@ class IndexController extends MemberController {
         $this->assign('list2', $lists2);
         $this->assign('borrow_money', $lists3);
         $this->assign('list3', $m);
+        $this->assign('tasks', $task);
         $this->assign('mstatus', $member_status);
         $this->assign('paymoney', $paymoney);
 

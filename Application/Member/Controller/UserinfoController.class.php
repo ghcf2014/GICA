@@ -59,6 +59,17 @@ class UserinfoController extends MemberController {
 		$this->pagetitle="工合财富直通贷款-银行卡设置";
 		$this->display ();
 	}
+	public function papersinfo() {
+		$uid = is_login ();
+		is_login () || $this->error ( '您还没有登录，请先登录！', U ( 'User/login' ) );
+		$m = M ( "z_member_data_info" );
+		$condition ['uid'] = $uid;
+		$condition ['type'] = 2;
+		$m = $m->where ( $condition )->select ();
+		$this->pagetitle="工合财富直通贷款-信征认证";
+		$this->assign ( 'list', $m );
+		$this->display ();
+	}
 	
 	/**
 	 * 银行卡设置

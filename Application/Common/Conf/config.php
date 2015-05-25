@@ -38,9 +38,15 @@ return array(
     // if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
     /* 数据库配置 */
     'DB_TYPE'   => 'mysql', // 数据库类型
+<<<<<<< HEAD
    // 'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
    // 'DB_HOST'   => '192.168.0.18', // 服务器地址59.188.8.43
      'DB_HOST'   => '59.188.8.43',
+=======
+   //'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
+   // 'DB_HOST'   => '192.168.0.18', // 服务器地址59.188.8.43
+      'DB_HOST'   => '59.188.8.43',
+>>>>>>> origin/master
     'DB_NAME'   => 'gica', // 数据库名
     'DB_USER'   => 'root', // 用户名
     'DB_PWD'    => 'root',  // 密码
@@ -56,13 +62,19 @@ return array(
 //     'DB_PWD'    => C('DATABASE_PWD'),  // 密码
 //     'DB_PORT'   => C('DATABASE_PORT'), // 端口
 //     'DB_PREFIX' => C('DATABASE_PREFIX'), // 数据库表前缀
-    
    
+
+   /*伪静态**/ 
+   'URL_HTML_SUFFIX'=>'do',
+   'URL_DENY_SUFFIX' => 'pdf|ico|png|gif|jpg|html' ,
+
+
     /* 文档模型配置 (文档模型核心配置，请勿更改) */
     'DOCUMENT_MODEL_TYPE' => array(2 => '主题', 1 => '目录', 3 => '段落'),
     /*支付宝即时到帐*/
     'alipay_partner' => '',
     'alipay_key' => '',
+
     'alipay_seller_email' => '',
     /* 支付设置 */
         'payment' => array(
