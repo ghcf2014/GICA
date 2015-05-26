@@ -129,7 +129,7 @@ class SystemController extends MemberController {
         //发件箱
         $post=$msg->table('gica_z_inner_msg stats,gica_member profile')->where('stats.tid = profile.uid and stats.uid=%s',$uid)->field('stats.id as id, stats.title as title,stats.send_time as send_time, profile.nickname as recvname')->order('stats.tid desc' )->select();
 
-
+        //系统消息
         $imsg =M('z_inner_msg');
         $map['tid']=$uid;
         $map['opertype']=1;
@@ -137,27 +137,18 @@ class SystemController extends MemberController {
         $count = $imsg->where($map)->count();
         $Page = new \Think\Page($count,10);
         $show = $Page->show();
-        
         $imsg = $imsg->where($map)->order(array("status=0 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
-        //系统消息
+        //好友消息
    		$this->assign('imsg',$imsg);
-<<<<<<< HEAD
    		$map1['tid']=$uid;
         $map1['opertype']=4;
    		$fmsg =M('z_inner_msg');
         $count = $fmsg->where($map1)->count();
         $Page = new \Think\Page($count,10);
         $show = $Page->show();
-        $fmsg = $fmsg->where($map1)->order(array("status=4 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
-        //好友消息
-=======
-   		$fmsg =M('z_inner_msg');
-        $count = $fmsg->where("tid=%s",$uid)->count();
-        $Page = new \Think\Page($count,10);
-        $show = $Page->show();
-        $fmsg = $fmsg->where("tid=%s",$uid)->order(array("status=4 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
+        $fmsg = $fmsg->where($map1)->order(array("status=0 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
+        
 
->>>>>>> origin/master
    		$this->assign('fmsg',$fmsg);
    		$statu['status']=1;
         M('z_inner_msg')->where($inner)->save($statu);
