@@ -141,6 +141,7 @@ class SystemController extends MemberController {
         $imsg = $imsg->where($map)->order(array("status=0 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
         //系统消息
    		$this->assign('imsg',$imsg);
+<<<<<<< HEAD
    		$map1['tid']=$uid;
         $map1['opertype']=4;
    		$fmsg =M('z_inner_msg');
@@ -149,6 +150,14 @@ class SystemController extends MemberController {
         $show = $Page->show();
         $fmsg = $fmsg->where($map1)->order(array("status=4 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
         //好友消息
+=======
+   		$fmsg =M('z_inner_msg');
+        $count = $fmsg->where("tid=%s",$uid)->count();
+        $Page = new \Think\Page($count,10);
+        $show = $Page->show();
+        $fmsg = $fmsg->where("tid=%s",$uid)->order(array("status=4 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
+
+>>>>>>> origin/master
    		$this->assign('fmsg',$fmsg);
    		$statu['status']=1;
         M('z_inner_msg')->where($inner)->save($statu);
