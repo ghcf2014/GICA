@@ -38,15 +38,11 @@ return array(
     // if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
     /* 数据库配置 */
     'DB_TYPE'   => 'mysql', // 数据库类型
-<<<<<<< HEAD
-   // 'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
+
+
+   'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
    // 'DB_HOST'   => '192.168.0.18', // 服务器地址59.188.8.43
-     'DB_HOST'   => '59.188.8.43',
-=======
-   //'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
-   // 'DB_HOST'   => '192.168.0.18', // 服务器地址59.188.8.43
-      'DB_HOST'   => '59.188.8.43',
->>>>>>> origin/master
+      // 'DB_HOST'   => '59.188.8.43',
     'DB_NAME'   => 'gica', // 数据库名
     'DB_USER'   => 'root', // 用户名
     'DB_PWD'    => 'root',  // 密码
@@ -63,6 +59,27 @@ return array(
 //     'DB_PORT'   => C('DATABASE_PORT'), // 端口
 //     'DB_PREFIX' => C('DATABASE_PREFIX'), // 数据库表前缀
    
+       // 配置邮件发送服务器
+    
+    // 'MAIL_TYPE' =>'smtp',
+    //  'MAIL_SMTP_HOST' =>'smtp.exmail.qq.com',
+    //  'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+    //  'MAIL_SMTP_USER' =>'admin@spiralcats.com',
+    //  'MAIL_SMTP_CE' =>'380003832@qq.com',
+    //  'MAIL_FROMNAME' =>'cnsecer',
+    //  'MAIL_SMTP_PASS' =>'hzsj120192',
+    //  'MAIL_CHARSET' =>'utf-8',
+    //  'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
+
+      // 配置邮件发送服务器
+	 // 'MAIL_HOST' =>'smtp.exmail.qq.com',
+	 'MAIL_SMTPAUTH' =>TRUE, //启用smtp认证
+	 // 'MAIL_USERNAME' =>'admin@ghcf.com.cn',
+	 'MAIL_FROM' =>'admin@ghcf.com.cn',
+	 'MAIL_FROMNAME' =>'工合财富',
+	 // 'MAIL_PASSWORD' =>'g121019',
+	 'MAIL_CHARSET' =>'utf-8',
+	 'MAIL_ISHTML' =>TRUE, // 是否HTML格式邮件
 
    /*伪静态**/ 
    'URL_HTML_SUFFIX'=>'do',
