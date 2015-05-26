@@ -138,6 +138,13 @@ class SystemController extends MemberController {
         $imsg = $imsg->where("tid=%s",$uid)->order(array("status=0 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
 
    		$this->assign('imsg',$imsg);
+   		$fmsg =M('z_inner_msg');
+        $count = $fmsg->where("tid=%s",$uid)->count();
+        $Page = new \Think\Page($count,10);
+        $show = $Page->show();
+        $fmsg = $fmsg->where("tid=%s",$uid)->order(array("status=4 desc","send_time desc"))->limit(($Page->firstRow.',').$Page->listRows)->select();
+
+   		$this->assign('fmsg',$fmsg);
    		$statu['status']=1;
         M('z_inner_msg')->where($inner)->save($statu);
         //系统通知状态查询

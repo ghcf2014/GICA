@@ -15,7 +15,7 @@
 									系统消息<!-- [{$syscount|default="暂无"}] --></if>
 								</li>
 								<li onclick=showSendMails();;>
-									发件箱
+									好友消息
 								</li>
 								<!-- <li>
 									发信息
@@ -81,21 +81,23 @@
 							          <table class="bordered">
 							     	<tbody>
 								     	<tr> 
-										    <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
-										    <th>发件人</th>
-										    <th>标题</th>
-										    <th>发件时间</div></th>
+										     <!-- <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th> -->
+													    <th style="width: 80px;">发件人</th>
+													    <th>标题</th>
+													    <th>发件时间</th>
+													    <th>操作</th>
 								  		</tr>
 									
 	
-									<foreach name="post" item="values">
+									<volist name="fmsg" id="f" empty="暂时没有数据">
 								  		<tr>
-								  			<th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Send(this)"></th>
-								  			<th>{$values['recvname']}</th>
-								  			<th><a href="#">{$values['title']}</a></th>
-								  			<th>{$values['send_time']}</th>
+								  			<!-- <th><input type="checkbox" name="checkbox" id="checkbox" onclick="checkAll_Sys(this)"></th> -->
+															<th><if condition="$f['uid'] eq 1">工合财富<else/>{$f['uid']|get_uname}</if></th>
+															<th ><if condition="$f['status'] eq 0"><span class="on">[新]</span></if>{$f['title']}：{$f['msg']}</th>
+															<th style="width:165px;">{$f['send_time']|date='Y-m-d H:i:s',###}</th>
+															<th  style="width:45px;"><a class="confirm" href="{:U('Member/System/usermailindex_danger_del?id='.$f['id'])}" title="点击删除消息" ><img src="__PUBLIC__/Home/images/img/iconfont-shanchu.png" style="border-radius: 100px;"width="24" height="24"></a></th>
 								  		</tr>
-							  		</foreach>
+							  		</volist>
 							  		
 							  		<tr><td colspan="9" align="center">暂无信息</td></tr>
 									</tbody></table>
