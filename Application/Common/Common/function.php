@@ -1648,6 +1648,7 @@ function subtext($text, $length) {
 		$data['uid']=$aduid[$opertype];
 		$data['tid']=$uid;
 		$data['title']=$title;
+		$data['opertype']=$opertype;
 		$data['msg']=$action;
 		$data['msgclass']=$opertype;
 		$data['way']='123';
