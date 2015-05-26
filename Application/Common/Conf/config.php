@@ -40,9 +40,9 @@ return array(
     'DB_TYPE'   => 'mysql', // 数据库类型
 
 
-   // 'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
+   'DB_HOST'   => '127.0.0.1', // 服务器地址59.188.8.43
    // 'DB_HOST'   => '192.168.0.18', // 服务器地址59.188.8.43
-      'DB_HOST'   => '59.188.8.43',
+      // 'DB_HOST'   => '59.188.8.43',
     'DB_NAME'   => 'gica', // 数据库名
     'DB_USER'   => 'root', // 用户名
     'DB_PWD'    => 'root',  // 密码
@@ -61,8 +61,8 @@ return array(
    
 
    /*伪静态**/ 
-   'URL_HTML_SUFFIX'=>'do',
-   'URL_DENY_SUFFIX' => 'pdf|ico|png|gif|jpg|html' ,
+   // 'URL_HTML_SUFFIX'=>'do',
+   // 'URL_DENY_SUFFIX' => 'pdf|ico|png|gif|jpg' ,
 
 
     /* 文档模型配置 (文档模型核心配置，请勿更改) */

@@ -228,7 +228,7 @@ class UserinfoController extends MemberController {
 			    //发送站内信
 			    $action="您绑定了新手机：". str_replace(substr($data['mobile'],3,-3),'*****',$data['mobile'])." !";
 			    // system_msg($action);
-				$this->success ( '保存成功！' );
+				$this->success ( '保存成功！',U('Member/Index/index') );
 			} else {
 				// 失败提示
 				$this->error ( '保存失败' );
