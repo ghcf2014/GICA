@@ -119,7 +119,7 @@
 									             <tr>
 									             	<td colspan="5" align="center">
 										             	<span class="theme-poptit">
-										        			<a href="javascript:;" title="确定" style="color:blue;" onclick="javascript:yhk_add()"class="close">确定</a>
+										        			<a href="javascript:;" title="确定"  onclick="javascript:yhk_add()"class="close1 large button blue">确定</a>
 										        		</span>
 									        		</td>
 									             	
@@ -162,7 +162,7 @@
 										id="sBankCard">输入您的卡号 </span>
 								</dd>
 							</dl>
-							<input type="button" class="yhk_btn" id="submitBank" value="提交">
+							<input type="button" class="large button blue" id="submitBank" value="提交">
 							</form>
 						</div>
 					
@@ -194,7 +194,7 @@
 								</tr>
 								</volist>
 							</table>
-							<input type="button" class="yhk_btn" onclick="javascript:add_bank(this)" value="添加银行卡">
+							<input type="button" class="large button blue" onclick="javascript:add_bank(this)" value="添加银行卡">
 						</div>
 
 					<else/>
@@ -293,7 +293,7 @@
 									             <tr>
 									             	<td colspan="5" align="center">
 										             	<span class="theme-poptit">
-										        			<a href="javascript:;" title="确定" style="color:blue;" onclick="javascript:yhk_add()"class="close">确定</a>
+										        			<a href="javascript:;" title="确定"  onclick="javascript:yhk_add()"class=" large button blue">确定</a>
 										        		</span>
 									        		</td>
 									             	
@@ -336,7 +336,7 @@
 										id="sBankCard">输入您的卡号 </span>
 								</dd>
 							</dl>
-							<input type="button" class="yhk_btn" id="submitBank" value="提交">
+							<input type="button" class="large button blue" id="submitBank" value="提交">
 							</form>
 							<span class="wenxin-tishi">
 							<p >温馨提示<p >1.请认真核对您的银行卡信息，如果信息有误，将导致您提现不成功；
@@ -423,7 +423,7 @@ jQuery(document).ready(function($) {
 		$('.theme-popover-mask').fadeIn(100); 
 		$('.theme-popover').slideDown(200);
 	})
-	$('.theme-poptit .close').click(function(){
+	$('.theme-poptit .close1').click(function(){
 		$('.theme-popover-mask').fadeOut(100);
 		$('.theme-popover').slideUp(200);
 	})

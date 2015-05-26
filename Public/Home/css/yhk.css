@@ -213,7 +213,7 @@ input.btn {
 	top:50%;
 	left:50%;
 	width:660px;
-	height:360px;
+	height:460px;
 	margin:-180px 0 0 -330px;
 	border-radius:5px;
 	border:solid 2px #666;
@@ -242,7 +242,6 @@ input.btn {
 	margin-left:8px
 }
 .theme-poptit .close {
-	float:right;
 	color:#999;
 	padding:5px;
 	margin:-2px -5px -5px;
@@ -296,7 +295,7 @@ display:;
 }
 .dform-login {
 	padding:0;
-	height: 270px;
+	height: 370px;
 	overflow: hidden;
 }
 .dform-login iframe {
