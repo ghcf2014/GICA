@@ -26,7 +26,10 @@
 				<div class="aqset_tabC_out" >	
 					<if condition="$list eq null">
 						<!--银行卡验证-->
-						<div class="aqset_tabC" id="add_banks">
+						<div class="aqset_tabC" id="add_banks"/>
+					<else/>
+						<div class="aqset_tabC" id="add_banks" style="display:none"/>
+					</if>
 
 							
 							<form action="{:U('userbankset_save')}" method="post" id="form">
@@ -160,193 +163,20 @@
 										id="sBankCard">输入您的卡号 </span>
 								</dd>
 							</dl>
-							<input type="button" class="large button blue" id="submitBank" value="提交">
-							</form>
-						</div>
-					
-				
-					<!--已绑定银行卡-->					
-						<div class="aqset_tabC" style="display: none;" id="show_banks">
-							<table class="bordered">
-								<tr>
-									<th style="width: 200px;">开户银行</th>
-									<th style="width: 200px;">开户支行</th>
-									<th style="width: 200px;">银行卡号</th>
-									<th style="width: 100px;">绑定时间</th>
-									<th style="width: 80px;">状态</th>
-								</tr>
-								<volist name="list" id="vo">
-								<tr>
-									<td>{$vo.bank_name}</td>
-									<td>{$vo.bank_province}{$vo.bank_city}{$vo.bank_area}{$vo.bank_address}</td>
-									<td>{$vo.bank_num}</td>
-									<td>{$vo.add_time|date='Y-m-d',###}</td>
-									<td>
-										<if condition="$vo['bank_status'] eq 0">
-											审核中
-										<else/>
-											已绑定
-										</if>
-										
-									</td>
-								</tr>
-								</volist>
-							</table>
-							<input type="button" class="large button blue" onclick="javascript:add_bank(this)" value="添加银行卡">
-						</div>
-
-					<else/>
-					<!--银行卡验证-->
-						<div class="aqset_tabC" id="add_banks" style="display: none;">
-							<form action="{:U('userbankset_save')}" method="post" id="form">
-							<!-- <dl class="yhk">
-								<dt>平台昵称：{:get_username()}</dt>
-								<dd></dd>
-							</dl> -->
-							<dl class="yhk">
-								<dt>选择开户银行：</dt>
-								<dd>
-									<input type="text" name="bank_name" value="" class="theme-login" style="float: left;height: 28px;"/><span color="red"
-										id="sBankName">请输入开户银行</span>
-								</dd>
-								<div class="theme-popover">
-									     <div class="theme-poptit">
-									        <td colspan="5"><strong>请选择开户银行：</strong></td>
-									     </div>
-									     <div class="theme-popbod dform">
-									           <table border="0" align="center" cellpadding="0"
-									              cellspacing="0">              
-									              <tr>
-									                <td>
-									                	<label><input type="radio" name="bankType" value="中国工商银行" id="rd_gopay_icbc" /><img src="__PUBLIC__/Home/images/banks/bank_01.png" width="128" height="33" /></label>
-									                
-									                </td>
-									                <td><label><input type="radio" name="bankType" value="招商银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_02.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="中国建设银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_03.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="中国农业银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_04.png"
-									                  width="128" height="33" /></label></td>									                
-									              </tr>
-									              <tr>
-									                <td><label><input type="radio" name="bankType" value="浦发银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_06.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="深圳发展银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_07.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="兴业银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_08.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="北京银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_09.png"
-									                  width="128" height="33" /></label></td>
-									                
-									              </tr>
-									              <tr>
-									                <td><label><input type="radio" name="bankType" value="交通银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_11.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="中国民生银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_12.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="中信银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_13.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="广发银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_14.png"
-									                  width="128" height="33" /></label></td>
-									                
-									              </tr>
-									              <tr>
-									                <td><label><input type="radio" name="bankType" value="中国邮政储蓄银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_16.png"
-									                  width="128" height="33" /></label></td>
-
-									                <td><label><input type="radio" name="bankType" value="上海农商银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_18.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="上海银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_19.png"
-									                  width="128" height="33" /></label></td>
-									                <td><label><input type="radio" name="bankType" value="华夏银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_20.png"
-									                  width="128" height="33" /></label></td>
-									               
-									              </tr>
-									              <tr>
-									              	<td><label><input type="radio" name="bankType" value="中国银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_05.png"
-									                  width="128" height="33" /></label></td>
-									                  <td><label><input type="radio" name="bankType" value="中国光大银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_10.png"
-									                  width="128" height="33" /></label></td>
-									                  <td><label><input type="radio" name="bankType" value="平安银行" />
-									                  <img src="__PUBLIC__/Home/images/banks/bank_15.png"
-									                  width="128" height="33" /></label></td>
-									              </tr>
-									             <tr>
-									             	<td colspan="5" align="center">
-										             	<span class="theme-poptit">
-										        			<a href="javascript:;" title="确定"  onclick="javascript:yhk_add()"class=" large button blue">确定</a>
-										        		</span>
-									        		</td>
-									             	
-									             </tr>
-									             	
-									             
-									            </table>
-
-										     </div>
-										</div>
-										<div class="theme-popover-mask"></div>	
-								
-							</dl>
-							<dl class="yhk">
-								<dt>开户行所在地：</dt>
-								<dd>
-									<select class="select" name="bank_province" id="s1" style="width:150px;">
-	                                    <option></option>
-	                                </select>
-	                                <select class="select" name="bank_city" id="s2" style="width:150px;">
-	                                    <option></option>
-	                                </select>
-                                	<select class="select" name="bank_area" id="s3" style="width:150px;">
-                                    	<option></option>
-                                </select>
-								</dd>
-							</dl>
-							<dl class="yhk">
-								<dt>开户支行：</dt>
-								<dd>
-									<input type="text" class="yhk_txt" name="subBankName"
-										id="subBankName" value=""><span color="red"
-										id="subBankNode">输入您的开户支行</span>
-								<span style="display:none;color:red;" id="area_bank">如果您不确定开户行,可以打电话向银行咨询或上网查询。</span></dd>
-							</dl>
-							<dl class="yhk">
-								<dt>银行卡号：</dt>
-								<dd>
-<input type="text" value="" class="yhk_txt"  size="25" onkeyup="formatBankNo(this)" onkeydown="formatBankNo(this)" name="bankCard" id="bankCard"><span color="red"
-										id="sBankCard">输入您的卡号 </span>
-								</dd>
-							</dl>
 							<input type="hidden" id="pin_pass" value="{$pin_pass}"/>
 							<input type="button" class="large button blue" id="submitBank" value="提交">
 							</form>
-							<span class="wenxin-tishi">
-							<p >温馨提示<p >1.请认真核对您的银行卡信息，如果信息有误，将导致您提现不成功；
- 例如：XX银行XX分行XX支行(招商银行深圳分行泰然支行)，如果无法确定开户支行信息，建议您致电开户银行进行咨询；</p>
-							<p >2.银行卡开户信息必须与您实名认证姓名等信息一致，否则将影响您的提现，不支持绑定信用卡；</p>
-							<p >3.如您申请的银行卡变更未完成或审核未通过，提现银行卡默认为您原绑定银行卡。</p></p></span>
 						</div>
 					
 				
-					<!--已绑定银行卡-->					
-						<div class="aqset_tabC" id="show_banks">
+					<!--已绑定银行卡-->	
+						<if condition="$list eq null">
+							<!--银行卡验证-->
+							<div class="aqset_tabC" style="display: none;" id="show_banks">
+						<else/>
+							<div class="aqset_tabC"  id="show_banks">
+						</if>				
+						
 							<table class="bordered">
 								<tr>
 									<th style="width: 200px;">开户银行</th>
@@ -372,12 +202,8 @@
 								</tr>
 								</volist>
 							</table>
-							<div class="page">
-								{$page}
-							</div>
 							<input type="button" class="large button blue" onclick="javascript:add_bank(this)" value="添加银行卡">
 						</div>
-					</if>
 				</div>
 				</div>
 				
@@ -481,8 +307,6 @@ jQuery(document).ready(function($) {
 				return false;
 			}
 			else{
-				
-				alert(ppass);
 				if(ppass=='1'){
 					layer.prompt({title: '输入支付密码', formType: 1}, function(pass){
 						var index = layer.load(1,{time: 7*1000});	
