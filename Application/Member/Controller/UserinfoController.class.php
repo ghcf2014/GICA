@@ -55,6 +55,14 @@ class UserinfoController extends MemberController {
 			$b=$m[$i]['bank_num'];
 			$m[$i]['bank_num']=str_replace(substr(($m[$i]['bank_num']),4,12),"************",($m[$i]['bank_num']));
 		}
+		$mid['id']=$uid;
+		$pass=M('ucenter_member')->where($mid)->field('pin_pass')->select();
+		if($pass[0]['pin_pass']==""){
+			$pin_pass="";
+		}else{
+			$pin_pass=1;
+		}
+		$this->assign('pin_pass',$pin_pass);
 		$this->assign ( 'list', $m );
 		$this->pagetitle="工合财富直通贷款-银行卡设置";
 		$this->display ();
@@ -83,7 +91,7 @@ class UserinfoController extends MemberController {
 	    $paypass = $userinfo [0] ['pin_pass']; // 查询用户交易密码
 
 	    
-	    if (md5($dealpwd) != $paypass) {
+	    if (md5($dealpwd) !== $paypass) {
 	        $this->error ( L ( '您输入的交易密码有误！' ) );
 	    }
 	    $this->success( L ( '正在提交...' ) );
@@ -126,6 +134,85 @@ class UserinfoController extends MemberController {
 			// 失败提示
 			$this->error ( L ( '添加失败!' ) );
 		}
+	}
+	public function paypassword() {
+		if (! is_login ()) {
+			$this->error ( '您还没有登陆', U ( 'User/login' ) );
+		}
+		$uid = is_login ();
+		$m = M ( "ucenter_member" );
+		$condition ['id'] = $uid;
+		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
+		$this->assign ( 'pin', $pin [0] ['pin_pass'] );
+		$this->display ();
+	}
+	public function changepaypassword_save() {
+		if (! is_login ()) {
+			$this->error ( '您还没有登陆', U ( 'User/login' ) );
+		}
+		// 获取参数
+		$uid = is_login ();
+		$oldpassword = I('post.oldpassword');
+		$newpassword = I('post.newpassword');
+		$repassword = I('post.repassword');
+		$m = M ( "ucenter_member" );
+
+		$condition ['id'] = $uid;
+		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
+		if ($pin [0] ['pin_pass'] == md5($_POST ['oldpassword']) ) {
+
+			$data ['pin_pass'] = md5 ( $_POST ['newpassword'] );
+			$result= $m->where($condition)->save($data);
+			if ($result) {
+				$this->success ( '支付密码修改成功，请注意资金安全',U('Home/User/profile'));
+			} else {
+				$this->error ( '支付密码修改失败！' );
+			}
+
+		} else {
+			$this->error ( '原支付密码不正确！' );
+		}
+		
+			
+	}
+	public function setpaypassword_save() {
+		if (! is_login ()) {
+			$this->error ( '您还没有登陆', U ( 'User/login' ) );
+		}
+		// 获取参数
+		$uid = is_login ();
+		$newpassword = I('post.pin_pass');
+		$m = M ( "ucenter_member" );
+		$condition ['id'] = $uid;
+		$data ['pin_pass'] = md5 ($newpassword );
+		$result= $m->where($condition)->save($data);
+		if ($result) {
+			$this->success ( '支付密码修改成功，请注意资金安全',U('Home/User/profile'));
+		} else {
+			$this->error ( '支付密码修改失败！' );
+		}	
+	}		
+	public function findpaypassword_save(){
+		$mobile_code=I('post.mobile_code');
+		$newpassword = I('post.new_ppass');
+		$repassword = I('post.re_ppass');
+		session_start();
+		if($_SESSION['mobile_code'] == $_POST['mobile_code']){
+			$m = M ( "ucenter_member" );
+			$condition ['id'] =is_login();
+			$data ['pin_pass'] = md5 ( $newpassword);
+			$result= $m->where($condition)->save($data);
+			if ($result) {
+				$this->success ( '支付密码修改成功!',U('Home/User/profile'));
+			} else {
+				$this->error ( '支付密码修改失败！' );
+			}
+			
+		}else{
+			$this->error('手机验证码错误，请重新发送。');
+		}
+
+
 	}
 	public function userbasicdata() {
 		$this->display ();
@@ -810,68 +897,7 @@ class UserinfoController extends MemberController {
 			$this->display ();
 		}
 	}
-	public function paypassword() {
-		if (! is_login ()) {
-			$this->error ( '您还没有登陆', U ( 'User/login' ) );
-		}
-		$uid = is_login ();
-		$m = M ( "ucenter_member" );
-		$condition ['id'] = $uid;
-		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
-		$this->assign ( 'pin', $pin [0] ['pin_pass'] );
-		$this->display ();
-	}
-	public function changepaypassword_save() {
-		if (! is_login ()) {
-			$this->error ( '您还没有登陆', U ( 'User/login' ) );
-		}
-		// 获取参数
-		$uid = is_login ();
-		$oldpassword = I('post.oldpassword');
-		$newpassword = I('post.newpassword');
-		$repassword = I('post.repassword');
-		$m = M ( "ucenter_member" );
 
-		$condition ['id'] = $uid;
-		$pin = $m->where ( $condition )->field ( 'pin_pass' )->select ();
-		if ($pin [0] ['pin_pass'] == md5($_POST ['oldpassword']) ) {
-
-			$data ['pin_pass'] = md5 ( $_POST ['newpassword'] );
-			$result= $m->where($condition)->save($data);
-			if ($result) {
-				$this->success ( '支付密码修改成功，请注意资金安全',U('Home/User/profile'));
-			} else {
-				$this->error ( '支付密码修改失败！' );
-			}
-
-		} else {
-			$this->error ( '原支付密码不正确！' );
-		}
-		
-			
-	}	
-	public function findpaypassword_save(){
-		$mobile_code=I('post.mobile_code');
-		$newpassword = I('post.new_ppass');
-		$repassword = I('post.re_ppass');
-		session_start();
-		if($_SESSION['mobile_code'] == $_POST['mobile_code']){
-			$m = M ( "ucenter_member" );
-			$condition ['id'] =is_login();
-			$data ['pin_pass'] = md5 ( $newpassword);
-			$result= $m->where($condition)->save($data);
-			if ($result) {
-				$this->success ( '支付密码修改成功!',U('Home/User/profile'));
-			} else {
-				$this->error ( '支付密码修改失败！' );
-			}
-			
-		}else{
-			$this->error('手机验证码错误，请重新发送。');
-		}
-
-
-	}
 	public function sms() {
 
 	if(sendsms($mob,$send_code)){

@@ -22,16 +22,14 @@
 							<li class="cur">已绑定银行卡</li>
 						</if>
 					</ul>
+					
 				<div class="aqset_tabC_out" >	
 					<if condition="$list eq null">
 						<!--银行卡验证-->
 						<div class="aqset_tabC" id="add_banks">
+
+							
 							<form action="{:U('userbankset_save')}" method="post" id="form">
-							<input type="hidden" id="pin_pass" value="{$pin_pass}">
-							<!-- <dl class="yhk">
-								<dt>平台昵称：{:get_username()}</dt>
-								<dd></dd>
-							</dl> -->
 							<dl class="yhk">
 								<dt>选择开户银行：</dt>
 								<dd>
@@ -336,6 +334,7 @@
 										id="sBankCard">输入您的卡号 </span>
 								</dd>
 							</dl>
+							<input type="hidden" id="pin_pass" value="{$pin_pass}"/>
 							<input type="button" class="large button blue" id="submitBank" value="提交">
 							</form>
 							<span class="wenxin-tishi">
@@ -454,11 +453,22 @@ jQuery(document).ready(function($) {
 			var bankName = $(".theme-login").val();
 			var subBankName = $("#subBankName").val();
 			var bankCard = $("#bankCard").val();
+			var s1=$('#s1').val();
+			var s2=$('#s2').val();
+			var s3=$('#s3').val();
+			var ppass=$('#pin_pass').val();
 			if (bankName == "") {
 				$("#sBankName").html("<font color='red'>请选择开户银行</font>");
 				return false;
-			}
-			else if (subBankName == "") {
+			}else if(s1==''||s2=='地级市'||s3=='市、县级市、县'){
+				document.getElementById("s1").style.borderColor = "red";
+				document.getElementById("s2").style.borderColor = "red";
+				document.getElementById("s3").style.borderColor = "red";
+				layer.msg('请选择所在地');
+			}else if (subBankName == "") {
+				document.getElementById("s1").style.borderColor = "";
+				document.getElementById("s2").style.borderColor = "";
+				document.getElementById("s3").style.borderColor = "";
 				$("#sBankName").hide();
 				$("#subBankNode").html("<font color='red'>请输入开户支行名称</font>");
 				$('#area_bank').show();
@@ -471,9 +481,9 @@ jQuery(document).ready(function($) {
 				return false;
 			}
 			else{
-				var ppass = $("#pin_pass").val();
-
-				if(ppass!=""){
+				
+				alert(ppass);
+				if(ppass=='1'){
 					layer.prompt({title: '输入支付密码', formType: 1}, function(pass){
 						var index = layer.load(1,{time: 7*1000});	
 					        $.post('__URL__/userbankset_save_pw',{pin_pass:pass},function success(data){
@@ -490,7 +500,7 @@ jQuery(document).ready(function($) {
 					    });
 
 				}
-				else{
+				else if(ppass==''){
 					layer.prompt({
 				title: '新建支付密码',
 				formType: 1 //prompt风格，支持0-2
@@ -500,7 +510,7 @@ jQuery(document).ready(function($) {
 				    	if(pass==cpass){
 				    		
 					        var index = layer.load(1,{time: 7*1000});	
-					        $.post('__URL__/paypassword_save',{pin_pass:pass},function success(data){
+					        $.post('__URL__/setpaypassword_save',{pin_pass:cpass},function success(data){
 					        if (data.status) {
 								layer.msg(data.info);
 								$("#form").submit();
