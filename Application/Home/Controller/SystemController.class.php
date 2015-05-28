@@ -51,10 +51,32 @@ class SystemController extends HomeController {
 	 *         2015-2-13通过手机号码找回密码
 	 */
 	public function findpassbyphone() {
+
 		$this->pagetitle="工合财富直通贷款-通过手机找回";
 		$this->display ();
 	}
-	
+	public function checkphone(){
+		$data ['mobile'] = I('post.mobile');
+		$mdata=M('ucenter_member');
+		$result=$mdata->where($data)->select();
+		if(!$result==null){
+			$this->success( L('存在该号码'));
+		}else{
+			$this->error('该号码不存在 ');
+		}
+	}
+	public function findloginpassbyphone(){
+		$mobile=$_POST['mobile'];
+		session_start();
+		if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
+			$this->error('手机验证码输入错误。');
+		}else{
+			
+			$this->redirect('Home/System/setpassword?mobile='.$mobile);
+		}
+
+		
+	}
 	/**
 	 *
 	 * @author liuy
@@ -70,29 +92,34 @@ class SystemController extends HomeController {
 	 *
 	 * @author 2015-1-29
 	 */
-	public function setpassword($basename='') {
-		$this->basename =$basename;
+	public function setpassword($mobile='',$basename='') {
+		if(!$mobile==''){
+			$this->value=$mobile;
+			$this->name='mobile';
+		}
+		if(!$basename==''){
+			$this->value=$basename;
+			$this->name='basename';
+		}
 		$this->display();
 	}
-
+   
     public function profile(){
         if ( IS_POST ) {
             //获取参数
-            $basename=$_POST['basename'];
-            if(empty($basename)){
-			$this->error = '非法操作!';
-			return false;
-			}
-
+            
+            if(array_key_exists('mobile',$_POST)){
+            	$map['mobile'] = $_POST['mobile'];
+            }elseif(array_key_exists('basename',$_POST)){
+            	$basename=$_POST['basename'];
+            	$map['username'] = base64_decode ( $basename );
+            }else{
+            	$this->error = '非法操作!';
+            }
 			//更新前检查用户修改权限码
-
-			
-				$map['username'] = base64_decode ( $basename );
-
 	            $Mid = M ( 'ucenter_member' )->field ( 'id' )->where($map)->select();
 				
 				$uid =$Mid[0]['id'];
-
             $data['password'] = $_POST['password'];
             $repassword = $_POST['repassword'];
             

@@ -205,7 +205,7 @@ class UserinfoController extends MemberController {
 			if ($result) {
 				$this->success ( '支付密码修改成功!',U('Home/User/profile'));
 			} else {
-				$this->error ( '支付密码修改失败！' );
+				$this->error ( '修改失败，新密码不能和原来一致！' );
 			}
 			
 		}else{
