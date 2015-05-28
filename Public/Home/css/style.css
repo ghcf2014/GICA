@@ -517,12 +517,12 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 
 /*------------个人中心--------------------------*/
-.zh_cont .zh_cont_r dl{width:873px;padding:20px 0 0px 20px;height:260px;overflow:hidden;border: 1px solid #ddd;background: #fff;margin-top: 5px;}
-.zh_cont .zh_cont_r dt{width:200px;height:auto;float:left;}
-.zh_cont .zh_cont_r dt img{display:block;}
-.zh_cont .zh_cont_r dt p{width:188px;height:60px;line-height:60px;text-align:center;font-size:16px;cursor:pointer;}
-.zh_cont .zh_cont_r dd{width:635px;height:auto;padding-left:35px;float:left;overflow:hidden;}
-.zh_cont .zh_cont_r .ul01{overflow:hidden;background: url(../images/img/renwubg.png) no-repeat;border:1px solid #ddd;margin-top: 5px;}
+ .zh_cont_r dl{width:873px;overflow:hidden;border: 1px solid #ddd;background: #fff;margin-top: 5px;}
+ .zh_cont_r dt{width:200px;height:auto;float:left;}
+ .zh_cont_r dt img{display:block;}
+ .zh_cont_r dt p{width:188px;height:60px;line-height:60px;text-align:center;font-size:16px;cursor:pointer;}
+ .zh_cont_r dd{width:635px;height:auto;padding-left:35px;float:left;overflow:hidden;}
+ .zh_cont_r .ul01{overflow:hidden;background: url(../images/img/renwubg.png) no-repeat;border:1px solid #ddd;margin-top: 5px;}
 /*.zh_cont .zh_cont_r .ul01:hover{background: url(../images/img/renwubg.png) repeat-x }*/
 
 /*.zh_cont .zh_cont_r .ul02{width:927px;padding-left:20px;height:60px;border-bottom:1px solid #ddd;overflow:hidden;}
@@ -553,10 +553,10 @@ a:hover{color:#66ccfb;text-decoration:none;}
 
 .zh_cont .zh_cont_r .tab .jbrz_con .warning{width: 580px;padding-left:40px;height: 40px;line-height: 40px;background:#eee url(../images/warning_red.png) no-repeat 5px center;margin: 10px auto;}
 
-.zh_cont .zh_cont_r .tab .jbrz_con .jbrz{width:650px;height:44px;overflow:hidden;font-size:16px;border: 0;}
-.zh_cont .zh_cont_r .tab .jbrz_con .jbrz dt{float:left;width:200px;height:44px;line-height:44px;text-align:right;margin-right:18px;font-weight:normal;}
-.zh_cont .zh_cont_r .tab .jbrz_con .jbrz dd{width:430px;height:44px;float:left;padding:0;}
-.zh_cont .zh_cont_r .tab .jbrz_con .jbrz dd .txt{width:388px;height:42px;line-height:42px;padding:0 0 0 10px;border:1px solid #ccc;}
+.zh_cont .zh_cont_r .tab .jbrz_con .jbrz{width:100%;height:44px;overflow:hidden;font-size:16px;border: 0;}
+.zh_cont .zh_cont_r .tab .jbrz_con .jbrz dt{float:left;width:30%;height:44px;line-height:44px;text-align:right;margin-right:18px;font-weight:normal;}
+.zh_cont .zh_cont_r .tab .jbrz_con .jbrz dd{width:60%;height:44px;float:left;padding:0;}
+
 
 .zh_cont .zh_cont_r .tab .jbrz_con .sfz{width:650px;height:80px;overflow:hidden;font-size:18px;}
 .zh_cont .zh_cont_r .tab .jbrz_con .sfz dt{float:left;width:200px;height:80px;line-height:80px;text-align:right;margin-right:18px;font-weight:normal;}
@@ -574,7 +574,7 @@ a:hover{color:#66ccfb;text-decoration:none;}
 .zh_cont .zh_cont_r .tab .jbrz_con .wxts{width: 370px;padding-left:35px;height: 35px;margin:10px auto 0;line-height: 35px;background: url(../images/sunflower.png) no-repeat 5px center;}
 .zh_cont .zh_cont_r .tab .jbrz_con .btn{width:140px;height:40px;background:url(../images/140x40pxblue.png) no-repeat;font-size:16px;line-height:35px;margin:30px 0 30px 355px;font-weight:bold;}
 
-.zh_cont .zh_cont_r .tab .jbrz_con .adress dd select{float: left;width: 134px;margin-right: 5px;margin-top: 5px;height: 35px;font-size: 16px;} 
+.zh_cont .zh_cont_r .tab .jbrz_con .adress dd select{float: left;width: 134px;margin-right: 5px;height: 42px;font-size: 16px;} 
 
 
 
