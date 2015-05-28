@@ -375,8 +375,15 @@ class UserController extends HomeController {
             $paypass=M('ucenter_member');
             $arr['id']=$uid;
             $paypassword=$paypass->where($arr)->select();
+            $mstatus = M('z_members_status');//用户验证状态
+            $condition2['uid'] =$uid;
+            $member_status=$mstatus->where($condition2)->select();
             $pin_pass=$paypassword[0]['pin_pass'];
             $mobile=$paypassword[0]['mobile'];
+            $email=$member_status['0']['email_status'];;
+
+            $this->emailst=$email;
+		    $this->assign ( 'list', $paypassword );
             $this->mobile=$mobile;
             $this->pin_pass=$pin_pass;
 		if ( !is_login() ) {
@@ -399,10 +406,7 @@ class UserController extends HomeController {
             $Api = new UserApi();
             $res = $Api->updateInfo($uid, $password, $data);
             if($res['status']){
-
             	//发送站内信
-
-                
                 $this->success('登录密码修改成功！');
             }else{
                 $this->error($res['info']);

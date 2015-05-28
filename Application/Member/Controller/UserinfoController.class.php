@@ -429,10 +429,13 @@ class UserinfoController extends MemberController {
 			}else{
 				$this->error('您填写的邮箱不合法',U('Member/Userinfo/usermailbanding'));
 			}
-			//发送站内信
-			$action='修改了新邮箱：'.str_replace(substr($data['email'],3,(strpos($data['email'],'@')-5)),'*****',$data['email']);
-			system_msg($action);
-			$this->success ( '修改成功！请进入邮箱进行验证');
+
+			
+			 //发送站内信
+                $action='您于'.date('Y-m-d H:i:s',time()).'修改了邮箱'.$data ['email'].'，请前往该邮箱认证。';
+                $opertype=2;//系统通知
+                $result_ms=inner_msg($uid,$opertype,$action); 
+                $this->success ( '修改成功！请进入邮箱进行验证');
 		} else {
 			// 失败提示
 			$this->error ( '修改失败！');

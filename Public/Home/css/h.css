@@ -399,8 +399,6 @@ width:16.6%;
     float: left;
     border: 1px solid #ddd;
     background: #fff;
-    
-    
 }
 
 /* = 分页------------------------------------------ */
@@ -475,23 +473,44 @@ float: left;
 text-align: center;
 overflow: hidden;
 }
+.lis{
+    height:auto;
+ font-size: 16px;
+margin-top:50px;
+/*padding: 50px;*/
+/*margin-bottom: 20px;*/
+border-bottom: 1px dotted #ddd;
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+                background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+                background-image: -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+                background-image: -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+                background-image: -o-linear-gradient(top, #ebf3fc, #dce9f9);
+                background-image: linear-gradient(top, #ebf3fc, #dce9f9);
+                filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#ebf3fc, endColorstr=#dce9f9);
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ebf3fc, endColorstr=#dce9f9)";
+                -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+                -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;
+                box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+}
 
 -----------------15-03-24-----------
-.list-person {
-height: auto;
+.list-person{
+height:400px;
 font-size: 16px;
+margin-top:80px;
+padding: 50px;
 margin-bottom: 20px;
 border-bottom: 1px dotted #ddd;
-clear: both;
+/*clear: both;*/
 }
 
 .list-one {
 overflow: hidden;
 /*padding-right: 96px;*/
-padding-right: 25px;
+/*padding-right: 25px;*/
 color: #595959;
 font-size: 22px;
-width: 30%;
+width: 40%;
 }
 .list-two {
 width: 59%;
@@ -516,16 +535,17 @@ background: url(../images/img/user-icon.png) -210px -253px;
 }
 .list-one .icon {
 float: left;
-width: 38px;
-height: 38px;
+width: 72px;
+height: 72px;
 display: inline-block;
-margin-left: 130px;
-margin-top: 20px;
+margin-left: 60px;
+/*margin-top: 20px;*/
 }
 .list-one .list-text {
-	color: #248ed1;
+color: #248ed1;
 float: left;
 line-height: 72px;
+margin-left: 50px;
 }
 .countfont-2{
     color: #166cb2;
@@ -1042,3 +1062,17 @@ table {
     .blue.button:hover                          { background-color: #22abe4; }
     .yellow.button, .yellow.button:visited      { background-color: #ffb515; }
     .yellow.button:hover                        { background-color: #fc9200; }
+
+
+
+    /**/
+    .clearfix:after { 
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden; 
+} 
+ .clearfix {display: inline-block;}  /* for IE/Mac */ 
+ .clearfix {zoom: 1;/* triggers hasLayout */ 
+display: block;/* resets display for IE/Win */}
