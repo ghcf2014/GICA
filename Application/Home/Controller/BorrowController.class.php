@@ -201,17 +201,18 @@ class BorrowController extends HomeController {
 			$this->error ( L ( '您未做任何修改' ) );
 		}
 	}
-	public function circulation_save($type=0) {
+	public function circulation_save($id=0) {
 		$uid = is_login ();
-		$depict ['borrow_type'] = $_GET['type'];
+		$depict ['borrow_type'] = $id;
 		$depict ['borrow_name'] = $_POST['borrow_name'];
 		$depict ['borrow_money'] = $_POST['borrow_money'];
 		$depict ['borrow_interest_rate'] = $_POST['borrow_interest_rate'];
+		$depict ['borrow_duration'] = $_POST['borrow_duration'];
+		$depict ['collect_day'] = $_POST['collect_day'];		
 		$depict ['borrow_use'] = $_POST['borrow_use'];
 		$depict ['borrow_min'] = $_POST['borrow_min'];
 		$depict ['borrow_max'] = $_POST['borrow_max'];
-		$depict ['collect_day'] = $_POST['collect_day'];
-		$depict ['collect_time'] = $_POST['collect_time'];
+
 		$depict ['repayment_type'] = $_POST['repayment_type'];
 		$depict ['borrow_info'] = $_POST['borrow_info'];
 		$depict ['borrow_status'] = 0;
@@ -297,10 +298,8 @@ class BorrowController extends HomeController {
 			$this->error ( '投标ID错误！' );
 		}
 		//登录状态显示
-		if (is_login()
-<=0){
-			$this->
-	redirect('Home/User/login');
+		if (is_login()<=0){
+			$this->redirect('Home/User/login');
 		}
 		/* 页码检测 */
 		$p = intval ( $p );
@@ -353,8 +352,7 @@ class BorrowController extends HomeController {
 		//还款计划查询
 		$num=$list[0]['borrow_duration'];
 		if($repayment_type==5){
-			for($i=1;$i
-	<=$num;$i++){
+			for($i=1;$i<=$num;$i++){
 				$dcapital1[$i]['repayment_money']=(floatval($list[0]['borrow_money']) * (floatval ( $list[0]["borrow_interest_rate"] )/100/12) * pow((1 + (floatval($list[0]["borrow_interest_rate"])/100/12)), floatval($list[0]["borrow_duration"]))/(pow((1 + (floatval ( $list[0]["borrow_interest_rate"])/100/12)), floatval ( $list[0]["borrow_duration"]))- 1)) * floatval ($i);
 	            $dcapital = (floatval ($dcapital1[$i]['repayment_money'])-floatval ($dcapital1[$i-1]['repayment_money']))-floatval($list[0]['borrow_money'])*(floatval($list[0]["borrow_interest_rate"])/100/12)*(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),$i-1)))/(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-1);
 	            $interest=floatval($list[0]["borrow_money"])*(floatval($list[0]["borrow_interest_rate"])/100/12)*(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),$i-1)))/(pow(1+(floatval($list[0]["borrow_interest_rate"])/100/12),floatval($list[0]['total']))-1);
@@ -364,13 +362,11 @@ class BorrowController extends HomeController {
 				$cons[$i]['remain_money']=round(($dcapital+$interest),2)*$num-round(($dcapital+$interest)*$i,2);
 				$cons[$i]['repayment_time']=strtotime('+ '.$i.' months',strtotime(''.date("Y-m-d",''.$list[0]['add_time'].'').''));
 			}
-			$this->
-		assign('num',$num);
+			$this->assign('num',$num);
 			$this->assign('cons',$cons);
 		}elseif($repayment_type==6){
 			//先息后本算法
-			for($i=1;$i
-		<=$num;$i++){
+			for($i=1;$i<=$num;$i++){
 				$cons[$i]['allcapital']=(floatval ($list[0]["borrow_money"])*(floatval ($list[0]["borrow_interest_rate"] )/100/12));
 				$cons[$i]['capital']=0;				       
 				$cons[$i]['interest']=floatval ($list[0]["borrow_money"] )*(floatval ($list[0]["borrow_interest_rate"] ) / 100 / 12); 
@@ -380,10 +376,9 @@ class BorrowController extends HomeController {
 			$cons[$num]['remain_money']=0;
 			$cons[$num]['allcapital']=(floatval ($list[0]["borrow_money"] )*(floatval ($list[0]["borrow_interest_rate"] ) / 100 / 12)+floatval ($list[0]["borrow_money"] ));	
 			$cons[$num]['capital']=$list[0]["borrow_money"];
-			$this->
-			assign('num',$num);
+			$this->assign('num',$num);
 			$this->assign('cons',$cons);
-		}else {
+			}else {
 			$cons[1]['allcapital']=(floatval ($list[0]["borrow_money"])+floatval ($list[0]["borrow_money"])*(floatval ($list[0]["borrow_interest_rate"]/100/12 )*$num));
 			$cons[1]['capital']=floatval ($list[0]["borrow_money"]);
 			$cons[1]['interest']=floatval ($list[0]["borrow_money"])*(floatval ($list[0]["borrow_interest_rate"]/100/12 )*$num);

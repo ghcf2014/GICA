@@ -200,7 +200,7 @@ class UserinfoController extends MemberController {
 		if($_SESSION['mobile_code'] == $_POST['mobile_code']){
 			$m = M ( "ucenter_member" );
 			$condition ['id'] =is_login();
-			$data ['pin_pass'] = md5 ( $newpassword);
+			$data ['pin_pass'] = md5 ( $repassword);
 			$result= $m->where($condition)->save($data);
 			if ($result) {
 				$this->success ( '支付密码修改成功!',U('Home/User/profile'));
