@@ -25,12 +25,12 @@
 		<form id="form" action="__SELF__" method="post">
 			<div class="zc_cont_bot">		
 				<!--左边-->
-				<div class="zc_cont_bot_l">		
+				<div class="input_layout" style="width:50%;float: left;">		
 					<!--手机号码-->
 					<!--电子邮箱-->
 					<dl>
 						<dt>
-							<span>* </span>用户名:
+							<span>* </span>用户名
 						</dt>
 						<dd>
 							<input type="text" value="" placeholder="请输入您的5-20位用户名" id="username"
@@ -40,7 +40,7 @@
 					</dl>
 					<dl>
 						<dt>
-							<span>* </span>电子邮箱:
+							<span>* </span>电子邮箱
 						</dt>
 						<dd>
 							<input type="text" value="" placeholder="请输入您的电子邮箱" class="txt etip" id="email" name="email"  />
@@ -50,7 +50,7 @@
 					
 					<dl>
 						<dt>
-							<span>* </span>密码:
+							<span>* </span>密码
 						</dt>
 						<dd>
 							<input type="password" value="" id="password"
@@ -61,7 +61,7 @@
 					</dl>
 					<dl>
 						<dt>
-							<span>* </span>确认密码:
+							<span>* </span>确认密码
 						</dt>
 						<dd>
 							<input type="password" value="" id="repassword"
@@ -72,20 +72,20 @@
 					</dl>
 					<dl>
 						<dt>
-							<span>* </span>手机号码:
+							<span>* </span>手机号码
 						</dt>
 						<dd>
-							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt mtip" style="width:230px;" />
+							<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt mtip" />
 						</dd>
 						<span id="checkphone" style="line-height:48px;"></span>
 					</dl>
 					<!--手机验证码-->
 					<dl>
 						<dt>
-							<span>* </span>验证码:
+							<span>* </span>验证码
 						</dt>
 						<dd>
-							<input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="width:130px;float: left;margin-bottom: 0px;margin:5px 5px 0 0;"/><input id="zphone" type="button" value="获取验证码 " onClick="get_mobile_code();" class="yz" style="width:120px; float:left;" >
+							<input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="width:130px;float: left;"/><input id="zphone" type="button" value="获取验证码 " onClick="get_mobile_code();" class="yz large button white" >
 						</dd>
 						<span id="checkphone" style="line-height:48px;"></span>
 					</dl>
@@ -103,7 +103,7 @@
 					</dl> -->
 					<dl>
 						<dt>
-							<span></span>推荐人:
+							<span></span>推荐人
 						</dt>
 						<dd>
 							<input type="text" value="{$reffer}" placeholder="推荐人(无则不用填写)" name="friends" class="txt" />
@@ -113,13 +113,19 @@
 					<dl style="width:512px;height:30px; margin-bottom:0px;">
 							<span style="color: red;line-height:30px;margin-left: 145px;" id="checkcode" class="formtips Validform_checktip "></span>
 					</dl>
-					<div class="zcCheck">
-						<input type="checkbox" class="check" checked="checked" id="testcheck"/>
-						<p>
-							<b>我已阅读并同意</b><a href="{:U('Home/Newhelp/fuwutiaokuan')}" target="_blank">《网站服务协议》</a><b>和</b><a href="{:U('Home/Newhelp/shiyongtiaokuan')}" target="_blank">《使用条款》</a>
-						</p>
-					</div>
-					<button type="submit" class="btn" id="zc">注 册</button>
+					<dl>
+						<dt></dt>
+						<dd>
+							<input type="checkbox" class="check" checked="checked" id="testcheck"/><span style="font-size: 12px;">我已阅读并同意<a href="{:U('Home/Newhelp/fuwutiaokuan')}" target="_blank">《网站服务协议》</a>和<a href="{:U('Home/Newhelp/shiyongtiaokuan')}" target="_blank">《使用条款》</a></span>
+						</dd>
+					</dl>
+					<dl>
+						<dt></dt>
+						<dd>
+							<button type="submit" class="large button blue" id="zc">注 册</button>
+						</dd>
+					</dl>
+					
 				</div>
 				<!--左边结束-->
 				<!--右边-->

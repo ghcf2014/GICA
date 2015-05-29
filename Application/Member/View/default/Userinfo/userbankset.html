@@ -23,7 +23,7 @@
 						</if>
 					</ul>
 					
-				<div class="aqset_tabC_out" >	
+				<div class="input_layout" >	
 					<if condition="$list eq null">
 						<!--银行卡验证-->
 						<div class="aqset_tabC" id="add_banks"/>
@@ -33,13 +33,16 @@
 
 							
 							<form action="{:U('userbankset_save')}" method="post" id="form">
-							<dl class="yhk">
+							<p class="tip"> <b style="font-weight: normal;color: #b30000;">注意：</b>
+                                                请填写真实有效的信息，认证审核通过后将不能修改。
+                                            </p>
+							<dl>
 								<dt>选择开户银行：</dt>
 								<dd>
-									<input type="text" name="bank_name" id="bank_name" value="" class="theme-login" style="float: left;height: 28px;"/><span color="red"
-										id="sBankName">请输入开户银行</span>
+									<input type="text" name="bank_name" id="bank_name" value="" class="theme-login" placeholder="请输入开户银行"/><span 
 								</dd>
-								<div class="theme-popover">
+								<span color="red" id="sBankName"></span>
+										<div class="theme-popover">
 									     <div class="theme-poptit">
 									        <td colspan="5"><strong>请选择开户银行：</strong></td>
 									     </div>
@@ -134,7 +137,7 @@
 										<div class="theme-popover-mask"></div>	
 								
 							</dl>
-							<dl class="yhk">
+							<dl>
 								<dt>开户行所在地：</dt>
 								<dd>
 									<select class="select" name="bank_province" id="s1" style="width:150px;">
@@ -148,23 +151,28 @@
                                 </select>
 								</dd>
 							</dl>
-							<dl class="yhk">
+							<dl>
 								<dt>开户支行：</dt>
 								<dd>
-									<input type="text" class="yhk_txt" name="subBankName"
-										id="subBankName" value=""><span color="red"
-										id="subBankNode">输入您的开户支行</span>
+									<input type="text" name="subBankName"
+										id="subBankName" value="" placeholder="输入您的开户支行"><span color="red"
+										id="subBankNode"></span>
 								<span style="display:none;color:red;" id="area_bank">如果您不确定开户行,可以打电话向银行咨询或上网查询。</span></dd>
 							</dl>
-							<dl class="yhk">
+							<dl>
 								<dt>银行卡号：</dt>
 								<dd>
-<input type="text" value="" class="yhk_txt"  size="25" onkeyup="formatBankNo(this)" onkeydown="formatBankNo(this)" name="bankCard" id="bankCard"><span color="red"
-										id="sBankCard">输入您的卡号 </span>
+<input type="text" value="" size="25" onkeyup="formatBankNo(this)" onkeydown="formatBankNo(this)" name="bankCard" id="bankCard" placeholder="输入您的卡号"><span color="red" id="sBankCard"></span>
 								</dd>
 							</dl>
-							<input type="hidden" id="pin_pass" value="{$pin_pass}"/>
-							<input type="button" class="large button blue" id="submitBank" value="提交">
+							
+							<dl>
+								<dt></dt>
+								<dd><input type="hidden" id="pin_pass" value="{$pin_pass}"/>
+									<input type="button" class="large button blue" id="submitBank" value="确定添加">
+								</dd>
+							</dl>
+							
 							</form>
 						</div>
 					

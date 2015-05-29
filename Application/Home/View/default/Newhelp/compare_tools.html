@@ -9,49 +9,52 @@
 			<b class="line"></b>
 		</div>
 		<div class="content_post">
-			<div class="bid-opt">
+			<div class="bid-opt input_layout">
 				
-				<div class="clearfix" style="display: block;overflow: hidden;">
-					
-					<ul class="items">
-						<li class="txt">投入金额：</li>
-						<li><input type="text" class="input" id="borrowSum" /> <label>元 </label> <span id="" class="tip error" style="display: none;"><i class="icons reg-error"></i><font color="red">该数值须为不小于200元的整数</font></span></li>
-					</ul>
-					
-			<ul class="items">
-	
-					
-						<li class="txt">年化利率：</li>
-						<li><input id="yearRate" type="text" class="input" /> <label
-							id="timeType"> % </label> <span class="tip error"
-							style="display: none;">增加您的资金利用率</span></li>
-					</ul>
-					<ul class="items">
-						<li class="txt">投入时长：</li>
-						<li><input id="borrowTime" type="text" class="input" /> <label
-							id="timeType"> 月 </label> <span class="tip error"
-							style="display: none;">增加您的资金利用率</span></li>
-					</ul>
-					<ul class="items">
-						<li class="txt">还款方式：</li>
-						<li><select id="repayWay" name="select" style="width: 135px;">
+
+
+					<dl>
+						<dt>投入金额</dt>
+						<dd><input type="text"  id="borrowSum" />元<span id="" class="tip error" style="display: none;"><i class="icons reg-error"></i><font color="red">该数值须为不小于200元的整数</font></span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>年化利率</dt>
+						<dd><input id="yearRate" type="text"/>%<span class="tip error"
+							style="display: none;">增加您的资金利用率</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>投入时长</dt>
+						<dd><input id="borrowTime" type="text" />月<span class="tip error"
+							style="display: none;">增加您的资金利用率</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>还款方式</dt>
+						<dd><select id="repayWay" name="select" style="width: 135px;">
 								<option selected="selected" value="0">等额本息</option>
 								<option value="1">先息后本</option>
 								<option value="2">一次性还款</option>
-						</select> <span class="tip" style="display: none;">这部分金额不会加入自动投标</span></li>
-					</ul>
-				</div>
-				<div style="margin-left: 120px;">
-					<strong><span style="color: red; float: none;"
+						</select> <span class="tip" style="display: none;">这部分金额不会加入自动投标</span>
+						</dd>
+
+					</dl>
+					<dl>
+						<dt></dt>
+						<dd><strong><span style="color: red; float: none;"
 						class="formtips" id="show_error"></span> </strong>
-				</div>
-				<div class="btn-submit">
-					<a href="javascript:void(0);" id="calcultor" class="gbtn">计算</a> <a
-						href="" class="gbtn gbtn-gray">重置</a>
-					<!-- <input id="manual"
-						class="helpId" type="checkbox" value="" name="cb_ids"
-						onclick="changeStatus();" /> &nbsp;天标 -->
-				</div>
+						</dd>
+						
+					</dl>
+					<dl>
+						<dt></dt>
+						<dd><a href="javascript:void(0);" id="calcultor" class="large button blue">计算</a> <a
+						href="" class="large button blue gbtn-gray">重置</a>
+						</dd>
+						
+					</dl>
+
 			</div>
 			<div class="jsq_right">
 				<div class="jsqyb_con1" id="calcResult">

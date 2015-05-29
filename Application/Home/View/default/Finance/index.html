@@ -10,13 +10,13 @@
       <!--tz_cont_head01-->
       <ul class="tz_cont_head01">
           <li ><a class="current" href="{:U('Finance/index?type=0#tz_cont')}">全部借款</a></li>
-          <li><a href="{:U('Finance/index?order=add_time#tz_cont')}">最近借款</a></li>
-          <li><a href="{:U('Finance/index?order=borrow_status#tz_cont')}">成功借款</a></li>
+          <li><a href="{:U('Finance/index?order=add_time#tz_cont')}">最近项目</a></li>
+          <li><a href="{:U('Finance/index?order=borrow_status#tz_cont')}">成功案例</a></li>
           <li class="tz_cont_head01_li_last">
           <div class="search-form fr cf">
-             <div class="sleft">
-                <input type="text" name="nickname" class="search-input" value="{:I('nickname')}" placeholder="请输入项目名称">
-                <a class="sch-btn" href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
+             <div>
+                <input type="text" name="nickname" value="{:I('nickname')}" placeholder="请输入项目名称">
+                <a  href="javascript:;" id="search" url="{:U('index')}"><i class="btn-search"></i></a>
               </div>
           </div>
             </li>            
@@ -25,11 +25,36 @@
       <!--tz_cont_head02-->
         <ul class="tz_cont_head02">
           <li class="tz_cont_head02_li01">标的类型:</li>
+          <li><a href="{:U('Finance/index?type=2#tz_cont')}" class="large button blue">全部</a></li>
             <li class="current"><a href="{:U('Finance/index?type=1#tz_cont')}"><img src="__PUBLIC__/Home/images/xin.png"/></a></li>
             <li><a href="{:U('Finance/index?type=2#tz_cont')}"><img src="__PUBLIC__/Home/images/jing.png"/></a></li>
             <li><a href="{:U('Finance/index?type=3#tz_cont')}"><img src="__PUBLIC__/Home/images/miao.png"/></a></li>
             <li><a href="{:U('Finance/index?type=4#tz_cont')}"><img src="__PUBLIC__/Home/images/bao.png"/></a></li>
             <li><a href="{:U('Finance/index?type=5#tz_cont')}"><img src="__PUBLIC__/Home/images/ya.png"/></a></li>
+        </ul>
+        <ul class="tz_cont_head02">
+          <li class="tz_cont_head02_li01">标的状态:</li>
+            <li><a href="{:U('Finance/index?type=2#tz_cont')}" class="large button blue">全部</a></li>
+            <li><a href="{:U('Finance/index?type=3#tz_cont')}">投标中</a></li>
+            <li><a href="{:U('Finance/index?type=4#tz_cont')}">已满标</a></li>
+            <li><a href="{:U('Finance/index?type=5#tz_cont')}">还款中</a></li>
+            <li><a href="{:U('Finance/index?type=5#tz_cont')}">已还完</a></li>
+        </ul>
+        <ul class="tz_cont_head02">
+          <li class="tz_cont_head02_li01">标的利率:</li>
+            <li class="current"><a href="{:U('Finance/index?type=1#tz_cont')}" class="large button blue">全部</a></li>
+            <li><a href="{:U('Finance/index?type=2#tz_cont')}">12%以下</a></li>
+            <li><a href="{:U('Finance/index?type=3#tz_cont')}">12-16%</a></li>
+            <li><a href="{:U('Finance/index?type=4#tz_cont')}">17-20%</a></li>
+            <li><a href="{:U('Finance/index?type=5#tz_cont')}">20以上</a></li>
+        </ul>
+                <ul class="tz_cont_head02">
+          <li class="tz_cont_head02_li01">标的期限:</li>
+            <li class="current"><a href="{:U('Finance/index?type=1#tz_cont')}" class="large button blue">全部</a></li>
+            <li><a href="{:U('Finance/index?type=2#tz_cont')}">1个月以下</a></li>
+            <li><a href="{:U('Finance/index?type=3#tz_cont')}">1-3个月</a></li>
+            <li><a href="{:U('Finance/index?type=4#tz_cont')}">4-6个月</a></li>
+            <li><a href="{:U('Finance/index?type=5#tz_cont')}">6个月以上</a></li>
         </ul>
 
       <!--tz_cont_head03-->       

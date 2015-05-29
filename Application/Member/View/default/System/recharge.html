@@ -46,37 +46,44 @@
 						</div>
 						<!--biaoge2 end-->
 						<div style="padding-left: 50px;">
-							<section class="demozone">
+							<section class="input_layout">
 							    <!-- <form class="demo form-horizontal" id="demo1" action="#" method="post"> -->
-							        <div class="form-item">
-							            <label for="username"><strong>充值金额：</strong></label>
+							        <dl>
+							            <dt><strong>充值金额</strong></dt>
 
-							            <div class="form-field"><input type="text" name="account_money" id="money" class="form-text"><span class="form-error">不能填写数字以外的字符，以及负数。</span>
+							            <dd><input type="text" name="account_money" id="money"  style="width:150px;"><span class="form-error">不能填写数字以外的字符，以及负数。</span></dd>
+							        </dl>
+							        <dl>
+							            <dt></dt>
+							            <dd><p class="form-des">* 请尽可能整额充值</p></dd>
+							        </dl>
+							        <dl>
+							            <dt><strong>充值方式</strong></dt>
 
-							                <p class="form-des">* 请尽可能整额充值</p></div>
-							        </div>
-							        <div class="form-item form-radio-checkbox-wrap">
-							            <label><strong>充值方式：</strong></label>
-
-							            <div class="form-field">
-							                <label><input type="radio" name="pay" value="128" value="2" checked="checked"/>
-											<img src="__PUBLIC__/Home/images/banks/bank_31.png"
-											width="128" height="33" title="汇潮支付" /></label>
-							                <label><input type="radio" name="pay" id="xxpay" value="3"style="float: none;"  /> &nbsp;线下充值<span class="form-des">(需要提交转账凭证给客服核实)</span><label>
-							            </div>
-							        </div>
-							        <div class="form-item">
-							        	<label><strong>操作卡号：</strong></label>
-							        	<div class="form-field">
-							        		<select name="banks" id="momeyType" class="inp80">
+							            <dd>
+							                <input type="radio" name="pay" value="2" checked="checked"/>
+											<img src="__PUBLIC__/Home/images/banks/bank_31.png"width="128" height="33" title="汇潮支付" />
+							                <input type="radio" name="pay" id="xxpay" value="3"  /> &nbsp;线下充值<span class="form-des">(需要提交转账凭证给客服核实)</span>
+							            </dd>
+							        </dl>
+							        <dl>
+							        	<dt><strong>操作卡号</strong></dt>
+							        	<dd>
+							        		<select name="banks" id="momeyType"  style="width:80%;">
 												<option value="">--请选择--</option>
 												<option value="{$banksdata['bank_num']}">{$banksdata['bank_num']}/{$memberdata['real_name']}/{$banksdata['bank_name']}</option>
 											</select>
-							        	</div>
-							        </div>
-							        <div id="btn_submit">
+							        	</dd>
+							        </dl>
+							         <dl>
+							        	<dt></dt>
+							        	<dd>
+							        		<div id="btn_submit">
 											<input type="button" class="large button blue r_post" name="b1" value="充值"  >
-									</div>
+											</div>
+							        	</dd>
+							        </dl>
+							        
 							    <!-- </form> -->
 							</section>
 						</div>

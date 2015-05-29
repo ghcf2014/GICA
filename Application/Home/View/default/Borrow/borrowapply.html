@@ -83,31 +83,31 @@
 				<p style="background: #f3a616 url(__PUBLIC__/Home/images/warning.png) no-repeat 5px center; color: #fff; padding-left: 40px; width: 88%;line-height: 32px;">您必须成为VIP会员后，才能提交正式借款申请。</p>
 			</div>
 			
-			<div class="tjsqjk" onload="setup();preselect('陕西省');promptinfo();">
+			<div class="input_layout" style="width: 56%;float: left;" onload="setup();preselect('陕西省');promptinfo();">
 				<h2>借款意向</h2>
 				<dl>
 					<dt><b style="color:red">*</b>姓名</dt>
 					<dd>
-						<input type="text" id="uname" class="txt"  />
+						<input type="text" id="uname"   />
 					</dd>
 				</dl>
 				<dl>
 					<dt><b style="color:red">*</b>手机号码 </dt>
 					<dd>
-						<input type="text" id="phone_num"class="txt" />
+						<input type="text" id="phone_num" />
 					</dd>
 				</dl>
 				<dl>
 					<dt><b style="color:red">*</b>借款金额</dt>
 					<dd>
-						<input type="text"  id="borrow_money" class="txt" />
+						<input type="text"  id="borrow_money"  />
 					</dd>
 				</dl>
 				<dl>
 					<dt>借款类型</dt>
 					<dd>
-						<select class="borrow" id="borrow_type" />
-							<option selected="selected" value="">---请选择---</option>
+						<select id="borrow_type" style="width: 42%;"/>
+							<option selected="selected" value="">请选择</option>
 							<option value="1">信用标</option>
 							<option value="2">净值标</option>
 							<option value="3">秒还标</option>
@@ -200,26 +200,32 @@
 				<dl>
 					<dt>所在地区</dt>
 					<dd>
-						<select class="select" name="province" id="s1" style="width: 25%;">
+						<select class="select" name="province" id="s1" style="width: 28%;">
 							<option></option>
 						</select>
-						<select class="select" name="city" id="s2" style="width: 33%;">
+						<select class="select" name="city" id="s2" style="width: 28%;">
 							<option></option>
 						</select>
-						<select class="select" name="town" id="s3" >
+						<select class="select" name="town" id="s3" style="width: 32%;">
 							<option></option>
 						</select>
 						
 					</dd>
 				</dl>
-				<dl>
+				<dl style="height:auto;">
 					<dt> <b style="color:red">*</b>借款说明</dt>
-					<dd>
-						<textarea id="borrow_info"></textarea>
+					<dd style="height:auto;" >
+						<textarea id="borrow_info" style="width: 87%;"></textarea>
 					</dd>
 				</dl>
 				<p style="color: orange; padding-left: 40px; width: 88%;line-height: 32px;margin: 10px 0;text-align: center;">带<b style="color:red;"> * </b>号为必填项，申请资料提交后将不能修改！</p>
-					<input type="button" class="btn" id="apply_btn" value="提交申请" />
+					
+				<dl>
+					<dt></dt>
+					<dd>
+						<input type="button" class="large button blue" id="apply_btn" value="提交申请" />
+					</dd>
+				</dl>
 				
 			</div>
 		</div>
