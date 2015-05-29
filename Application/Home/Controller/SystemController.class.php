@@ -96,25 +96,26 @@ class SystemController extends HomeController {
 		if(!$mobile==''){
 			$this->value=$mobile;
 			$this->name='mobile';
+			$this->display();
 		}
 		if(!$basename==''){
 			$this->value=$basename;
 			$this->name='basename';
+			$this->display();
 		}
-		$this->display();
+		$this->redirect('Home/user/login');
 	}
    
     public function profile(){
         if ( IS_POST ) {
             //获取参数
-            
             if(array_key_exists('mobile',$_POST)){
             	$map['mobile'] = $_POST['mobile'];
             }elseif(array_key_exists('basename',$_POST)){
             	$basename=$_POST['basename'];
             	$map['username'] = base64_decode ( $basename );
             }else{
-            	$this->error = '非法操作!';
+            	$this->error('非法路径操作！');
             }
 			//更新前检查用户修改权限码
 	            $Mid = M ( 'ucenter_member' )->field ( 'id' )->where($map)->select();
@@ -129,8 +130,6 @@ class SystemController extends HomeController {
             if($data['password'] !== $repassword){
                 $this->error('您输入的新密码与确认密码不一致');
             }
-
-
             $Api = new UserApi();
             $res = $Api->updatepw($uid, $data);
             if($res['status']){
