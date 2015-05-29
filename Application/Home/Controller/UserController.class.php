@@ -207,7 +207,7 @@ class UserController extends HomeController {
 			            $arr['uid']=$uid;
 			            $result=$mstatus->add($arr); 
 			        }
-					$this->success('登录成功！',U('Member/Index/index'));				               
+					$this->success(''.get_uname($uid).'，欢迎回来！',U('Member/Index/index'));				               
 				} else {
 					$this->error($Member->getError());
 				}
@@ -380,9 +380,11 @@ class UserController extends HomeController {
             $member_status=$mstatus->where($condition2)->select();
             $pin_pass=$paypassword[0]['pin_pass'];
             $mobile=$paypassword[0]['mobile'];
-            $email=$member_status['0']['email_status'];;
+            $email=$member_status['0']['email_status'];
+            $phone=$member_status['0']['phone_status'];
 
             $this->emailst=$email;
+            $this->phonest=$phone;
 		    $this->assign ( 'list', $paypassword );
             $this->mobile=$mobile;
             $this->pin_pass=$pin_pass;

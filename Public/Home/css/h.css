@@ -1062,6 +1062,8 @@ table {
     .blue.button:hover                          { background-color: #22abe4; }
     .yellow.button, .yellow.button:visited      { background-color: #ffb515; }
     .yellow.button:hover                        { background-color: #fc9200; }
+    .white.button, .white.button:visited       { background-color: #BDBDBD; }
+    .white.button:hover                        { background-color: #D3D3D3; }
 
 
 

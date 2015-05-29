@@ -48,11 +48,10 @@
 					</div>
 					<h2 class="otherh2x" style="font-weight: normal;font-size: 16px;">资金记录</h2>
 					<div class="boxmain2">
-						<div class="srh">
+						<div style="text-align: right;">
 							<form action="{:U('userchagerwithdraw')}" method="post">
-								&nbsp;&nbsp;&nbsp;&nbsp;交易时间： <input id="startTime" type="text" name="startTime" /> 到 <input
-									id="endTime" type="text" name="endTime" /> 类型: <select
-									name="momeyType" id="momeyType" class="inp80">
+								&nbsp;&nbsp;&nbsp;&nbsp;交易时间： <input id="startTime" type="text" name="startTime" style="width:150px;" /> 到 <input id="endTime" type="text" name="endTime" style="width:150px;" /> 类型: <select
+									name="momeyType" id="momeyType">
 									<option value="">--请选择--</option>
 									<option value="-1">国付宝</option>
 									<option value="804">扣除VIP会费</option>
@@ -77,8 +76,7 @@
 									<option value="-1">提现失败</option>
 									<option value="602">冻结秒还借款费</option>
 									<option value="105">解冻秒还借款费</option>
-								</select> <input type="submit" class="cxbtn" value="查询"
-									style="width: 60px;">
+								</select> <input type="submit" class="large button blue" value="查询">
 							</form>
 						</div>
 						<div class="biaoge" id="fundRecord">
