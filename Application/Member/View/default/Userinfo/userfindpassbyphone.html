@@ -14,43 +14,49 @@
 				<h3>当前位置 > <span style="color: #D41010;">安全认证</span></h3>
 				<div class="aqset_tab">
 					<ul class="yhk_head">
-						<li ><a href="{:U('Home/User/profile')}" >账户安全</a></li>
-						<li><a href="{:U('Home/Borrow/papersinfo')}">信征认证</a></li>
+						<!-- <li ><a href="{:U('Home/User/profile')}" >账户安全</a></li>
+						<li><a href="{:U('Home/Borrow/papersinfo')}">信征认证</a></li> -->
 						<!-- <li ><a href="{:U('Member/Userinfo/usermailbanding')}">邮箱认证</a></li> -->
 						<li class="cur"><a href="{:U('Member/Userinfo/userfindpassbyphone')}">手机认证</a></li>
-						<li style="border-right: none;"><a href="{:U('Member/Userinfo/userselfset')}">实名认证</a></li>
+						<!-- <li style="border-right: none;"><a href="{:U('Member/Userinfo/userselfset')}">实名认证</a></li> -->
 					</ul>
 				<div class="aqset_tabC_out">
 					<form action="{:U('userphone_save')}" method="post"
 						class="form-horizontal" id="form">
 						<!--手机验证-->
 						<volist name="list" id="vo">
-						<div class="aqset_tabC">
+						<div class="input_layout">
 							<!-- <dl class="phone">
                                 <dt>手机绑定：</dt>
                                 <dd><input type="text" class="phone_txt"></dd>
                             </dl> -->
 
-							<dl class="phone">
+							<dl class="m-t-50">
 								<dt>原手机号码：</dt>
-								<dd style="line-height: 42px;font-size: 16px;">{$vo.mobile}</dd>
+								<dd>{$vo.mobile}</dd>
 							</dl>
-							<dl class="phone">
+							<dl>
 								<dt>手机变更：</dt>
 								<dd>
-									<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:130px;float: left;margin-top: 7px;" />
+									<input id="mobile" type="text" value="" placeholder="请输入您的手机号码" name="mobile" class="txt" style="width:230px;" />
 									<input id="zphone" type="button" value="获取验证码 " onClick="get_mobile_code();"  class="large button blue" >
 								</dd>
 							</dl>
-							<dl class="phone">
+							<dl>
 								<dt>手机验证码：</dt>
 								<dd>
-								<input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="width:130px;float: left;margin-bottom: 0px;margin:5px 5px 0 0;"id="checkcode"/>
+								<input type="text" size="8" name="mobile_code" placeholder="手机验证码" class="inputBg" style="width:130px;"id="checkcode"/>
 									<span>输入您的手机验证码</span>
 								</dd>
 							</dl>
-							<input type="button" class="large button blue ajax-post" value="提交"
-								id="updatePhone" target-form="form-horizontal" style="border: 0;padding-bottom:8px;margin-top: 20px;margin-left: 260px;">
+							<dl>
+								<dt></dt>
+								<dd>
+									<input type="button" class="large button blue ajax-post" value="提交"
+									id="updatePhone" target-form="form-horizontal">
+								</dd>
+							</dl>
+							
 						</div>
 						</volist>
 					</form>
