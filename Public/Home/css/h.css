@@ -1058,7 +1058,7 @@ table {
     .red.button:hover                           { background-color: #cf2525; }
     .orange.button, .orange.button:visited      { background-color: #ff5c00; }
     .orange.button:hover                        { background-color: #d45500; }
-    .blue.button, .blue.button:visited          { background-color: #56abe4; }
+    .blue.button, .blue.button:visited          { background-color: #56abe4;border-radius: 4px; }
     .blue.button:hover                          { background-color: #22abe4; }
     .yellow.button, .yellow.button:visited      { background-color: #ffb515; }
     .yellow.button:hover                        { background-color: #fc9200; }
