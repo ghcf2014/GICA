@@ -103,7 +103,7 @@ class UserinfoController extends MemberController {
 		$m = M ( "z_member_banks" );
 		// 获取表单数据
 		$data ['uid'] = $uid;
-		$data ['bank_num'] = $_POST ['bankCard'];
+		$data ['bank_num'] = str_replace("  ","",$_POST ['bankCard']);
 		$data ['bank_address'] = $_POST ['bank_province'].$_POST ['bank_city'].$_POST ["bank_area"].$_POST ["subBankName"];
 		$data ['bank_name'] = $_POST ["bank_name"];
 		$data ['add_time'] = time();

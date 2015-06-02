@@ -8,91 +8,89 @@
 			<dl style="padding-bottom: 10px;">
 				<dt>
 					<div class="img">
-					<ul class="clearfix img-title title-alpha">
-						<li><a href="#">
-						<volist name="list3" id="vo"> 
-							<if condition="$vo.logo_url eq ''"> 
-								<img src="__PUBLIC__/Home/images/default-img.jpg" style="border-radius: 100px;"width="200" height="200"> 
-								<strong title="标题" id="test2">求真像</strong>
-							<elseif condition="$vo.logo_url  neq ''" />
-								<img src="/Uploads/User/{$vo.logo_url}" style="border-radius: 100px;height: 200px;" width="200" height="200" />
-								<strong title="标题" id="test2">更换图像</strong>
-							</if> </volist>
-						    </a></li>
-						</ul>
-
-					</div>
-				</dt>
-				<dd>
-				<div>
-					<div class="a-c-r-t-m">
-						<div style="border:none;">
-						    <span style="color: #66ccfb;font-size: 18px;">{:get_username()}<if condition="$vo.user_leve eq 1">
-								<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx.png" title="VIP已认证" /> </a>
-							<else/>
-								<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx_h.png" title="VIP未认证" /></a>
-							</if><if condition="$member_level eq 0">
+						<ul class="clearfix img-title title-alpha">
+							<li><a href="#">
+								<volist name="list3" id="vo"> 
+									<if condition="$vo.logo_url eq ''"> 
+										<img src="__PUBLIC__/Home/images/default-img.jpg" style="border-radius: 100px;"width="200" height="200"> 
+										<strong title="标题" id="test2">求真像</strong>
+										<elseif condition="$vo.logo_url  neq ''" />
+										<img src="/Uploads/User/{$vo.logo_url}" style="border-radius: 100px;height: 200px;" width="200" height="200" />
+										<strong title="标题" id="test2">更换图像</strong>
+									</if> </volist>
+								</a></li>
+							</ul>
+						</div>
+					</dt>
+					<dd>
+						<div>
+							<div class="a-c-r-t-m">
+								<div style="border:none;">
+									<span style="color: #66ccfb;font-size: 18px;">{:get_username()}<if condition="$vo.user_leve eq 1">
+										<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx.png" title="VIP已认证" /> </a>
+										<else/>
+										<a href="{:U('Userinfo/userrenewalvip')}"> <img src="__PUBLIC__/Home/images/img/ltxx_h.png" title="VIP未认证" /></a>
+									</if><if condition="$member_level eq 0">
 									<img src="__PUBLIC__/Home/images/level_p.png" title="普通会员" />
-								<elseif condition="$member_level eq 1"/>
+									<elseif condition="$member_level eq 1"/>
 									<img src="__PUBLIC__/Home/images/level_a.png" title="A级会员" />
-								<elseif condition="$member_level eq 2"/>
+									<elseif condition="$member_level eq 2"/>
 									<img src="__PUBLIC__/Home/images/level_b.png" title="B级会员" />
-								<elseif condition="$member_level eq 3"/>
+									<elseif condition="$member_level eq 3"/>
 									<img src="__PUBLIC__/Home/images/level_c.png" title="C级会员" />
 								</if>	
 							</span>
 						</div>
 						<ul>
-						<volist name="mstatus" id="ms">
-						<li class="a-c-r-t-m-i-full">
-							<if condition="$ms.phone_status eq 1"> 
-								<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-shoujitianchong.png" style="border-radius: 100px;"width="32" height="32"></a>
+							<volist name="mstatus" id="ms">
+								<li class="a-c-r-t-m-i-full">
+									<if condition="$ms.phone_status eq 1"> 
+										<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-shoujitianchong.png" style="border-radius: 100px;"width="32" height="32"></a>
 
-							<else/>
-								<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-shoujitianchong_h.png" style="border-radius: 100px;"width="32" height="32"></a>
-							</if>
-						</li>
-						<li class="a-c-r-t-m-p-full">
-							<if condition="$ms.email_status eq 1"> 
-								<a href="{:U('Userinfo/usermailbanding')}" title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong.png" style="border-radius: 100px;"width="32" height="32"></a> 
-							<else/> 
-								<a href="{:U('Userinfo/usermailbanding')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong_h.png" style="border-radius: 100px;"width="32" height="32"></a> 
-							</if>
-						</li>	
-								
-						<li class="a-c-r-t-m-e-full">
-							<if condition="$ms.id_status eq 1">
-								<a href="{:U('Userinfo/userselfset')}"title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-iconfontmingpian.png" style="border-radius: 100px;"width="32" height="32"> </a> 
-							<else/>
-								 <a href="{:U('Userinfo/userselfset')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-iconfontmingpian_h.png" style="border-radius: 100px;"width="32" height="32"></a>
-							</if>
-						</li>
-						</volist>
+										<else/>
+										<a href="{:U('/Member/Userinfo/userfindpassbyphone')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-shoujitianchong_h.png" style="border-radius: 100px;"width="32" height="32"></a>
+									</if>
+								</li>
+								<li class="a-c-r-t-m-p-full">
+									<if condition="$ms.email_status eq 1"> 
+										<a href="{:U('Userinfo/usermailbanding')}" title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong.png" style="border-radius: 100px;"width="32" height="32"></a> 
+										<else/> 
+										<a href="{:U('Userinfo/usermailbanding')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-xinfengtianchong_h.png" style="border-radius: 100px;"width="32" height="32"></a> 
+									</if>
+								</li>	
+								<li class="a-c-r-t-m-e-full">
+									<if condition="$ms.id_status eq 1">
+										<a href="{:U('Userinfo/userselfset')}"title="已认证"><img src="__PUBLIC__/Home/images/img/iconfont-iconfontmingpian.png" style="border-radius: 100px;"width="32" height="32"> </a> 
+										<else/>
+										<a href="{:U('Userinfo/userselfset')}" title="未认证"><img src="__PUBLIC__/Home/images/img/iconfont-iconfontmingpian_h.png" style="border-radius: 100px;"width="32" height="32"></a>
+									</if>
+								</li>
+							</volist>
 						</ul>
 						<div class="m-roll-bg">
-							 <div class="m-roll-one" style="width:{$sshow}%;background: #72d0eb;margin-left:0px;"></div>
-							 <div class="m-roll-show" style="width:100%"></div>
+							<div class="m-roll-one" style="width:{$sshow}%;background: #72d0eb;margin-left:0px;"></div>
+							<div class="m-roll-show" style="width:100%"></div>
 						</div>
 						<p>资料完整度</p>
 					</div>
 				</div>
-					<div class="a-c-r-t-m">
-					   <a class="now now1" href="{:U('Member/System/recharge')}"><img src="__PUBLIC__/Home/images/img/iconfont-chongzhi(1).png" style="border-radius: 100px;"width="32" height="32">充值</a>
-					   <a class="now now2" href="{:U('Member/System/withdrawdeposit')}"><img src="__PUBLIC__/Home/images/img/font-100498-.png" style="border-radius: 100px;"width="32" height="32">提现</a>
-					   <a class="now now3" href="{:U('Member/Borrow/myborrowmanager')}"><img src="__PUBLIC__/Home/images/img/iconfont-huafeiqiazhuanrang.png" style="border-radius: 100px;"width="32" height="32">还款</a>
-					   <a class="now now4" href="{:U('Member/System/usermailindex')}"><span class="tip_span">{:is_sysmsg()}</span><img src="__PUBLIC__/Home/images/img/iconfont-fxiconyoujian.png" style="border-radius: 100px;"width="32" height="32">站内信<a><!-- <a href="javascript:;">增值服务</a> -->
-					</div>
+				<div class="a-c-r-t-m">
+					<a class="now now1" href="{:U('Member/System/recharge')}"><img src="__PUBLIC__/Home/images/img/iconfont-chongzhi(1).png" style="border-radius: 100px;"width="32" height="32">充值</a>
+					<a class="now now2" href="{:U('Member/System/withdrawdeposit')}"><img src="__PUBLIC__/Home/images/img/font-100498-.png" style="border-radius: 100px;"width="32" height="32">提现</a>
+					<a class="now now3" href="{:U('Member/Borrow/myborrowmanager')}"><img src="__PUBLIC__/Home/images/img/iconfont-huafeiqiazhuanrang.png" style="border-radius: 100px;"width="32" height="32">还款</a>
+					<a class="now now4" href="{:U('Member/System/usermailindex')}"><span class="tip_span">{:is_sysmsg()}</span><img src="__PUBLIC__/Home/images/img/iconfont-fxiconyoujian.png" style="border-radius: 100px;"width="32" height="32">站内信<a><!-- <a href="javascript:;">增值服务</a> -->
+				</div>
 
-					<ul class="a-c-u">
-						<li>用户积分：<span><volist name="list" id="vo">{$vo.score}分</volist></span></li>
-						<li>VIP到期时间：<span>{$vo.time_limit|date='Y-m-d',###}</span></li>
-						<li>注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span></li>
-						<li>专属客服：<span><if condition="$vo.user_leve eq 1"><a href="{:U('Member/Userinfo/kf_index')}" >{$qqtitle}<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$qqnum}&amp;site=qq&amp;menu=yes"><img style="border:0;" src="http://wpa.qq.com/pa?p=2:{$qqnum}:52" alt="点击这里给我发消息" title="点击这里给我发消息"></a></a><else/>无</if></span></li>
-						<li>注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span></li>
-						<li>登录IP:<span>{:get_client_ip()}</span></li>
-					</ul>		
-				</dd>
-			</dl>
+				<ul class="a-c-u">
+					<li>用户积分：<span><volist name="list" id="vo">{$vo.score}分</volist></span></li>
+					<li>VIP到期时间：<span>{$vo.time_limit|date='Y-m-d',###}</span></li>
+					<li>注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span></li>
+					<li>专属客服：<span><if condition="$vo.user_leve eq 1"><a href="{:U('Member/Userinfo/kf_index')}" >{$qqtitle}<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$qqnum}&amp;site=qq&amp;menu=yes"><img style="border:0;" src="http://wpa.qq.com/pa?p=2:{$qqnum}:52" alt="点击这里给我发消息" title="点击这里给我发消息"></a></a><else/>无</if></span></li>
+					<li>注册时间：<span>{$vo.reg_time|date='Y-m-d',###}</span></li>
+					<li>登录IP:<span>{:get_client_ip()}</span></li>
+				</ul>		
+			</dd>
+		</dl>
 			
 			<div class="ul01">
 			<if condition="$tasks.main eq ''">
@@ -112,51 +110,90 @@
 			</if>
 			</div>
 			<!-- 账户详情 -->
-			<div class="zh_cont_r_con_bot">
-				<h4 ><img src="__PUBLIC__/Home/images/img/iconfont-icon.png" style="border-radius: 100px;"width="32" height="32">账户详情：</h4>
-				<div class="zh_cont_r_bot">
-					<volist name="list" id="vo">
-					<ul>
-						<li>账户总额（元）：{$vo['account_money']+$vo['money_freeze']}</li>
-						<li>可用余额（元）：{$vo.account_money|default="0.00"}</li>
-						<li>冻结金额（元）：{$vo.money_freeze|default="0.00"}</li>
-					</ul>
-					</volist>
+			<div class="m-r-bot">
+				<div class="m-list-bot">
+					<h4 class="h4"><img src="__PUBLIC__/Home/images/img/iconfont-icon.png" style="border-radius: 100px;"width="32" height="32">账户详情：</h4>
+					<div>
+						<volist name="list" id="vo">
+							<div class="m-list">
+								<h4 >账户总额（元）</h4>
+								<div>{$vo['account_money']+$vo['money_freeze']}</div>
+							</div>
+							<div class="m-list">
+								<h4 >可用余额（元）</h4>
+								<div>{$vo.account_money|default="0.00"}</div>
+							</div>
+							<div class="m-list">
+								<h4 >冻结金额（元）</h4>
+								<div>{$vo.money_freeze|default="0.00"}</div>
+							</div>
+						</volist>
+					</div>
 				</div>
 				<!-- 投资总汇 -->
 				<!-- 借款总汇 -->
-				<h4><img src="__PUBLIC__/Home/images/img/iconfont-lijin.png" style="border-radius: 100px;"width="32" height="32">收益统计：</h4>
-				<div class="zh_cont_r_bot">
-					<ul>
-						<li>已收总收益（元）：{$bm['interest']+$bm['reward']+$bm['oter_reward']}</li>
-						<li>已收投资收益（元）：{$bm.interest|default="0.00"}</li>
-						<li>已收奖励（元）：{$bm.reward|default="0.00"}</li>
-						<li>其他收益（元）：{$bm.oter_reward|default="0.00"}</li>
-						<li>推广提成收益（元）：{$bm.borrow_money|default="0.00"}</li>
-					</ul>
-				</div>
-				<h4><img src="__PUBLIC__/Home/images/img/iconfont-jianzhi.png" style="border-radius: 100px;"width="32" height="32">待收统计：</h4>
-				<div class="zh_cont_r_bot">
-				    <volist name="list" id="vo">
-						<ul>
-							<li>待收本息（元）：{$vo['money_collect']+$interest}</li>
-							<li>待收本金（元）：{$vo['money_collect']|default="0.00"}</li>
-							<li>待收利息（元）：{$interest|default="0.00"}</li>
-						</ul>
+				<div class="m-list-bot">
+				<h4 class="h4"><img src="__PUBLIC__/Home/images/img/iconfont-lijin.png" style="border-radius: 100px;"width="32" height="32">收益统计：</h4>
+				<div>
+					<volist name="list" id="vo">
+						<div class="m-list" style="width: 20%;">
+							<h4 >已收总收益（元）</h4>
+							<div>{$bm['interest']+$bm['reward']+$bm['oter_reward']}</div>
+						</div>
+						<div class="m-list" style="width: 20%;">
+							<h4 >已收投资收益（元）</h4>
+							<div>{$vo.money_freeze|default="0.00"}</div>
+						</div>
+						<div class="m-list" style="width: 20%;">
+							<h4 >已收奖励（元）</h4>
+							<div>{$bm.reward|default="0.00"}</div>
+						</div>
+						<div class="m-list" style="width: 20%;">
+							<h4 >其他收益（元）</h4>
+							<div>{$bm.oter_reward|default="0.00"}</div>
+						</div>
+						<div class="m-list" style="width: 20%;">
+							<h4 >其他收益（元）</h4>
+							<div>{$bm.borrow_money|default="0.00"}</div>
+						</div>
 					</volist>
 				</div>
-				<h4><img src="__PUBLIC__/Home/images/img/iconfont-zhuanzhang.png" style="border-radius: 100px;"width="32" height="32">充值提现：</h4>
-				<div class="zh_cont_r_bot">
-				<volist name="paymoney" id="vo" empty="暂时没有数据">
-					<ul>
-						<li>充值总金额（元）：{$vo.money|default="0.00"}</li>
-						<li>提现总金额（元）：{$bm.borrow_money|default="0.00"}</li>
-					</ul>
-				</volist>
 				</div>
+				<div class="m-list-bot">
+				<h4 class="h4"><img src="__PUBLIC__/Home/images/img/iconfont-jianzhi.png" style="border-radius: 100px;"width="32" height="32">待收统计：</h4>
+				<div>
+					<volist name="list" id="vo">
+						<div class="m-list">
+							<h4 >待收本息（元）</h4>
+							<div>{$vo['money_collect']+$interest}</div>
+						</div>
+						<div class="m-list">
+							<h4 >待收本金（元）</h4>
+							<div>{$vo['money_collect']|default="0.00"}</div>
+						</div>
+						<div class="m-list">
+							<h4 >待收利息（元）</h4>
+							<div>{$interest|default="0.00"}</div>
+						</div>
+					</volist>
+				</div>
+				</div>
+				<div class="m-list-bot">
+				<h4 class="h4"><img src="__PUBLIC__/Home/images/img/iconfont-zhuanzhang.png" style="border-radius: 100px;"width="32" height="32">充值提现：</h4>
+				<div class="t-a-c">
+					<volist name="paymoney" id="vo" empty="暂时没有数据">
+						<div class="m-list">
+							<h4 >充值总金额（元）</h4>
+							<div>{$vo.money|default="0.00"}</div>
+						</div>
+						<div class="m-list">
+							<h4 >提现总金额（元）</h4>
+							<div>{$bm.borrow_money|default="0.00"}</div>
+						</div>
+					</volist>
+				</div>
+			  </div>
 			</div>
-			
-			
 		</div>
 	</div>
 </div>

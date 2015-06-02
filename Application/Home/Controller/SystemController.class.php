@@ -86,13 +86,14 @@ class SystemController extends HomeController {
 			$this->value=$mobile;
 			$this->name='mobile';
 			$this->display();
-		}
-		if(!$basename==''){
+		}elseif(!$basename==''){
 			$this->value=$basename;
 			$this->name='basename';
 			$this->display();
+		}else{
+			$this->redirect('Home/user/login');
 		}
-		$this->redirect('Home/user/login');
+		
 	}
    
     public function profile(){

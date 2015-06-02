@@ -208,12 +208,12 @@
 				layer.msg('请选择投标类型！');
 			}else{
 
-				if(apr_first>=apr_last){
-					layer.msg('借款利率最小值不能低于最大值！');
+				if(apr_last<=apr_first){
+					layer.msg('借款利率最大值不能小于最小值！');
 				}else{
 					if(borrow_low_timelimt>=borrow_height_timelimt){
 						$('#borrow_low_timelimt').click();
-						layer.msg('借款期限最小值不能低于最大值！');
+						layer.msg('借款期限最大值不能低于最小值！');
 					}else{
 						var index = layer.load(1,{time: 7*1000});
 						$.post('__ROOT__/Member/Invest/autoinvest_save',{keep_money:keep_money,borrow_money:borrow_money,tender_type:tender_type,apr_first:apr_first,apr_last:apr_last,borrow_low_timelimt:borrow_low_timelimt,borrow_height_timelimt:borrow_height_timelimt},function success(data){
