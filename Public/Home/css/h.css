@@ -1038,28 +1038,6 @@ table {
 .large.button, .large.button:visited            { font-size: 14px; 
                                                   padding: 8px 14px 9px; }
                                                   
-<<<<<<< HEAD
-    .large.button, .large.button:visited            { font-size: 14px; 
-                                                      padding: 8px 14px 9px; }
-                                                      
-    .super.button, .super.button:visited            { font-size: 34px; 
-                                                      padding: 8px 14px 9px; }
-    
-    .pink.button, .magenta.button:visited       { background-color: #e22092; }
-    .pink.button:hover                          { background-color: #c81e82; }
-    .green.button, .green.button:visited        { background-color: #91bd09; }
-    .green.button:hover                         { background-color: #749a02; }
-    .red.button, .red.button:visited            { background-color: #e62727; }
-    .red.button:hover                           { background-color: #cf2525; }
-    .orange.button, .orange.button:visited      { background-color: #ff5c00; }
-    .orange.button:hover                        { background-color: #d45500; }
-    .blue.button, .blue.button:visited          { background-color: #56abe4;border-radius: 4px; }
-    .blue.button:hover                          { background-color: #22abe4; }
-    .yellow.button, .yellow.button:visited      { background-color: #ffb515; }
-    .yellow.button:hover                        { background-color: #fc9200; }
-    .white.button, .white.button:visited       { background-color: #BDBDBD; }
-    .white.button:hover                        { background-color: #D3D3D3; }
-=======
 .super.button, .super.button:visited            { font-size: 34px; 
                                                   padding: 8px 14px 9px; }
 
@@ -1071,13 +1049,12 @@ table {
 .red.button:hover                           { background-color: #cf2525; }
 .orange.button, .orange.button:visited      { background-color: #ff5c00; }
 .orange.button:hover                        { background-color: #d45500; }
-.blue.button, .blue.button:visited          { background-color: #56abe4; }
+.blue.button, .blue.button:visited          { background-color: #56abe4;border-radius: 4px; }
 .blue.button:hover                          { background-color: #22abe4; }
 .yellow.button, .yellow.button:visited      { background-color: #ffb515; }
 .yellow.button:hover                        { background-color: #fc9200; }
 .white.button, .white.button:visited       { background-color: #BDBDBD; }
 .white.button:hover                        { background-color: #D3D3D3; }
->>>>>>> origin/master
 
 
 
@@ -1162,7 +1139,7 @@ display: block;/* resets display for IE/Win */}
 .input_layout dt        { float:left;width:30%;height:44px;line-height:44px;text-align:right;margin-right:18px;font-weight:normal;}
 .input_layout dd        { width:60%;height:44px;float:left;padding:0;line-height:44px;}
 .input_layout p.tip     { text-align:center;margin:50px auto 30px;}
-.input_layout dd select { width:20%;}
+.input_layout dd select { width:30%;}
 
 
 

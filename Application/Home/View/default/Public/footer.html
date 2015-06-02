@@ -1,15 +1,16 @@
+<!--浮动侧边栏  计算器  客服QQ-->
 <div class="flo_aside">
 	<!--浮动框标题-->
     <ul class="flo_l">
     	<li style="padding-top: 30px;">计<br />算<br />器</li>
         <li>联<br />系<br />我<br />们</li>
-        <li style="padding-top: 40px;" class="fankui hot" ><div></div>反<br />馈</li>
-        	<div id="float_ad">
-				<!-- <div><a href="#" target="_blank"><img height=172 src="images/chivas_ad1.jpg" width="20" border="0" /></a></div> -->
-				<div><img onclick="show();" height="41" src="__PUBLIC__/Home/images/index-loading-bgx.png" width="50" /></div>
-			</div>
+        <li style="padding-top: 40px;" class="fankui hot" >反<br />馈</li>	
         <li class="returnTop" style="display:none;height: 35px;padding-top: 0;"><a href="#returntop" style="color: #fff;display: block;width: 35px;height: 35px;background: url(__PUBLIC__/Home/images/returntop.png) no-repeat center center;"></a></li>
     </ul>
+    <div id="float_ad">
+		<!-- <div><a href="#" target="_blank"><img height=172 src="images/chivas_ad1.jpg" width="20" border="0" /></a></div> -->
+		<div><img onclick="show();" height="41" src="__PUBLIC__/Home/images/index-loading-bgx.png" width="50" /></div>
+	</div>
     <div class="flo_r" style="display:none">
     	<!--计算器-->
     	<ul class="flo_jsq" style="display:none">
@@ -18,7 +19,7 @@
             	<li><a href="#">收益对比</a></li>
             	<li><a href="#">身价计算器</a></li>-->
         </ul>
-        <!--联系方式-->
+        <!--联系我们-->
         <ul class="flo_lx" style="display:none">
             <li style="font-size:18px;line-height:30px">客服热线<br /><span>400-123-4567</span></li>
             <li><a href="tencent://message/?uin=3058467611">客服QQ</a></li>
@@ -39,6 +40,7 @@
     	</ul>
     </div>
 </div>
+
 <!--footer start-->
 <div class="footer">
 	<div class="footer_in">
@@ -194,7 +196,7 @@
 			//alert(2);
 			$('.flo_aside .flo_l li').each(function(index,element){
 				$(element).hover(function(){
-					if($(element).index()!=2)
+					if($(element).index()!=2 && $(element).index()!=3)
 					{
 						$('.flo_aside .flo_r').show();
 						$('.flo_aside .flo_r ul').eq($(this).index()).show().siblings().hide();
@@ -271,8 +273,8 @@
 //			if($(document).scrollTop() > $('.header_out').height()+$('.nav_out').height()+$('.banner').height())
 			if($(document).scrollTop() > $(window).height())
 			{
-				$('.nav_out').css({'position':'fixed','top':'0','z-index':'1000','box-shadow':'2px 0 5px #ccc'})
-				//$('.nav2_out').css({'position':'fixed','top':'0','z-index':'1000','display':'block'})
+				$('.nav_out').css({'position':'fixed','top':'0','z-index':'99','box-shadow':'2px 0 5px #ccc'})
+				//$('.nav2_out').css({'position':'fixed','top':'0','z-index':'99','display':'block'})
 			}
 			else
 			{
