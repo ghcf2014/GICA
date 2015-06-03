@@ -113,19 +113,19 @@ class BorrowController extends HomeController {
 	}
 	public function borrowapply_save(){
 		$uid=is_login();
-		$receive['apply_ip']=ip2long($_SERVER['REMOTE_ADDR']);
-		$receive['apply_uid']=$uid;
-		$receive["username"]=I('post.username');                            
-		$receive["tel"]=I('post.tel');                                                              
-		$receive["borrow_money"]=I('post.borrow_money');                        
-		$receive["borrow_type"]=I('post.borrow_type');                         
-		$receive["borrow_interest_rate"]=I('post.borrow_interest_rate');                
-		$receive["day_time"]=I('post.day_time');                            
-		$receive["month_time"]=I('post.month_time');                          
-		$receive["year_time"]=I('post.year_time');                           
-		$receive["time_type"]=I('post.time_type');                           
-		$receive['address']=I('post.province').I('post.city').I('post.town');                               
-		$receive["borrow_info"]=I('post.borrow_info');                        
+		$receive['apply_ip']             = ip2long($_SERVER['REMOTE_ADDR']);
+		$receive['apply_uid']            = $uid;
+		$receive["username"]             = I('post.username');
+		$receive["tel"]                  = I('post.tel');
+		$receive["borrow_money"]         = I('post.borrow_money');
+		$receive["borrow_type"]          = I('post.borrow_type');
+		$receive["borrow_interest_rate"] = I('post.borrow_interest_rate');
+		$receive["day_time"]             = I('post.day_time');
+		$receive["month_time"]           = I('post.month_time');
+		$receive["year_time"]            = I('post.year_time');
+		$receive["time_type"]            = I('post.time_type');
+		$receive['address']              = I('post.province').I('post.city').I('post.town');
+		$receive["borrow_info"]          = I('post.borrow_info');
 
 		$model=M('z_borrow_apply');
 		$result=$model->add($receive);
@@ -164,16 +164,16 @@ class BorrowController extends HomeController {
 		$uid = is_login ();
 		
 		$m = M ( "z_member_info" );
-		$data ['real_name'] = $_POST ["real_name"];
-		$data ['idcard'] = $_POST ["idcard"];
-		// $data ['card_img'] = $_POST ["card_img"];
+		$data ['real_name']        = $_POST ["real_name"];
+		$data ['idcard']           = $_POST ["idcard"];
+		// $data ['card_img']      = $_POST ["card_img"];
 		// $data ['card_back_img'] = $_POST ["card_back_img"];
-		$data ['sex'] = $_POST ["sex"];
-		$data ['zy'] = $_POST ["zy"];
-		$data ['cell_phone'] = $_POST ["cell_phone"];
-		$data ['education'] = $_POST ["education"];
-		$data ['income'] = $_POST ["income"];
-		$data ['address'] = $_POST ["address"];
+		$data ['sex']              = $_POST ["sex"];
+		$data ['zy']               = $_POST ["zy"];
+		$data ['cell_phone']       = $_POST ["cell_phone"];
+		$data ['education']        = $_POST ["education"];
+		$data ['income']           = $_POST ["income"];
+		$data ['address']          = $_POST ["address"];
 		// dump($data);
 		$condition ['uid'] = $uid;
 		
@@ -203,23 +203,23 @@ class BorrowController extends HomeController {
 	}
 	public function circulation_save($id=0) {
 		$uid = is_login ();
-		$depict ['borrow_type'] = $id;
-		$depict ['borrow_name'] = $_POST['borrow_name'];
-		$depict ['borrow_money'] = $_POST['borrow_money'];
+		$depict ['borrow_type']          = $id;
+		$depict ['borrow_name']          = $_POST['borrow_name'];
+		$depict ['borrow_money']         = $_POST['borrow_money'];
 		$depict ['borrow_interest_rate'] = $_POST['borrow_interest_rate'];
-		$depict ['borrow_duration'] = $_POST['borrow_duration'];
-		$depict ['collect_day'] = $_POST['collect_day'];		
-		$depict ['borrow_use'] = $_POST['borrow_use'];
-		$depict ['borrow_min'] = $_POST['borrow_min'];
-		$depict ['borrow_max'] = $_POST['borrow_max'];
+		$depict ['borrow_duration']      = $_POST['borrow_duration'];
+		$depict ['collect_day']          = $_POST['collect_day'];		
+		$depict ['borrow_use']           = $_POST['borrow_use'];
+		$depict ['borrow_min']           = $_POST['borrow_min'];
+		$depict ['borrow_max']           = $_POST['borrow_max'];
 
-		$depict ['repayment_type'] = $_POST['repayment_type'];
-		$depict ['borrow_info'] = $_POST['borrow_info'];
-		$depict ['borrow_status'] = 0;
-		$depict ['borrow_uid'] = $uid;
-		$depict ['add_time'] = time ();
-		$depict ['deadline'] = strtotime ( '+' . intval ( $_POST['collect_day'] ) . ' year' );
-		$depict ['add_ip'] = get_client_ip ();
+		$depict ['repayment_type']       = $_POST['repayment_type'];
+		$depict ['borrow_info']          = $_POST['borrow_info'];
+		$depict ['borrow_status']        = 0;
+		$depict ['borrow_uid']           = $uid;
+		$depict ['add_time']             = time ();
+		$depict ['deadline']             = strtotime ( '+' . intval ( $_POST['collect_day'] ) . ' year' );
+		$depict ['add_ip']               = get_client_ip ();
 		//判断最低投资额、最高投资额、借款金额
 		if($depict['borrow_min']>$depict['borrow_money']){
 			$this->error('最低投资额不能大于借款金额！');
@@ -623,12 +623,12 @@ class BorrowController extends HomeController {
 		);
 		$upload = new \Think\Upload ( $config ); // 实例化上传类
 		$info = $upload->upload (); // 上传文件
-		$data['identity_report']=$info['identity_report']['savepath'].$info['identity_report']['savename'];
-		$data['credit_report']=$info['credit_report']['savepath'].$info['credit_report']['savename'];
-		$data['living_report']=$info['living_report']['savepath'].$info['living_report']['savename'];
-		$data['work_report']=$info['work_report']['savepath'].$info['work_report']['savename'];
-		$data['income_report']=$info['income_report']['savepath'].$info['income_report']['savename'];
-		$data['other_report']=$info['other_report']['savepath'].$info['other_report']['savename'];
+		$data['identity_report'] = $info['identity_report']['savepath'].$info['identity_report']['savename'];
+		$data['credit_report']   = $info['credit_report']['savepath'].$info['credit_report']['savename'];
+		$data['living_report']   = $info['living_report']['savepath'].$info['living_report']['savename'];
+		$data['work_report']     = $info['work_report']['savepath'].$info['work_report']['savename'];
+		$data['income_report']   = $info['income_report']['savepath'].$info['income_report']['savename'];
+		$data['other_report']    = $info['other_report']['savepath'].$info['other_report']['savename'];
 		if (! $info) { // 上传错误提示错误信息
 			$this->error ( $upload->getError () );
 		} else { // 上传成功
@@ -645,12 +645,12 @@ class BorrowController extends HomeController {
 				$arr1=array_pop($sta);
 				$result=$borrowfile_status->where($arrid)->save($arr1);
 				if ($result){
-					$status['uid']=$uid;
-					$status['identity_report']==1;
-					$status['work_report']==1;
-					$status['living_report']==1;
-					$status['income_report']==1;
-					$status['credit_report']==1;
+					$status['uid']             = $uid;
+					$status['identity_report'] = 1;
+					$status['work_report']     = 1;
+					$status['living_report']   = 1;
+					$status['income_report']   = 1;
+					$status['credit_report']   = 1;
 					$borrowfile=M('z_members_status');
 					$borrowfile_status=$borrowfile->where($status)->select();
 					if($borrowfile_status){

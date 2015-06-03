@@ -224,20 +224,6 @@ class UserinfoController extends MemberController {
 		$this->display ();
 	}
 	public function userchagerwithdraw() {
-		
-		// $nickname = I('nickname');
-		// $map['status'] = array('egt',0);
-		// if(is_numeric($nickname)){
-		// $map['uid|nickname']= array(intval($nickname),array('like','%'.$nickname.'%'),'_multi'=>true);
-		// }else{
-		// $map['nickname'] = array('like', '%'.(string)$nickname.'%');
-		// }
-		
-		// $list = $this->lists('z_member_moneylog', $map);
-		// int_to_string($list);
-		// $this->assign('_list', $list);
-		// $this->meta_title = '资金信息';
-		// $this->display();
 		$uid = is_login ();
 		$ml = M ( "z_member_moneylog" );
 		$condition ['uid'] = $uid;
@@ -286,22 +272,15 @@ class UserinfoController extends MemberController {
 		if(IS_POST){ 
 			$uid = is_login ();
 			$m = M ( "ucenter_member" );
-			
 			$data ['mobile'] = $_POST ['mobile'];
 			$condition ['id'] = $uid;
-			
 			session_start();
 			if($_POST['mobile']!=$_SESSION['mobile'] or $_POST['mobile_code']!=$_SESSION['mobile_code'] or empty($_POST['mobile']) or empty($_POST['mobile_code'])){
 			$this->error('手机验证码输入错误。');
 			}
-
 			if ($_POST ['mobile'] == null) {
 				$this->error ( '您未输入变更的手机号码！' );
 			}
-
-            
-
-			
 			$mList = $m->select ();
 			// 如果有相同的邮箱就终止循环
 			for($i = 0; $i < count ( $mList ); $i ++) {
@@ -507,10 +486,6 @@ class UserinfoController extends MemberController {
 			$moneydata = M ( "z_member_money" );
 			$money = $moneydata->field ( 'account_money' )->where ( $condition3 )->select (); 
 			$vipmoney=intval($mvip)*intval($viptime);
-			
-
-			
-
 			if(floatval( $money [0] ['account_money'] )<intval($vipmoney)){
 				$this->success($vipmoney);
 			}
@@ -574,33 +549,7 @@ class UserinfoController extends MemberController {
 	public function userricelist() {
 		$this->display ();
 	}
-	
-	/**
-	 *
-	 * @author liuy
-	 *        
-	 *         身份证设置2015-1-30
-	 */
 	public function userselfidcard() {
-		// $uid = is_login ();
-		// $mstatus = M ( 'z_members_status' );
-		// $map['uid']=$uid;
-
-		// $ms = $mstatus ->where ($map)->select ();
-		// // var_dump($userinfo);
-		// $id_status = $ms [0] ['id_status'];
-		// if ($id_status == 0) {
-			
-		// } elseif ($id_status == 1) {
-
-
-
-			
-		// } elseif ($id_status == 2) {
-		// 	$this->error ( "您还没有进行基本身份认证！", U ( 'Member/Userinfo/userselfset' ) );
-		// }
-		// dump($id_status);
-		// $this->display ();
 		$uid = is_login();
 		$chk = M ( "z_member_info" );
 		$condition ['uid'] = $uid;
@@ -779,7 +728,6 @@ class UserinfoController extends MemberController {
 				return false;
 			}
 		}
-		
 		return true;
 	}
 	public function upload_back() {
@@ -900,9 +848,7 @@ class UserinfoController extends MemberController {
 			$this->display ();
 		}
 	}
-
 	public function sms() {
-
 	if(sendsms($mob,$send_code)){
 				$this->success ( '已发送！' );
 				// exit();
@@ -910,18 +856,9 @@ class UserinfoController extends MemberController {
 				// 失败提示
 				$this->error ( '发送失败' );
 			}
-	
 	}
 	public function kf_index() {
 		$uid = is_login ();
-		// $password = I('post.old');
-		// $repassword = I('post.repassword');
-		// $data['pin_pass'] = I('post.pin_pas');
-		// empty($password) && $this->error('请输入原密码');
-		// empty($data['pin_pass']) && $this->error('请输入新密码');
-		// empty($repassword) && $this->error('请输入确认密码');
-		// 从表单中获取来的数据
-		
 		$m = M ( "ucenter_member" );
 		$condition ['id'] = $uid;
 		$pin = $m->where ( $condition )->select ();
@@ -934,6 +871,4 @@ class UserinfoController extends MemberController {
 		$this->assign ( 'qqlist', $mqqlist);
 		$this->display ();
 	}
-	
-
 }

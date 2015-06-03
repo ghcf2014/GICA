@@ -131,14 +131,14 @@ class FinanceController extends HomeController {
             
             //创建一个表对象，将传来的数据插入到数据库中
             $m=M("z_borrow_investor");
-            $m->investor_capital=$capital;
-            $m->borrow_id=$bid;
-            $m->borrow_uid=$list3[0]['borrow_uid'];
-            $m->add_time=time();
-            $m->deadline=$list3[0]['deadline'];
-            $m->invest_fee=$list3[0]['borrow_interest_rate'];
-            $m->investor_uid=$uid;
-            $m->investor_interest=$b;
+            $m->investor_capital  = $capital;
+            $m->borrow_id         = $bid;
+            $m->borrow_uid        = $list3[0]['borrow_uid'];
+            $m->add_time          = time();
+            $m->deadline          = $list3[0]['deadline'];
+            $m->invest_fee        = $list3[0]['borrow_interest_rate'];
+            $m->investor_uid      = $uid;
+            $m->investor_interest = $b;
             
         // 判断余额不足
         if($list[0]['account_money'] >= $capital ){
@@ -151,11 +151,8 @@ class FinanceController extends HomeController {
                 $m2=M("z_borrow_info");
                 $condition2['id'] =$bid;
                 $m22=$m2->field('id,has_borrow,borrow_money')->where($condition2)->select();
-
                 $m2h=floatval ($m22[0]['has_borrow'])+floatval ($capital);
-
                 $m222=floatval ($m22[0]['borrow_money'])-$m2h;//计算溢出的已借款金额
-
                 $data2['has_borrow']=$m2h;
 
                     if(floatval ($m22[0]['has_borrow']) == floatval ($m22[0]['borrow_money']))
@@ -215,15 +212,15 @@ class FinanceController extends HomeController {
                                                 $interest=floatval($capital)*(floatval($binfo[0]["borrow_interest_rate"])/100/12)*(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),floatval($binfo[0]['total']))-(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),$i-1)))/(pow(1+(floatval($binfo[0]["borrow_interest_rate"])/100/12),floatval($binfo[0]['total']))-1);
                                                     $t=$i+1;
                                                     $detail=M("z_investor_detail");
-                                                    $detail->repayment_time=strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
-                                                    $detail->borrow_id=$bid;
-                                                    $detail->invest_id=$iinfo[0]['id'];
-                                                    $detail->investor_uid=$uid;
-                                                    $detail->borrow_uid=$binfo[0]['borrow_uid'];
-                                                    $detail->capital=$dcapital;
-                                                    $detail->interest=$interest;
-                                                    $detail->interest_fee=$b;
-                                                    $detail->status=$binfo[0]['borrow_status'];
+                                                    $detail->repayment_time = strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
+                                                    $detail->borrow_id      = $bid;
+                                                    $detail->invest_id      = $iinfo[0]['id'];
+                                                    $detail->investor_uid   = $uid;
+                                                    $detail->borrow_uid     = $binfo[0]['borrow_uid'];
+                                                    $detail->capital        = $dcapital;
+                                                    $detail->interest       = $interest;
+                                                    $detail->interest_fee   = $b;
+                                                    $detail->status         = $binfo[0]['borrow_status'];
                                                     // $detail->receive_interest=$b;
                                                     // $detail->receive_capital=$b;
                                                     $detail->sort_order=$i;
@@ -243,41 +240,41 @@ class FinanceController extends HomeController {
                                                      // $huan[1]['lixi'] =intval ($huan[0]['lixi'])+intval ( $binfo[0]["borrow_interest_rate"] )*(intval ($borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)*$i;
                                                      $t=$i+1;
                                                     $detail=M("z_investor_detail");
-                                                    $detail->repayment_time=strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
-                                                    $detail->borrow_id=$bid;
-                                                    $detail->invest_id=$iinfo[0]['id'];
-                                                    $detail->investor_uid=$uid;
-                                                    $detail->borrow_uid=$binfo[0]['borrow_uid'];
-                                                    $detail->capital=$dcapital;
-                                                    $detail->interest=$b;
-                                                    $detail->interest_fee=$interest;
-                                                    $detail->status=$binfo[0]['borrow_status'];
-                                                    // $detail->receive_interest=$b;
-                                                    // $detail->receive_capital=$b;
-                                                    $detail->sort_order=$i;
-                                                    $detail->total=$binfo[0]['total'];
-                                                    // $detail->deadline=$b;
-                                                    // $detail->expired_money=$b;
-                                                    // $detail->expired_days=$b;
-                                                    // $detail->call_fee=$b;
-                                                    // $detail->substitute_money=$b;
+                                                    $detail->repayment_time      = strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
+                                                    $detail->borrow_id           = $bid;
+                                                    $detail->invest_id           = $iinfo[0]['id'];
+                                                    $detail->investor_uid        = $uid;
+                                                    $detail->borrow_uid          = $binfo[0]['borrow_uid'];
+                                                    $detail->capital             = $dcapital;
+                                                    $detail->interest            = $b;
+                                                    $detail->interest_fee        = $interest;
+                                                    $detail->status              = $binfo[0]['borrow_status'];
+                                                    // $detail->receive_interest = $b;
+                                                    // $detail->receive_capital  = $b;
+                                                    $detail->sort_order          = $i;
+                                                    $detail->total               = $binfo[0]['total'];
+                                                    // $detail->deadline         = $b;
+                                                    // $detail->expired_money    = $b;
+                                                    // $detail->expired_days     = $b;
+                                                    // $detail->call_fee         = $b;
+                                                    // $detail->substitute_money = $b;
                                                     // $detail->substitute_time=$b;
                                                     $detail=$detail->add();
                                             }
                                             if ($binfo[0]["repayment_type"] == 7){
                                                     $t=(intval($list3[0]['borrow_duration']));
                                                     $detail=M("z_investor_detail");
-                                                    $detail->repayment_time=strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
-                                                    $detail->borrow_id=$bid;
-                                                    $detail->invest_id=$iinfo[0]['id'];
-                                                    $detail->investor_uid=$uid;
-                                                    $detail->borrow_uid=$binfo[0]['borrow_uid'];
-                                                    $detail->capital=floatval ($capital );
-                                                    $detail->interest=$b;
-                                                    $detail->interest_fee=$interest;
-                                                    $detail->status=$binfo[0]['borrow_status'];
-                                                    $detail->sort_order=$i;
-                                                    $detail->total=$binfo[0]['total'];
+                                                    $detail->repayment_time = strtotime('+ '.$t.' months',strtotime(''.date("Y-m-d",''.$binfo[0]["add_time"].'').''));
+                                                    $detail->borrow_id      = $bid;
+                                                    $detail->invest_id      = $iinfo[0]['id'];
+                                                    $detail->investor_uid   = $uid;
+                                                    $detail->borrow_uid     = $binfo[0]['borrow_uid'];
+                                                    $detail->capital        = floatval ($capital );
+                                                    $detail->interest       = $b;
+                                                    $detail->interest_fee   = $interest;
+                                                    $detail->status         = $binfo[0]['borrow_status'];
+                                                    $detail->sort_order     = $i;
+                                                    $detail->total          = $binfo[0]['total'];
                                                     $detail=$detail->add();
                                                     continue;
                                             }
@@ -291,13 +288,13 @@ class FinanceController extends HomeController {
                                         //投资详情表
 
                                         //日志
-                                        $log = M ( 'z_member_moneylog' );
-                                        $logdata ['uid'] = $uid;
-                                        $logdata ['type'] = 204;
-                                        $logdata ['borrowinfo_id']=$uid;
-                                        $logdata ['affect_money'] = $capital;
-                                        $logdata ['info'] = '您于'.date('Y-m-d H:i:s',time()).'投资'.$list3[0]['id'].'号标'.$capital.'元(资金冻结中)。';
-                                        $logdata ['add_time'] = time ();
+                                        $log                       = M ( 'z_member_moneylog' );
+                                        $logdata ['uid']           = $uid;
+                                        $logdata ['type']          = 204;
+                                        $logdata ['borrowinfo_id'] = $uid;
+                                        $logdata ['affect_money']  = $capital;
+                                        $logdata ['info']          = '您于'.date('Y-m-d H:i:s',time()).'投资'.$list3[0]['id'].'号标'.$capital.'元(资金冻结中)。';
+                                        $logdata ['add_time']      = time ();
                                         $log = $log->add ( $logdata );
 
                                         //发送站内信

@@ -157,22 +157,6 @@ class UserController extends HomeController {
 	public function registeremailok(){
 		$this->display();
 	}
-
-	//手机验证码随机生成方法
-	// public function random($length = 6 , $numeric = 0) {
-	// 	PHP_VERSION < '4.2.0' && mt_srand((double)microtime() * 1000000);
-	// 	if($numeric) {
-	// 		$hash = sprintf('%0'.$length.'d', mt_rand(0, pow(10, $length) - 1));
-	// 	} else {
-	// 		$hash = '';
-	// 		$chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789abcdefghjkmnpqrstuvwxyz';
-	// 		$max = strlen($chars) - 1;
-	// 		for($i = 0; $i < $length; $i++) {
-	// 			$hash .= $chars[mt_rand(0, $max)];
-	// 		}
-	// 	}
-	// 	return $hash;
-	// }
 	/* 登录页面 */
 	public function login($username = '', $password = '', $verify = '',$email = ''){
 		//已经登录过隐藏登陆界面
@@ -289,11 +273,11 @@ class UserController extends HomeController {
            	}
            	
            	//查询验证用户信息
-           	$membername = M('ucenter_member');
-           	$arr['id']=$emailyz;
-           	$memberdata=$membername->where($arr)->select();        
-           	$username=$memberdata[0]['username'];
-           	$_SESSION['username']=$username;
+           	$membername           = M('ucenter_member');
+           	$arr['id']            = $emailyz;
+           	$memberdata           = $membername->where($arr)->select();
+           	$username             = $memberdata[0]['username'];
+           	$_SESSION['username'] = $username;
 
            	//登录账户
 			$this->redirect('Home/User/registeremailok');
@@ -378,10 +362,10 @@ class UserController extends HomeController {
             $mstatus = M('z_members_status');//用户验证状态
             $condition2['uid'] =$uid;
             $member_status=$mstatus->where($condition2)->select();
-            $pin_pass=$paypassword[0]['pin_pass'];
-            $mobile=$paypassword[0]['mobile'];
-            $email=$member_status['0']['email_status'];
-            $phone=$member_status['0']['phone_status'];
+            $pin_pass = $paypassword[0]['pin_pass'];
+            $mobile   = $paypassword[0]['mobile'];
+            $email    = $member_status['0']['email_status'];
+            $phone    = $member_status['0']['phone_status'];
 
             $this->emailst=$email;
             $this->phonest=$phone;
