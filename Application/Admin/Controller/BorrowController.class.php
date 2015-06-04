@@ -409,6 +409,7 @@ class BorrowController extends AdminController {
         $m = M ( 'z_borrow_info' ); // 用户头像
         $s =$m ->where($map)->select();
         $uid=$s[0]['borrow_uid'];
+        $capital=$s[0]['borrow_money'];
 
         $s=$s[0]['borrow_status'];
 
@@ -438,11 +439,14 @@ class BorrowController extends AdminController {
         	 }
         }
 
-        
+
+
+
         $data ['borrow_status']=$sb ;
-        $datad ['status']=$sb ;
+        $datad ['status']=$sb;
         $md = M ( 'z_investor_detail' );
-        $md = $md->where ( $mapd )->save ( $datad );
+        $md = $md->where ($mapd)->save ( $datad );
+
         // 保存当前数据对象
         if ($m = $m->where ( $map )->save ( $data )) { // 保存成功
                                                              // 成功提示
@@ -455,11 +459,21 @@ class BorrowController extends AdminController {
             );
 
             //发送站内信
-            $action='您发布的'.$id.'借款标已审核。审核员：2915,审核结果：【'.$type[$sb].'】,审核理由：无。';
-            $opertype=5;//系统通知
-            $result_ms=inner_msg($uid,$opertype,$action);  
-
-            $this->success('操作成功');
+            // $action='您发布的'.$id.'借款标已审核。审核员：2915,审核结果：【'.$type[$sb].'】,审核理由：无。';
+            // $opertype=5;//系统通知
+            // $result_ms=inner_msg($uid,$opertype,$action);  
+            if($sb==6){
+	        	
+		        $result=b_change_money($capital,$uid);
+		        if ($result) { 
+		        	//发送站内信
+		            $action='您发布的'.$id.'借款标'.$type[$sb].'。收到借款标款项'.$capital.'元。注：有借有还，方得始终';
+		            $opertype=1;//账户通知
+		            $result_ms=inner_msg($uid,$opertype,$action); 
+		            $this->success('操作成功');
+		        }
+	        }
+            
         } else {
             // 失败提示
             $this->error ( L ( '操作失败' ) );

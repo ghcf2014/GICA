@@ -43,17 +43,15 @@ return array(
 
 
 
-     // 'DB_HOST'              => '127.0.0.1', // 服务器地址59.188.8.43
-
-     // 'DB_HOST'           = > '192.168.0.18', // 服务器地址59.188.8.43
-     'DB_HOST'           = > '59.188.8.43',
+     'DB_HOST'              => '127.0.0.1', // 服务器地址59.188.8.43
+     // 'DB_HOST'           => '59.188.8.43',
      'DB_NAME'              => 'gica', // 数据库名
      'DB_USER'              => 'root', // 用户名
      'DB_PWD'               => 'root',  // 密码
      'DB_PORT'              => '3306', // 端口
      'DB_PREFIX'            => 'gica_', // 数据库表前缀
 
-      // 配置邮件发送服务器
+     // 配置邮件发送服务器
      'MAIL_HOST'            =>'smtp.exmail.qq.com',
      'MAIL_SMTPAUTH'        =>TRUE, //启用smtp认证
      'MAIL_USERNAME'        =>'admin@ghcf.com.cn',
