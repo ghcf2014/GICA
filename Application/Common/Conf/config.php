@@ -39,10 +39,6 @@ return array(
     /* 数据库配置 */
      'DB_TYPE'              => 'mysql', // 数据库类型
 
-
-
-
-
      'DB_HOST'              => '127.0.0.1', // 服务器地址59.188.8.43
      // 'DB_HOST'           => '59.188.8.43',
      'DB_NAME'              => 'gica', // 数据库名
@@ -50,6 +46,12 @@ return array(
      'DB_PWD'               => 'root',  // 密码
      'DB_PORT'              => '3306', // 端口
      'DB_PREFIX'            => 'gica_', // 数据库表前缀
+
+     // 'DB_NAME'              => 'spiralca_ghcf', // 数据库名
+     // 'DB_USER'              => 'spiralca_spcos', // 用户名
+     // 'DB_PWD'               => 'spcos',  // 密码
+     // 'DB_PORT'              => '3306', // 端口
+     // 'DB_PREFIX'            => 'gica_', // 数据库表前缀
 
      // 配置邮件发送服务器
      'MAIL_HOST'            =>'smtp.exmail.qq.com',
