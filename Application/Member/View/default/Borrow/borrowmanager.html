@@ -78,10 +78,7 @@
 											condition="$vo.borrow_type eq 4" /> 普通 <elseif
 											condition="$vo.borrow_type eq 5" /> 实地 <elseif
 											condition="$vo.borrow_type eq 6" /> 担保 </if></td>
-									<td align="center"><a
-										href="{:U('Invest/borrowprotocol?id='.$vo['id'])}"
-										target="_blank">查看协议</a></td>
-									
+									<td align="center"><a href="{:U('Invest/borrowprotocol?id='.$vo['id'])}"target="_blank">查看协议</a></td>
 								</volist>
 								</tr>
 								<tr>

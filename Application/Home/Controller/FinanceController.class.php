@@ -168,7 +168,8 @@ class FinanceController extends HomeController {
                         $m2=$m2->where($condition2)->save($data2);
                         $count=$m->add();
 
-                        
+                        //会员账户扣除
+                        $result_freeze=freeze_money($capital,$uid);
                         $result=change_money($capital,$uid);
                         if ($result) { //保存成功
 
@@ -218,7 +219,7 @@ class FinanceController extends HomeController {
                                                     $detail->investor_uid   = $uid;
                                                     $detail->borrow_uid     = $binfo[0]['borrow_uid'];
                                                     $detail->capital        = $dcapital;
-                                                    $detail->interest       = $interest;
+                                                    $detail->interest       = floatval ($interest)*floatval (C('INTEREST_MANAGEMENT_FEE'));//利息管理费
                                                     $detail->interest_fee   = $b;
                                                     $detail->status         = $binfo[0]['borrow_status'];
                                                     // $detail->receive_interest=$b;
@@ -247,7 +248,7 @@ class FinanceController extends HomeController {
                                                     $detail->borrow_uid          = $binfo[0]['borrow_uid'];
                                                     $detail->capital             = $dcapital;
                                                     $detail->interest            = $b;
-                                                    $detail->interest_fee        = $interest;
+                                                    $detail->interest_fee        = floatval ($interest)*floatval (C('INTEREST_MANAGEMENT_FEE'));//利息管理费
                                                     $detail->status              = $binfo[0]['borrow_status'];
                                                     // $detail->receive_interest = $b;
                                                     // $detail->receive_capital  = $b;
@@ -271,7 +272,7 @@ class FinanceController extends HomeController {
                                                     $detail->borrow_uid     = $binfo[0]['borrow_uid'];
                                                     $detail->capital        = floatval ($capital );
                                                     $detail->interest       = $b;
-                                                    $detail->interest_fee   = $interest;
+                                                    $detail->interest_fee   = floatval ($interest)*floatval (C('INTEREST_MANAGEMENT_FEE'));//利息管理费
                                                     $detail->status         = $binfo[0]['borrow_status'];
                                                     $detail->sort_order     = $i;
                                                     $detail->total          = $binfo[0]['total'];

@@ -23,6 +23,13 @@ function change_money($capital=0,$uid=0){
     $m1=M("z_member_money");
     $mmoney=floatval ($money[0]['account_money'])-floatval ($capital);//余额减掉金额
     $mcollect=floatval ($money[0]['money_collect'])+floatval ($capital);
+
+    if($mmoney < 0){
+        return  false;
+    }
+    if($mcollect < 0){
+        return  false;
+    }
     $data1['account_money']=$mmoney;
     $data1['money_collect']=$mcollect;
     if ($m1 = $m1->where($condition1)->save($data1)) { //保存成功

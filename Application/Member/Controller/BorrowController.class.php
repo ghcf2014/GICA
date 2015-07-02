@@ -157,29 +157,30 @@ class BorrowController extends MemberController {
 
         $ccc=count($dee);
         for($i=0;$i<=(intval ($ccc)-1);$i++){
-
         	$cm=floatval($dee[$i]['capital'])+floatval($dee[$i]['interest']);
-        	// floatval($dee[$i]['interest_fee']);
-
         }
-	    
-
 	    $map['id']  =$dee[0]['borrow_id'];
         $binfo =M('z_borrow_info')->where($map)->select();
         $map1['uid']  =$binfo[0]['borrow_uid'];
         $mbinfo =M('z_member_money')->where($map1)->select();
 
-        $data['money']=floatval($mbinfo[0]['account_money'])-floatval($cm);
+        $capital=floatval($cm);
+        $uid=$binfo[0]['borrow_uid'];
 
-        M('z_member_money')->where(array('uid'=>$binfo[0]['borrow_uid']))->setField(array('account_money'=>floatval($data['money'])));
 
         
 
+        $result=change_money($capital,$uid);//还款会员账户扣减
+        if (!$result) { //保存成功
+        	$this->error('余额不足，请充值！');
+        }
+        // $data['money']=floatval($mbinfo[0]['account_money'])-floatval($cm);
+
+        // M('z_member_money')->where(array('uid'=>$binfo[0]['borrow_uid']))->setField(array('account_money'=>floatval($data['money'])));
+
         for($i=0;$i<=(intval ($ccc)-1);$i++){
 	    $data[$i]['investor_uid'] =$dee[$i]['investor_uid'];
-	    
 
-	    
 	    $member_money = M ('z_member_money');
 	    $money=$member_money->where(array('uid'=>$data[$i]['investor_uid']))->select();
         $data[$i]['money']=floatval($dee[$i]['interest'])+floatval($dee[$i]['capital'])+floatval($money[0]['account_money']);
@@ -203,75 +204,11 @@ class BorrowController extends MemberController {
         M('z_investor_detail')->where(array('id'=>$data[$i]['id']))->setField(array('status'=>7,'deadline'=>time(),'receive_capital'=>$de[$i]['capital'],'receive_interest'=>$de[$i]['interest']));
         }
 
-		// $condition ['id'] = $_POST['bid'];
-		// $m= $_POST['bid2'];
-		// $hi= $_POST['hi'];
-		// $re = M ( 'z_borrow_info' );
-		// $b=$re->where($condition)->select();
-
-		// $borrow_info =M('z_borrow_info');
-		// for($i=1;$i<=intval ($b[0]['total']);$i++){
-		//  	if($i==$hi){
-		//  		$depict[$i]['has_pay']=$hi;
-		//  	}
-
-		//  }
-
-		// $where['id'] =$condition ['id'];
-		// // $where['id'] = array('in','1,2,3');
-		// $data['receive_capital'] =$m;
-		// $data['deadline'] = time();
-		// $result=M('z_investor_detail')->where($where)->data($data)->save();
-		// $resultinfo=M('z_investor_detail')->where($where)->select();
-
-		// //关联borrow_info数据
-		// $bwhere['id'] =$resultinfo[0]['borrow_id'];
-		// $binfo =M('z_borrow_info')->where($bwhere)->select();
-		// $bdata['has_pay'] =intval($binfo[0]['has_pay'])+1;
-		// $bresult=M('z_borrow_info')->where($bwhere)->data($bdata)->save();
-
-		// $data ['has_pay'] = serialize ($depict);
-		// $data ['repayment_ed_money'] =(floatval($b[0]['repayment_ed_money'])+floatval($m));
-
-		// var_dump($b[0]['repayment_ed_money']);
-		//发送站内信
-        
-         
         $action='您于'.date('Y-m-d H:i:s',time()).'对'.$bid.'号标'.$id.'期的还款操作成功。';
 	    $uid=$de[0]['borrow_uid'];
 	    $opertype=1;//系统通知
         $result_ms=inner_msg($uid,$opertype,$action); 
 		$this->success ('还款成功');
-
-		//2015-2-3
-		// foreach ( $fileinfo as $vo ) {
-		// 	$data [$i] ['updata'] = $vo ['savepath'] . $vo ['savename'];
-		// 	$i ++;
-		// }
-
-
-		// for($i=0;$i<=$stcount;$i++)
-  //       {
-  //          $p1=$st[$i]['id'];
-  //          $pp.=$p1.',';
-  //       }
-  //       $pp=rtrim($pp, ",");
-
-		// $b[0]['repayment_ed_money']+$_POST['bid']
-
-		// $data ['has_pay'] =;
-		// $depict ['updata'] = serialize ( $data );
-        // $data['borrow_status']=$binfo[0]['borrow_status'];
-
-		// $data['deadline']=$result[0]['deadline'];
-  //       $data['m']=$result[0]['receive_capital'];
-		// $data['msg']='还款成功';
-		// $data['money']=$b[0]['repayment_ed_money'];
-		
-		// $data['bid']=$_POST['bid'];
-		// if($result=$borrow_info->where($condition)->save($data)){
-		// 	if($this->a1=$_POST['bid'] != ''){$this->ajaxReturn($data);}
-		// }
 		
 	}
 	public function reimbursement_huan($id=0) {
@@ -281,28 +218,9 @@ class BorrowController extends MemberController {
 		$condition ['id'] = $id;
 		$borrow_info = $borrow_info->where ( $condition )->select ();
 
-        //  if ($borrow_info[0]["repayment_type"] == 5) {
-		// 	$depict ['repayment_interest'] = (intval ( $borrow_info[0]["borrow_money"] ) * (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $borrow_info[0]["borrow_interest_rate"] ) / 100 / 12)), intval ( $borrow_info[0]["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] ) - intval ( $_POST ["borrow_money"] );
-		// 	$depict ['repayment_money'] = (intval ( $_POST ["borrow_money"] ) * (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12) * pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) / (pow ( (1 + (intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12)), intval ( $_POST ["borrow_duration"] ) ) - 1)) * intval ( $_POST ["borrow_duration"] );
-		// 	$depict ['total'] = $_POST ["borrow_duration"];
-		// }
-		// if ($_POST ["repayment_type"] == 6) {
-		// 	$depict ['repayment_interest'] =intval ( $_POST ["borrow_money"] )*(intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12);
-		// 	$depict ['repayment_money'] = intval ( $_POST ["borrow_money"] )+(intval ( $_POST ["borrow_money"] )*(intval ( $_POST ["borrow_interest_rate"] ) / 100 / 12));
-		// 	$depict ['total'] = $_POST ["borrow_duration"];
-		// }
-
-
-
-
 		$this->assign ( 'list', $borrow_info );
 		$this->display ();
 	}
-	/**
-	 *
-	 * @author liuy
-	 *         2015-1-19审核中的借款(包括初审中的借款以及复审中的借款)
-	 */
 	public function checkingborrow() {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
@@ -319,12 +237,6 @@ class BorrowController extends MemberController {
 		$this->pagetitle="工合财富直通贷款-审核中的借款";
 		$this->display ();
 	}
-	
-	/**
-	 *
-	 * @author liuy
-	 *         2015-1-19招标中的借款
-	 */
 	public function issueborrow() {
 		$uid = is_login (); // 获取当前用户UID
 		$borrow_info = M ( 'z_borrow_info' );
