@@ -40,6 +40,8 @@ class FinanceController extends HomeController {
             $this->assign('list2',$list);
             $this->assign('login',$login);
             $this->assign('page',$show);
+            $this->assign('gtype',$type);
+
             $this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-投标列表";
             $this->display();
     }
