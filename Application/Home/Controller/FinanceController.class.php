@@ -12,7 +12,7 @@ class FinanceController extends HomeController {
         $this->model = new BorrowModel();
     }
 	//系统首页
-    public function index($type=0,$order=borrow_status){
+    public function index($type=0,$order=borrow_status,$status=0){
         $nickname  =   I('nickname');
 
         //判断登陆赋值
@@ -22,14 +22,20 @@ class FinanceController extends HomeController {
            $login=0;
         }
 
-        if($type==0){
+        // if($type==0){
 
-            $type='1,2,3,4,5,6';
-        }
+        //     $type='1,2,3,4,5,6';
+        // }
         //标字符模糊查询
         $map['borrow_name']    =   array('like', '%'.(string)$nickname.'%','and');
-        $map['borrow_status']    =   array('not in', '1,5,3','and');
-        $map['borrow_type']    =   array('in',$type,'and');
+        // $map['borrow_status']    =   array('not in', '1,5,3','and');
+        if($type!=0){
+            $map['borrow_type']    =   $type;
+        }
+        if($status!=0){
+            $map['borrow_status']    =   $status;
+        }
+        
 
             import('ORG.Util.Page');// 导入分页类
             $listBorrow  = M('z_borrow_info');
@@ -41,6 +47,7 @@ class FinanceController extends HomeController {
             $this->assign('login',$login);
             $this->assign('page',$show);
             $this->assign('gtype',$type);
+            $this->assign('gstatus',$status);
 
             $this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-投标列表";
             $this->display();

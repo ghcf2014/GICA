@@ -93,27 +93,24 @@
 	<form class="login-form" action="{:U('Home/User/login')}" method="post" id="loginform">
 	<div class="input_layout" >
 					<dl style="margin-top: 20px;">
-						<dt><img style="margin-left: -262px;"  src="__PUBLIC__/Home/images/jiantou-denglu.png" /></dt>
-						<dd><input type="text" name="username" value="" id="username"  tabindex="1" />
-						</dd>
+						<input type="text" name="username" value="" id="username" style="width: 96%;"placeholder="请输入用户名／邮箱／手机号" tabindex="1" />
 					</dl>
 					<dl style="margin-top: 20px;">
-						<dt><img style="margin-left: -24px;" src="__PUBLIC__/Home/images/jiantou-denglu-2.png" /></dt>
-						<dd><input type="password" name="password" id="password" tabindex="2" />
-						</dd>
+					<input type="password" name="password" id="password" style="width: 96%;"placeholder="请输入密码" tabindex="2" />
 					</dl>
-					<dl style="margin-top: 20px;">
+					<a href="{:U('Home/System/findpassword')}">忘记密码？</a>
+<!-- 					<dl style="margin-top: 20px;">
 						<dt><img style=" margin-left: -159px;" src="__PUBLIC__/Home/images/jiantou-yanzhengma.png" /></dt>
 						<dd><input type="text" name="verify" style="width:50px;" /><img class="verifyimg reloadverify" src="{:U('Home/User/verify')}" width="100"height="44" alt="点击切换">
 						</dd>
+					</dl> -->
+					<dl style="text-align: center;margin-top: 40px;">
+						<input  type="submit" id="login_btn" class="a-btn" style="width: 99%;" value="登陆"/>
+					</dl>
+					<dl style="text-align: center;margin-top: 20px;">
+						还没有账号？<a href="{:U('Home/User/register')}">立即注册</a>
 					</dl>
 					
-					<dl style="text-align: center;margin-top: 20px;">
-						<input  type="submit" id="login_btn" class="large button blue" style="width:120px;" value="登陆"/>
-					</dl>
-					<dt>
-						<dd><a href="{:U('Home/System/findpassword')}">忘记密码？</a>|<a href="{:U('Home/User/register')}">立即注册</a></dd>
-					</dt>
 	</div>	
 </form>
   <script type="text/javascript">
@@ -129,8 +126,8 @@
 		  var bid =1;
 		  var index = layer.load(1,{time: 5*1000});	
           $.post('Home/User/login_array',{bid:bid,username:username},function success(data){
-    //       	if (data.nuser=='用户不存在')
-    //       	 {
+		    //     if(data.nuser=='用户不存在')
+		    //     {
 				// layer.msg(data.nuser);
 				// layer.closeAll('loading');
 			 //    } 

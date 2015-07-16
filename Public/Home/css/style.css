@@ -1234,7 +1234,7 @@ table {*border-collapse : collapse; /* IE7 and lower */ border-spacing   : 0; wi
 
 @-webkit-keyframes warning-animation {0%                                   {background-position: 0 0; } 100%{background-position: 3em 0;} } @-moz-keyframes warning-animation    {0%                                   {background-position: 0 0; } 100%                                 {background-position: 3em 0; } } @keyframes warning-animation         {0%                                   {background-position: 0 0; } 100%                                 {background-position: 3em 0; } }
 /*input布局样式*/
-.input_layout           { width:100%;height:auto;background: #fff;margin-top: 5px;}
+.input_layout           { width:350px;height:auto;background: #fff;margin-top: 5px;}
 .input_layout dl        { width:100%;height:44px;overflow:hidden;font-size:16px;border: 0;}
 .input_layout dl.m-t-50 { margin-top:50px; }
 .input_layout dt        { float:left;width:30%;height:44px;line-height:44px;text-align:right;margin-right:18px;font-weight:normal;}
@@ -1268,4 +1268,24 @@ width:360px; margin:0px auto;display:block;background:#79C700; text-decoration:n
 
 .a_on {
 color: #66ccfb;
+}
+a.bh-mhnbo {
+background: url(../images/hg-lk_02.png) no-repeat;
+width: 30px;
+height: 17px;
+vertical-align: middle;
+position: absolute;
+top: 19px;
+right: 10px;
+z-index: 5;
+}
+.a-btn {
+background: #55acef;
+height: 44px;
+line-height: 44px;
+display: block;
+width: 100%;
+color: #fff;
+font-size: 18px;
+text-align: center;
 }

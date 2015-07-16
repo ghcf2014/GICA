@@ -25,20 +25,28 @@
       <!--tz_cont_head02-->
         <ul class="tz_cont_head02">
           <li class="tz_cont_head02_li01">标的类型:</li>
-          <li><a <a <if condition="$gtype eq ''">class="a_on"</if> href="{:U('Finance/index?type=2#tz_cont')}">全部</a></li>
+          <li><a <a <if condition="$gtype eq '0'">class="a_on"</if> href="{:U('Finance/index?type=2#tz_cont')}">全部</a></li>
             <li class="current"><a <if condition="$gtype eq '1'">class="a_on"</if> href="{:U('Finance/index?type=1#tz_cont')}">信用标</a></li>
             <li><a <if condition="$gtype eq '2'">class="a_on"</if> href="{:U('Finance/index?type=2#tz_cont')}">净值标</a></li>
             <li><a <if condition="$gtype eq '3'">class="a_on"</if> href="{:U('Finance/index?type=3#tz_cont')}">秒还标</a></li>
             <li><a <if condition="$gtype eq '4'">class="a_on"</if> href="{:U('Finance/index?type=4#tz_cont')}">担保标</a></li>
             <li><a <if condition="$gtype eq '5'">class="a_on"</if> href="{:U('Finance/index?type=5#tz_cont')}">抵押标</a></li>
+            <li class="tz_cont_head01_li_last" style="width: 300px;">
+              <div class="search-form fr" style="position:relative;">
+                 <div>
+                    <a  href="javascript:;" id="search" url="{:U('index')}" class="bh-mhnbo"></a>
+                    <input type="text" name="nickname" value="{:I('nickname')}" placeholder="请输入项目名称">
+                  </div>
+              </div>
+            </li> 
         </ul>
         <ul class="tz_cont_head02">
           <li class="tz_cont_head02_li01">项目进程:</li>
-            <li><a href="{:U('Finance/index?type=2#tz_cont')}" class="a_on">全部</a></li>
-            <li><a href="{:U('Finance/index?type=3#tz_cont')}">投标中</a></li>
-            <li><a href="{:U('Finance/index?type=4#tz_cont')}">已满标</a></li>
-            <li><a href="{:U('Finance/index?type=5#tz_cont')}">还款中</a></li>
-            <li><a href="{:U('Finance/index?type=5#tz_cont')}">已还完</a></li>
+            <li><a <a <if condition="$gstatus eq '0'">class="a_on"</if> href="{:U('Finance/index?status=0#tz_cont')}" >全部</a></li>
+            <li><a <a <if condition="$gstatus eq '2'">class="a_on"</if> href="{:U('Finance/index?status=2#tz_cont')}">投标中</a></li>
+            <li><a <a <if condition="$gstatus eq '4'">class="a_on"</if> href="{:U('Finance/index?status=4#tz_cont')}">已满标</a></li>
+            <li><a <a <if condition="$gstatus eq '6'">class="a_on"</if> href="{:U('Finance/index?status=6#tz_cont')}">还款中</a></li>
+            <li><a <a <if condition="$gstatus eq '7'">class="a_on"</if> href="{:U('Finance/index?status=7#tz_cont')}">已还完</a></li>
         </ul>
         <ul class="tz_cont_head02">
           <li class="tz_cont_head02_li01">标的利率:</li>
@@ -55,7 +63,6 @@
             <li><a href="{:U('Finance/index?type=4#tz_cont')}">9~12个月</a></li>
             <li><a href="{:U('Finance/index?type=5#tz_cont')}">12个月以上</a></li>
         </ul>
-
       <!--tz_cont_head03-->       
         <ul class="tz_cont_head03">
           <li class="tz_cont_head03_title">项目</li>

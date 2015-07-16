@@ -165,9 +165,9 @@ class UserController extends HomeController {
 		}
 		if(IS_POST){ //登录验证
 			/* 检测验证码 */
-			if(!check_verify($verify)){
-			$this->error('验证码错误！');
-			}
+			// if(!check_verify($verify)){
+			// $this->error('验证码错误！');
+			// }
 			if(isusername($username)){
 			$type = 1;
 		    }
@@ -203,7 +203,6 @@ class UserController extends HomeController {
 				}
 				$this->error($error);
 			}
-
 		} else { //显示登录表单
 			$this->pagetitle="工合财富直通贷款-小额贷-融资贷-本地贷款-推荐领取积分-壕礼相送-登录页";
 			$this->display();
